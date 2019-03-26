@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-
+import ssl
 # 生成子图，相当于fig = plt.figure(),ax = fig.add_subplot(),
 # 其中ax的函数参数表示把当前画布进行分割，
 # 例：fig.add_subplot(2,2,2).表示将画布分割为两行两列
@@ -26,5 +26,6 @@ def update(n):
 #这里的frames在调用update函数是会将frames作为实参传递给“n”
 ani = FuncAnimation(fig, update, frames=np.linspace(0, 2*np.pi, 30),
                     init_func=init, blit=False)
-ani.save('GifDemo.htm', dpi=80, writer='imagemagick')
+ani.save('line.gif', dpi=80, writer='imagemagick')
+#ani.save('F:\MyGitHub\MyMLStudy\MyPythonLearn\matplotlib\GifDemo.html', dpi=80, writer='imagemagick')
 plt.show()

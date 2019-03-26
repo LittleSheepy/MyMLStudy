@@ -55,5 +55,5 @@ def update(frame):
     return scat,
 
 anim = animation.FuncAnimation(fig, update, interval=10, blit=True, frames=200)
-anim.save('guanfang.htm', dpi=80, writer='imagemagick')
+anim.save('guanfang.html', dpi=80, writer='imagemagick')
 plt.show()
