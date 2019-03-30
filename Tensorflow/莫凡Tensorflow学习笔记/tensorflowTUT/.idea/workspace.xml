@@ -10,29 +10,63 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/tensorflowTUT$tensorflow7_variable.coverage" NAME="tensorflow7_variable Coverage Results" MODIFIED="1553434727579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tensorflowTUT$full_code__3_.coverage" NAME="full_code (3) Coverage Results" MODIFIED="1553503926799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf16_classification" />
     <SUITE FILE_PATH="coverage/tensorflowTUT$tensorflow6_session.coverage" NAME="tensorflow6_session Coverage Results" MODIFIED="1553434198857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tensorflowTUT$tensorflow11_build_network_EX.coverage" NAME="tensorflow11_build_network_EX Coverage Results" MODIFIED="1553480353869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tensorflowTUT$tensorflow8_feeds.coverage" NAME="tensorflow8_feeds Coverage Results" MODIFIED="1553434891446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tensorflowTUT$full_code__4_.coverage" NAME="full_code (4) Coverage Results" MODIFIED="1553588413099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf18_CNN2" />
     <SUITE FILE_PATH="coverage/tensorflowTUT$tensorflow12_plut_result.coverage" NAME="tensorflow12_plut_result Coverage Results" MODIFIED="1553436723909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tensorflowTUT$full_code__1_.coverage" NAME="full_code (1) Coverage Results" MODIFIED="1553588228098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf17_dropout" />
-    <SUITE FILE_PATH="coverage/tensorflowTUT$full_code.coverage" NAME="full_code Coverage Results" MODIFIED="1553498235619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf14_tensorboard" />
-    <SUITE FILE_PATH="coverage/tensorflowTUT$full_code__2_.coverage" NAME="full_code (2) Coverage Results" MODIFIED="1553502629531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf15_tensorboard" />
     <SUITE FILE_PATH="coverage/tensorflowTUT$tensorflow11_build_network.coverage" NAME="tensorflow11_build_network Coverage Results" MODIFIED="1553435062705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tensorflowTUT$full_code__5_.coverage" NAME="full_code (5) Coverage Results" MODIFIED="1553588525257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf18_CNN3" />
+    <SUITE FILE_PATH="coverage/tensorflowTUT$tf23_BN.coverage" NAME="tf23_BN Coverage Results" MODIFIED="1553937209232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf23_BN" />
+    <SUITE FILE_PATH="coverage/tensorflowTUT$tensorflow7_variable.coverage" NAME="tensorflow7_variable Coverage Results" MODIFIED="1553434727579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tensorflowTUT$full_code__3_.coverage" NAME="full_code (3) Coverage Results" MODIFIED="1553503926799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf16_classification" />
+    <SUITE FILE_PATH="coverage/tensorflowTUT$tensorflow11_build_network_EX.coverage" NAME="tensorflow11_build_network_EX Coverage Results" MODIFIED="1553480353869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tensorflowTUT$full_code__4_.coverage" NAME="full_code (4) Coverage Results" MODIFIED="1553588413099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf18_CNN2" />
+    <SUITE FILE_PATH="coverage/tensorflowTUT$full_code__1_.coverage" NAME="full_code (1) Coverage Results" MODIFIED="1553839591205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf20_RNN2.2" />
+    <SUITE FILE_PATH="coverage/tensorflowTUT$full_code.coverage" NAME="full_code Coverage Results" MODIFIED="1553825114668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf20_RNN2" />
+    <SUITE FILE_PATH="coverage/tensorflowTUT$full_code__2_.coverage" NAME="full_code (2) Coverage Results" MODIFIED="1553934332059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf21_autoencoder" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="tensorflowTUT" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="full_code.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tf18_CNN3/full_code.py">
+      <file leaf-file-name="tf23_BN.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tf23_BN/tf23_BN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-228" />
+            <state relative-caret-position="-1955">
+              <caret line="45" column="60" lean-forward="true" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
+              <folding>
+                <element signature="e#26#45#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>encode_decode</find>
+      <find>encoder_result</find>
+      <find />
+      <find> </find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -44,6 +78,10 @@
         <option value="$PROJECT_DIR$/tf14_tensorboard/full_code.py" />
         <option value="$PROJECT_DIR$/tf15_tensorboard/full_code.py" />
         <option value="$PROJECT_DIR$/tf17_dropout/full_code.py" />
+        <option value="$PROJECT_DIR$/tf20_RNN2/full_code.py" />
+        <option value="$PROJECT_DIR$/tf20_RNN2.2/full_code.py" />
+        <option value="$PROJECT_DIR$/tf21_autoencoder/full_code.py" />
+        <option value="$PROJECT_DIR$/tf23_BN/tf23_BN.py" />
       </list>
     </option>
   </component>
@@ -56,10 +94,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="33" />
+    <option name="y" value="6" />
+    <option name="width" value="958" />
     <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
@@ -77,39 +115,7 @@
             <path>
               <item name="tensorflowTUT" type="b2602c69:ProjectViewProjectNode" />
               <item name="tensorflowTUT" type="462c0819:PsiDirectoryNode" />
-              <item name="tf15_tensorboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tensorflowTUT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tensorflowTUT" type="462c0819:PsiDirectoryNode" />
-              <item name="tf15_tensorboard" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tensorflowTUT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tensorflowTUT" type="462c0819:PsiDirectoryNode" />
-              <item name="tf16_classification" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tensorflowTUT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tensorflowTUT" type="462c0819:PsiDirectoryNode" />
-              <item name="tf17_dropout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tensorflowTUT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tensorflowTUT" type="462c0819:PsiDirectoryNode" />
-              <item name="tf18_CNN2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tensorflowTUT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tensorflowTUT" type="462c0819:PsiDirectoryNode" />
-              <item name="tf18_CNN3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tensorflowTUT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tensorflowTUT" type="462c0819:PsiDirectoryNode" />
-              <item name="tf18_CNN3" type="462c0819:PsiDirectoryNode" />
-              <item name="MNIST_data" type="462c0819:PsiDirectoryNode" />
+              <item name="tf23_BN" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -120,7 +126,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../tutorials/tensorflowTUT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../tutorials_S/tensorflowTUT/tf23_BN" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -136,7 +142,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.full_code (5)">
+  <component name="RunManager" selected="Python.tf23_BN">
     <configuration name="full_code (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tensorflowTUT" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,12 +151,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf17_dropout" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf20_RNN2.2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf17_dropout/full_code.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf20_RNN2.2/full_code.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,18 +170,18 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf15_tensorboard" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf21_autoencoder" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf15_tensorboard/full_code.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf21_autoencoder/full_code.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="full_code (3)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="full_code" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tensorflowTUT" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -183,18 +189,18 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf16_classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf20_RNN2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf16_classification/full_code.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf20_RNN2/full_code.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="full_code (4)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tf23_BN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tensorflowTUT" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -202,50 +208,29 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf18_CNN2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf23_BN" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf18_CNN2/full_code.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="full_code (5)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="tensorflowTUT" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf18_CNN3" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf18_CNN3/full_code.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf23_BN/tf23_BN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.full_code (2)" />
-      <item itemvalue="Python.full_code (3)" />
+      <item itemvalue="Python.full_code" />
       <item itemvalue="Python.full_code (1)" />
-      <item itemvalue="Python.full_code (4)" />
-      <item itemvalue="Python.full_code (5)" />
+      <item itemvalue="Python.full_code (2)" />
+      <item itemvalue="Python.tf23_BN" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.full_code (5)" />
-        <item itemvalue="Python.full_code (4)" />
-        <item itemvalue="Python.full_code (1)" />
-        <item itemvalue="Python.full_code (3)" />
+        <item itemvalue="Python.tf23_BN" />
         <item itemvalue="Python.full_code (2)" />
+        <item itemvalue="Python.full_code (1)" />
+        <item itemvalue="Python.full_code" />
       </list>
     </recent_temporary>
   </component>
@@ -262,28 +247,38 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2701525" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.083877996" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
+      <window_info anchor="bottom" id="Python Console" weight="0.32897604" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32897604" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.06449893" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="SciView" visible="true" weight="0.32995737" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
-      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Database" weight="0.32962137" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="right" id="SciView" visible="true" weight="0.33901918" />
+      <window_info id="Structure" order="1" sideWeight="0.5016234" side_tool="true" weight="0.195629" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.27342048" />
+      <window_info id="Favorites" sideWeight="0.5016234" side_tool="true" weight="0.195629" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" visible="true" weight="0.32897604" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -297,6 +292,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tf20_RNN2/full_code.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tf20_RNN2.2/full_code.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tf21_autoencoder/full_code.py</url>
+          <line>173</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -304,7 +316,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -451,19 +463,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tf17_dropout/full_code.py">
+    <entry file="file://D:/ProgramData/Anaconda3/Lib/site-packages/tensorflow/python/ops/gen_array_ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="76" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="7427" selection-start-line="7427" selection-end-line="7427" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tf18_CNN2/full_code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-577">
+        <state relative-caret-position="-844">
           <folding>
             <element signature="e#324#361#0" expanded="true" />
           </folding>
@@ -472,7 +488,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tf18_CNN3/full_code.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1140" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf17_dropout/full_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="31" />
+          <folding>
+            <element signature="e#333#370#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf20_RNN2.2/full_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="145" column="44" selection-start-line="145" selection-start-column="39" selection-end-line="145" selection-end-column="44" />
+          <folding>
+            <element signature="e#412#435#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda3/Lib/site-packages/tensorflow/python/framework/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="5959" selection-start-line="5959" selection-end-line="5959" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda3/Lib/site-packages/tensorflow/python/ops/variable_scope.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="2105" selection-start-line="2105" selection-end-line="2105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf20_RNN2/full_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1520">
+          <caret line="80" column="45" lean-forward="true" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="45" />
+          <folding>
+            <element signature="e#470#493#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf21_autoencoder/full_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="177" selection-start-line="177" selection-end-line="177" />
+          <folding>
+            <element signature="e#137#201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf22_scope/tf22_RNN_scope.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1787" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf22_scope/tf22_scope.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-228" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf23_BN/tf23_BN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1955">
+          <caret line="45" column="60" lean-forward="true" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
+          <folding>
+            <element signature="e#26#45#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
