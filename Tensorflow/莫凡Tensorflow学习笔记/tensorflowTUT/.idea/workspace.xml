@@ -42,15 +42,12 @@
     <favorites_list name="tensorflowTUT" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="tf23_BN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tf23_BN/tf23_BN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1955">
-              <caret line="45" column="60" lean-forward="true" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
-              <folding>
-                <element signature="e#26#45#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="19">
+              <caret line="45" column="60" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -95,9 +92,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="33" />
-    <option name="y" value="6" />
-    <option name="width" value="958" />
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
@@ -126,7 +123,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../tutorials_S/tensorflowTUT/tf23_BN" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Tensorflow-" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -261,27 +258,27 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32897604" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.083877996" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" weight="0.32897604" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32897604" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.06449893" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" weight="0.32962137" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="right" id="SciView" visible="true" weight="0.33901918" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.12473348" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32962137" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.33901918" />
       <window_info id="Structure" order="1" sideWeight="0.5016234" side_tool="true" weight="0.195629" />
+      <window_info id="Favorites" order="2" sideWeight="0.5016234" side_tool="true" weight="0.195629" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27342048" />
-      <window_info id="Favorites" sideWeight="0.5016234" side_tool="true" weight="0.195629" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" visible="true" weight="0.32897604" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="7" visible="true" weight="0.32897604" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,13 +317,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/tf23_BN/tf23_BN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="45" column="60" lean-forward="true" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tf5_example2/full_code.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="18" />
-          <folding>
-            <element signature="e#363#386#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -334,9 +335,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -344,9 +342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="16" column="24" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -354,9 +349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -364,9 +356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -374,9 +363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -384,9 +370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -401,9 +384,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="70" column="48" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="48" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -418,9 +398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="83" column="28" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -428,28 +405,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-476">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tf12_plot_result/full_code.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tf16_classification/full_code.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -457,9 +422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="73" selection-start-line="73" selection-end-line="73" selection-end-column="29" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -479,11 +441,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tf18_CNN2/full_code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-844">
-          <folding>
-            <element signature="e#324#361#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-844" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tf18_CNN3/full_code.py">
@@ -495,9 +453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
           <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="31" />
-          <folding>
-            <element signature="e#333#370#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -557,11 +512,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tf23_BN/tf23_BN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1955">
-          <caret line="45" column="60" lean-forward="true" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
-          <folding>
-            <element signature="e#26#45#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="19">
+          <caret line="45" column="60" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
         </state>
       </provider>
     </entry>
