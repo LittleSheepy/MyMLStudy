@@ -63,6 +63,8 @@ class PTBModel(object):
     # Slightly better results can be obtained with forget gate biases
     # initialized to 1 but the hyperparameters of the model would need to be
     # different than reported in the paper.
+    # （翻译）forget gate biases初始化为1可以获得稍微好一些的结果，但这样会和论文结果不同
+    # 首先使用BasicLSTMCell定义单个基本的LSTM单元。这里的size其实就是hidden_size。
     def lstm_cell():
       return tf.contrib.rnn.BasicLSTMCell(
           size, forget_bias=0.0, state_is_tuple=True)
@@ -71,18 +73,20 @@ class PTBModel(object):
       def attn_cell():
         return tf.contrib.rnn.DropoutWrapper(
             lstm_cell(), output_keep_prob=config.keep_prob)
+    # 多层LSTM结构 这里使用了两层config.num_layers = 2
     cell = tf.contrib.rnn.MultiRNNCell(
         [attn_cell() for _ in range(config.num_layers)], state_is_tuple=True)
 
     self._initial_state = cell.zero_state(batch_size, tf.float32)
 
+    # 输入预处理
     with tf.device("/cpu:0"):
       embedding = tf.get_variable(
           "embedding", [vocab_size, size], dtype=tf.float32)
       inputs = tf.nn.embedding_lookup(embedding, input_.input_data)
 
     if is_training and config.keep_prob < 1:
-      inputs = tf.nn.dropout(inputs, config.keep_prob)
+      inputs = tf.nn.dropout(inputs, 0.5)
 
     # Simplified version of models/tutorials/rnn/rnn.py's rnn().
     # This builds an unrolled LSTM for tutorial purposes only.
@@ -99,31 +103,43 @@ class PTBModel(object):
       for time_step in range(num_steps):
         if time_step > 0: tf.get_variable_scope().reuse_variables()
         (cell_output, state) = cell(inputs[:, time_step, :], state)
-        outputs.append(cell_output)
+        outputs.append(cell_output)# output: shape[num_steps][batch,hidden_size]
 
+    # 把之前的list展开，成[batch, hidden_size*num_steps],然后 reshape, 成[batch*numsteps, hidden_size]
+    # [num_steps][batch,hidden_size] ==>[batch, hidden_size*num_steps] ==> [batch*numsteps, hidden_size]
     output = tf.reshape(tf.concat(outputs, 1), [-1, size])
-    softmax_w = tf.get_variable(
-        "softmax_w", [size, vocab_size], dtype=tf.float32)
+
+    #=====损失函数计算=======
+    # softmax_w , shape=[hidden_size, vocab_size], 用于将distributed表示的单词转化为one-hot表示
+    softmax_w = tf.get_variable("softmax_w", [size, vocab_size], dtype=tf.float32)
     softmax_b = tf.get_variable("softmax_b", [vocab_size], dtype=tf.float32)
+    # [batch*numsteps, vocab_size] 从隐藏语义转化成完全表示
     logits = tf.matmul(output, softmax_w) + softmax_b
+    # loss , shape=[batch*num_steps]
+    # 带权重的交叉熵计算
     loss = tf.contrib.legacy_seq2seq.sequence_loss_by_example(
-        [logits],
-        [tf.reshape(input_.targets, [-1])],
+        [logits],# output [batch*numsteps, vocab_size]
+        [tf.reshape(input_.targets, [-1])], # target, [batch_size, num_steps] 然后展开成一维【列表】
         [tf.ones([batch_size * num_steps], dtype=tf.float32)])
-    self._cost = cost = tf.reduce_sum(loss) / batch_size
+    self._cost = cost = tf.reduce_sum(loss) / batch_size   # 计算得到平均每批batch的误差
     self._final_state = state
 
     if not is_training:
       return
 
+    # 生成一个lr的variable，但是trainable=False，也就是不进行求导。
     self._lr = tf.Variable(0.0, trainable=False)
+    # gradients: return A list of sum(dy/dx) for each x in xs.
     tvars = tf.trainable_variables()
+    # tf.gradients 用来计算导数
+    # clip_by_global_norm  修正梯度值，用于控制梯度爆炸的问题。
     grads, _ = tf.clip_by_global_norm(tf.gradients(cost, tvars),
                                       config.max_grad_norm)
+
     optimizer = tf.train.GradientDescentOptimizer(self._lr)
-    self._train_op = optimizer.apply_gradients(
-        zip(grads, tvars),
-        global_step=tf.contrib.framework.get_or_create_global_step())
+
+    self._train_op = optimizer.apply_gradients(zip(grads, tvars),
+                                      global_step=tf.contrib.framework.get_or_create_global_step())
 
     self._new_lr = tf.placeholder(
         tf.float32, shape=[], name="new_learning_rate")
@@ -159,18 +175,18 @@ class PTBModel(object):
 
 class SmallConfig(object):
   """Small config."""
-  init_scale = 0.1
+  init_scale = 0.1          # 网络中权重初始scale
   learning_rate = 1.0
   max_grad_norm = 5
   num_layers = 2
   num_steps = 20
-  hidden_size = 200
+  hidden_size = 200         # 隐藏层中单元数目
   max_epoch = 4
-  max_max_epoch = 13
-  keep_prob = 1.0
+  max_max_epoch = 13        # 指的是整个文本循环次数。
+  keep_prob = 0.5
   lr_decay = 0.5
   batch_size = 20
-  vocab_size = 10000
+  vocab_size = 10000        # 词典规模，总共10K个词
 
 
 class MediumConfig(object):
@@ -292,8 +308,10 @@ with tf.Graph().as_default():
   sv = tf.train.Supervisor()
   with sv.managed_session() as session:
     for i in range(config.max_max_epoch):
+      # 先计算学习速率衰减值
+      # 在 遍数小于max epoch时， lr_decay = 1 ; > max_epoch时， lr_decay = 0.5^(i-max_epoch)
       lr_decay = config.lr_decay ** max(i + 1 - config.max_epoch, 0.0)
-      m.assign_lr(session, config.learning_rate * lr_decay)
+      m.assign_lr(session, config.learning_rate * lr_decay) # 设置learning rate
 
       print("Epoch: %d Learning rate: %.3f" % (i + 1, session.run(m.lr)))
       train_perplexity = run_epoch(session, m, eval_op=m.train_op,
