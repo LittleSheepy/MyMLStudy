@@ -31,7 +31,7 @@ if __name__ == '__main__':
     # FuncAnimation 会在每一帧都调用“update” 函数。
     # 在这里设置一个10帧的动画，每帧之间间隔200毫秒
     anim = FuncAnimation(fig, update, frames=np.arange(0, 10), interval=200)
-    anim.save('line.htm', dpi=80, writer='imagemagick')
+    anim.save('line.gif', dpi=80, writer='imagemagick')
     #if len(sys.argv) > 1 and sys.argv[1] == 'save':
         #anim.save('line.gif', dpi=80, writer='imagemagick')
     #else:
