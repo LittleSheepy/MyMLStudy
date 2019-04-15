@@ -1,11 +1,14 @@
 import copy
 from matplotlib import pyplot as plt
 from matplotlib import animation
+from pltGif import pltGif
 
-training_set = [[(1, 2), 1], [(2, 3), 1], [(3, 1), -1], [(4, 2), -1]]  # 训练数据集
-w = [0, 0]  # 参数初始化
+training_set = [[1, 2, 1], [2, 3, 1], [3, 1, -1], [4, 2, -1]]  # 训练数据集
+w = [0.1, 0.1]  # 参数初始化
 b = 0
 history = []  # 用来记录每次更新过后的w,b
+history.append([copy.copy(w), b])  # 将每次更新过后的w,b记录在history数组中
+hisDot = []
 
 
 def update(item):
@@ -15,11 +18,11 @@ def update(item):
     :return: nothing 无返回值
     """
     global w, b, history  # 把w, b, history声明为全局变量
-    w[0] += 1 * item[1] * item[0][0]  # 根据误分类点更新参数,这里学习效率设为1
-    w[1] += 1 * item[1] * item[0][1]
-    b += 1 * item[1]
+    w[0] += 1 * item[2] * item[0]  # 根据误分类点更新参数,这里学习效率设为1
+    w[1] += 1 * item[2] * item[1]
+    b += 1 * item[2]
     history.append([copy.copy(w), b])  # 将每次更新过后的w,b记录在history数组中
-
+    hisDot.append([item[0], item[1]])
 
 def cal(item):
     """
@@ -29,10 +32,10 @@ def cal(item):
     :return:
     """
     res = 0
-    for i in range(len(item[0])):  # 迭代item的每个坐标，对于本文数据则有两个坐标x1和x2
-        res += item[0][i] * w[i]
+    for i in range(len(item) - 1):  # 迭代item的每个坐标，对于本文数据则有两个坐标x1和x2
+        res += item[i] * w[i]
     res += b
-    res *= item[1]  # 这里是乘以公式中的yi
+    res *= item[2]  # 这里是乘以公式中的yi
     return res
 
 
@@ -52,10 +55,18 @@ def check():
 
 
 if __name__ == "__main__":
+
     for i in range(1000):  # 迭代1000遍
         if not check(): break  # 如果已正确分类，则结束迭代
     # 以下代码是将迭代过程可视化
     # 首先建立我们想要做成动画的图像figure, 坐标轴axis,和plot element
+    pltGif_ = pltGif(training_set, history, hisDot)
+    pltGif_.save()
+
+
+    """
+    
+
     fig = plt.figure()
     ax = plt.axes(xlim=(0, 2), ylim=(-2, 2))
     line, = ax.plot([], [], 'g', lw=2)  # 画一条线
@@ -66,12 +77,12 @@ if __name__ == "__main__":
         line.set_data([], [])
         x, y, x_, y_ = [], [], [], []
         for p in training_set:
-            if p[1] > 0:
-                x.append(p[0][0])  # 存放yi=1的点的x1坐标
-                y.append(p[0][1])  # 存放yi=1的点的x2坐标
+            if p[2] > 0:
+                x.append(p[0])  # 存放yi=1的点的x1坐标
+                y.append(p[1])  # 存放yi=1的点的x2坐标
             else:
-                x_.append(p[0][0])  # 存放yi=-1的点的x1坐标
-                y_.append(p[0][1])  # 存放yi=-1的点的x2坐标
+                x_.append(p[0])  # 存放yi=-1的点的x1坐标
+                y_.append(p[1])  # 存放yi=-1的点的x2坐标
         plt.plot(x, y, 'bo', x_, y_, 'rx')  # 在图里yi=1的点用点表示，yi=-1的点用叉表示
         plt.axis([-6, 6, -6, 6])  # 横纵坐标上下限
         plt.grid(True)  # 显示网格
@@ -95,9 +106,14 @@ if __name__ == "__main__":
         y1 = -(b + w[0] * x1) / w[1]
         label.set_text(history[i])
         label.set_position([x1, y1])
+        ss = 'Perceptron Algorithm (www.hankcs.com)%s'%i
+        plt.title(ss)  # 给图一个标题：感知机算法
         return line, label
 
 
     print("参数w,b更新过程：", history)
     anim = animation.FuncAnimation(fig, animate, init_func=init, frames=len(history), interval=1000, repeat=True, blit=True)
     anim.save('basic_animation.gif', fps=80, extra_args=['-vcodec', 'libx264'])
+    #plt.show()
+    
+    """
