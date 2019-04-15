@@ -26,5 +26,5 @@ def update(n):
 #这里的frames在调用update函数是会将frames作为实参传递给“n”
 ani = FuncAnimation(fig, update, frames=np.linspace(0, 2*np.pi, 30),
                     init_func=init, blit=False)
-ani.save('GifDemo.htm', dpi=80, writer='imagemagick')
+#ani.save('GifDemo.htm', dpi=80, writer='imagemagick')
 plt.show()
