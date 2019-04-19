@@ -7,6 +7,7 @@
     <orderEntry type="module" module-name="reinforcement-learning-an-introduction" />
     <orderEntry type="module" module-name="MyMLStudy" />
     <orderEntry type="module" module-name="AiLearning" />
+    <orderEntry type="module" module-name="MyGitHub" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="py.test" />
