@@ -5,7 +5,7 @@ import copy
 from pltGif import pltGif
 
 # 创建一个数据集，X有两个特征，y={-1，1}
-PLA_NUM = 50
+PLA_NUM = 100
 PLA_NUM_TEST = 2
 X, y = make_blobs(n_samples=PLA_NUM, centers=2, random_state=6)
 y[y==1] = -1
@@ -26,13 +26,13 @@ class PerceptronRaw():
         self.history = []  # 用来记录每次更新过后的w,b
         self.hisDot = []
 
-    def fit(self, x_train, y_train, learning_rate=0.05, n_iters=100, plot_train=True):
+    def fit(self, x_train, y_train, learning_rate=0.005, n_iters=100, plot_train=True):
         print("开始训练...")
         num_samples, num_features = x_train.shape
-        self.W = np.array([-0.1, 0.1])
-        self.bias = 1
+        self.W = np.array([-2, -1])
+        self.bias = 10
         self.history.append([copy.copy(self.W), self.bias])
-
+        self.TrainNum = 0
         while True:
             erros_examples = []
             erros_examples_y = []
@@ -50,6 +50,8 @@ class PerceptronRaw():
                     erros_examples_y.append(y_idx)
                     distanceSum += -distance/w_
             print(distanceSum)
+            if self.TrainNum > 200:
+                break;
             if len(erros_examples) == 0:
                 break;
             else:
@@ -58,9 +60,11 @@ class PerceptronRaw():
                 choosed_example = erros_examples[random_idx]
                 choosed_example_y = erros_examples_y[random_idx]
                 self.W = self.W + learning_rate * choosed_example_y * choosed_example
-                #self.bias = self.bias + learning_rate * choosed_example_y
+                #self.W[0] = -2
+                self.bias = self.bias + learning_rate * choosed_example_y
                 self.history.append([copy.copy(self.W), self.bias])
                 self.hisDot.append(choosed_example)
+                self.TrainNum+=1
         print("训练结束")
 
         # 绘制训练结果部分
