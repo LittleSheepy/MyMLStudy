@@ -18,13 +18,15 @@
     <SUITE FILE_PATH="coverage/Tensorflow$PLA.coverage" NAME="PLA Coverage Results" MODIFIED="1555405020390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$GifDemo.coverage" NAME="GifDemo Coverage Results" MODIFIED="1554862083219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../matplotlib" />
     <SUITE FILE_PATH="coverage/Tensorflow$p5_Nesterov_momentum.coverage" NAME="p5 Nesterov momentum Coverage Results" MODIFIED="1555670520535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../mlbasic" />
+    <SUITE FILE_PATH="coverage/Tensorflow$AdaDelta1.coverage" NAME="AdaDelta1 Coverage Results" MODIFIED="1555837868403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
     <SUITE FILE_PATH="coverage/Tensorflow$DrewGif.coverage" NAME="DrewGif Coverage Results" MODIFIED="1555334679069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../matplotlib" />
     <SUITE FILE_PATH="coverage/Tensorflow$ouPLA1.coverage" NAME="ouPLA1 Coverage Results" MODIFIED="1555316335760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$momentum.coverage" NAME="momentum Coverage Results" MODIFIED="1555690365323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$PLA1.coverage" NAME="PLA1 Coverage Results" MODIFIED="1555405036196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$SimplePLA.coverage" NAME="SimplePLA Coverage Results" MODIFIED="1555405046131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
-    <SUITE FILE_PATH="coverage/Tensorflow$adadelta.coverage" NAME="adadelta Coverage Results" MODIFIED="1555579062470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
+    <SUITE FILE_PATH="coverage/Tensorflow$adadelta.coverage" NAME="adadelta Coverage Results" MODIFIED="1555836955459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
     <SUITE FILE_PATH="coverage/Tensorflow$tic_tac_toe.coverage" NAME="tic_tac_toe Coverage Results" MODIFIED="1554370516235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/chapter01" />
+    <SUITE FILE_PATH="coverage/Tensorflow$momentum__1_.coverage" NAME="momentum (1) Coverage Results" MODIFIED="1555851240948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
     <SUITE FILE_PATH="coverage/Tensorflow$2_binary_perceptron.coverage" NAME="2.binary_perceptron Coverage Results" MODIFIED="1555426998139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$01_.coverage" NAME="01 命令行参数 Coverage Results" MODIFIED="1554365197055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow学习笔记" />
     <SUITE FILE_PATH="coverage/Tensorflow$perceptron.coverage" NAME="perceptron Coverage Results" MODIFIED="1554864155037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
@@ -49,7 +51,7 @@
       <file leaf-file-name="p6 adagrad.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../mlbasic/p6 adagrad.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="851">
+            <state relative-caret-position="23">
               <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -58,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="p8 adam.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../mlbasic/p8 adam.py">
+      <file leaf-file-name="p7 adadelta.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../mlbasic/p7 adadelta.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="128" selection-start-line="128" selection-end-line="128" selection-end-column="46" />
+            <state relative-caret-position="1373">
+              <caret line="128" column="9" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="9" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -70,11 +72,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="momentum.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/momentum.py">
+      <file leaf-file-name="adadelta.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../优化函数/adadelta.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1348">
-              <caret line="58" column="39" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="39" />
+            <state>
+              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="momentum.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../优化函数/momentum.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -133,6 +144,8 @@
         <option value="$PROJECT_DIR$/../../mlbasic/p6 adagrad.py" />
         <option value="$PROJECT_DIR$/../../mlbasic/p8 adam.py" />
         <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/momentum.py" />
+        <option value="$PROJECT_DIR$/../优化函数/AdaDelta1.py" />
+        <option value="$PROJECT_DIR$/../优化函数/momentum.py" />
       </list>
     </option>
   </component>
@@ -225,7 +238,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.momentum">
+  <component name="RunManager" selected="Python.momentum (1)">
+    <configuration name="AdaDelta1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../优化函数" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../优化函数/AdaDelta1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="adadelta" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -245,6 +277,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="momentum (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../优化函数" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../优化函数/momentum.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="momentum" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -259,44 +310,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/momentum.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="p5 Nesterov momentum" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MyGitHub" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../mlbasic" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../mlbasic/p5 Nesterov momentum.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="p6 adagrad" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MyGitHub" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../mlbasic" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../mlbasic/p6 adagrad.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -324,17 +337,17 @@
     <list>
       <item itemvalue="Python.momentum" />
       <item itemvalue="Python.adadelta" />
-      <item itemvalue="Python.p5 Nesterov momentum" />
-      <item itemvalue="Python.p6 adagrad" />
       <item itemvalue="Python.p8 adam" />
+      <item itemvalue="Python.AdaDelta1" />
+      <item itemvalue="Python.momentum (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.momentum (1)" />
+        <item itemvalue="Python.AdaDelta1" />
+        <item itemvalue="Python.adadelta" />
         <item itemvalue="Python.momentum" />
         <item itemvalue="Python.p8 adam" />
-        <item itemvalue="Python.p6 adagrad" />
-        <item itemvalue="Python.p5 Nesterov momentum" />
-        <item itemvalue="Python.adadelta" />
       </list>
     </recent_temporary>
   </component>
@@ -369,15 +382,15 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.2868048" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.45801526" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13646056" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
-      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.37579957" />
+      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.35714287" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.25408942" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.13195202" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -435,11 +448,6 @@
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../优化函数/adadelta.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../../mlbasic/p6 adagrad.py</url>
           <line>92</line>
           <option name="timeStamp" value="77" />
@@ -454,6 +462,11 @@
           <line>94</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../优化函数/adadelta.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -462,7 +475,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="83" />
+      <option name="time" value="87" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -490,27 +503,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../reinforcement-learning-an-introduction/chapter02/ten_armed_testbed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5198">
-          <caret line="226" column="14" selection-start-line="226" selection-start-column="4" selection-end-line="226" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TensorFlow实战-黄文坚/Tensorflow 实战（源码）/7_2_LSTM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7153">
-          <caret line="314" selection-start-line="314" selection-end-line="314" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tensorflow学习笔记/01 命令行参数.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../reinforcement-learning-an-introduction/chapter01/tic_tac_toe.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6532">
@@ -765,29 +757,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../优化函数/adadelta.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../mlbasic/readme.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-105" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../mlbasic/p6 adagrad.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm_matplotlib_backend/backend_interagg.py">
@@ -814,9 +786,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/momentum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1334">
+          <caret line="58" column="39" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../优化函数/AdaDelta1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../mlbasic/p6 adagrad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../mlbasic/p8 adam.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
+        <state relative-caret-position="874">
           <caret line="128" selection-start-line="128" selection-end-line="128" selection-end-column="46" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -824,10 +826,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/momentum.py">
+    <entry file="file://$PROJECT_DIR$/../优化函数/adadelta.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1348">
-          <caret line="58" column="39" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="39" />
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../mlbasic/p7 adadelta.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1373">
+          <caret line="128" column="9" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../优化函数/momentum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
