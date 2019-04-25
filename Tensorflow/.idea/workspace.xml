@@ -13,10 +13,11 @@
     <SUITE FILE_PATH="coverage/Tensorflow$ten_armed_testbed.coverage" NAME="ten_armed_testbed Coverage Results" MODIFIED="1554375158754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/chapter02" />
     <SUITE FILE_PATH="coverage/Tensorflow$p6_adagrad.coverage" NAME="p6 adagrad Coverage Results" MODIFIED="1555677305174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../mlbasic" />
     <SUITE FILE_PATH="coverage/Tensorflow$kd_knn2.coverage" NAME="kd_knn2 Coverage Results" MODIFIED="1556178466711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
+    <SUITE FILE_PATH="coverage/Tensorflow$kd_tree2.coverage" NAME="kd_tree2 Coverage Results" MODIFIED="1556205431843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法" />
     <SUITE FILE_PATH="coverage/Tensorflow$PLA.coverage" NAME="PLA Coverage Results" MODIFIED="1555405020390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$sklearn_knn_demo.coverage" NAME="sklearn-knn-demo Coverage Results" MODIFIED="1555925203525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
     <SUITE FILE_PATH="coverage/Tensorflow$AdaDelta1.coverage" NAME="AdaDelta1 Coverage Results" MODIFIED="1555837868403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
-    <SUITE FILE_PATH="coverage/Tensorflow$kd.coverage" NAME="kd Coverage Results" MODIFIED="1556185668208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
+    <SUITE FILE_PATH="coverage/Tensorflow$kd.coverage" NAME="kd Coverage Results" MODIFIED="1556204592017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
     <SUITE FILE_PATH="coverage/Tensorflow$distance_test.coverage" NAME="distance_test Coverage Results" MODIFIED="1555859202672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../lihang_book_algorithm/knn" />
     <SUITE FILE_PATH="coverage/Tensorflow$Unittests_in_test_server_py.coverage" NAME="Unittests in test_server.py Coverage Results" MODIFIED="1556176752976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../python-socketio/tests/common" />
     <SUITE FILE_PATH="coverage/Tensorflow$ouPLA1.coverage" NAME="ouPLA1 Coverage Results" MODIFIED="1555853391686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
@@ -59,50 +60,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="knn_kd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/knn_kd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="189" column="12" selection-start-line="189" selection-start-column="12" selection-end-line="189" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kd_knn2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_knn2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="39" />
-              <folding>
-                <element signature="e#109#127#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="kd.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="68" column="82" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="82" />
+            <state relative-caret-position="290">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="kd_tree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_tree.py">
+        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/kd_tree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="-529">
+              <caret line="19" column="35" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="19" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/README.md">
+      <file leaf-file-name="kd_tree2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/kd_tree2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="8" />
+            <state relative-caret-position="367">
+              <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/ProgramData/Anaconda3/Lib/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="309" selection-start-line="309" selection-end-line="309" />
             </state>
           </provider>
         </entry>
@@ -172,6 +170,7 @@
         <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_tree.py" />
         <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/knnSimple.py" />
         <option value="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/README.md" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/kd_tree2.py" />
       </list>
     </option>
   </component>
@@ -337,7 +336,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.knnSimple">
+  <component name="RunManager" selected="Python.kd_tree2">
     <configuration name="kd" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AiLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -357,25 +356,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="kd_knn2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AiLearning" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_knn2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="kd_tree" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AiLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -390,6 +370,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_tree.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="kd_tree2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/kd_tree2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -434,19 +433,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.kd_knn2" />
       <item itemvalue="Python.kd_tree" />
       <item itemvalue="Python.kd" />
       <item itemvalue="Python.knn_kd" />
       <item itemvalue="Python.knnSimple" />
+      <item itemvalue="Python.kd_tree2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.kd_tree2" />
+        <item itemvalue="Python.kd" />
         <item itemvalue="Python.knnSimple" />
         <item itemvalue="Python.kd_tree" />
         <item itemvalue="Python.knn_kd" />
-        <item itemvalue="Python.kd" />
-        <item itemvalue="Python.kd_knn2" />
       </list>
     </recent_temporary>
   </component>
@@ -492,15 +491,15 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.22900763" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.36641222" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3293348" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14552239" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14552239" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
       <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.13752665" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.34460196" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.34460196" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -555,14 +554,14 @@
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/knnSimple.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_knn2.py</url>
           <line>75</line>
           <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="124" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -572,7 +571,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="119" />
+      <option name="time" value="125" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -600,23 +599,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/PLA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="70" column="14" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/2.binary_perceptron.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/ouPLA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-141">
@@ -876,20 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/ProgramData/Anaconda3/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/knn_kd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="189" column="12" selection-start-line="189" selection-start-column="12" selection-end-line="189" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_knn2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -897,13 +865,6 @@
           <folding>
             <element signature="e#109#127#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="68" column="82" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="82" />
         </state>
       </provider>
     </entry>
@@ -945,10 +906,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/knn_kd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="189" column="12" selection-start-line="189" selection-start-column="12" selection-end-line="189" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" />
+        <state relative-caret-position="207">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda3/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/kd_tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-529">
+          <caret line="19" column="35" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/kd_tree2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
         </state>
       </provider>
     </entry>
