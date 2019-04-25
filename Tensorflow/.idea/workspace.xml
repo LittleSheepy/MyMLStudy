@@ -101,8 +101,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state>
+              <caret selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -188,8 +188,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
+    <option name="x" value="323" />
+    <option name="y" value="68" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -920,13 +920,6 @@
     <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/knnSimple.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-194">
@@ -945,10 +938,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state>
+          <caret selection-end-line="8" />
         </state>
       </provider>
     </entry>
