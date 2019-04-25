@@ -72,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_knn2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
-              <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="39" />
+              <caret line="8" column="39" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="39" />
               <folding>
                 <element signature="e#109#127#0" expanded="true" />
               </folding>
@@ -84,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="68" column="82" lean-forward="true" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="82" />
+              <caret line="68" column="82" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -93,19 +93,16 @@
         <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_tree.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="knnSimple.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/knnSimple.py">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="46">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -134,7 +131,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../AiLearning" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -174,6 +171,7 @@
         <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd.py" />
         <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_tree.py" />
         <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/knnSimple.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/README.md" />
       </list>
     </option>
   </component>
@@ -298,6 +296,13 @@
               <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
               <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
               <item name="第2章 感知机" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
+              <item name="第3章 k近邻法" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -487,7 +492,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3838604" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.22900763" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3293348" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14552239" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -530,17 +535,17 @@
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/../../mlbasic/p6 adagrad.py</url>
           <line>92</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/../../mlbasic/p8 adam.py</url>
           <line>82</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/../../mlbasic/p8 adam.py</url>
           <line>94</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
@@ -595,33 +600,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../mlbasic/p7 adadelta.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1373">
-          <caret line="128" column="9" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../优化函数/momentum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="139" column="25" lean-forward="true" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/pltGif.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="63" column="61" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/PLA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="710">
@@ -698,11 +676,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/data/train.csv">
       <provider selected="true" editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-552" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/knn/knn.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -920,7 +893,7 @@
     <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_knn2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="39" />
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="39" />
           <folding>
             <element signature="e#109#127#0" expanded="true" />
           </folding>
@@ -930,24 +903,52 @@
     <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="68" column="82" lean-forward="true" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <caret line="68" column="82" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/knnSimple.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+        <state relative-caret-position="460">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/knnSimple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-194">
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/knn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
         </state>
       </provider>
     </entry>
