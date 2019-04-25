@@ -13,6 +13,10 @@
           <option value="W391" />
           <option value="E301" />
           <option value="E261" />
+          <option value="E201" />
+          <option value="E203" />
+          <option value="E251" />
+          <option value="E701" />
         </list>
       </option>
     </inspection_tool>
@@ -20,6 +24,8 @@
       <option name="ignoredErrors">
         <list>
           <option value="N802" />
+          <option value="N806" />
+          <option value="N803" />
         </list>
       </option>
     </inspection_tool>
