@@ -1,8 +1,6 @@
 import copy
 import numpy as np
-from matplotlib import pyplot as plt
-from matplotlib import animation
-from pltGif import pltGif
+import pltGif
 
 training_set = [[1, 1, 1], [2, 4, 1], [3, 1, -1], [4, 2, -1]]  # 训练数据集
 w = [1, 1]  # 参数初始化
@@ -10,18 +8,20 @@ b = 0
 history = []  # 用来记录每次更新过后的w,b
 history.append([copy.copy(w), b])  # 将每次更新过后的w,b记录在history数组中
 hisDot = []
-hisL = []
+hisLoss = []
 rate = 0.005
-def L():
-    L = 0
+
+# 计算Loss
+def Loss():
+    Loss = 0
     for i in range(len(training_set)):
         if cal(training_set[i]) <= 0:
             w_ = copy.copy(w)
             #w_.append(1)
             w_ = np.sqrt(np.sum(np.array(w_)**2))
             s = -cal(training_set[i])/w_
-            L += s
-    return round(L, 4)
+            Loss += s
+    return round(Loss, 4)   # 保留4位小数
 
 def update(item):
     """
@@ -30,10 +30,10 @@ def update(item):
     :return: nothing 无返回值
     """
     global w, b, history  # 把w, b, history声明为全局变量
-    hisL.append(L())
+    hisLoss.append(Loss())
     w_ = copy.copy(w)
     w_.append(b)
-    print(L(),item, w_)
+    print(Loss(),item, w_)
     w[0] += rate * item[2] * item[0]  # 根据误分类点更新参数,这里学习效率设为1
     w[0] = round(w[0], 4)
     w[1] += rate * item[2] * item[1]
@@ -82,5 +82,5 @@ if __name__ == "__main__":
         if not check(): break  # 如果已正确分类，则结束迭代
     # 以下代码是将迭代过程可视化
     # 首先建立我们想要做成动画的图像figure, 坐标轴axis,和plot element
-    pltGif_ = pltGif(training_set, history, hisDot)
+    pltGif_ = pltGif.pltGif(training_set, history, hisDot)
     pltGif_.save()

@@ -66,6 +66,6 @@ def PLA_train(dataSet,plot = False):
     return w, b
 
 #测试：
-dataSet = makePLAData([1,-2],7,4)
+dataSet = makePLAData([1,-2],7,100)
 showFigure(dataSet)
 w,b= PLA_train(dataSet,True)
