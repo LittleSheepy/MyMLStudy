@@ -18,7 +18,7 @@ data = np.array([[1,2,2,3],
                  [3,1,2,1],
                  [3,2,2,3]])
 label = np.array([0,0,1,1,0,0,0,1,1,1,1,1,1,1,0])
-target = [3,1,2,1]
+target = [3,1,1,1]
 
 class Tree(object):
     def __init__(self,node_type, Class = None, feature_index = None, feature = None):
@@ -87,7 +87,6 @@ class Id3_tree(object):
     def __caclulate_ga(self, data, labels, features_num):
         Ga = []
         for feature_index in range(features_num):
-            print("qq",feature_index)
             feature_s = np.unique(data[:, feature_index])
             Gai = np.zeros(len(feature_s))
             for index, feature in enumerate(feature_s):
