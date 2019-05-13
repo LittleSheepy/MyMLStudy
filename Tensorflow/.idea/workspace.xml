@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76976911-20c4-44ec-9a2a-e70b7995463f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_3.png" afterDir="false" />
@@ -29,6 +32,7 @@
     <SUITE FILE_PATH="coverage/Tensorflow$kd.coverage" NAME="kd Coverage Results" MODIFIED="1556204592017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
     <SUITE FILE_PATH="coverage/Tensorflow$distance_test.coverage" NAME="distance_test Coverage Results" MODIFIED="1555859202672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../lihang_book_algorithm/knn" />
     <SUITE FILE_PATH="coverage/Tensorflow$C45.coverage" NAME="C45 Coverage Results" MODIFIED="1556783785027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树" />
+    <SUITE FILE_PATH="coverage/Tensorflow$logistic_regression.coverage" NAME="logistic_regression Coverage Results" MODIFIED="1557660125871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression" />
     <SUITE FILE_PATH="coverage/Tensorflow$adadelta.coverage" NAME="adadelta Coverage Results" MODIFIED="1555836955459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
     <SUITE FILE_PATH="coverage/Tensorflow$tic_tac_toe.coverage" NAME="tic_tac_toe Coverage Results" MODIFIED="1554370516235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/chapter01" />
     <SUITE FILE_PATH="coverage/Tensorflow$ouPLA.coverage" NAME="ouPLA Coverage Results" MODIFIED="1555855883875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
@@ -50,6 +54,8 @@
     <SUITE FILE_PATH="coverage/Tensorflow$GramPLA.coverage" NAME="GramPLA Coverage Results" MODIFIED="1557048722034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$ten_armed_testbed.coverage" NAME="ten_armed_testbed Coverage Results" MODIFIED="1554375158754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/chapter02" />
     <SUITE FILE_PATH="coverage/Tensorflow$1.coverage" NAME="1 Coverage Results" MODIFIED="1556759770592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法" />
+    <SUITE FILE_PATH="coverage/Tensorflow$logistic.coverage" NAME="logistic Coverage Results" MODIFIED="1557661978106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
+    <SUITE FILE_PATH="coverage/Tensorflow$maxENT.coverage" NAME="maxENT Coverage Results" MODIFIED="1557667958298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
     <SUITE FILE_PATH="coverage/Tensorflow$kd_tree2.coverage" NAME="kd_tree2 Coverage Results" MODIFIED="1556205431843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法" />
     <SUITE FILE_PATH="coverage/Tensorflow$sklearn_knn_demo.coverage" NAME="sklearn-knn-demo Coverage Results" MODIFIED="1555925203525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
     <SUITE FILE_PATH="coverage/Tensorflow$AdaDelta1.coverage" NAME="AdaDelta1 Coverage Results" MODIFIED="1555837868403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
@@ -86,11 +92,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test2.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/test2.py">
+      <file leaf-file-name="logistic.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="147" column="36" selection-start-line="147" selection-start-column="28" selection-end-line="147" selection-end-column="36" />
+            <state relative-caret-position="920">
+              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -98,55 +104,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pre_REP_Pruning.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Pre_REP_Pruning.py">
+      <file leaf-file-name="maxENT.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Post_Pruning.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-67">
-              <caret line="177" column="38" lean-forward="true" selection-start-line="177" selection-start-column="38" selection-end-line="177" selection-end-column="38" />
+            <state relative-caret-position="-2001">
+              <caret line="45" column="35" lean-forward="true" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlotDT.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/CreateDT/PlotDT.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="67" selection-start-line="67" selection-end-line="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CART.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/CreateDT/CART.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1978">
-              <caret line="86" column="20" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#66#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Operation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/CreateDT/Operation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1886">
-              <caret line="112" selection-start-line="112" selection-end-line="112" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
+                <element signature="e#152#171#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,8 +142,8 @@
       <find>dx_y</find>
       <find>createSubTree</find>
       <find>PostPruning_REP</find>
-      <find>PostPruning_PEP</find>
       <find>calErrorRatio</find>
+      <find>PostPruning_PEP</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -188,8 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/LSTM/预测sin函数多层版.py" />
-        <option value="$PROJECT_DIR$/LSTM/MNIST图像分类.py" />
         <option value="$PROJECT_DIR$/LSTM/预测sin函数手写版.py" />
         <option value="$PROJECT_DIR$/TensorFlow实战-黄文坚/Tensorflow 实战（源码）/7_2_LSTM.py" />
         <option value="$PROJECT_DIR$/Tensorflow学习笔记/01 命令行参数.py" />
@@ -239,6 +201,8 @@
         <option value="$PROJECT_DIR$/../../Decision-Tree11/test.py" />
         <option value="$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py" />
         <option value="$PROJECT_DIR$/../../Decision-Tree11/test2.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py" />
       </list>
     </option>
   </component>
@@ -278,41 +242,31 @@
             <path>
               <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="Decision-Tree11" type="462c0819:PsiDirectoryNode" />
+              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="Decision-Tree11" type="462c0819:PsiDirectoryNode" />
-              <item name="CreateDT" type="462c0819:PsiDirectoryNode" />
+              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="logistic_regression" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="Decision-Tree11" type="462c0819:PsiDirectoryNode" />
-              <item name="DataSet" type="462c0819:PsiDirectoryNode" />
+              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="maxENT" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="Decision-Tree11" type="462c0819:PsiDirectoryNode" />
-              <item name="PurnDT" type="462c0819:PsiDirectoryNode" />
+              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="naive_bayes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="Decision_tree-python" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="Decision_Tree_Prune" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="Decision_Tree_Prune" type="462c0819:PsiDirectoryNode" />
-              <item name="PEP-finish" type="462c0819:PsiDirectoryNode" />
+              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="perceptron" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
@@ -359,6 +313,13 @@
               <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
               <item name="第5章 决策树" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
+              <item name="第6章 逻辑回归和最大熵模型" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -392,27 +353,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test2">
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MyGitHub" />
+  <component name="RunManager" selected="Python.maxENT">
+    <configuration name="logistic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../cart" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../cart/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="logistic_regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MyGitHub" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -420,12 +381,31 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Decision-Tree11" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Decision-Tree11/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression/logistic_regression.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="maxENT" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -469,39 +449,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="tree" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MyGitHub" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Decision_tree-python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Decision_tree-python/tree.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list>
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.test1" />
-      <item itemvalue="Python.tree" />
-      <item itemvalue="Python.main (1)" />
       <item itemvalue="Python.test2" />
+      <item itemvalue="Python.logistic_regression" />
+      <item itemvalue="Python.logistic" />
+      <item itemvalue="Python.maxENT" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.maxENT" />
+        <item itemvalue="Python.logistic" />
+        <item itemvalue="Python.logistic_regression" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.test1" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.tree" />
       </list>
     </recent_temporary>
   </component>
@@ -547,15 +508,15 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.53435117" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.29007635" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3293348" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992636" visible="true" weight="0.20309168" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992636" visible="true" weight="0.20309168" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
       <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.26812366" />
       <window_info id="Structure" order="1" sideWeight="0.50073636" side_tool="true" weight="0.14872068" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.22900763" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.35550708" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -697,12 +658,13 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="213" />
+      <option name="time" value="230" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="secondDict.keys()" language="Python" />
         <watch expression="Tree.keys()" language="Python" />
+        <watch expression="self.M" />
       </configuration>
     </watches-manager>
   </component>
@@ -761,61 +723,8 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/guss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/data/train.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="-1104" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/decision_tree/decision_tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="183" column="41" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="41" />
-          <folding>
-            <element signature="e#17#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/GaussionNB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/data/train_binary.csv">
       <provider selected="true" editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/perceptron/binary_perceptron.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1019">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding>
-            <element signature="e#152#171#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/SimplePLA.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1053,11 +962,6 @@
         <state relative-caret-position="-1518" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Decision_Tree_Prune/PEP-finish/getNumofCommonSubstr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-393" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Decision_Tree_Prune/PEP-finish/crx.data">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1932" />
@@ -1067,13 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Pre_REP_Pruning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
         </state>
       </provider>
     </entry>
@@ -1104,7 +1001,7 @@
     <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-67">
-          <caret line="177" column="38" lean-forward="true" selection-start-line="177" selection-start-column="38" selection-end-line="177" selection-end-column="38" />
+          <caret line="177" column="38" selection-start-line="177" selection-start-column="38" selection-end-line="177" selection-end-column="38" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -1127,6 +1024,76 @@
           <caret line="147" column="36" selection-start-line="147" selection-start-column="28" selection-end-line="147" selection-end-column="36" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision_Tree_Prune/PEP-finish/getNumofCommonSubstr.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression/binary_perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1272" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Pre_REP_Pruning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/perceptron/binary_perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-851">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#152#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression/logistic_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="e#151#162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/maxENT/maxENT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="137" column="29" lean-forward="true" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
+          <folding>
+            <element signature="e#152#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/train_binary.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-1952" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2001">
+          <caret line="45" column="35" lean-forward="true" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+          <folding>
+            <element signature="e#152#171#0" expanded="true" />
           </folding>
         </state>
       </provider>
