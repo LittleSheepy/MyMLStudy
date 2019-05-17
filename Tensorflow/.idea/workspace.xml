@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76976911-20c4-44ec-9a2a-e70b7995463f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py" beforeDir="false" afterPath="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_3.png" afterDir="false" />
@@ -107,8 +105,8 @@
       <file leaf-file-name="maxENT.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2001">
-              <caret line="45" column="35" lean-forward="true" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+            <state relative-caret-position="177">
+              <caret line="56" column="16" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="16" />
               <folding>
                 <element signature="e#152#171#0" expanded="true" />
               </folding>
@@ -152,8 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/LSTM/预测sin函数手写版.py" />
-        <option value="$PROJECT_DIR$/TensorFlow实战-黄文坚/Tensorflow 实战（源码）/7_2_LSTM.py" />
         <option value="$PROJECT_DIR$/Tensorflow学习笔记/01 命令行参数.py" />
         <option value="$PROJECT_DIR$/../matplotlib/gifDemo1.py" />
         <option value="$PROJECT_DIR$/../matplotlib/GifDemo.py" />
@@ -202,6 +198,8 @@
         <option value="$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py" />
         <option value="$PROJECT_DIR$/../../Decision-Tree11/test2.py" />
         <option value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py" />
+        <option value="$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/softmax-regression.ipynb" />
+        <option value="$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/linear-regression.ipynb" />
         <option value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py" />
       </list>
     </option>
@@ -319,6 +317,17 @@
               <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
               <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
               <item name="第6章 逻辑回归和最大熵模型" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="pydata-notebook" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="pydata-notebook" type="462c0819:PsiDirectoryNode" />
+              <item name="Chapter-03" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -510,13 +519,13 @@
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.29007635" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3293348" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992636" visible="true" weight="0.20309168" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992636" visible="true" weight="0.20309168" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
       <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.26812366" />
       <window_info id="Structure" order="1" sideWeight="0.50073636" side_tool="true" weight="0.14872068" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.35550708" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35550708" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -658,7 +667,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="230" />
+      <option name="time" value="231" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -723,59 +732,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/data/train_binary.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/SimplePLA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/GramPLA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690">
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/test.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/SimplePLA1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/PLA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="68" column="34" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/pltGif.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
-          <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/2.binary_perceptron.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -1083,15 +1039,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_appendix/aws.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_appendix/index.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/index.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/softmax-regression.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/linear-regression.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pydata-notebook/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pydata-notebook/Chapter-03/3.1 Data Structures and Sequences (数据结构与序列).ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/train_binary.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
+      <provider editor-type-id="LargeFileEditor">
         <state relative-caret-position="-1952" />
       </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2001">
-          <caret line="45" column="35" lean-forward="true" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+        <state relative-caret-position="177">
+          <caret line="56" column="16" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="16" />
           <folding>
             <element signature="e#152#171#0" expanded="true" />
           </folding>
