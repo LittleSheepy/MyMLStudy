@@ -81,7 +81,7 @@ class MaxEnt(object):
 
     def cal_EPx(self):
         '''
-        计算书83页最上面那个期望
+        计算书83页最上面那个期望、
         '''
         self.EPx = [0.0 for i in range(self.n)]
 
