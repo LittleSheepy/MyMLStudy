@@ -61,7 +61,8 @@ class MaxEnt(object):
         self.EPxy = defaultdict(float)
         for id in range(self.n):
             (x, y) = self.id2xy[id]
-            self.EPxy[id] = float(self.Pxy[(x, y)]) / float(self.N)
+            nPxy = self.Pxy[(x, y)]
+            self.EPxy[id] = float(nPxy) / float(self.N)
 
     def cal_pyx(self, X, y):
         result = 0.0
@@ -73,23 +74,23 @@ class MaxEnt(object):
 
     def cal_probality(self, X):
         '''
-        计算书85页公式6.22
+        计算书85页公式6.22 P(y|x)
         '''
         Pyxs = [(self.cal_pyx(X, y)) for y in self.Y_]
         Z = sum([prob for prob, y in Pyxs])
-        return [(prob / Z, y) for prob, y in Pyxs]
+        return [(prob / Z, y) for prob, y in Pyxs]      # [(0.5,0),(0.5,1)]
 
     def cal_EPx(self):
         '''
-        计算书83页最上面那个期望、
+        计算书83页最上面那个期望、Ep(f)  ### 经验分布P(x)的期望
         '''
         self.EPx = [0.0 for i in range(self.n)]
 
         for i, X in enumerate(self.X_):
-            Pyxs = self.cal_probality(X)
+            Pyxs = self.cal_probality(X)   #P(y|x) = [(0.5,0),(0.5,1)]
 
-            for x in X:
-                for Pyx, y in Pyxs:
+            for x in X:                 # X = [0_0,1_0,2_0]
+                for Pyx, y in Pyxs:     # Pyx=0.5  y=0
                     if self.fxy(x, y):
                         id = self.xy2id[(x, y)]
                         self.EPx[id] += Pyx * (1.0 / self.N)
