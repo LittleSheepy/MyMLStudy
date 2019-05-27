@@ -4,8 +4,7 @@
     <list default="true" id="76976911-20c4-44ec-9a2a-e70b7995463f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py" beforeDir="false" afterPath="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/train_binary.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/train_binary.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_3.png" afterDir="false" />
@@ -42,6 +41,7 @@
     <SUITE FILE_PATH="coverage/Tensorflow$p5_Nesterov_momentum.coverage" NAME="p5 Nesterov momentum Coverage Results" MODIFIED="1555670520535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../mlbasic" />
     <SUITE FILE_PATH="coverage/Tensorflow$knnSimple.coverage" NAME="knnSimple Coverage Results" MODIFIED="1556200150685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法" />
     <SUITE FILE_PATH="coverage/Tensorflow$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1557222226372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Decision-Tree11" />
+    <SUITE FILE_PATH="coverage/Tensorflow$svm_simple.coverage" NAME="svm-simple Coverage Results" MODIFIED="1558926356873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM" />
     <SUITE FILE_PATH="coverage/Tensorflow$DrewGif.coverage" NAME="DrewGif Coverage Results" MODIFIED="1555334679069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../matplotlib" />
     <SUITE FILE_PATH="coverage/Tensorflow$main.coverage" NAME="main Coverage Results" MODIFIED="1557220854167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../decision-tree" />
     <SUITE FILE_PATH="coverage/Tensorflow$Unittests_in_test_client_py.coverage" NAME="Unittests in test_client.py Coverage Results" MODIFIED="1556176799090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../python-socketio/tests/common" />
@@ -59,6 +59,7 @@
     <SUITE FILE_PATH="coverage/Tensorflow$sklearn_knn_demo.coverage" NAME="sklearn-knn-demo Coverage Results" MODIFIED="1555925203525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
     <SUITE FILE_PATH="coverage/Tensorflow$AdaDelta1.coverage" NAME="AdaDelta1 Coverage Results" MODIFIED="1555837868403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
     <SUITE FILE_PATH="coverage/Tensorflow$Unittests_in_test_server_py.coverage" NAME="Unittests in test_server.py Coverage Results" MODIFIED="1556176752976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../python-socketio/tests/common" />
+    <SUITE FILE_PATH="coverage/Tensorflow$svm_simple__1_.coverage" NAME="svm-simple (1) Coverage Results" MODIFIED="1558927584161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机" />
     <SUITE FILE_PATH="coverage/Tensorflow$ouPLA1.coverage" NAME="ouPLA1 Coverage Results" MODIFIED="1555853391686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$SimplePLA.coverage" NAME="SimplePLA Coverage Results" MODIFIED="1557048678421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$01_.coverage" NAME="01 命令行参数 Coverage Results" MODIFIED="1554365197055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow学习笔记" />
@@ -91,44 +92,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="logistic.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py">
+      <file leaf-file-name="svm-simple.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+            <state relative-caret-position="409">
+              <caret line="91" column="25" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="25" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#223#242#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="maxENT.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
-              <folding>
-                <element signature="e#152#171#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
-        <entry file="file://D:/ProgramData/Anaconda3/Lib/codecs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="311" selection-start-line="311" selection-end-line="311" />
             </state>
           </provider>
         </entry>
@@ -171,8 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../matplotlib/gifDemo1.py" />
-        <option value="$PROJECT_DIR$/../matplotlib/GifDemo.py" />
         <option value="$PROJECT_DIR$/../统计学习方法-李航/2.binary_perceptron.py" />
         <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/perceptron.py" />
         <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/SimplePLA.py" />
@@ -222,6 +191,8 @@
         <option value="$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/linear-regression.ipynb" />
         <option value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/train_binary.csv" />
         <option value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py" />
+        <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py" />
       </list>
     </option>
   </component>
@@ -237,7 +208,7 @@
       <path value="$PROJECT_DIR$/../../socketIO-client/socketIO_client/tests/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="323" />
     <option name="y" value="68" />
     <option name="width" value="1400" />
@@ -261,35 +232,6 @@
             <path>
               <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="logistic_regression" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="maxENT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="naive_bayes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="perceptron" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
               <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -309,46 +251,7 @@
               <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
               <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
               <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
-              <item name="第2章 感知机" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
-              <item name="第3章 k近邻法" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
-              <item name="第4张 朴素贝叶斯法" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
-              <item name="第5章 决策树" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
-              <item name="第6章 逻辑回归和最大熵模型" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="pydata-notebook" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="pydata-notebook" type="462c0819:PsiDirectoryNode" />
-              <item name="Chapter-03" type="462c0819:PsiDirectoryNode" />
+              <item name="第7章 支持向量机" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -383,7 +286,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.maxENT">
+  <component name="RunManager" selected="Python.svm-simple (1)">
     <configuration name="logistic" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -441,58 +344,58 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MyGitHub" />
+    <configuration name="svm-simple (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Decision-Tree11" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Decision-Tree11/test1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MyGitHub" />
+    <configuration name="svm-simple" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AiLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Decision-Tree11" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Decision-Tree11/test2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.test1" />
-      <item itemvalue="Python.test2" />
       <item itemvalue="Python.logistic_regression" />
       <item itemvalue="Python.logistic" />
       <item itemvalue="Python.maxENT" />
+      <item itemvalue="Python.svm-simple" />
+      <item itemvalue="Python.svm-simple (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.svm-simple (1)" />
+        <item itemvalue="Python.svm-simple" />
         <item itemvalue="Python.maxENT" />
         <item itemvalue="Python.logistic" />
         <item itemvalue="Python.logistic_regression" />
-        <item itemvalue="Python.test2" />
-        <item itemvalue="Python.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -530,7 +433,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3293348" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053304" side_tool="true" weight="0.3293348" />
@@ -545,7 +449,7 @@
       <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.23667377" />
       <window_info id="Structure" order="1" sideWeight="0.50073636" side_tool="true" weight="0.14872068" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.2955289" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.2093784" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -694,6 +598,21 @@
           <line>88</line>
           <option name="timeStamp" value="253" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py</url>
+          <line>239</line>
+          <option name="timeStamp" value="254" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
+          <line>244</line>
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="257" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -702,16 +621,8 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="254" />
+      <option name="time" value="258" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="secondDict.keys()" language="Python" />
-        <watch expression="Tree.keys()" language="Python" />
-        <watch expression="self.M" />
-        <watch expression="self.id2xy[336]" language="Python" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -763,52 +674,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树/C45.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/numpy/lib/arraysetops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="220" selection-start-line="220" selection-end-line="220" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树/CART_cut.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="871">
-          <caret line="104" column="64" selection-start-line="104" selection-start-column="54" selection-end-line="104" selection-end-column="64" />
-          <folding>
-            <element signature="e#67#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/ProgramData/Anaconda3/Lib/site-packages/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="3696" selection-start-line="3696" selection-end-line="3696" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../decision-tree/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1570">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../decision-tree1/tree/tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6676" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/CreateDT/C4_5.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1116,10 +981,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
+        <state relative-caret-position="-1182">
           <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="e#152#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/svm/generate_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#16#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/svm/svm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#153#164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-complete.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AiLearning/data/6.SVM/testSet.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="231" column="4" selection-start-line="231" selection-start-column="4" selection-end-line="231" selection-end-column="4" />
+          <folding>
+            <element signature="e#223#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="91" column="25" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="25" />
+          <folding>
+            <element signature="e#223#242#0" expanded="true" />
           </folding>
         </state>
       </provider>
