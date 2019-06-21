@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_3.png" afterDir="false" />
@@ -59,7 +61,7 @@
     <SUITE FILE_PATH="coverage/Tensorflow$sklearn_knn_demo.coverage" NAME="sklearn-knn-demo Coverage Results" MODIFIED="1555925203525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
     <SUITE FILE_PATH="coverage/Tensorflow$AdaDelta1.coverage" NAME="AdaDelta1 Coverage Results" MODIFIED="1555837868403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
     <SUITE FILE_PATH="coverage/Tensorflow$Unittests_in_test_server_py.coverage" NAME="Unittests in test_server.py Coverage Results" MODIFIED="1556176752976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../python-socketio/tests/common" />
-    <SUITE FILE_PATH="coverage/Tensorflow$svm_simple__1_.coverage" NAME="svm-simple (1) Coverage Results" MODIFIED="1558927584161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$svm_simple__1_.coverage" NAME="svm-simple (1) Coverage Results" MODIFIED="1560513433206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机" />
     <SUITE FILE_PATH="coverage/Tensorflow$ouPLA1.coverage" NAME="ouPLA1 Coverage Results" MODIFIED="1555853391686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$SimplePLA.coverage" NAME="SimplePLA Coverage Results" MODIFIED="1557048678421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/Tensorflow$01_.coverage" NAME="01 命令行参数 Coverage Results" MODIFIED="1554365197055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow学习笔记" />
@@ -95,11 +97,20 @@
       <file leaf-file-name="svm-simple.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="91" column="25" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="25" />
+            <state relative-caret-position="467">
+              <caret line="170" column="35" lean-forward="true" selection-start-line="170" selection-start-column="35" selection-end-line="170" selection-end-column="35" />
               <folding>
                 <element signature="e#223#242#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testSet.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/testSet.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2300">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
             </state>
           </provider>
         </entry>
@@ -208,7 +219,7 @@
       <path value="$PROJECT_DIR$/../../socketIO-client/socketIO_client/tests/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="323" />
     <option name="y" value="68" />
     <option name="width" value="1400" />
@@ -433,7 +444,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3293348" />
@@ -443,13 +454,13 @@
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32061067" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3293348" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992636" visible="true" weight="0.16151386" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992636" visible="true" weight="0.1119403" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
-      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.23667377" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.16897655" />
       <window_info id="Structure" order="1" sideWeight="0.50073636" side_tool="true" weight="0.14872068" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.2093784" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.15594329" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -605,13 +616,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
-          <line>244</line>
+          <line>245</line>
           <option name="timeStamp" value="256" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
           <line>83</line>
           <option name="timeStamp" value="257" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
+          <line>91</line>
+          <option name="timeStamp" value="258" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -621,7 +637,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="258" />
+      <option name="time" value="259" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -674,11 +690,46 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/CreateDT/C4_5.py">
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="3266">
+          <caret line="142" column="35" lean-forward="true" selection-start-line="142" selection-start-column="35" selection-end-line="142" selection-end-column="35" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#223#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/testSet.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2300">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2392">
+          <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+          <folding>
+            <element signature="e#223#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/testSet.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2300">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2093">
+          <caret line="91" column="25" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="25" />
+          <folding>
+            <element signature="e#223#242#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -687,15 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-197">
           <caret line="279" column="43" selection-start-line="279" selection-start-column="43" selection-end-line="279" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../decision-tree/decisionTreeCART.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -715,25 +757,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="67" column="28" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/example">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/test3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2323">
           <caret line="101" column="29" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,9 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1978">
           <caret line="86" column="20" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -805,19 +832,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/DataSet/watermelon.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/DataSet/car.data.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2208" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/DataSet/dataSet.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/DataSet/loan.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -833,9 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1886">
           <caret line="112" selection-start-line="112" selection-end-line="112" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -848,9 +863,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Decision_Tree_Prune/PEP-finish/getNumofCommonSubstr.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression/binary_perceptron.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -868,9 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-851">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#152#171#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -878,9 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1748">
           <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="e#151#162#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -888,9 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="137" column="29" lean-forward="true" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
-          <folding>
-            <element signature="e#152#171#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -898,9 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="920">
           <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -939,18 +939,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../pydata-notebook/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../pydata-notebook/Chapter-03/3.1 Data Structures and Sequences (数据结构与序列).ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/train_binary - 副本 (3).csv">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://D:/ProgramData/Anaconda3/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -966,17 +960,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/train_binary1111.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/train_binary.csv">
-      <provider editor-type-id="LargeFileEditor">
-        <state relative-caret-position="-1952" />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
+      </provider>
+      <provider editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-1952" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py">
@@ -989,30 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/svm/generate_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#16#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/svm/svm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#153#164#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-complete.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../AiLearning/data/6.SVM/testSet.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14">
@@ -1023,10 +990,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/numpy/matrixlib/defmatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/testSet.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2300">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_comm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="375" selection-start-line="375" selection-end-line="375" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="91" column="25" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="25" />
+        <state relative-caret-position="467">
+          <caret line="170" column="35" lean-forward="true" selection-start-line="170" selection-start-column="35" selection-end-line="170" selection-end-column="35" />
           <folding>
             <element signature="e#223#242#0" expanded="true" />
           </folding>
