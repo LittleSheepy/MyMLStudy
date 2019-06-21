@@ -90,8 +90,8 @@ def smoSimple(dataMatIn, classLabels, C, toler, maxIter):
     # 没有任何alpha改变的情况下遍历数据的次数
     iter = 0
     while (iter < maxIter):
-        # w = calcWs(alphas, dataMatIn, classLabels)
-        # print("w:", w)
+        w = calcWs(alphas, dataMatIn, classLabels)
+        print("w:", w)
 
         # 记录alpha是否已经进行优化，每次循环时设为0，然后再对整个集合顺序遍历
         alphaPairsChanged = 0
@@ -242,6 +242,7 @@ if __name__ == "__main__":
     # print(labelArr)
 
     # b是常量值， alphas是拉格朗日乘子
+    # smoSimple(dataMatIn, classLabels, C, toler, maxIter):
     b, alphas = smoSimple(dataArr, labelArr, 0.6, 0.001, 40)
     print('/n/n/n')
     print('b=', b)
