@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../AirGesture" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../OpenCV-Python-Tutorial" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../OpenCV-Python-Tutorial1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../PCA" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../ShuffleNet-Series" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../dimensionality_reduction_alo_codes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../gym-nes-mario-bros" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../lihang_book_algorithm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../machinelearning" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../reinforcement-learning-an-introduction" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../tensorflow-handbook_tf2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../tensorflow2_tutorials_chinese" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../walk-bot" vcs="Git" />
   </component>
 </project>

@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../AiLearning/.idea/AiLearning.iml" filepath="$PROJECT_DIR$/../AiLearning/.idea/AiLearning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" filepath="$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MyMLStudy.iml" filepath="$PROJECT_DIR$/.idea/MyMLStudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PCA/.idea/PCA.iml" filepath="$PROJECT_DIR$/../PCA/.idea/PCA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/.idea/Reinforcement-learning-with-tensorflow.iml" filepath="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/.idea/Reinforcement-learning-with-tensorflow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" filepath="$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" filepath="$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lihang_book_algorithm/.idea/mnist_test.iml" filepath="$PROJECT_DIR$/../lihang_book_algorithm/.idea/mnist_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/.idea/reinforcement-learning-an-introduction.iml" filepath="$PROJECT_DIR$/../reinforcement-learning-an-introduction/.idea/reinforcement-learning-an-introduction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tensorflow2_tutorials_chinese/.idea/tensorflow2_tutorials_chinese.iml" filepath="$PROJECT_DIR$/../tensorflow2_tutorials_chinese/.idea/tensorflow2_tutorials_chinese.iml" />
     </modules>
   </component>
 </project>

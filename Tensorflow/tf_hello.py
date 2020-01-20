@@ -9,7 +9,7 @@ Please note, this code is only for python 3+. If you are using python 2+, please
 from __future__ import print_function
 import tensorflow as tf
 import numpy as np
-
+print(tf.__version__)
 # create data
 x_data = np.random.rand(100).astype(np.float32)
 y_data = x_data*0.1 + 0.3
