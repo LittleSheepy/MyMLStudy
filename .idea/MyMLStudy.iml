@@ -14,5 +14,8 @@
     <orderEntry type="module" module-name="dimensionality_reduction_alo_codes" />
     <orderEntry type="module" module-name="AirGesture" />
     <orderEntry type="module" module-name="mnist_test" />
+    <orderEntry type="module" module-name="OpenCV-Python-Tutorial1" />
+    <orderEntry type="module" module-name="GBDT" />
+    <orderEntry type="module" module-name="GBDT_Simple_Tutorial" />
   </component>
 </module>

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法/AdaBoost.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Liner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sms.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5.2_Prioritized_Replay_DQN/SumTree.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter02/1.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter05/11.py" afterDir="false" />
@@ -15,21 +17,14 @@
       <change beforePath="$PROJECT_DIR$/../AirGesture/dinosaur.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AirGesture/dinosaur.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AirGesture/mario.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AirGesture/mario.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AirGesture/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AirGesture/src/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GBDT/GBDT.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../GBDT/GBDT.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Numpy-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Numpy-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Numpy.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Numpy.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tensorflow/.ipynb_checkpoints/Base-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Tensorflow/.ipynb_checkpoints/Base-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tensorflow/Base.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Tensorflow/Base.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tensorflow/tf_hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tensorflow/tf_hello.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Untitled.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matplotlib/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/matplotlib/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matplotlib/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/matplotlib/Untitled.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机/svm-simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机/svm-simple.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机/testSet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机/testSet.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/统计学习方法-李航/第2章 感知机/basic_animation.gif" beforeDir="false" afterPath="$PROJECT_DIR$/统计学习方法-李航/第2章 感知机/basic_animation.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py" beforeDir="false" afterPath="$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/01. 简介与安装/cv2_contrast_brightness_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/01. 简介与安装/cv2_contrast_brightness_time.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/02. 基本元素-图片/cv2_getting_start_with_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/02. 基本元素-图片/cv2_getting_start_with_images.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/03. 打开摄像头/cv2_capture_live_video_from_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/03. 打开摄像头/cv2_capture_live_video_from_camera.py" afterDir="false" />
@@ -165,16 +160,87 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1196">
-              <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+            <state relative-caret-position="1449">
+              <caret line="70" selection-start-line="70" selection-end-line="70" />
               <folding>
-                <element signature="e#56#74#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/GBDT/gbdt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="874">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+              <folding>
+                <element signature="e#62#72#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2622">
+              <caret line="114" column="25" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pymssqlLearn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第2章 感知机/2.binary_perceptron.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1817">
+              <caret line="81" column="43" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Liner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/crawl_keyword_pic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="966">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/1.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -207,6 +273,10 @@
       <find>get_all_states</find>
       <find>monte_carlo_off_policy</find>
       <find>giveReward</find>
+      <find>BaseGradientBoosting</find>
+      <find>collections</find>
+      <find>from collections import Iterable</find>
+      <find>Iterable</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -215,13 +285,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5_Deep_Q_Network/DQN_modified.py" />
-        <option value="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5_Deep_Q_Network/RL_brain.py" />
-        <option value="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/6_OpenAI_gym/run_MountainCar.py" />
-        <option value="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/6_OpenAI_gym/run_CartPole.py" />
-        <option value="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5_Deep_Q_Network/run_this.py" />
-        <option value="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5.1_Double_DQN/RL_brain.py" />
-        <option value="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5.1_Double_DQN/run_Pendulum.py" />
         <option value="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5.2_Prioritized_Replay_DQN/RL_brain.py" />
         <option value="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5.2_Prioritized_Replay_DQN/run_MountainCar.py" />
         <option value="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5.2_Prioritized_Replay_DQN/SumTree.py" />
@@ -266,14 +329,21 @@
         <option value="$PROJECT_DIR$/../lihang_book_algorithm/AdaBoost/adaboost.py" />
         <option value="$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法/8.Boost.py" />
         <option value="$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py" />
+        <option value="$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py" />
+        <option value="$PROJECT_DIR$/list.py" />
+        <option value="$PROJECT_DIR$/sms.py" />
+        <option value="$PROJECT_DIR$/pymssql.py" />
+        <option value="$PROJECT_DIR$/1.py" />
+        <option value="$PROJECT_DIR$/pymssqlLearn.py" />
+        <option value="$PROJECT_DIR$/Liner.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1026" />
+    <option name="height" value="546" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -281,6 +351,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -288,54 +359,16 @@
               <item name="MyMLStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="MyMLStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyMLStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
-              <item name="第9章 EM算法及其推广" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyMLStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AiLearning" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyMLStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AiLearning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyMLStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AiLearning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="py3.x" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyMLStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AiLearning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="py3.x" type="462c0819:PsiDirectoryNode" />
-              <item name="ml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyMLStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lihang_book_algorithm" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lihang_book_algorithm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../holymonk.github.io" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -352,8 +385,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.9.Expectation_Maximization">
-    <configuration name="8.Boost" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.crawl_keyword_pic">
+    <configuration name="2.binary_perceptron" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -361,12 +394,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/统计学习方法-李航/第2章 感知机" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法/8.Boost.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/统计学习方法-李航/第2章 感知机/2.binary_perceptron.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -375,7 +408,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="9.Expectation_Maximization" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Liner" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -383,12 +416,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Liner.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -397,42 +430,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="adaboost" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="mnist_test" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="D:\anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../lihang_book_algorithm/AdaBoost" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../lihang_book_algorithm/AdaBoost/adaboost.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="dqn" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="machinelearning" />
+    <configuration name="crawl_keyword_pic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../machinelearning/reinforcement-learning" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../machinelearning/reinforcement-learning/dqn.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawl_keyword_pic.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -463,20 +474,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mario" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AirGesture" />
+    <configuration name="pymssql" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../AirGesture" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../AirGesture/mario.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pymssql.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pymssqlLearn" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pymssqlLearn.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -487,19 +520,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.full_code" />
-      <item itemvalue="Python.8.Boost" />
-      <item itemvalue="Python.9.Expectation_Maximization" />
-      <item itemvalue="Python.adaboost" />
-      <item itemvalue="Python.dqn" />
-      <item itemvalue="Python.mario" />
+      <item itemvalue="Python.2.binary_perceptron" />
+      <item itemvalue="Python.Liner" />
+      <item itemvalue="Python.pymssqlLearn" />
+      <item itemvalue="Python.pymssql" />
+      <item itemvalue="Python.crawl_keyword_pic" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.9.Expectation_Maximization" />
-        <item itemvalue="Python.8.Boost" />
-        <item itemvalue="Python.adaboost" />
-        <item itemvalue="Python.dqn" />
-        <item itemvalue="Python.mario" />
+        <item itemvalue="Python.crawl_keyword_pic" />
+        <item itemvalue="Python.Liner" />
+        <item itemvalue="Python.2.binary_perceptron" />
+        <item itemvalue="Python.pymssqlLearn" />
+        <item itemvalue="Python.pymssql" />
       </list>
     </recent_temporary>
   </component>
@@ -557,12 +590,28 @@
       <workItem from="1578620846379" duration="6000" />
       <workItem from="1578620869139" duration="2000" />
       <workItem from="1579263316343" duration="451000" />
-      <workItem from="1579536310387" duration="687000" />
+      <workItem from="1579536310387" duration="3349000" />
+      <workItem from="1579576064743" duration="1216000" />
+      <workItem from="1581927078433" duration="280000" />
+      <workItem from="1582009493628" duration="682000" />
+      <workItem from="1582010492794" duration="12904000" />
+      <workItem from="1582120372863" duration="6794000" />
+      <workItem from="1582390783520" duration="590000" />
+      <workItem from="1582892805436" duration="748000" />
+      <workItem from="1583200865923" duration="101000" />
+      <workItem from="1583200993821" duration="1902000" />
+      <workItem from="1583203005740" duration="4248000" />
+      <workItem from="1583228377298" duration="6000" />
+      <workItem from="1583228484326" duration="6000" />
+      <workItem from="1583228562040" duration="104000" />
+      <workItem from="1583228704870" duration="2020000" />
+      <workItem from="1583304252078" duration="7000" />
+      <workItem from="1583389507601" duration="768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="493634000" />
+    <option name="totallyTimeSpent" value="528672000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -575,28 +624,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24886535" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21331316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291714" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24631101" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18688525" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="5" visible="true" weight="0.8344262" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3291714" />
+      <window_info active="true" anchor="bottom" id="Debug" order="5" visible="true" weight="0.64918035" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3262295" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.08399546" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="11" weight="0.3291714" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.3291714" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.37213114" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.39344263" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32786885" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.16988418" />
+      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.04462935" />
       <window_info anchor="right" id="Database" order="4" weight="0.32818532" />
     </layout>
     <layout-to-restore>
@@ -629,16 +677,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
-          <line>90</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
-          <line>142</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
           <line>246</line>
@@ -884,6 +922,76 @@
           <line>191</line>
           <option name="timeStamp" value="491" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="501" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="504" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="505" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py</url>
+          <line>101</line>
+          <option name="timeStamp" value="506" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/list.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="507" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/list.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="508" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="510" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="511" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="512" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pymssqlLearn.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="514" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pymssqlLearn.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="516" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Liner.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="517" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/crawl_keyword_pic.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="518" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/crawl_keyword_pic.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="519" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -896,6 +1004,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_lane_detection_picture.coverage" NAME="cv2_lane_detection_picture Coverage Results" MODIFIED="1573224050087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务3：车道检测" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$startup.coverage" NAME="startup Coverage Results" MODIFIED="1582118172739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../GBDT" />
     <SUITE FILE_PATH="coverage/MyMLStudy$car_rental.coverage" NAME="car_rental Coverage Results" MODIFIED="1575471153773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_canny_edge_detection.coverage" NAME="cv2_canny_edge_detection Coverage Results" MODIFIED="1572957469692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/11. 边缘检测" />
     <SUITE FILE_PATH="coverage/MyMLStudy$11.coverage" NAME="11 Coverage Results" MODIFIED="1575738800722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter05" />
@@ -919,9 +1028,10 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$opencv_windows_management.coverage" NAME="opencv_windows_management Coverage Results" MODIFIED="1573384180972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial/Tools工具包/OpenCV_Window_Management" />
     <SUITE FILE_PATH="coverage/MyMLStudy$A3C_continuous_action.coverage" NAME="A3C_continuous_action Coverage Results" MODIFIED="1574781778802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/10_A3C" />
     <SUITE FILE_PATH="coverage/MyMLStudy$trajectory_sampling.coverage" NAME="trajectory_sampling Coverage Results" MODIFIED="1575984780006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$9_Expectation_Maximization.coverage" NAME="9.Expectation_Maximization Coverage Results" MODIFIED="1578324742456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$9_Expectation_Maximization.coverage" NAME="9.Expectation_Maximization Coverage Results" MODIFIED="1579538983492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广" />
     <SUITE FILE_PATH="coverage/MyMLStudy$tensorflow6_session.coverage" NAME="tensorflow6_session Coverage Results" MODIFIED="1565025635968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/莫凡Tensorflow学习笔记/tensorflowTUT" />
     <SUITE FILE_PATH="coverage/MyMLStudy$camera_compare1.coverage" NAME="camera_compare1 Coverage Results" MODIFIED="1572924079325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial/ch05-视频/相机_相片相似度" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$example.coverage" NAME="example Coverage Results" MODIFIED="1582214663543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../GBDT_Simple_Tutorial" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_lane_detection_video.coverage" NAME="cv2_lane_detection_video Coverage Results" MODIFIED="1573224313807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务3：车道检测" />
     <SUITE FILE_PATH="coverage/MyMLStudy$treasure_on_right.coverage" NAME="treasure_on_right Coverage Results" MODIFIED="1574089109639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/1_command_line_reinforcement_learning" />
     <SUITE FILE_PATH="coverage/MyMLStudy$8_Boost.coverage" NAME="8.Boost Coverage Results" MODIFIED="1578299494005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法" />
@@ -936,6 +1046,8 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$collision.coverage" NAME="collision Coverage Results" MODIFIED="1574000862478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/experiments/2D_car" />
     <SUITE FILE_PATH="coverage/MyMLStudy$GifDemo.coverage" NAME="GifDemo Coverage Results" MODIFIED="1574168015462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/matplotlib" />
     <SUITE FILE_PATH="coverage/MyMLStudy$simply_PPO.coverage" NAME="simply_PPO Coverage Results" MODIFIED="1574844393786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/12_Proximal_Policy_Optimization" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$gbdt.coverage" NAME="gbdt Coverage Results" MODIFIED="1582118005374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../GBDT_Simple_Tutorial/GBDT" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$Liner.coverage" NAME="Liner Coverage Results" MODIFIED="1583230863149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_capture_live_video_from_camera.coverage" NAME="cv2_capture_live_video_from_camera Coverage Results" MODIFIED="1572924416713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/03. 打开摄像头" />
     <SUITE FILE_PATH="coverage/MyMLStudy$05_.coverage" NAME="05 深度强化学习 Coverage Results" MODIFIED="1573988415039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/TensorFlow2学习笔记" />
     <SUITE FILE_PATH="coverage/MyMLStudy$battle_city.coverage" NAME="battle_city Coverage Results" MODIFIED="1575716898816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../AirGesture" />
@@ -953,13 +1065,14 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$maze.coverage" NAME="maze Coverage Results" MODIFIED="1575970054856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08" />
     <SUITE FILE_PATH="coverage/MyMLStudy$car_env.coverage" NAME="car_env Coverage Results" MODIFIED="1574000832480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/experiments/2D_car" />
     <SUITE FILE_PATH="coverage/MyMLStudy$fitline.coverage" NAME="fitline Coverage Results" MODIFIED="1573384281232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial/官方samples" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$pymssqlLearn.coverage" NAME="pymssqlLearn Coverage Results" MODIFIED="1583205830340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mainEntry.coverage" NAME="mainEntry Coverage Results" MODIFIED="1572948659625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务2：PyQt5编写GUI界面" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_this__1_.coverage" NAME="run_this (1) Coverage Results" MODIFIED="1574176163258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/3_Sarsa_maze" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_getting_start_with_images.coverage" NAME="cv2_getting_start_with_images Coverage Results" MODIFIED="1572923623466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/02. 基本元素-图片" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_changing_color_space.coverage" NAME="cv2_changing_color_space Coverage Results" MODIFIED="1572940827334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/05. 颜色空间转换" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_image_smoothing.coverage" NAME="cv2_image_smoothing Coverage Results" MODIFIED="1572955328260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/10. 平滑图像" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$svm_simple.coverage" NAME="svm-simple Coverage Results" MODIFIED="1572528117480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_play_video_from_file.coverage" NAME="cv2_play_video_from_file Coverage Results" MODIFIED="1572925437515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/03. 打开摄像头" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$svm_simple.coverage" NAME="svm-simple Coverage Results" MODIFIED="1582019266324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_Pendulum__1_.coverage" NAME="run_Pendulum (1) Coverage Results" MODIFIED="1574577997722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5.3_Dueling_DQN" />
     <SUITE FILE_PATH="coverage/MyMLStudy$windy_grid_world.coverage" NAME="windy_grid_world Coverage Results" MODIFIED="1575810728439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_basic_operations.coverage" NAME="cv2_basic_operations Coverage Results" MODIFIED="1572936464524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/04. 图像基本操作" />
@@ -970,7 +1083,9 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_exercise1__1_.coverage" NAME="cv2_exercise1 (1) Coverage Results" MODIFIED="1572936991621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/04. 图像基本操作" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_drawing_functions.coverage" NAME="cv2_drawing_functions Coverage Results" MODIFIED="1572947972468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/08. 绘图功能" />
     <SUITE FILE_PATH="coverage/MyMLStudy$requests.coverage" NAME="requests Coverage Results" MODIFIED="1572836983431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyPythonLearn/base" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$list.coverage" NAME="list Coverage Results" MODIFIED="1582210448176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_contours_features.coverage" NAME="cv2_contours_features Coverage Results" MODIFIED="1572963178596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/14. 轮廓特征" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$pymssql.coverage" NAME="pymssql Coverage Results" MODIFIED="1583201810044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_mouse_drawing_exercise2.coverage" NAME="cv2_mouse_drawing_exercise2 Coverage Results" MODIFIED="1572948559544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/番外篇06. 鼠标绘图" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cliff_walking.coverage" NAME="cliff_walking Coverage Results" MODIFIED="1575812042992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_shi_tomasi_corner_detector.coverage" NAME="cv2_shi_tomasi_corner_detector Coverage Results" MODIFIED="1573222503394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/20. Shi-Tomasi角点检测" />
@@ -990,6 +1105,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$gamblers_problem.coverage" NAME="gamblers_problem Coverage Results" MODIFIED="1575472478715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$logistic.coverage" NAME="logistic Coverage Results" MODIFIED="1562327804504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
     <SUITE FILE_PATH="coverage/MyMLStudy$infinite_variance.coverage" NAME="infinite_variance Coverage Results" MODIFIED="1575725032407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter05" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$2_binary_perceptron.coverage" NAME="2.binary_perceptron Coverage Results" MODIFIED="1583230343738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第2章 感知机" />
     <SUITE FILE_PATH="coverage/MyMLStudy$request_test.coverage" NAME="request_test Coverage Results" MODIFIED="1572861262127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyPythonLearn/base" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_harris_corner_detector.coverage" NAME="cv2_harris_corner_detector Coverage Results" MODIFIED="1573222442396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/19. Harris角点检测" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mainForm.coverage" NAME="mainForm Coverage Results" MODIFIED="1572948645049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务2：PyQt5编写GUI界面" />
@@ -999,6 +1115,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$DDPG_update.coverage" NAME="DDPG_update Coverage Results" MODIFIED="1574761707422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/9_Deep_Deterministic_Policy_Gradient_DDPG" />
     <SUITE FILE_PATH="coverage/MyMLStudy$tic_tac_toe2.coverage" NAME="tic_tac_toe2 Coverage Results" MODIFIED="1574934011822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter01" />
     <SUITE FILE_PATH="coverage/MyMLStudy$expectation_vs_sample.coverage" NAME="expectation_vs_sample Coverage Results" MODIFIED="1575971302805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$crawl_keyword_pic.coverage" NAME="crawl_keyword_pic Coverage Results" MODIFIED="1583390160611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyMLStudy$random_walk__1_.coverage" NAME="random_walk (1) Coverage Results" MODIFIED="1575888647934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter07" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_exercise1.coverage" NAME="cv2_exercise1 Coverage Results" MODIFIED="1573012799059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/15. 直方图" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_this__2_.coverage" NAME="run_this (2) Coverage Results" MODIFIED="1574253388763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/4_Sarsa_lambda_maze" />
@@ -1006,6 +1123,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>[_pmf[k] for k in range(count)]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>weighted_returns[-1]</expression-string>
         <language-id>Python</language-id>
@@ -1051,217 +1173,9 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>self.greedy[i]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/anaconda3/Lib/site-packages/numpy/core/fromnumeric.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="2061" selection-start-line="2061" selection-end-line="2061" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/report.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/report.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://D:/anaconda3/Lib/site-packages/numpy/random/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://D:/anaconda3/Lib/site-packages/tqdm/_tqdm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="1025" selection-start-line="1025" selection-end-line="1025" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/anaconda3/Lib/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="230" selection-start-line="230" selection-end-line="230" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter09/random_walk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="393" column="15" selection-start-line="393" selection-start-column="15" selection-end-line="393" selection-end-column="15" />
-          <folding>
-            <element signature="e#996#2011#0" />
-            <element signature="e#2453#2519#0" />
-            <element signature="e#2595#3279#0" />
-            <element signature="e#13735#15764#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/codes/PCA/KPCA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/codes/PCA/PCA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding>
-            <element signature="e#15#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter09/square_wave.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1564">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter11/counterexample.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3864">
-          <folding>
-            <element signature="e#505#523#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter12/mountain_car.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#433#451#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter10/mountain_car.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter10/access_control.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1173" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter07/random_walk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2392">
-          <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
-          <folding>
-            <element signature="e#505#523#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04/grid_world.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#505#522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04/gamblers_problem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#505#522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04/car_rental_synchronous.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#844#862#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter03/grid_world.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2484">
-          <caret line="108" selection-start-line="108" selection-end-line="108" />
-          <folding>
-            <element signature="e#505#522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06/windy_grid_world.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1886">
-          <caret line="83" column="28" lean-forward="true" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06/cliff_walking.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2737">
-          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
-          <folding>
-            <element signature="e#505#523#0" expanded="true" />
-            <element signature="e#5981#7212#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06/random_walk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-          <folding>
-            <element signature="e#505#523#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06/maximization_bias.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2668">
-          <caret line="116" selection-start-line="116" selection-end-line="116" />
-          <folding>
-            <element signature="e#505#523#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter05/11.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter05/blackjack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3381">
-          <caret line="268" column="43" selection-start-line="268" selection-start-column="43" selection-end-line="268" selection-end-column="43" />
-          <folding>
-            <element signature="e#577#595#0" expanded="true" />
-            <element signature="e#2028#5858#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08/expectation_vs_sample.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="943">
@@ -1380,31 +1294,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../PCA/PCA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1219">
-          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
-          <folding>
-            <element signature="e#290#321#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../lihang_book_algorithm/AdaBoost/Sign/Sign/sign.cpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../AiLearning/src/py3.x/ml/7.AdaBoost/adaboost.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法/AdaBoost.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://D:/anaconda3/Lib/site-packages/sklearn/ensemble/weight_boosting.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1440,22 +1334,241 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法/8.Boost.py">
+    <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="653">
+          <caret line="49" column="127" selection-start-line="49" selection-start-column="127" selection-end-line="49" selection-end-column="127" />
           <folding>
-            <element signature="e#1512#1530#0" expanded="true" />
+            <element signature="e#56#74#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py">
+    <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法/AdaBoost.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+        <state relative-caret-position="460">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
-            <element signature="e#56#74#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../PCA/PCA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+          <folding>
+            <element signature="e#290#321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法/8.Boost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+          <folding>
+            <element signature="e#52#70#0" expanded="true" />
+            <element signature="e#677#5556#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第2章 感知机/PLA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/优化函数/adadelta.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/优化函数/momentum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2219">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机/svm-simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="e#223#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/GBDT/decision_tree.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/results/NO.1_tree.png" />
+    <entry file="file://D:/anaconda3/Lib/site-packages/pydotplus/graphviz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44735">
+          <caret line="1956" column="38" selection-start-line="1956" selection-start-column="25" selection-end-line="1956" selection-end-column="38" />
+          <folding>
+            <element signature="e#1467#1514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/GBDT/tree_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3128">
+          <caret line="140" column="8" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
+          <folding>
+            <element signature="e#61#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/anaconda3/Lib/site-packages/matplotlib/image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13547">
+          <caret line="616" column="19" selection-start-line="616" selection-start-column="19" selection-end-line="616" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/anaconda3/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="379" selection-start-line="379" selection-end-line="379" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="25" column="47" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="47" />
+          <folding>
+            <element signature="e#124#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GBDT/startup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="31" column="15" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="15" />
+          <folding>
+            <element signature="e#654#683#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/anaconda3/Lib/argparse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="1762" column="21" selection-start-line="1762" selection-start-column="21" selection-end-line="1762" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pymssql.py" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/socket.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-207">
+          <folding>
+            <element signature="e#274#284#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/2060878080/_mssql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/2060878080/pymssql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第2章 感知机/basic_animation.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1449">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/GBDT/gbdt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#62#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2622">
+          <caret line="114" column="25" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pymssqlLearn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/统计学习方法-李航/第2章 感知机/2.binary_perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1817">
+          <caret line="81" column="43" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Liner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawl_keyword_pic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
