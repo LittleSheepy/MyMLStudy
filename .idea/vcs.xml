@@ -3,6 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../AirGesture" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../GBDT" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../GBDT_Simple_Tutorial" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../OpenCV-Python-Tutorial" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../OpenCV-Python-Tutorial1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../PCA" vcs="Git" />
