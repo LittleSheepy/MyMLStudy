@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\myGitHub\MyMLStudy\CMake\01helloword\helloword.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\myGitHub\MyMLStudy\CMake\01helloword\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B0186857-7E9E-32C6-980B-894422CA4B1D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

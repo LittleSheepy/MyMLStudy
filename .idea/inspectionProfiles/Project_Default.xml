@@ -1,6 +1,8 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyNoneFunctionAssignmentInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <option name="ignoredErrors">
         <list>
@@ -25,6 +27,11 @@
           <option value="E114" />
           <option value="E501" />
           <option value="E301" />
+          <option value="E203" />
+          <option value="E225" />
+          <option value="E116" />
+          <option value="W391" />
+          <option value="E731" />
         </list>
       </option>
     </inspection_tool>
@@ -34,10 +41,22 @@
           <option value="N803" />
           <option value="N802" />
           <option value="N806" />
+          <option value="N801" />
+          <option value="N813" />
         </list>
       </option>
     </inspection_tool>
-    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="PyProtectedMemberInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="next" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingNamesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="false" level="WARNING" enabled_by_default="false">
       <option name="ignoredIdentifiers">
         <list>
           <option value="tensorflow_core._api.v2.compat.v1.disable_eager_execution" />
@@ -48,8 +67,14 @@
           <option value="tensorflow_core._api.v2.compat.v1.*" />
           <option value="tensorflow.variable_scope" />
           <option value="tensorflow.*" />
+          <option value="pltGif" />
         </list>
       </option>
+    </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
     </inspection_tool>
   </profile>
 </component>

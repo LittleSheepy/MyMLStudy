@@ -17,7 +17,7 @@ import numpy as np
 import random
 import tensorflow as tf
 import os
-%matplotlib inline
+#%matplotlib inline
 
 from gridworld import gameEnv
 env = gameEnv(size=5)

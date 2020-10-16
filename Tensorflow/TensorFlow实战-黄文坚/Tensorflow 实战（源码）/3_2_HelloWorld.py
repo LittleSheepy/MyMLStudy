@@ -24,6 +24,7 @@ import tensorflow as tf
 sess = tf.InteractiveSession()
 x = tf.placeholder(tf.float32, [None, 784])
 
+# W = tf.zeros([784, 10])
 W = tf.Variable(tf.zeros([784, 10]))
 b = tf.Variable(tf.zeros([10]))
 
@@ -43,5 +44,7 @@ for i in range(1000):
 correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
 
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+w_v = sess.run(W)
 
 print(accuracy.eval({x: mnist.test.images, y_: mnist.test.labels}))

@@ -4,7 +4,7 @@
 # In[1]:
 
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 flags = tf.flags #flags是一个文件：flags.py，用于处理命令行参数的解析工作
 logging = tf.logging
 

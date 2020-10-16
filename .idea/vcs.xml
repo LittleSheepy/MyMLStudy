@@ -5,18 +5,22 @@
     <mapping directory="$PROJECT_DIR$/../AirGesture" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../GBDT" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../GBDT_Simple_Tutorial" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DeepLearning/CNN/tensorflow-alexnet" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../OpenCV-Python-Tutorial" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../OpenCV-Python-Tutorial1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../PCA" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../RCNN" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ShuffleNet-Series" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_Classification/MobileNetV2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_YOLO/yolov5" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_detection/CenterNet" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_paddle/PaddleOCR" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../dimensionality_reduction_alo_codes" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../gym-nes-mario-bros" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../lihang_book_algorithm" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../machinelearning" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../reinforcement-learning-an-introduction" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../tensorflow-handbook_tf2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../tensorflow2_tutorials_chinese" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../walk-bot" vcs="Git" />
   </component>
 </project>

@@ -2,19 +2,31 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../AiLearning/.idea/AiLearning.iml" filepath="$PROJECT_DIR$/../AiLearning/.idea/AiLearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" filepath="$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" filepath="$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_detection/CenterNet/.idea/CenterNet.iml" filepath="$PROJECT_DIR$/../aFolder_detection/CenterNet/.idea/CenterNet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_data/Data-Augment/.idea/Data-Augment.iml" filepath="$PROJECT_DIR$/../aFolder_data/Data-Augment/.idea/Data-Augment.iml" />
       <module fileurl="file://$PROJECT_DIR$/../GBDT/.idea/GBDT.iml" filepath="$PROJECT_DIR$/../GBDT/.idea/GBDT.iml" />
       <module fileurl="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/.idea/GBDT_Simple_Tutorial.iml" filepath="$PROJECT_DIR$/../GBDT_Simple_Tutorial/.idea/GBDT_Simple_Tutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_Classification/MobileNetV2/.idea/MobileNetV2.iml" filepath="$PROJECT_DIR$/../aFolder_Classification/MobileNetV2/.idea/MobileNetV2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MyMLStudy.iml" filepath="$PROJECT_DIR$/.idea/MyMLStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/../OpenCV-Python-Tutorial1/.idea/OpenCV-Python-Tutorial1.iml" filepath="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/.idea/OpenCV-Python-Tutorial1.iml" />
       <module fileurl="file://$PROJECT_DIR$/../PCA/.idea/PCA.iml" filepath="$PROJECT_DIR$/../PCA/.idea/PCA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_paddle/PaddleOCR/.idea/PaddleOCR.iml" filepath="$PROJECT_DIR$/../aFolder_paddle/PaddleOCR/.idea/PaddleOCR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../RCNN/.idea/RCNN.iml" filepath="$PROJECT_DIR$/../RCNN/.idea/RCNN.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/.idea/Reinforcement-learning-with-tensorflow.iml" filepath="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/.idea/Reinforcement-learning-with-tensorflow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" filepath="$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" />
       <module fileurl="file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" filepath="$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" />
       <module fileurl="file://$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" filepath="$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../lihang_book_algorithm/.idea/mnist_test.iml" filepath="$PROJECT_DIR$/../lihang_book_algorithm/.idea/mnist_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/.idea/mmdetection-2.4.0.iml" filepath="$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/.idea/mmdetection-2.4.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mudiban/.idea/mudiban.iml" filepath="$PROJECT_DIR$/../mudiban/.idea/mudiban.iml" />
+      <module fileurl="file://D:/aaaa/mudiban(include-camera-driver)/.idea/mudiban(include-camera-driver).iml" filepath="D:/aaaa/mudiban(include-camera-driver)/.idea/mudiban(include-camera-driver).iml" />
       <module fileurl="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/.idea/reinforcement-learning-an-introduction.iml" filepath="$PROJECT_DIR$/../reinforcement-learning-an-introduction/.idea/reinforcement-learning-an-introduction.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../tensorflow2_tutorials_chinese/.idea/tensorflow2_tutorials_chinese.iml" filepath="$PROJECT_DIR$/../tensorflow2_tutorials_chinese/.idea/tensorflow2_tutorials_chinese.iml" />
+      <module fileurl="file://D:/servermmdet/.idea/servermmdet.iml" filepath="D:/servermmdet/.idea/servermmdet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/tensorRTIntegrate-master/.idea/tensorRTIntegrate-master.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/tensorRTIntegrate-master/.idea/tensorRTIntegrate-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/tensorrtx-master/.idea/tensorrtx-master.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/tensorrtx-master/.idea/tensorrtx-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/weights/.idea/weights.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/weights/.idea/weights.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/.idea/yolov5.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/.idea/yolov5.iml" />
     </modules>
   </component>
 </project>

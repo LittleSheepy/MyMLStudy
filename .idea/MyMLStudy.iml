@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.7 (MyMLStudy)" jdkType="Python SDK" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/ObjectDetetion" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/YOLOs-tensorflow/datasets" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.7 (python37)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="AiLearning" />
-    <orderEntry type="module" module-name="tensorflow2_tutorials_chinese" />
-    <orderEntry type="module" module-name="Reinforcement-learning-with-tensorflow" />
-    <orderEntry type="module" module-name="reinforcement-learning-an-introduction" />
-    <orderEntry type="module" module-name="PCA" />
-    <orderEntry type="module" module-name="dimensionality_reduction_alo_codes" />
-    <orderEntry type="module" module-name="machinelearning" />
-    <orderEntry type="module" module-name="dimensionality_reduction_alo_codes" />
-    <orderEntry type="module" module-name="AirGesture" />
-    <orderEntry type="module" module-name="mnist_test" />
-    <orderEntry type="module" module-name="OpenCV-Python-Tutorial1" />
-    <orderEntry type="module" module-name="GBDT" />
-    <orderEntry type="module" module-name="GBDT_Simple_Tutorial" />
+    <orderEntry type="module" module-name="servermmdet" />
+    <orderEntry type="module" module-name="mudiban" />
+    <orderEntry type="module" module-name="mmdetection-2.4.0" />
+    <orderEntry type="module" module-name="tensorRTIntegrate-master" />
+    <orderEntry type="module" module-name="CenterNet" />
+    <orderEntry type="module" module-name="tensorrtx-master" />
+    <orderEntry type="module" module-name="yolov5" />
+    <orderEntry type="module" module-name="PaddleOCR" />
+    <orderEntry type="module" module-name="weights" />
+    <orderEntry type="module" module-name="mudiban(include-camera-driver)" />
+    <orderEntry type="module" module-name="Data-Augment" />
+    <orderEntry type="module" module-name="MobileNetV2" />
   </component>
 </module>
