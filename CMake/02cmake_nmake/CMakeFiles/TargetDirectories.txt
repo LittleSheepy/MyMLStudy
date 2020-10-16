@@ -1,0 +1,3 @@
+D:/myGitHub/MyMLStudy/CMake/02cmake_nmake/CMakeFiles/HelloWorldexe2.dir
+D:/myGitHub/MyMLStudy/CMake/02cmake_nmake/CMakeFiles/edit_cache.dir
+D:/myGitHub/MyMLStudy/CMake/02cmake_nmake/CMakeFiles/rebuild_cache.dir
