@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<annotation>
+    <filename type="str">82236457.jpg</filename>
+    <object type="dict">
+        <name type="str">20220410</name>
+        <bndbox type="dict">
+            <xmin type="int">2612</xmin>
+            <ymin type="int">1513</ymin>
+            <xmax type="int">2712</xmax>
+            <ymax type="int">1651</ymax>
+        </bndbox>
+    </object>
+</annotation>
