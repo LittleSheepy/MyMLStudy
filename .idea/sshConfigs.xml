@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="10.16.100.89" id="ee47efe7-018d-4c41-9490-5954f8df53fb" port="22" customName="mmdet" nameFormat="CUSTOM">
+        <option name="customName" value="mmdet" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>
