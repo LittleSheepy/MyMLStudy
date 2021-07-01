@@ -20,13 +20,6 @@
       <module fileurl="file://$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" filepath="$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/.idea/mmdetection-2.4.0.iml" filepath="$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/.idea/mmdetection-2.4.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/../mudiban/.idea/mudiban.iml" filepath="$PROJECT_DIR$/../mudiban/.idea/mudiban.iml" />
-      <module fileurl="file://D:/aaaa/mudiban(include-camera-driver)/.idea/mudiban(include-camera-driver).iml" filepath="D:/aaaa/mudiban(include-camera-driver)/.idea/mudiban(include-camera-driver).iml" />
-      <module fileurl="file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/.idea/reinforcement-learning-an-introduction.iml" filepath="$PROJECT_DIR$/../reinforcement-learning-an-introduction/.idea/reinforcement-learning-an-introduction.iml" />
-      <module fileurl="file://D:/servermmdet/.idea/servermmdet.iml" filepath="D:/servermmdet/.idea/servermmdet.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/tensorRTIntegrate-master/.idea/tensorRTIntegrate-master.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/tensorRTIntegrate-master/.idea/tensorRTIntegrate-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/tensorrtx-master/.idea/tensorrtx-master.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/tensorrtx-master/.idea/tensorrtx-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/weights/.idea/weights.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/weights/.idea/weights.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/.idea/yolov5.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/.idea/yolov5.iml" />
     </modules>
   </component>
 </project>

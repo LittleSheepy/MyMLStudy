@@ -5,18 +5,12 @@
       <sourceFolder url="file://$MODULE_DIR$/ObjectDetetion" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/YOLOs-tensorflow/datasets" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.7 (python37)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="servermmdet" />
     <orderEntry type="module" module-name="mudiban" />
     <orderEntry type="module" module-name="mmdetection-2.4.0" />
-    <orderEntry type="module" module-name="tensorRTIntegrate-master" />
     <orderEntry type="module" module-name="CenterNet" />
-    <orderEntry type="module" module-name="tensorrtx-master" />
-    <orderEntry type="module" module-name="yolov5" />
     <orderEntry type="module" module-name="PaddleOCR" />
-    <orderEntry type="module" module-name="weights" />
-    <orderEntry type="module" module-name="mudiban(include-camera-driver)" />
     <orderEntry type="module" module-name="Data-Augment" />
     <orderEntry type="module" module-name="MobileNetV2" />
   </component>
