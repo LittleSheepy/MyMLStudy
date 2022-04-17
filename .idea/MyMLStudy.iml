@@ -7,11 +7,6 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="mudiban" />
-    <orderEntry type="module" module-name="mmdetection-2.4.0" />
-    <orderEntry type="module" module-name="CenterNet" />
     <orderEntry type="module" module-name="PaddleOCR" />
-    <orderEntry type="module" module-name="Data-Augment" />
-    <orderEntry type="module" module-name="MobileNetV2" />
   </component>
 </module>
