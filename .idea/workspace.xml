@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03leetcode/001两数之和.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03leetcode/002两数相加.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/gen_wts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepLearning/CNN/tensorflow-alexnet/tflearn_alexnet_end2end.py" beforeDir="false" afterPath="$PROJECT_DIR$/DeepLearning/CNN/tensorflow-alexnet/tflearn_alexnet_end2end.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepLearning/CNN/tensorflow-alexnet/train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DeepLearning/CNN/tensorflow-alexnet/train.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +117,7 @@
       <recent name="D:\myGitHub\MyMLStudy\data\lmdb_Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.删除文件">
+  <component name="RunManager" selected="Python.001两数之和">
     <configuration name="删除文件" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -137,6 +132,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/删除文件.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="001两数之和" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/03leetcode" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/03leetcode/001两数之和.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,9 +187,11 @@
     <list>
       <item itemvalue="Python.删除文件" />
       <item itemvalue="Python.val" />
+      <item itemvalue="Python.001两数之和" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.001两数之和" />
         <item itemvalue="Python.删除文件" />
         <item itemvalue="Python.val" />
       </list>
@@ -530,6 +549,9 @@
       <workItem from="1633093611580" duration="9000" />
       <workItem from="1637071312627" duration="10000" />
       <workItem from="1649035860099" duration="5108000" />
+      <workItem from="1650198815634" duration="984000" />
+      <workItem from="1655718993179" duration="302000" />
+      <workItem from="1657412316350" duration="7000" />
     </task>
     <servers />
   </component>
@@ -540,10 +562,26 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="0" key="#Illuminated_Cloud" timestamp="1649035890348">
+    <state x="0" y="0" key="#Illuminated_Cloud" timestamp="1657412322570">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1649035890348" />
+    <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1657412322570" />
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom" timestamp="1650199468073">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1650199468073" />
+    <state width="1493" height="212" key="GridCell.Tab.0.center" timestamp="1650199468073">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="212" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1650199468073" />
+    <state width="1493" height="212" key="GridCell.Tab.0.left" timestamp="1650199468073">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="212" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1650199468073" />
+    <state width="1493" height="212" key="GridCell.Tab.0.right" timestamp="1650199468073">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="212" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1650199468073" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1617,6 +1655,11 @@
           <line>260</line>
           <option name="timeStamp" value="1586" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/03leetcode/001两数之和.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="1587" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1694,6 +1737,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$maze.coverage" NAME="maze Coverage Results" MODIFIED="1575970054856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_play_video_from_file.coverage" NAME="cv2_play_video_from_file Coverage Results" MODIFIED="1572925437515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/03. 打开摄像头" />
     <SUITE FILE_PATH="coverage/MyMLStudy$selectivesearch___.coverage" NAME="selectivesearch - 副本 Coverage Results" MODIFIED="1593640962084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../RCNN" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$001.coverage" NAME="001两数之和 Coverage Results" MODIFIED="1650199468030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03leetcode" />
     <SUITE FILE_PATH="coverage/MyMLStudy$tf_hello.coverage" NAME="tf_hello Coverage Results" MODIFIED="1574090473181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow" />
     <SUITE FILE_PATH="coverage/MyMLStudy$eval.coverage" NAME="eval Coverage Results" MODIFIED="1622630022374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/" />
     <SUITE FILE_PATH="coverage/MyMLStudy$setup.coverage" NAME="setup Coverage Results" MODIFIED="1601902891542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NVIDIA/tensorRTIntegrate-master/dcn_onnx/DCNv2" />
