@@ -2,29 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ1 字符串最后一个单词的长度.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ10 字符个数统计.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ11 数字颠倒 HJ12 字符串反转.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ13 句子逆序.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ14 字符串排序.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ15 求int型正整数在内存中存储时1的个数.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ16 背包问题.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ16 购物单-优化前.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ16 购物单.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ17 坐标移动.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ2 计算某字符出现次数.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ3 明明的随机数.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ4 字符串分隔.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ5 进制转换.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ6 质数因子.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ7 取近似值.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ8 合并表记录.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ9 提取不重复的整数.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ19 简单错误记录.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ20 密码验证合格程序.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ21 简单密码.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ22 汽水瓶.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ23 删除字符串中出现次数最少的字符.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/gen_wts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py" beforeDir="false" afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +122,7 @@
       <recent name="D:\myGitHub\MyMLStudy\data\lmdb_Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.HJ8 合并表记录">
+  <component name="RunManager" selected="Python.HJ19 简单错误记录">
     <configuration name="HJ16 购物单-优化前" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -204,7 +189,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="HJ8 合并表记录" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="HJ18 识别有效的IP地址和掩码并进行分类统计" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -217,7 +202,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ8 合并表记录.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -226,7 +211,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="HJ9 提取不重复的整数" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="HJ18 识别有效的IP地址和掩码并进行分类统计" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -239,7 +224,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ9 提取不重复的整数.py" />
+      <option name="SCRIPT_NAME" value="D:\myGitHub\MyMLStudy\04HuaWeiTiKu-NiuKe\HJ18 识别有效的IP地址和掩码并进行分类统计.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="HJ19 简单错误记录" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ19 简单错误记录.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -249,17 +256,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.HJ8 合并表记录" />
-      <item itemvalue="Python.HJ9 提取不重复的整数" />
       <item itemvalue="Python.HJ16 背包问题" />
       <item itemvalue="Python.HJ16 购物单-优化前" />
+      <item itemvalue="Python.HJ18 识别有效的IP地址和掩码并进行分类统计" />
+      <item itemvalue="Python.HJ18 识别有效的IP地址和掩码并进行分类统计02" />
+      <item itemvalue="Python.HJ19 简单错误记录" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.HJ19 简单错误记录" />
+        <item itemvalue="Python.HJ18 识别有效的IP地址和掩码并进行分类统计" />
+        <item itemvalue="Python.HJ18 识别有效的IP地址和掩码并进行分类统计02" />
         <item itemvalue="Python.HJ16 购物单-优化前" />
         <item itemvalue="Python.HJ16 背包问题" />
-        <item itemvalue="Python.HJ9 提取不重复的整数" />
-        <item itemvalue="Python.HJ8 合并表记录" />
       </list>
     </recent_temporary>
   </component>
@@ -620,7 +629,7 @@
       <workItem from="1657412316350" duration="669000" />
       <workItem from="1665502613204" duration="3005000" />
       <workItem from="1665506296165" duration="40302000" />
-      <workItem from="1666119636273" duration="16000" />
+      <workItem from="1666119636273" duration="8712000" />
     </task>
     <servers />
   </component>
@@ -640,25 +649,25 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
-    <state width="1493" height="212" key="GridCell.Tab.0.bottom" timestamp="1666113432861">
+    <state width="1493" height="301" key="GridCell.Tab.0.bottom" timestamp="1666444899681">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="212" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666113432861" />
+    <state width="1493" height="301" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666444899681" />
     <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="212" key="GridCell.Tab.0.center" timestamp="1666113432860">
+    <state width="1493" height="301" key="GridCell.Tab.0.center" timestamp="1666444899681">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="212" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666113432860" />
+    <state width="1493" height="301" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666444899681" />
     <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="212" key="GridCell.Tab.0.left" timestamp="1666113432860">
+    <state width="1493" height="301" key="GridCell.Tab.0.left" timestamp="1666444899681">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="212" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666113432860" />
+    <state width="1493" height="301" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666444899681" />
     <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="212" key="GridCell.Tab.0.right" timestamp="1666113432861">
+    <state width="1493" height="301" key="GridCell.Tab.0.right" timestamp="1666444899681">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="212" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666113432861" />
+    <state width="1493" height="301" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666444899681" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1665661954745">
       <screen x="0" y="0" width="1536" height="834" />
@@ -1737,6 +1746,36 @@
           <line>20</line>
           <option name="timeStamp" value="1620" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="1625" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="1626" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="1627" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="1628" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ19 简单错误记录.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="1630" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ19 简单错误记录.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="1631" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1746,6 +1785,11 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="l[-8:]" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MyMLStudy$svm_simple.coverage" NAME="svm-simple Coverage Results" MODIFIED="1582019266324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机" />
@@ -1805,6 +1849,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1602695288797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_DeepBlue/ZoomingSlowMo/Zooming-Slow-Mo-CVPR-2020-test/codes" />
     <SUITE FILE_PATH="coverage/MyMLStudy$predict_system.coverage" NAME="predict_system Coverage Results" MODIFIED="1613811167971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_paddle/PaddleOCR_beifen/" />
     <SUITE FILE_PATH="coverage/MyMLStudy$11.coverage" NAME="11 Coverage Results" MODIFIED="1621332645665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$HJ18_IP.coverage" NAME="HJ18 识别有效的IP地址和掩码并进行分类统计 Coverage Results" MODIFIED="1666121640752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
     <SUITE FILE_PATH="coverage/MyMLStudy$DDPG.coverage" NAME="DDPG Coverage Results" MODIFIED="1574756252222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/9_Deep_Deterministic_Policy_Gradient_DDPG" />
     <SUITE FILE_PATH="coverage/MyMLStudy$02_MLP.coverage" NAME="02 多层感知机（MLP） Coverage Results" MODIFIED="1573995110322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/TensorFlow2学习笔记" />
     <SUITE FILE_PATH="coverage/MyMLStudy$05_.coverage" NAME="05 深度强化学习 Coverage Results" MODIFIED="1573988415039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/TensorFlow2学习笔记" />
@@ -1829,6 +1874,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1602421995934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Anaconda3/envs/mmdet/Lib/site-packages/utils" />
     <SUITE FILE_PATH="coverage/MyMLStudy$lenet5.coverage" NAME="lenet5 Coverage Results" MODIFIED="1610552230124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorchx/lenet" />
     <SUITE FILE_PATH="coverage/MyMLStudy$xstack.coverage" NAME="xstack Coverage Results" MODIFIED="1593621995213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/numpy练习" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$HJ18_IP02.coverage" NAME="HJ18 识别有效的IP地址和掩码并进行分类统计02 Coverage Results" MODIFIED="1666120527917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_main.coverage" NAME="run_main Coverage Results" MODIFIED="1593353764287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../tensorflow-mnist-CVAE" />
     <SUITE FILE_PATH="coverage/MyMLStudy$inception.coverage" NAME="inception Coverage Results" MODIFIED="1610553011847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorchx/inception" />
     <SUITE FILE_PATH="coverage/MyMLStudy$qt0406_QLabel.coverage" NAME="qt0406_QLabel Coverage Results" MODIFIED="1622456541909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter04" />
@@ -1916,6 +1962,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_read_image_time.coverage" NAME="cv2_read_image_time Coverage Results" MODIFIED="1572921319057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/01. 简介与安装" />
     <SUITE FILE_PATH="coverage/MyMLStudy$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1602520410707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/flask_data_baobiao" />
     <SUITE FILE_PATH="coverage/MyMLStudy$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1624271410857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$HJ19_.coverage" NAME="HJ19 简单错误记录 Coverage Results" MODIFIED="1666444899656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_getting_start_with_images.coverage" NAME="cv2_getting_start_with_images Coverage Results" MODIFIED="1572923623466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/02. 基本元素-图片" />
     <SUITE FILE_PATH="coverage/MyMLStudy$CallMainWinSignalSlog03.coverage" NAME="CallMainWinSignalSlog03 Coverage Results" MODIFIED="1622440868930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter03" />
     <SUITE FILE_PATH="coverage/MyMLStudy$DDPG_update2.coverage" NAME="DDPG_update2 Coverage Results" MODIFIED="1574776372473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/9_Deep_Deterministic_Policy_Gradient_DDPG" />
