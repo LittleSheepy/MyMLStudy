@@ -20,10 +20,10 @@ def find(odd, visited, choose, evens): #配对的过程
 
 
 try:
-    # num = int(input())
-    # a = input()
-    num = 4
-    a = "2 5 6 13"
+    num = int(input())
+    a = input()
+    # num = 4
+    # a = "2 5 6 13"
     a = a.split()
     b = []
     count = 0

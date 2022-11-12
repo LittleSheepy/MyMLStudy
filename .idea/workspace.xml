@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ25 数据分类处理02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ26 字符串排序.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ27 查找兄弟单词.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ28 素数伴侣.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05算法/01匈牙利算法.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ29 字符串加解密.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ30 字符串合并处理.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/gen_wts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ25 数据分类处理.py" beforeDir="false" afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ25 数据分类处理.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ28 素数伴侣.py" beforeDir="false" afterPath="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ28 素数伴侣.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05算法/01匈牙利算法.py" beforeDir="false" afterPath="$PROJECT_DIR$/05算法/01匈牙利算法.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,8 +120,8 @@
       <recent name="D:\myGitHub\MyMLStudy\data\lmdb_Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.HJ28 素数伴侣">
-    <configuration name="HJ16 购物单" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.HJ30 字符串合并处理">
+    <configuration name="01匈牙利算法" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -131,56 +129,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/05算法" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ16 购物单.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="HJ25 数据分类处理02" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MyMLStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ25 数据分类处理02.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="HJ25 数据分类处理" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MyMLStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ25 数据分类处理.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05算法/01匈牙利算法.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -255,20 +209,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="HJ30 字符串合并处理" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ30 字符串合并处理.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.HJ25 数据分类处理" />
-      <item itemvalue="Python.HJ25 数据分类处理02" />
       <item itemvalue="Python.HJ26 字符串排序" />
       <item itemvalue="Python.HJ27 查找兄弟单词" />
       <item itemvalue="Python.HJ28 素数伴侣" />
+      <item itemvalue="Python.01匈牙利算法" />
+      <item itemvalue="Python.HJ30 字符串合并处理" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.HJ30 字符串合并处理" />
+        <item itemvalue="Python.01匈牙利算法" />
         <item itemvalue="Python.HJ28 素数伴侣" />
         <item itemvalue="Python.HJ27 查找兄弟单词" />
         <item itemvalue="Python.HJ26 字符串排序" />
-        <item itemvalue="Python.HJ25 数据分类处理" />
-        <item itemvalue="Python.HJ25 数据分类处理02" />
       </list>
     </recent_temporary>
   </component>
@@ -630,6 +606,9 @@
       <workItem from="1665502613204" duration="3005000" />
       <workItem from="1665506296165" duration="40302000" />
       <workItem from="1666119636273" duration="37059000" />
+      <workItem from="1667713549991" duration="73821000" />
+      <workItem from="1667863993765" duration="7304000" />
+      <workItem from="1668234548279" duration="5233000" />
     </task>
     <servers />
   </component>
@@ -640,39 +619,48 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="0" key="#Illuminated_Cloud" timestamp="1666119650978">
+    <state x="0" y="0" key="#Illuminated_Cloud" timestamp="1667864000876">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666119650978" />
+    <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1667864000876" />
     <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834@0.0.1536.834" timestamp="1665506315244" />
-    <state width="455" height="466" key="DebuggerActiveHint" timestamp="1666639715142">
+    <state width="644" height="466" key="DebuggerActiveHint" timestamp="1668296085449">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="455" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666639715142" />
+    <state width="644" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668296085449" />
+    <state width="615" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1667867791082" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1665502872686">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
-    <state width="1493" height="251" key="GridCell.Tab.0.bottom" timestamp="1666644713247">
+    <state width="1493" height="160" key="GridCell.Tab.0.bottom" timestamp="1668296093114">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="251" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666644713247" />
+    <state width="1493" height="160" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668296093114" />
+    <state width="1877" height="718" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1667866197885" />
     <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="251" key="GridCell.Tab.0.center" timestamp="1666644713247">
+    <state width="1493" height="160" key="GridCell.Tab.0.center" timestamp="1668296093114">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="251" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666644713247" />
+    <state width="1493" height="160" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668296093114" />
+    <state width="1877" height="718" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1667866197885" />
     <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="251" key="GridCell.Tab.0.left" timestamp="1666644713247">
+    <state width="1493" height="160" key="GridCell.Tab.0.left" timestamp="1668296093114">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="251" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666644713247" />
+    <state width="1493" height="160" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668296093114" />
+    <state width="1877" height="718" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1667866197885" />
     <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="251" key="GridCell.Tab.0.right" timestamp="1666644713247">
+    <state width="1493" height="160" key="GridCell.Tab.0.right" timestamp="1668296093114">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="251" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666644713247" />
+    <state width="1493" height="160" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668296093114" />
+    <state width="1877" height="718" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1667866197885" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
+    <state x="29" y="0" width="1521" height="859" maximized="true" key="dock-window-1" timestamp="1667866339181">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="29" y="0" width="1521" height="859" maximized="true" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1667866339181" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1666637282687">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -1825,6 +1813,11 @@
           <line>41</line>
           <option name="timeStamp" value="1659" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/05算法/01匈牙利算法.py</url>
+          <line>221</line>
+          <option name="timeStamp" value="1660" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -2090,6 +2083,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ3_.coverage" NAME="HJ3 明明的随机数 Coverage Results" MODIFIED="1665653539344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_erosion_dilation.coverage" NAME="cv2_erosion_dilation Coverage Results" MODIFIED="1572961130763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/12. 腐蚀与膨胀" />
     <SUITE FILE_PATH="coverage/MyMLStudy$XMLaug.coverage" NAME="XMLaug Coverage Results" MODIFIED="1603208785507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_data/Data-Augment" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$HJ30_.coverage" NAME="HJ30 字符串合并处理 Coverage Results" MODIFIED="1668296093087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
     <SUITE FILE_PATH="coverage/MyMLStudy$trajectory_sampling.coverage" NAME="trajectory_sampling Coverage Results" MODIFIED="1575984780006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08" />
     <SUITE FILE_PATH="coverage/MyMLStudy$xml_tets.coverage" NAME="xml_tets Coverage Results" MODIFIED="1604592605714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python练习" />
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ16_.coverage" NAME="HJ16 购物单 Coverage Results" MODIFIED="1665847532968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
@@ -2151,7 +2145,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$p2e.coverage" NAME="p2e Coverage Results" MODIFIED="1624260287893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/01work/07xiling/pyqtdraw" />
     <SUITE FILE_PATH="coverage/MyMLStudy$AlexNet_tf.coverage" NAME="AlexNet_tf Coverage Results" MODIFIED="1593602272272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DeepLearning/CNN/AlexNet" />
     <SUITE FILE_PATH="coverage/MyMLStudy$fitline.coverage" NAME="fitline Coverage Results" MODIFIED="1573384281232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial/官方samples" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$01.coverage" NAME="01滚动条 Coverage Results" MODIFIED="1622462514740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01PyQt" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$01.coverage" NAME="01匈牙利算法 Coverage Results" MODIFIED="1667866197848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/05算法" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p54.coverage" NAME="p54 Coverage Results" MODIFIED="1594006658323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />
     <SUITE FILE_PATH="coverage/MyMLStudy$dataset.coverage" NAME="dataset Coverage Results" MODIFIED="1623382576917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/lmdb_Data" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p42_CVAE_mnist.coverage" NAME="p42_CVAE_mnist Coverage Results" MODIFIED="1593511440499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />
