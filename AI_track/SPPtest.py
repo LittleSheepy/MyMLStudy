@@ -120,7 +120,7 @@ class SimConv(nn.Module):
 
 
 def main():
-    input_tensor = torch.rand(128, 128, 16, 16)
+    input_tensor = torch.rand(128, 128, 128, 128)
     spp = SPP()
     sppf = SPPF()
     simsppf = SimSPPF(128, 128)

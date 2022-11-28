@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/AI_track/SPPtest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AI_track/SPPcode.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/gen_wts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI_track/SPPtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI_track/SPPtest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" afterDir="false" />
@@ -122,28 +121,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.SPPtest">
-    <configuration name="01匈牙利算法" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MyMLStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/05算法" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05算法/01匈牙利算法.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="HJ30 字符串合并处理" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -158,6 +135,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ30 字符串合并处理.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SPPcode" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AI_track" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AI_track/SPPcode.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -233,19 +232,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.01匈牙利算法" />
       <item itemvalue="Python.HJ30 字符串合并处理" />
       <item itemvalue="Python.train" />
       <item itemvalue="Python.common" />
       <item itemvalue="Python.SPPtest" />
+      <item itemvalue="Python.SPPcode" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.SPPtest" />
+        <item itemvalue="Python.SPPcode" />
         <item itemvalue="Python.common" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.HJ30 字符串合并处理" />
-        <item itemvalue="Python.01匈牙利算法" />
       </list>
     </recent_temporary>
   </component>
@@ -612,7 +611,7 @@
       <workItem from="1668234548279" duration="6623000" />
       <workItem from="1668298668097" duration="4161000" />
       <workItem from="1668659827722" duration="644000" />
-      <workItem from="1669550394172" duration="11447000" />
+      <workItem from="1669550394172" duration="14102000" />
     </task>
     <servers />
   </component>
@@ -637,29 +636,29 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
-    <state width="1877" height="802" key="GridCell.Tab.0.bottom" timestamp="1669631847452">
+    <state width="1877" height="317" key="GridCell.Tab.0.bottom" timestamp="1669634029113">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state width="1493" height="413" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907018" />
-    <state width="1877" height="802" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631847452" />
+    <state width="1877" height="317" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669634029113" />
     <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="802" key="GridCell.Tab.0.center" timestamp="1669631847452">
+    <state width="1877" height="317" key="GridCell.Tab.0.center" timestamp="1669634029113">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state width="1493" height="413" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907017" />
-    <state width="1877" height="802" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631847452" />
+    <state width="1877" height="317" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669634029113" />
     <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="802" key="GridCell.Tab.0.left" timestamp="1669631847452">
+    <state width="1877" height="317" key="GridCell.Tab.0.left" timestamp="1669634029113">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state width="1493" height="413" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907016" />
-    <state width="1877" height="802" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631847452" />
+    <state width="1877" height="317" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669634029113" />
     <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="802" key="GridCell.Tab.0.right" timestamp="1669631847452">
+    <state width="1877" height="317" key="GridCell.Tab.0.right" timestamp="1669634029113">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state width="1493" height="413" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907017" />
-    <state width="1877" height="802" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631847452" />
+    <state width="1877" height="317" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669634029113" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
     <state x="2381" y="-142" key="SettingsEditor" timestamp="1669631380207">
       <screen x="1920" y="-309" width="1920" height="1050" />
@@ -669,19 +668,20 @@
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state x="2371" y="-48" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669571374803" />
-    <state x="-6" y="0" width="1547" height="840" key="dock-window-1" timestamp="1669631896875">
+    <state x="-6" y="0" width="1547" height="840" key="dock-window-1" timestamp="1669632002445">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="-6" y="0" width="1547" height="840" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630360405" />
-    <state x="-6" y="0" width="1547" height="840" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631896875" />
+    <state x="-6" y="0" width="1547" height="840" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669632002445" />
     <state x="0" y="0" width="1550" height="920" key="dock-window-2" timestamp="1669631302910">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="0" y="0" width="1550" height="920" key="dock-window-2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631302909" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1666637282687">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="2459" y="-114" width="840" height="854" key="search.everywhere.popup" timestamp="1669633427038">
+      <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1666637282687" />
+    <state x="2459" y="-114" width="840" height="854" key="search.everywhere.popup/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669633427038" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1900,6 +1900,21 @@
           <line>61</line>
           <option name="timeStamp" value="1686" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AI_track/SPPcode.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="1687" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AI_track/SPPcode.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="1688" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AI_track/SPPcode.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="1690" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1997,7 +2012,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$full_code.coverage" NAME="full_code Coverage Results" MODIFIED="1562327730781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/莫凡Tensorflow学习笔记/tensorflowTUT/tf5_example2" />
     <SUITE FILE_PATH="coverage/MyMLStudy$ten_armed_testbed.coverage" NAME="ten_armed_testbed Coverage Results" MODIFIED="1575360540468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter02" />
     <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1669571360641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/yolov5" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$SPPtest.coverage" NAME="SPPtest Coverage Results" MODIFIED="1669631847420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AI_track" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$SPPtest.coverage" NAME="SPPtest Coverage Results" MODIFIED="1669634026003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AI_track" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mainEntry.coverage" NAME="mainEntry Coverage Results" MODIFIED="1572948659625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务2：PyQt5编写GUI界面" />
     <SUITE FILE_PATH="coverage/MyMLStudy$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1602421995934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Anaconda3/envs/mmdet/Lib/site-packages/utils" />
     <SUITE FILE_PATH="coverage/MyMLStudy$lenet5.coverage" NAME="lenet5 Coverage Results" MODIFIED="1610552230124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorchx/lenet" />
@@ -2082,6 +2097,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$gen_label.coverage" NAME="gen_label Coverage Results" MODIFIED="1612173312426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/XML" />
     <SUITE FILE_PATH="coverage/MyMLStudy$val_yuan.coverage" NAME="val_yuan Coverage Results" MODIFIED="1623897371646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation" />
     <SUITE FILE_PATH="coverage/MyMLStudy$imread.coverage" NAME="imread Coverage Results" MODIFIED="1590263020517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opencvFun/04图片" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$SPPcode.coverage" NAME="SPPcode Coverage Results" MODIFIED="1669633980239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AI_track" />
     <SUITE FILE_PATH="coverage/MyMLStudy$treasure_on_right.coverage" NAME="treasure_on_right Coverage Results" MODIFIED="1574089109639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/1_command_line_reinforcement_learning" />
     <SUITE FILE_PATH="coverage/MyMLStudy$watershed.coverage" NAME="watershed Coverage Results" MODIFIED="1590263309613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OpenCV-Python Tutorials/03 Image Processing in OpenCV/3.15 分水岭算法的图像分割" />
     <SUITE FILE_PATH="coverage/MyMLStudy$CallMainWin01.coverage" NAME="CallMainWin01 Coverage Results" MODIFIED="1622442268734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter03/mainWin" />
