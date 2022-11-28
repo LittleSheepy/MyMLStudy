@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/AI_track/SPPtest.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/gen_wts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +47,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../aFolder_YOLO/yolov5" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -116,7 +121,7 @@
       <recent name="D:\myGitHub\MyMLStudy\data\lmdb_Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.train">
+  <component name="RunManager" selected="Python.SPPtest">
     <configuration name="01匈牙利算法" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,50 +144,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="HJ27 查找兄弟单词" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MyMLStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ27 查找兄弟单词.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="HJ28 素数伴侣" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MyMLStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ28 素数伴侣.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="HJ30 字符串合并处理" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -197,6 +158,50 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ30 字符串合并处理.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SPPtest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AI_track" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AI_track/SPPtest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="common" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="yolov5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -228,19 +233,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.HJ27 查找兄弟单词" />
-      <item itemvalue="Python.HJ28 素数伴侣" />
       <item itemvalue="Python.01匈牙利算法" />
       <item itemvalue="Python.HJ30 字符串合并处理" />
       <item itemvalue="Python.train" />
+      <item itemvalue="Python.common" />
+      <item itemvalue="Python.SPPtest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.SPPtest" />
+        <item itemvalue="Python.common" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.HJ30 字符串合并处理" />
         <item itemvalue="Python.01匈牙利算法" />
-        <item itemvalue="Python.HJ28 素数伴侣" />
-        <item itemvalue="Python.HJ27 查找兄弟单词" />
       </list>
     </recent_temporary>
   </component>
@@ -607,6 +612,7 @@
       <workItem from="1668234548279" duration="6623000" />
       <workItem from="1668298668097" duration="4161000" />
       <workItem from="1668659827722" duration="644000" />
+      <workItem from="1669550394172" duration="11447000" />
     </task>
     <servers />
   </component>
@@ -622,44 +628,56 @@
     </state>
     <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669550402245" />
     <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834@0.0.1536.834" timestamp="1665506315244" />
-    <state width="644" height="466" key="DebuggerActiveHint" timestamp="1668296085449">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1398" height="587" key="DebuggerActiveHint" timestamp="1669571509671">
+      <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state width="644" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668296085449" />
-    <state width="615" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1667867791082" />
+    <state width="1398" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669571509671" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1665502872686">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
-    <state width="1877" height="626" key="GridCell.Tab.0.bottom" timestamp="1668300512896">
+    <state width="1877" height="802" key="GridCell.Tab.0.bottom" timestamp="1669631847452">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state width="1493" height="221" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668298655782" />
-    <state width="1877" height="626" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1668300512896" />
+    <state width="1493" height="413" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907018" />
+    <state width="1877" height="802" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631847452" />
     <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="626" key="GridCell.Tab.0.center" timestamp="1668300512896">
+    <state width="1877" height="802" key="GridCell.Tab.0.center" timestamp="1669631847452">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state width="1493" height="221" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668298655782" />
-    <state width="1877" height="626" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1668300512896" />
+    <state width="1493" height="413" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907017" />
+    <state width="1877" height="802" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631847452" />
     <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="626" key="GridCell.Tab.0.left" timestamp="1668300512895">
+    <state width="1877" height="802" key="GridCell.Tab.0.left" timestamp="1669631847452">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state width="1493" height="221" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668298655781" />
-    <state width="1877" height="626" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1668300512895" />
+    <state width="1493" height="413" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907016" />
+    <state width="1877" height="802" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631847452" />
     <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="626" key="GridCell.Tab.0.right" timestamp="1668300512896">
+    <state width="1877" height="802" key="GridCell.Tab.0.right" timestamp="1669631847452">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state width="1493" height="221" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668298655782" />
-    <state width="1877" height="626" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1668300512896" />
+    <state width="1493" height="413" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907017" />
+    <state width="1877" height="802" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631847452" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state x="177" y="28" width="1128" height="820" maximized="true" key="dock-window-1" timestamp="1668298686017">
+    <state x="2381" y="-142" key="SettingsEditor" timestamp="1669631380207">
+      <screen x="1920" y="-309" width="1920" height="1050" />
+    </state>
+    <state x="2381" y="-142" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631380207" />
+    <state x="2371" y="-48" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1669571374803">
+      <screen x="1920" y="-309" width="1920" height="1050" />
+    </state>
+    <state x="2371" y="-48" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669571374803" />
+    <state x="-6" y="0" width="1547" height="840" key="dock-window-1" timestamp="1669631896875">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="177" y="28" width="1128" height="820" maximized="true" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668298686017" />
-    <state x="29" y="0" width="1521" height="859" maximized="true" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1667866339181" />
+    <state x="-6" y="0" width="1547" height="840" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630360405" />
+    <state x="-6" y="0" width="1547" height="840" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631896875" />
+    <state x="0" y="0" width="1550" height="920" key="dock-window-2" timestamp="1669631302910">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="0" y="0" width="1550" height="920" key="dock-window-2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631302909" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1666637282687">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -668,187 +686,187 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
           <line>246</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../ShuffleNet-Series/ShuffleNetV2.ExLarge/eval.py</url>
           <line>14</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/MyPythonLearn/base/request_test.py</url>
           <line>32</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/MyPythonLearn/base/request_test.py</url>
           <line>5</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py</url>
           <line>17</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py</url>
           <line>1751</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../OpenCV-Python-Tutorial1/17. 霍夫变换/cv2_hough_transform.py</url>
           <line>50</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tensorflow/TensorFlow2学习笔记/04 循环神经网络.py</url>
           <line>79</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tensorflow/TensorFlow2学习笔记/05 深度强化学习.py</url>
           <line>37</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/1_command_line_reinforcement_learning/treasure_on_right.py</url>
           <line>84</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/4_Sarsa_lambda_maze/maze_env.py</url>
           <line>15</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5_Deep_Q_Network/RL_brain.py</url>
           <line>68</line>
           <option name="timeStamp" value="98" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5_Deep_Q_Network/RL_brain.py</url>
           <line>83</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5_Deep_Q_Network/maze_env.py</url>
           <line>118</line>
           <option name="timeStamp" value="115" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/8_Actor_Critic_Advantage/AC_continue_Pendulum.py</url>
           <line>79</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/8_Actor_Critic_Advantage/AC_CartPole.py</url>
           <line>126</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/9_Deep_Deterministic_Policy_Gradient_DDPG/DDPG.py</url>
           <line>218</line>
           <option name="timeStamp" value="134" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/9_Deep_Deterministic_Policy_Gradient_DDPG/DDPG_update2.py</url>
           <line>98</line>
           <option name="timeStamp" value="136" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/12_Proximal_Policy_Optimization/simply_PPO.py</url>
           <line>157</line>
           <option name="timeStamp" value="138" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/12_Proximal_Policy_Optimization/simply_PPO.py</url>
           <line>150</line>
           <option name="timeStamp" value="142" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter01/tic_tac_toe2.py</url>
           <line>346</line>
           <option name="timeStamp" value="154" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter02/1.py</url>
           <line>8</line>
           <option name="timeStamp" value="175" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter02/ten_armed_testbed.py</url>
           <line>255</line>
           <option name="timeStamp" value="207" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04/car_rental.py</url>
           <line>182</line>
           <option name="timeStamp" value="230" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04/car_rental.py</url>
           <line>167</line>
           <option name="timeStamp" value="237" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04/car_rental.py</url>
           <line>151</line>
           <option name="timeStamp" value="247" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter05/blackjack.py</url>
           <line>279</line>
           <option name="timeStamp" value="257" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06/windy_grid_world.py</url>
           <line>131</line>
           <option name="timeStamp" value="290" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter01/tic_tac_toe.py</url>
           <line>361</line>
           <option name="timeStamp" value="304" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter01/tic_tac_toe.py</url>
           <line>171</line>
           <option name="timeStamp" value="310" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter01/tic_tac_toe.py</url>
           <line>236</line>
           <option name="timeStamp" value="313" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06/random_walk.py</url>
           <line>107</line>
           <option name="timeStamp" value="342" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06/maximization_bias.py</url>
           <line>139</line>
           <option name="timeStamp" value="360" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06/maximization_bias.py</url>
           <line>111</line>
           <option name="timeStamp" value="411" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08/maze.py</url>
           <line>400</line>
           <option name="timeStamp" value="412" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08/maze.py</url>
           <line>414</line>
           <option name="timeStamp" value="413" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08/maze.py</url>
           <line>505</line>
           <option name="timeStamp" value="421" />
@@ -858,979 +876,1029 @@
           <line>132</line>
           <option name="timeStamp" value="426" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08/expectation_vs_sample.py</url>
           <line>53</line>
           <option name="timeStamp" value="439" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08/expectation_vs_sample.py</url>
           <line>41</line>
           <option name="timeStamp" value="441" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter08/expectation_vs_sample.py</url>
           <line>40</line>
           <option name="timeStamp" value="442" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter09/random_walk.py</url>
           <line>247</line>
           <option name="timeStamp" value="475" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter09/random_walk.py</url>
           <line>463</line>
           <option name="timeStamp" value="477" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/codes/PCA/PCA.py</url>
           <line>65</line>
           <option name="timeStamp" value="478" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../machinelearning/reinforcement-learning/dqn.py</url>
           <line>131</line>
           <option name="timeStamp" value="481" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../lihang_book_algorithm/AdaBoost/adaboost.py</url>
           <line>270</line>
           <option name="timeStamp" value="487" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法/8.Boost.py</url>
           <line>178</line>
           <option name="timeStamp" value="489" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法/8.Boost.py</url>
           <line>173</line>
           <option name="timeStamp" value="490" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法/8.Boost.py</url>
           <line>191</line>
           <option name="timeStamp" value="491" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py</url>
           <line>38</line>
           <option name="timeStamp" value="501" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py</url>
           <line>56</line>
           <option name="timeStamp" value="504" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/统计学习方法-李航/第9章 EM算法及其推广/9.Expectation_Maximization.py</url>
           <line>37</line>
           <option name="timeStamp" value="505" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py</url>
           <line>101</line>
           <option name="timeStamp" value="506" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/list.py</url>
           <line>50</line>
           <option name="timeStamp" value="507" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/list.py</url>
           <line>32</line>
           <option name="timeStamp" value="508" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py</url>
           <line>62</line>
           <option name="timeStamp" value="510" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py</url>
           <line>65</line>
           <option name="timeStamp" value="511" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/example.py</url>
           <line>68</line>
           <option name="timeStamp" value="512" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pymssqlLearn.py</url>
           <line>1</line>
           <option name="timeStamp" value="514" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pymssqlLearn.py</url>
           <line>15</line>
           <option name="timeStamp" value="516" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Liner.py</url>
           <line>11</line>
           <option name="timeStamp" value="517" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/crawl_keyword_pic.py</url>
           <line>45</line>
           <option name="timeStamp" value="518" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/crawl_keyword_pic.py</url>
           <line>48</line>
           <option name="timeStamp" value="519" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/OpenCV-Python Tutorials/03 Image Processing in OpenCV/3.1 颜色空间转换/ColorConversionCodes.py</url>
           <line>4</line>
           <option name="timeStamp" value="537" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/OpenCV-Python Tutorials/03 Image Processing in OpenCV/3.5 形态转换/MorphologicalTransformations.py</url>
           <line>8</line>
           <option name="timeStamp" value="538" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sklearn练习/生成数据集.py</url>
           <line>11</line>
           <option name="timeStamp" value="539" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/numpy练习/dot.py</url>
           <line>26</line>
           <option name="timeStamp" value="562" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../RCNN/train_alexnet.py</url>
           <line>93</line>
           <option name="timeStamp" value="592" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../tensorflow-mnist-CVAE/run_main.py</url>
           <line>291</line>
           <option name="timeStamp" value="630" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../tensorflow-mnist-CVAE/plot_utils.py</url>
           <line>73</line>
           <option name="timeStamp" value="636" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../tensorflow-mnist-CVAE/run_main.py</url>
           <line>362</line>
           <option name="timeStamp" value="637" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p42_CVAE_mnist1.py</url>
           <line>78</line>
           <option name="timeStamp" value="661" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p42_CVAE_mnist1.py</url>
           <line>77</line>
           <option name="timeStamp" value="662" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p44.py</url>
           <line>217</line>
           <option name="timeStamp" value="695" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p42_CVAE_mnist.py</url>
           <line>219</line>
           <option name="timeStamp" value="696" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p43_framework.py</url>
           <line>2</line>
           <option name="timeStamp" value="699" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../RCNN/RCNN_output.py</url>
           <line>92</line>
           <option name="timeStamp" value="714" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../RCNN/RCNN_output.py</url>
           <line>129</line>
           <option name="timeStamp" value="715" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../RCNN/RCNN_output.py</url>
           <line>73</line>
           <option name="timeStamp" value="716" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DeepLearning/CNN/tensorflow-alexnet/tflearn_alexnet_end2end.py</url>
           <line>98</line>
           <option name="timeStamp" value="719" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DeepLearning/CNN/tensorflow-alexnet/tflearn_alexnet_end2end.py</url>
           <line>48</line>
           <option name="timeStamp" value="720" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../RCNN/selectivesearch.py</url>
           <line>327</line>
           <option name="timeStamp" value="766" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../RCNN/selectivesearch.py</url>
           <line>141</line>
           <option name="timeStamp" value="767" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../RCNN/RCNN_output.py</url>
           <line>125</line>
           <option name="timeStamp" value="783" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../RCNN/RCNN_output.py</url>
           <line>123</line>
           <option name="timeStamp" value="784" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../resnet-18-tensorflow/train.py</url>
           <line>123</line>
           <option name="timeStamp" value="812" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p45_celeba.py</url>
           <line>90</line>
           <option name="timeStamp" value="814" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p45_celeba.py</url>
           <line>89</line>
           <option name="timeStamp" value="815" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../resnet-18-tensorflow/resnet.py</url>
           <line>64</line>
           <option name="timeStamp" value="831" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p45_celeba.py</url>
           <line>88</line>
           <option name="timeStamp" value="837" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p51_fac_recog.py</url>
           <line>61</line>
           <option name="timeStamp" value="838" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DeepLearning/CNN/ResNet/ResNet.py</url>
           <line>121</line>
           <option name="timeStamp" value="864" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DeepLearning/CNN/ResNet/ResNet.py</url>
           <line>110</line>
           <option name="timeStamp" value="865" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/myClass/level3/4trees/dt.py</url>
           <line>141</line>
           <option name="timeStamp" value="867" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/myClass/level3/4trees/dt.py</url>
           <line>168</line>
           <option name="timeStamp" value="869" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/myClass/level3/4trees/dt.py</url>
           <line>84</line>
           <option name="timeStamp" value="871" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/myClass/level3/4trees/tests.py</url>
           <line>114</line>
           <option name="timeStamp" value="873" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/myClass/level3/4trees/dt.py</url>
           <line>83</line>
           <option name="timeStamp" value="874" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/practice/p23_GD2_SORT.py</url>
           <line>22</line>
           <option name="timeStamp" value="886" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/practice/p23_GD2_SORT.py</url>
           <line>21</line>
           <option name="timeStamp" value="888" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p50_framework.py</url>
           <line>187</line>
           <option name="timeStamp" value="902" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p50_framework.py</url>
           <line>76</line>
           <option name="timeStamp" value="911" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/00JiaoDaAI/FullTime/classcode/p50_framework.py</url>
           <line>77</line>
           <option name="timeStamp" value="912" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.1.0/mmdet/apis/train.py</url>
           <line>78</line>
           <option name="timeStamp" value="971" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../mudiban/pytorch2onnx.py</url>
           <line>34</line>
           <option name="timeStamp" value="973" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../mudiban/pytorch2onnx1.py</url>
           <line>153</line>
           <option name="timeStamp" value="976" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../mudiban/pytorch2onnx1.py</url>
           <line>155</line>
           <option name="timeStamp" value="977" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../mudiban/roi2onnx.py</url>
           <line>21</line>
           <option name="timeStamp" value="978" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../mudiban/roi2onnx.py</url>
           <line>48</line>
           <option name="timeStamp" value="979" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../mudiban/roi2onnx.py</url>
           <line>59</line>
           <option name="timeStamp" value="980" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../mudiban/roi2onnx.py</url>
           <line>64</line>
           <option name="timeStamp" value="981" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_deployment/mmdetection-to-tensorrt/mmdet2trt/models/builder.py</url>
           <option name="timeStamp" value="989" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../mudiban/main.py</url>
           <line>40</line>
           <option name="timeStamp" value="990" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_NVIDIA/tensorRTIntegrate-master/dcn_onnx/dladcn_export_onnx.py</url>
           <line>29</line>
           <option name="timeStamp" value="1001" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_NVIDIA/tensorRTIntegrate-master/dcn_onnx/pose_dla_dcn.py</url>
           <line>427</line>
           <option name="timeStamp" value="1002" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_detection/CenterNet/src/lib/models/networks/pose_dla_dcn.py</url>
           <line>82</line>
           <option name="timeStamp" value="1012" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://C:/Anaconda3/envs/py36db/Lib/site-packages/torch/onnx/utils.py</url>
           <line>331</line>
           <option name="timeStamp" value="1031" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_detection/CenterNet/src/lib/models/networks/DCNv2/testcuda.py</url>
           <line>10</line>
           <option name="timeStamp" value="1036" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_detection/CenterNet/src/lib/models/networks/DCNv2/testcuda.py</url>
           <line>11</line>
           <option name="timeStamp" value="1037" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/Anaconda3/envs/python37/Lib/site-packages/torch/jit/__init__.py</url>
           <line>355</line>
           <option name="timeStamp" value="1040" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/Anaconda3/envs/python37/Lib/site-packages/torch/jit/__init__.py</url>
           <line>362</line>
           <option name="timeStamp" value="1041" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/Anaconda3/envs/python37/Lib/site-packages/torch/jit/__init__.py</url>
           <line>349</line>
           <option name="timeStamp" value="1045" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/Anaconda3/envs/mmdet/Lib/site-packages/mmcv/utils/registry.py</url>
           <line>160</line>
           <option name="timeStamp" value="1051" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/mmdet/models/detectors/two_stage.py</url>
           <line>91</line>
           <option name="timeStamp" value="1052" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/python练习/map_test.py</url>
           <line>7</line>
           <option name="timeStamp" value="1097" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/tools/convert_datasets/pascal_voc.py</url>
           <line>88</line>
           <option name="timeStamp" value="1114" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/demo/image_demo.py</url>
           <line>38</line>
           <option name="timeStamp" value="1129" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/demo/image_demo.py</url>
           <line>42</line>
           <option name="timeStamp" value="1130" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ObjectDetetion/main.py</url>
           <line>11</line>
           <option name="timeStamp" value="1131" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py</url>
           <line>369</line>
           <option name="timeStamp" value="1138" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/Anaconda3/envs/webpy37/Lib/site-packages/flask_backstage/mongoengine/__init__.py</url>
           <line>1</line>
           <option name="timeStamp" value="1141" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_DeepBlue/ZoomingSlowMo/Zooming-Slow-Mo-CVPR-2020-test/codes/testBig.py</url>
           <line>78</line>
           <option name="timeStamp" value="1142" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_DeepBlue/ZoomingSlowMo/Zooming-Slow-Mo-CVPR-2020-test/codes/test.py</url>
           <line>52</line>
           <option name="timeStamp" value="1143" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_Classification/MobileNetV2/data/convert.py</url>
           <line>3</line>
           <option name="timeStamp" value="1195" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/Anaconda3/envs/py37paddle/Lib/site-packages/paddleocr/paddleocr.py</url>
           <line>14</line>
           <option name="timeStamp" value="1201" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_Classification/MobileNetV2/train.py</url>
           <line>149</line>
           <option name="timeStamp" value="1207" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_Classification/MobileNetV2/train.py</url>
           <line>183</line>
           <option name="timeStamp" value="1210" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_paddle/PaddleOCR/tools/infer_rec.py</url>
           <line>175</line>
           <option name="timeStamp" value="1228" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_paddle/PaddleOCR/tools/infer_rec.py</url>
           <line>173</line>
           <option name="timeStamp" value="1229" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn_ctc_ocr_tf/tools/test.py</url>
           <line>122</line>
           <option name="timeStamp" value="1246" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn_ctc_ocr_tf/tools/test.py</url>
           <line>143</line>
           <option name="timeStamp" value="1250" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_paddle/PaddleOCR/tools/program.py</url>
           <line>435</line>
           <option name="timeStamp" value="1255" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_paddle/PaddleOCR/ppocr/utils/character.py</url>
           <line>14</line>
           <option name="timeStamp" value="1292" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_paddle/PaddleOCR/ppocr/data/rec/dataset_traversal.py</url>
           <line>253</line>
           <option name="timeStamp" value="1338" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_paddle/PaddleOCR/tools/infer/predict_system.py</url>
           <line>15</line>
           <option name="timeStamp" value="1359" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/01work/DeepBlueDet/01codes/01yolov5/yolov5/models/yolo.py</url>
           <line>249</line>
           <option name="timeStamp" value="1363" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/01work/DeepBlueDet/01codes/01yolov5/yolov5/train.py</url>
           <line>36</line>
           <option name="timeStamp" value="1381" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/01work/DeepBlueDet/01codes/01yolov5/yolov5/utils/datasets.py</url>
           <line>755</line>
           <option name="timeStamp" value="1386" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/01work/DeepBlueDet/01codes/01yolov5/yolov5/utils/datasets.py</url>
           <line>690</line>
           <option name="timeStamp" value="1387" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/01work/DeepBlueDet/01codes/01yolov5/yolov5/utils/datasets.py</url>
           <line>801</line>
           <option name="timeStamp" value="1388" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/01work/DeepBlueDet/01codes/01yolov5/yolov5/utils/datasets.py</url>
           <line>625</line>
           <option name="timeStamp" value="1389" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/opencvFun/04图片/imread.py</url>
           <line>18</line>
           <option name="timeStamp" value="1390" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/Anaconda3/envs/mmdet/Lib/site-packages/torchvision/datasets/folder.py</url>
           <line>122</line>
           <option name="timeStamp" value="1398" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_BackBone/RepVGG/test.py</url>
           <line>97</line>
           <option name="timeStamp" value="1401" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_BackBone/RepVGG/test.py</url>
           <line>93</line>
           <option name="timeStamp" value="1402" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_BackBone/RepVGG/test.py</url>
           <line>33</line>
           <option name="timeStamp" value="1403" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_BackBone/RepVGG/convert.py</url>
           <line>32</line>
           <option name="timeStamp" value="1406" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/01work/DeepBlueDet/01codes/paddlepaddle/PaddleOCR_github/tools/program.py</url>
           <line>425</line>
           <option name="timeStamp" value="1410" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/01work/DeepBlueDet/01codes/paddlepaddle/PaddleOCR_github/tools/program.py</url>
           <line>421</line>
           <option name="timeStamp" value="1412" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_paddle/PaddleOCR_beifen/ppocr/data/rec/img_tools.py</url>
           <line>349</line>
           <option name="timeStamp" value="1415" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_paddle/PaddleOCR_beifen/ppocr/data/rec/img_tools.py</url>
           <line>172</line>
           <option name="timeStamp" value="1416" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/01work/DeepBlueDet/01codes/tongli/Kone_Led/Main.py</url>
           <line>153</line>
           <option name="timeStamp" value="1422" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/shuaipp-tensorflow_lstm_ctc_ocr-master/tensorflow_lstm_ctc_ocr/utils.py</url>
           <line>78</line>
           <option name="timeStamp" value="1425" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/01work/DeepBlueDet/01codes/ningbo/合并图片.py</url>
           <line>64</line>
           <option name="timeStamp" value="1426" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/utils/general.py</url>
           <line>294</line>
           <option name="timeStamp" value="1432" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter03/firstMainWin.py</url>
           <line>12</line>
           <option name="timeStamp" value="1433" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation/preprocess_dsb2018.py</url>
           <line>32</line>
           <option name="timeStamp" value="1435" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$APPLICATION_HOME_DIR$/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_comm.py</url>
           <line>292</line>
           <option name="timeStamp" value="1444" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation/val_one_img.py</url>
           <line>49</line>
           <option name="timeStamp" value="1449" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation/val_one_img.py</url>
           <line>47</line>
           <option name="timeStamp" value="1450" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation/val_one_img.py</url>
           <line>40</line>
           <option name="timeStamp" value="1451" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/trainer/trainer.py</url>
           <line>46</line>
           <option name="timeStamp" value="1459" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/base/base_dataset.py</url>
           <line>48</line>
           <option name="timeStamp" value="1461" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/tools/train.py</url>
           <line>62</line>
           <option name="timeStamp" value="1479" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/utils/__init__.py</url>
           <line>3</line>
           <option name="timeStamp" value="1480" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/tools/train.py</url>
           <line>46</line>
           <option name="timeStamp" value="1484" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/models/neck/FPN.py</url>
           <line>40</line>
           <option name="timeStamp" value="1491" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/chineseocr_lite_dage/model.py</url>
           <line>86</line>
           <option name="timeStamp" value="1501" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/chineseocr_lite_dage/model.py</url>
           <line>234</line>
           <option name="timeStamp" value="1502" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/chineseocr_lite_dage/crnn/CRNN.py</url>
           <line>64</line>
           <option name="timeStamp" value="1503" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/chineseocr_lite_dage/model.py</url>
           <line>31</line>
           <option name="timeStamp" value="1504" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/chineseocr_lite_dage/model.py</url>
           <line>27</line>
           <option name="timeStamp" value="1505" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/Anaconda3/envs/python38/Lib/site-packages/warpctc_pytorch-0.1-py3.8-win-amd64.egg/warpctc_pytorch/_warp_ctc.py</url>
           <line>5</line>
           <option name="timeStamp" value="1509" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../huggingmolecules/src/huggingmolecules/downloading/downloading_utils.py</url>
           <line>21</line>
           <option name="timeStamp" value="1528" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../huggingmolecules/test.py</url>
           <line>12</line>
           <option name="timeStamp" value="1529" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../huggingmolecules/test.py</url>
           <line>13</line>
           <option name="timeStamp" value="1530" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn.pytorch/train.py</url>
           <line>98</line>
           <option name="timeStamp" value="1542" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn.pytorch/models/crnn.py</url>
           <line>25</line>
           <option name="timeStamp" value="1547" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn.pytorch/models/crnn.py</url>
           <line>77</line>
           <option name="timeStamp" value="1550" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn.pytorch/models/crnn.py</url>
           <line>59</line>
           <option name="timeStamp" value="1551" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn.pytorch/models/crnn.py</url>
           <line>103</line>
           <option name="timeStamp" value="1552" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn.pytorch/models/crnn.py</url>
           <line>98</line>
           <option name="timeStamp" value="1554" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn.pytorch/train.py</url>
           <line>185</line>
           <option name="timeStamp" value="1556" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn.pytorch/train.py</url>
           <line>186</line>
           <option name="timeStamp" value="1557" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_OCR/crnn.pytorch/train.py</url>
           <line>81</line>
           <option name="timeStamp" value="1558" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/Anaconda3/envs/python38/Lib/site-packages/warpctc_pytorch-0.1-py3.8-win-amd64.egg/warpctc_pytorch/__init__.py</url>
           <line>77</line>
           <option name="timeStamp" value="1559" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/Easy_HMM/Dice_01.py</url>
           <line>23</line>
           <option name="timeStamp" value="1566" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/Easy_HMM/hmm.py</url>
           <line>313</line>
           <option name="timeStamp" value="1577" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/Easy_HMM/hmm.py</url>
           <line>131</line>
           <option name="timeStamp" value="1579" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/Easy_HMM/hmm.py</url>
           <line>128</line>
           <option name="timeStamp" value="1580" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/Easy_HMM/hmm.py</url>
           <line>137</line>
           <option name="timeStamp" value="1581" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/Easy_HMM/hmm.py</url>
           <line>142</line>
           <option name="timeStamp" value="1582" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/Easy_HMM/Dice_01.py</url>
           <line>22</line>
           <option name="timeStamp" value="1583" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/Easy_HMM/hmm.py</url>
           <line>250</line>
           <option name="timeStamp" value="1584" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_MLs/Easy_HMM/hmm.py</url>
           <line>268</line>
           <option name="timeStamp" value="1585" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://D:/01sheepy/0/trunk/dentalTrain.py</url>
           <line>260</line>
           <option name="timeStamp" value="1586" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/03leetcode/001两数之和.py</url>
           <line>22</line>
           <option name="timeStamp" value="1587" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py</url>
           <line>631</line>
           <option name="timeStamp" value="1588" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py</url>
           <line>485</line>
           <option name="timeStamp" value="1590" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ3 明明的随机数.py</url>
           <line>2</line>
           <option name="timeStamp" value="1593" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ6 质数因子.py</url>
           <line>5</line>
           <option name="timeStamp" value="1595" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ16 购物单-优化前.py</url>
           <line>31</line>
           <option name="timeStamp" value="1610" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ16 购物单-优化前.py</url>
           <line>17</line>
           <option name="timeStamp" value="1611" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ16 购物单.py</url>
           <line>20</line>
           <option name="timeStamp" value="1620" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py</url>
           <line>49</line>
           <option name="timeStamp" value="1625" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py</url>
           <line>70</line>
           <option name="timeStamp" value="1626" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py</url>
           <line>72</line>
           <option name="timeStamp" value="1627" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ18 识别有效的IP地址和掩码并进行分类统计.py</url>
           <line>74</line>
           <option name="timeStamp" value="1628" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ19 简单错误记录.py</url>
           <line>5</line>
           <option name="timeStamp" value="1630" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ19 简单错误记录.py</url>
           <line>14</line>
           <option name="timeStamp" value="1631" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ24 合唱队-二分法.py</url>
           <line>34</line>
           <option name="timeStamp" value="1642" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ24 合唱队-二分法.py</url>
           <line>20</line>
           <option name="timeStamp" value="1643" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ24 合唱队-二分法.py</url>
           <line>17</line>
           <option name="timeStamp" value="1645" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ25 数据分类处理02.py</url>
           <line>19</line>
           <option name="timeStamp" value="1648" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ25 数据分类处理.py</url>
           <line>8</line>
           <option name="timeStamp" value="1650" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ26 字符串排序.py</url>
           <line>6</line>
           <option name="timeStamp" value="1652" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ27 查找兄弟单词.py</url>
           <line>28</line>
           <option name="timeStamp" value="1655" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ28 素数伴侣.py</url>
           <line>43</line>
           <option name="timeStamp" value="1657" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ28 素数伴侣.py</url>
           <line>41</line>
           <option name="timeStamp" value="1659" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/05算法/01匈牙利算法.py</url>
           <line>221</line>
           <option name="timeStamp" value="1660" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py</url>
           <line>177</line>
           <option name="timeStamp" value="1668" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py</url>
           <line>300</line>
           <option name="timeStamp" value="1669" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py</url>
           <line>315</line>
           <option name="timeStamp" value="1671" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py</url>
+          <line>216</line>
+          <option name="timeStamp" value="1672" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py</url>
+          <line>333</line>
+          <option name="timeStamp" value="1673" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="1674" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py</url>
+          <line>259</line>
+          <option name="timeStamp" value="1678" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py</url>
+          <line>855</line>
+          <option name="timeStamp" value="1679" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py</url>
+          <line>207</line>
+          <option name="timeStamp" value="1680" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AI_track/SPPtest.py</url>
+          <line>129</line>
+          <option name="timeStamp" value="1682" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AI_track/SPPtest.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="1684" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AI_track/SPPtest.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="1685" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AI_track/SPPtest.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="1686" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1843,8 +1911,9 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="l_ls" language="Python" />
         <watch expression="d['backbone']" language="Python" />
+        <watch expression="d['head']" language="Python" />
+        <watch expression="m" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -1927,7 +1996,8 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$gamblers_problem.coverage" NAME="gamblers_problem Coverage Results" MODIFIED="1575472478715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$full_code.coverage" NAME="full_code Coverage Results" MODIFIED="1562327730781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/莫凡Tensorflow学习笔记/tensorflowTUT/tf5_example2" />
     <SUITE FILE_PATH="coverage/MyMLStudy$ten_armed_testbed.coverage" NAME="ten_armed_testbed Coverage Results" MODIFIED="1575360540468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter02" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1668300512852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/yolov5" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1669571360641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/yolov5" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$SPPtest.coverage" NAME="SPPtest Coverage Results" MODIFIED="1669631847420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AI_track" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mainEntry.coverage" NAME="mainEntry Coverage Results" MODIFIED="1572948659625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务2：PyQt5编写GUI界面" />
     <SUITE FILE_PATH="coverage/MyMLStudy$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1602421995934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Anaconda3/envs/mmdet/Lib/site-packages/utils" />
     <SUITE FILE_PATH="coverage/MyMLStudy$lenet5.coverage" NAME="lenet5 Coverage Results" MODIFIED="1610552230124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorchx/lenet" />
@@ -2158,6 +2228,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$p17_rabbit_50.coverage" NAME="p17_rabbit_50 Coverage Results" MODIFIED="1594006089199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode/practice" />
     <SUITE FILE_PATH="coverage/MyMLStudy$FirstWin__1_.coverage" NAME="FirstWin (1) Coverage Results" MODIFIED="1622429934647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter01/EricPro01" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p2e.coverage" NAME="p2e Coverage Results" MODIFIED="1624260287893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/01work/07xiling/pyqtdraw" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$common.coverage" NAME="common Coverage Results" MODIFIED="1669631083660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models" />
     <SUITE FILE_PATH="coverage/MyMLStudy$AlexNet_tf.coverage" NAME="AlexNet_tf Coverage Results" MODIFIED="1593602272272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DeepLearning/CNN/AlexNet" />
     <SUITE FILE_PATH="coverage/MyMLStudy$fitline.coverage" NAME="fitline Coverage Results" MODIFIED="1573384281232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial/官方samples" />
     <SUITE FILE_PATH="coverage/MyMLStudy$01.coverage" NAME="01匈牙利算法 Coverage Results" MODIFIED="1667866197848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/05算法" />
