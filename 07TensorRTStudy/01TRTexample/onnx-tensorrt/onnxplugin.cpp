@@ -284,7 +284,6 @@ namespace ONNXPlugin {
 	}
 
 	void TRTPlugin::pluginInit(const std::string& name, const std::string& info, const std::vector<std::shared_ptr<Weight>>& weights) {
-		printf("\pluginInit name = %s\n", name.c_str());
 		phase_ = CompilePhase;
 		layerName_ = name;
 		config_ = this->new_config();

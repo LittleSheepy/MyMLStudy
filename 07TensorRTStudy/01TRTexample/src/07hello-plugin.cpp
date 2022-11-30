@@ -36,7 +36,7 @@ bool build_model07(){
     // 通过onnxparser解析器解析的结果会填充到network中，类似addConv的方式添加进去
     nvonnxparser::IParser* parser = nvonnxparser::createParser(*network, logger);
     printf("\n==================开始parseFromFile=========================\n");
-    if(!parser->parseFromFile("demo.onnx", 1)){
+    if(!parser->parseFromFile("07demo.onnx", 1)){
         printf("Failed to parse demo.onnx\n");
 
         // 注意这里的几个指针还没有释放，是有内存泄漏的，后面考虑更优雅的解决

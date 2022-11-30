@@ -11,7 +11,7 @@ class MYSELUImpl(torch.autograd.Function):
     @staticmethod
     def symbolic(g, x, p):
         print("==================================call symbolic")
-        return g.op("MYSELU", x, p, 
+        return g.op("MYSELU07", x, p,
             g.op("Constant", value_t=torch.tensor([3, 2, 1], dtype=torch.float32)),
             attr1_s="this is string pro",
             attr2_i=[1, 2, 3], 
