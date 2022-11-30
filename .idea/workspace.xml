@@ -46,7 +46,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../aFolder_YOLO/yolov5" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -101,7 +101,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.2/yolov5-6.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="python.debugger.dataview.autoresize" value="false" />
@@ -612,6 +612,7 @@
       <workItem from="1668298668097" duration="4161000" />
       <workItem from="1668659827722" duration="644000" />
       <workItem from="1669550394172" duration="17611000" />
+      <workItem from="1669780374951" duration="582000" />
     </task>
     <servers />
   </component>
@@ -632,9 +633,10 @@
     </state>
     <state width="644" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668296085449" />
     <state width="1398" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669571509671" />
-    <state x="2606" y="-92" key="FileChooserDialogImpl" timestamp="1669641316242">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1669780506894">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669780506894" />
     <state x="2606" y="-92" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641316242" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
     <state width="1493" height="271" key="GridCell.Tab.0.bottom" timestamp="1669776524370">
@@ -661,9 +663,10 @@
     <state width="1493" height="271" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669776524370" />
     <state width="1877" height="112" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641771224" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state x="2381" y="-142" key="SettingsEditor" timestamp="1669641768048">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state x="369" y="119" key="SettingsEditor" timestamp="1669780636098">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="369" y="119" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669780636098" />
     <state x="2381" y="-142" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641768048" />
     <state x="2371" y="-48" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1669571374803">
       <screen x="1920" y="-309" width="1920" height="1050" />
