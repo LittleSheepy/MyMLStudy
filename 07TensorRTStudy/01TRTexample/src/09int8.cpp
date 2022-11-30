@@ -16,16 +16,30 @@
 #include <math.h>
 
 #include <iostream>
+#include <string>
+#include <locale>
+#include <codecvt>
+#include <fstream>
+#include <codecvt>
+#include <array>
+#include <xlocbuf>
+
+#include <iostream>
 #include <fstream>
 #include <vector>
 #include <memory>
 #include <functional>
+
+#ifdef WIN32
+#include <windows.h>
+#else
 #include <unistd.h>
-
+#endif
+#include <Shlwapi.h>
 #include <opencv2/opencv.hpp>
-
+#include "common.h"
 using namespace std;
-
+#pragma comment(lib, "Shlwapi.lib")
 #define checkRuntime(op)  __check_cuda_runtime((op), #op, __FILE__, __LINE__)
 
 bool __check_cuda_runtime(cudaError_t code, const char* op, const char* file, int line){
@@ -37,44 +51,6 @@ bool __check_cuda_runtime(cudaError_t code, const char* op, const char* file, in
     }
     return true;
 }
-
-inline const char* severity_string(nvinfer1::ILogger::Severity t){
-    switch(t){
-        case nvinfer1::ILogger::Severity::kINTERNAL_ERROR: return "internal_error";
-        case nvinfer1::ILogger::Severity::kERROR:   return "error";
-        case nvinfer1::ILogger::Severity::kWARNING: return "warning";
-        case nvinfer1::ILogger::Severity::kINFO:    return "info";
-        case nvinfer1::ILogger::Severity::kVERBOSE: return "verbose";
-        default: return "unknow";
-    }
-}
-
-class TRTLogger : public nvinfer1::ILogger{
-public:
-    virtual void log(Severity severity, nvinfer1::AsciiChar const* msg) noexcept override{
-        if(severity <= Severity::kINFO){
-            // 打印带颜色的字符，格式如下：
-            // printf("\033[47;33m打印的文本\033[0m");
-            // 其中 \033[ 是起始标记
-            //      47    是背景颜色
-            //      ;     分隔符
-            //      33    文字颜色
-            //      m     开始标记结束
-            //      \033[0m 是终止标记
-            // 其中背景颜色或者文字颜色可不写
-            // 部分颜色代码 https://blog.csdn.net/ericbar/article/details/79652086
-            if(severity == Severity::kWARNING){
-                printf("\033[33m%s: %s\033[0m\n", severity_string(severity), msg);
-            }
-            else if(severity <= Severity::kERROR){
-                printf("\033[31m%s: %s\033[0m\n", severity_string(severity), msg);
-            }
-            else{
-                printf("%s: %s\n", severity_string(severity), msg);
-            }
-        }
-    }
-} logger;
 
 typedef std::function<void(
     int current, int count, const std::vector<std::string>& files, 
@@ -198,9 +174,9 @@ static bool exists(const string& path){
 }
 
 // 上一节的代码
-bool build_model(){
+bool build_model09(){
 
-    if(exists("engine.trtmodel")){
+    if(exists("09engine.trtmodel")){
         printf("Engine.trtmodel has exists.\n");
         return true;
     }
@@ -217,7 +193,7 @@ bool build_model(){
 
     // 通过onnxparser解析器解析的结果会填充到network中，类似addConv的方式添加进去
     auto parser = make_nvshared(nvonnxparser::createParser(*network, logger));
-    if(!parser->parseFromFile("classifier.onnx", 1)){
+    if(!parser->parseFromFile("09classifier.onnx", 1)){
         printf("Failed to parse classifier.onnx\n");
 
         // 注意这里的几个指针还没有释放，是有内存泄漏的，后面考虑更优雅的解决
@@ -270,7 +246,7 @@ bool build_model(){
 
     // 配置int8标定数据读取工具
     shared_ptr<Int8EntropyCalibrator> calib(new Int8EntropyCalibrator(
-        {"kej.jpg"}, input_dims, preprocess
+        {"../files/kej.jpg"}, input_dims, preprocess
     ));
     config->setInt8Calibrator(calib.get());
     
@@ -293,7 +269,7 @@ bool build_model(){
 
     // 将模型序列化，并储存为文件
     auto model_data = make_nvshared(engine->serialize());
-    FILE* f = fopen("engine.trtmodel", "wb");
+    FILE* f = fopen("09engine.trtmodel", "wb");
     fwrite(model_data->data(), 1, model_data->size(), f);
     fclose(f);
 
@@ -308,24 +284,81 @@ bool build_model(){
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+string to_string(const wstring& str, const locale& loc = locale())
+{
+    vector<char>buf(str.size());
+    use_facet<ctype<wchar_t>>(loc).narrow(str.data(), str.data() + str.size(), '*', buf.data());
+    return string(buf.data(), buf.size());
+}
+#include <Windows.h>
+//将wstring转换成string  
+string wstring2string(wstring wstr)
+{
+    string result;
+    //获取缓冲区大小，并申请空间，缓冲区大小事按字节计算的  
+    int len = WideCharToMultiByte(CP_ACP, 0, wstr.c_str(), wstr.size(), NULL, 0, NULL, NULL);
+    char* buffer = new char[len + 1];
+    //宽字节编码转换成多字节编码  
+    WideCharToMultiByte(CP_ACP, 0, wstr.c_str(), wstr.size(), buffer, len, NULL, NULL);
+    buffer[len] = '\0';
+    //删除缓冲区并返回值  
+    result.append(buffer);
+    delete[] buffer;
+    return result;
+}
 
-vector<unsigned char> load_file(const string& file){
-    ifstream in(file, ios::in | ios::binary);
-    if (!in.is_open())
-        return {};
+std::string UnicodeToAscii(const std::wstring str)
+{
+    int	iTextLen = WideCharToMultiByte(CP_ACP, 0, str.c_str(), -1, NULL, 0, NULL, NULL);
+    std::vector<char> vecText(iTextLen, '\0');
+    ::WideCharToMultiByte(CP_ACP, 0, str.c_str(), -1, &(vecText[0]), iTextLen, NULL, NULL);
 
-    in.seekg(0, ios::end);
-    size_t length = in.tellg();
+    std::string strText = &(vecText[0]);
 
-    std::vector<uint8_t> data;
-    if (length > 0){
-        in.seekg(0, ios::beg);
-        data.resize(length);
+    return strText;
+}
+std::string UTF8ToString(const std::string& utf8Data)
+{
+    //先将UTF-8转换成Unicode
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> conv;
+    std::wstring wString = conv.from_bytes(utf8Data);
+    //在转换成string
+    //return wstring2string(wString);
+    return UnicodeToAscii(wString);
+    //return wString;
+}
 
-        in.read((char*)&data[0], length);
+constexpr char const* rc = "?"; // replacement_char
+// table mapping ISO-8859-1 characters to similar ASCII characters
+std::array<char const*, 96> conversions = { {
+   " ",  "!","c","L", rc,"Y", "|","S", rc,"C","a","<<",   rc,  "-",  "R", "-",
+    rc,"+/-","2","3","'","u", "P",".",",","1","o",">>","1/4","1/2","3/4", "?",
+   "A",  "A","A","A","A","A","AE","C","E","E","E", "E",  "I",  "I",  "I", "I",
+   "D",  "N","O","O","O","O", "O","*","0","U","U", "U",  "U",  "Y",  "P","ss",
+   "a",  "a","a","a","a","a","ae","c","e","e","e", "e",  "i",  "i",  "i", "i",
+   "d",  "n","o","o","o","o", "o","/","0","u","u", "u",  "u",  "y",  "p", "y"
+} };
+template <class Facet>
+class usable_facet : public Facet {
+public:
+    using Facet::Facet;
+    ~usable_facet() {}
+};
+std::string to_ascii(std::string const& utf8) {
+    std::wstring_convert<usable_facet<std::codecvt<char32_t, char, std::mbstate_t>>,
+        char32_t> convert;
+    std::u32string utf32 = convert.from_bytes(utf8);
+
+    std::string ascii;
+    for (char32_t c : utf32) {
+        if (c <= U'\u007F')
+            ascii.push_back(static_cast<char>(c));
+        else if (U'\u00A0' <= c && c <= U'\u00FF')
+            ascii.append(conversions[c - U'\u00A0']);
+        else
+            ascii.append(rc);
     }
-    in.close();
-    return data;
+    return ascii;
 }
 
 vector<string> load_labels(const char* file){
@@ -345,10 +378,10 @@ vector<string> load_labels(const char* file){
     return lines;
 }
 
-void inference(){
+void inference09(){
 
     TRTLogger logger;
-    auto engine_data = load_file("engine.trtmodel");
+    auto engine_data = load_file("09engine.trtmodel");
     auto runtime   = make_nvshared(nvinfer1::createInferRuntime(logger));
     auto engine = make_nvshared(runtime->deserializeCudaEngine(engine_data.data(), engine_data.size()));
     if(engine == nullptr){
@@ -373,7 +406,7 @@ void inference(){
 
     ///////////////////////////////////////////////////
     // image to float
-    auto image = cv::imread("kej.jpg");
+    auto image = cv::imread("../files/kej.jpg");
     float mean[] = {0.406, 0.456, 0.485};
     float std[]  = {0.225, 0.224, 0.229};
 
@@ -411,10 +444,11 @@ void inference(){
 
     float* prob = output_data_host;
     int predict_label = std::max_element(prob, prob + num_classes) - prob;
-    auto labels = load_labels("labels.imagenet.txt");
+    auto labels = load_labels("../files/labels.imagenet.txt");
     auto predict_name = labels[predict_label];
     float confidence  = prob[predict_label];
-    printf("Predict: %s, confidence = %f, label = %d\n", predict_name.c_str(), confidence, predict_label);
+    printf("Predict: %s , confidence = %f, label = %d\n", predict_name.c_str(), confidence, predict_label);
+    std::cout << predict_name<<std::endl;
 
     checkRuntime(cudaStreamDestroy(stream));
     checkRuntime(cudaFreeHost(input_data_host));
@@ -422,10 +456,10 @@ void inference(){
     checkRuntime(cudaFree(output_data_device));
 }
 
-int main(){
-    if(!build_model()){
-        return -1;
-    }
-    inference();
+int int8(){
+    //if(!build_model09()){
+    //    return -1;
+    //}
+    inference09();
     return 0;
 }

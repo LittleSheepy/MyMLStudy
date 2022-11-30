@@ -14,6 +14,7 @@ int CNNUseAPI();
 int onnx_parser();
 int hello_plugin();
 int integrate_easyplugin();
+int int8();
 
 int main(){
     // 更改控制台输出编码 —— 65001表示UTF-8编码格式
@@ -23,6 +24,7 @@ int main(){
     //CNNUseAPI();
     //onnx_parser();
     //hello_plugin();
-    integrate_easyplugin();
+    //integrate_easyplugin();
+    int8();
     return 0;
 }

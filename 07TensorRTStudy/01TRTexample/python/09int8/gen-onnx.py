@@ -18,8 +18,8 @@ class Classifier(torch.nn.Module):
 imagenet_mean = [0.485, 0.456, 0.406]
 imagenet_std  = [0.229, 0.224, 0.225]
 
-#image = cv2.imread("../../files/kej.jpg")
-image = cv2.imread("../../files/jinmao.jpg")
+image = cv2.imread("../../files/kej.jpg")
+#image = cv2.imread("../../files/jinmao.jpg")
 image = cv2.resize(image, (224, 224))            # resize
 image = image[..., ::-1]                         # BGR -> RGB
 image = image / 255.0

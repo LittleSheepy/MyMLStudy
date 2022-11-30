@@ -49,13 +49,13 @@ void TRTLogger::log(Severity severity, nvinfer1::AsciiChar const* msg) noexcept 
         // 其中背景颜色或者文字颜色可不写
         // 部分颜色代码 https://blog.csdn.net/ericbar/article/details/79652086
         if (severity == Severity::kWARNING) {
-            printf("\033[33m%s: %s\033[0m\n", severity_string(severity), msg);
+            printf("===\033[33m>>>>%s: %s\033[0m\n", severity_string(severity), msg);
         }
         else if (severity <= Severity::kERROR) {
-            printf("\033[31m%s: %s\033[0m\n", severity_string(severity), msg);
+            printf("===\033[31m>>>>%s: %s\033[0m\n", severity_string(severity), msg);
         }
         else {
-            printf("%s: %s\n", severity_string(severity), msg);
+            printf("===>>>>%s: %s\n", severity_string(severity), msg);
         }
     }
 }
