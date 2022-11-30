@@ -16,12 +16,12 @@ static __global__ void MYSELU_kernel_fp32(const float* x, float* output, int edg
     output[position] = x[position] * sigmoid(x[position]);
 }
 
-class MYSELU08 : public TRTPlugin {
+class MYSELU : public TRTPlugin {
 public:
-	SetupPlugin(MYSELU08);
+	SetupPlugin(MYSELU);
 
 	virtual void config_finish() override{
-		printf("\033[33minit MYSELU08 config: %s\033[0m\n", config_->info_.c_str());
+		printf("\033[33minit MYSELU config: %s\033[0m\n", config_->info_.c_str());
 		printf("weights count is %d\n", config_->weights_.size());
 	}
 
@@ -37,4 +37,4 @@ public:
 	}
 };
 
-RegisterPlugin(MYSELU08);
+RegisterPlugin(MYSELU);
