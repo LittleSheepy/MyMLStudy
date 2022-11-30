@@ -10,7 +10,6 @@
     <orderEntry type="module" module-name="PaddleOCR" />
     <orderEntry type="module" module-name="yolov5" />
     <orderEntry type="module" module-name="yolov5-6.2" />
-    <orderEntry type="module" module-name="python" />
-    <orderEntry type="module" module-name="python" />
+    <orderEntry type="module" module-name="onnx-tensorrt" />
   </component>
 </module>

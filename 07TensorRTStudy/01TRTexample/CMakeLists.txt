@@ -27,6 +27,7 @@ option(CUDA_USE_STATIC_CUDA_RUNTIME OFF)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Ofast -D_MWAITXINTRIN_H_INCLUDED")
 
 include_directories(${PROJECT_SOURCE_DIR}/include/)
+include_directories(${PROJECT_SOURCE_DIR}/include/onnx-tensorrt-release-8.0/)
 include_directories(${PROJECT_SOURCE_DIR}/)
 
 # setup CUDA
@@ -67,14 +68,19 @@ message("===message=========================================")
 
 FILE(GLOB SRC_FILES "src/*.cpp")
 FILE(GLOB SRC_CU_FILES "src/*.cu")
-FILE(GLOB INC_FILES "include/*.h")
+FILE(GLOB INC_FILES "include/*.h" "include/*.hpp")
+FILE(GLOB ONNX_TRT_INC_FILES "include/onnx-tensorrt-release-8.0/*.hpp" "include/onnx-tensorrt-release-8.0/*.h")
+source_group("Header Files\\onnx-tensorrt-release-8.0" FILES ${ONNX_TRT_INC_FILES})
+
+FILE(GLOB ONNXPlugin_INC_FILES "ONNXPlugin/*.*")
+source_group("ONNXPlugin" FILES ${ONNXPlugin_INC_FILES})
 
 #生成目标文件
-add_executable(${PROJECT_NAME} ${SRC_FILES} ${SRC_CU_FILES} ${INC_FILES})
+add_executable(${PROJECT_NAME} ${SRC_FILES} ${SRC_CU_FILES} ${INC_FILES} ${ONNX_TRT_INC_FILES} ${ONNXPlugin_INC_FILES})
 
 target_link_libraries(${PROJECT_NAME} ${YOLOV4_LIB_NAME})
 target_link_libraries(${PROJECT_NAME} ${YOLOV5_LIB_NAME})
-target_link_libraries(${PROJECT_NAME} nvinfer cudart nvinfer_plugin ${CUDA_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} nvinfer cudart nvinfer_plugin nvonnxparser nvparsers ${CUDA_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 target_link_libraries(${PROJECT_NAME} Threads::Threads)
 
