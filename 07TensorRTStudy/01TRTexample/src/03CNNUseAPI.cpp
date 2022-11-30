@@ -13,27 +13,10 @@
 #include <iostream> 
 #include <fstream> // 后面要用到ios这个库
 #include <vector>
-
+#include "common.h"
 using namespace std;
 
-class TRTLogger : public nvinfer1::ILogger{
-public:
-    virtual void log(Severity severity, nvinfer1::AsciiChar const* msg) noexcept override{
-        if(severity <= Severity::kINFO){
-            printf("%d: %s\n", severity, msg);
-        }
-    }
-} logger;
-
-nvinfer1::Weights make_weights(float* ptr, int n){
-    nvinfer1::Weights w;
-    w.count = n;
-    w.type = nvinfer1::DataType::kFLOAT;
-    w.values = ptr;
-    return w;
-}
-
-bool build_model(){
+bool build_model03(){
     TRTLogger logger;
 
     // ----------------------------- 1. 定义 builder, config 和network -----------------------------
@@ -104,7 +87,7 @@ bool build_model(){
     // -------------------------- 3. 序列化 ----------------------------------
     // 将模型序列化，并储存为文件
     nvinfer1::IHostMemory* model_data = engine->serialize();
-    FILE* f = fopen("engine.trtmodel", "wb");
+    FILE* f = fopen("03engine.trtmodel", "wb");
     fwrite(model_data->data(), 1, model_data->size(), f);
     fclose(f);
 
@@ -118,29 +101,10 @@ bool build_model(){
     return true;
 }
 
-vector<unsigned char> load_file(const string& file){
-    ifstream in(file, ios::in | ios::binary);
-    if (!in.is_open())
-        return {};
-
-    in.seekg(0, ios::end);
-    size_t length = in.tellg();
-
-    std::vector<uint8_t> data;
-    if (length > 0){
-        in.seekg(0, ios::beg);
-        data.resize(length);
-
-        in.read((char*)&data[0], length);
-    }
-    in.close();
-    return data;
-}
-
-void inference(){
+void inference03(){
     // ------------------------------- 1. 加载model并反序列化 -------------------------------
     TRTLogger logger;
-    auto engine_data = load_file("engine.trtmodel");
+    auto engine_data = load_file("03engine.trtmodel");
     nvinfer1::IRuntime* runtime   = nvinfer1::createInferRuntime(logger);
     nvinfer1::ICudaEngine* engine = runtime->deserializeCudaEngine(engine_data.data(), engine_data.size());
     if(engine == nullptr){
@@ -183,7 +147,8 @@ void inference(){
     int ib = 2;
     int iw = 3;
     int ih = 3;
-    float output_data_host[ib * iw * ih];
+    //float output_data_host[ib * iw * ih];
+    float output_data_host[18];
     float* output_data_device = nullptr;
     cudaMalloc(&input_data_device, sizeof(input_data_host));
     cudaMalloc(&output_data_device, sizeof(output_data_host));
@@ -218,11 +183,11 @@ void inference(){
     runtime->destroy();
 }
 
-int main(){
+int CNNUseAPI(){
 
-    if(!build_model()){
+    if(!build_model03()){
         return -1;
     }
-    inference();
+    inference03();
     return 0;
 }

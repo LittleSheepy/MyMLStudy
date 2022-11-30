@@ -9,9 +9,11 @@
 #include <stdio.h>
 int build_model();
 int hello_inference();
+int CNNUseAPI();
 
 int main(){
     //build_model();
-    hello_inference();
+    //hello_inference();
+    CNNUseAPI();
     return 0;
 }
