@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/AI_track/SPPcode.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/gen_wts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI_track/SPPtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI_track/SPPtest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" afterDir="false" />
@@ -46,7 +46,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../aFolder_YOLO/yolov5" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -101,7 +101,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aFolder_YOLO/yolov5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.2/yolov5-6.2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="python.debugger.dataview.autoresize" value="false" />
@@ -109,40 +109,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myGitHub\aFolder_paddle\PaddleOCR_mytest\imgs" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myGitHub\aFolder_YOLO\01yolov5s\yolov5-6.2\yolov5-6.2" />
       <recent name="D:\01sheepy\0\trunk\dental" />
       <recent name="D:\01sheepy\0\trunk\detectron2" />
       <recent name="D:\01sheepy\01work\07xiling\pyqtdraw" />
       <recent name="D:\myGitHub\aFolder_MLs\unet-pp-Medical-cell-segmentation" />
-      <recent name="D:\myGitHub\MyMLStudy\data\lmdb_Data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myGitHub\aFolder_paddle\PaddleOCR_mytest\imgs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.SPPtest">
-    <configuration name="HJ30 字符串合并处理" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MyMLStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe/HJ30 字符串合并处理.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.gen_wts">
     <configuration name="SPPcode" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -209,6 +187,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="gen_wts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="yolov5-6.2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.2/yolov5-6.2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.2/yolov5-6.2/gen_wts.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yolov5" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -232,19 +232,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.HJ30 字符串合并处理" />
       <item itemvalue="Python.train" />
       <item itemvalue="Python.common" />
       <item itemvalue="Python.SPPtest" />
       <item itemvalue="Python.SPPcode" />
+      <item itemvalue="Python.gen_wts" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.gen_wts" />
         <item itemvalue="Python.SPPtest" />
         <item itemvalue="Python.SPPcode" />
         <item itemvalue="Python.common" />
         <item itemvalue="Python.train" />
-        <item itemvalue="Python.HJ30 字符串合并处理" />
       </list>
     </recent_temporary>
   </component>
@@ -611,7 +611,7 @@
       <workItem from="1668234548279" duration="6623000" />
       <workItem from="1668298668097" duration="4161000" />
       <workItem from="1668659827722" duration="644000" />
-      <workItem from="1669550394172" duration="14102000" />
+      <workItem from="1669550394172" duration="17611000" />
     </task>
     <servers />
   </component>
@@ -632,47 +632,48 @@
     </state>
     <state width="644" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1668296085449" />
     <state width="1398" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669571509671" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1665502872686">
+    <state x="2606" y="-92" key="FileChooserDialogImpl" timestamp="1669641316242">
+      <screen x="1920" y="-309" width="1920" height="1050" />
+    </state>
+    <state x="2606" y="-92" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641316242" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
+    <state width="1493" height="271" key="GridCell.Tab.0.bottom" timestamp="1669776524370">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
-    <state width="1877" height="317" key="GridCell.Tab.0.bottom" timestamp="1669634029113">
-      <screen x="1920" y="-309" width="1920" height="1050" />
-    </state>
-    <state width="1493" height="413" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907018" />
-    <state width="1877" height="317" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669634029113" />
+    <state width="1493" height="271" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669776524370" />
+    <state width="1877" height="112" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641771224" />
     <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="317" key="GridCell.Tab.0.center" timestamp="1669634029113">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state width="1493" height="271" key="GridCell.Tab.0.center" timestamp="1669776524370">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="413" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907017" />
-    <state width="1877" height="317" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669634029113" />
+    <state width="1493" height="271" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669776524370" />
+    <state width="1877" height="112" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641771224" />
     <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="317" key="GridCell.Tab.0.left" timestamp="1669634029113">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state width="1493" height="271" key="GridCell.Tab.0.left" timestamp="1669776524370">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="413" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907016" />
-    <state width="1877" height="317" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669634029113" />
+    <state width="1493" height="271" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669776524370" />
+    <state width="1877" height="112" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641771224" />
     <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="317" key="GridCell.Tab.0.right" timestamp="1669634029113">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state width="1493" height="271" key="GridCell.Tab.0.right" timestamp="1669776524370">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="413" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630907017" />
-    <state width="1877" height="317" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669634029113" />
+    <state width="1493" height="271" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669776524370" />
+    <state width="1877" height="112" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641771224" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state x="2381" y="-142" key="SettingsEditor" timestamp="1669631380207">
+    <state x="2381" y="-142" key="SettingsEditor" timestamp="1669641768048">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state x="2381" y="-142" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631380207" />
+    <state x="2381" y="-142" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641768048" />
     <state x="2371" y="-48" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1669571374803">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state x="2371" y="-48" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669571374803" />
-    <state x="-6" y="0" width="1547" height="840" key="dock-window-1" timestamp="1669632002445">
+    <state x="-6" y="0" width="1547" height="840" key="dock-window-1" timestamp="1669727284037">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="-6" y="0" width="1547" height="840" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669630360405" />
-    <state x="-6" y="0" width="1547" height="840" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669632002445" />
+    <state x="-6" y="0" width="1547" height="840" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669727284037" />
+    <state x="-6" y="0" width="1547" height="840" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669648916895" />
     <state x="0" y="0" width="1550" height="920" key="dock-window-2" timestamp="1669631302910">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2024,7 +2025,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$PCA.coverage" NAME="PCA Coverage Results" MODIFIED="1576048053672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../PCA" />
     <SUITE FILE_PATH="coverage/MyMLStudy$Led_Rec.coverage" NAME="Led_Rec Coverage Results" MODIFIED="1614132053212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/01work/DeepBlueDet/01codes/tongli/Kone_Led/HandlePic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ25_02.coverage" NAME="HJ25 数据分类处理02 Coverage Results" MODIFIED="1666468878989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$gen_wts.coverage" NAME="gen_wts Coverage Results" MODIFIED="1621782568706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_detection/detectron2" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$gen_wts.coverage" NAME="gen_wts Coverage Results" MODIFIED="1669641771186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.2/yolov5-6.2" />
     <SUITE FILE_PATH="coverage/MyMLStudy$PCA__1_.coverage" NAME="PCA (1) Coverage Results" MODIFIED="1576049031000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../dimensionality_reduction_alo_codes/codes/PCA" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_Pendulum.coverage" NAME="run_Pendulum Coverage Results" MODIFIED="1574518692604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5.1_Double_DQN" />
     <SUITE FILE_PATH="coverage/MyMLStudy$grid_world__1_.coverage" NAME="grid_world (1) Coverage Results" MODIFIED="1575708135549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04" />

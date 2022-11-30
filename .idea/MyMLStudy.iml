@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PaddleOCR" />
     <orderEntry type="module" module-name="yolov5" />
+    <orderEntry type="module" module-name="yolov5-6.2" />
   </component>
 </module>
