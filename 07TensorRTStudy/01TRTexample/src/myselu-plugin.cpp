@@ -13,7 +13,7 @@ void myselu_inference(const float* x, float* output, int n, cudaStream_t stream)
 namespace
 {
 const char* MYSELU_PLUGIN_VERSION{"1"};  // 采用的名称要对应上onnx-tensorrt-release-8.0/builtin_op_importers.cpp:5094行定义的名称
-const char* MYSELU_PLUGIN_NAME{"MYSELU"};
+const char* MYSELU_PLUGIN_NAME{"MYSELU07"};
 } // namespace
 
 // 静态类字段的初始化

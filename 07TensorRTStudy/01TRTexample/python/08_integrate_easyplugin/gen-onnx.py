@@ -12,9 +12,9 @@ class MYSELUImpl(torch.autograd.Function):
     @staticmethod
     def symbolic(g, x, p):
         print("==================================call symbolic")
-        return g.op("Plugin", x, p, 
+        return g.op("Plugin", x, p,
             g.op("Constant", value_t=torch.tensor([3, 2, 1], dtype=torch.float32)),
-            name_s="MYSELU",
+            name_s="MYSELU08",
             info_s=json.dumps(
                 dict(
                     attr1_s="这是字符串属性", 

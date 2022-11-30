@@ -16,14 +16,29 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin)
 #设置库输出目录
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin)
 
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 #option 选项开关
 #启用后，将在中使用CUDA运行时库的静态版本CUDA_LIBRARIES。
 option(CUDA_USE_STATIC_CUDA_RUNTIME OFF)
+# 判断编译器类型
+if(MSVC)     
+    # Use the static C library for all build types
+    foreach(var 
+        CMAKE_C_FLAGS CMAKE_C_FLAGS_DEBUG CMAKE_C_FLAGS_RELEASE
+        CMAKE_C_FLAGS_MINSIZEREL CMAKE_C_FLAGS_RELWITHDEBINFO
+        CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
+        CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO CUDA_NVCC_FLAGS CUDAFE_FLAGS CUDAFE_FLAGS_DEBUG
+      )
+      if(${var} MATCHES "/MD")
+        string(REGEX REPLACE "/MD" "/MT" ${var} "${${var}}")
+      endif()
+    endforeach()    
+endif(MSVC)
 
 # -D_MWAITXINTRIN_H_INCLUDED for solving error: identifier "__builtin_ia32_mwaitx" is undefined
 ##-Wall  #-Wfatal-errors 
 #指定编译选项
-#set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -Wall")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -Wall -MTd")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Ofast -D_MWAITXINTRIN_H_INCLUDED")
 
 include_directories(${PROJECT_SOURCE_DIR}/include/)
@@ -31,7 +46,8 @@ include_directories(${PROJECT_SOURCE_DIR}/include/onnx-tensorrt-release-8.0/)
 include_directories(${PROJECT_SOURCE_DIR}/)
 
 # setup CUDA
-set(CUDA_NVCC_PLAGS ${CUDA_NVCC_PLAGS};-std=c++11; -g; -G;-gencode; arch=compute_75;code=sm_75)
+set(CUDA_NVCC_PLAGS ${CUDA_NVCC_PLAGS};-std=c++11; -g; -G; -w; -gencode; arch=compute_75;code=sm_75)
+#set(CUDAFE_FLAGS_DEBUG ${CUDAFE_FLAGS_DEBUG};/MTd)
 find_package(CUDA REQUIRED)
 include_directories(${CUDA_INCLUDE_DIRS})
 enable_language(CUDA)  # add this line, then no need to setup cuda path in vs
@@ -69,18 +85,29 @@ message("===message=========================================")
 FILE(GLOB SRC_FILES "src/*.cpp")
 FILE(GLOB SRC_CU_FILES "src/*.cu")
 FILE(GLOB INC_FILES "include/*.h" "include/*.hpp")
-FILE(GLOB ONNX_TRT_INC_FILES "include/onnx-tensorrt-release-8.0/*.hpp" "include/onnx-tensorrt-release-8.0/*.h")
-source_group("Header Files\\onnx-tensorrt-release-8.0" FILES ${ONNX_TRT_INC_FILES})
 
-FILE(GLOB ONNXPlugin_INC_FILES "ONNXPlugin/*.*")
-source_group("ONNXPlugin" FILES ${ONNXPlugin_INC_FILES})
+include_directories(${PROJECT_SOURCE_DIR}/onnx/)
+FILE(GLOB onnx_INC_FILES "onnx/*.*")
+source_group("onnx" FILES ${onnx_INC_FILES})
+
+include_directories(${PROJECT_SOURCE_DIR}/onnx-tensorrt/)
+FILE(GLOB onnx_tensorrt_INC_FILES "onnx-tensorrt/*.*")
+source_group("onnx-tensorrt" FILES ${onnx_tensorrt_INC_FILES})
+
+##protobuf3.11.4
+include_directories(${PROJECT_SOURCE_DIR}/third/protobuf3.11.4/include/)
+link_directories(${PROJECT_SOURCE_DIR}/third/protobuf3.11.4/lib/)
 
 #生成目标文件
-add_executable(${PROJECT_NAME} ${SRC_FILES} ${SRC_CU_FILES} ${INC_FILES} ${ONNX_TRT_INC_FILES} ${ONNXPlugin_INC_FILES})
+add_executable(${PROJECT_NAME} ${SRC_FILES} ${SRC_CU_FILES} ${INC_FILES} 
+			${onnx_INC_FILES}
+			${onnx_tensorrt_INC_FILES}
+		)
 
 target_link_libraries(${PROJECT_NAME} ${YOLOV4_LIB_NAME})
 target_link_libraries(${PROJECT_NAME} ${YOLOV5_LIB_NAME})
 target_link_libraries(${PROJECT_NAME} nvinfer cudart nvinfer_plugin nvonnxparser nvparsers ${CUDA_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 target_link_libraries(${PROJECT_NAME} Threads::Threads)
+target_link_libraries(${PROJECT_NAME} libprotobufd)
 

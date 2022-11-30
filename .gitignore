@@ -16,3 +16,4 @@ DeepLearning/CNN/ResNet/models/resnet/resnet.meta
 06CUDA编程/01CUDAexamples/CUDAbase/x64/
 07TensorRTStudy/01TRTexample/build/
 07TensorRTStudy/01TRTexample/bin/
+07TensorRTStudy/01TRTexample/third/

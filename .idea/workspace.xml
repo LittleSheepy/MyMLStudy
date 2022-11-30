@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/.idea/onnx-tensorrt.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/gen_wts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/04onnx-editor/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/05onnx-parser/gen-onnx.py" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/05onnx-parser/gen-onnx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/05onnx_parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/05onnx_parser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/common.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/common.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/ONNXPlugin/onnxplugin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/ONNXPlugin/onnxplugin.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/ONNXPlugin/onnxplugin.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/ONNXPlugin/onnxplugin.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/07hello_plugin/gen-onnx.py" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/07hello_plugin/gen-onnx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/08_integrate_easyplugin/gen-onnx.py" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/08_integrate_easyplugin/gen-onnx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/07hello-plugin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/07hello-plugin.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/easy-plugin.cu" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/easy-plugin.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/myselu-plugin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/myselu-plugin.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/onnx_tensorrt/backend.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/onnx_tensorrt/backend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" afterDir="false" />
@@ -122,6 +117,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myGitHub\aFolder_paddle\PaddleOCR_mytest\imgs" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\myGitHub\aFolder_YOLO\01yolov5s\yolov5-6.2\yolov5-6.2" />
       <recent name="D:\01sheepy\0\trunk\dental" />
@@ -129,11 +127,8 @@
       <recent name="D:\01sheepy\01work\07xiling\pyqtdraw" />
       <recent name="D:\myGitHub\aFolder_MLs\unet-pp-Medical-cell-segmentation" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myGitHub\aFolder_paddle\PaddleOCR_mytest\imgs" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.gen-onnx (2)">
+  <component name="RunManager" selected="Python.gen-onnx (3)">
     <configuration name="gen-onnx (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -178,7 +173,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="gen-onnx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="gen-onnx (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -186,12 +181,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/05onnx-parser" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/09int8" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/05onnx-parser/gen-onnx.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/09int8/gen-onnx.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -245,19 +240,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.gen-onnx" />
       <item itemvalue="Python.setup" />
       <item itemvalue="Python.setup (1)" />
       <item itemvalue="Python.gen-onnx (1)" />
       <item itemvalue="Python.gen-onnx (2)" />
+      <item itemvalue="Python.gen-onnx (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.gen-onnx (3)" />
         <item itemvalue="Python.gen-onnx (2)" />
         <item itemvalue="Python.gen-onnx (1)" />
         <item itemvalue="Python.setup (1)" />
         <item itemvalue="Python.setup" />
-        <item itemvalue="Python.gen-onnx" />
       </list>
     </recent_temporary>
   </component>
@@ -625,7 +620,7 @@
       <workItem from="1668298668097" duration="4161000" />
       <workItem from="1668659827722" duration="644000" />
       <workItem from="1669550394172" duration="17611000" />
-      <workItem from="1669780374951" duration="13840000" />
+      <workItem from="1669780374951" duration="20762000" />
     </task>
     <servers />
   </component>
@@ -658,34 +653,34 @@
     </state>
     <state width="1010" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669788774907" />
     <state width="1398" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669571509671" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1669789239994">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1669802269463">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669789239994" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669802269463" />
     <state x="2606" y="-92" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641316242" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
-    <state width="1493" height="471" key="GridCell.Tab.0.bottom" timestamp="1669799230901">
+    <state width="1493" height="440" key="GridCell.Tab.0.bottom" timestamp="1669821859734">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669799230901" />
+    <state width="1493" height="440" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669821859734" />
     <state width="1877" height="112" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641771224" />
     <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="471" key="GridCell.Tab.0.center" timestamp="1669799230901">
+    <state width="1493" height="440" key="GridCell.Tab.0.center" timestamp="1669821859734">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669799230901" />
+    <state width="1493" height="440" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669821859734" />
     <state width="1877" height="112" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641771224" />
     <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="471" key="GridCell.Tab.0.left" timestamp="1669799230901">
+    <state width="1493" height="440" key="GridCell.Tab.0.left" timestamp="1669821859734">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669799230901" />
+    <state width="1493" height="440" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669821859734" />
     <state width="1877" height="112" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641771224" />
     <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="471" key="GridCell.Tab.0.right" timestamp="1669799230901">
+    <state width="1493" height="440" key="GridCell.Tab.0.right" timestamp="1669821859734">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669799230901" />
+    <state width="1493" height="440" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669821859734" />
     <state width="1877" height="112" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641771224" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
     <state x="296" y="22" key="SettingsEditor" timestamp="1669789284286">
@@ -706,6 +701,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="0" y="0" width="1550" height="920" key="dock-window-2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631302909" />
+    <state x="447" y="150" width="642" height="534" key="find.popup" timestamp="1669802380018">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="447" y="150" width="642" height="534" key="find.popup/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669802380018" />
     <state x="2459" y="-114" width="840" height="854" key="search.everywhere.popup" timestamp="1669633427038">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
@@ -1944,21 +1943,6 @@
           <line>67</line>
           <option name="timeStamp" value="1690" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/07hello_plugin/gen-onnx.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="1696" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://D:/Anaconda3/envs/python38/Lib/site-packages/torch/onnx/utils.py</url>
-          <line>205</line>
-          <option name="timeStamp" value="1697" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://D:/Anaconda3/envs/python38/Lib/site-packages/torch/onnx/__init__.py</url>
-          <line>312</line>
-          <option name="timeStamp" value="1698" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1987,7 +1971,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_mouse_drawing_exercise2.coverage" NAME="cv2_mouse_drawing_exercise2 Coverage Results" MODIFIED="1572948559544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/番外篇06. 鼠标绘图" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cliff_walking.coverage" NAME="cliff_walking Coverage Results" MODIFIED="1575812042992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06" />
     <SUITE FILE_PATH="coverage/MyMLStudy$grid_world.coverage" NAME="grid_world Coverage Results" MODIFIED="1575649040000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter03" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx__2_.coverage" NAME="gen-onnx (2) Coverage Results" MODIFIED="1669799230869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/08_integrate_easyplugin" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx__2_.coverage" NAME="gen-onnx (2) Coverage Results" MODIFIED="1669817767437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/08_integrate_easyplugin" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_this__2_.coverage" NAME="run_this (2) Coverage Results" MODIFIED="1574253388763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/4_Sarsa_lambda_maze" />
     <SUITE FILE_PATH="coverage/MyMLStudy$get_xml_small_pic.coverage" NAME="get_xml_small_pic Coverage Results" MODIFIED="1619344565344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Data-Augment" />
     <SUITE FILE_PATH="coverage/MyMLStudy$test_ocr.coverage" NAME="test_ocr Coverage Results" MODIFIED="1623312151351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_OCR/ocr1" />
@@ -2059,6 +2043,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$ten_armed_testbed.coverage" NAME="ten_armed_testbed Coverage Results" MODIFIED="1575360540468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter02" />
     <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1669571360641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/yolov5" />
     <SUITE FILE_PATH="coverage/MyMLStudy$SPPtest.coverage" NAME="SPPtest Coverage Results" MODIFIED="1669634026003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AI_track" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx__3_.coverage" NAME="gen-onnx (3) Coverage Results" MODIFIED="1669821859694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/09int8" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mainEntry.coverage" NAME="mainEntry Coverage Results" MODIFIED="1572948659625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务2：PyQt5编写GUI界面" />
     <SUITE FILE_PATH="coverage/MyMLStudy$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1602421995934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Anaconda3/envs/mmdet/Lib/site-packages/utils" />
     <SUITE FILE_PATH="coverage/MyMLStudy$lenet5.coverage" NAME="lenet5 Coverage Results" MODIFIED="1610552230124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorchx/lenet" />
@@ -2118,7 +2103,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_save_video_to_file.coverage" NAME="cv2_save_video_to_file Coverage Results" MODIFIED="1572925475376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/03. 打开摄像头" />
     <SUITE FILE_PATH="coverage/MyMLStudy$faster_rcnn_r50_fpn_1x.coverage" NAME="faster_rcnn_r50_fpn_1x Coverage Results" MODIFIED="1602818352208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/aaaa/mudiban(include-camera-driver)/mudiban/work_dirs/faster_rcnn_r50_fpn_1x" />
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ1_.coverage" NAME="HJ1 字符串最后一个单词的长度 Coverage Results" MODIFIED="1665651613988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx__1_.coverage" NAME="gen-onnx (1) Coverage Results" MODIFIED="1669799215498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/07hello_plugin" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx__1_.coverage" NAME="gen-onnx (1) Coverage Results" MODIFIED="1669817626651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/07hello_plugin" />
     <SUITE FILE_PATH="coverage/MyMLStudy$image_demo.coverage" NAME="image_demo Coverage Results" MODIFIED="1602315957070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/demo" />
     <SUITE FILE_PATH="coverage/MyMLStudy$roi2onnx.coverage" NAME="roi2onnx Coverage Results" MODIFIED="1601197537816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../mudiban" />
     <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx.coverage" NAME="gen-onnx Coverage Results" MODIFIED="1669783310598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/05onnx-parser" />
