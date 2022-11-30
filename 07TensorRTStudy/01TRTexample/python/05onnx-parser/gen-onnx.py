@@ -31,7 +31,7 @@ torch.onnx.export(
     (dummy,), 
 
     # 储存的文件路径
-    "workspace/demo.onnx", 
+    "demo.onnx",
 
     # 打印详细信息
     verbose=True, 

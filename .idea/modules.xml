@@ -15,7 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" filepath="$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" />
       <module fileurl="file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" filepath="$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" />
       <module fileurl="file://$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" filepath="$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" />
-      <module fileurl="file://$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/.idea/python.iml" filepath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/.idea/python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/.idea/onnx-tensorrt.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/.idea/onnx-tensorrt.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/.idea/yolov5.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/.idea/yolov5.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.2/yolov5-6.2/.idea/yolov5-6.2.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.2/yolov5-6.2/.idea/yolov5-6.2.iml" />
     </modules>
