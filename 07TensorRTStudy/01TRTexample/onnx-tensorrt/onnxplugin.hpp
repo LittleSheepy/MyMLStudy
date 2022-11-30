@@ -4,8 +4,8 @@
 
 #include <memory>
 #include <vector>
-#include <set>
 #include <fstream>
+#include <set>
 
 #include <NvInfer.h>
 #include <NvInferRuntimeCommon.h>
@@ -189,7 +189,7 @@ namespace ONNXPlugin {
 	#define RegisterPlugin(class_)		\
 	class class_##PluginCreator__ : public nvinfer1::IPluginCreator{																				\
 	public:																																			\
-		const char* getPluginName() const noexcept override{return #class_;}																					\
+		const char* getPluginName() const noexcept override{printf("#class_ = %s\n",#class_);return #class_;}													\
 		const char* getPluginVersion() const noexcept override{return "1";}																					\
 		const nvinfer1::PluginFieldCollection* getFieldNames() noexcept override{return &mFieldCollection;}													\
 																																					\
@@ -201,7 +201,7 @@ namespace ONNXPlugin {
 		}																																			\
 																																					\
 		nvinfer1::IPluginV2DynamicExt* deserializePlugin(const char* name, const void* serialData, size_t serialLength) noexcept override{								\
-			auto plugin = new class_();																												\
+			printf("\ndeserializePlugin #class_ = %s\n",#class_);auto plugin = new class_();																												\
 			plugin->pluginInit(name, serialData, serialLength);																						\
 			mPluginName = name;																														\
 			return plugin;																															\
