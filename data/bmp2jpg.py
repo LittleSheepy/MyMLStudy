@@ -22,9 +22,11 @@ def deleteImages(file_path, imageFormat):
 
 def main():
  file_path = "D:/01sheepy\work/baojie_ocr\pendianword\img/"
+ file_path = r"D:\01sheepy\01work\02tongllidianti\0dataset\imgall\imgall1229\png\/"
  bmpToJpg(file_path)
  deleteImages(file_path, "bmp")
+ deleteImages(file_path, "png")
 
 
 if __name__ == '__main__':
- main()
+    main()
