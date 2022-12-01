@@ -11,5 +11,7 @@
     <orderEntry type="module" module-name="yolov5" />
     <orderEntry type="module" module-name="yolov5-6.2" />
     <orderEntry type="module" module-name="onnx-tensorrt" />
+    <orderEntry type="module" module-name="yolov5-6.0" />
+    <orderEntry type="module" module-name="yolov5-6.0-change" />
   </component>
 </module>

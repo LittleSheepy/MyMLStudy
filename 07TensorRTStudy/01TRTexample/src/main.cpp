@@ -16,6 +16,8 @@ int hello_plugin();
 int integrate_easyplugin();
 int int8();
 int plugin_3rd();
+int full_cnn_classifier();
+int yolov5_detect();
 
 int main(){
     // 更改控制台输出编码 —— 65001表示UTF-8编码格式
@@ -27,6 +29,8 @@ int main(){
     //hello_plugin();
     //integrate_easyplugin();
     //int8();
-    plugin_3rd();
+    //plugin_3rd();
+    //full_cnn_classifier();
+    yolov5_detect();
     return 0;
 }

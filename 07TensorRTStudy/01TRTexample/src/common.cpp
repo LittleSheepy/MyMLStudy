@@ -1,5 +1,34 @@
 #include "common.h"
 #include <stdio.h>
+
+
+#include <iostream>
+#include <string>
+#include <locale>
+#include <codecvt>
+#include <fstream>
+#include <codecvt>
+#include <array>
+#include <xlocbuf>
+#include <Shlwapi.h>
+#pragma comment(lib, "Shlwapi.lib")
+bool exists(const string& path) {
+
+#ifdef _WIN32
+    return ::PathFileExistsA(path.c_str());
+#else
+    return access(path.c_str(), R_OK) == 0;
+#endif
+}
+bool __check_cuda_runtime(cudaError_t code, const char* op, const char* file, int line) {
+    if (code != cudaSuccess) {
+        const char* err_name = cudaGetErrorName(code);
+        const char* err_message = cudaGetErrorString(code);
+        printf("runtime error %s:%d  %s failed. \n  code = %s, message = %s\n", file, line, op, err_name, err_message);
+        return false;
+    }
+    return true;
+}
 nvinfer1::Weights make_weights(float* ptr, int n) {
     nvinfer1::Weights w;
     w.count = n;
@@ -58,4 +87,98 @@ void TRTLogger::log(Severity severity, nvinfer1::AsciiChar const* msg) noexcept 
             printf("===>>>>%s: %s\n", severity_string(severity), msg);
         }
     }
+}
+
+string to_string(const wstring& str, const locale& loc = locale())
+{
+    vector<char>buf(str.size());
+    use_facet<ctype<wchar_t>>(loc).narrow(str.data(), str.data() + str.size(), '*', buf.data());
+    return string(buf.data(), buf.size());
+}
+#include <Windows.h>
+//将wstring转换成string  
+string wstring2string(wstring wstr)
+{
+    string result;
+    //获取缓冲区大小，并申请空间，缓冲区大小事按字节计算的  
+    int len = WideCharToMultiByte(CP_ACP, 0, wstr.c_str(), wstr.size(), NULL, 0, NULL, NULL);
+    char* buffer = new char[len + 1];
+    //宽字节编码转换成多字节编码  
+    WideCharToMultiByte(CP_ACP, 0, wstr.c_str(), wstr.size(), buffer, len, NULL, NULL);
+    buffer[len] = '\0';
+    //删除缓冲区并返回值  
+    result.append(buffer);
+    delete[] buffer;
+    return result;
+}
+
+std::string UnicodeToAscii(const std::wstring str)
+{
+    int	iTextLen = WideCharToMultiByte(CP_ACP, 0, str.c_str(), -1, NULL, 0, NULL, NULL);
+    std::vector<char> vecText(iTextLen, '\0');
+    ::WideCharToMultiByte(CP_ACP, 0, str.c_str(), -1, &(vecText[0]), iTextLen, NULL, NULL);
+
+    std::string strText = &(vecText[0]);
+
+    return strText;
+}
+std::string UTF8ToString(const std::string& utf8Data)
+{
+    //先将UTF-8转换成Unicode
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> conv;
+    std::wstring wString = conv.from_bytes(utf8Data);
+    //在转换成string
+    //return wstring2string(wString);
+    return UnicodeToAscii(wString);
+    //return wString;
+}
+
+constexpr char const* rc = "?"; // replacement_char
+// table mapping ISO-8859-1 characters to similar ASCII characters
+std::array<char const*, 96> conversions = { {
+   " ",  "!","c","L", rc,"Y", "|","S", rc,"C","a","<<",   rc,  "-",  "R", "-",
+    rc,"+/-","2","3","'","u", "P",".",",","1","o",">>","1/4","1/2","3/4", "?",
+   "A",  "A","A","A","A","A","AE","C","E","E","E", "E",  "I",  "I",  "I", "I",
+   "D",  "N","O","O","O","O", "O","*","0","U","U", "U",  "U",  "Y",  "P","ss",
+   "a",  "a","a","a","a","a","ae","c","e","e","e", "e",  "i",  "i",  "i", "i",
+   "d",  "n","o","o","o","o", "o","/","0","u","u", "u",  "u",  "y",  "p", "y"
+} };
+template <class Facet>
+class usable_facet : public Facet {
+public:
+    using Facet::Facet;
+    ~usable_facet() {}
+};
+std::string to_ascii(std::string const& utf8) {
+    std::wstring_convert<usable_facet<std::codecvt<char32_t, char, std::mbstate_t>>,
+        char32_t> convert;
+    std::u32string utf32 = convert.from_bytes(utf8);
+
+    std::string ascii;
+    for (char32_t c : utf32) {
+        if (c <= U'\u007F')
+            ascii.push_back(static_cast<char>(c));
+        else if (U'\u00A0' <= c && c <= U'\u00FF')
+            ascii.append(conversions[c - U'\u00A0']);
+        else
+            ascii.append(rc);
+    }
+    return ascii;
+}
+
+vector<string> load_labels(const char* file) {
+    vector<string> lines;
+
+    ifstream in(file, ios::in | ios::binary);
+    if (!in.is_open()) {
+        printf("open %d failed.\n", file);
+        return lines;
+    }
+
+    string line;
+    while (getline(in, line)) {
+        lines.push_back(line);
+    }
+    in.close();
+    return lines;
 }

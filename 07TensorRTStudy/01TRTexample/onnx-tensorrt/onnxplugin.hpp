@@ -182,14 +182,14 @@ namespace ONNXPlugin {
 	};
 
 	#define SetupPlugin(class_)			\
-		virtual const char* getPluginType() const noexcept override{return #class_;};																		\
+		virtual const char* getPluginType() const noexcept override{printf("Plugin getPluginType #class_ = %s\n",#class_);return #class_;};																		\
 		virtual const char* getPluginVersion() const noexcept override{return "1";};																			\
 		virtual nvinfer1::IPluginV2DynamicExt* clone() const noexcept override{return new class_(*this);}
 
 	#define RegisterPlugin(class_)		\
 	class class_##PluginCreator__ : public nvinfer1::IPluginCreator{																				\
 	public:																																			\
-		const char* getPluginName() const noexcept override{printf("#class_ = %s\n",#class_);return #class_;}													\
+		const char* getPluginName() const noexcept override{printf("Creator getPluginName#class_ = %s\n",#class_);return #class_;}													\
 		const char* getPluginVersion() const noexcept override{return "1";}																					\
 		const nvinfer1::PluginFieldCollection* getFieldNames() noexcept override{return &mFieldCollection;}													\
 																																					\
