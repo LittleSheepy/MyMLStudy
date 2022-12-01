@@ -2,28 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/gen_wts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/14retinaface-detect.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/14retinaface-detect.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/files/image-draw.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/files/image-draw.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/files/input-image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/files/input-image.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/15unet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/15unet.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/onnx_tensorrt/backend.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/onnx_tensorrt/backend.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/third_party/onnx" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/third_party/onnx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/benchmarks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/benchmarks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/classify/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/classify/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/classify/val.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/classify/val.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/detect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/export.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/models/yolo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/segment/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/segment/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/segment/val.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/segment/val.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/utils/activations.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/utils/activations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/val.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/val.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +102,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.6-chinese-classifer-bert/Bert-Chinese-Text-Classification" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.10-yolov5-obb/yolov5_obb" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="python.debugger.dataview.autoresize" value="false" />
@@ -129,80 +115,14 @@
       <recent name="D:\myGitHub\aFolder_paddle\PaddleOCR_mytest\imgs" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myGitHub\aFolder_NVIDIA\learning-cuda-trt\tensorrt-integrate-1.8-alphapose\AlphaPose-change\pretrained_models" />
       <recent name="D:\myGitHub\MyMLStudy\09ONNX\01examples" />
       <recent name="D:\myGitHub\aFolder_NVIDIA\learning-cuda-trt\tensorrt-integrate-1.2-yolov5-detect\yolov5-6.0" />
       <recent name="D:\myGitHub\aFolder_YOLO\01yolov5s\yolov5-6.2\yolov5-6.2" />
       <recent name="D:\01sheepy\0\trunk\dental" />
-      <recent name="D:\01sheepy\0\trunk\detectron2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="00shape节点处理" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MyMLStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/09ONNX/01examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\myGitHub\MyMLStudy\09ONNX\01examples\00shape节点处理.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="export (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="yolov5-6.0-change" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="D:\Anaconda3\envs\python38\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.2-yolov5-detect/yolov5-6.0-change" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.2-yolov5-detect/yolov5-6.0-change/export.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="export (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="unet-pytorch-change" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="D:\Anaconda3\envs\python38\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.5-unet/unet-pytorch-change" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.5-unet/unet-pytorch-change/export.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="export" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yolov5-6.0" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -225,21 +145,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Bert-Chinese-Text-Classification" />
+    <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="yolov5_obb" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="D:\Anaconda3\envs\python38\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.6-chinese-classifer-bert/Bert-Chinese-Text-Classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.10-yolov5-obb/yolov5_obb/utils/nms_rotated" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.6-chinese-classifer-bert/Bert-Chinese-Text-Classification/run.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.10-yolov5-obb/yolov5_obb/utils/nms_rotated/setup.py" />
+      <option name="PARAMETERS" value="build" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -247,20 +167,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.00shape节点处理" />
-      <item itemvalue="Python.export" />
-      <item itemvalue="Python.export (1)" />
-      <item itemvalue="Python.export (2)" />
-      <item itemvalue="Python.run" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.export (2)" />
+        <item itemvalue="Python.setup" />
         <item itemvalue="Python.export" />
-        <item itemvalue="Python.export (1)" />
-        <item itemvalue="Python.00shape节点处理" />
       </list>
     </recent_temporary>
   </component>
@@ -628,7 +538,7 @@
       <workItem from="1668298668097" duration="4161000" />
       <workItem from="1668659827722" duration="644000" />
       <workItem from="1669550394172" duration="17611000" />
-      <workItem from="1669780374951" duration="48493000" />
+      <workItem from="1669780374951" duration="55384000" />
     </task>
     <servers />
   </component>
@@ -644,10 +554,10 @@
     </state>
     <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669550402245" />
     <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834@0.0.1536.834" timestamp="1665506315244" />
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1669915257658">
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1669933356285">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669915257658" />
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669933356285" />
     <state x="500" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1669783349895">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -668,6 +578,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="477" y="72" key="#export_(2)/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669917408636" />
+    <state x="477" y="72" key="#export_(3)" timestamp="1669928688345">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="477" y="72" key="#export_(3)/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669928688345" />
     <state x="477" y="72" key="#gen-onnx" timestamp="1669783232611">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -676,6 +590,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="477" y="72" key="#run/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669918414994" />
+    <state x="477" y="72" key="#setup" timestamp="1669931816813">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="477" y="72" key="#setup/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669931816813" />
     <state x="477" y="72" key="#setup_(1)" timestamp="1669786590384">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -685,34 +603,34 @@
     </state>
     <state width="1010" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669912497557" />
     <state width="1398" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669906919099" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1669918131541">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1669931060479">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669918131541" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669931060479" />
     <state x="2606" y="-92" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641316242" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1669919322860">
+    <state width="1493" height="351" key="GridCell.Tab.0.bottom" timestamp="1669933357244">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669919322860" />
+    <state width="1493" height="351" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669933357244" />
     <state width="1877" height="235" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669913573846" />
     <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1669919322859">
+    <state width="1493" height="351" key="GridCell.Tab.0.center" timestamp="1669933357244">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669919322859" />
+    <state width="1493" height="351" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669933357244" />
     <state width="1877" height="235" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669913573846" />
     <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1669919322859">
+    <state width="1493" height="351" key="GridCell.Tab.0.left" timestamp="1669933357243">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669919322859" />
+    <state width="1493" height="351" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669933357243" />
     <state width="1877" height="235" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669913573846" />
     <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1669919322859">
+    <state width="1493" height="351" key="GridCell.Tab.0.right" timestamp="1669933357244">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669919322859" />
+    <state width="1493" height="351" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669933357244" />
     <state width="1877" height="235" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669913573846" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
     <state x="296" y="22" key="SettingsEditor" timestamp="1669915043331">
@@ -2051,6 +1969,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$app.coverage" NAME="app Coverage Results" MODIFIED="1602518995435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/code/gccv3/gccv3/UIServer" />
     <SUITE FILE_PATH="coverage/MyMLStudy$04_.coverage" NAME="04 循环神经网络 Coverage Results" MODIFIED="1573912756238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/TensorFlow2学习笔记" />
     <SUITE FILE_PATH="coverage/MyMLStudy$model.coverage" NAME="model Coverage Results" MODIFIED="1623309617734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_OCR/chineseocr_lite_dage" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$export__3_.coverage" NAME="export Coverage Results" MODIFIED="1669930426645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.8-alphapose/AlphaPose-change" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_histogram.coverage" NAME="cv2_histogram Coverage Results" MODIFIED="1573011388721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/15. 直方图" />
     <SUITE FILE_PATH="coverage/MyMLStudy$ctc_loss__1_.coverage" NAME="ctc_loss (1) Coverage Results" MODIFIED="1605194563174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../CTC-loss-introduction/src_code/numpy_ctc" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run.coverage" NAME="run Coverage Results" MODIFIED="1669919322830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.6-chinese-classifer-bert/Bert-Chinese-Text-Classification" />
@@ -2084,7 +2003,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$tf_hello.coverage" NAME="tf_hello Coverage Results" MODIFIED="1574090473181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow" />
     <SUITE FILE_PATH="coverage/MyMLStudy$eval.coverage" NAME="eval Coverage Results" MODIFIED="1622630022374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/" />
     <SUITE FILE_PATH="coverage/MyMLStudy$Dice_01.coverage" NAME="Dice_01 Coverage Results" MODIFIED="1624843352106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/Easy_HMM" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$setup.coverage" NAME="setup Coverage Results" MODIFIED="1669785850108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/06-onnx-parser-source-code/onnx-tensorrt-release-8.0" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$setup.coverage" NAME="setup Coverage Results" MODIFIED="1669933357207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.10-yolov5-obb/yolov5_obb/utils/nms_rotated" />
     <SUITE FILE_PATH="coverage/MyMLStudy$gamblers_problem.coverage" NAME="gamblers_problem Coverage Results" MODIFIED="1575472478715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$full_code.coverage" NAME="full_code Coverage Results" MODIFIED="1562327730781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/莫凡Tensorflow学习笔记/tensorflowTUT/tf5_example2" />
     <SUITE FILE_PATH="coverage/MyMLStudy$ten_armed_testbed.coverage" NAME="ten_armed_testbed Coverage Results" MODIFIED="1575360540468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter02" />

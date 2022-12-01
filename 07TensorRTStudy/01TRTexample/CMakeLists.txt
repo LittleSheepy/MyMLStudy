@@ -97,6 +97,10 @@ source_group("onnx-tensorrt" FILES ${onnx_tensorrt_INC_FILES})
 ##protobuf3.11.4
 include_directories(${PROJECT_SOURCE_DIR}/third/protobuf3.11.4/include/)
 link_directories(${PROJECT_SOURCE_DIR}/third/protobuf3.11.4/lib/)
+##onnxruntime-win-x64-gpu-1.10.0
+include_directories(${PROJECT_SOURCE_DIR}/third/onnxruntime-win-x64-gpu-1.10.0/include/)
+link_directories(${PROJECT_SOURCE_DIR}/third/onnxruntime-win-x64-gpu-1.10.0/lib/)
+FILE(GLOB onnxruntime_LIBS "third/onnxruntime-win-x64-gpu-1.10.0/lib/*.lib")
 
 #生成目标文件
 add_executable(${PROJECT_NAME} ${SRC_FILES} ${SRC_CU_FILES} ${INC_FILES} 
@@ -110,4 +114,8 @@ target_link_libraries(${PROJECT_NAME} nvinfer cudart nvinfer_plugin nvonnxparser
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 target_link_libraries(${PROJECT_NAME} Threads::Threads)
 target_link_libraries(${PROJECT_NAME} libprotobufd)
+
+target_link_libraries(${PROJECT_NAME} ${onnxruntime_LIBS})
+
+
 

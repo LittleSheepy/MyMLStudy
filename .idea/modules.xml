@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" filepath="$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.6-chinese-classifer-bert/Bert-Chinese-Text-Classification/.idea/Bert-Chinese-Text-Classification.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.6-chinese-classifer-bert/Bert-Chinese-Text-Classification/.idea/Bert-Chinese-Text-Classification.iml" />
       <module fileurl="file://$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" filepath="$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" />
       <module fileurl="file://$PROJECT_DIR$/../GBDT/.idea/GBDT.iml" filepath="$PROJECT_DIR$/../GBDT/.idea/GBDT.iml" />
       <module fileurl="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/.idea/GBDT_Simple_Tutorial.iml" filepath="$PROJECT_DIR$/../GBDT_Simple_Tutorial/.idea/GBDT_Simple_Tutorial.iml" />
@@ -16,12 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" filepath="$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" />
       <module fileurl="file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" filepath="$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" />
       <module fileurl="file://$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" filepath="$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/.idea/onnx-tensorrt.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/onnx-tensorrt/.idea/onnx-tensorrt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.5-unet/unet-pytorch-change/.idea/unet-pytorch-change.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.5-unet/unet-pytorch-change/.idea/unet-pytorch-change.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/yolov5/.idea/yolov5.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/yolov5/.idea/yolov5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.2-yolov5-detect/yolov5-6.0/.idea/yolov5-6.0.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.2-yolov5-detect/yolov5-6.0/.idea/yolov5-6.0.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.2-yolov5-detect/yolov5-6.0-change/.idea/yolov5-6.0-change.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.2-yolov5-detect/yolov5-6.0-change/.idea/yolov5-6.0-change.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.2/yolov5-6.2/.idea/yolov5-6.2.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.2/yolov5-6.2/.idea/yolov5-6.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.10-yolov5-obb/yolov5_obb/.idea/yolov5_obb.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.10-yolov5-obb/yolov5_obb/.idea/yolov5_obb.iml" />
     </modules>
   </component>
 </project>
