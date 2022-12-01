@@ -86,7 +86,7 @@ torch.onnx.export(
     (dummy,), 
 
     # 储存的文件路径
-    "../../bin/10demo.onnx",
+    "../../bin/10demo01.onnx",
 
     # 打印详细信息
     verbose=False, 

@@ -30,138 +30,22 @@
 
 #include <chrono>
 #include <opencv2/opencv.hpp>
-#include <Shlwapi.h>
-#pragma comment(lib, "Shlwapi.lib")
 
 #include "common.h"
 
 using namespace std;
 
-typedef std::function<void(
-    int current, int count, const std::vector<std::string>& files, 
-    nvinfer1::Dims dims, float* ptensor
-)> Int8Process;
-
-// int8熵校准器：用于评估量化前后的分布改变
-class Int8EntropyCalibrator : public nvinfer1::IInt8EntropyCalibrator2
-{
-public:
-    Int8EntropyCalibrator(const vector<string>& imagefiles, nvinfer1::Dims dims, const Int8Process& preprocess) {
-
-        assert(preprocess != nullptr);
-        this->dims_ = dims;
-        this->allimgs_ = imagefiles;
-        this->preprocess_ = preprocess;
-        this->fromCalibratorData_ = false;
-        files_.resize(dims.d[0]);
-    }
-
-    // 这个构造函数，是允许从缓存数据中加载标定结果，这样不用重新读取图像处理
-    Int8EntropyCalibrator(const vector<uint8_t>& entropyCalibratorData, nvinfer1::Dims dims, const Int8Process& preprocess) {
-
-        assert(preprocess != nullptr);
-        this->dims_ = dims;
-        this->entropyCalibratorData_ = entropyCalibratorData;
-        this->preprocess_ = preprocess;
-        this->fromCalibratorData_ = true;
-        files_.resize(dims.d[0]);
-    }
-
-    virtual ~Int8EntropyCalibrator(){
-        if(tensor_host_ != nullptr){
-            checkRuntime(cudaFreeHost(tensor_host_));
-            checkRuntime(cudaFree(tensor_device_));
-            tensor_host_ = nullptr;
-            tensor_device_ = nullptr;
-        }
-    }
-
-    // 想要按照多少的batch进行标定
-    int getBatchSize() const noexcept {
-        return dims_.d[0];
-    }
-
-    bool next() {
-        int batch_size = dims_.d[0];
-        if (cursor_ + batch_size > allimgs_.size())
-            return false;
-
-        for(int i = 0; i < batch_size; ++i)
-            files_[i] = allimgs_[cursor_++];
-
-        if(tensor_host_ == nullptr){
-            size_t volumn = 1;
-            for(int i = 0; i < dims_.nbDims; ++i)
-                volumn *= dims_.d[i];
-            
-            bytes_ = volumn * sizeof(float);
-            checkRuntime(cudaMallocHost(&tensor_host_, bytes_));
-            checkRuntime(cudaMalloc(&tensor_device_, bytes_));
-        }
-
-        preprocess_(cursor_, allimgs_.size(), files_, dims_, tensor_host_);
-        checkRuntime(cudaMemcpy(tensor_device_, tensor_host_, bytes_, cudaMemcpyHostToDevice));
-        return true;
-    }
-
-    bool getBatch(void* bindings[], const char* names[], int nbBindings) noexcept {
-        if (!next()) return false;
-        bindings[0] = tensor_device_;
-        return true;
-    }
-
-    const vector<uint8_t>& getEntropyCalibratorData() {
-        return entropyCalibratorData_;
-    }
-
-    const void* readCalibrationCache(size_t& length) noexcept {
-        if (fromCalibratorData_) {
-            length = this->entropyCalibratorData_.size();
-            return this->entropyCalibratorData_.data();
-        }
-
-        length = 0;
-        return nullptr;
-    }
-
-    virtual void writeCalibrationCache(const void* cache, size_t length) noexcept {
-        entropyCalibratorData_.assign((uint8_t*)cache, (uint8_t*)cache + length);
-    }
-
-private:
-    Int8Process preprocess_;
-    vector<string> allimgs_;
-    size_t batchCudaSize_ = 0;
-    int cursor_ = 0;
-    size_t bytes_ = 0;
-    nvinfer1::Dims dims_;
-    vector<string> files_;
-    float* tensor_host_ = nullptr;
-    float* tensor_device_ = nullptr;
-    vector<uint8_t> entropyCalibratorData_;
-    bool fromCalibratorData_ = false;
-};
-
 // 通过智能指针管理nv返回的指针参数
 // 内存自动释放，避免泄漏
 template<typename _T>
-static shared_ptr<_T> make_nvshared(_T* ptr){
+shared_ptr<_T> make_nvshared(_T* ptr){
     return shared_ptr<_T>(ptr, [](_T* p){p->destroy();});
 }
 
-static bool exists(const string& path){
-
-#ifdef _WIN32
-    return ::PathFileExistsA(path.c_str());
-#else
-    return access(path.c_str(), R_OK) == 0;
-#endif
-}
-
 // 上一节的代码
-bool build_model09(){
+bool build_model11(){
 
-    if(exists("09engine.trtmodel")){
+    if(exists("11engine.trtmodel")){
         printf("Engine.trtmodel has exists.\n");
         return true;
     }
@@ -178,7 +62,7 @@ bool build_model09(){
 
     // 通过onnxparser解析器解析的结果会填充到network中，类似addConv的方式添加进去
     auto parser = make_nvshared(nvonnxparser::createParser(*network, logger));
-    if(!parser->parseFromFile("09classifier.onnx", 1)){
+    if(!parser->parseFromFile("11classifier.onnx", 1)){
         printf("Failed to parse classifier.onnx\n");
 
         // 注意这里的几个指针还没有释放，是有内存泄漏的，后面考虑更优雅的解决
@@ -194,54 +78,11 @@ bool build_model09(){
     auto profile = builder->createOptimizationProfile();
     auto input_tensor = network->getInput(0);
     auto input_dims = input_tensor->getDimensions();
-
-    input_dims.d[0] = 1;
-    config->setFlag(nvinfer1::BuilderFlag::kINT8);
-
-    auto preprocess = [](
-        int current, int count, const std::vector<std::string>& files, 
-        nvinfer1::Dims dims, float* ptensor
-    ){
-        printf("Preprocess %d / %d\n", count, current);
-
-        // 标定所采用的数据预处理必须与推理时一样
-        int width = dims.d[3];
-        int height = dims.d[2];
-        float mean[] = {0.406, 0.456, 0.485};
-        float std[]  = {0.225, 0.224, 0.229};
-
-        for(int i = 0; i < files.size(); ++i){
-
-            auto image = cv::imread(files[i]);
-            cv::resize(image, image, cv::Size(width, height));
-            int image_area = width * height;
-            unsigned char* pimage = image.data;
-            float* phost_b = ptensor + image_area * 0;
-            float* phost_g = ptensor + image_area * 1;
-            float* phost_r = ptensor + image_area * 2;
-            for(int i = 0; i < image_area; ++i, pimage += 3){
-                // 注意这里的顺序rgb调换了
-                *phost_r++ = (pimage[0] / 255.0f - mean[0]) / std[0];
-                *phost_g++ = (pimage[1] / 255.0f - mean[1]) / std[1];
-                *phost_b++ = (pimage[2] / 255.0f - mean[2]) / std[2];
-            }
-            ptensor += image_area * 3;
-        }
-    };
-
-    // 配置int8标定数据读取工具
-    shared_ptr<Int8EntropyCalibrator> calib(new Int8EntropyCalibrator(
-        {"../files/kej.jpg"}, input_dims, preprocess
-    ));
-    config->setInt8Calibrator(calib.get());
     
-    // 配置最小允许batch
+    // 配置最小、最优、最大范围
     input_dims.d[0] = 1;
     profile->setDimensions(input_tensor->getName(), nvinfer1::OptProfileSelector::kMIN, input_dims);
     profile->setDimensions(input_tensor->getName(), nvinfer1::OptProfileSelector::kOPT, input_dims);
-
-    // 配置最大允许batch
-    // if networkDims.d[i] != -1, then minDims.d[i] == optDims.d[i] == maxDims.d[i] == networkDims.d[i]
     input_dims.d[0] = maxBatchSize;
     profile->setDimensions(input_tensor->getName(), nvinfer1::OptProfileSelector::kMAX, input_dims);
     config->addOptimizationProfile(profile);
@@ -254,13 +95,8 @@ bool build_model09(){
 
     // 将模型序列化，并储存为文件
     auto model_data = make_nvshared(engine->serialize());
-    FILE* f = fopen("09engine.trtmodel", "wb");
+    FILE* f = fopen("11engine.trtmodel", "wb");
     fwrite(model_data->data(), 1, model_data->size(), f);
-    fclose(f);
-
-    f = fopen("calib.txt", "wb");
-    auto calib_data = calib->getEntropyCalibratorData();
-    fwrite(calib_data.data(), 1, calib_data.size(), f);
     fclose(f);
 
     // 卸载顺序按照构建顺序倒序
@@ -270,10 +106,10 @@ bool build_model09(){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void inference09(){
+void inference11(){
 
     TRTLogger logger;
-    auto engine_data = load_file("09engine.trtmodel");
+    auto engine_data = load_file("11engine.trtmodel");
     auto runtime   = make_nvshared(nvinfer1::createInferRuntime(logger));
     auto engine = make_nvshared(runtime->deserializeCudaEngine(engine_data.data(), engine_data.size()));
     if(engine == nullptr){
@@ -286,19 +122,19 @@ void inference09(){
     checkRuntime(cudaStreamCreate(&stream));
     auto execution_context = make_nvshared(engine->createExecutionContext());
 
-    int input_batch   = 1;
+    int input_batch = 1;
     int input_channel = 3;
-    int input_height  = 224;
-    int input_width   = 224;
-    int input_numel   = input_batch * input_channel * input_height * input_width;
-    float* input_data_host   = nullptr;
+    int input_height = 224;
+    int input_width = 224;
+    int input_numel = input_batch * input_channel * input_height * input_width;
+    float* input_data_host = nullptr;
     float* input_data_device = nullptr;
     checkRuntime(cudaMallocHost(&input_data_host, input_numel * sizeof(float)));
     checkRuntime(cudaMalloc(&input_data_device, input_numel * sizeof(float)));
 
     ///////////////////////////////////////////////////
     // image to float
-    auto image = cv::imread("../files/kej.jpg");
+    auto image = cv::imread("../files/dog.jpg");
     float mean[] = {0.406, 0.456, 0.485};
     float std[]  = {0.225, 0.224, 0.229};
 
@@ -328,6 +164,7 @@ void inference09(){
     auto input_dims = execution_context->getBindingDimensions(0);
     input_dims.d[0] = input_batch;
 
+    // 设置当前推理时，input大小
     execution_context->setBindingDimensions(0, input_dims);
     float* bindings[] = {input_data_device, output_data_device};
     bool success      = execution_context->enqueueV2((void**)bindings, stream, nullptr);
@@ -348,10 +185,10 @@ void inference09(){
     checkRuntime(cudaFree(output_data_device));
 }
 
-int int8(){
-    if(!build_model09()){
+int full_cnn_classifier(){
+    if(!build_model11()){
         return -1;
     }
-    inference09();
+    inference11();
     return 0;
 }
