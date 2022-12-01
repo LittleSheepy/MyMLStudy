@@ -18,6 +18,8 @@ int int8();
 int plugin_3rd();
 int full_cnn_classifier();
 int yolov5_detect();
+int yolox_detect();
+int retinaface_detect();
 
 int main(){
     // 更改控制台输出编码 —— 65001表示UTF-8编码格式
@@ -31,6 +33,8 @@ int main(){
     //int8();
     //plugin_3rd();
     //full_cnn_classifier();
-    yolov5_detect();
+    //yolov5_detect();
+    //yolox_detect();
+    retinaface_detect();
     return 0;
 }

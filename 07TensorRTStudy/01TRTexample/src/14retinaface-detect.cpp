@@ -21,7 +21,6 @@
 #include <vector>
 #include <memory>
 #include <functional>
-
 #ifdef WIN32
 #include <windows.h>
 #else
@@ -33,48 +32,6 @@
 #include "common.h"
 using namespace std;
 
-// coco数据集的labels，关于coco：https://cocodataset.org/#home
-static const char* cocolabels[] = {
-    "person", "bicycle", "car", "motorcycle", "airplane",
-    "bus", "train", "truck", "boat", "traffic light", "fire hydrant",
-    "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse",
-    "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack",
-    "umbrella", "handbag", "tie", "suitcase", "frisbee", "skis",
-    "snowboard", "sports ball", "kite", "baseball bat", "baseball glove",
-    "skateboard", "surfboard", "tennis racket", "bottle", "wine glass",
-    "cup", "fork", "knife", "spoon", "bowl", "banana", "apple", "sandwich",
-    "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake",
-    "chair", "couch", "potted plant", "bed", "dining table", "toilet", "tv",
-    "laptop", "mouse", "remote", "keyboard", "cell phone", "microwave",
-    "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase",
-    "scissors", "teddy bear", "hair drier", "toothbrush"
-};
-
-// hsv转bgr
-static std::tuple<uint8_t, uint8_t, uint8_t> hsv2bgr(float h, float s, float v){
-    const int h_i = static_cast<int>(h * 6);
-    const float f = h * 6 - h_i;
-    const float p = v * (1 - s);
-    const float q = v * (1 - f*s);
-    const float t = v * (1 - (1 - f) * s);
-    float r, g, b;
-    switch (h_i) {
-    case 0:r = v; g = t; b = p;break;
-    case 1:r = q; g = v; b = p;break;
-    case 2:r = p; g = v; b = t;break;
-    case 3:r = p; g = q; b = v;break;
-    case 4:r = t; g = p; b = v;break;
-    case 5:r = v; g = p; b = q;break;
-    default:r = 1; g = 1; b = 1;break;}
-    return make_tuple(static_cast<uint8_t>(b * 255), static_cast<uint8_t>(g * 255), static_cast<uint8_t>(r * 255));
-}
-
-static std::tuple<uint8_t, uint8_t, uint8_t> random_color(int id){
-    float h_plane = ((((unsigned int)id << 2) ^ 0x937151) % 100) / 100.0f;;
-    float s_plane = ((((unsigned int)id << 3) ^ 0x315793) % 100) / 100.0f;
-    return hsv2bgr(h_plane, s_plane, 1);
-}
-
 
 // 通过智能指针管理nv返回的指针参数
 // 内存自动释放，避免泄漏
@@ -83,13 +40,11 @@ shared_ptr<_T> make_nvshared(_T* ptr){
     return shared_ptr<_T>(ptr, [](_T* p){p->destroy();});
 }
 
-
-
 // 上一节的代码
-bool build_model12(){
+bool build_model14(){
 
-    if(exists("yolov5s.trtmodel")){
-        printf("yolov5s.trtmodel has exists.\n");
+    if(exists("mb_retinaface.trtmodel")){
+        printf("mb_retinaface.trtmodel has exists.\n");
         return true;
     }
 
@@ -98,12 +53,15 @@ bool build_model12(){
     // 这是基本需要的组件
     auto builder = make_nvshared(nvinfer1::createInferBuilder(logger));
     auto config = make_nvshared(builder->createBuilderConfig());
+
+    // createNetworkV2(1)表示采用显性batch size，新版tensorRT(>=7.0)时，不建议采用0非显性batch size
+    // 因此贯穿以后，请都采用createNetworkV2(1)而非createNetworkV2(0)或者createNetwork
     auto network = make_nvshared(builder->createNetworkV2(1));
 
     // 通过onnxparser解析器解析的结果会填充到network中，类似addConv的方式添加进去
     auto parser = make_nvshared(nvonnxparser::createParser(*network, logger));
-    if(!parser->parseFromFile("yolov5s.onnx", 1)){
-        printf("Failed to parse yolov5s.onnx\n");
+    if(!parser->parseFromFile("mb_retinaface.onnx", 1)){
+        printf("Failed to parse mb_retinaface.onnx\n");
 
         // 注意这里的几个指针还没有释放，是有内存泄漏的，后面考虑更优雅的解决
         return false;
@@ -118,10 +76,13 @@ bool build_model12(){
     auto input_tensor = network->getInput(0);
     auto input_dims = input_tensor->getDimensions();
     
-    // 配置最小、最优、最大范围
+    // 配置最小允许batch
     input_dims.d[0] = 1;
     profile->setDimensions(input_tensor->getName(), nvinfer1::OptProfileSelector::kMIN, input_dims);
     profile->setDimensions(input_tensor->getName(), nvinfer1::OptProfileSelector::kOPT, input_dims);
+
+    // 配置最大允许batch
+    // if networkDims.d[i] != -1, then minDims.d[i] == optDims.d[i] == maxDims.d[i] == networkDims.d[i]
     input_dims.d[0] = maxBatchSize;
     profile->setDimensions(input_tensor->getName(), nvinfer1::OptProfileSelector::kMAX, input_dims);
     config->addOptimizationProfile(profile);
@@ -134,7 +95,7 @@ bool build_model12(){
 
     // 将模型序列化，并储存为文件
     auto model_data = make_nvshared(engine->serialize());
-    FILE* f = fopen("yolov5s.trtmodel", "wb");
+    FILE* f = fopen("mb_retinaface.trtmodel", "wb");
     fwrite(model_data->data(), 1, model_data->size(), f);
     fclose(f);
 
@@ -145,10 +106,77 @@ bool build_model12(){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void inference12(){
+struct PriorBox{
+    float cx, cy, sx, sy;
+};
+
+float desigmoid(float x){
+    return -log(1.0f / x - 1.0f);
+}
+
+float sigmoid(float x){
+    return 1 / (1 + exp(-x));
+}
+
+size_t compute_prior_size(int input_width, int input_height, const vector<int>& strides={8, 16, 32}, int num_anchor_per_stage=2){
+
+    int input_area = input_width * input_height;
+    size_t total = 0;
+    for(int s : strides){
+        total += input_area / s / s * num_anchor_per_stage;
+    }
+    return total;
+}
+
+vector<PriorBox> init_prior_box(int input_width, int input_height){
+
+    vector<PriorBox> prior;
+    vector<int> strides{8, 16, 32};
+    vector<vector<float>> min_sizes{
+        vector<float>({16.0f,  32.0f }),
+        vector<float>({64.0f,  128.0f}),
+        vector<float>({256.0f, 512.0f})
+    };
+    
+    size_t box_count = compute_prior_size(input_width, input_height, strides);
+    prior.resize(box_count);
+
+    int prior_row = 0;
+    for(int istride = 0; istride < strides.size(); ++istride){
+        int stride         = strides[istride];
+        auto anchor_sizes  = min_sizes[istride];
+        int feature_map_width  = input_width  / stride;
+        int feature_map_height = input_height / stride;
+        
+        for(int y = 0; y < feature_map_height; ++y){
+            for(int x = 0; x < feature_map_width; ++x){
+                for(int isize = 0; isize < anchor_sizes.size(); ++isize){
+                    float anchor_size = anchor_sizes[isize];
+                    float dense_cx    = (x + 0.5f) * stride;
+                    float dense_cy    = (y + 0.5f) * stride;
+                    float s_kx        = anchor_size;
+                    float s_ky        = anchor_size;
+                    auto& prow       = prior[prior_row++];
+                    prow.cx = dense_cx;
+                    prow.cy = dense_cy;
+                    prow.sx = s_kx;
+                    prow.sy = s_ky;
+                }
+            }
+        }
+    }
+    return prior;
+}
+
+struct Face{
+    float left, top, right, bottom, confidence;
+    float landmark[5][2];
+};
+
+void inference14(){
 
     TRTLogger logger;
-    auto engine_data = load_file("yolov5s.trtmodel");
+    auto engine_data = load_file("mb_retinaface.trtmodel");
     auto runtime   = make_nvshared(nvinfer1::createInferRuntime(logger));
     auto engine = make_nvshared(runtime->deserializeCudaEngine(engine_data.data(), engine_data.size()));
     if(engine == nullptr){
@@ -170,6 +198,7 @@ void inference12(){
     int input_channel = 3;
     int input_height = 640;
     int input_width = 640;
+    auto prior_boxes = init_prior_box(input_width, input_height);
     int input_numel = input_batch * input_channel * input_height * input_width;
     float* input_data_host = nullptr;
     float* input_data_device = nullptr;
@@ -178,34 +207,32 @@ void inference12(){
 
     ///////////////////////////////////////////////////
     // letter box
-    auto image = cv::imread("../files/car.jpg");
-    // 通过双线性插值对图像进行resize
+    auto image = cv::imread("../files/group.jpg");
     float scale_x = input_width / (float)image.cols;
     float scale_y = input_height / (float)image.rows;
     float scale = std::min(scale_x, scale_y);
     float i2d[6], d2i[6];
-    // resize图像，源图像和目标图像几何中心的对齐
     i2d[0] = scale;  i2d[1] = 0;  i2d[2] = (-scale * image.cols + input_width + scale  - 1) * 0.5;
     i2d[3] = 0;  i2d[4] = scale;  i2d[5] = (-scale * image.rows + input_height + scale - 1) * 0.5;
 
-    cv::Mat m2x3_i2d(2, 3, CV_32F, i2d);  // image to dst(network), 2x3 matrix
-    cv::Mat m2x3_d2i(2, 3, CV_32F, d2i);  // dst to image, 2x3 matrix
-    cv::invertAffineTransform(m2x3_i2d, m2x3_d2i);  // 计算一个反仿射变换
+    cv::Mat m2x3_i2d(2, 3, CV_32F, i2d);
+    cv::Mat m2x3_d2i(2, 3, CV_32F, d2i);
+    cv::invertAffineTransform(m2x3_i2d, m2x3_d2i);
 
     cv::Mat input_image(input_height, input_width, CV_8UC3);
-    cv::warpAffine(image, input_image, m2x3_i2d, input_image.size(), cv::INTER_LINEAR, cv::BORDER_CONSTANT, cv::Scalar::all(114));  // 对图像做平移缩放旋转变换,可逆
+    cv::warpAffine(image, input_image, m2x3_i2d, input_image.size(), cv::INTER_LINEAR, cv::BORDER_CONSTANT, cv::Scalar::all(114));
     cv::imwrite("../files/input-image.jpg", input_image);
 
     int image_area = input_image.cols * input_image.rows;
     unsigned char* pimage = input_image.data;
+    float mean[] = {104, 117, 123};
     float* phost_b = input_data_host + image_area * 0;
     float* phost_g = input_data_host + image_area * 1;
     float* phost_r = input_data_host + image_area * 2;
     for(int i = 0; i < image_area; ++i, pimage += 3){
-        // 注意这里的顺序rgb调换了
-        *phost_r++ = pimage[0] / 255.0f;
-        *phost_g++ = pimage[1] / 255.0f;
-        *phost_b++ = pimage[2] / 255.0f;
+        *phost_b++ = pimage[0] - mean[0];
+        *phost_g++ = pimage[1] - mean[1];
+        *phost_r++ = pimage[2] - mean[2];
     }
     ///////////////////////////////////////////////////
     checkRuntime(cudaMemcpyAsync(input_data_device, input_data_host, input_numel * sizeof(float), cudaMemcpyHostToDevice, stream));
@@ -214,7 +241,7 @@ void inference12(){
     auto output_dims = engine->getBindingDimensions(1);
     int output_numbox = output_dims.d[1];
     int output_numprob = output_dims.d[2];
-    int num_classes = output_numprob - 5;
+    int num_classes = 2;
     int output_numel = input_batch * output_numbox * output_numprob;
     float* output_data_host = nullptr;
     float* output_data_device = nullptr;
@@ -231,59 +258,67 @@ void inference12(){
     checkRuntime(cudaMemcpyAsync(output_data_host, output_data_device, sizeof(float) * output_numel, cudaMemcpyDeviceToHost, stream));
     checkRuntime(cudaStreamSynchronize(stream));
 
-    // decode box：从不同尺度下的预测狂还原到原输入图上(包括:预测框，类被概率，置信度）
-    vector<vector<float>> bboxes;
-    float confidence_threshold = 0.25;
+    // decode box
+    vector<Face> bboxes;
+    float confidence_threshold = 0.7;
+
+    // 用deconfidence的方式，处理置信度，避免进行softmax的计算，去掉softmax节点
+    float deconfidence_threshold = desigmoid(confidence_threshold);
     float nms_threshold = 0.5;
+    float variances[] = {0.1f, 0.2f};
     for(int i = 0; i < output_numbox; ++i){
         float* ptr = output_data_host + i * output_numprob;
-        float objness = ptr[4];
-        if(objness < confidence_threshold)
+        float neg_deconfidence = ptr[4];
+        float pos_deconfidence = ptr[5];
+        float object_deconfidence = (pos_deconfidence - neg_deconfidence);
+        if(object_deconfidence < deconfidence_threshold)
             continue;
 
-        float* pclass = ptr + 5;
-        int label     = std::max_element(pclass, pclass + num_classes) - pclass;
-        float prob    = pclass[label];
-        float confidence = prob * objness;
-        if(confidence < confidence_threshold)
-            continue;
-
-        // 中心点、宽、高
-        float cx     = ptr[0];
-        float cy     = ptr[1];
-        float width  = ptr[2];
-        float height = ptr[3];
-
-        // 预测框
+        auto& prior  = prior_boxes[i];
+        float cx     = prior.cx + ptr[0] * variances[0] * prior.sx;
+        float cy     = prior.cy + ptr[1] * variances[0] * prior.sy;
+        float width  = prior.sx * exp(ptr[2] * variances[1]);
+        float height = prior.sy * exp(ptr[3] * variances[1]);
         float left   = cx - width * 0.5;
         float top    = cy - height * 0.5;
         float right  = cx + width * 0.5;
         float bottom = cy + height * 0.5;
 
-        // 对应图上的位置
-        float image_base_left   = d2i[0] * left   + d2i[2];
-        float image_base_right  = d2i[0] * right  + d2i[2];
-        float image_base_top    = d2i[0] * top    + d2i[5];
-        float image_base_bottom = d2i[0] * bottom + d2i[5];
-        bboxes.push_back({image_base_left, image_base_top, image_base_right, image_base_bottom, (float)label, confidence});
+        // 对于而分类的置信度而言，可以把softmax转化为sigmoid
+        Face face;
+        face.confidence = sigmoid(object_deconfidence);
+        face.left   = d2i[0] * left   + d2i[2];
+        face.right  = d2i[0] * right  + d2i[2];
+        face.top    = d2i[0] * top    + d2i[5];
+        face.bottom = d2i[0] * bottom + d2i[5];
+
+        float* landmark = ptr + 6;
+        for(int j = 0; j < 5; ++j){
+            float x = prior.cx + landmark[0] * variances[0] * prior.sx;
+            float y = prior.cy + landmark[1] * variances[0] * prior.sy;
+            face.landmark[j][0] = d2i[0] * x + d2i[2];
+            face.landmark[j][1] = d2i[0] * y + d2i[5];
+            landmark += 2;
+        }
+        bboxes.push_back(face);
     }
     printf("decoded bboxes.size = %d\n", bboxes.size());
 
-    // nms非极大抑制
-    std::sort(bboxes.begin(), bboxes.end(), [](vector<float>& a, vector<float>& b){return a[5] > b[5];});
+    // nms
+    std::sort(bboxes.begin(), bboxes.end(), [](Face& a, Face& b){return a.confidence > b.confidence;});
     std::vector<bool> remove_flags(bboxes.size());
-    std::vector<vector<float>> box_result;
+    std::vector<Face> box_result;
     box_result.reserve(bboxes.size());
 
-    auto iou = [](const vector<float>& a, const vector<float>& b){
-        float cross_left   = std::max(a[0], b[0]);
-        float cross_top    = std::max(a[1], b[1]);
-        float cross_right  = std::min(a[2], b[2]);
-        float cross_bottom = std::min(a[3], b[3]);
+    auto iou = [](const Face& a, const Face& b){
+        float cross_left   = std::max(a.left,   b.left);
+        float cross_top    = std::max(a.top,    b.top);
+        float cross_right  = std::min(a.right,  b.right);
+        float cross_bottom = std::min(a.bottom, b.bottom);
 
         float cross_area = std::max(0.0f, cross_right - cross_left) * std::max(0.0f, cross_bottom - cross_top);
-        float union_area = std::max(0.0f, a[2] - a[0]) * std::max(0.0f, a[3] - a[1]) 
-                         + std::max(0.0f, b[2] - b[0]) * std::max(0.0f, b[3] - b[1]) - cross_area;
+        float union_area = std::max(0.0f, a.right - a.left) * std::max(0.0f, a.bottom - a.top) 
+                         + std::max(0.0f, b.right - b.left) * std::max(0.0f, b.bottom - b.top) - cross_area;
         if(cross_area == 0 || union_area == 0) return 0.0f;
         return cross_area / union_area;
     };
@@ -291,40 +326,32 @@ void inference12(){
     for(int i = 0; i < bboxes.size(); ++i){
         if(remove_flags[i]) continue;
 
-        auto& ibox = bboxes[i];
-        box_result.emplace_back(ibox);
+        auto& iface = bboxes[i];
+        box_result.emplace_back(iface);
         for(int j = i + 1; j < bboxes.size(); ++j){
             if(remove_flags[j]) continue;
 
             auto& jbox = bboxes[j];
-            if(ibox[4] == jbox[4]){
-                // class matched
-                if(iou(ibox, jbox) >= nms_threshold)
-                    remove_flags[j] = true;
-            }
+            if(iou(iface, jbox) >= nms_threshold)
+                remove_flags[j] = true;
         }
     }
     printf("box_result.size = %d\n", box_result.size());
 
     for(int i = 0; i < box_result.size(); ++i){
-        auto& ibox = box_result[i];
-        float left = ibox[0];
-        float top = ibox[1];
-        float right = ibox[2];
-        float bottom = ibox[3];
-        int class_label = ibox[4];
-        float confidence = ibox[5];
-        cv::Scalar color;
-        tie(color[0], color[1], color[2]) = random_color(class_label);
-        cv::rectangle(image, cv::Point(left, top), cv::Point(right, bottom), color, 3);
+        auto& iface = box_result[i];
+        cv::Scalar color(0, 255, 0);
+        cv::rectangle(image, cv::Point(iface.left, iface.top), cv::Point(iface.right, iface.bottom), color, 3);
 
-        auto name      = cocolabels[class_label];
-        auto caption   = cv::format("%s %.2f", name, confidence);
+        for(int j = 0; j < 5; ++j)
+            circle(image, cv::Point(iface.landmark[j][0], iface.landmark[j][1]), 3, cv::Scalar(0, 0, 255), -1, 16);
+
+        auto caption   = cv::format("%.2f", iface.confidence);
         int text_width = cv::getTextSize(caption, 0, 1, 2, nullptr).width + 10;
-        cv::rectangle(image, cv::Point(left-3, top-33), cv::Point(left + text_width, top), color, -1);
-        cv::putText(image, caption, cv::Point(left, top-5), 0, 1, cv::Scalar::all(0), 2, 16);
+        cv::rectangle(image, cv::Point(iface.left-3, iface.top-33), cv::Point(iface.left + text_width, iface.top), color, -1);
+        cv::putText(image, caption, cv::Point(iface.left, iface.top-5), 0, 1, cv::Scalar::all(0), 2, 16);
     }
-    cv::imwrite("../files/image-draw.jpg", image);
+    cv::imwrite("image-draw.jpg", image);
 
     checkRuntime(cudaStreamDestroy(stream));
     checkRuntime(cudaFreeHost(input_data_host));
@@ -333,10 +360,10 @@ void inference12(){
     checkRuntime(cudaFree(output_data_device));
 }
 
-int yolov5_detect(){
-    if(!build_model12()){
+int retinaface_detect(){
+    if(!build_model14()){
         return -1;
     }
-    inference12();
+    inference14();
     return 0;
 }

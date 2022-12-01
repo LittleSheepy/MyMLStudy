@@ -15,7 +15,7 @@ public:
     virtual void log(Severity severity, nvinfer1::AsciiChar const* msg) noexcept override;
 };
 vector<string> load_labels(const char* file);
-
+std::tuple<uint8_t, uint8_t, uint8_t> random_color(int id);
 
 
 
