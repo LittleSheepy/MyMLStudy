@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" filepath="$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.6-chinese-classifer-bert/Bert-Chinese-Text-Classification/.idea/Bert-Chinese-Text-Classification.iml" filepath="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.6-chinese-classifer-bert/Bert-Chinese-Text-Classification/.idea/Bert-Chinese-Text-Classification.iml" />
       <module fileurl="file://$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" filepath="$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" />
       <module fileurl="file://$PROJECT_DIR$/../GBDT/.idea/GBDT.iml" filepath="$PROJECT_DIR$/../GBDT/.idea/GBDT.iml" />
       <module fileurl="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/.idea/GBDT_Simple_Tutorial.iml" filepath="$PROJECT_DIR$/../GBDT_Simple_Tutorial/.idea/GBDT_Simple_Tutorial.iml" />

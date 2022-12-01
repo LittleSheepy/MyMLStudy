@@ -14,5 +14,6 @@
     <orderEntry type="module" module-name="yolov5-6.0" />
     <orderEntry type="module" module-name="yolov5-6.0-change" />
     <orderEntry type="module" module-name="unet-pytorch-change" />
+    <orderEntry type="module" module-name="Bert-Chinese-Text-Classification" />
   </component>
 </module>

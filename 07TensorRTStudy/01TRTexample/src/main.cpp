@@ -20,21 +20,12 @@ int full_cnn_classifier();
 int yolov5_detect();
 int yolox_detect();
 int retinaface_detect();
+int unet();
+int chinese_classifer_bert();
 
 int main(){
     // 更改控制台输出编码 —— 65001表示UTF-8编码格式
     SetConsoleOutputCP(65001);
-    //build_model();
-    //hello_inference();
-    //CNNUseAPI();
-    //onnx_parser();
-    //hello_plugin();
-    //integrate_easyplugin();
-    //int8();
-    //plugin_3rd();
-    //full_cnn_classifier();
-    //yolov5_detect();
-    //yolox_detect();
-    retinaface_detect();
+    unet();
     return 0;
 }

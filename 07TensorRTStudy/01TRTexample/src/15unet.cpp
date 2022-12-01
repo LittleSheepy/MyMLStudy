@@ -32,13 +32,19 @@
 #include "common.h"
 using namespace std;
 
-
+static vector<int> _classes_colors = {
+    0, 0, 0, 128, 0, 0, 0, 128, 0, 128, 128, 0, 0, 0, 128, 128, 0, 128, 0, 128, 128,
+    128, 128, 128, 64, 0, 0, 192, 0, 0, 64, 128, 0, 192, 128, 0, 64, 0, 128, 192, 0, 128,
+    64, 128, 128, 192, 128, 128, 0, 64, 0, 128, 64, 0, 0, 192, 0, 128, 192, 0, 0, 64, 128, 128, 64, 12
+};
 // 通过智能指针管理nv返回的指针参数
 // 内存自动释放，避免泄漏
 template<typename _T>
 shared_ptr<_T> make_nvshared(_T* ptr){
     return shared_ptr<_T>(ptr, [](_T* p){p->destroy();});
 }
+
+
 
 // 上一节的代码
 bool build_model15(){
@@ -178,7 +184,7 @@ void inference15(){
 
     ///////////////////////////////////////////////////
     // letter box
-    auto image = cv::imread("street.jpg");
+    auto image = cv::imread("../files/street.jpg");
     float scale_x = input_width / (float)image.cols;
     float scale_y = input_height / (float)image.rows;
     float scale = std::min(scale_x, scale_y);
@@ -192,7 +198,7 @@ void inference15(){
 
     cv::Mat input_image(input_height, input_width, CV_8UC3);
     cv::warpAffine(image, input_image, m2x3_i2d, input_image.size(), cv::INTER_LINEAR, cv::BORDER_CONSTANT, cv::Scalar::all(114));
-    cv::imwrite("input-image.jpg", input_image);
+    cv::imwrite("../filse/input-image.jpg", input_image);
 
     int image_area = input_image.cols * input_image.rows;
     unsigned char* pimage = input_image.data;
@@ -235,7 +241,7 @@ void inference15(){
     render(image, prob, iclass);
 
     printf("Done, Save to image-draw.jpg\n");
-    cv::imwrite("image-draw.jpg", image);
+    cv::imwrite("../files/image-draw.jpg", image);
 
     checkRuntime(cudaStreamDestroy(stream));
     checkRuntime(cudaFreeHost(input_data_host));
