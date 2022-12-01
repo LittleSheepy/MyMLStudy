@@ -21,11 +21,13 @@ int yolov5_detect();
 int yolox_detect();
 int retinaface_detect();
 int unet();
-int chinese_classifer_bert();
+//int chinese_classifer_bert();
+int alphapose();
+int onnxruntime();
 
 int main(){
     // 更改控制台输出编码 —— 65001表示UTF-8编码格式
     SetConsoleOutputCP(65001);
-    unet();
+    onnxruntime();
     return 0;
 }

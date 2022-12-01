@@ -8,12 +8,6 @@
     <orderEntry type="jdk" jdkName="Python 3.8 (python38)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PaddleOCR" />
-    <orderEntry type="module" module-name="yolov5" />
-    <orderEntry type="module" module-name="yolov5-6.2" />
-    <orderEntry type="module" module-name="onnx-tensorrt" />
-    <orderEntry type="module" module-name="yolov5-6.0" />
-    <orderEntry type="module" module-name="yolov5-6.0-change" />
-    <orderEntry type="module" module-name="unet-pytorch-change" />
-    <orderEntry type="module" module-name="Bert-Chinese-Text-Classification" />
+    <orderEntry type="module" module-name="yolov5_obb" />
   </component>
 </module>

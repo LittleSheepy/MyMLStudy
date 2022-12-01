@@ -198,7 +198,7 @@ void inference15(){
 
     cv::Mat input_image(input_height, input_width, CV_8UC3);
     cv::warpAffine(image, input_image, m2x3_i2d, input_image.size(), cv::INTER_LINEAR, cv::BORDER_CONSTANT, cv::Scalar::all(114));
-    cv::imwrite("../filse/input-image.jpg", input_image);
+    cv::imwrite("../files/input-image.jpg", input_image);
 
     int image_area = input_image.cols * input_image.rows;
     unsigned char* pimage = input_image.data;
