@@ -351,7 +351,7 @@ void inference14(){
         cv::rectangle(image, cv::Point(iface.left-3, iface.top-33), cv::Point(iface.left + text_width, iface.top), color, -1);
         cv::putText(image, caption, cv::Point(iface.left, iface.top-5), 0, 1, cv::Scalar::all(0), 2, 16);
     }
-    cv::imwrite("image-draw.jpg", image);
+    cv::imwrite("../files/image-draw.jpg", image);
 
     checkRuntime(cudaStreamDestroy(stream));
     checkRuntime(cudaFreeHost(input_data_host));
