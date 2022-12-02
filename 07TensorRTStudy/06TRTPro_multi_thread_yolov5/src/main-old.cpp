@@ -21,9 +21,15 @@
 #include <vector>
 #include <memory>
 #include <functional>
+#ifdef WIN32
+#include <windows.h>
+#else
 #include <unistd.h>
+#endif
 
 #include <opencv2/opencv.hpp>
+#include <Shlwapi.h>
+#pragma comment(lib, "Shlwapi.lib")
 
 using namespace std;
 

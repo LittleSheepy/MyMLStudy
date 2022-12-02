@@ -104,7 +104,7 @@ int main_old();
 int main(){
 
     // 旧的实现，请参照main-old.cpp
-    main_old();
+    //main_old();
 
     // 新的实现
     if(!build_model()){
