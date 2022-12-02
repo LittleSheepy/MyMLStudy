@@ -92,7 +92,7 @@ namespace SimpleLogger{
 
         if(level == LogLevel::Fatal || level == LogLevel::Error){
             fflush(stdout);
-            abort();
+            //abort();
         }
     }
 };
