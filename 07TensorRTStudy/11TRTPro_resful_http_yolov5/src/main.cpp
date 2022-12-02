@@ -30,6 +30,7 @@
 #include <app_yolo/yolo.hpp>
 #include <Shlwapi.h>
 #pragma comment(lib, "Shlwapi.lib")
+#include <app_http/http_server.hpp>
 
 using namespace std;
 
@@ -48,6 +49,53 @@ static const char* cocolabels[] = {
     "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase",
     "scissors", "teddy bear", "hair drier", "toothbrush"
 };
+
+class LogicalController : public Controller{
+	SetupController(LogicalController);
+
+public:
+	bool startup();
+ 
+public: 
+	DefRequestMapping(detect);
+
+private:
+    shared_ptr<Yolo::Infer> yolo_;
+};
+
+Json::Value LogicalController::detect(const Json::Value& param){
+
+    auto session = get_current_session();
+    if(session->request.body.empty())
+        return failure("Request body is empty");
+
+    // if base64
+    // iLogger::base64_decode();
+	cv::Mat imdata(1, session->request.body.size(), CV_8U, (char*)session->request.body.data());
+    cv::Mat image = cv::imdecode(imdata, 1);
+    if(image.empty())
+        return failure("Image decode failed");
+
+    auto boxes = yolo_->commit(image).get();
+    Json::Value out(Json::arrayValue);
+    for(int i = 0; i < boxes.size(); ++i){
+        auto& item = boxes[i];
+        Json::Value itemj;
+        itemj["left"] = item.left;
+        itemj["top"] = item.top;
+        itemj["right"] = item.right;
+        itemj["bottom"] = item.bottom;
+        itemj["class_label"] = item.class_label;
+        itemj["confidence"] = item.confidence;
+        out.append(itemj);
+    }
+    return success(out);
+}
+
+bool LogicalController::startup(){
+    yolo_ = Yolo::create_infer("yolov5s.trtmodel", Yolo::Type::V5, 0, 0.25, 0.45);
+    return yolo_ != nullptr;
+}
 
 static bool exists(const string& path){
 
@@ -77,22 +125,41 @@ static bool build_model(){
     return true;
 }
 
-static void inference(){
+int start_http(int port = 9090){
 
-    auto image = cv::imread("../files/rq.jpg");
-    auto yolov5 = Yolo::create_infer("yolov5s.trtmodel", Yolo::Type::V5, 0, 0.25, 0.45);
-    auto boxes = yolov5->commit(image).get();
-    for(auto& box : boxes){
-        cv::Scalar color(0, 255, 0);
-        cv::rectangle(image, cv::Point(box.left, box.top), cv::Point(box.right, box.bottom), color, 3);
+    INFO("Create controller");
+	auto logical_controller = make_shared<LogicalController>();
+	if(!logical_controller->startup()){
+		INFOE("Startup controller failed.");
+		return -1;
+	}
 
-        auto name      = cocolabels[box.class_label];
-        auto caption   = cv::format("%s %.2f", name, box.confidence);
-        int text_width = cv::getTextSize(caption, 0, 1, 2, nullptr).width + 10;
-        cv::rectangle(image, cv::Point(box.left-3, box.top-33), cv::Point(box.left + text_width, box.top), color, -1);
-        cv::putText(image, caption, cv::Point(box.left, box.top-5), 0, 1, cv::Scalar::all(0), 2, 16);
-    }
-    cv::imwrite("../files/image-draw.jpg", image);
+	string address = iLogger::format("0.0.0.0:%d", port);
+	INFO("Create http server to: %s", address.c_str());
+
+	auto server = createHttpServer(address, 32);
+	if(!server)
+		return -1;
+    
+    server->verbose();
+
+	INFO("Add controller");
+	server->add_controller("/api", logical_controller);
+
+    // 这是一个vue的项目
+	// server->add_controller("/", create_redirect_access_controller("./web"));
+	// server->add_controller("/static", create_file_access_controller("./"));
+	INFO("Access url: http://%s", address.c_str());
+
+	INFO(
+		"\n"
+		"访问如下地址即可看到效果:\n"
+		"1. http://%s/api/detect              使用自定义写出内容作为response\n",
+		address.c_str()
+	);
+
+	INFO("按下Ctrl + C结束程序");
+	return iLogger::while_loop();
 }
 
 int main(){
@@ -101,6 +168,5 @@ int main(){
     if(!build_model()){
         return -1;
     }
-    inference();
-    return 0;
+    return start_http();
 }
