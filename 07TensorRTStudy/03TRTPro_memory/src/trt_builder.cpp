@@ -17,6 +17,7 @@
 #include "cuda-tools.hpp"
 #include "simple-logger.hpp"
 #include <chrono>
+#include <iso646.h>
 
 using namespace nvinfer1;
 using namespace std;   
@@ -325,10 +326,10 @@ namespace TRT {
 			config->setFlag(BuilderFlag::kFP16);
 		}
 
-		shared_ptr<INetworkDefinition> network;
+		//shared_ptr<INetworkDefinition> network;
 		//shared_ptr<ICaffeParser> caffeParser;
 		const auto explicitBatch = 1U << static_cast<uint32_t>(nvinfer1::NetworkDefinitionCreationFlag::kEXPLICIT_BATCH);
-		network = make_nvshared(builder->createNetworkV2(explicitBatch));
+		shared_ptr<INetworkDefinition> network = make_nvshared(builder->createNetworkV2(explicitBatch));
 		
 		shared_ptr<nvonnxparser::IParser> onnxParser = make_nvshared(nvonnxparser::createParser(*network, gLogger));
 		if (onnxParser == nullptr) {
@@ -337,7 +338,12 @@ namespace TRT {
 		}
 
 		if (!onnxParser->parseFromFile(source.c_str(), 1)) {
-			INFOE("Can not parse OnnX file: %s", source.c_str());
+			INFOE("Can not parse OnnX file: %s", source.c_str()); 
+			for (int32_t i = 0; i < onnxParser->getNbErrors(); ++i)
+			{
+				INFOE("%s", onnxParser->getError(i)->desc());
+				//std::cout << onnxParser->getError(i)->desc() << std::endl;
+			}
 			return false;
 		}
 

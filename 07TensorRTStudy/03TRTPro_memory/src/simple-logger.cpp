@@ -2,6 +2,8 @@
 #include "simple-logger.hpp"
 #include <string>
 #include <stdarg.h>
+#include <time.h>
+#include <iso646.h>
 
 using namespace std;
 
