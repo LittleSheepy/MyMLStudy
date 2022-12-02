@@ -155,6 +155,24 @@ namespace TRT{
                 
             return np.frombuffer(binary_data, np_dtype, offset=(ndims + 3) * 4).reshape(*dims)
 
+
+        def save_tensor(tensor, file):
+
+            with open(file, "wb") as f:
+                typeid = 0
+                if tensor.dtype == np.float32:
+                    typeid = 0
+                elif tensor.dtype == np.float16:
+                    typeid = 1
+                elif tensor.dtype == np.int32:
+                    typeid = 2
+                elif tensor.dtype == np.uint8:
+                    typeid = 3
+
+                head = np.array([0xFCCFE2E2, tensor.ndim, typeid], dtype=np.uint32).tobytes()
+                f.write(head)
+                f.write(np.array(tensor.shape, dtype=np.uint32).tobytes())
+                f.write(tensor.tobytes())
             **/
         bool save_to_file(const std::string& file) const;
         bool load_from_file(const std::string& file);
