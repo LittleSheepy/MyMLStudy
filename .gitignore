@@ -25,3 +25,5 @@ DeepLearning/CNN/ResNet/models/resnet/resnet.meta
 07TensorRTStudy/04TRTPro_tensor/bin/
 07TensorRTStudy/05TRTPro_infer/build/
 07TensorRTStudy/05TRTPro_infer/bin/
+07TensorRTStudy/06TRTPro_multi_thread_yolov5/build/
+07TensorRTStudy/06TRTPro_multi_thread_yolov5/bin/
