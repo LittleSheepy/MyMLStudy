@@ -5,7 +5,6 @@
 
 
 #include "cuda_tools.hpp"
-#include <iostream>
 
 namespace CUDATools{
     // bool check_driver(CUresult e, const char* call, int line, const char *file) {
@@ -75,13 +74,13 @@ namespace CUDATools{
         checkCudaRuntime(cudaGetDevice(&device_id));
         checkCudaRuntime(cudaGetDeviceProperties(&prop, device_id));
         checkCudaRuntime(cudaMemGetInfo(&free_mem, &total_mem));
-        std::string result = iLogger::format(
+
+        return iLogger::format(
             "[ID %d]<%s>[arch %d.%d][GMEM %.2f GB/%.2f GB]",
-            device_id, prop.name, prop.major, prop.minor,
+            device_id, prop.name, prop.major, prop.minor, 
             free_mem / 1024.0f / 1024.0f / 1024.0f,
             total_mem / 1024.0f / 1024.0f / 1024.0f
         );
-        return result;
     }
 
     AutoDevice::AutoDevice(int device_id){
