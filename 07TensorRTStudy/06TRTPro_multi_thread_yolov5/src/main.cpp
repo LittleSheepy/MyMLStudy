@@ -28,17 +28,31 @@
 #endif
 #include <opencv2/opencv.hpp>
 
-#include "simple-logger.hpp"
-#include "cuda-tools.hpp"
 #include "trt-builder.hpp"
-#include "trt-tensor.hpp"
-#include "trt-infer.hpp"
+#include "simple-logger.hpp"
+#include "yolov5.hpp"
 #include <Shlwapi.h>
 #pragma comment(lib, "Shlwapi.lib")
 
 using namespace std;
 
-bool exists(const string& path){
+static const char* cocolabels[] = {
+    "person", "bicycle", "car", "motorcycle", "airplane",
+    "bus", "train", "truck", "boat", "traffic light", "fire hydrant",
+    "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse",
+    "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack",
+    "umbrella", "handbag", "tie", "suitcase", "frisbee", "skis",
+    "snowboard", "sports ball", "kite", "baseball bat", "baseball glove",
+    "skateboard", "surfboard", "tennis racket", "bottle", "wine glass",
+    "cup", "fork", "knife", "spoon", "bowl", "banana", "apple", "sandwich",
+    "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake",
+    "chair", "couch", "potted plant", "bed", "dining table", "toilet", "tv",
+    "laptop", "mouse", "remote", "keyboard", "cell phone", "microwave",
+    "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase",
+    "scissors", "teddy bear", "hair drier", "toothbrush"
+};
+
+static bool exists(const string& path){
 
 #ifdef _WIN32
     return ::PathFileExistsA(path.c_str());
@@ -48,10 +62,10 @@ bool exists(const string& path){
 }
 
 // 上一节的代码
-bool build_model(){
+static bool build_model(){
 
-    if(exists("engine.trtmodel")){
-        printf("Engine.trtmodel has exists.\n");
+    if(exists("yolov5s.trtmodel")){
+        printf("yolov5s.trtmodel has exists.\n");
         return true;
     }
 
@@ -59,79 +73,40 @@ bool build_model(){
     TRT::compile(
         TRT::Mode::FP32,
         10,
-        "classifier.onnx",
-        "engine.trtmodel",
+        "yolov5s.onnx",
+        "yolov5s.trtmodel",
         1 << 28
     );
     INFO("Done.");
     return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-vector<string> load_labels(const char* file){
-    vector<string> lines;
+static void inference(){
 
-    ifstream in(file, ios::in | ios::binary);
-    if (!in.is_open()){
-        printf("open %d failed.\n", file);
-        return lines;
+    auto image = cv::imread("../files/rq.jpg");
+    auto yolov5 = YoloV5::create_infer("yolov5s.trtmodel");
+    auto boxes = yolov5->commit(image).get();
+    for(auto& box : boxes){
+        cv::Scalar color(0, 255, 0);
+        cv::rectangle(image, cv::Point(box.left, box.top), cv::Point(box.right, box.bottom), color, 3);
+
+        auto name      = cocolabels[box.class_label];
+        auto caption   = cv::format("%s %.2f", name, box.confidence);
+        int text_width = cv::getTextSize(caption, 0, 1, 2, nullptr).width + 10;
+        cv::rectangle(image, cv::Point(box.left-3, box.top-33), cv::Point(box.left + text_width, box.top), color, -1);
+        cv::putText(image, caption, cv::Point(box.left, box.top-5), 0, 1, cv::Scalar::all(0), 2, 16);
     }
-    
-    string line;
-    while(getline(in, line)){
-        lines.push_back(line);
-    }
-    in.close();
-    return lines;
+    cv::imwrite("../files/image-draw.jpg", image);
 }
 
-void inference(){
-
-    auto engine = TRT::load_infer("engine.trtmodel");
-    if(engine == nullptr){
-        printf("Deserialize cuda engine failed.\n");
-        return;
-    }
-
-    engine->print();
-
-    auto input       = engine->input(); // Tensor
-    auto output      = engine->output();
-    int input_width  = input->width();
-    int input_height = input->height();
-
-    ///////////////////////////////////////////////////
-    // image to float
-    auto image = cv::imread("../files/dog.jpg");
-    float mean[] = {0.406, 0.456, 0.485};
-    float std[]  = {0.225, 0.224, 0.229};
-
-    // 对应于pytorch的代码部分
-    cv::resize(image, image, cv::Size(input_width, input_height));
-    image.convertTo(image, CV_32F);
-
-    cv::Mat channel_based[3];
-    for(int i = 0; i < 3; ++i)
-        channel_based[i] = cv::Mat(input_height, input_width, CV_32F, input->cpu<float>(0, 2-i));
-
-    cv::split(image, channel_based);
-    for(int i = 0; i < 3; ++i)
-        channel_based[i] = (channel_based[i] / 255.0f - mean[i]) / std[i];
-
-    engine->forward(true);    
-
-    int num_classes   = output->size(1);
-    float* prob       = output->cpu<float>();
-    int predict_label = std::max_element(prob, prob + num_classes) - prob;
-    auto labels = load_labels("../files/labels.imagenet.txt");
-    auto predict_name = labels[predict_label];
-    float confidence  = prob[predict_label];
-    printf("Predict: %s, confidence = %f, label = %d\n", predict_name.c_str(), confidence, predict_label);
-    std::cout << predict_name << std::endl;
-}
+int main_old();
 
 int main(){
 
+    // 旧的实现，请参照main-old.cpp
+    main_old();
+
+    // 新的实现
     if(!build_model()){
         return -1;
     }
