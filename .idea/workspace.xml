@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/files/image-draw.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/files/image-draw.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/files/input-image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/files/input-image.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/15unet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/15unet.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/src/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -538,7 +529,7 @@
       <workItem from="1668298668097" duration="4161000" />
       <workItem from="1668659827722" duration="644000" />
       <workItem from="1669550394172" duration="17611000" />
-      <workItem from="1669780374951" duration="55384000" />
+      <workItem from="1669780374951" duration="56153000" />
     </task>
     <servers />
   </component>

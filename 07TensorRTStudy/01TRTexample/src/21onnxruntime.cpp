@@ -1,5 +1,5 @@
 
-#include <onnxruntime_cxx_api.h>
+#include "onnxruntime_cxx_api.h"
 
 // system include
 #include <stdio.h>
@@ -18,6 +18,7 @@
 #endif
 
 #include <opencv2/opencv.hpp>
+#include <tchar.h>
 
 #include "common.h"
 using namespace std;
@@ -49,7 +50,7 @@ void inference21(){
     session_options.SetIntraOpNumThreads(1);
     session_options.SetGraphOptimizationLevel(GraphOptimizationLevel::ORT_ENABLE_EXTENDED);
 
-    Ort::Session session(env, "yolov5s.onnx", session_options);
+    Ort::Session session(env, L"yolov5s.onnx", session_options);
     auto output_dims = session.GetOutputTypeInfo(0).GetTensorTypeAndShapeInfo().GetShape();
     const char *input_names[] = {"images"}, *output_names[] = {"output"};
 

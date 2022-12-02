@@ -1,7 +1,7 @@
 # cmake 版本
 cmake_minimum_required(VERSION 3.1)
 # 项目名
-project(trt_proj)
+project(trt_pro)
 MESSAGE("===This is Windows,CMAKE_SYSTEM_NAME:${CMAKE_SYSTEM_NAME}")
 
 # 编译增加C++11 支持
@@ -38,7 +38,7 @@ endif(MSVC)
 # -D_MWAITXINTRIN_H_INCLUDED for solving error: identifier "__builtin_ia32_mwaitx" is undefined
 ##-Wall  #-Wfatal-errors 
 #指定编译选项
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -Wall -MTd")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -W0 -MTd")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Ofast -D_MWAITXINTRIN_H_INCLUDED")
 
 include_directories(${PROJECT_SOURCE_DIR}/include/)
@@ -82,45 +82,27 @@ message(STATUS "    libraries: ${OpenCV_LIBS}")
 message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 message("===message=========================================")
 
-FILE(GLOB SRC_FILES "src/*.cpp")
-FILE(GLOB SRC_CU_FILES "src/*.cu")
-FILE(GLOB INC_FILES "include/*.h" "include/*.hpp")
+FILE(GLOB SRC_FILES "src/*.*")
+include_directories(${PROJECT_SOURCE_DIR}/src/)
 
-include_directories(${PROJECT_SOURCE_DIR}/onnx/)
-FILE(GLOB onnx_INC_FILES "onnx/*.*")
-source_group("onnx" FILES ${onnx_INC_FILES})
+# include_directories(${PROJECT_SOURCE_DIR}/onnx/)
+# FILE(GLOB onnx_INC_FILES "onnx/*.*")
+# source_group("onnx" FILES ${onnx_INC_FILES})
 
-include_directories(${PROJECT_SOURCE_DIR}/onnx-tensorrt/)
-FILE(GLOB onnx_tensorrt_INC_FILES "onnx-tensorrt/*.*")
-source_group("onnx-tensorrt" FILES ${onnx_tensorrt_INC_FILES})
-
-include_directories(${PROJECT_SOURCE_DIR}/22multithread/)
-FILE(GLOB multithread_FILES "22multithread/*.*")
-source_group("22multithread" FILES ${multithread_FILES})
-
-##protobuf3.11.4
-include_directories(${PROJECT_SOURCE_DIR}/third/protobuf3.11.4/include/)
-link_directories(${PROJECT_SOURCE_DIR}/third/protobuf3.11.4/lib/)
-##onnxruntime-win-x64-gpu-1.10.0
-include_directories(${PROJECT_SOURCE_DIR}/third/onnxruntime-win-x64-gpu-1.10.0/include/)
-link_directories(${PROJECT_SOURCE_DIR}/third/onnxruntime-win-x64-gpu-1.10.0/lib/)
-FILE(GLOB onnxruntime_LIBS "third/onnxruntime-win-x64-gpu-1.10.0/lib/*.lib")
+# include_directories(${PROJECT_SOURCE_DIR}/onnx-tensorrt/)
+# FILE(GLOB onnx_tensorrt_INC_FILES "onnx-tensorrt/*.*")
+# source_group("onnx-tensorrt" FILES ${onnx_tensorrt_INC_FILES})
 
 #生成目标文件
-add_executable(${PROJECT_NAME} ${SRC_FILES} ${SRC_CU_FILES} ${INC_FILES} 
-			${onnx_INC_FILES}
-			${onnx_tensorrt_INC_FILES}
-			${multithread_FILES}
+add_executable(${PROJECT_NAME} 
+			${SRC_FILES}
+			#${onnx_INC_FILES}
+			#${onnx_tensorrt_INC_FILES}
 		)
 
-target_link_libraries(${PROJECT_NAME} ${YOLOV4_LIB_NAME})
-target_link_libraries(${PROJECT_NAME} ${YOLOV5_LIB_NAME})
 target_link_libraries(${PROJECT_NAME} nvinfer cudart nvinfer_plugin nvonnxparser nvparsers ${CUDA_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 target_link_libraries(${PROJECT_NAME} Threads::Threads)
-target_link_libraries(${PROJECT_NAME} libprotobufd)
-
-target_link_libraries(${PROJECT_NAME} ${onnxruntime_LIBS})
 
 
 
