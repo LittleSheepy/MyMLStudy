@@ -95,7 +95,7 @@ void inference(){
 
     engine->print();
 
-    auto input       = engine->input();
+    auto input       = engine->input(); // Tensor
     auto output      = engine->output();
     int input_width  = input->width();
     int input_height = input->height();
@@ -127,6 +127,7 @@ void inference(){
     auto predict_name = labels[predict_label];
     float confidence  = prob[predict_label];
     printf("Predict: %s, confidence = %f, label = %d\n", predict_name.c_str(), confidence, predict_label);
+    std::cout << predict_name << std::endl;
 }
 
 int main(){
