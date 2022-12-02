@@ -21,13 +21,19 @@
 #include <vector>
 #include <memory>
 #include <functional>
+#ifdef WIN32
+#include <windows.h>
+#else
 #include <unistd.h>
+#endif
 #include <opencv2/opencv.hpp>
 
 #include "cuda-tools.hpp"
 #include "trt-builder.hpp"
 #include "simple-logger.hpp"
 #include "trt-tensor.hpp"
+#include <Shlwapi.h>
+#pragma comment(lib, "Shlwapi.lib")
 
 using namespace std;
 
@@ -152,7 +158,7 @@ void inference(){
 
     ///////////////////////////////////////////////////
     // image to float
-    auto image = cv::imread("dog.jpg");
+    auto image = cv::imread("../files/dog.jpg");
     float mean[] = {0.406, 0.456, 0.485};
     float std[]  = {0.225, 0.224, 0.229};
 
@@ -195,10 +201,11 @@ void inference(){
     // 当获取cpu地址的时候，如果数据最新的在gpu上，就进行数据复制，然后再返回cpu地址
     float* prob = output_data.cpu<float>();
     int predict_label = std::max_element(prob, prob + num_classes) - prob;
-    auto labels = load_labels("labels.imagenet.txt");
+    auto labels = load_labels("../files/labels.imagenet.txt");
     auto predict_name = labels[predict_label];
     float confidence  = prob[predict_label];
     printf("Predict: %s, confidence = %f, label = %d\n", predict_name.c_str(), confidence, predict_label);
+    std::cout << predict_name << std::endl;
 
     checkRuntime(cudaStreamDestroy(stream));
 }
