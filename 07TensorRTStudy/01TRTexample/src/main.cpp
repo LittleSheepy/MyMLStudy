@@ -8,6 +8,8 @@
 // system include
 #include <stdio.h>
 #include "Windows.h"
+#pragma warning(default : 4514)
+
 int build_model();
 int hello_inference();
 int CNNUseAPI();
@@ -25,9 +27,14 @@ int unet();
 int alphapose();
 int onnxruntime();
 
+void future_test();
+void infer_test();
+void condition_variable_test();
+
+
 int main(){
     // 更改控制台输出编码 —— 65001表示UTF-8编码格式
     SetConsoleOutputCP(65001);
-    onnxruntime();
+    future_test();
     return 0;
 }
