@@ -69,6 +69,7 @@ namespace SimpleLogger{
         char buffer[2048];
         auto now = time_now();
         string filename = file_name(file, true);
+        filename = filename.substr(filename.length() - 20, filename.length());
         int n = snprintf(buffer, sizeof(buffer), "[%s]", now.c_str());
 
         if (level == LogLevel::Fatal or level == LogLevel::Error) {

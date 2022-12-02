@@ -53,13 +53,13 @@ namespace CUDATools{
         checkRuntime(cudaGetDevice(&device_id));
         checkRuntime(cudaGetDeviceProperties(&prop, device_id));
         checkRuntime(cudaMemGetInfo(&free_mem, &total_mem));
-
-        return format(
+        string result = format(
             "[ID %d]<%s>[arch %d.%d][GMEM %.2f GB/%.2f GB]",
-            device_id, prop.name, prop.major, prop.minor, 
+            device_id, prop.name, prop.major, prop.minor,
             free_mem / 1024.0f / 1024.0f / 1024.0f,
             total_mem / 1024.0f / 1024.0f / 1024.0f
         );
+        return result;
     }
 
     int current_device_id(){
