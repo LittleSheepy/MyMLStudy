@@ -676,7 +676,6 @@ bool ModelImporter::parseFromFile(const char* onnxModelFile, int32_t verbosity)
     ::onnx::ModelProto onnx_model;
     auto* ctx = &_importer_ctx;
 
-    LOG_INFO("---------------------------my-------------------------------------");
     const bool is_binary = ParseFromFile_WAR(&onnx_model, onnxModelFile);
     if (!is_binary && !ParseFromTextFile(&onnx_model, onnxModelFile))
     {
