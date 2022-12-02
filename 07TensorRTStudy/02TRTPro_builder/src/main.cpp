@@ -197,8 +197,11 @@ void inference(){
 
     // 3x3输入，对应3x3输出
     const int num_classes = 1000;
+    //float* output_data_host = new float[num_classes];
     float output_data_host[num_classes];
+    //float* output_data_host = nullptr;
     float* output_data_device = nullptr;
+    //checkRuntime(cudaMallocHost(&output_data_host, sizeof(output_data_host1)));
     checkRuntime(cudaMalloc(&output_data_device, sizeof(output_data_host)));
 
     // 明确当前推理时，使用的数据输入大小
