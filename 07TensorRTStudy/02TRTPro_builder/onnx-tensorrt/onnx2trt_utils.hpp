@@ -22,7 +22,7 @@
     do                                                                                                                 \
     {                                                                                                                  \
         std::stringstream ss{};                                                                                        \
-        if (severity <= nvinfer1::ILogger::Severity::kWARNING) ss << __FILENAME__ << ":" << __LINE__ << ": ";          \
+        if (severity <= nvinfer1::ILogger::Severity::kWARNING) ss << __FILENAME__ << "==my==:" << __LINE__ << ": ";          \
         ss << msg;                                                                                                     \
         ctx->logger().log(severity, ss.str().c_str());                                                                 \
     } while (0)

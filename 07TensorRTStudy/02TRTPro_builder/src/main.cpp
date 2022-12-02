@@ -175,7 +175,7 @@ void inference(){
 
     ///////////////////////////////////////////////////
     // image to float
-    auto image = cv::imread("dog.jpg");
+    auto image = cv::imread("../files/dog.jpg");
     float mean[] = {0.406, 0.456, 0.485};
     float std[]  = {0.225, 0.224, 0.229};
 
@@ -213,10 +213,11 @@ void inference(){
 
     float* prob = output_data_host;
     int predict_label = std::max_element(prob, prob + num_classes) - prob;
-    auto labels = load_labels("labels.imagenet.txt");
+    auto labels = load_labels("../files/labels.imagenet.txt");
     auto predict_name = labels[predict_label];
     float confidence  = prob[predict_label];
     printf("Predict: %s, confidence = %f, label = %d\n", predict_name.c_str(), confidence, predict_label);
+    std::cout << predict_name << std::endl;
 
     checkRuntime(cudaStreamDestroy(stream));
     checkRuntime(cudaFreeHost(input_data_host));

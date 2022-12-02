@@ -35,6 +35,6 @@ void condition_variable_test();
 int main(){
     // 更改控制台输出编码 —— 65001表示UTF-8编码格式
     SetConsoleOutputCP(65001);
-    future_test();
+    yolov5_detect();
     return 0;
 }

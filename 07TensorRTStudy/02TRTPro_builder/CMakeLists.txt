@@ -42,7 +42,6 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -W0 -MTd")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Ofast -D_MWAITXINTRIN_H_INCLUDED")
 
 include_directories(${PROJECT_SOURCE_DIR}/include/)
-include_directories(${PROJECT_SOURCE_DIR}/include/onnx-tensorrt-release-8.0/)
 include_directories(${PROJECT_SOURCE_DIR}/)
 
 # setup CUDA

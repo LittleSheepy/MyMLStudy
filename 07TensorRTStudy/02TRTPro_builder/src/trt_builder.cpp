@@ -6,7 +6,8 @@
 #include <NvInfer.h>
 #include <NvInferPlugin.h>
 //#include <NvCaffeParser.h>
-#include <onnx-tensorrt/NvOnnxParser.h>
+#include <NvOnnxParser.h>
+//#include <onnx-tensorrt/NvOnnxParser.h>
 #include <string>
 #include <vector>
 #include <iostream>
@@ -338,12 +339,7 @@ namespace TRT {
 		}
 
 		if (!onnxParser->parseFromFile(source.c_str(), 1)) {
-			INFOE("Can not parse OnnX file: %s", source.c_str()); 
-			for (int32_t i = 0; i < onnxParser->getNbErrors(); ++i)
-			{
-				INFOE("%s", onnxParser->getError(i)->desc());
-				//std::cout << onnxParser->getError(i)->desc() << std::endl;
-			}
+			INFOE("Can not parse OnnX file: %s", source.c_str());
 			return false;
 		}
 
@@ -353,7 +349,7 @@ namespace TRT {
 		INFO("Input shape is %s", join_dims(vector<int>(inputDims.d, inputDims.d + inputDims.nbDims)).c_str());
 		INFO("Set max batch size = %d", maxBatchSize);
 		INFO("Set max workspace size = %.2f MB", maxWorkspaceSize / 1024.0f / 1024.0f);
-		INFO("Base device: %s", CUDATools::device_description().c_str());
+		//INFO("Base device: %s", CUDATools::device_description().c_str());
 
 		int net_num_input = network->getNbInputs();
 		INFO("Network has %d inputs:", net_num_input);
