@@ -39,4 +39,5 @@ DeepLearning/CNN/ResNet/models/resnet/resnet.meta
 07TensorRTStudy/14TRTPro_pybind11_yolov5/build/
 07TensorRTStudy/14TRTPro_pybind11_yolov5/bin/
 07TensorRTStudy/14TRTPro_pybind11_yolov5/third/
-
+06CUDAStudy/02CUDAexamplesCMake/build/
+06CUDAStudy/02CUDAexamplesCMake/bin/
