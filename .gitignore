@@ -11,9 +11,9 @@ DeepLearning/CNN/ResNet/models/resnet/checkpoint
 DeepLearning/CNN/ResNet/models/resnet/resnet.data-00000-of-00001
 DeepLearning/CNN/ResNet/models/resnet/resnet.index
 DeepLearning/CNN/ResNet/models/resnet/resnet.meta
-06CUDA编程/01CUDAexamples/x64
-06CUDA编程/01CUDAexamples/.vs/
-06CUDA编程/01CUDAexamples/CUDAbase/x64/
+06CUDAStudy/01CUDAexamples/x64
+06CUDAStudy/01CUDAexamples/.vs/
+06CUDAStudy/01CUDAexamples/CUDAbase/x64/
 07TensorRTStudy/01TRTexample/build/
 07TensorRTStudy/01TRTexample/bin/
 07TensorRTStudy/01TRTexample/third/
