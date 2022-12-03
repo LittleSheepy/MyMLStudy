@@ -1,7 +1,7 @@
 # cmake 版本
 cmake_minimum_required(VERSION 3.1)
 # 项目名
-project(trt_proj)
+project(CUDAexamplesCMake)
 MESSAGE("===This is Windows,CMAKE_SYSTEM_NAME:${CMAKE_SYSTEM_NAME}")
 
 # 编译增加C++11 支持
@@ -45,13 +45,12 @@ include_directories(${PROJECT_SOURCE_DIR}/include/)
 include_directories(${PROJECT_SOURCE_DIR}/include/onnx-tensorrt-release-8.0/)
 include_directories(${PROJECT_SOURCE_DIR}/)
 
-
 # setup CUDA
-set(CUDA_NVCC_PLAGS ${CUDA_NVCC_PLAGS};-std=c++11; -g; -G; -w; -gencode; arch=compute_75;code=sm_75)
 #set(CUDAFE_FLAGS_DEBUG ${CUDAFE_FLAGS_DEBUG};/MTd)
 find_package(CUDA REQUIRED)
 include_directories(${CUDA_INCLUDE_DIRS})
 enable_language(CUDA)  # add this line, then no need to setup cuda path in vs
+set(CUDA_NVCC_PLAGS ${CUDA_NVCC_PLAGS};-std=c++11; -g; -G; -w; -gencode; arch=compute_75;code=sm_75)
 
 # tensorrt
 set(TRT_DIR "D:/tools/TensorRT-8.0.1.6-cu10.2/")  #3
@@ -60,7 +59,7 @@ link_directories(${TRT_DIR}\\lib)
 
 # setup opencv
 set(OpenCV_DIR "D:/tools/opencv/build/x64/vc15/lib/")  #2
-    find_package(OpenCV REQUIRED)
+find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 # Threads
 set(THREADS_PREFER_PTHREAD_FLAG ON)
@@ -92,9 +91,9 @@ add_executable(${PROJECT_NAME} ${SRC_FILES})
 
 target_link_libraries(${PROJECT_NAME} ${LIB_FILES})
 target_link_libraries(${PROJECT_NAME} ${CUDA_LIBRARIES})
-target_link_libraries(${PROJECT_NAME} nvinfer cudart nvinfer_plugin nvonnxparser nvparsers)
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
-target_link_libraries(${PROJECT_NAME} Threads::Threads)
+#target_link_libraries(${PROJECT_NAME} nvinfer cudart nvinfer_plugin nvonnxparser nvparsers)
+#target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+#target_link_libraries(${PROJECT_NAME} Threads::Threads)
 
-
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
 
