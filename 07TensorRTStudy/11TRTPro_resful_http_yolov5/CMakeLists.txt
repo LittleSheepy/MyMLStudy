@@ -85,7 +85,13 @@ set(SRC_FILES "")
 FILE(GLOB SRC_FILES1 "src/*.*")
 set(SRC_FILES ${SRC_FILES} ${SRC_FILES1})
 
+# app_yolo
 FILE(GLOB app_yolo_FILES "src/app_yolo/*.*")
+include_directories(${PROJECT_SOURCE_DIR}/src/)
+set(SRC_FILES ${SRC_FILES} ${app_yolo_FILES})
+
+# app_http
+FILE(GLOB app_yolo_FILES "src/app_http/*.*")
 include_directories(${PROJECT_SOURCE_DIR}/src/)
 set(SRC_FILES ${SRC_FILES} ${app_yolo_FILES})
 

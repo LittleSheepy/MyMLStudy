@@ -164,6 +164,8 @@ int start_http(int port = 9090){
 
 int main(){
 
+    // 更改控制台输出编码 —— 65001表示UTF-8编码格式
+    SetConsoleOutputCP(65001);
     // 新的实现
     if(!build_model()){
         return -1;
