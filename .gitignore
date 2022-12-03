@@ -36,6 +36,7 @@ DeepLearning/CNN/ResNet/models/resnet/resnet.meta
 07TensorRTStudy/11TRTPro_resful_http_yolov5/build/
 07TensorRTStudy/11TRTPro_resful_http_yolov5/bin/
 07TensorRTStudy/11TRTPro_resful_http_yolov5/third/
-07TensorRTStudy/10TRTPro_multi_camera_decoder/bin/
-07TensorRTStudy/10TRTPro_multi_camera_decoder/build/
+07TensorRTStudy/14TRTPro_pybind11_yolov5/build/
+07TensorRTStudy/14TRTPro_pybind11_yolov5/bin/
+07TensorRTStudy/14TRTPro_pybind11_yolov5/third/
 
