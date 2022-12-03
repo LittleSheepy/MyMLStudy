@@ -90,6 +90,8 @@ include_directories(${PROJECT_SOURCE_DIR}/src/)
 set(SRC_FILES ${SRC_FILES} ${app_yolo_FILES})
 
 include_directories(${PROJECT_SOURCE_DIR}/src/tensorRT/)
+include_directories("D:/Anaconda3/envs/python38/include/")
+
 
 # 加载TensorRT_Pro
 # builder
@@ -139,7 +141,7 @@ link_directories(${PROJECT_SOURCE_DIR}/third/protobuf3.11.4/lib/)
 set(LIB_FILES ${LIB_FILES} "libprotobufd")
 
 #生成目标文件
-add_executable(${PROJECT_NAME}  ${SRC_FILES})
+add_library(${PROJECT_NAME}  ${SRC_FILES})
 
 target_link_libraries(${PROJECT_NAME} nvinfer cudart nvinfer_plugin nvonnxparser nvparsers ${CUDA_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
