@@ -3732,21 +3732,21 @@ static int mg_socket_if_listen_udp(struct mg_connection *nc,
 
 static int mg_socket_if_tcp_send(struct mg_connection *nc, const void *buf,
                                  size_t len) {
-  int n = (int) MG_SEND_FUNC(nc->sock, buf, len, 0);
+  int n = (int) MG_SEND_FUNC(nc->sock, (const char *)buf, len, 0);
   if (n < 0 && !mg_is_error()) n = 0;
   return n;
 }
 
 static int mg_socket_if_udp_send(struct mg_connection *nc, const void *buf,
                                  size_t len) {
-  int n = sendto(nc->sock, buf, len, 0, &nc->sa.sa, sizeof(nc->sa.sin));
+  int n = sendto(nc->sock, (const char*)buf, len, 0, &nc->sa.sa, sizeof(nc->sa.sin));
   if (n < 0 && !mg_is_error()) n = 0;
   return n;
 }
 
 static int mg_socket_if_tcp_recv(struct mg_connection *nc, void *buf,
                                  size_t len) {
-  int n = (int) MG_RECV_FUNC(nc->sock, buf, len, 0);
+  int n = (int) MG_RECV_FUNC(nc->sock, (char*)buf, len, 0);
   if (n == 0) {
     /* Orderly shutdown of the socket, try flushing output. */
     nc->flags |= MG_F_SEND_AND_CLOSE;
@@ -3760,7 +3760,7 @@ static int mg_socket_if_udp_recv(struct mg_connection *nc, void *buf,
                                  size_t len, union socket_address *sa,
                                  size_t *sa_len) {
   socklen_t sa_len_st = *sa_len;
-  int n = recvfrom(nc->sock, buf, len, 0, &sa->sa, &sa_len_st);
+  int n = recvfrom(nc->sock, (char*)buf, len, 0, &sa->sa, &sa_len_st);
   *sa_len = sa_len_st;
   if (n < 0 && !mg_is_error()) n = 0;
   return n;
@@ -3820,7 +3820,7 @@ static sock_t mg_open_listening_socket(union socket_address *sa, int type,
 #if !MG_LWIP /* LWIP doesn't support either */
 #if defined(_WIN32) && defined(SO_EXCLUSIVEADDRUSE) && !defined(WINCE)
       /* "Using SO_REUSEADDR and SO_EXCLUSIVEADDRUSE" http://goo.gl/RmrFTm */
-      !setsockopt(sock, SOL_SOCKET, SO_EXCLUSIVEADDRUSE, (void *) &on,
+      !setsockopt(sock, SOL_SOCKET, SO_EXCLUSIVEADDRUSE, (const char*) &on,
                   sizeof(on)) &&
 #endif
 
@@ -12022,10 +12022,10 @@ static int mg_get_ip_address_of_nameserver(char *name, size_t name_len) {
         break;
       }
       if (RegOpenKeyExW(hKey, subkey, 0, KEY_READ, &hSub) == ERROR_SUCCESS &&
-          ((RegQueryValueExW(hSub, L"NameServer", 0, &type, (void *) value,
+          ((RegQueryValueExW(hSub, L"NameServer", 0, &type, (LPBYTE) value,
                              &len) == ERROR_SUCCESS &&
             value[0] != '\0') ||
-           (RegQueryValueExW(hSub, L"DhcpNameServer", 0, &type, (void *) value,
+           (RegQueryValueExW(hSub, L"DhcpNameServer", 0, &type, (LPBYTE) value,
                              &len) == ERROR_SUCCESS &&
             value[0] != '\0'))) {
         /*
