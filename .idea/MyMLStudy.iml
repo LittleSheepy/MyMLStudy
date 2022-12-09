@@ -8,6 +8,10 @@
     <orderEntry type="jdk" jdkName="Python 3.8 (python38)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PaddleOCR" />
-    <orderEntry type="module" module-name="yolov5_obb" />
+    <orderEntry type="module" module-name="yolov5-v6" />
+    <orderEntry type="module" module-name="model-compression-optimization" />
+    <orderEntry type="module" module-name="yolov5-6.0" />
+    <orderEntry type="module" module-name="yolov5_prune" />
+    <orderEntry type="module" module-name="yolov5_prune_old" />
   </component>
 </module>
