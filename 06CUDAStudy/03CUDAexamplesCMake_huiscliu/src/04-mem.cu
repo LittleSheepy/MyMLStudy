@@ -3,8 +3,7 @@
 #include <cuda.h>
 
 typedef double FLOAT;
-
-__global__ void sum(FLOAT *x)
+__global__ void sum(FLOAT* x)
 {
     int tid = threadIdx.x;
     printf(">>>>>sumt id = %d\n", tid);
@@ -48,7 +47,7 @@ int mem04()
     cudaMemcpy(dx, hx, nbytes, cudaMemcpyHostToDevice);
 
     /* call GPU */
-    sum<<<1, 32>>>(dx);
+    sum<<<1, N>>>(dx);
 
     /* let GPU finish */
     cudaDeviceSynchronize();
@@ -63,6 +62,7 @@ int mem04()
 
     cudaFree(dx);
     free(hx);
+    //cudaFreeHost(hx);
 
     return 0;
 }

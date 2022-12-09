@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="" />
+    <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/DeepLearning/CNN/01MobileNetV1/mobilenetv1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06CUDAStudy/03CUDAexamplesCMake_huiscliu/src/04-mem.cu" beforeDir="false" afterPath="$PROJECT_DIR$/06CUDAStudy/03CUDAexamplesCMake_huiscliu/src/04-mem.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06CUDAStudy/03CUDAexamplesCMake_huiscliu/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/06CUDAStudy/03CUDAexamplesCMake_huiscliu/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/.idea/model-compression-optimization.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/.idea/model-compression-optimization.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming/prune.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming/prune.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/data/coco_hand.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/data/coco_hand.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/prune_finetune.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/prune_finetune.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/train_sparsity.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/train_sparsity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/utils/model_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/utils/model_transfer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/utils/prune_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/utils/prune_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/data/train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/data/train.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/data/valid.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/data/valid.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/shortcut_prune_yolov5s.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/shortcut_prune_yolov5s.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/slim_prune_yolov5s.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/slim_prune_yolov5s.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/slim_prune_yolov5s_8x.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/slim_prune_yolov5s_8x.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/utils/datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/utils/datasets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/utils/prune_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/utils/prune_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/utils/torch_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/utils/torch_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/data/train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/data/train.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/data/valid.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/data/valid.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/shortcut_prune_yolov5s.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/shortcut_prune_yolov5s.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/utils/datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/utils/datasets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/utils/prune_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/utils/prune_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/utils/torch_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/utils/torch_utils.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +69,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -93,7 +124,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.10-yolov5-obb/yolov5_obb" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="python.debugger.dataview.autoresize" value="false" />
@@ -101,10 +132,6 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myGitHub\MyMLStudy\08AIUnitsCode\01BN" />
-      <recent name="D:\myGitHub\aFolder_paddle\PaddleOCR_mytest\imgs" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\myGitHub\aFolder_NVIDIA\learning-cuda-trt\tensorrt-integrate-1.8-alphapose\AlphaPose-change\pretrained_models" />
       <recent name="D:\myGitHub\MyMLStudy\09ONNX\01examples" />
@@ -112,22 +139,26 @@
       <recent name="D:\myGitHub\aFolder_YOLO\01yolov5s\yolov5-6.2\yolov5-6.2" />
       <recent name="D:\01sheepy\0\trunk\dental" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myGitHub\MyMLStudy\08AIUnitsCode\01BN" />
+      <recent name="D:\myGitHub\aFolder_paddle\PaddleOCR_mytest\imgs" />
+    </key>
   </component>
-  <component name="RunManager">
-    <configuration name="export" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="yolov5-6.0" />
+  <component name="RunManager" selected="Python.slim_prune_yolov5s">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="model-compression-optimization" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\Anaconda3\envs\python38\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.2-yolov5-detect/yolov5-6.0" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.2-yolov5-detect/yolov5-6.0/export.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -136,21 +167,87 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="yolov5_obb" />
+    <configuration name="prune" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="model-compression-optimization" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\Anaconda3\envs\python38\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.10-yolov5-obb/yolov5_obb/utils/nms_rotated" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.10-yolov5-obb/yolov5_obb/utils/nms_rotated/setup.py" />
-      <option name="PARAMETERS" value="build" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming/prune.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="shortcut_prune_yolov5s" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="yolov5_prune_old" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/shortcut_prune_yolov5s.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="slim_prune_yolov5s" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="yolov5_prune" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/slim_prune_yolov5s.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train_sparsity" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="yolov5-v6" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/train_sparsity.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -160,8 +257,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.setup" />
-        <item itemvalue="Python.export" />
+        <item itemvalue="Python.slim_prune_yolov5s" />
+        <item itemvalue="Python.shortcut_prune_yolov5s" />
+        <item itemvalue="Python.train_sparsity" />
+        <item itemvalue="Python.prune" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -530,6 +630,7 @@
       <workItem from="1668659827722" duration="644000" />
       <workItem from="1669550394172" duration="17611000" />
       <workItem from="1669780374951" duration="56153000" />
+      <workItem from="1670276548500" duration="35588000" />
     </task>
     <servers />
   </component>
@@ -549,14 +650,18 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669933356285" />
-    <state x="500" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1669783349895">
+    <state x="500" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1670372551213">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="500" y="220" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669783349895" />
+    <state x="500" y="220" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670372551213" />
     <state x="477" y="72" key="#convert_to_onnx" timestamp="1669916981373">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="477" y="72" key="#convert_to_onnx/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669916981373" />
+    <state x="2588" y="-129" key="#converter" timestamp="1670276814002">
+      <screen x="1920" y="-309" width="1920" height="1050" />
+    </state>
+    <state x="2588" y="-129" key="#converter/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670276814002" />
     <state x="477" y="72" key="#export" timestamp="1669911363926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -589,63 +694,75 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="477" y="72" key="#setup_(1)/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669786590384" />
-    <state width="1010" height="466" key="DebuggerActiveHint" timestamp="1669912497557">
+    <state x="477" y="72" key="#shortcut_prune_yolov5s" timestamp="1670280168548">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1010" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669912497557" />
-    <state width="1398" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669906919099" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1669931060479">
+    <state x="477" y="72" key="#shortcut_prune_yolov5s/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670280168548" />
+    <state x="2588" y="-129" key="#train" timestamp="1670277878750">
+      <screen x="1920" y="-309" width="1920" height="1050" />
+    </state>
+    <state x="2588" y="-129" key="#train/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670277878750" />
+    <state x="477" y="72" key="#train_sparsity" timestamp="1670278977043">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669931060479" />
-    <state x="2606" y="-92" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641316242" />
+    <state x="477" y="72" key="#train_sparsity/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670278977043" />
+    <state width="1398" height="587" key="DebuggerActiveHint" timestamp="1670393396816">
+      <screen x="1920" y="-309" width="1920" height="1050" />
+    </state>
+    <state width="1010" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670374671420" />
+    <state width="1398" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670393396816" />
+    <state x="2606" y="-92" key="FileChooserDialogImpl" timestamp="1670394282705">
+      <screen x="1920" y="-309" width="1920" height="1050" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670374454895" />
+    <state x="2606" y="-92" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670394282705" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
-    <state width="1493" height="351" key="GridCell.Tab.0.bottom" timestamp="1669933357244">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="633" key="GridCell.Tab.0.bottom" timestamp="1670555086697">
+      <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state width="1493" height="351" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669933357244" />
-    <state width="1877" height="235" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669913573846" />
+    <state width="1493" height="182" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670374621246" />
+    <state width="1877" height="633" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670555086697" />
     <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="351" key="GridCell.Tab.0.center" timestamp="1669933357244">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="633" key="GridCell.Tab.0.center" timestamp="1670555086696">
+      <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state width="1493" height="351" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669933357244" />
-    <state width="1877" height="235" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669913573846" />
+    <state width="1493" height="182" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670374621246" />
+    <state width="1877" height="633" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670555086696" />
     <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="351" key="GridCell.Tab.0.left" timestamp="1669933357243">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="633" key="GridCell.Tab.0.left" timestamp="1670555086695">
+      <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state width="1493" height="351" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669933357243" />
-    <state width="1877" height="235" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669913573846" />
+    <state width="1493" height="182" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670374621246" />
+    <state width="1877" height="633" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670555086695" />
     <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="351" key="GridCell.Tab.0.right" timestamp="1669933357244">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="633" key="GridCell.Tab.0.right" timestamp="1670555086697">
+      <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state width="1493" height="351" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669933357244" />
-    <state width="1877" height="235" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669913573846" />
+    <state width="1493" height="182" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670374621246" />
+    <state width="1877" height="633" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670555086697" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state x="296" y="22" key="SettingsEditor" timestamp="1669915043331">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="2381" y="-142" key="SettingsEditor" timestamp="1670394296110">
+      <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state x="296" y="22" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669915043331" />
-    <state x="2381" y="-142" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669641768048" />
+    <state x="296" y="22" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670296931845" />
+    <state x="2381" y="-142" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670394296110" />
     <state x="2371" y="-48" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1669571374803">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state x="2371" y="-48" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669571374803" />
-    <state x="27" y="32" width="1303" height="767" maximized="true" key="dock-window-1" timestamp="1669903989464">
+    <state x="0" y="0" width="1495" height="719" key="dock-window-1" timestamp="1670294727638">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="-6" y="0" width="1547" height="840" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669727284037" />
-    <state x="27" y="32" width="1303" height="767" maximized="true" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669903989464" />
-    <state x="0" y="0" width="1550" height="920" key="dock-window-2" timestamp="1669631302910">
+    <state x="0" y="0" width="1495" height="719" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670294727638" />
+    <state x="55" y="0" width="1495" height="826" maximized="true" key="dock-window-2" timestamp="1670394319683">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="0" y="0" width="1550" height="920" key="dock-window-2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669631302909" />
-    <state x="447" y="150" width="642" height="534" key="find.popup" timestamp="1669901623015">
+    <state x="55" y="0" width="1495" height="826" maximized="true" key="dock-window-2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670394319683" />
+    <state x="447" y="150" width="642" height="534" key="find.popup" timestamp="1670280629781">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="447" y="150" width="642" height="534" key="find.popup/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669901623015" />
+    <state x="447" y="150" width="642" height="534" key="find.popup/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670280629781" />
     <state x="2459" y="-114" width="840" height="854" key="search.everywhere.popup" timestamp="1669633427038">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
@@ -1904,6 +2021,41 @@
           <line>36</line>
           <option name="timeStamp" value="1708" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming/prune.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="1712" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming/prune.py</url>
+          <line>109</line>
+          <option name="timeStamp" value="1715" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/train_sparsity.py</url>
+          <line>204</line>
+          <option name="timeStamp" value="1716" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming/prune.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="1742" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/utils/prune_utils.py</url>
+          <line>370</line>
+          <option name="timeStamp" value="1757" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/utils/prune_utils.py</url>
+          <line>374</line>
+          <option name="timeStamp" value="1758" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/slim_prune_yolov5s.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="1764" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1913,6 +2065,15 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="module_list[idx][1]" language="Python" />
+        <watch expression="device" language="Python" />
+        <watch expression="model.module_list[idx][0]" language="Python" />
+        <watch expression="compact_module_defs" />
+        <watch expression="compact_CBL[1]" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MyMLStudy$svm_simple.coverage" NAME="svm-simple Coverage Results" MODIFIED="1582019266324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第7章 支持向量机" />
@@ -1969,6 +2130,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$simply_PPO.coverage" NAME="simply_PPO Coverage Results" MODIFIED="1574844393786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/12_Proximal_Policy_Optimization" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p51_fac_recog__1_.coverage" NAME="p51_fac_recog (1) Coverage Results" MODIFIED="1593751946797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mobilenet.coverage" NAME="mobilenet Coverage Results" MODIFIED="1622644238253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorchx/mobilenet" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$shortcut_prune_yolov5s.coverage" NAME="shortcut_prune_yolov5s Coverage Results" MODIFIED="1670394450098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old" />
     <SUITE FILE_PATH="coverage/MyMLStudy$main_82.coverage" NAME="main_82 Coverage Results" MODIFIED="1600856081143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../smoke_call" />
     <SUITE FILE_PATH="coverage/MyMLStudy$app_garbage.coverage" NAME="app_garbage Coverage Results" MODIFIED="1602567622579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/code/gccv3/gccv3/UIServer" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mask.coverage" NAME="红色转mask Coverage Results" MODIFIED="1622550678379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/01work/07xiling/labelseg" />
@@ -1998,18 +2160,20 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$gamblers_problem.coverage" NAME="gamblers_problem Coverage Results" MODIFIED="1575472478715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$full_code.coverage" NAME="full_code Coverage Results" MODIFIED="1562327730781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/莫凡Tensorflow学习笔记/tensorflowTUT/tf5_example2" />
     <SUITE FILE_PATH="coverage/MyMLStudy$ten_armed_testbed.coverage" NAME="ten_armed_testbed Coverage Results" MODIFIED="1575360540468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter02" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1669571360641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/yolov5" />
     <SUITE FILE_PATH="coverage/MyMLStudy$export__1_.coverage" NAME="export (1) Coverage Results" MODIFIED="1669912091358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.2-yolov5-detect/yolov5-6.0-change" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1670279418643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6" />
     <SUITE FILE_PATH="coverage/MyMLStudy$SPPtest.coverage" NAME="SPPtest Coverage Results" MODIFIED="1669634026003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AI_track" />
     <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx__3_.coverage" NAME="gen-onnx (3) Coverage Results" MODIFIED="1669829300193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/09int8" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mainEntry.coverage" NAME="mainEntry Coverage Results" MODIFIED="1572948659625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务2：PyQt5编写GUI界面" />
     <SUITE FILE_PATH="coverage/MyMLStudy$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1602421995934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Anaconda3/envs/mmdet/Lib/site-packages/utils" />
     <SUITE FILE_PATH="coverage/MyMLStudy$lenet5.coverage" NAME="lenet5 Coverage Results" MODIFIED="1610552230124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorchx/lenet" />
     <SUITE FILE_PATH="coverage/MyMLStudy$xstack.coverage" NAME="xstack Coverage Results" MODIFIED="1593621995213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/numpy练习" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$prune.coverage" NAME="prune Coverage Results" MODIFIED="1670302089879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming" />
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ18_IP02.coverage" NAME="HJ18 识别有效的IP地址和掩码并进行分类统计02 Coverage Results" MODIFIED="1666120527917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_main.coverage" NAME="run_main Coverage Results" MODIFIED="1593353764287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../tensorflow-mnist-CVAE" />
     <SUITE FILE_PATH="coverage/MyMLStudy$inception.coverage" NAME="inception Coverage Results" MODIFIED="1610553011847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorchx/inception" />
     <SUITE FILE_PATH="coverage/MyMLStudy$qt0406_QLabel.coverage" NAME="qt0406_QLabel Coverage Results" MODIFIED="1622456541909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter04" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$slim_prune_yolov5s.coverage" NAME="slim_prune_yolov5s Coverage Results" MODIFIED="1670395067522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune" />
     <SUITE FILE_PATH="coverage/MyMLStudy$PCA.coverage" NAME="PCA Coverage Results" MODIFIED="1576048053672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../PCA" />
     <SUITE FILE_PATH="coverage/MyMLStudy$Led_Rec.coverage" NAME="Led_Rec Coverage Results" MODIFIED="1614132053212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/01work/DeepBlueDet/01codes/tongli/Kone_Led/HandlePic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ25_02.coverage" NAME="HJ25 数据分类处理02 Coverage Results" MODIFIED="1666468878989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
@@ -2151,6 +2315,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$ser.coverage" NAME="ser Coverage Results" MODIFIED="1605598897527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/MyMLStudy$utils.coverage" NAME="utils Coverage Results" MODIFIED="1605194286155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../CTC-loss-introduction/src_code/numpy_ctc" />
     <SUITE FILE_PATH="coverage/MyMLStudy$tests.coverage" NAME="tests Coverage Results" MODIFIED="1594571103429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/myClass/level3/4trees" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$train_sparsity.coverage" NAME="train_sparsity Coverage Results" MODIFIED="1670379959126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_exercise1__1_.coverage" NAME="cv2_exercise1 (1) Coverage Results" MODIFIED="1572936991621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/04. 图像基本操作" />
     <SUITE FILE_PATH="coverage/MyMLStudy$plots.coverage" NAME="plots Coverage Results" MODIFIED="1593619050598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/matplotlib练习" />
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ25_.coverage" NAME="HJ25 数据分类处理 Coverage Results" MODIFIED="1666469230867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
@@ -2170,6 +2335,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$battle_city.coverage" NAME="battle_city Coverage Results" MODIFIED="1575716898816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../AirGesture" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p56_ResNet.coverage" NAME="p56_ResNet Coverage Results" MODIFIED="1594606534682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />
     <SUITE FILE_PATH="coverage/MyMLStudy$CallMainWin02.coverage" NAME="CallMainWin02 Coverage Results" MODIFIED="1622443176877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter03/mainWin" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$converter.coverage" NAME="converter Coverage Results" MODIFIED="1670277439429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/data" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p45_celeba.coverage" NAME="p45_celeba Coverage Results" MODIFIED="1593712546371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_atari.coverage" NAME="run-atari Coverage Results" MODIFIED="1578052313036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../gym-nes-mario-bros/src" />
     <SUITE FILE_PATH="coverage/MyMLStudy$convert_to_onnx.coverage" NAME="convert_to_onnx Coverage Results" MODIFIED="1669916981402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.4-retinaface-detect/Pytorch_Retinaface-master" />
@@ -2195,7 +2361,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$TongJiData.coverage" NAME="TongJiData Coverage Results" MODIFIED="1611294805344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/TongJiData" />
     <SUITE FILE_PATH="coverage/MyMLStudy$qt402_FirstPyQt.coverage" NAME="qt402_FirstPyQt Coverage Results" MODIFIED="1622454461039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$blackjack.coverage" NAME="blackjack Coverage Results" MODIFIED="1575740307340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter05" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$main.coverage" NAME="main Coverage Results" MODIFIED="1622631566999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/01work/07xiling/labelseg" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$main.coverage" NAME="main Coverage Results" MODIFIED="1670298372382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/1pruning/01NetworkSlimming" />
     <SUITE FILE_PATH="coverage/MyMLStudy$tensorflow6_session.coverage" NAME="tensorflow6_session Coverage Results" MODIFIED="1565025635968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/莫凡Tensorflow学习笔记/tensorflowTUT" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_CartPole.coverage" NAME="run_CartPole Coverage Results" MODIFIED="1574434458790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/6_OpenAI_gym" />
     <SUITE FILE_PATH="coverage/MyMLStudy$01_.coverage" NAME="01 命令行参数 Coverage Results" MODIFIED="1593076760067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/Tensorflow学习笔记" />
