@@ -89,15 +89,48 @@ set(SRC_FILES ${SRC_FILES} ${SRC_FILES1})
 # CUDA lib 文件
 FILE(GLOB CUDA_LIB_FILES "${CUDA_INCLUDE_DIRS}/../lib/x64/*.*")
 set(LIB_FILES ${LIB_FILES} ${CUDA_LIB_FILES})
+set(LIB_FILES ${LIB_FILES} ${CUDA_LIBRARIES})
 
 #生成目标文件
-add_executable(${PROJECT_NAME} ${SRC_FILES})
+#add_executable(${PROJECT_NAME} ${SRC_FILES})
 
-target_link_libraries(${PROJECT_NAME} ${LIB_FILES})
-target_link_libraries(${PROJECT_NAME} ${CUDA_LIBRARIES})
+#target_link_libraries(${PROJECT_NAME} ${LIB_FILES})
+#target_link_libraries(${PROJECT_NAME} ${CUDA_LIBRARIES})
 #target_link_libraries(${PROJECT_NAME} nvinfer cudart nvinfer_plugin nvonnxparser nvparsers)
 #target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 #target_link_libraries(${PROJECT_NAME} Threads::Threads)
 
-set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
+set(LESSON_NAME "LESSON03_REDUCE")
+FILE(GLOB LESSON_SRC_FILES "src/lesson3/reduce.cu")
+add_executable(${LESSON_NAME} ${LESSON_SRC_FILES})
+target_link_libraries(${LESSON_NAME} ${LIB_FILES})
+
+set(LESSON_NAME "LESSON03_SCAN")
+FILE(GLOB LESSON_SRC_FILES "src/lesson3/scan.cu")
+add_executable(${LESSON_NAME} ${LESSON_SRC_FILES})
+target_link_libraries(${LESSON_NAME} ${LIB_FILES})
+
+set(LESSON_NAME "LESSON04_HISTO")
+FILE(GLOB LESSON_SRC_FILES "src/lesson4/histo.cu")
+add_executable(${LESSON_NAME} ${LESSON_SRC_FILES})
+target_link_libraries(${LESSON_NAME} ${LIB_FILES})
+
+set(LESSON_NAME "LESSON05_RGB2GRAY")
+FILE(GLOB LESSON_SRC_FILES "src/lesson5/rgb2grey.cu")
+add_executable(${LESSON_NAME} ${LESSON_SRC_FILES})
+set(LIB_FILES ${LIB_FILES} ${OpenCV_LIBS})
+target_link_libraries(${LESSON_NAME} ${LIB_FILES})
+
+set(LESSON_NAME "LESSON07_TRANSPOSE")
+FILE(GLOB LESSON_SRC_FILES "src/lesson7/transpose.cu")
+add_executable(${LESSON_NAME} ${LESSON_SRC_FILES})
+target_link_libraries(${LESSON_NAME} ${LIB_FILES})
+
+set(LESSON_NAME "LESSON07_QUERY")
+FILE(GLOB LESSON_SRC_FILES "src/lesson7/deviceQuery_simplified.cpp")
+add_executable(${LESSON_NAME} ${LESSON_SRC_FILES})
+target_link_libraries(${LESSON_NAME} ${LIB_FILES})
+
+set(LESSON_NAME "LESSON07_QUERY")
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${LESSON_NAME})
 
