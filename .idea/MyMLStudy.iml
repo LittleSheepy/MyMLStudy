@@ -14,5 +14,6 @@
     <orderEntry type="module" module-name="yolov5_prune" />
     <orderEntry type="module" module-name="yolov5_prune_old" />
     <orderEntry type="module" module-name="yolov7" />
+    <orderEntry type="module" module-name="yolov5prune" />
   </component>
 </module>
