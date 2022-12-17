@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/00datasets/.idea/00datasets.iml" filepath="$PROJECT_DIR$/00datasets/.idea/00datasets.iml" />
       <module fileurl="file://$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" filepath="$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" />
       <module fileurl="file://$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" filepath="$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" />
       <module fileurl="file://$PROJECT_DIR$/../GBDT/.idea/GBDT.iml" filepath="$PROJECT_DIR$/../GBDT/.idea/GBDT.iml" />
@@ -15,13 +16,9 @@
       <module fileurl="file://$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" filepath="$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" />
       <module fileurl="file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" filepath="$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" />
       <module fileurl="file://$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" filepath="$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/.idea/model-compression-optimization.iml" filepath="$PROJECT_DIR$/../aFolder_ModelCompression/model-compression-optimization/.idea/model-compression-optimization.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.0/yolov5-6.0/.idea/yolov5-6.0.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5-6.0/yolov5-6.0/.idea/yolov5-6.0.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/.idea/yolov5-v6.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6/.idea/yolov5-v6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/.idea/yolov5_prune.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/.idea/yolov5_prune.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/.idea/yolov5_prune_old.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune_old/.idea/yolov5_prune_old.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5prune/.idea/yolov5prune.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/yolov5prune/.idea/yolov5prune.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/02yolov7s/yolov7/.idea/yolov7.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/02yolov7s/yolov7/.idea/yolov7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial/.idea/nlp-tutorial.iml" filepath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial/.idea/nlp-tutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/.idea/nlp-tutorial_wmathor.iml" filepath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/.idea/nlp-tutorial_wmathor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_Attention/seq2seq/.idea/seq2seq.iml" filepath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/.idea/seq2seq.iml" />
     </modules>
   </component>
 </project>
