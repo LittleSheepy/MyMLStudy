@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/00datasets/.idea/00datasets.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/00datasets/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/00datasets/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/00datasets/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/00datasets/01torchtext/01Multi30k.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeepLearning/RNN/01seq2seq/Seq2Seq-Machine-Translation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeepLearning/RNN/_02seq2seqTest/datasets/data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeepLearning/RNN/_02seq2seqTest/models/Decoders.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeepLearning/RNN/_02seq2seqTest/models/Encoders.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeepLearning/RNN/_02seq2seqTest/models/seq2seqs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeepLearning/RNN/_02seq2seqTest/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02DeepLearning/RNN/01seq2seq/Seq2Seq(Attention)-Torch.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/utils/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/01dataset/02dataload.py" beforeDir="false" afterPath="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/01dataset/02dataload.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/.idea/seq2seq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/.idea/seq2seq.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/mytraining.pt" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/mytraining.pt" afterDir="false" />
@@ -33,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test/test6/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test/test6/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test/test_success1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test/test_success1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/4-2.Seq2Seq(Attention)/Seq2Seq(Attention)-Torch.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/4-2.Seq2Seq(Attention)/Seq2Seq(Attention)-Torch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer/Transformer_Torch.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer/Transformer_Torch.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +112,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/00datasets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/02DeepLearning/RNN/01seq2seq" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="python.debugger.dataview.autoresize" value="false" />
@@ -133,19 +120,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\00myGitHub\MyMLStudy\DeepLearning\RNN\01seq2seq" />
-      <recent name="D:\00myGitHub\MyMLStudy\05算法" />
-      <recent name="D:\00myGitHub\aFolder_Classification\Contrastive-Clustering\datasets" />
-      <recent name="D:\00myGitHub\MyMLStudy\11Attention\01transform" />
-      <recent name="D:\myGitHub\aFolder_YOLO\02yolov7s\yolov7\data" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\myGitHub\MyMLStudy\08AIUnitsCode\01BN" />
       <recent name="D:\myGitHub\aFolder_paddle\PaddleOCR_mytest\imgs" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\00myGitHub\MyMLStudy\02DeepLearning\RNN\01seq2seq" />
+      <recent name="D:\00myGitHub\MyMLStudy\DeepLearning\RNN\01seq2seq" />
+      <recent name="D:\00myGitHub\MyMLStudy\05算法" />
+      <recent name="D:\00myGitHub\aFolder_Classification\Contrastive-Clustering\datasets" />
+      <recent name="D:\00myGitHub\MyMLStudy\11Attention\01transform" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.01Multi30k">
+  <component name="RunManager" selected="Python.Transformer_Torch">
     <configuration name="01Multi30k" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="00datasets" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,6 +177,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Transformer_Torch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="nlp-tutorial_wmathor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer/Transformer_Torch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="seq2seq_torch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="nlp-tutorial_wmathor" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -212,42 +221,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test4_gru_batch_first" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="seq2seq" />
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="nlp-tutorial_wmathor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test/test4_gru_batch_first.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MyMLStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DeepLearning/RNN/_02seq2seqTest" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DeepLearning/RNN/_02seq2seqTest/train.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -257,19 +244,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.train" />
-      <item itemvalue="Python.test4_gru_batch_first" />
       <item itemvalue="Python.Seq2Seq(Attention)-Torch" />
       <item itemvalue="Python.seq2seq_torch" />
       <item itemvalue="Python.01Multi30k" />
+      <item itemvalue="Python.Transformer_Torch" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Transformer_Torch" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.01Multi30k" />
         <item itemvalue="Python.Seq2Seq(Attention)-Torch" />
         <item itemvalue="Python.seq2seq_torch" />
-        <item itemvalue="Python.train" />
-        <item itemvalue="Python.test4_gru_batch_first" />
       </list>
     </recent_temporary>
   </component>
@@ -656,7 +643,7 @@
       <workItem from="1671241105496" duration="1427000" />
       <workItem from="1671242569117" duration="6367000" />
       <workItem from="1671261814974" duration="1803000" />
-      <workItem from="1671264134000" duration="12727000" />
+      <workItem from="1671264134000" duration="45019000" />
     </task>
     <servers />
   </component>
@@ -739,50 +726,50 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="477" y="72" key="#train_sparsity/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670278977043" />
-    <state width="1426" height="587" key="DebuggerActiveHint" timestamp="1671282524683">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state width="1057" height="466" key="DebuggerActiveHint" timestamp="1671374191935">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1057" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670950761284" />
-    <state width="1426" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671282524683" />
+    <state width="1057" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671374191935" />
+    <state width="1426" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671369930986" />
     <state x="2606" y="-92" key="FileChooserDialogImpl" timestamp="1671282175071">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671026819483" />
     <state x="2606" y="-92" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671282175071" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
-    <state width="1877" height="738" key="GridCell.Tab.0.bottom" timestamp="1671283449124">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state width="1493" height="301" key="GridCell.Tab.0.bottom" timestamp="1671375173803">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="501" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671080222194" />
-    <state width="1877" height="738" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671283449124" />
+    <state width="1493" height="301" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671375173803" />
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671365125860" />
     <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="738" key="GridCell.Tab.0.center" timestamp="1671283449124">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state width="1493" height="301" key="GridCell.Tab.0.center" timestamp="1671375173803">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="501" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671080222194" />
-    <state width="1877" height="738" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671283449124" />
+    <state width="1493" height="301" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671375173803" />
+    <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671365125860" />
     <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="738" key="GridCell.Tab.0.left" timestamp="1671283449124">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state width="1493" height="301" key="GridCell.Tab.0.left" timestamp="1671375173803">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="501" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671080222194" />
-    <state width="1877" height="738" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671283449124" />
+    <state width="1493" height="301" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671375173803" />
+    <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671365125860" />
     <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1877" height="738" key="GridCell.Tab.0.right" timestamp="1671283449124">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state width="1493" height="301" key="GridCell.Tab.0.right" timestamp="1671375173803">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="501" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671080222194" />
-    <state width="1877" height="738" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671283449124" />
+    <state width="1493" height="301" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671375173803" />
+    <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671365125860" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
     <state x="143" y="50" key="SettingsEditor" timestamp="1671282190877">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="126" y="30" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671080178286" />
     <state x="143" y="50" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671282190877" />
-    <state width="968" height="533" key="XDebugger.FullValuePopup" timestamp="1671207561423">
+    <state width="968" height="533" key="XDebugger.FullValuePopup" timestamp="1671371880519">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state width="968" height="533" key="XDebugger.FullValuePopup/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671207561423" />
+    <state width="968" height="533" key="XDebugger.FullValuePopup/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671371880519" />
     <state x="2673" y="-95" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1671242365963">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
@@ -791,15 +778,15 @@
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state x="2371" y="-48" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669571374803" />
-    <state x="98" y="0" width="1278" height="920" maximized="true" key="dock-window-1" timestamp="1671282472659">
+    <state x="98" y="0" width="1278" height="920" maximized="true" key="dock-window-1" timestamp="1671365154545">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="10" y="0" width="1540" height="874" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671027627390" />
-    <state x="98" y="0" width="1278" height="920" maximized="true" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671282472659" />
-    <state x="0" y="0" width="1532" height="883" key="dock-window-2" timestamp="1671087323406">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="98" y="0" width="1278" height="920" maximized="true" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671365154545" />
+    <state x="2280" y="-120" width="1553" height="842" key="dock-window-2" timestamp="1671371355929">
+      <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
-    <state x="0" y="0" width="1532" height="883" key="dock-window-2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671087323406" />
+    <state x="2280" y="-120" width="1553" height="842" key="dock-window-2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671371355929" />
     <state x="2479" y="-120" width="899" height="673" key="find.popup" timestamp="1671111918767">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
@@ -2295,11 +2282,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/4-2.Seq2Seq(Attention)/Seq2Seq(Attention)-Torch.py</url>
-          <line>403</line>
-          <option name="timeStamp" value="2013" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/4-2.Seq2Seq(Attention)/Seq2Seq(Attention)-Torch.py</url>
           <line>335</line>
           <option name="timeStamp" value="2016" />
         </line-breakpoint>
@@ -2356,6 +2338,7 @@
       <configuration name="PythonConfigurationType">
         <watch expression="train_data.fields['trg'].vocab.stoi[2816]" language="Python" />
         <watch expression="train_data.fields['trg'].vocab.itos[2816]" language="Python" />
+        <watch expression="context.data" />
       </configuration>
     </watches-manager>
   </component>
@@ -2375,7 +2358,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$run_this__2_.coverage" NAME="run_this (2) Coverage Results" MODIFIED="1574253388763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/4_Sarsa_lambda_maze" />
     <SUITE FILE_PATH="coverage/MyMLStudy$get_xml_small_pic.coverage" NAME="get_xml_small_pic Coverage Results" MODIFIED="1619344565344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Data-Augment" />
     <SUITE FILE_PATH="coverage/MyMLStudy$test_ocr.coverage" NAME="test_ocr Coverage Results" MODIFIED="1623312151351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_OCR/ocr1" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$test.coverage" NAME="test Coverage Results" MODIFIED="1624028407897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../huggingmolecules" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$test.coverage" NAME="test Coverage Results" MODIFIED="1671289262679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_hough_transform.coverage" NAME="cv2_hough_transform Coverage Results" MODIFIED="1573222016705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/17. 霍夫变换" />
     <SUITE FILE_PATH="coverage/MyMLStudy$googlenet.coverage" NAME="googlenet Coverage Results" MODIFIED="1610553203657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorchx/googlenet" />
     <SUITE FILE_PATH="coverage/MyMLStudy$01read_data.coverage" NAME="01read_data Coverage Results" MODIFIED="1670928744848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/01dataset" />
@@ -2558,6 +2541,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$CallMainWin01.coverage" NAME="CallMainWin01 Coverage Results" MODIFIED="1622442268734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter03/mainWin" />
     <SUITE FILE_PATH="coverage/MyMLStudy$pytorch2onnx.coverage" NAME="pytorch2onnx Coverage Results" MODIFIED="1602315383846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/tools" />
     <SUITE FILE_PATH="coverage/MyMLStudy$02dataload.coverage" NAME="02dataload Coverage Results" MODIFIED="1671162294561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/01dataset" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$Transformer_Torch.coverage" NAME="Transformer_Torch Coverage Results" MODIFIED="1671365125832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer" />
     <SUITE FILE_PATH="coverage/MyMLStudy$Framework.coverage" NAME="Framework Coverage Results" MODIFIED="1593790237041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DeepLearning/CNN/ResNet" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_shi_tomasi_corner_detector.coverage" NAME="cv2_shi_tomasi_corner_detector Coverage Results" MODIFIED="1573222503394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/20. Shi-Tomasi角点检测" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_read_image_time.coverage" NAME="cv2_read_image_time Coverage Results" MODIFIED="1572921319057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/01. 简介与安装" />

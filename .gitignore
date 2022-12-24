@@ -46,3 +46,6 @@ DeepLearning/CNN/ResNet/models/resnet/resnet.meta
 06CUDAStudy/00CUDAexamplesCMake_Common/build/
 06CUDAStudy/00CUDAexamplesCMake_Common/bin/
 11Attention/01transform/01Transfomer-example-main/log/
+02DeepLearning/CNN/AlexNet/models/
+02DeepLearning/CNN/ResNet/models/
+02DeepLearning/CNN/AlexNet/dataset.pkl
