@@ -120,7 +120,9 @@ class Transformer(nn.Module):
     
     def forward(self, x,y,mask_out,mask_enc):
         #encoder
-        e = self.encs[0](self.pos(self.enc_input_fc(x)))
+        x = self.enc_input_fc(x)
+        x = self.pos(x)
+        e = self.encs[0](x)
         for enc in self.encs[1:]:
             e = enc(e)
         
@@ -186,4 +188,3 @@ if __name__ == '__main__':
     onnx_model = torch.onnx.export(model_MultiHeadAttention, (z),
                       onnx_name,
                       opset_version=12)
-print("==================")

@@ -17,10 +17,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
 
-
-# In[2]:
-
-
 class EncoderDecoder(nn.Module):
     """标准的Encoder-Decoder架构"""
     def __init__(self, encoder, decoder, src_embed, tgt_embed, generator):
@@ -33,15 +29,19 @@ class EncoderDecoder(nn.Module):
         
     def forward(self, src, tgt, src_mask, tgt_mask):
         "接收和处理原序列,目标序列,以及他们的mask"
-        return self.decode(self.encode(src, src_mask), src_mask,
-                            tgt, tgt_mask)
+        encode_out = self.encode(src, src_mask)
+        out = self.decode(encode_out, src_mask, tgt, tgt_mask)
+        return out
     
     def encode(self, src, src_mask):
-        return self.encoder(self.src_embed(src), src_mask)
+        src_emb = self.src_embed(src)
+        encode_out = self.encoder(src_emb, src_mask)
+        return encode_out
     
     def decode(self, memory, src_mask, tgt, tgt_mask):
-        return self.decoder(self.tgt_embed(tgt), memory, src_mask, tgt_mask)
-
+        tgt_emb = self.tgt_embed(tgt)
+        decode_out = self.decoder(tgt_emb, memory, src_mask, tgt_mask)
+        return decode_out
 
 class Generator(nn.Module):
     """定义标准的linear+softmax生成步骤"""
@@ -96,7 +96,9 @@ class SublayerConnection(nn.Module):
 
     def forward(self, x, sublayer):
         "add norm"
-        return x + self.dropout(sublayer(self.norm(x)))
+        x = self.norm(x)
+        x = sublayer(x)
+        return x + self.dropout(x)
 
 class EncoderLayer(nn.Module):
     """Encoder分为两层Self-Attn和Feed Forward"""
@@ -193,7 +195,7 @@ class MultiHeadedAttention(nn.Module):
         # 1) 这一步qkv变化:[batch, L, d_model] ->[batch, h, L, d_model/h] 
         query, key, value =             [l(x).view(nbatches, -1, self.h, self.d_k).transpose(1, 2)
                    for l, x in zip(self.linears, (query, key, value))]
-        
+
         # 2) 计算注意力attn 得到attn*v 与attn
         # qkv :[batch, h, L, d_model/h] -->x:[b, h, L, d_model/h], attn[b, h, L, L]
         x, self.attn = attention(query, key, value, mask=mask, dropout=self.dropout)
@@ -223,7 +225,8 @@ class Embeddings(nn.Module):
         self.d_model = d_model  #表示embedding的维度
 
     def forward(self, x):
-        return self.lut(x) * math.sqrt(self.d_model)
+        x = self.lut(x) * math.sqrt(self.d_model)
+        return x
 
 
 # Positional Encoding
@@ -258,8 +261,7 @@ def make_model(src_vocab, tgt_vocab, N=6, d_model=512, d_ff=2048, h=8, dropout=0
     position = PositionalEncoding(d_model, dropout)
     model = EncoderDecoder(
         Encoder(EncoderLayer(d_model, c(attn), c(ff), dropout), N),
-        Decoder(DecoderLayer(d_model, c(attn), c(attn), 
-                             c(ff), dropout), N),
+        Decoder(DecoderLayer(d_model, c(attn), c(attn), c(ff), dropout), N),
         nn.Sequential(Embeddings(d_model, src_vocab), c(position)),
         nn.Sequential(Embeddings(d_model, tgt_vocab), c(position)),
         Generator(d_model, tgt_vocab))
@@ -270,30 +272,18 @@ def make_model(src_vocab, tgt_vocab, N=6, d_model=512, d_ff=2048, h=8, dropout=0
             nn.init.xavier_uniform_(p)
     return model
 
-
-# In[3]:
-
-
 # 测试MultiHeadedAttention的过程
-batch_size=16
-L = 50         # 序列长度
+batch_size=2
+L = 5         # 序列长度
 d_model = 512  # 词向量维度
 h = 8
 x = torch.randn(batch_size, L, d_model)  # 生层一个测试序列x    # torch.Size([16, 50, 512])
 x.size()
 
-
-# In[4]:
-
-
 # 测试MultiHeadedAttention的过程
 obj = MultiHeadedAttention(8, 512)
 q = torch.randn(2,10, 512)  # 序列输入x
 line_net = clones(nn.Linear(512, 512), 4)
-
-
-# In[16]:
-
 
 for l,x in zip(line_net, (q, q, q)):
     print("linear:", l)
@@ -303,10 +293,6 @@ for l,x in zip(line_net, (q, q, q)):
     print(out.view(2, -1, 8, 64).size())
     print(out.view(2, -1, 8, 64).transpose(1,2).size())
     print("--" * 5)
-
-
-# In[4]:
-
 
 q, k, v = [l(x).view(2, -1, 8, 64).transpose(1,2) for l,x in zip(line_net, (q, q, q))]
 print(k.size(), k.transpose(-2, -1).size())
@@ -323,9 +309,6 @@ out = r_x.transpose(1, 2).contiguous().view(2, -1, 8 * 64)
 print(out.size())  # [2, 10, 512]
 
 
-# In[5]:
-
-
 # obj.forward(x,x,x,mask=None)
 # X是一个序列，X的Embedding + posEmbedding 输入Encoder，这个输入我们称为 X_emb_pos
 # Encoder有6个子结构串行，第一个的输出结果，作为第二个的输入，以此类推得到最后一个子结构的输出。
@@ -333,16 +316,13 @@ print(out.size())  # [2, 10, 512]
 # 这8个tensor 分别做self-attention，这个部分是8个一起并行的 ，然后得到8个结果再合并在一起，进行Norm ，norm之后再输入FFN，之后再经过norm之后输入下一个子结构。
 
 
-# In[6]:
-
-
 # 在位置编码下方，将基于位置添加正弦波。对于每个维度，波的频率和偏移都不同。
-plt.figure(figsize=(15, 5))
-pe = PositionalEncoding(20, 0)
-y = pe.forward(Variable(torch.zeros(1, 100, 20)))
-plt.plot(np.arange(100), y[0, :, 4:8].data.numpy())
-plt.legend(["dim %d"%p for p in [4,5,6,7]])
-
+# plt.figure(figsize=(15, 5))
+# pe = PositionalEncoding(20, 0)
+# y = pe.forward(Variable(torch.zeros(1, 100, 20)))
+# plt.plot(np.arange(100), y[0, :, 4:8].data.numpy())
+# plt.legend(["dim %d"%p for p in [4,5,6,7]])
+# plt.show()
 
 # ## posembbeding的理解
 # - 同一维度（一个单词本来有多个维度，为了可视化，选取一个维度）对比不同位置的单词在同一维度是有相对关系的，符合某个正弦或者余弦波。
@@ -352,9 +332,6 @@ plt.legend(["dim %d"%p for p in [4,5,6,7]])
 # ----
 # - 定义个一个Batch对象
 # - 
-
-# In[7]:
-
 
 class Batch(object):
     "定义一个训练时需要的批次数据对象，封装了用于训练的src和tgt句子，以及mask"
@@ -376,15 +353,7 @@ class Batch(object):
         return tgt_mask
 
 
-# In[8]:
-
-
 # 定义一个训练函数用于训练和计算损失、更新梯度
-
-
-# In[9]:
-
-
 def run_epoch(data_iter, model, loss_compute, device):
     """提供训练和日志功能"""
     start = time.time()
@@ -418,9 +387,6 @@ def run_epoch(data_iter, model, loss_compute, device):
 # - 使用XX数据集
 # - 使用torchtext来处理数据？
 
-# In[10]:
-
-
 global max_src_in_batch, max_tgt_in_batch
 def batch_size_fn(new, count, sofar):
     "Keep augmenting batch and calculate total number of tokens + padding."
@@ -446,9 +412,6 @@ def batch_size_fn(new, count, sofar):
 # -  使用Adam优化器，其中β1= 0.9，β2= 0.98和ϵ = 10-9。
 # - 根据以下公式在训练过程中改变学习率：$lrate =d_{model}^{-0.5} * min（step\_num^{-0.5}, step\_num * warmup\_steps ^{-1.5}）$
 # - 也就是训练步数在$warmup\_steps内，线性增加学习率；之后的训练，按步数的负1.5平方成比例地减小学习率。我们使用了 $warmup\_steps= 4000$。
-
-# In[11]:
-
 
 class NoamOpt(object):
     "Optim wrapper that implements rate."
@@ -480,10 +443,6 @@ def get_std_opt(model):
     return NoamOpt(model.src_embed[0].d_model, 2, 4000,
             torch.optim.Adam(model.parameters(), lr=0, betas=(0.9, 0.98), eps=1e-9))
 
-
-# In[12]:
-
-
 # 不同大小与不同超参模型的学习率曲线
 opts = [NoamOpt(512, 1, 4000, None), 
         NoamOpt(512, 1, 8000, None),
@@ -499,9 +458,6 @@ plt.legend(["512:4000", "512:8000", "256:4000"])
 # ### 标签平滑
 # - 在训练期间，我们采用ϵls = 0.1的标签平滑。随着模型训练变得更加不确定，这会增加困惑度perplexity，但会提高准确率（accuracy）和BLEU分数。
 # - 使用KL div损失实现标签平滑，而不是使用one-hot目标分布，我们创建的分布具有对正确单词的置信度以及其余平滑质量分布在整个词汇表中的置信度。
-
-# In[13]:
-
 
 class LabelSmoothing(nn.Module):
     "实现labelsmoothing."
@@ -530,9 +486,6 @@ class LabelSmoothing(nn.Module):
 # ## 例子
 # - 
 
-# In[14]:
-
-
 # Example of label smoothing.
 crit = LabelSmoothing(5, 0, 0.4)
 predict = torch.FloatTensor([[0, 0.2, 0.7, 0.1, 0],
@@ -543,10 +496,6 @@ v = crit(Variable(predict.log()),
 
 # Show the target distributions expected by the system.
 plt.imshow(crit.true_dist)
-
-
-# In[15]:
-
 
 crit = LabelSmoothing(5, 0, 0.1)
 def loss(x):
@@ -560,28 +509,17 @@ plt.plot(np.arange(1, 100), [loss(x) for x in range(1, 100)])
 # ## 用一个小例子测试一下
 # - 构造数据
 
-# In[16]:
-
-
 ## 数据生成
 def data_gen(V, batch, nbatches):
     "Generate random data for a src-tgt copy task."
     for i in range(nbatches):
-        data = torch.from_numpy(np.random.randint(1, V, size=(batch, 10)))
+        data = torch.from_numpy(np.random.randint(1, V, size=(batch, 5)))
         data[:, 0] = 1
         src = Variable(data, requires_grad=False)
         tgt = Variable(data, requires_grad=False)
         yield Batch(src, tgt, 0)
 
-
-# In[17]:
-
-
 data_gen(11, 30,20)
-
-
-# In[18]:
-
 
 class SimpleLossCompute(object):
     "A simple loss compute and train function."
@@ -600,10 +538,6 @@ class SimpleLossCompute(object):
             self.opt.optimizer.zero_grad()
         return loss * norm.float()
 
-
-# In[19]:
-
-
 # 贪婪解码
 # Train the simple copy task.
 V = 11
@@ -615,15 +549,7 @@ model = model.to(device)
 model_opt = NoamOpt(model.src_embed[0].d_model, 1, 400,
         torch.optim.Adam(model.parameters(), lr=0, betas=(0.9, 0.98), eps=1e-9))
 
-
-# In[20]:
-
-
 # data = torch.rand(30,20,)
-
-
-# In[21]:
-
 
 # s1 = data[9]
 # print(s1.src[5], 
@@ -634,53 +560,27 @@ model_opt = NoamOpt(model.src_embed[0].d_model, 1, 400,
 # print(s1.trg_mask[5])
 # print("ntokens", s1.ntokens)
 
-
-# In[22]:
-
-
 mask = subsequent_mask(8)
 # mask = mask.unsqueeze(1)
 mask
 
 
-# In[23]:
-
-
 score = torch.randn(1,8, 8)
 score.size()
 
-
-# In[24]:
-
-
 score.masked_fill(mask == 0, -1e9)
-
-
-# In[25]:
-
 
 # a = (s1.trg != 0).unsqueeze(-2) & Variable(subsequent_mask(9).type_as(s1.trg_mask.data))
 
-
-# In[26]:
-
-
 # a.size()
-
-
-# In[27]:
-
 
 for epoch in range(5):
     model.train()
     loss_func = SimpleLossCompute(model.generator, criterion, model_opt)
-    run_epoch(data_gen(V, 30, 20), model, loss_func, device)
+    run_epoch(data_gen(V, 2, 20), model, loss_func, device)
     model.eval()
     print(run_epoch(data_gen(V, 30, 5), model, 
                   SimpleLossCompute(model.generator, criterion, None), device))
-
-
-# In[28]:
 
 
 # https://www.cnblogs.com/shiyublog/p/10909009.html#_label5
@@ -699,9 +599,3 @@ for epoch in range(5):
 #     - 给 decoder 输入 encoder 的 embedding 结果和 “</s>I Love”，在这一步 decoder 应该产生预测 “China”。
 #     - 给 decoder 输入 encoder 的 embedding 结果和 “</s>I Love China”, decoder应该生成句子结尾的标记，decoder 应该输出 ”</eos>”。
 # 然后 decoder 生成了 </eos>，翻译完成。
-
-# In[ ]:
-
-
-
-
