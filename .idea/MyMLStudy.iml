@@ -14,6 +14,6 @@
     <orderEntry type="module" module-name="seq2seq" />
     <orderEntry type="module" module-name="nlp-tutorial" />
     <orderEntry type="module" module-name="nlp-tutorial_wmathor" />
-    <orderEntry type="module" module-name="00datasets" />
+    <orderEntry type="module" module-name="01transform" />
   </component>
 </module>

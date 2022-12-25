@@ -32,14 +32,14 @@ d_ff=80
 heads = 4
 input_size=1
 output_size=1
-enc_seq_len = 100   # input_sequence_length
-dec_seq_len = 20    # output_sequence_length
+enc_seq_len = 7   # input_sequence_length
+dec_seq_len = 5    # output_sequence_length
 max_len=100
 
 lr = 0.002
 epochs = 20
 n_layers=3
-batch_size = 10
+batch_size = 2
 
 #init network and optimizer
 transformer = Transformer(d_model,d_ff,heads,input_size,output_size,enc_seq_len,dec_seq_len,
