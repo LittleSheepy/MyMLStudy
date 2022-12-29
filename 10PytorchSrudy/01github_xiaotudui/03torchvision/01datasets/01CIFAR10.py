@@ -3,7 +3,7 @@ from torch import nn
 from torch.utils.data import DataLoader
 import cv2
 from PIL import Image
-train_data = torchvision.datasets.CIFAR10("./data",
+train_data = torchvision.datasets.CIFAR10(r"D:\02dataset\cifar-10-python\/",
                                           train=True,
                                           transform=torchvision.transforms.ToTensor(),
                                           download=True
