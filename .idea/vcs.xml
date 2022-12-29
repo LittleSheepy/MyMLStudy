@@ -13,8 +13,9 @@
     <mapping directory="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ShuffleNet-Series" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../aFolder_Attention/seq2seq" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_Tutorials/pytorch-tutorial" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../aFolder_paddle/PaddleOCR" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../dimensionality_reduction_alo_codes" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../gym-nes-mario-bros" vcs="Git" />
