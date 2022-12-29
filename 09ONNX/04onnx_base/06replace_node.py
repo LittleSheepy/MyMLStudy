@@ -22,7 +22,7 @@ def replace():
     onnx.checker.check_model(model)
     onnx.save_model(model, "./replace_model.onnx")
     input = np.random.rand(1,3,224,224).astype(dtype=np.float32)
-    sess = onnxruntime.InferenceSession("./replace_model.onnx")
+    sess = onnxruntime.InferenceSession("replace_model.onnx")
     result = sess.run(["output"],{"input":input})
     print(result) # [shape=1,3,224,224]
 

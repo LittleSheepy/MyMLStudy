@@ -20,7 +20,7 @@ for i in output:
     i.type.tensor_type.shape.dim[0].dim_param = "batchsize"
 onnx.checker.check_model(model)
 onnx.save_model(model, "./dynamic_model.onnx")
-sess = onnxruntime.InferenceSession("./dynamic_model.onnx")
+sess = onnxruntime.InferenceSession("dynamic_model.onnx")
 input = np.random.rand(16,3,224,224).astype(dtype=np.float32)
 result = sess.run(["output"],{"input":input})
 print(result) # [shape=1,3,224,224]
