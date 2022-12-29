@@ -12,8 +12,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PaddleOCR" />
     <orderEntry type="module" module-name="seq2seq" />
-    <orderEntry type="module" module-name="nlp-tutorial" />
     <orderEntry type="module" module-name="nlp-tutorial_wmathor" />
     <orderEntry type="module" module-name="01transform" />
+    <orderEntry type="module" module-name="simple-faster-rcnn-pytorch" />
+    <orderEntry type="module" module-name="faster_rcnn" />
+    <orderEntry type="module" module-name="pytorch-tutorial" />
   </component>
 </module>

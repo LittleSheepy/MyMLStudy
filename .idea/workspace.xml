@@ -2,18 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/09ONNX/02/01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/09ONNX/02/02check_onnx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/09ONNX/02/03onnxruntime.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/09ONNX/02/04.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/09ONNX/02/05operater.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/09ONNX/02/06onnxruntime.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/09ONNX/02/face.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/09ONNX/02/srcnn.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/09ONNX/03API/torch.onnx.export.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/09ONNX/02/07traceANDscript.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/09ONNX/02/08dynamic_axes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/09ONNX/02/09.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/09ONNX/02/10operator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/09ONNX/02/my_add_lib/my_add.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/09ONNX/02/my_add_lib/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/09ONNX/02/my_lib.cp38-win_amd64.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/01dataset/03transforms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN/02nn_conv2d.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN/03nn_maxpool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN/04model_save.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN/05model_load.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/03torchvision/02models/01vgg16.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10PytorchSrudy/04TorchScript/01IR.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/utils/data.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/01create_onnx.py" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/01create_onnx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/01examples/00shape节点处理.py" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/01examples/00shape节点处理.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/02load_onnx.py" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/02load_onnx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/03create_onnx.py" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/03create_onnx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/04change_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/04change_input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/05modify_onnx.py" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/05modify_onnx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/06replace_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/06replace_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/07personal.py" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/07personal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/add_model.onnx" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/add_model.onnx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/del_model.onnx" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/del_model.onnx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/dynamic_model.onnx" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/dynamic_model.onnx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/model.onnx" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/model.onnx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/replace_model.onnx" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/replace_model.onnx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09ONNX/torch.onnx" beforeDir="false" afterPath="$PROJECT_DIR$/09ONNX/04onnx_base/torch.onnx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/03torchvision/01datasets/01CIFAR10.py" beforeDir="false" afterPath="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/03torchvision/01datasets/01CIFAR10.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/.idea/seq2seq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/.idea/seq2seq.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/mytraining.pt" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/mytraining.pt" afterDir="false" />
@@ -28,6 +51,12 @@
       <change beforePath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test/test_success1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test/test_success1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/4-2.Seq2Seq(Attention)/Seq2Seq(Attention)-Torch.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/4-2.Seq2Seq(Attention)/Seq2Seq(Attention)-Torch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer/Transformer_Torch.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer/Transformer_Torch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/data/voc_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/data/voc_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/model/region_proposal_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/model/region_proposal_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/model/utils/creator_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/model/utils/creator_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/utils/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/utils/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +94,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../aFolder_Tutorials/pytorch-tutorial" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -120,7 +149,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/09ONNX/02" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="python.debugger.dataview.autoresize" value="false" />
@@ -128,20 +157,22 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\00myGitHub\MyMLStudy\09ONNX\02" />
-      <recent name="D:\00myGitHub\MyMLStudy\02DeepLearning\03transformer" />
-      <recent name="D:\00myGitHub\MyMLStudy\02DeepLearning\RNN\01seq2seq" />
-      <recent name="D:\00myGitHub\MyMLStudy\DeepLearning\RNN\01seq2seq" />
-      <recent name="D:\00myGitHub\MyMLStudy\05算法" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\00myGitHub\MyMLStudy\09ONNX\04onnx_base" />
+      <recent name="D:\00myGitHub\MyMLStudy\09ONNX\02" />
       <recent name="D:\myGitHub\MyMLStudy\08AIUnitsCode\01BN" />
       <recent name="D:\myGitHub\aFolder_paddle\PaddleOCR_mytest\imgs" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\00myGitHub\MyMLStudy\10PytorchSrudy\01github_xiaotudui\02NN" />
+      <recent name="D:\00myGitHub\deep-learning-for-image-processing\pytorch_object_detection\faster_rcnn\backbone" />
+      <recent name="D:\00myGitHub\MyMLStudy\09ONNX\02" />
+      <recent name="D:\00myGitHub\MyMLStudy\02DeepLearning\03transformer" />
+      <recent name="D:\00myGitHub\MyMLStudy\02DeepLearning\RNN\01seq2seq" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.06onnxruntime">
-    <configuration name="02check_onnx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.04model_save">
+    <configuration name="01vgg16" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -149,12 +180,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/09ONNX/02" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/03torchvision/02models" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/09ONNX/02/02check_onnx.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/03torchvision/02models/01vgg16.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,7 +194,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="03onnxruntime" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="02nn_conv2d" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -171,12 +202,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/09ONNX/02" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/09ONNX/02/03onnxruntime.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN/02nn_conv2d.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -185,7 +216,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="04" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="03transforms" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -193,12 +224,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/09ONNX/02" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/01dataset" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/09ONNX/02/04.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/01dataset/03transforms.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -207,7 +238,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="05operater" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="04model_save" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -215,12 +246,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/09ONNX/02" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\00myGitHub\MyMLStudy\09ONNX\02\05operater.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN/04model_save.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -229,20 +260,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="06onnxruntime" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MyMLStudy" />
+    <configuration name="nn_linear" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pytorch-tutorial" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/09ONNX/02" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_Tutorials/pytorch-tutorial/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/09ONNX/02/06onnxruntime.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_Tutorials/pytorch-tutorial/src/nn_linear.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -252,19 +283,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.02check_onnx" />
-      <item itemvalue="Python.03onnxruntime" />
-      <item itemvalue="Python.04" />
-      <item itemvalue="Python.05operater" />
-      <item itemvalue="Python.06onnxruntime" />
+      <item itemvalue="Python.03transforms" />
+      <item itemvalue="Python.02nn_conv2d" />
+      <item itemvalue="Python.nn_linear" />
+      <item itemvalue="Python.01vgg16" />
+      <item itemvalue="Python.04model_save" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.06onnxruntime" />
-        <item itemvalue="Python.05operater" />
-        <item itemvalue="Python.04" />
-        <item itemvalue="Python.03onnxruntime" />
-        <item itemvalue="Python.02check_onnx" />
+        <item itemvalue="Python.04model_save" />
+        <item itemvalue="Python.01vgg16" />
+        <item itemvalue="Python.nn_linear" />
+        <item itemvalue="Python.02nn_conv2d" />
+        <item itemvalue="Python.03transforms" />
       </list>
     </recent_temporary>
   </component>
@@ -653,6 +684,9 @@
       <workItem from="1671261814974" duration="1803000" />
       <workItem from="1671264134000" duration="45019000" />
       <workItem from="1671876195137" duration="38342000" />
+      <workItem from="1672025481962" duration="6266000" />
+      <workItem from="1672054628568" duration="30661000" />
+      <workItem from="1672200863149" duration="10519000" />
     </task>
     <servers />
   </component>
@@ -663,22 +697,26 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1920" y="-309" key="#Illuminated_Cloud" timestamp="1671241653170">
-      <screen x="1920" y="-309" width="1920" height="1050" />
-    </state>
-    <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671004583185" />
-    <state x="1920" y="-309" key="#Illuminated_Cloud/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671241653170" />
-    <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834@0.0.1536.834" timestamp="1665506315244" />
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1671880026971">
+    <state x="0" y="0" key="#Illuminated_Cloud" timestamp="1672055108009">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671880026971" />
+    <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672055108009" />
+    <state x="1920" y="-309" key="#Illuminated_Cloud/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671241653170" />
+    <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834@0.0.1536.834" timestamp="1665506315244" />
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1672067510540">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672067510540" />
     <state x="2199" y="-218" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671028571768" />
     <state x="500" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1671964441033">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="500" y="220" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671964441033" />
     <state x="2545" y="-32" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671166955207" />
+    <state x="468" y="324" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1672106134971">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="468" y="324" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1672106134971" />
     <state x="477" y="72" key="#convert_to_onnx" timestamp="1669916981373">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -735,45 +773,45 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="477" y="72" key="#train_sparsity/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670278977043" />
-    <state width="1057" height="466" key="DebuggerActiveHint" timestamp="1671891878607">
+    <state width="1057" height="466" key="DebuggerActiveHint" timestamp="1672141806370">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1057" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671891878607" />
-    <state width="1426" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671369930986" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1671877244183">
+    <state width="1057" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672141806370" />
+    <state width="1426" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1672131743577" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1672201663608">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671877244183" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672201663608" />
     <state x="2606" y="-92" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671282175071" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1665502872686" />
-    <state width="1493" height="293" key="GridCell.Tab.0.bottom" timestamp="1671983760482">
+    <state width="1493" height="175" key="GridCell.Tab.0.bottom" timestamp="1672236393527">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="293" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671983760482" />
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671365125860" />
+    <state width="1493" height="175" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672236393527" />
+    <state width="1877" height="607" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1672131655352" />
     <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="293" key="GridCell.Tab.0.center" timestamp="1671983760482">
+    <state width="1493" height="175" key="GridCell.Tab.0.center" timestamp="1672236393527">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="293" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671983760482" />
-    <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671365125860" />
+    <state width="1493" height="175" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672236393527" />
+    <state width="1877" height="607" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1672131655352" />
     <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="293" key="GridCell.Tab.0.left" timestamp="1671983760482">
+    <state width="1493" height="175" key="GridCell.Tab.0.left" timestamp="1672236393527">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="293" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671983760482" />
-    <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671365125860" />
+    <state width="1493" height="175" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672236393527" />
+    <state width="1877" height="607" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1672131655352" />
     <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state width="1493" height="293" key="GridCell.Tab.0.right" timestamp="1671983760482">
+    <state width="1493" height="175" key="GridCell.Tab.0.right" timestamp="1672236393527">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="293" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671983760482" />
-    <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671365125860" />
+    <state width="1493" height="175" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672236393527" />
+    <state width="1877" height="607" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1672131655352" />
     <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1665509032747" />
-    <state x="231" y="50" key="SettingsEditor" timestamp="1671981107267">
+    <state x="231" y="50" key="SettingsEditor" timestamp="1672113822623">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="231" y="50" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671981107267" />
+    <state x="231" y="50" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672113822623" />
     <state x="143" y="50" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671282190877" />
     <state width="775" height="424" key="XDebugger.FullValuePopup" timestamp="1671882783295">
       <screen x="0" y="0" width="1536" height="834" />
@@ -788,19 +826,19 @@
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state x="2371" y="-48" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1669571374803" />
-    <state x="98" y="0" width="1278" height="920" maximized="true" key="dock-window-1" timestamp="1671365154545">
+    <state x="51" y="48" width="1222" height="770" maximized="true" key="dock-window-1" timestamp="1672129769278">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="10" y="0" width="1540" height="874" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671027627390" />
-    <state x="98" y="0" width="1278" height="920" maximized="true" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671365154545" />
+    <state x="51" y="48" width="1222" height="770" maximized="true" key="dock-window-1/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1672129769278" />
     <state x="2280" y="-120" width="1553" height="842" key="dock-window-2" timestamp="1671371355929">
       <screen x="1920" y="-309" width="1920" height="1050" />
     </state>
     <state x="2280" y="-120" width="1553" height="842" key="dock-window-2/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671371355929" />
-    <state x="2479" y="-120" width="899" height="673" key="find.popup" timestamp="1671111918767">
-      <screen x="1920" y="-309" width="1920" height="1050" />
+    <state x="447" y="150" width="719" height="534" key="find.popup" timestamp="1672067623719">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="447" y="150" width="719" height="534" key="find.popup/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670815079778" />
+    <state x="447" y="150" width="719" height="534" key="find.popup/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672067623719" />
     <state x="2479" y="-120" width="899" height="673" key="find.popup/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671111918767" />
     <state x="2459" y="-114" width="840" height="854" key="search.everywhere.popup" timestamp="1671162233834">
       <screen x="1920" y="-309" width="1920" height="1050" />
@@ -2341,19 +2379,74 @@
           <option name="timeStamp" value="2075" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/09ONNX/04change_input.py</url>
+          <url>file://$PROJECT_DIR$/09ONNX/04onnx_base/04change_input.py</url>
           <line>8</line>
           <option name="timeStamp" value="2078" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/09ONNX/06replace_node.py</url>
+          <url>file://$PROJECT_DIR$/09ONNX/04onnx_base/06replace_node.py</url>
           <line>26</line>
           <option name="timeStamp" value="2081" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/09ONNX/06replace_node.py</url>
+          <url>file://$PROJECT_DIR$/09ONNX/04onnx_base/06replace_node.py</url>
           <line>21</line>
           <option name="timeStamp" value="2082" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/trainer.py</url>
+          <line>96</line>
+          <option name="timeStamp" value="2104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/train.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="2105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/model/faster_rcnn.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="2106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/model/faster_rcnn.py</url>
+          <line>126</line>
+          <option name="timeStamp" value="2107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/trainer.py</url>
+          <line>89</line>
+          <option name="timeStamp" value="2108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/trainer.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="2109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/model/region_proposal_network.py</url>
+          <line>100</line>
+          <option name="timeStamp" value="2110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/model/utils/creator_tool.py</url>
+          <line>385</line>
+          <option name="timeStamp" value="2111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../deep-learning-for-image-processing/pytorch_object_detection/faster_rcnn/backbone/mobilenetv2_model.py</url>
+          <line>122</line>
+          <option name="timeStamp" value="2120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../deep-learning-for-image-processing/pytorch_object_detection/faster_rcnn/network_files/roi_head.py</url>
+          <line>364</line>
+          <option name="timeStamp" value="2137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../deep-learning-for-image-processing/pytorch_object_detection/faster_rcnn/network_files/roi_head.py</url>
+          <line>253</line>
+          <option name="timeStamp" value="2138" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -2382,6 +2475,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$get_xml_small_pic.coverage" NAME="get_xml_small_pic Coverage Results" MODIFIED="1619344565344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Data-Augment" />
     <SUITE FILE_PATH="coverage/MyMLStudy$test_ocr.coverage" NAME="test_ocr Coverage Results" MODIFIED="1623312151351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_OCR/ocr1" />
     <SUITE FILE_PATH="coverage/MyMLStudy$test.coverage" NAME="test Coverage Results" MODIFIED="1671289262679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/5-1.Transformer" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$train_mobilenetv2.coverage" NAME="train_mobilenetv2 Coverage Results" MODIFIED="1672137705321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../deep-learning-for-image-processing/pytorch_object_detection/faster_rcnn" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_hough_transform.coverage" NAME="cv2_hough_transform Coverage Results" MODIFIED="1573222016705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/17. 霍夫变换" />
     <SUITE FILE_PATH="coverage/MyMLStudy$01read_data.coverage" NAME="01read_data Coverage Results" MODIFIED="1670928744848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/01dataset" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_contours_features.coverage" NAME="cv2_contours_features Coverage Results" MODIFIED="1572963178596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/14. 轮廓特征" />
@@ -2419,9 +2513,9 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$selectivesearch___.coverage" NAME="selectivesearch - 副本 Coverage Results" MODIFIED="1593640962084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../RCNN" />
     <SUITE FILE_PATH="coverage/MyMLStudy$tf_hello.coverage" NAME="tf_hello Coverage Results" MODIFIED="1574090473181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow" />
     <SUITE FILE_PATH="coverage/MyMLStudy$eval.coverage" NAME="eval Coverage Results" MODIFIED="1622630022374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$setup.coverage" NAME="setup Coverage Results" MODIFIED="1669933357207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.10-yolov5-obb/yolov5_obb/utils/nms_rotated" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$setup.coverage" NAME="setup Coverage Results" MODIFIED="1672056110593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/09ONNX/02/my_add_lib" />
     <SUITE FILE_PATH="coverage/MyMLStudy$full_code.coverage" NAME="full_code Coverage Results" MODIFIED="1562327730781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/莫凡Tensorflow学习笔记/tensorflowTUT/tf5_example2" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1671247028120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DeepLearning/RNN/_02seq2seqTest" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1672072268310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch" />
     <SUITE FILE_PATH="coverage/MyMLStudy$SPPtest.coverage" NAME="SPPtest Coverage Results" MODIFIED="1669634026003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AI_track" />
     <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx__3_.coverage" NAME="gen-onnx (3) Coverage Results" MODIFIED="1669829300193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/09int8" />
     <SUITE FILE_PATH="coverage/MyMLStudy$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1602421995934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Anaconda3/envs/mmdet/Lib/site-packages/utils" />
@@ -2471,11 +2565,13 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$convert.coverage" NAME="convert Coverage Results" MODIFIED="1611816026841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_BackBone/RepVGG" />
     <SUITE FILE_PATH="coverage/MyMLStudy$02BN.coverage" NAME="02BN分步 Coverage Results" MODIFIED="1669903638781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/08AIUnitsCode/01BN" />
     <SUITE FILE_PATH="coverage/MyMLStudy$MorphologicalTransformations.coverage" NAME="MorphologicalTransformations Coverage Results" MODIFIED="1590260897164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OpenCV-Python Tutorials/03 Image Processing in OpenCV/3.5 形态转换" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$01vgg16.coverage" NAME="01vgg16 Coverage Results" MODIFIED="1672235779911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/03torchvision/02models" />
     <SUITE FILE_PATH="coverage/MyMLStudy$imread.coverage" NAME="imread Coverage Results" MODIFIED="1590263020517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opencvFun/04图片" />
     <SUITE FILE_PATH="coverage/MyMLStudy$SPPcode.coverage" NAME="SPPcode Coverage Results" MODIFIED="1669633980239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AI_track" />
     <SUITE FILE_PATH="coverage/MyMLStudy$treasure_on_right.coverage" NAME="treasure_on_right Coverage Results" MODIFIED="1574089109639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/1_command_line_reinforcement_learning" />
     <SUITE FILE_PATH="coverage/MyMLStudy$watershed.coverage" NAME="watershed Coverage Results" MODIFIED="1590263309613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OpenCV-Python Tutorials/03 Image Processing in OpenCV/3.15 分水岭算法的图像分割" />
     <SUITE FILE_PATH="coverage/MyMLStudy$pytorch2onnx.coverage" NAME="pytorch2onnx Coverage Results" MODIFIED="1602315383846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/tools" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$03transforms.coverage" NAME="03transforms Coverage Results" MODIFIED="1672204975840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/01dataset" />
     <SUITE FILE_PATH="coverage/MyMLStudy$Framework.coverage" NAME="Framework Coverage Results" MODIFIED="1593790237041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DeepLearning/CNN/ResNet" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_shi_tomasi_corner_detector.coverage" NAME="cv2_shi_tomasi_corner_detector Coverage Results" MODIFIED="1573222503394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/20. Shi-Tomasi角点检测" />
     <SUITE FILE_PATH="coverage/MyMLStudy$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1602520410707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/flask_data_baobiao" />
@@ -2494,10 +2590,12 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$CallFirstMainWin.coverage" NAME="CallFirstMainWin Coverage Results" MODIFIED="1622432582783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter03" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p23_GD2_SORT.coverage" NAME="p23_GD2_SORT Coverage Results" MODIFIED="1594007942642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode/practice" />
     <SUITE FILE_PATH="coverage/MyMLStudy$demo.coverage" NAME="demo Coverage Results" MODIFIED="1625078526915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../AdelaiDet/" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$nn_linear.coverage" NAME="nn_linear Coverage Results" MODIFIED="1672229186441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorch-tutorial/src" />
     <SUITE FILE_PATH="coverage/MyMLStudy$qt101_testPyQt.coverage" NAME="qt101_testPyQt Coverage Results" MODIFIED="1622431348958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter01" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_thresholding.coverage" NAME="cv2_thresholding Coverage Results" MODIFIED="1572944520599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/06. 阈值分割" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_basic_operations.coverage" NAME="cv2_basic_operations Coverage Results" MODIFIED="1572936464524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/04. 图像基本操作" />
     <SUITE FILE_PATH="coverage/MyMLStudy$ser.coverage" NAME="ser Coverage Results" MODIFIED="1605598897527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$10operator.coverage" NAME="10operator Coverage Results" MODIFIED="1672060194568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/09ONNX/02" />
     <SUITE FILE_PATH="coverage/MyMLStudy$utils.coverage" NAME="utils Coverage Results" MODIFIED="1605194286155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../CTC-loss-introduction/src_code/numpy_ctc" />
     <SUITE FILE_PATH="coverage/MyMLStudy$train_sparsity.coverage" NAME="train_sparsity Coverage Results" MODIFIED="1670379959126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5-v6" />
     <SUITE FILE_PATH="coverage/MyMLStudy$optimize_leastsq.coverage" NAME="optimize.leastsq Coverage Results" MODIFIED="1593185181412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scipy练习" />
@@ -2552,6 +2650,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$wordlist.coverage" NAME="wordlist Coverage Results" MODIFIED="1605176413389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/RandomWordList" />
     <SUITE FILE_PATH="coverage/MyMLStudy$train_aux.coverage" NAME="train_aux Coverage Results" MODIFIED="1670900164498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/02yolov7s/yolov7" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_exercise1.coverage" NAME="cv2_exercise1 Coverage Results" MODIFIED="1573012799059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/15. 直方图" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$04model_save.coverage" NAME="04model_save Coverage Results" MODIFIED="1672236393499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN" />
     <SUITE FILE_PATH="coverage/MyMLStudy$qt401_widgetGeometry.coverage" NAME="qt401_widgetGeometry Coverage Results" MODIFIED="1622454451502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$GifDemo.coverage" NAME="GifDemo Coverage Results" MODIFIED="1574168015462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/matplotlib" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p17_rabbit_50.coverage" NAME="p17_rabbit_50 Coverage Results" MODIFIED="1594006089199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode/practice" />
@@ -2619,6 +2718,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$run_mario.coverage" NAME="run-mario Coverage Results" MODIFIED="1578051971053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../gym-nes-mario-bros/src" />
     <SUITE FILE_PATH="coverage/MyMLStudy$dot.coverage" NAME="dot Coverage Results" MODIFIED="1593192962260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/numpy练习" />
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ16__.coverage" NAME="HJ16 购物单-优化前 Coverage Results" MODIFIED="1665840079629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$07traceANDscript.coverage" NAME="07traceANDscript Coverage Results" MODIFIED="1672026108647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/09ONNX/02" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_MountainCar__1_.coverage" NAME="run_MountainCar (1) Coverage Results" MODIFIED="1574565300163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5.2_Prioritized_Replay_DQN" />
     <SUITE FILE_PATH="coverage/MyMLStudy$random_walk.coverage" NAME="random_walk Coverage Results" MODIFIED="1575989505789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter09" />
     <SUITE FILE_PATH="coverage/MyMLStudy$Demo_run.coverage" NAME="Demo_run Coverage Results" MODIFIED="1606793913943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/aaaa/mudiban(include-camera-driver)/mudiban" />
@@ -2638,6 +2738,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$FirstWin.coverage" NAME="FirstWin Coverage Results" MODIFIED="1622429904995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter01" />
     <SUITE FILE_PATH="coverage/MyMLStudy$8_Boost.coverage" NAME="8.Boost Coverage Results" MODIFIED="1578299494005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第8张 提升方法" />
     <SUITE FILE_PATH="coverage/MyMLStudy$qt102_PrintApi.coverage" NAME="qt102_PrintApi Coverage Results" MODIFIED="1622431792377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter01" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$01IR.coverage" NAME="01IR Coverage Results" MODIFIED="1672062681414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/10PytorchSrudy/04TorchScript" />
     <SUITE FILE_PATH="coverage/MyMLStudy$example.coverage" NAME="example Coverage Results" MODIFIED="1582214663543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../GBDT_Simple_Tutorial" />
     <SUITE FILE_PATH="coverage/MyMLStudy$XXX_Dense.coverage" NAME="XXX.Dense Coverage Results" MODIFIED="1593548766304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/Tensorflow练习" />
     <SUITE FILE_PATH="coverage/MyMLStudy$bn_train.coverage" NAME="bn_train Coverage Results" MODIFIED="1593779499686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DeepLearning/CNN/bn_exp/bn_exp" />
@@ -2646,6 +2747,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$faster_rcnn_r50_fpn_1x.coverage" NAME="faster_rcnn_r50_fpn_1x Coverage Results" MODIFIED="1602818352208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/aaaa/mudiban(include-camera-driver)/mudiban/work_dirs/faster_rcnn_r50_fpn_1x" />
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ1_.coverage" NAME="HJ1 字符串最后一个单词的长度 Coverage Results" MODIFIED="1665651613988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
     <SUITE FILE_PATH="coverage/MyMLStudy$image_demo.coverage" NAME="image_demo Coverage Results" MODIFIED="1602315957070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_librarys/mmdet_libs/mmdetection-2.4.0/demo" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$08dynamic_axes.coverage" NAME="08dynamic_axes Coverage Results" MODIFIED="1672029766118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/09ONNX/02" />
     <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx.coverage" NAME="gen-onnx Coverage Results" MODIFIED="1669831793901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/10-3rd-plugin" />
     <SUITE FILE_PATH="coverage/MyMLStudy$MainWinSignalSlog04.coverage" NAME="MainWinSignalSlog04 Coverage Results" MODIFIED="1622441066624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter03" />
     <SUITE FILE_PATH="coverage/MyMLStudy$windy_grid_world.coverage" NAME="windy_grid_world Coverage Results" MODIFIED="1575810728439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06" />
@@ -2678,6 +2780,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$car_rental_synchronous.coverage" NAME="car_rental_synchronous Coverage Results" MODIFIED="1575471273262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$logistic.coverage" NAME="logistic Coverage Results" MODIFIED="1562327804504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
     <SUITE FILE_PATH="coverage/MyMLStudy$RCNN_output.coverage" NAME="RCNN_output Coverage Results" MODIFIED="1593641218921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../RCNN" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$09.coverage" NAME="09 Coverage Results" MODIFIED="1672030189663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/09ONNX/02" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p46.coverage" NAME="p46 Coverage Results" MODIFIED="1593573291516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />
     <SUITE FILE_PATH="coverage/MyMLStudy$dqn.coverage" NAME="dqn Coverage Results" MODIFIED="1578053681038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../machinelearning/reinforcement-learning" />
     <SUITE FILE_PATH="coverage/MyMLStudy$bn_test.coverage" NAME="bn_test Coverage Results" MODIFIED="1593779702551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DeepLearning/CNN/bn_exp/bn_exp" />
@@ -2736,6 +2839,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$predict.coverage" NAME="predict Coverage Results" MODIFIED="1623289382430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/" />
     <SUITE FILE_PATH="coverage/MyMLStudy$CallMainWinSignalSlog01.coverage" NAME="CallMainWinSignalSlog01 Coverage Results" MODIFIED="1622440566807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter03" />
     <SUITE FILE_PATH="coverage/MyMLStudy$maximization_bias.coverage" NAME="maximization_bias Coverage Results" MODIFIED="1575819829978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter06" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$02nn_conv2d.coverage" NAME="02nn_conv2d Coverage Results" MODIFIED="1672225993926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/10PytorchSrudy/01github_xiaotudui/02NN" />
     <SUITE FILE_PATH="coverage/MyMLStudy$export.coverage" NAME="export Coverage Results" MODIFIED="1669913573822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_NVIDIA/learning-cuda-trt/tensorrt-integrate-1.2-yolov5-detect/yolov5-6.0" />
     <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx__4_.coverage" NAME="gen-onnx (4) Coverage Results" MODIFIED="1669833011333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/11full-cnn-classifier" />
     <SUITE FILE_PATH="coverage/MyMLStudy$square_wave.coverage" NAME="square_wave Coverage Results" MODIFIED="1575985036878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter09" />
