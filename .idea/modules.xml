@@ -15,10 +15,12 @@
       <module fileurl="file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/.idea/Reinforcement-learning-with-tensorflow.iml" filepath="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/.idea/Reinforcement-learning-with-tensorflow.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" filepath="$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" />
       <module fileurl="file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" filepath="$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../deep-learning-for-image-processing/pytorch_object_detection/faster_rcnn/.idea/faster_rcnn.iml" filepath="$PROJECT_DIR$/../deep-learning-for-image-processing/pytorch_object_detection/faster_rcnn/.idea/faster_rcnn.iml" />
       <module fileurl="file://$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" filepath="$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial/.idea/nlp-tutorial.iml" filepath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial/.idea/nlp-tutorial.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/.idea/nlp-tutorial_wmathor.iml" filepath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/.idea/nlp-tutorial_wmathor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_Tutorials/pytorch-tutorial/.idea/pytorch-tutorial.iml" filepath="$PROJECT_DIR$/../aFolder_Tutorials/pytorch-tutorial/.idea/pytorch-tutorial.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_Attention/seq2seq/.idea/seq2seq.iml" filepath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/.idea/seq2seq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/.idea/simple-faster-rcnn-pytorch.iml" filepath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/.idea/simple-faster-rcnn-pytorch.iml" />
     </modules>
   </component>
 </project>
