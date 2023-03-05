@@ -11,11 +11,14 @@
     <orderEntry type="jdk" jdkName="Python 3.8 (python38)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PaddleOCR" />
-    <orderEntry type="module" module-name="seq2seq" />
-    <orderEntry type="module" module-name="nlp-tutorial_wmathor" />
     <orderEntry type="module" module-name="01transform" />
-    <orderEntry type="module" module-name="simple-faster-rcnn-pytorch" />
     <orderEntry type="module" module-name="faster_rcnn" />
-    <orderEntry type="module" module-name="pytorch-tutorial" />
+    <orderEntry type="module" module-name="ultralytics" />
+    <orderEntry type="module" module-name="yolov5_prune" />
+    <orderEntry type="module" module-name="pytorch-slimming_vgg" />
+    <orderEntry type="module" module-name="FPGM_filter-pruning-geometric-median" />
+    <orderEntry type="module" module-name="Pruning_filters_for_efficient_convnets" />
+    <orderEntry type="module" module-name="distiller" />
+    <orderEntry type="module" module-name="aFolder_ModelCompression" />
   </component>
 </module>
