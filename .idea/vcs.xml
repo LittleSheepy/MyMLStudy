@@ -12,10 +12,12 @@
     <mapping directory="$PROJECT_DIR$/../RCNN" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ShuffleNet-Series" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../aFolder_Attention/seq2seq" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../aFolder_Tutorials/pytorch-tutorial" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_ModelCompression/Pruning_filters_for_efficient_convnets" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_ModelCompression/distiller" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_ModelCompression/pytorch-slimming_vgg" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_YOLO/03yolov8s/ultralytics" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../aFolder_paddle/PaddleOCR" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../dimensionality_reduction_alo_codes" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../gym-nes-mario-bros" vcs="Git" />

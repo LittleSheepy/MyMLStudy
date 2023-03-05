@@ -5,22 +5,25 @@
       <module fileurl="file://$PROJECT_DIR$/11Attention/01transform/.idea/01transform.iml" filepath="$PROJECT_DIR$/11Attention/01transform/.idea/01transform.iml" />
       <module fileurl="file://$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" filepath="$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" />
       <module fileurl="file://$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" filepath="$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/FPGM_filter-pruning-geometric-median.iml" filepath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/FPGM_filter-pruning-geometric-median.iml" />
       <module fileurl="file://$PROJECT_DIR$/../GBDT/.idea/GBDT.iml" filepath="$PROJECT_DIR$/../GBDT/.idea/GBDT.iml" />
       <module fileurl="file://$PROJECT_DIR$/../GBDT_Simple_Tutorial/.idea/GBDT_Simple_Tutorial.iml" filepath="$PROJECT_DIR$/../GBDT_Simple_Tutorial/.idea/GBDT_Simple_Tutorial.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MyMLStudy.iml" filepath="$PROJECT_DIR$/.idea/MyMLStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/../OpenCV-Python-Tutorial1/.idea/OpenCV-Python-Tutorial1.iml" filepath="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/.idea/OpenCV-Python-Tutorial1.iml" />
       <module fileurl="file://$PROJECT_DIR$/../PCA/.idea/PCA.iml" filepath="$PROJECT_DIR$/../PCA/.idea/PCA.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_paddle/PaddleOCR/.idea/PaddleOCR.iml" filepath="$PROJECT_DIR$/../aFolder_paddle/PaddleOCR/.idea/PaddleOCR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_ModelCompression/Pruning_filters_for_efficient_convnets/.idea/Pruning_filters_for_efficient_convnets.iml" filepath="$PROJECT_DIR$/../aFolder_ModelCompression/Pruning_filters_for_efficient_convnets/.idea/Pruning_filters_for_efficient_convnets.iml" />
       <module fileurl="file://$PROJECT_DIR$/../RCNN/.idea/RCNN.iml" filepath="$PROJECT_DIR$/../RCNN/.idea/RCNN.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/.idea/Reinforcement-learning-with-tensorflow.iml" filepath="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/.idea/Reinforcement-learning-with-tensorflow.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" filepath="$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_ModelCompression/.idea/aFolder_ModelCompression.iml" filepath="$PROJECT_DIR$/../aFolder_ModelCompression/.idea/aFolder_ModelCompression.iml" />
       <module fileurl="file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" filepath="$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_ModelCompression/distiller/.idea/distiller.iml" filepath="$PROJECT_DIR$/../aFolder_ModelCompression/distiller/.idea/distiller.iml" />
       <module fileurl="file://$PROJECT_DIR$/../deep-learning-for-image-processing/pytorch_object_detection/faster_rcnn/.idea/faster_rcnn.iml" filepath="$PROJECT_DIR$/../deep-learning-for-image-processing/pytorch_object_detection/faster_rcnn/.idea/faster_rcnn.iml" />
       <module fileurl="file://$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" filepath="$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/.idea/nlp-tutorial_wmathor.iml" filepath="$PROJECT_DIR$/../aFolder_NLP/nlp-tutorial_wmathor/.idea/nlp-tutorial_wmathor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_Tutorials/pytorch-tutorial/.idea/pytorch-tutorial.iml" filepath="$PROJECT_DIR$/../aFolder_Tutorials/pytorch-tutorial/.idea/pytorch-tutorial.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_Attention/seq2seq/.idea/seq2seq.iml" filepath="$PROJECT_DIR$/../aFolder_Attention/seq2seq/.idea/seq2seq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/.idea/simple-faster-rcnn-pytorch.iml" filepath="$PROJECT_DIR$/../aFolder_RCNN/simple-faster-rcnn-pytorch/.idea/simple-faster-rcnn-pytorch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_ModelCompression/pytorch-slimming_vgg/.idea/pytorch-slimming_vgg.iml" filepath="$PROJECT_DIR$/../aFolder_ModelCompression/pytorch-slimming_vgg/.idea/pytorch-slimming_vgg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/03yolov8s/ultralytics/.idea/ultralytics.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/03yolov8s/ultralytics/.idea/ultralytics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/.idea/yolov5_prune.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/.idea/yolov5_prune.iml" />
     </modules>
   </component>
 </project>
