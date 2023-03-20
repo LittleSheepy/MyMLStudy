@@ -16,8 +16,10 @@
     <mapping directory="$PROJECT_DIR$/../aFolder_ModelCompression/Pruning_filters_for_efficient_convnets" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../aFolder_ModelCompression/distiller" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../aFolder_ModelCompression/pytorch-slimming_vgg" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_Track/sort" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../aFolder_YOLO/03yolov8s/ultralytics" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../aFolder_paddle/PaddleOCR" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../dimensionality_reduction_alo_codes" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../gym-nes-mario-bros" vcs="Git" />
