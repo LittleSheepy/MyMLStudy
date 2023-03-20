@@ -20,5 +20,10 @@
     <orderEntry type="module" module-name="Pruning_filters_for_efficient_convnets" />
     <orderEntry type="module" module-name="distiller" />
     <orderEntry type="module" module-name="aFolder_ModelCompression" />
+    <orderEntry type="module" module-name="aFolder_Classification" />
+    <orderEntry type="module" module-name="sort" />
+    <orderEntry type="module" module-name="aFolder_Track" />
+    <orderEntry type="module" module-name="ARML-master" />
+    <orderEntry type="module" module-name="ARML_yuan" />
   </component>
 </module>

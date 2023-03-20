@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/11Attention/01transform/.idea/01transform.iml" filepath="$PROJECT_DIR$/11Attention/01transform/.idea/01transform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_aaa/ARML-master/.idea/ARML-master.iml" filepath="$PROJECT_DIR$/../aFolder_aaa/ARML-master/.idea/ARML-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_aaa/ARML_yuan/.idea/ARML_yuan.iml" filepath="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan/.idea/ARML_yuan.iml" />
       <module fileurl="file://$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" filepath="$PROJECT_DIR$/../AirGesture/.idea/AirGesture.iml" />
       <module fileurl="file://$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" filepath="$PROJECT_DIR$/DeepLearning/CNN/.idea/CNN.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/FPGM_filter-pruning-geometric-median.iml" filepath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/FPGM_filter-pruning-geometric-median.iml" />
@@ -16,12 +18,15 @@
       <module fileurl="file://$PROJECT_DIR$/../RCNN/.idea/RCNN.iml" filepath="$PROJECT_DIR$/../RCNN/.idea/RCNN.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/.idea/Reinforcement-learning-with-tensorflow.iml" filepath="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/.idea/Reinforcement-learning-with-tensorflow.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" filepath="$PROJECT_DIR$/Tensorflow/TensorFlow实战-黄文坚/.idea/TensorFlow实战-黄文坚.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_Classification/.idea/aFolder_Classification.iml" filepath="$PROJECT_DIR$/../aFolder_Classification/.idea/aFolder_Classification.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_ModelCompression/.idea/aFolder_ModelCompression.iml" filepath="$PROJECT_DIR$/../aFolder_ModelCompression/.idea/aFolder_ModelCompression.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_Track/.idea/aFolder_Track.iml" filepath="$PROJECT_DIR$/../aFolder_Track/.idea/aFolder_Track.iml" />
       <module fileurl="file://$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" filepath="$PROJECT_DIR$/../dimensionality_reduction_alo_codes/.idea/dimensionality_reduction_alo_codes.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_ModelCompression/distiller/.idea/distiller.iml" filepath="$PROJECT_DIR$/../aFolder_ModelCompression/distiller/.idea/distiller.iml" />
       <module fileurl="file://$PROJECT_DIR$/../deep-learning-for-image-processing/pytorch_object_detection/faster_rcnn/.idea/faster_rcnn.iml" filepath="$PROJECT_DIR$/../deep-learning-for-image-processing/pytorch_object_detection/faster_rcnn/.idea/faster_rcnn.iml" />
       <module fileurl="file://$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" filepath="$PROJECT_DIR$/../machinelearning/.idea/machinelearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_ModelCompression/pytorch-slimming_vgg/.idea/pytorch-slimming_vgg.iml" filepath="$PROJECT_DIR$/../aFolder_ModelCompression/pytorch-slimming_vgg/.idea/pytorch-slimming_vgg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aFolder_Track/sort/.idea/sort.iml" filepath="$PROJECT_DIR$/../aFolder_Track/sort/.idea/sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/03yolov8s/ultralytics/.idea/ultralytics.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/03yolov8s/ultralytics/.idea/ultralytics.iml" />
       <module fileurl="file://$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/.idea/yolov5_prune.iml" filepath="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune/.idea/yolov5_prune.iml" />
     </modules>
