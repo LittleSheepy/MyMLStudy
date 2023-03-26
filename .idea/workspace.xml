@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/data/yolo/coco128SegDataShow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/yolo/labelme2coco128Seg.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/FPGM_filter-pruning-geometric-median.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/misc.xml" afterDir="false" />
@@ -32,9 +30,10 @@
       <change afterPath="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12CPPopenCV/Solution.sln" beforeDir="false" afterPath="$PROJECT_DIR$/12CPPopenCV/Solution.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12CPPopenCV/cv01Test/cv01Test.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/12CPPopenCV/cv01Test/cv01Test.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12CPPopenCV/cv01Test/cv01Test.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/12CPPopenCV/cv01Test/cv01Test.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12CPPopenCV/cv01Test/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/12CPPopenCV/cv01Test/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar/PFEC_vggprune.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar/PFEC_vggprune.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar/main_cifar_vgg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar/main_cifar_vgg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar/pruning_cifar_vgg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar/pruning_cifar_vgg.py" afterDir="false" />
