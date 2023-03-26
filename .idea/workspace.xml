@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/data/yolo/coco128SegDataShow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/yolo/labelme2coco128Seg.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/FPGM_filter-pruning-geometric-median.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/misc.xml" afterDir="false" />
@@ -32,7 +34,6 @@
       <change afterPath="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar/PFEC_vggprune.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar/PFEC_vggprune.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar/main_cifar_vgg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar/main_cifar_vgg.py" afterDir="false" />
@@ -110,7 +111,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -177,7 +178,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aFolder_MLs" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="python.debugger.dataview.autoresize" value="false" />
@@ -201,7 +202,7 @@
       <recent name="D:\00myGitHub\deep-learning-for-image-processing\pytorch_object_detection\faster_rcnn\backbone" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.train">
     <configuration name="conv2d_groups" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -290,20 +291,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_prune" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="aFolder_ModelCompression" />
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="aFolder_MLs" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_ModelCompression/MobileNet_Prune_Quantification/code" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_ModelCompression/MobileNet_Prune_Quantification/code/train_prune.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation/train.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -313,19 +314,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.train_prune" />
       <item itemvalue="Python.conv2d_groups" />
       <item itemvalue="Python.sort" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.main (1)" />
+      <item itemvalue="Python.train" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.train" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.sort" />
         <item itemvalue="Python.conv2d_groups" />
-        <item itemvalue="Python.train_prune" />
       </list>
     </recent_temporary>
   </component>
@@ -732,6 +733,7 @@
       <workItem from="1677591853506" duration="27710000" />
       <workItem from="1677708410159" duration="143608000" />
       <workItem from="1678510050606" duration="7710000" />
+      <workItem from="1679832578557" duration="2838000" />
     </task>
     <servers />
   </component>
@@ -756,70 +758,23 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672326718776" />
-    <state x="2199" y="-218" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671028571768" />
     <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1678513491871" />
     <state x="500" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1671964441033">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="500" y="220" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1671964441033" />
-    <state x="2545" y="-32" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671166955207" />
     <state x="468" y="324" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1672106134971">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="468" y="324" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1672106134971" />
-    <state x="477" y="72" key="#convert_to_onnx" timestamp="1669916981373">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="477" y="72" key="#convert_to_onnx/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669916981373" />
-    <state x="2588" y="-129" key="#converter" timestamp="1670276814002">
-      <screen x="1920" y="-309" width="1920" height="1050" />
-    </state>
-    <state x="2588" y="-129" key="#converter/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1670276814002" />
-    <state x="477" y="72" key="#export" timestamp="1669911363926">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="477" y="72" key="#export/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669911363926" />
-    <state x="477" y="72" key="#export_(1)" timestamp="1669911931077">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="477" y="72" key="#export_(1)/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669911931077" />
-    <state x="477" y="72" key="#export_(2)" timestamp="1669917408636">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="477" y="72" key="#export_(2)/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669917408636" />
-    <state x="477" y="72" key="#export_(3)" timestamp="1669928688345">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="477" y="72" key="#export_(3)/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669928688345" />
     <state x="534" y="143" key="#main" timestamp="1678510987852">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="2588" y="-129" key="#main/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671028526946" />
     <state x="534" y="143" key="#main/0.0.1536.834@0.0.1536.834" timestamp="1678510987852" />
-    <state x="477" y="72" key="#run" timestamp="1669918414994">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="477" y="72" key="#run/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669918414994" />
-    <state x="477" y="72" key="#setup" timestamp="1669931816813">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="477" y="72" key="#setup/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1669931816813" />
-    <state x="477" y="72" key="#shortcut_prune_yolov5s" timestamp="1670280168548">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="477" y="72" key="#shortcut_prune_yolov5s/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670280168548" />
-    <state x="2588" y="-129" key="#train" timestamp="1671020165172">
-      <screen x="1920" y="-309" width="1920" height="1050" />
-    </state>
-    <state x="2588" y="-129" key="#train/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671020165172" />
     <state x="477" y="72" key="#train_cifar10" timestamp="1672327341229">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="477" y="72" key="#train_cifar10/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672327341229" />
-    <state x="477" y="72" key="#train_sparsity" timestamp="1670278977043">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="477" y="72" key="#train_sparsity/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1670278977043" />
     <state x="0" y="170" key="#xdebugger.XInspectDialog" timestamp="1676998312850">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -835,12 +790,12 @@
     <state width="1057" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1675011269916" />
     <state width="1426" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673786911904" />
     <state width="1141" height="466" key="DebuggerActiveHint/0.0.1536.834@0.0.1536.834" timestamp="1678514433692" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1678511938847">
+    <state x="419" y="9" width="676" height="775" key="FileChooserDialogImpl" timestamp="1679834449131">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1674889200090" />
     <state x="2606" y="-92" key="FileChooserDialogImpl/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673753384770" />
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1678511938847" />
+    <state x="419" y="9" width="676" height="775" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1679834449131" />
     <state width="1493" height="464" key="GridCell.Tab.-1.bottom" timestamp="1672497613980">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -857,30 +812,30 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="464" key="GridCell.Tab.-1.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672497613980" />
-    <state width="1493" height="365" key="GridCell.Tab.0.bottom" timestamp="1678814448124">
+    <state width="1493" height="176" key="GridCell.Tab.0.bottom" timestamp="1679835002742">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="74" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1675092236152" />
     <state width="1877" height="770" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673786216664" />
-    <state width="1493" height="365" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1678814448124" />
-    <state width="1493" height="365" key="GridCell.Tab.0.center" timestamp="1678814448124">
+    <state width="1493" height="176" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1679835002742" />
+    <state width="1493" height="176" key="GridCell.Tab.0.center" timestamp="1679835002741">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="74" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1675092236152" />
     <state width="1877" height="770" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673786216663" />
-    <state width="1493" height="365" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1678814448124" />
-    <state width="1493" height="365" key="GridCell.Tab.0.left" timestamp="1678814448124">
+    <state width="1493" height="176" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1679835002741" />
+    <state width="1493" height="176" key="GridCell.Tab.0.left" timestamp="1679835002740">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="74" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1675092236151" />
     <state width="1877" height="770" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673786216663" />
-    <state width="1493" height="365" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1678814448124" />
-    <state width="1493" height="365" key="GridCell.Tab.0.right" timestamp="1678814448124">
+    <state width="1493" height="176" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1679835002740" />
+    <state width="1493" height="176" key="GridCell.Tab.0.right" timestamp="1679835002741">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="74" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1675092236152" />
     <state width="1877" height="770" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673786216663" />
-    <state width="1493" height="365" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1678814448124" />
+    <state width="1493" height="176" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1679835002741" />
     <state width="1493" height="464" key="GridCell.Tab.1.bottom" timestamp="1672497607196">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -930,12 +885,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="447" y="150" width="719" height="534" key="find.popup/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672067623719" />
-    <state x="2479" y="-120" width="899" height="673" key="find.popup/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671111918767" />
     <state x="588" y="171" width="782" height="600" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1677988809229" />
     <state x="431" y="155" width="672" height="679" key="search.everywhere.popup" timestamp="1677824512512">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="2459" y="-114" width="840" height="854" key="search.everywhere.popup/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1671162233834" />
     <state x="431" y="155" width="672" height="679" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1677824512512" />
   </component>
   <component name="XDebuggerManager">
@@ -3107,7 +3060,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$eval.coverage" NAME="eval Coverage Results" MODIFIED="1622630022374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/" />
     <SUITE FILE_PATH="coverage/MyMLStudy$setup.coverage" NAME="setup Coverage Results" MODIFIED="1672056110593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/09ONNX/02/my_add_lib" />
     <SUITE FILE_PATH="coverage/MyMLStudy$full_code.coverage" NAME="full_code Coverage Results" MODIFIED="1562327730781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow/莫凡Tensorflow学习笔记/tensorflowTUT/tf5_example2" />
-    <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1677987176771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_ModelCompression/MobileNet_Prune_Quantification/code" />
+    <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1679835002713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation" />
     <SUITE FILE_PATH="coverage/MyMLStudy$SPPtest.coverage" NAME="SPPtest Coverage Results" MODIFIED="1669634026003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AI_track" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mc_demo_prb.coverage" NAME="mc_demo_prb Coverage Results" MODIFIED="1677601860177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Track/SMILEtrack/BoT-SORT" />
     <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx__3_.coverage" NAME="gen-onnx (3) Coverage Results" MODIFIED="1669829300193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/09int8" />
