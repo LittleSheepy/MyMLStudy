@@ -1,12 +1,4 @@
-//出处：昊虹AI笔记网(hhai.cc)
-//用心记录计算机视觉和AI技术
-
-//博主微信/QQ 2487872782
-//QQ群 271891601
-//欢迎技术交流与咨询
-
-//OpenCV版本 OpenCV3.0
-
+// 遍历图片
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include<ctime>
@@ -100,7 +92,7 @@ cv::Mat inverseColor4(cv::Mat srcImage)
 }
 int test()
 {
-	cv::Mat img = cv::imread("test.jpg"); // 读入测试图像
+	cv::Mat img = cv::imread("testBig.jpg"); // 读入测试图像
 	if (img.empty())
 	{
 		std::cout << "Cannot read image file" << std::endl;
