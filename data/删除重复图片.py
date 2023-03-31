@@ -157,9 +157,9 @@ def write_img_path_to_txt():
 
 
 if __name__ == '__main__':
-    # quchong()
+    quchong()
     #fenshuju()
     #txt_to_img()
-    img_label_to_txt()
+    #img_label_to_txt()
     #write_img_path_to_txt()
     pass
