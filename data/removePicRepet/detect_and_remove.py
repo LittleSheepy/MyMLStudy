@@ -9,7 +9,7 @@ import argparse
 import cv2
 import os
 
-def dhash(image, hashSize=8):
+def dhash(image, hashSize=16):
 	# convert the image to grayscale and resize the grayscale image,
 	# adding a single column (width) so we can compute the horizontal
 	# gradient
@@ -25,7 +25,7 @@ def dhash(image, hashSize=8):
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-d", "--dataset", default=r'D:\01sheepy\01work\07xiling\little_pic\ad\image_all1/',
+ap.add_argument("-d", "--dataset", default=r'D:\04DataSets\02\images/',
 	help="path to input dataset")
 ap.add_argument("-r", "--remove", type=int, default=1,
 	help="whether or not duplicates should be removed (i.e., dry run)")
