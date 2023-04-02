@@ -34,5 +34,13 @@ cv9BasicThresholdingOperations = cv1Basic.cv9BasicThresholdingOperations
 cv10ThresholdUseInRange = cv1Basic.cv10ThresholdUseInRange
 
 from cv3ImageProcessing import cv2Transformations
-cv6HoughLineTransform = cv2Transformations.cv6HoughLineTransform            # 霍夫直线检测
-#from cv3ImageProcessing.cv2Transformations import cv6HoughLineTransform
+cv6HoughLineTransform = cv2Transformations.cv6HoughLineTransform                # 霍夫直线检测
+# 10仿射变换
+cv10AffineTransformations = cv2Transformations.cv10AffineTransformations
+my_warpAffine = cv10AffineTransformations.my_warpAffine                         # 仿射变换
+myRotation_warpAffine = cv10AffineTransformations.myRotation_warpAffine         # 旋转仿射变换
+from cv3ImageProcessing import cv3Histograms
+# 直方图均衡化
+cv1HistogramEqualization = cv3Histograms.cv1HistogramEqualization
+my_equalizeHist = cv1HistogramEqualization.my_equalizeHist                      # 直方图均衡化
+myBGR_equalizeHist = cv1HistogramEqualization.myBGR_equalizeHist                # 分通道直方图均衡化
