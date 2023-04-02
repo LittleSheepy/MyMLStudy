@@ -151,11 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CPostProcessor.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="quickdemo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="quickopencv.h" />
+    <ClInclude Include="CPostProcessor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
