@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303322db-ab02-4f20-a097-861694fffd46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/openCV练习/01图像拼接.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/openCV练习/02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/openCV练习/03.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/openCV练习/04.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/openCV练习/05.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/openCV练习/0601.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/openCV练习/06特征拼接.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/openCV练习/07.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/openCV练习/08.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv0main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv2Transformations/01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python练习/二维数组排序.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/FPGM_filter-pruning-geometric-median.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/.idea/misc.xml" afterDir="false" />
@@ -40,6 +34,7 @@
       <change afterPath="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MyMLStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyMLStudy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/12CPPopenCV/cv01Test/cv01Test.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/12CPPopenCV/cv01Test/cv01Test.vcxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/12CPPopenCV/cv01Test/cv01Test.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/12CPPopenCV/cv01Test/cv01Test.vcxproj.filters" afterDir="false" />
@@ -187,7 +182,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aFolder_YOLO/03yolov8s/ultralytics" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="python.debugger.dataview.autoresize" value="false" />
@@ -211,8 +206,8 @@
       <recent name="D:\00myGitHub\deep-learning-for-image-processing\pytorch_object_detection\faster_rcnn\backbone" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.06特征拼接 (1)">
-    <configuration name="06特征拼接 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.cv10ThresholdUseInRange">
+    <configuration name="cv10ThresholdUseInRange" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -220,12 +215,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/openCV练习" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/openCV练习/06特征拼接.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic/cv10ThresholdUseInRange.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -234,7 +229,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="06特征拼接" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="cv6HitMiss" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -242,12 +237,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/openCV练习" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\00myGitHub\MyMLStudy\openCV练习\06特征拼接.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic/cv6HitMiss.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -256,7 +251,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0601" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="cv7MorphLinesDetection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -264,12 +259,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/openCV练习" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/openCV练习/0601.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic/cv7MorphLinesDetection.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -278,7 +273,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="08" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="cv8ImagePyramids" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -286,12 +281,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/openCV练习" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/openCV练习/08.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic/cv8ImagePyramids.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -300,7 +295,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ColorConversionCodes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="cv9BasicThresholdingOperations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MyMLStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -308,12 +303,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/OpenCV-Python Tutorials/03 Image Processing in OpenCV/3.1 颜色空间转换" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OpenCV-Python Tutorials/03 Image Processing in OpenCV/3.1 颜色空间转换/ColorConversionCodes.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic/cv9BasicThresholdingOperations.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -323,19 +318,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.08" />
-      <item itemvalue="Python.0601" />
-      <item itemvalue="Python.06特征拼接" />
-      <item itemvalue="Python.06特征拼接 (1)" />
-      <item itemvalue="Python.ColorConversionCodes" />
+      <item itemvalue="Python.cv6HitMiss" />
+      <item itemvalue="Python.cv7MorphLinesDetection" />
+      <item itemvalue="Python.cv8ImagePyramids" />
+      <item itemvalue="Python.cv9BasicThresholdingOperations" />
+      <item itemvalue="Python.cv10ThresholdUseInRange" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.06特征拼接 (1)" />
-        <item itemvalue="Python.ColorConversionCodes" />
-        <item itemvalue="Python.06特征拼接" />
-        <item itemvalue="Python.0601" />
-        <item itemvalue="Python.08" />
+        <item itemvalue="Python.cv10ThresholdUseInRange" />
+        <item itemvalue="Python.cv9BasicThresholdingOperations" />
+        <item itemvalue="Python.cv8ImagePyramids" />
+        <item itemvalue="Python.cv7MorphLinesDetection" />
+        <item itemvalue="Python.cv6HitMiss" />
       </list>
     </recent_temporary>
   </component>
@@ -746,6 +741,7 @@
       <workItem from="1680014818879" duration="6144000" />
       <workItem from="1680183149897" duration="7697000" />
       <workItem from="1680269061236" duration="220000" />
+      <workItem from="1680274778899" duration="42575000" />
     </task>
     <servers />
   </component>
@@ -756,11 +752,11 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="0" key="#Illuminated_Cloud" timestamp="1680269231822">
+    <state x="0" y="0" key="#Illuminated_Cloud" timestamp="1680274808434">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672374970543" />
-    <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834@0.0.1536.834" timestamp="1680269231822" />
+    <state x="0" y="0" key="#Illuminated_Cloud/0.0.1536.834@0.0.1536.834" timestamp="1680274808434" />
     <state x="361" y="76" key="#Inspections" timestamp="1677270447279">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -795,12 +791,12 @@
     </state>
     <state x="524" y="119" key="#xdebugger.evaluate/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1674892677346" />
     <state x="524" y="119" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1676998297039" />
-    <state width="1141" height="466" key="DebuggerActiveHint" timestamp="1680190046947">
+    <state width="1276" height="466" key="DebuggerActiveHint" timestamp="1680428491116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1057" height="466" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1675011269916" />
     <state width="1426" height="587" key="DebuggerActiveHint/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673786911904" />
-    <state width="1141" height="466" key="DebuggerActiveHint/0.0.1536.834@0.0.1536.834" timestamp="1680190046947" />
+    <state width="1276" height="466" key="DebuggerActiveHint/0.0.1536.834@0.0.1536.834" timestamp="1680428491116" />
     <state x="419" y="9" width="676" height="775" key="FileChooserDialogImpl" timestamp="1680112956683">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -823,30 +819,30 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="464" key="GridCell.Tab.-1.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672497613980" />
-    <state width="1493" height="46" key="GridCell.Tab.0.bottom" timestamp="1680267123025">
+    <state width="1493" height="263" key="GridCell.Tab.0.bottom" timestamp="1680436282314">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="74" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1675092236152" />
     <state width="1877" height="770" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673786216664" />
-    <state width="1493" height="46" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1680267123025" />
-    <state width="1493" height="46" key="GridCell.Tab.0.center" timestamp="1680267123025">
+    <state width="1493" height="263" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1680436282314" />
+    <state width="1493" height="263" key="GridCell.Tab.0.center" timestamp="1680436282314">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="74" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1675092236152" />
     <state width="1877" height="770" key="GridCell.Tab.0.center/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673786216663" />
-    <state width="1493" height="46" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1680267123025" />
-    <state width="1493" height="46" key="GridCell.Tab.0.left" timestamp="1680267123025">
+    <state width="1493" height="263" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1680436282314" />
+    <state width="1493" height="263" key="GridCell.Tab.0.left" timestamp="1680436282314">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="74" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1675092236151" />
     <state width="1877" height="770" key="GridCell.Tab.0.left/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673786216663" />
-    <state width="1493" height="46" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1680267123025" />
-    <state width="1493" height="46" key="GridCell.Tab.0.right" timestamp="1680267123025">
+    <state width="1493" height="263" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1680436282314" />
+    <state width="1493" height="263" key="GridCell.Tab.0.right" timestamp="1680436282314">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="74" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1675092236152" />
     <state width="1877" height="770" key="GridCell.Tab.0.right/0.0.1536.834/1920.-309.1920.1050@1920.-309.1920.1050" timestamp="1673786216663" />
-    <state width="1493" height="46" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1680267123025" />
+    <state width="1493" height="263" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1680436282314" />
     <state width="1493" height="464" key="GridCell.Tab.1.bottom" timestamp="1672497607196">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -863,11 +859,11 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="464" key="GridCell.Tab.1.right/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672497607195" />
-    <state x="304" y="119" key="SettingsEditor" timestamp="1680182763835">
+    <state x="304" y="119" key="SettingsEditor" timestamp="1680274835239">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="231" y="50" key="SettingsEditor/0.0.1536.834/1920.-309.1920.1050@0.0.1536.834" timestamp="1672414339542" />
-    <state x="304" y="119" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1680182763835" />
+    <state x="304" y="119" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1680274835239" />
     <state width="775" height="424" key="XDebugger.FullValuePopup" timestamp="1678092461352">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -3000,6 +2996,26 @@
           <line>25</line>
           <option name="timeStamp" value="2620" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv2Transformations/cv6HoughLineTransform.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="2622" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv2Transformations/01.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="2632" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python练习/二维数组排序.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="2634" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic/cv5MoreMorphologyTransformations.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="2646" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -3076,6 +3092,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$train.coverage" NAME="train Coverage Results" MODIFIED="1679835002713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation" />
     <SUITE FILE_PATH="coverage/MyMLStudy$SPPtest.coverage" NAME="SPPtest Coverage Results" MODIFIED="1669634026003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AI_track" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mc_demo_prb.coverage" NAME="mc_demo_prb Coverage Results" MODIFIED="1677601860177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Track/SMILEtrack/BoT-SORT" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv9BasicThresholdingOperations.coverage" NAME="cv9BasicThresholdingOperations Coverage Results" MODIFIED="1680433767036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$gen_onnx__3_.coverage" NAME="gen-onnx (3) Coverage Results" MODIFIED="1669829300193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07TensorRTStudy/01TRTexample/python/09int8" />
     <SUITE FILE_PATH="coverage/MyMLStudy$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1602421995934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Anaconda3/envs/mmdet/Lib/site-packages/utils" />
     <SUITE FILE_PATH="coverage/MyMLStudy$lenet5.coverage" NAME="lenet5 Coverage Results" MODIFIED="1610552230124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/pytorchx/lenet" />
@@ -3119,6 +3136,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$06__1_.coverage" NAME="06特征拼接 (1) Coverage Results" MODIFIED="1680192989321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/openCV练习" />
     <SUITE FILE_PATH="coverage/MyMLStudy$A3C_continuous_action.coverage" NAME="A3C_continuous_action Coverage Results" MODIFIED="1574781778802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/10_A3C" />
     <SUITE FILE_PATH="coverage/MyMLStudy$dilate.coverage" NAME="dilate Coverage Results" MODIFIED="1590253846267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OpenCV-Python Tutorials/03 Image Processing in OpenCV/3.5 形态转换" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$test.coverage" NAME="test Coverage Results" MODIFIED="1680420099813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$datalist.coverage" NAME="datalist Coverage Results" MODIFIED="1604335628652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/RandomDataList" />
     <SUITE FILE_PATH="coverage/MyMLStudy$counterexample.coverage" NAME="counterexample Coverage Results" MODIFIED="1578037744154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter11" />
     <SUITE FILE_PATH="coverage/MyMLStudy$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1678513494735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_aaa/ARML_yuan" />
@@ -3140,6 +3158,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1680113062640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/03yolov8s/ultralytics" />
     <SUITE FILE_PATH="coverage/MyMLStudy$Framework.coverage" NAME="Framework Coverage Results" MODIFIED="1593790237041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DeepLearning/CNN/ResNet" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_shi_tomasi_corner_detector.coverage" NAME="cv2_shi_tomasi_corner_detector Coverage Results" MODIFIED="1573222503394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/20. Shi-Tomasi角点检测" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$01.coverage" NAME="01 Coverage Results" MODIFIED="1680285265598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv2Transformations" />
     <SUITE FILE_PATH="coverage/MyMLStudy$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1602520410707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Tutorials/flask_data_baobiao" />
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ19_.coverage" NAME="HJ19 简单错误记录 Coverage Results" MODIFIED="1666444899656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
     <SUITE FILE_PATH="coverage/MyMLStudy$direct_api_pruning.coverage" NAME="direct_api_pruning Coverage Results" MODIFIED="1677941589584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_ModelCompression/distiller/examples/scheduling_api" />
@@ -3261,6 +3280,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$test3_gru_liner_trueLenth_attention.coverage" NAME="test3_gru_liner_trueLenth_attention Coverage Results" MODIFIED="1671120057740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_Pendulum__1_.coverage" NAME="run_Pendulum (1) Coverage Results" MODIFIED="1574577997722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/5.3_Dueling_DQN" />
     <SUITE FILE_PATH="coverage/MyMLStudy$txt.coverage" NAME="生成txt Coverage Results" MODIFIED="1623235873688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/DBNet.pytorch/datasets" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv6HoughLineTransform.coverage" NAME="cv6HoughLineTransform Coverage Results" MODIFIED="1680280643072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv2Transformations" />
     <SUITE FILE_PATH="coverage/MyMLStudy$default_runtime.coverage" NAME="default_runtime Coverage Results" MODIFIED="1600873273250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../mudiban/configs" />
     <SUITE FILE_PATH="coverage/MyMLStudy$Main.coverage" NAME="Main Coverage Results" MODIFIED="1613977507732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/01work/DeepBlueDet/01codes/tongli/Kone_Led" />
     <SUITE FILE_PATH="coverage/MyMLStudy$model.coverage" NAME="model Coverage Results" MODIFIED="1623309617734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_OCR/chineseocr_lite_dage" />
@@ -3270,6 +3290,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$mask.coverage" NAME="红色转mask Coverage Results" MODIFIED="1622550678379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/01work/07xiling/labelseg" />
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_affine_perspective_transformation.coverage" NAME="cv2_affine_perspective_transformation Coverage Results" MODIFIED="1572945273789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/番外篇05. 仿射变换和透视变换原理" />
     <SUITE FILE_PATH="coverage/MyMLStudy$text_file_replease.coverage" NAME="text_file_replease Coverage Results" MODIFIED="1604757992263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv3SmoothingImages.coverage" NAME="cv3SmoothingImages Coverage Results" MODIFIED="1680418443326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$11.coverage" NAME="11 Coverage Results" MODIFIED="1621332645665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyMLStudy$DDPG.coverage" NAME="DDPG Coverage Results" MODIFIED="1574756252222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/9_Deep_Deterministic_Policy_Gradient_DDPG" />
     <SUITE FILE_PATH="coverage/MyMLStudy$01create_onnx.coverage" NAME="01create_onnx Coverage Results" MODIFIED="1671960665056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/09ONNX" />
@@ -3286,6 +3307,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$Encoders.coverage" NAME="Encoders Coverage Results" MODIFIED="1671167014375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DeepLearning/RNN/_02seq2seqTest/models" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mainEntry.coverage" NAME="mainEntry Coverage Results" MODIFIED="1572948659625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务2：PyQt5编写GUI界面" />
     <SUITE FILE_PATH="coverage/MyMLStudy$HJ18_IP02.coverage" NAME="HJ18 识别有效的IP地址和掩码并进行分类统计02 Coverage Results" MODIFIED="1666120527917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04HuaWeiTiKu-NiuKe" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv7MorphLinesDetection.coverage" NAME="cv7MorphLinesDetection Coverage Results" MODIFIED="1680431240066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_main.coverage" NAME="run_main Coverage Results" MODIFIED="1593353764287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../tensorflow-mnist-CVAE" />
     <SUITE FILE_PATH="coverage/MyMLStudy$slim_prune_yolov5s.coverage" NAME="slim_prune_yolov5s Coverage Results" MODIFIED="1670395067522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/01yolov5s/ZJU-lishuang_yolov5-v6/yolov5_prune" />
     <SUITE FILE_PATH="coverage/MyMLStudy$Led_Rec.coverage" NAME="Led_Rec Coverage Results" MODIFIED="1614132053212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/01work/DeepBlueDet/01codes/tongli/Kone_Led/HandlePic" />
@@ -3306,6 +3328,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$Flask_____aFolder_Tutorials_flask_backstage_example_manage_py_.coverage" NAME="Flask (../aFolder_Tutorials/flask_backstage_example/manage.py) Coverage Results" MODIFIED="1602508383079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/MyMLStudy$qt403_QIcon.coverage" NAME="qt403_QIcon Coverage Results" MODIFIED="1622443770315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_this.coverage" NAME="run_this Coverage Results" MODIFIED="1574175250200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/2_Q_Learning_maze" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv4ErodingAndDilating.coverage" NAME="cv4ErodingAndDilating Coverage Results" MODIFIED="1680420982222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$train_prune.coverage" NAME="train_prune Coverage Results" MODIFIED="1677999074896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_ModelCompression/MobileNet_Prune_Quantification/code" />
     <SUITE FILE_PATH="coverage/MyMLStudy$list.coverage" NAME="list Coverage Results" MODIFIED="1582210448176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyMLStudy$run_MountainCar.coverage" NAME="run_MountainCar Coverage Results" MODIFIED="1574594928116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/7_Policy_gradient_softmax" />
@@ -3340,6 +3363,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$test_pyqt_labelseg2.coverage" NAME="test_pyqt_labelseg2 Coverage Results" MODIFIED="1624436840307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/01work/07xiling/pyqtdraw" />
     <SUITE FILE_PATH="coverage/MyMLStudy$test4_gru_batch_first.coverage" NAME="test4_gru_batch_first Coverage Results" MODIFIED="1671191696587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test" />
     <SUITE FILE_PATH="coverage/MyMLStudy$fine_tune_RCNN.coverage" NAME="fine_tune_RCNN Coverage Results" MODIFIED="1593525078756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../RCNN" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv1BasicDrawing.coverage" NAME="cv1BasicDrawing Coverage Results" MODIFIED="1680411271171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p49_RESNET.coverage" NAME="p49_RESNET Coverage Results" MODIFIED="1593712589281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />
     <SUITE FILE_PATH="coverage/MyMLStudy$gen_label.coverage" NAME="gen_label Coverage Results" MODIFIED="1612173312426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/XML" />
     <SUITE FILE_PATH="coverage/MyMLStudy$val_yuan.coverage" NAME="val_yuan Coverage Results" MODIFIED="1623897371646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_MLs/unet-pp-Medical-cell-segmentation" />
@@ -3362,6 +3386,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$pic_move.coverage" NAME="pic_move Coverage Results" MODIFIED="1622532099180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/MyMLStudy$car_rental_synchronous.coverage" NAME="car_rental_synchronous Coverage Results" MODIFIED="1575471273262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$logistic.coverage" NAME="logistic Coverage Results" MODIFIED="1562327804504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$.coverage" NAME="二维数组排序 Coverage Results" MODIFIED="1680337920756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python练习" />
     <SUITE FILE_PATH="coverage/MyMLStudy$RCNN_output.coverage" NAME="RCNN_output Coverage Results" MODIFIED="1593641218921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../RCNN" />
     <SUITE FILE_PATH="coverage/MyMLStudy$09.coverage" NAME="09 Coverage Results" MODIFIED="1672030189663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/09ONNX/02" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p46.coverage" NAME="p46 Coverage Results" MODIFIED="1593573291516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />
@@ -3379,8 +3404,10 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$cv2_lane_detection_video.coverage" NAME="cv2_lane_detection_video Coverage Results" MODIFIED="1573224313807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务3：车道检测" />
     <SUITE FILE_PATH="coverage/MyMLStudy$qt0407_QLabel.coverage" NAME="qt0407_QLabel Coverage Results" MODIFIED="1622455514307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter04" />
     <SUITE FILE_PATH="coverage/MyMLStudy$dentalTrain.coverage" NAME="dentalTrain Coverage Results" MODIFIED="1626021523367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/01sheepy/0/trunk" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv10ThresholdUseInRange.coverage" NAME="cv10ThresholdUseInRange Coverage Results" MODIFIED="1680436282283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$test2_gru.coverage" NAME="test2_gru Coverage Results" MODIFIED="1671185772900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_Attention/seq2seq/test" />
     <SUITE FILE_PATH="coverage/MyMLStudy$SimpleThresholding.coverage" NAME="SimpleThresholding Coverage Results" MODIFIED="1590250881226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OpenCV-Python Tutorials/03 Image Processing in OpenCV/3.3 图像阈值" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv8ImagePyramids.coverage" NAME="cv8ImagePyramids Coverage Results" MODIFIED="1680433180581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p44_CVAE_mnist_gpus.coverage" NAME="p44_CVAE_mnist_gpus Coverage Results" MODIFIED="1593687464603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />
     <SUITE FILE_PATH="coverage/MyMLStudy$infer.coverage" NAME="infer Coverage Results" MODIFIED="1619408426120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_paddle/PaddleDetection/" />
     <SUITE FILE_PATH="coverage/MyMLStudy$mainForm.coverage" NAME="mainForm Coverage Results" MODIFIED="1572948645049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial1/挑战任务2：PyQt5编写GUI界面" />
@@ -3398,6 +3425,8 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$gbdt.coverage" NAME="gbdt Coverage Results" MODIFIED="1582118005374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../GBDT_Simple_Tutorial/GBDT" />
     <SUITE FILE_PATH="coverage/MyMLStudy$tic_tac_toe.coverage" NAME="tic_tac_toe Coverage Results" MODIFIED="1575619925738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter01" />
     <SUITE FILE_PATH="coverage/MyMLStudy$ppo_train.coverage" NAME="ppo_train Coverage Results" MODIFIED="1573995957013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../walk-bot/v_tensorflow" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv0main.coverage" NAME="cv0main Coverage Results" MODIFIED="1680357662155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv2RandomDrawing.coverage" NAME="cv2RandomDrawing Coverage Results" MODIFIED="1680417328974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$test_gui.coverage" NAME="test_gui Coverage Results" MODIFIED="1623318871877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_OCR/ocr1" />
     <SUITE FILE_PATH="coverage/MyMLStudy$infinite_variance.coverage" NAME="infinite_variance Coverage Results" MODIFIED="1575725032407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter05" />
     <SUITE FILE_PATH="coverage/MyMLStudy$battle_city.coverage" NAME="battle_city Coverage Results" MODIFIED="1575716898816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../AirGesture" />
@@ -3423,6 +3452,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$main_cifar_vgg.coverage" NAME="main_cifar_vgg Coverage Results" MODIFIED="1677817636924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_ModelCompression/FPGM_filter-pruning-geometric-median/VGG_cifar" />
     <SUITE FILE_PATH="coverage/MyMLStudy$DDPG_update.coverage" NAME="DDPG_update Coverage Results" MODIFIED="1574761707422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Reinforcement-learning-with-tensorflow/contents/9_Deep_Deterministic_Policy_Gradient_DDPG" />
     <SUITE FILE_PATH="coverage/MyMLStudy$ResNet.coverage" NAME="ResNet Coverage Results" MODIFIED="1593812200014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DeepLearning/CNN/ResNet" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv6HitMiss.coverage" NAME="cv6HitMiss Coverage Results" MODIFIED="1680425735022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$split_dataset.coverage" NAME="split_dataset Coverage Results" MODIFIED="1620964473112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_paddle/PaddleDetection/dataset" />
     <SUITE FILE_PATH="coverage/MyMLStudy$qt103_runPyQt.coverage" NAME="qt103_runPyQt Coverage Results" MODIFIED="1622431856872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_PyQt/PyQt5/Chapter01" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p51.coverage" NAME="p51_fac_recog Coverage Results" MODIFIED="1593741532651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />
@@ -3446,6 +3476,7 @@
     <SUITE FILE_PATH="coverage/MyMLStudy$random_walk__1_.coverage" NAME="random_walk (1) Coverage Results" MODIFIED="1575888647934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../reinforcement-learning-an-introduction/chapter07" />
     <SUITE FILE_PATH="coverage/MyMLStudy$common.coverage" NAME="common Coverage Results" MODIFIED="1670945225919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../aFolder_YOLO/02yolov7s/yolov7/models" />
     <SUITE FILE_PATH="coverage/MyMLStudy$02load_onnx.coverage" NAME="02load_onnx Coverage Results" MODIFIED="1671961006192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/09ONNX" />
+    <SUITE FILE_PATH="coverage/00MyMLStudy$cv5MoreMorphologyTransformations.coverage" NAME="cv5MoreMorphologyTransformations Coverage Results" MODIFIED="1680424933627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/13PythonOpencv4/2官网教程/cv3ImageProcessing/cv1Basic" />
     <SUITE FILE_PATH="coverage/MyMLStudy$fitline.coverage" NAME="fitline Coverage Results" MODIFIED="1573384281232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OpenCV-Python-Tutorial/官方samples" />
     <SUITE FILE_PATH="coverage/MyMLStudy$01.coverage" NAME="01图像拼接 Coverage Results" MODIFIED="1680179902841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/openCV练习" />
     <SUITE FILE_PATH="coverage/MyMLStudy$p54.coverage" NAME="p54 Coverage Results" MODIFIED="1594006658323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/00JiaoDaAI/FullTime/classcode" />

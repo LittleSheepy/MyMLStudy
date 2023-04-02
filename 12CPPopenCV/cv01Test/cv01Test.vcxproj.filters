@@ -18,12 +18,12 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="quickdemo.cpp">
+    <ClCompile Include="CPostProcessor.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="quickopencv.h">
+    <ClInclude Include="CPostProcessor.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

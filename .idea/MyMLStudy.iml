@@ -7,8 +7,9 @@
       <sourceFolder url="file://$MODULE_DIR$/08AIUnitsCode/02NetBlock" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/11Attention/01transform/01Transfomer-example-main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DeepLearning/RNN/_02seq2seqTest" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/13PythonOpencv4/2官网教程" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.9 (base)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (python38)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PaddleOCR" />
     <orderEntry type="module" module-name="01transform" />
