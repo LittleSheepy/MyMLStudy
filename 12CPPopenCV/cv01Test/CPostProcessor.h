@@ -36,6 +36,7 @@ public:
 	vector<CBox> m_img3Cfg;
 	vector<CBox> m_img4Cfg;
 	map<string, int>		m_brokenCnt;
+	map<string, int>		m_brokenCfg;
 	CBoxArray m_objs;
 };
 
