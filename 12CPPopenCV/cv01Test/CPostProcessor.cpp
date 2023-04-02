@@ -23,7 +23,9 @@ CPostProcessor::CPostProcessor() {
         {"1c3", "cb1", 3,Point(1000,CTOP),Point(1300,CBOTTOM)},
         {"1c4", "cb5", 4,Point(1900,CTOP),Point(2300,CBOTTOM)},
 
-        {"1b1", "bbl", 1,Point(450,BTOP),Point(2200,BBOTTOM)},
+        {"1b6", "bbl", 1,Point(450,BTOP),Point(2200,BBOTTOM)},
+        {"1b7", "bbl", 1,Point(450,BTOP),Point(2200,BBOTTOM)},
+        {"1b8", "bbl", 1,Point(450,BTOP),Point(2200,BBOTTOM)},
         {"1b2", "bbc", 2,Point(2000,BTOP),Point(2448,BBOTTOM)},
     };
     m_img2Cfg = {
@@ -48,7 +50,10 @@ CPostProcessor::CPostProcessor() {
         {"4b3", "bbc", 1,Point(0,BTOP),Point(400,BBOTTOM)},
         {"4b3", "bbr", 2,Point(300,BTOP),Point(2200,BBOTTOM)},
     };
-
+    m_brokenCfg = {
+        {"cb1",0},{"cb2",0},{"cb3",0},{"cb4",0},{"cb5",1},{"cb6",1},
+        {"bbl",1},
+    };
 }
 
 bool CPostProcessor::Process(vector<Mat> v_img) {
