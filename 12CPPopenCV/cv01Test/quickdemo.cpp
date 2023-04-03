@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 //#include <opencv2/opencv.hpp>
 #include "quickopencv.h"
 
@@ -153,7 +153,7 @@ static void on_lightness(int b, void* userdata) {
 	Mat m = Mat::zeros(image.size(), image.type());
 	m = Scalar(b, b, b);//创建调整亮度的数值
 	addWeighted(image, 1.0, m, 0, b, dst);	//融合两张图 dst = image * 1.0 + m * 0 + b
-	imshow("亮度&对比度调整", dst);//显示调整亮度之后的图片
+	imshow(" 亮度&对比度调整  ", dst);//显示调整亮度之后的图片
 }
 static void on_contrast(int b, void* userdata) {
 	Mat image = *((Mat*)userdata);
@@ -161,16 +161,16 @@ static void on_contrast(int b, void* userdata) {
 	Mat m = Mat::zeros(image.size(), image.type());
 	double contrast = b / 100.0;
 	addWeighted(image, contrast, m, 0.0, 0, dst);
-	imshow("亮度&对比度调整", dst);//显示调整亮度之后的图片
+	imshow("  亮度&对比度调整  ", dst);//显示调整亮度之后的图片
 }
 
 void QuickDemo::tracking_bar_demo2(Mat& image) {
-	namedWindow("亮度&对比度调整", WINDOW_AUTOSIZE);
+	namedWindow(" 亮度&对比度调整 ", WINDOW_AUTOSIZE);
 	int lightness = 50;//定义初始化的亮度为50
 	int max_value = 100;//定义最大值为100
 	int contrast_value = 100;
-	createTrackbar("Value Bar", "亮度&对比度调整", &lightness, max_value, on_lightness, (void*)(&image));//调用函数实现功能
-	//createTrackbar("Contrast Bar", "亮度&对比度调整", &contrast_value, 200, on_contrast, (void*)(&image));//调用函数实现功能
+	createTrackbar("Value Bar", " 亮度&对比度调整 ", &lightness, max_value, on_lightness, (void*)(&image));//调用函数实现功能
+	//createTrackbar("Contrast Bar", " 亮度&对比度调整 ", &contrast_value, 200, on_contrast, (void*)(&image));//调用函数实现功能
 	on_lightness(50, &image);
 	//on_contrast(50,&image);
 }
@@ -386,7 +386,7 @@ void QuickDemo::polyline_drawing_demo(Mat& image) {
 	pts.push_back(p4);
 	pts.push_back(p5);
 	//fillPoly(canvas, pts, Scalar(122, 155, 255), 8, 0);				//填充多边形
-	//polylines(canvas, pts, true, Scalar(90, 0, 255), 2, 8, 0);		//绘制多边形
+	// polylines(canvas, pts, true, Scalar(90, 0, 255), 5, 8, 0);		//绘制多边形
 	//参数一：画布				参数二：点集			参数三：一定要写true（封闭图形
 	//参数倒3：线宽(最少为1		参数倒2：线的渲染方式	参数倒1：相对左上角（0,0）的位置
 
