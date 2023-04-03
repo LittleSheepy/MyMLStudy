@@ -55,6 +55,20 @@ for /d %%i in (*) do (
 
   )
 
+  if exist files (
+
+    REM 判断当前子文件夹内是否存在bin目录
+
+    echo Deleting bin directory files %%i...
+
+    REM 打印当前正在执行的操作提示信息
+
+    rd /s /q files
+
+    REM 使用 rd 命令删除 bin 目录
+
+  )
+
   cd ..
 
   REM 切换回上级目录
