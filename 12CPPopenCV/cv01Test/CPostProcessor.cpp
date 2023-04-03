@@ -23,9 +23,9 @@ CPostProcessor::CPostProcessor() {
         {"1c3", "cb1", 3,Point(1000,CTOP),Point(1300,CBOTTOM)},
         {"1c4", "cb5", 4,Point(1900,CTOP),Point(2300,CBOTTOM)},
 
-        {"1b6", "bbl", 1,Point(450,BTOP),Point(2200,BBOTTOM)},
-        {"1b7", "bbl", 1,Point(450,BTOP),Point(2200,BBOTTOM)},
-        {"1b8", "bbl", 1,Point(450,BTOP),Point(2200,BBOTTOM)},
+        {"1b6", "bbl", 6,Point(450,BTOP),Point(2200,BBOTTOM)},
+        {"1b7", "bbl", 7,Point(450,BTOP),Point(2200,BBOTTOM)},
+        {"1b8", "bbl", 8,Point(450,BTOP),Point(2200,BBOTTOM)},
         {"1b2", "bbc", 2,Point(2000,BTOP),Point(2448,BBOTTOM)},
     };
     m_img2Cfg = {
@@ -48,32 +48,56 @@ CPostProcessor::CPostProcessor() {
         {"4c12", "cb6", 12,Point(1800,CTOP),Point(2100,CBOTTOM)},
 
         {"4b3", "bbc", 1,Point(0,BTOP),Point(400,BBOTTOM)},
-        {"4b3", "bbr", 2,Point(300,BTOP),Point(2200,BBOTTOM)},
+        {"4b9", "bbr", 9,Point(300,BTOP),Point(2200,BBOTTOM)},
+        {"4b10", "bbr", 10,Point(300,BTOP),Point(2200,BBOTTOM)},
+        {"4b11", "bbr", 11,Point(300,BTOP),Point(2200,BBOTTOM)},
     };
     m_brokenCfg = {
         {"cb1",0},{"cb2",0},{"cb3",0},{"cb4",0},{"cb5",1},{"cb6",1},
-        {"bbl",1},
+        {"bbl",1},{"bbc",0},{"bbr",1},
     };
 }
 
-bool CPostProcessor::Process(vector<Mat> v_img) {
+Mat CPostProcessor::getMask(vector<Point> points) {
+    Mat mask;
+
+    return mask;
+}
+
+bool CPostProcessor::Process(vector<Mat> v_img, vector<vector<CDefect>> vv_defect) {
     bool result = true;
-    int i = 0;
-    for (auto it = v_img.begin(); it != v_img.end(); ++it) {
-        processImg1(*it, ++i);
+    // 遍历4个图
+    for (int i = 0; i < 4; i++) {
+        Mat img = v_img[i];
+        vector<CDefect> v_defect = vv_defect[i];
+        for (auto it = v_defect.begin(); it != v_defect.end(); ++it) {
+            processImg1(img, (*it), i + 1);
+        }
+    }
+
+    // 遍历m_brokenCnt 确认 NG
+    for (auto [key, val] : m_brokenCnt) {
+        if (val > m_brokenCfg[key]) {
+            result = false;
+            break;
+        }
     }
     return result;
 }
 
-void CPostProcessor::processImg1(Mat img, int serial) {
+void CPostProcessor::processImg1(Mat img, CDefect defect, int serial) {
+    Mat img_mask = Mat::zeros(img.size(), CV_8UC1);
+    rectangle(img_mask, { defect.p1, defect.p2 }, Scalar(1), -1, 4);
+    int area = defect.area;
     for (auto it = m_img1Cfg.begin(); it != m_img1Cfg.end(); ++it) {
         // 切片
         Rect select = Rect((*it).p1, (*it).p2);
-        Mat ROI = img(select);
+        Mat ROI = img_mask(select);
         int sum = cv::sum(ROI)[0];
         std::cout << sum << std::endl;
         if (sum > 100){
             (*it).state = false;
+            (*it).n_defect++;
             m_brokenCnt[(*it).arr_name]++;
         }
     }
