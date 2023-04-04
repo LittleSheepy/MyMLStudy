@@ -44,3 +44,14 @@ from cv3ImageProcessing import cv3Histograms
 cv1HistogramEqualization = cv3Histograms.cv1HistogramEqualization
 my_equalizeHist = cv1HistogramEqualization.my_equalizeHist                      # 直方图均衡化
 myBGR_equalizeHist = cv1HistogramEqualization.myBGR_equalizeHist                # 分通道直方图均衡化
+# 计算直方图
+cv2HistogramCalculation = cv3Histograms.cv2HistogramCalculation
+myGrayList_calcHist = cv2HistogramCalculation.myGrayList_calcHist               # 计算直方图-灰度图列表
+mybgr_calcHist = cv2HistogramCalculation.mybgr_calcHist                         # 计算直方图-彩色图列表
+# 直方图比较
+my_compareHist = cv3Histograms.cv3HistogramComparison.my_compareHist            # 直方图比较
+# 背投影
+my_calcBackProject = cv3Histograms.cv4CalcBackProjection.my_calcBackProject     # 背投影 点在直方图的概率值
+
+
+

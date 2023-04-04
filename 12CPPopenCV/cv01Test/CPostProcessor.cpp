@@ -84,13 +84,31 @@ bool CPostProcessor::Process(vector<Mat> v_img, vector<vector<CDefect>> vv_defec
     }
     return result;
 }
-
+void findVerticalLine(Mat image, Point point1, Point point2) {
+    Mat roi = image(Rect(point1, point2));
+    Mat gray;
+    cvtColor(roi, gray, COLOR_BGR2GRAY);
+    Mat edges;
+    Canny(gray, edges, 50, 200);
+    vector<Vec4i> lines;
+    HoughLinesP(edges, lines, 1, CV_PI / 180, 50, 50, 10);
+    for (size_t i = 0; i < lines.size(); i++) {
+        Vec4i l = lines[i];
+        double angle = atan2(l[3] - l[1], l[2] - l[0]) * 180 / CV_PI;
+        if (abs(angle) < 100 || abs(angle) > 80) {
+            line(roi, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255), 3, LINE_AA);
+        }
+    }
+    imshow("Vertical Line", roi);
+    waitKey(0);
+}
 void CPostProcessor::processImg1(Mat img, CDefect defect, int serial) {
     Mat img_mask = Mat::zeros(img.size(), CV_8UC1);
     rectangle(img_mask, { defect.p1, defect.p2 }, Scalar(1), -1, 4);
     int area = defect.area;
     for (auto it = m_img1Cfg.begin(); it != m_img1Cfg.end(); ++it) {
         // 切片
+        //findVerticalLine(img, (*it).p1, (*it).p2);
         Rect select = Rect((*it).p1, (*it).p2);
         Mat ROI = img_mask(select);
         int sum = cv::sum(ROI)[0];
