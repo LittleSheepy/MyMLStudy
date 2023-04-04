@@ -4,9 +4,9 @@
 #include<ctime>
 #include "CPostProcessor.h"
 #include "quickopencv.h"
-#include <fstream>
-#include <nlohmann/json.hpp>
-using json = nlohmann::json;
+//#include <fstream>
+//#include <nlohmann/json.hpp>
+//using json = nlohmann::json;
 using namespace std;
 using namespace cv;
 void TraversalPicture();
@@ -32,6 +32,7 @@ void cvtest()
 	waitKey();
 	destroyAllWindows();
 }
+/*
 void jsonTest() {
 	string json_name = "F:/sheepy/result.json";
 	std::ifstream f(json_name);
@@ -44,9 +45,11 @@ void jsonTest() {
 		cout << point["x"] << point["y"] << endl;
 	}
 }
+*/
 void PPtest()
 {
-	string dir_root = "F:/sheepy/02data/01LG/test/";
+	//string dir_root = "F:/sheepy/02data/01LG/test/";
+	string dir_root = "D:/02dataset/01work/01TuoPanLJ/tuopan/black_0074690/";
 	string img_first_name = "black_0074690_CM1_";
 	vector<Mat> v_img;
 	for (int i = 0; i < 4; i++) {
