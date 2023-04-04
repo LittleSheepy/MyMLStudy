@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/MyPythonLearn/base/request_test.py" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/scipy练习/optimize.leastsq.py" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/../aFolder_YOLO/03yolov8s/ultralytics/ultralytics/tracker/trackers/byte_tracker.py" charset="UTF-8" />
-  </component>
-</project>
