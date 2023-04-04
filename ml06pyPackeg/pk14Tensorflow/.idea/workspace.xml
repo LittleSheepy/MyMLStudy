@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="76976911-20c4-44ec-9a2a-e70b7995463f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/images/figure_2_6.png" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Tensorflow$4_1naive_Bayes.coverage" NAME="4.1naive_Bayes Coverage Results" MODIFIED="1556270655302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法" />
+    <SUITE FILE_PATH="coverage/Tensorflow$naiveBayes.coverage" NAME="naiveBayes Coverage Results" MODIFIED="1556269890638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法" />
+    <SUITE FILE_PATH="coverage/Tensorflow$p6_adagrad.coverage" NAME="p6 adagrad Coverage Results" MODIFIED="1555677305174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../mlbasic" />
+    <SUITE FILE_PATH="coverage/Tensorflow$kd_knn2.coverage" NAME="kd_knn2 Coverage Results" MODIFIED="1556178466711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
+    <SUITE FILE_PATH="coverage/Tensorflow$GaussionNB.coverage" NAME="GaussionNB Coverage Results" MODIFIED="1556371483365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法" />
+    <SUITE FILE_PATH="coverage/Tensorflow$PLA.coverage" NAME="PLA Coverage Results" MODIFIED="1557049316613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$CART.coverage" NAME="CART Coverage Results" MODIFIED="1557137292515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树" />
+    <SUITE FILE_PATH="coverage/Tensorflow$kd.coverage" NAME="kd Coverage Results" MODIFIED="1556204592017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
+    <SUITE FILE_PATH="coverage/Tensorflow$distance_test.coverage" NAME="distance_test Coverage Results" MODIFIED="1555859202672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../lihang_book_algorithm/knn" />
+    <SUITE FILE_PATH="coverage/Tensorflow$C45.coverage" NAME="C45 Coverage Results" MODIFIED="1556783785027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树" />
+    <SUITE FILE_PATH="coverage/Tensorflow$logistic_regression.coverage" NAME="logistic_regression Coverage Results" MODIFIED="1557660125871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression" />
+    <SUITE FILE_PATH="coverage/Tensorflow$adadelta.coverage" NAME="adadelta Coverage Results" MODIFIED="1555836955459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
+    <SUITE FILE_PATH="coverage/Tensorflow$tic_tac_toe.coverage" NAME="tic_tac_toe Coverage Results" MODIFIED="1554370516235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/chapter01" />
+    <SUITE FILE_PATH="coverage/Tensorflow$ouPLA.coverage" NAME="ouPLA Coverage Results" MODIFIED="1555855883875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$CART_cut.coverage" NAME="CART_cut Coverage Results" MODIFIED="1557217430862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树" />
+    <SUITE FILE_PATH="coverage/Tensorflow$momentum__1_.coverage" NAME="momentum (1) Coverage Results" MODIFIED="1555851240948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
+    <SUITE FILE_PATH="coverage/Tensorflow$SimplePLA1.coverage" NAME="SimplePLA1 Coverage Results" MODIFIED="1555482453494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$kNN.coverage" NAME="kNN Coverage Results" MODIFIED="1555925212652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
+    <SUITE FILE_PATH="coverage/Tensorflow$p5_Nesterov_momentum.coverage" NAME="p5 Nesterov momentum Coverage Results" MODIFIED="1555670520535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../mlbasic" />
+    <SUITE FILE_PATH="coverage/Tensorflow$knnSimple.coverage" NAME="knnSimple Coverage Results" MODIFIED="1556200150685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法" />
+    <SUITE FILE_PATH="coverage/Tensorflow$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1557222226372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Decision-Tree11" />
+    <SUITE FILE_PATH="coverage/Tensorflow$svm_simple.coverage" NAME="svm-simple Coverage Results" MODIFIED="1558926356873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM" />
+    <SUITE FILE_PATH="coverage/Tensorflow$DrewGif.coverage" NAME="DrewGif Coverage Results" MODIFIED="1555334679069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../matplotlib" />
+    <SUITE FILE_PATH="coverage/Tensorflow$main.coverage" NAME="main Coverage Results" MODIFIED="1557220854167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../decision-tree" />
+    <SUITE FILE_PATH="coverage/Tensorflow$Unittests_in_test_client_py.coverage" NAME="Unittests in test_client.py Coverage Results" MODIFIED="1556176799090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../python-socketio/tests/common" />
+    <SUITE FILE_PATH="coverage/Tensorflow$decisionTreeCut.coverage" NAME="decisionTreeCut Coverage Results" MODIFIED="1557220150881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../decision-tree" />
+    <SUITE FILE_PATH="coverage/Tensorflow$PLA1.coverage" NAME="PLA1 Coverage Results" MODIFIED="1555405036196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$kd_tree.coverage" NAME="kd_tree Coverage Results" MODIFIED="1556197159931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
+    <SUITE FILE_PATH="coverage/Tensorflow$tree.coverage" NAME="tree Coverage Results" MODIFIED="1557221230646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Decision_tree-python" />
+    <SUITE FILE_PATH="coverage/Tensorflow$decisionTreeCART.coverage" NAME="decisionTreeCART Coverage Results" MODIFIED="1557220302768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../decision-tree" />
+    <SUITE FILE_PATH="coverage/Tensorflow$GramPLA.coverage" NAME="GramPLA Coverage Results" MODIFIED="1557048722034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$ten_armed_testbed.coverage" NAME="ten_armed_testbed Coverage Results" MODIFIED="1554375158754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../reinforcement-learning-an-introduction/chapter02" />
+    <SUITE FILE_PATH="coverage/Tensorflow$1.coverage" NAME="1 Coverage Results" MODIFIED="1556759770592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法" />
+    <SUITE FILE_PATH="coverage/Tensorflow$logistic.coverage" NAME="logistic Coverage Results" MODIFIED="1557661978106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
+    <SUITE FILE_PATH="coverage/Tensorflow$maxENT.coverage" NAME="maxENT Coverage Results" MODIFIED="1558925834079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
+    <SUITE FILE_PATH="coverage/Tensorflow$kd_tree2.coverage" NAME="kd_tree2 Coverage Results" MODIFIED="1556205431843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法" />
+    <SUITE FILE_PATH="coverage/Tensorflow$sklearn_knn_demo.coverage" NAME="sklearn-knn-demo Coverage Results" MODIFIED="1555925203525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
+    <SUITE FILE_PATH="coverage/Tensorflow$AdaDelta1.coverage" NAME="AdaDelta1 Coverage Results" MODIFIED="1555837868403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../优化函数" />
+    <SUITE FILE_PATH="coverage/Tensorflow$Unittests_in_test_server_py.coverage" NAME="Unittests in test_server.py Coverage Results" MODIFIED="1556176752976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../python-socketio/tests/common" />
+    <SUITE FILE_PATH="coverage/Tensorflow$svm_simple__1_.coverage" NAME="svm-simple (1) Coverage Results" MODIFIED="1560513433206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$ouPLA1.coverage" NAME="ouPLA1 Coverage Results" MODIFIED="1555853391686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$SimplePLA.coverage" NAME="SimplePLA Coverage Results" MODIFIED="1557048678421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$01_.coverage" NAME="01 命令行参数 Coverage Results" MODIFIED="1554365197055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tensorflow学习笔记" />
+    <SUITE FILE_PATH="coverage/Tensorflow$p8_adam.coverage" NAME="p8 adam Coverage Results" MODIFIED="1555687248143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../mlbasic" />
+    <SUITE FILE_PATH="coverage/Tensorflow$sklearn_bayes.coverage" NAME="sklearn_bayes Coverage Results" MODIFIED="1556292975451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法" />
+    <SUITE FILE_PATH="coverage/Tensorflow$test.coverage" NAME="test Coverage Results" MODIFIED="1557222092080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Decision-Tree11" />
+    <SUITE FILE_PATH="coverage/Tensorflow$GifDemo.coverage" NAME="GifDemo Coverage Results" MODIFIED="1554862083219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../matplotlib" />
+    <SUITE FILE_PATH="coverage/Tensorflow$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1557658841691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Decision-Tree11" />
+    <SUITE FILE_PATH="coverage/Tensorflow$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1557221284232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../cart" />
+    <SUITE FILE_PATH="coverage/Tensorflow$momentum.coverage" NAME="momentum Coverage Results" MODIFIED="1555690365323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$decision_tree.coverage" NAME="decision_tree Coverage Results" MODIFIED="1556800615870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树" />
+    <SUITE FILE_PATH="coverage/Tensorflow$guss.coverage" NAME="guss Coverage Results" MODIFIED="1556293547823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法" />
+    <SUITE FILE_PATH="coverage/Tensorflow$2_binary_perceptron.coverage" NAME="2.binary_perceptron Coverage Results" MODIFIED="1557049798372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
+    <SUITE FILE_PATH="coverage/Tensorflow$knn_kd.coverage" NAME="knn_kd Coverage Results" MODIFIED="1556185776649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN" />
+    <SUITE FILE_PATH="coverage/Tensorflow$perceptron.coverage" NAME="perceptron Coverage Results" MODIFIED="1554864155037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="svm-simple.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="467">
+              <caret line="170" column="35" lean-forward="true" selection-start-line="170" selection-start-column="35" selection-end-line="170" selection-end-column="35" />
+              <folding>
+                <element signature="e#223#242#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testSet.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/testSet.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2300">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>perplexity</find>
+      <find>FLAGS</find>
+      <find>EXTENSION</find>
+      <find>gram</find>
+      <find>xi</find>
+      <find>X</find>
+      <find>transfer_dict</find>
+      <find>__length</find>
+      <find>dim</find>
+      <find>dist</find>
+      <find>findKeyNode</find>
+      <find>calcu_cut_value</find>
+      <find>dx_y</find>
+      <find>createSubTree</find>
+      <find>PostPruning_REP</find>
+      <find>calErrorRatio</find>
+      <find>PostPruning_PEP</find>
+      <find>cal_probality</find>
+      <find>cal_EPxy</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/2.binary_perceptron.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/perceptron.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/SimplePLA.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/ouPLA.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/PLA1.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/GramPLA.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/ouPLA1.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/test.py" />
+        <option value="$PROJECT_DIR$/../matplotlib/DrewGif.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/pltGif.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/SimplePLA1.py" />
+        <option value="$PROJECT_DIR$/../优化函数/adadelta.py" />
+        <option value="$PROJECT_DIR$/../../mlbasic/p5 Nesterov momentum.py" />
+        <option value="$PROJECT_DIR$/../../mlbasic/p6 adagrad.py" />
+        <option value="$PROJECT_DIR$/../../mlbasic/p8 adam.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/momentum.py" />
+        <option value="$PROJECT_DIR$/../优化函数/AdaDelta1.py" />
+        <option value="$PROJECT_DIR$/../优化函数/momentum.py" />
+        <option value="$PROJECT_DIR$/../../lihang_book_algorithm/knn/knn.py" />
+        <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kNN.py" />
+        <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/knn_kd.py" />
+        <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_knn2.py" />
+        <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd.py" />
+        <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_tree.py" />
+        <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/knnSimple.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/README.md" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第3章 k近邻法/kd_tree2.py" />
+        <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/4.NaiveBayes/bayes.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/4.1naive_Bayes.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/naiveBayes.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/sklearn_bayes.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/guss.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/GaussionNB.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/1.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树/decision_tree.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/PLA.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第2章 感知机/2.binary_perceptron.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树/C45.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树/CART.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树/CART_cut.py" />
+        <option value="$PROJECT_DIR$/../../decision-tree/main.py" />
+        <option value="$PROJECT_DIR$/../../Decision-Tree11/test.py" />
+        <option value="$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py" />
+        <option value="$PROJECT_DIR$/../../Decision-Tree11/test2.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py" />
+        <option value="$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/softmax-regression.ipynb" />
+        <option value="$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/linear-regression.ipynb" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/train_binary.csv" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py" />
+        <option value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py" />
+        <option value="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/../../d2l-zh/build/mx-theme/package.json" />
+      <path value="$PROJECT_DIR$/../../socketIO-client/socketIO_client/tests/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="323" />
+    <option name="y" value="68" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="优化函数" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tensorflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="MyMLStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="统计学习方法-李航" type="462c0819:PsiDirectoryNode" />
+              <item name="第7章 支持向量机" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\MyGitHub\MyMLStudy\统计学习方法-李航\第2章 感知机" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\MyGitHub\AiLearning\src\py3.x\ml\2.KNN" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.svm-simple (1)">
+    <configuration name="logistic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="logistic_regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyGitHub" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression/logistic_regression.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="maxENT" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="svm-simple (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyMLStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="svm-simple" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AiLearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.logistic_regression" />
+      <item itemvalue="Python.logistic" />
+      <item itemvalue="Python.maxENT" />
+      <item itemvalue="Python.svm-simple" />
+      <item itemvalue="Python.svm-simple (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.svm-simple (1)" />
+        <item itemvalue="Python.svm-simple" />
+        <item itemvalue="Python.maxENT" />
+        <item itemvalue="Python.logistic" />
+        <item itemvalue="Python.logistic_regression" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76976911-20c4-44ec-9a2a-e70b7995463f" name="Default" comment="" />
+      <created>1554218310470</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554218310470</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_test_server_py - 2019.04.25 at 15h 19m 15s.xml">
+      <configuration name="Unittests in test_server.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_client_py - 2019.04.25 at 15h 19m 28s.xml">
+      <configuration name="Unittests in test_client.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_client_py - 2019.04.25 at 15h 19m 59s.xml">
+      <configuration name="Unittests in test_client.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3293348" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053304" side_tool="true" weight="0.3293348" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32061067" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3293348" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992636" visible="true" weight="0.1119403" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.16897655" />
+      <window_info id="Structure" order="1" sideWeight="0.50073636" side_tool="true" weight="0.14872068" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.15594329" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3293348" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url />
+          <line>50</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url />
+          <line>31</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url />
+          <line>48</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../mlbasic/p6 adagrad.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../mlbasic/p8 adam.py</url>
+          <line>82</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../mlbasic/p8 adam.py</url>
+          <line>94</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../优化函数/adadelta.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd_knn2.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/2.KNN/kd.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/naiveBayes.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/naiveBayes.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/naiveBayes.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/sklearn_bayes.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/GaussionNB.py</url>
+          <line>135</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/GaussionNB.py</url>
+          <line>105</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第4张 朴素贝叶斯法/1.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../Decision-Tree11/test.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../Decision-Tree11/test1.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="188" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../Decision-Tree11/test2.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="198" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py</url>
+          <line>267</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py</url>
+          <line>251</line>
+          <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py</url>
+          <line>223</line>
+          <option name="timeStamp" value="212" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py</url>
+          <line>101</line>
+          <option name="timeStamp" value="232" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py</url>
+          <line>176</line>
+          <option name="timeStamp" value="252" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py</url>
+          <line>88</line>
+          <option name="timeStamp" value="253" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py</url>
+          <line>239</line>
+          <option name="timeStamp" value="254" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
+          <line>245</line>
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="257" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py</url>
+          <line>91</line>
+          <option name="timeStamp" value="258" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="259" />
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>self.id2xy[336]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.Pxy[336]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.Pxy</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.Pxy[1000]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>secondDict.keys()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Tree.keys()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>classList[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>type(value)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dict_all</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3266">
+          <caret line="142" column="35" lean-forward="true" selection-start-line="142" selection-start-column="35" selection-end-line="142" selection-end-column="35" />
+          <folding>
+            <element signature="e#223#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/testSet.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2300">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2392">
+          <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+          <folding>
+            <element signature="e#223#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/testSet.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2300">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2093">
+          <caret line="91" column="25" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="25" />
+          <folding>
+            <element signature="e#223#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision_tree-python/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-197">
+          <caret line="279" column="43" selection-start-line="279" selection-start-column="43" selection-end-line="279" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../cart/visualize/visualize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1794" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../cart/visualize/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../cart/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="67" column="28" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/test3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2323">
+          <caret line="101" column="29" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../decision-tree/decisionTreeCut.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/CreateDT/CART.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1978">
+          <caret line="86" column="20" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第5章 决策树/CART.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1391">
+          <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/CreateDT/ID3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision_Tree_Prune/PEP-finish/predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1518" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision_Tree_Prune/PEP-finish/crx.data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1932" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/CreateDT/PlotDT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/DataSet/car.data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2208" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Post_Pruning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67">
+          <caret line="177" column="38" selection-start-line="177" selection-start-column="38" selection-end-line="177" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/CreateDT/Operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1886">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="147" column="36" selection-start-line="147" selection-start-column="28" selection-end-line="147" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression/binary_perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1272" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Decision-Tree11/PurnDT/Pre_REP_Pruning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/perceptron/binary_perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-851">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/logistic_regression/logistic_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lihang_book_algorithm/maxENT/maxENT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="137" column="29" lean-forward="true" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/logistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_appendix/aws.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_appendix/index.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/index.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/softmax-regression.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../notebooks_动手学深度学习/chapter_linear-networks/linear-regression.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pydata-notebook/Chapter-03/3.1 Data Structures and Sequences (数据结构与序列).ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda3/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="311" selection-start-line="311" selection-end-line="311" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/train_binary.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+      <provider editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-1952" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第6章 逻辑回归和最大熵模型/maxENT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1182">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#152#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AiLearning/src/py3.x/ml/6.SVM/svm-simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="231" column="4" selection-start-line="231" selection-start-column="4" selection-end-line="231" selection-end-column="4" />
+          <folding>
+            <element signature="e#223#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/numpy/matrixlib/defmatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/testSet.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2300">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_comm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="375" selection-start-line="375" selection-end-line="375" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../统计学习方法-李航/第7章 支持向量机/svm-simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="170" column="35" lean-forward="true" selection-start-line="170" selection-start-column="35" selection-end-line="170" selection-end-column="35" />
+          <folding>
+            <element signature="e#223#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
