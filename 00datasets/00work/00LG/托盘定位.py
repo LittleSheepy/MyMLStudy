@@ -6,11 +6,14 @@ import numpy as np
 def verticalLine(gray):
     lineList = []
     # 应用高斯模糊以减少噪音
-    blur = cv2.GaussianBlur(gray, (5, 5), 0)
+    blur = cv2.GaussianBlur(gray, (7, 7), 0)
+    blur = cv2.GaussianBlur(blur, (7, 7), 0)
+    cv2.imwrite(out_dir + "01blur.jpg", blur)
     # 检测边缘
-    edges = cv2.Canny(blur, 50, 150, apertureSize=3)
+    edges = cv2.Canny(blur, 30, 90, apertureSize=3)
+    cv2.imwrite(out_dir + "01edges.jpg", edges)
     # 应用霍夫直线变换以检测直线
-    lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 100, minLineLength=100, maxLineGap=50)
+    lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 100, minLineLength=30, maxLineGap=40)
     # 绘制检测到的直线
     for line in lines:
         x1, y1, x2, y2 = line[0]
@@ -22,24 +25,24 @@ def verticalLine(gray):
 
 def lineGroup(line_list):
     lineList_sort = sorted(line_list, key=lambda x: x[0])
-    lines_group = []
+    lines_group = [[]]
     lines = []
     last_x = 0
     for line in lineList_sort:
-        if len(lines) == 0:
-            lines.append(line)
-            last_x = line[0]
-            continue
+        if len(lines_group[-1]) == 0:
+            lines_group[-1].append(line)
         elif line[0] - last_x < 50:
-            lines.append(line)
+            lines_group[-1].append(line)
         else:
-            lines_group.append(lines)
-            lines = []
+            lines_group.append([line])
+        last_x = line[0]
+    lines.append(line)
     return lines_group
 
 
 # 筛选 计算中心点
-def getLineCenterX(lines_group, top_y):
+def getLineCenterX(lines_group, top_y, top_x=0):
+    global centerList
     # 帅选
     # 去掉白色区域 计算中心点
     lines_group_new = []
@@ -50,7 +53,10 @@ def getLineCenterX(lines_group, top_y):
         xs = [line[0] for line in lines] + [line[2] for line in lines]
         ys = [line[1] for line in lines] + [line[3] for line in lines]
         xs_min, xs_max, ys_min, ys_max = min(xs), max(xs), min(ys), max(ys)
-        if ys_min < (top_y + 400) or ys_max > top_y + 1000:
+        if top_x > 0:
+            if xs_min < top_x+10 and top_x-750 < xs_max:
+                continue
+        if ys_min < (top_y + 300) or ys_max > top_y + 1100:
             lines_group_new.append(lines)
             # 中心
             center_xs.append(int((xs_min + xs_max) / 2))
@@ -59,6 +65,7 @@ def getLineCenterX(lines_group, top_y):
                 if dis > dis_max:
                     dis_max = dis
                     dis_max_index = len(center_xs) - 1
+    centerList.append(center_xs[dis_max_index])
     return lines_group_new, center_xs, dis_max_index
 
 
@@ -75,6 +82,34 @@ def BianHao14(img_gray, img_serial=1):
 
     # 筛选 计算中心点
     linesAll_new, center_xs, dis_max_index = getLineCenterX(linesAll, top_y)
+
+    # 保存结果
+    resultDict = {}
+    for i in range(len(center_xs)):
+        line_serial = key_serial + i - dis_max_index
+        key_name = str(line_serial)
+        result = {"center_x": center_xs[i], "lines": linesAll_new[i]}
+        resultDict[key_name] = result
+
+    resultDict["linesAll"] = lineList
+    resultDict["top_y"] = top_y
+    resultDict["serial"] = img_serial
+    return resultDict
+
+# 编号 img1 ： 0 12  3
+# 编号 img4 ： 8  9A B
+def BianHao1(img_gray, img_serial=1):
+    keySerialDict = {"1": 3, "4": 9}
+    key_serial = keySerialDict[str(img_serial)]
+    top_y = getTop(img_gray)
+    top_x = getright(img_gray)
+    lineList = verticalLine(img_gray)
+
+    # 分组
+    linesAll = lineGroup(lineList)
+
+    # 筛选 计算中心点
+    linesAll_new, center_xs, dis_max_index = getLineCenterX(linesAll, top_y, top_x)
 
     # 保存结果
     resultDict = {}
@@ -121,7 +156,7 @@ def BianHao23(img_gray, img_serial=2):
 
 
 def BianHao(img_gray, img_serial=2):
-    func_list = [BianHao14, BianHao23, BianHao23, BianHao14]
+    func_list = [BianHao1, BianHao23, BianHao23, BianHao14]
     return func_list[int(img_serial) - 1](img_gray, img_serial)
 
 
@@ -131,6 +166,14 @@ def getTop(img_gray):
     for point_y in range(h):
         if img_gray[point_y, point_x] > 50:
             return point_y
+
+def getright(img_gray):
+    h, w = img_gray.shape
+    point_y = 1200
+    for point_x in range(w-1, int(h/2), -1):
+        if img_gray[point_y, point_x] > 240:
+            wList.append(point_x)
+            return point_x
 
 
 def drawResultDict(img, result_dict):
@@ -168,16 +211,21 @@ def test(img_dir, out_dir):
         img = np.concatenate((img, img_list[2]), axis=1)
         img = np.concatenate((img, img_list[3]), axis=1)
         cv2.imwrite(out_dir + first_name[:-1] + ".jpg", img)
-
+centerList = []
+wList = []
 if __name__ == '__main__':
     dir_root = r"D:\04DataSets\ningjingLG/"
     img_dir = dir_root + "all/"
-    out_dir = dir_root + "out2/"
-    img1 = cv2.imread(dir_root + r'\black\black_0074690_CM1_1.bmp')
+    out_dir = dir_root + "out3/"
+    img1 = cv2.imread(dir_root + r'\black\black_0074690_CM4_1.bmp')
     img2 = cv2.imread(dir_root + r'\black\black_0074690_CM1_2.bmp')
-    # img_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
+    img_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     # #BianHao1(img_gray, img_serial)
     # top_y = getTop(img_gray)
     # print("top_y", top_y)
-    # BianHao1(img_gray)
+    # result_dict = BianHao1(img_gray)
+    # drawResultDict(img1, result_dict)
+    # cv2.imwrite(out_dir + "01.jpg", img1)
     test(img_dir, out_dir)
+    wList = np.array(wList)
+    pass
