@@ -118,7 +118,8 @@ class main:
         self.master.protocol('WM_DELETE_WINDOW', self._on_closing)
         self.main_screen = get_monitor_from_coord(master.winfo_x(), master.winfo_y())
 
-        self.recognitionFlg = True
+        self.runFlg = False
+        self.recognitionFlg = False
         self.stop_video = False
         self.file_path = None
         self.width = int(self.main_screen.width * .85)
@@ -161,7 +162,8 @@ class main:
         self.actions_graph()
 
         self.delay = 15
-        #self.load_cam(r'D:\01/fall.mp4')
+        self.cameraFlg = False
+        #   self.load_cam(r'D:\01/fall.mp4')
         self.update()
 
     def preproc(self, image):
@@ -190,15 +192,19 @@ class main:
     def update(self):
         if self.cam is None:
             return
+        if not self.runFlg and not self.cameraFlg:
+            return
         if self.cam.grabbed():
             frame = self.cam.getitem()
-
-            frame = self.models.process_frame(frame)
+            if self.recognitionFlg:
+                frame = self.models.process_frame(frame)
 
             frame = cv2.resize(frame, (self.canvas.winfo_width(), self.canvas.winfo_height()),
                                interpolation=cv2.INTER_CUBIC)
             self.photo = ImageTk.PhotoImage(image=Image.fromarray(frame))
             self.canvas.create_image(0, 0, image=self.photo, anchor=tk.NW)
+
+            self.master.update()
         else:
             self.cam.stop()
 
@@ -210,68 +216,64 @@ class main:
             self.cam.stop()
             self.cam.__del__()
         self.master.destroy()
+    # 选择视频
     def select_file(self):
+        if self.cam:
+            self.cam.stop()
+            self.cam.__del__()
+            self.cam = None
         self.recognitionFlg = False
         self.file_path = filedialog.askopenfilename(title="选择视频")
-        #file_path = filedialog.askopenfilename(title="选择视频", filetypes=[("视频文件", "*.MP4;*.jpeg;*.png;*.bmp")])
         if self.file_path:
             print("选择视频：",self.file_path)
-            self.video_capture = cv2.VideoCapture(self.file_path)
-            ret, frame = self.video_capture.read()
+            self.load_cam(self.file_path)
+
+            frame = self.cam.getitem()
+            frame = cv2.resize(frame, (self.canvas.winfo_width(), self.canvas.winfo_height()),
+                               interpolation=cv2.INTER_CUBIC)
+            frame = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
             self.show_canvas(frame)
-    def show_canvas(self, img_cv):
-        frame= Image.fromarray(cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB))
+            self.runFlg = False
+            self.cameraFlg = False
+    def show_canvas(self, frame):
         self.photo = ImageTk.PhotoImage(frame)
-        self.canvas.config(width=frame.size[0], height=frame.size[0])
+        self.canvas.config(width=frame.size[0], height=frame.size[1])
         self.canvas.create_image(0, 0, image=self.photo, anchor=NW)
+        self.master.update()
 
     def begin_recognition(self):
-        self.recognitionFlg = True
-        i = 0
-        while self.recognitionFlg:
-            if self.video_capture.isOpened():
-                i = i+1
-                ret, frame = self.video_capture.read()
-                if ret:
-                    frame = recognition(frame)
-                    self.show_canvas(frame)
-                    self.update()
-                    self.after(1)
-                    cv2.waitKey(40)
-                else:
-                    break
-        # 实现开始识别功能
-        pass
+        if self.cam:
+            self.runFlg = True
+            self.recognitionFlg = True
+            self.cam.stopped = False
+            self.update()
     def end_recognition(self):
-        self.recognitionFlg = False
-        # 实现停止识别功能
-        pass
+        if self.cam:
+            self.runFlg = False
+            if self.cameraFlg == False:
+                self.cam.stop()
+            self.recognitionFlg = False
     def activate_camera(self):
+        if self.cam:
+            self.cam.stop()
+            self.cam.__del__()
+            self.cam = None
         # 实现打开摄像头功能
-        self.video_capture = cv2.VideoCapture(0)
-        # ret, frame = self.video_capture.read()
-        # self.show_canvas(frame)
-        self.recognitionFlg = False
-        self.stop_video = False
-        while not self.stop_video:
-            if self.video_capture.isOpened():
-                ret, frame = self.video_capture.read()
-                if ret:
-                    if self.recognitionFlg:
-                        frame = recognition(frame)
-                    self.show_canvas(frame)
-                    self.update()
-                    self.after(1)
-                    cv2.waitKey(40)
-                else:
-                    break
+        if self.cameraFlg == False:
+            self.runFlg = True
+            self.cameraFlg = True
+            self.load_cam(0)
+            self.cam.start()
+            self.update()
     def deactivate_camera(self):
         # 实现关闭摄像头功能
-        self.stop_video = True
-        self.image_show = Image.new("RGB", (self.width, self.height), (255, 255, 255))
-        self.photo = ImageTk.PhotoImage(self.image_show)
-        self.canvas.create_image(0, 0, image=self.photo, anchor=NW)
-        self.update()
+        self.cameraFlg = False
+        if self.cam:
+            self.cam.stop()
+            self.cam.__del__()
+            self.cam = None
+        image_show = Image.new("RGB", (self.canvas.winfo_width(), self.canvas.winfo_height()), (255, 255, 255))
+        self.show_canvas(image_show)
 
 root = tk.Tk()
 app = main(root)
