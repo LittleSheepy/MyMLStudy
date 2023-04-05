@@ -39,6 +39,7 @@ cv6HoughLineTransform = cv2Transformations.cv6HoughLineTransform                
 cv10AffineTransformations = cv2Transformations.cv10AffineTransformations
 my_warpAffine = cv10AffineTransformations.my_warpAffine                         # 仿射变换
 myRotation_warpAffine = cv10AffineTransformations.myRotation_warpAffine         # 旋转仿射变换
+
 from cv3ImageProcessing import cv3Histograms
 # 直方图均衡化
 cv1HistogramEqualization = cv3Histograms.cv1HistogramEqualization
@@ -51,7 +52,13 @@ mybgr_calcHist = cv2HistogramCalculation.mybgr_calcHist                         
 # 直方图比较
 my_compareHist = cv3Histograms.cv3HistogramComparison.my_compareHist            # 直方图比较
 # 背投影
+my_floodFill = cv3Histograms.cv4CalcBackProjection.my_floodFill                 # 漫水填充(涂油漆桶)
 my_calcBackProject = cv3Histograms.cv4CalcBackProjection.my_calcBackProject     # 背投影 点在直方图的概率值
+# 模板匹配
+my_matchTemplate = cv3Histograms.cv4CalcBackProjection.my_matchTemplate         # 模板匹配
 
+from cv3ImageProcessing import cv4Contours
+my_findContours = cv4Contours.cv1findContours.my_findContours                   # 寻找轮廓
+my_convexHull = cv4Contours.cv2ConvexHull.my_convexHull                       # 凸包
 
 
