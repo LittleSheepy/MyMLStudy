@@ -76,7 +76,10 @@ bool CPostProcessor::Process(vector<Mat> v_img, vector<vector<CDefect>> vv_defec
     }
 
     // 遍历m_brokenCnt 确认 NG
-    for (auto [key, val] : m_brokenCnt) {
+    for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); it++){
+        string key = (*it).first;
+        int val = (*it).second;
+    //for (auto [key, val] : m_brokenCnt) {
         if (val > m_brokenCfg[key]) {
             result = false;
             break;
