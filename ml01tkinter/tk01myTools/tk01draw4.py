@@ -6,8 +6,6 @@ import sys
 import cv2
 import numpy as np
 
-# from PIL.Image import Image
-
 sys.path.append("../../")
 from ml00project.pj3distence.cv01distenceTest import distenceMeasure, imgdrawResult
 
@@ -26,7 +24,7 @@ class ImageEditor:
         self.file_path = r"D:\04DataSets\04/box.jpg"
         self.root = Tk()
         self.root.title("刘翠立的算法调试器")
-        self.root.geometry("800x800")
+        # self.root.geometry("800x800")
         self.brush_size = 15
         self.draw_color = (60, 60, 60)
         # 创建菜单栏
@@ -43,6 +41,7 @@ class ImageEditor:
         self.pen_btn.pack(side=LEFT, padx=5, pady=5)
 
         self.color_btn = Button(toolbar, text="颜色", command=self.choose_color)
+        self.color_btn.configure(bg=str(rgb2hex(self.draw_color)))
         self.color_btn.pack(side=LEFT, padx=5, pady=5)
 
         self.screen_btn = Button(toolbar, text="吸色", command=self.pick_color)
@@ -78,6 +77,7 @@ class ImageEditor:
         self.tool = None
         self.image_original = None
         self.image_draw = None
+        self.image_show_ori = None
         self.photo = None
 
         # 绑定事件
@@ -88,8 +88,8 @@ class ImageEditor:
         # self.canvas.bind("<ButtonRelease-1>", self.reset)
 
         # 图片信息
-        self.window_w = 800
-        self.window_h = 800
+        self.window_w = 1000
+        self.window_h = 1200
         self.img_w = 386
         self.img_h = 386
         self.canv_w = 386
@@ -100,21 +100,37 @@ class ImageEditor:
 
     def init_img(self):
         self.image_original = Image.open(self.file_path)
-        self.img_w = self.image_original.shape[1]
-        self.img_h = self.image_original.shape[0]
+        self.img_w = self.image_original.size[0]
+        self.img_h = self.image_original.size[1]
         self.resize_canvas()
-        self.image_draw = self.image_original.copy().resize((self.canv_w, self.canv_h))
-
-        image_show_gray = cv2.cvtColor(np.array(self.image_draw), cv2.COLOR_RGB2GRAY)
-        image_show_bgr = cv2.cvtColor(np.array(self.image_draw), cv2.COLOR_RGB2BGR)  # PIL -> cv
-        result_dict = distenceMeasure(image_show_gray)
-        imgdrawResult(image_show_bgr, result_dict)
-
+        self.image_draw = self.image_original.copy()
         self.draw = ImageDraw.Draw(self.image_draw)
-        self.image_show = self.image_original.copy()
+        self.recog_image()
+        self.show_image()
+
+    # 绘制，识别和现实
+    def draw_image(self, x=None, y=None):
+        if x and y:
+            self.draw.ellipse((x - self.brush_size, y - self.brush_size, x + self.brush_size, y + self.brush_size),
+                              fill=self.draw_color, outline=self.draw_color)
+            self.recog_image()
+        self.show_image()
+
+    def recog_image(self):
+        image_show_gray = cv2.cvtColor(np.array(self.image_draw), cv2.COLOR_RGB2GRAY)
+        self.image_show_ori = cv2.cvtColor(np.array(self.image_draw), cv2.COLOR_RGB2BGR)  # PIL -> cv
+        result_dict = distenceMeasure(image_show_gray)
+        imgdrawResult(self.image_show_ori, result_dict)
+
+    def show_image(self):
+        if self.image_show_ori is None:
+            return
+        self.image_show = self.image_show_ori.copy()
+        self.image_show = cv2.resize(self.image_show, (self.canv_w, self.canv_h))
+        # self.image_show.resize((self.canv_w, self.canv_h), refcheck=False)
+        self.image_show = Image.fromarray(cv2.cvtColor(self.image_show, cv2.COLOR_BGR2RGB))  # cv -> PIL
         self.photo = ImageTk.PhotoImage(self.image_show)
         self.canvas1.create_image(0, 0, image=self.photo, anchor=NW)
-        self.color_btn.configure(bg=str(rgb2hex(self.draw_color)))
 
     def open_image(self):
         file_path = filedialog.askopenfilename(title="选择图片", filetypes=[("图片文件", "*.jpg;*.jpeg;*.png;*.bmp")])
@@ -151,7 +167,7 @@ class ImageEditor:
     def paint(self, event):
         print("paint", self.tool)
         if self.tool == "pen":
-            x, y = event.x, event.y
+            x, y = int(event.x / self.ratio), int(event.y / self.ratio)
             self.draw.ellipse((x - self.brush_size, y - self.brush_size, x + self.brush_size, y + self.brush_size),
                               fill=self.draw_color, outline=self.draw_color)
             # self.draw.line([event.x, event.y, event.x + 1, event.y + 1], fill=self.draw_color, width=20)
@@ -177,18 +193,17 @@ class ImageEditor:
 
     def img_reset(self):
         self.init_img()
-        # self.tool = None
         pass
 
     def resize_canvas(self, event=None):
-        print("resize_canvas", event.width, event.height)
         if event:
-            self.window_w = event.width
-            self.window_h = event.height
+            print("resize_canvas", event.width, event.height)
+            self.window_w = event.width+4
+            self.window_h = event.height+4
 
-        w = self.window_w - 28
-        h = self.window_w - 28
-        self.ratio = min(w / self.img_w, h / self.img_h)
+        w = self.window_w-10
+        h = self.window_h-10
+        self.ratio = min(w / (self.img_w * 2), h / (self.img_h * 2))
         self.canv_w = int(self.img_w * self.ratio) - 1
         self.canv_h = int(self.img_h * self.ratio) - 1
         canv_w = self.canv_w
@@ -197,6 +212,7 @@ class ImageEditor:
         self.canvas2.config(width=canv_w, height=canv_h - 10)
         self.canvas3.config(width=canv_w, height=canv_h - 10)
         self.canvas4.config(width=canv_w, height=canv_h - 10)
+        self.show_image()
 
     def run(self):
         self.root.mainloop()
