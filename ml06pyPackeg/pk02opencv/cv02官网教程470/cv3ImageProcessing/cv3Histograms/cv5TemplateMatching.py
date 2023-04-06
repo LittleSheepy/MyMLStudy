@@ -57,7 +57,7 @@ def MatchingMethod(param):
 if __name__ == "__main__":
     dir_root = r"D:\02dataset\02opencv_data/"
     dir_root = r"D:\04DataSets\ningjingLG/"
-    filename = dir_root + 'img14.bmp'
+    filename = dir_root + 'img15.bmp'
     templatename = dir_root + 'template2.bmp'
     maskname = dir_root + 'mask.png'
     img_bgr = cv.imread(filename)
