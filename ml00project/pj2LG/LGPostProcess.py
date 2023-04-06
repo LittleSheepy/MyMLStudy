@@ -81,17 +81,50 @@ class CPostProcessor:
             CBox("4b9", "bbr", 9, (100, BTOP), (1400, BBOTTOM), AREA150),
             CBox("4b10", "bbr", 10, (1100, BTOP), (2100, BBOTTOM), AREA25),
         }
+        self.m_imgCfg = [ self.m_img1Cfg, self.m_img2Cfg, self.m_img3Cfg, self.m_img4Cfg]
         self.m_brokenCfg = {"cb1": 0, "cb2": 0, "cb3": 0, "cb4": 0, "cb5": 1, "cb6": 1, "bbl": 1, "bbc": 0, "bbr": 1}
         self.m_brokenCnt = {}
         self.m_objs = CBoxArray()
+        self.offset = 0
 
     # v_img 四张图片
     # vv_defect 四个CDefect缺陷列表
     def Process(self, v_img: List[np.ndarray], vv_defect: List[List[CDefect]]) -> bool:
-        pass
+        result = True
+        # 遍历4个图
+        for i in range(4):
+            img = v_img[i]
+            v_defect = vv_defect[i]
+            for defect in v_defect:
+                self.processImg(img, defect, i)
 
-    def processImg1(self, img: np.ndarray, defect: CDefect, serial: int):
-        pass
+        # 遍历m_brokenCnt 确认 NG
+        for key, val in self.m_brokenCnt.items():
+            if val > self.m_brokenCfg[key]:
+                result = False
+                break
+        return result
+
+    def processImg(self, img: np.ndarray, defect: CDefect, serial: int):
+        img_mask = np.zeros(img.shape[:2], dtype=np.uint8)
+        cv2.rectangle(img_mask, defect.p1, defect.p2, 1, -1, 4)
+        defect_area = defect.area
+        for cfg in self.m_imgCfg[serial]:
+            arr_name = cfg.arr_name
+            cfg_area = cfg.area
+            # 切片
+            select = slice(cfg.p1[1], cfg.p2[1]), slice(cfg.p1[0], cfg.p2[0])
+            ROI = img_mask[select]
+            sum = cv2.sumElems(ROI)[0]
+            # 一多半在这个配置框就认为是这个的
+            if sum > defect.area*0.5:
+                # 面积超限 算两个
+                if defect_area > cfg_area:
+                    cfg.state = False
+                    cfg.n_defect += 1
+                cfg.n_defect += 1
+                self.m_brokenCnt[arr_name] = self.m_brokenCnt.get(arr_name, 0)
+                self.m_brokenCnt[arr_name] += 1
 
     def getMask(self, points: List[Tuple[int, int]]) -> np.ndarray:
         pass
@@ -103,5 +136,11 @@ if __name__ == '__main__':
     for i in range(4):
         img_path = dir_root + img_first_name + str(i + 1) + ".bmp"
         v_img.append(cv2.imread(img_path))
+    vv_defect = [[CDefect([450, 700],[700, 1630],6,1)]] * 4
 
     pp = CPostProcessor()
+    try:
+        result = pp.Process(v_img, vv_defect)
+        print("\n",result)
+    except Exception as e:
+        print(e)
