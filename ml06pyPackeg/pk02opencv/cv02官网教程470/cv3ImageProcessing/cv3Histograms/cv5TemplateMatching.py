@@ -1,4 +1,6 @@
 import sys
+
+import cv2
 import cv2 as cv
 
 # 模板匹配
@@ -14,7 +16,7 @@ def my_matchTemplate(img_bgr, tmpl_bgr, method=cv.TM_SQDIFF_NORMED, mask=None):
     result = cv.matchTemplate(img_bgr, tmpl_bgr, method, result=None, mask=mask)
     cv.normalize( result, result, 0, 1, cv.NORM_MINMAX, -1 )
     _minVal, _maxVal, minLoc, maxLoc = cv.minMaxLoc(result, None)
-    if match_method == cv.TM_SQDIFF or match_method == cv.TM_SQDIFF_NORMED:
+    if method == cv.TM_SQDIFF or method == cv.TM_SQDIFF_NORMED:
         matchLoc = minLoc
     else:
         matchLoc = maxLoc
@@ -35,30 +37,37 @@ def MatchingMethod(param):
     match_method = param
 
     img_display = img_bgr.copy()
+    img_result = img_bgr.copy()
     method_accepts_mask = (cv.TM_SQDIFF == match_method or match_method == cv.TM_CCORR_NORMED)
     if (use_mask and method_accepts_mask):
         matchLoc, result = my_matchTemplate(img_bgr, tmpl_bgr, method=match_method, mask=mask_bgr)
     else:
         matchLoc, result = my_matchTemplate(img_bgr, tmpl_bgr, method=match_method)
-    cv.rectangle(img_display, matchLoc, (matchLoc[0] + tmpl_bgr.shape[0], matchLoc[1] + tmpl_bgr.shape[1]), (0, 0, 0), 2, 8, 0)
-    cv.rectangle(result, matchLoc, (matchLoc[0] + tmpl_bgr.shape[0], matchLoc[1] + tmpl_bgr.shape[1]), (0, 0, 0), 2, 8, 0)
-    cv.imshow(image_window, img_display)
-    cv.imshow(result_window, result)
+    cv.rectangle(img_display, matchLoc, (matchLoc[0] + tmpl_bgr.shape[1], matchLoc[1] + tmpl_bgr.shape[0]), (0, 0, 0), 2, 8, 0)
+    img_result[:result.shape[0],:result.shape[1],0] = result
+    img_result[:result.shape[0],:result.shape[1],1] = result
+    img_result[:result.shape[0],:result.shape[1],2] = result
+    cv.rectangle(img_result, matchLoc, (matchLoc[0] + tmpl_bgr.shape[1], matchLoc[1] + tmpl_bgr.shape[0]), (255, 0, 0), 2, 8, 0)
+    img_hconcat = cv2.hconcat([img_display, img_result])
+    img_hconcat = cv2.resize(img_hconcat, (int(img_hconcat.shape[1]/4), int(img_hconcat.shape[0]/4)))
+    cv.imshow(image_window, img_hconcat)
+    #cv.imshow(result_window, result)
     pass
 
 if __name__ == "__main__":
     dir_root = r"D:\02dataset\02opencv_data/"
-    filename = dir_root + 'lena_tmpl.jpg'
-    templatename = dir_root + 'tmpl.png'
+    dir_root = r"D:\04DataSets\ningjingLG/"
+    filename = dir_root + 'img14.bmp'
+    templatename = dir_root + 'template2.bmp'
     maskname = dir_root + 'mask.png'
     img_bgr = cv.imread(filename)
     tmpl_bgr = cv.imread(templatename)
     mask_bgr = None
-    use_mask = True
+    use_mask = False
     if use_mask:
         mask_bgr = cv.imread(maskname)
     image_window = "Source Image"
     result_window = "Result window"
 
-    match_method = 0
+    match_method = 5
     main()

@@ -1,7 +1,8 @@
 import os
 import cv2
+import cv2 as cv
 import numpy as np
-
+import random as rng
 
 def verticalLine(gray):
     lineList = []
@@ -176,6 +177,67 @@ def getright(img_gray):
             return point_x
 
 
+def find_white_region(image):
+    # 转换为灰度图像
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    # 使用二值化提取白色区域
+    ret, thresh = cv2.threshold(gray, 240, 255, cv2.THRESH_BINARY)
+
+    # 寻找轮廓并筛选白色区域
+    contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    white_contours = []
+    for cnt in contours:
+        if 320000 > cv2.contourArea(cnt) > 280000:
+            x, y, w, h = cv2.boundingRect(cnt)
+            white_contours.append((x, y, w, h))
+    # 绘制所有
+    for i in range(len(contours)):
+        color = (rng.randint(0,256), rng.randint(0,256), rng.randint(0,256))
+        cv2.drawContours(image, contours, i, color, 2, cv2.LINE_8, hierarchy, 0)
+    # 返回最大的白色区域的外界矩形
+    if white_contours:
+        x, y, w, h = max(white_contours, key=lambda x: x[2] * x[3])
+
+        # cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        # cv2.imshow('image', image)
+        # cv2.waitKey(0)
+        return (x, y, w, h), thresh
+    else:
+        return None
+
+def save_white_region():
+    tested = []
+    for file_name in os.listdir(img_dir):
+        first_name = file_name[:-5]
+        if first_name in tested:
+            continue
+        print(first_name)
+        tested.append(first_name)
+        img_bgr = cv2.imread(img_dir + first_name + "1.bmp")
+        (x, y, w, h), thresh = find_white_region(img_bgr)
+        cv2.rectangle(img_bgr, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        cv2.imwrite(out_dir + first_name[:-1] + ".jpg", img_bgr)
+        cv2.imwrite(out_dir + first_name[:-1] + "_thr.jpg", thresh)
+# 模板匹配
+def my_matchTemplate(img_bgr, tmpl_bgr, method=cv.TM_SQDIFF_NORMED, mask=None):
+    # def matchTemplate(image, templ, method, result=None, mask=None)
+    #
+    # cv2.TM_SQDIFF         采用<平方差>的方法，求模板和图像之间的差值，差值越小匹配度越高。
+    # cv2.TM_SQDIFF_NORMED  采用归一化平方差的方法，将模板和图像归一化后再求平方差，差值越小匹配度越高。
+    # cv2.TM_CCORR          采用<互相关>的方法，将模板和图像卷积后再求相关，相关值越大匹配度越高。
+    # cv2.TM_CCORR_NORMED
+    # cv2.TM_CCOEF          采用<相关系数>的方法，将模板和图像转化为概率分布后再求相关系数，相关系数越大匹配度越高。
+    # cv2.TM_CCOEFF_NORMED
+    result = cv.matchTemplate(img_bgr, tmpl_bgr, method, result=None, mask=mask)
+    cv.normalize( result, result, 0, 1, cv.NORM_MINMAX, -1 )
+    _minVal, _maxVal, minLoc, maxLoc = cv.minMaxLoc(result, None)
+    if method == cv.TM_SQDIFF or method == cv.TM_SQDIFF_NORMED:
+        matchLoc = minLoc
+    else:
+        matchLoc = maxLoc
+    return matchLoc, result
+
 def drawResultDict(img, result_dict):
     #
     linesAll = result_dict.get("linesAll")
@@ -216,9 +278,10 @@ wList = []
 if __name__ == '__main__':
     dir_root = r"D:\04DataSets\ningjingLG/"
     img_dir = dir_root + "all/"
-    out_dir = dir_root + "out3/"
-    img1 = cv2.imread(dir_root + r'\black\black_0074690_CM4_1.bmp')
-    img2 = cv2.imread(dir_root + r'\black\black_0074690_CM1_2.bmp')
+    out_dir = dir_root + "out4/"
+    img1 = cv2.imread(dir_root + r'\black\black_R032829_CM1_1.bmp')
+    img2 = cv2.imread(dir_root + r'\black\black_R032829_CM1_2.bmp')
+    template2 = cv2.imread(dir_root + r"template2.bmp")
     img_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     # #BianHao1(img_gray, img_serial)
     # top_y = getTop(img_gray)
@@ -226,6 +289,12 @@ if __name__ == '__main__':
     # result_dict = BianHao1(img_gray)
     # drawResultDict(img1, result_dict)
     # cv2.imwrite(out_dir + "01.jpg", img1)
-    test(img_dir, out_dir)
-    wList = np.array(wList)
+    # test(img_dir, out_dir)
+    # wList = np.array(wList)
+    #save_white_region()
+    find_white_region(img1)
+    cv2.imwrite(dir_root + "region.jpg", img1)
+    matchLoc, result = my_matchTemplate(img1, template2, cv2.TM_CCOEFF_NORMED)
+
+
     pass
