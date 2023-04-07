@@ -9,6 +9,9 @@ import numpy as np
 sys.path.append("../../")
 from ml00project.pj3distence.cv01distenceTest import distenceMeasure, imgdrawResult
 
+sys.path.append("../../")
+from ml00project.pj2LG.LGPostProcess import CPostProcessor, mask2defectList # , imgdrawResult
+
 
 def rgb2hex(rgb):
     hex_color = "#" + hex(rgb[0])[2:].zfill(2) + hex(rgb[1])[2:].zfill(2) + hex(rgb[2])[2:].zfill(2)
@@ -16,15 +19,17 @@ def rgb2hex(rgb):
 
 
 class ImageEditor:
-    image_draw: Image
+    image_draw_mask: Image
 
     def __init__(self, width, height):
         # self.width = width
         # self.height = height
-        self.file_path = r"D:\04DataSets\04/box.jpg"
+        dir_root = r"D:\04DataSets\ningjingLG\all1\/"
+        img_first_name = "black_0074690_CM1_"
+        self.file_path = r"D:\04DataSets\ningjingLG\all\black_0074690_CM1_1.bmp"
         self.root = Tk()
         self.root.title("刘翠立的算法调试器")
-        # self.root.geometry("800x800")
+        self.root.geometry("1000x1200")
         self.brush_size = 15
         self.draw_color = (60, 60, 60)
         # 创建菜单栏
@@ -50,23 +55,25 @@ class ImageEditor:
         self.reset_btn = Button(toolbar, text="重置", command=self.img_reset)
         self.reset_btn.pack(side=LEFT, padx=5, pady=5)
 
+        self.reset_btn = Button(toolbar, text="识别", command=self.recog_image)
+        self.reset_btn.pack(side=LEFT, padx=5, pady=5)
+
+        self.label = Label(toolbar, text="正确")
+        self.label.pack(side=LEFT, padx=5, pady=5)
+
         toolbar.pack(side=TOP, fill=X)
+
 
         # 创建画布
         self.canvas_frame = Frame(self.root)
         self.canvas_frame.config(bg="red")
-        # self.canvas1 = Canvas(self.canvas_frame, width=self.width, height=self.height)
-        # self.canvas2 = Canvas(self.canvas_frame, width=self.width, height=self.height)
-        # self.canvas3 = Canvas(self.canvas_frame, width=self.width, height=self.height)
-        # self.canvas4 = Canvas(self.canvas_frame, width=self.width, height=self.height)
-        self.canvas1 = Canvas(self.canvas_frame, bg='white')
-        self.canvas2 = Canvas(self.canvas_frame, bg='white')
-        self.canvas3 = Canvas(self.canvas_frame, bg='white')
-        self.canvas4 = Canvas(self.canvas_frame, bg='white')
-        self.canvas1.grid(row=0, column=0, padx=5, pady=5, sticky="nesw")
-        self.canvas2.grid(row=0, column=1, padx=5, pady=5, sticky="nesw")
-        self.canvas3.grid(row=1, column=0, padx=5, pady=5, sticky="nesw")
-        self.canvas4.grid(row=1, column=1, padx=5, pady=5, sticky="nesw")
+        self.canvas = [Canvas]*4
+        for i in range(4):
+            self.canvas[i] = Canvas(self.canvas_frame, bg='white', name=str(i))
+            self.canvas[i].bind("<B1-Motion>", self.paint)
+            row = i//2
+            column = i%2
+            self.canvas[i].grid(row=row, column=column, sticky="nesw")
         self.canvas_frame.pack(expand=True, fill="both")
         self.canvas_frame.bind("<Configure>", self.resize_canvas)
         # self.root.bind("<Configure>", self.resize_frame)
@@ -74,18 +81,15 @@ class ImageEditor:
         # 初始化画笔
         # self.image_show = Image.new("RGB", (self.width, self.height), (255, 255, 255))
         # self.draw = ImageDraw.Draw(self.image_show)
-        self.tool = None
-        self.image_original = None
-        self.image_draw = None
-        self.image_show_ori = None
-        self.photo = None
-
-        # 绑定事件
-        self.canvas1.bind("<B1-Motion>", self.paint)
-        self.canvas2.bind("<B1-Motion>", self.paint)
-        self.canvas3.bind("<B1-Motion>", self.paint)
-        self.canvas4.bind("<B1-Motion>", self.paint)
-        # self.canvas.bind("<ButtonRelease-1>", self.reset)
+        self.tool = "pen"
+        self.image_original = [None]*4
+        self.image_original_cv = [None]*4
+        self.image_draw_mask = [None] * 4
+        self.draw = [ImageDraw.ImageDraw]*4
+        self.draw_rgb = [ImageDraw.ImageDraw]*4
+        self.image_show_ori = [None]*4
+        self.image_show = [None]*4
+        self.photo = [None]*4
 
         # 图片信息
         self.window_w = 1000
@@ -97,56 +101,65 @@ class ImageEditor:
         self.ratio = 1
 
         self.init_img()
+        self.defectListList = [[]]*4
+        self.pp = CPostProcessor()
 
     def init_img(self):
-        self.image_original = Image.open(self.file_path)
-        self.img_w = self.image_original.size[0]
-        self.img_h = self.image_original.size[1]
-        self.resize_canvas()
-        self.image_draw = self.image_original.copy()
-        self.draw = ImageDraw.Draw(self.image_draw)
-        self.recog_image()
-        self.show_image()
+        path_split = self.file_path.split(".")
+        for i in range(4):
+            file_path = path_split[0][:-1] + str(i + 1) + "." + path_split[1]
+
+            self.image_original[i] = Image.open(file_path)
+            self.image_original_cv[i] = cv2.cvtColor(np.array(self.image_original[i]), cv2.COLOR_RGB2BGR)
+            self.img_w = self.image_original[i].size[0]
+            self.img_h = self.image_original[i].size[1]
+            self.image_draw_mask[i] = Image.fromarray(np.zeros(self.image_original[i].size, dtype=np.uint8))
+            self.draw[i] = ImageDraw.Draw(self.image_draw_mask[i])
+            self.image_show_ori[i] = self.image_original[i].copy()
+            self.draw_rgb[i] = ImageDraw.Draw(self.image_show_ori[i])
+            # self.image_show[i] = self.image_draw_mask[i].copy()
+            # self.photo[i] = ImageTk.PhotoImage(self.image_show[i])
+            # self.canvas[i].create_image(0, 0, image=self.photo[i], anchor=NW)
 
     # 绘制，识别和现实
-    def draw_image(self, x=None, y=None):
+    def draw_image(self, i, x=None, y=None):
         if x and y:
-            self.draw.ellipse((x - self.brush_size, y - self.brush_size, x + self.brush_size, y + self.brush_size),
-                              fill=self.draw_color, outline=self.draw_color)
-            self.recog_image()
-        self.show_image()
+            self.draw[i].ellipse((x - self.brush_size, y - self.brush_size, x + self.brush_size, y + self.brush_size),
+                              fill=255, outline=255)
+            self.draw_rgb[i].ellipse((x - self.brush_size, y - self.brush_size, x + self.brush_size, y + self.brush_size),
+                              fill=(255,)*3, outline=(255,)*3)
+            self.recog_image(i)
+        self.show_image(i)
 
-    def recog_image(self):
-        image_show_gray = cv2.cvtColor(np.array(self.image_draw), cv2.COLOR_RGB2GRAY)
-        self.image_show_ori = cv2.cvtColor(np.array(self.image_draw), cv2.COLOR_RGB2BGR)  # PIL -> cv
-        result_dict = distenceMeasure(image_show_gray)
-        imgdrawResult(self.image_show_ori, result_dict)
+    def recog_image(self, i=None):
+        if i:
+            self.defectListList[i] = mask2defectList(np.array(self.image_draw_mask[i]))
+        result = self.pp.Process(self.image_original_cv, self.defectListList)
+        self.label.config(text=str(result))
+        print(str(result))
+        #imgdrawResult(self.image_show_ori[i], result_dict)
 
-    def show_image(self):
-        if self.image_show_ori is None:
+    def show_image(self, i):
+        if self.image_show_ori[i] is None:
             return
-        self.image_show = self.image_show_ori.copy()
-        self.image_show = cv2.resize(self.image_show, (self.canv_w, self.canv_h))
+        self.image_show[i] = self.image_show_ori[i].copy()
+        self.image_show[i] = self.image_show[i].resize((self.canv_w, self.canv_h))
         # self.image_show.resize((self.canv_w, self.canv_h), refcheck=False)
-        self.image_show = Image.fromarray(cv2.cvtColor(self.image_show, cv2.COLOR_BGR2RGB))  # cv -> PIL
-        self.photo = ImageTk.PhotoImage(self.image_show)
-        self.canvas1.create_image(0, 0, image=self.photo, anchor=NW)
+        # self.image_show[i] = Image.fromarray(cv2.cvtColor(self.image_show[i], cv2.COLOR_BGR2RGB))  # cv -> PIL
+        self.photo[i] = ImageTk.PhotoImage(self.image_show[i])
+        self.canvas[i].create_image(0, 0, image=self.photo[i], anchor=NW)
 
     def open_image(self):
         file_path = filedialog.askopenfilename(title="选择图片", filetypes=[("图片文件", "*.jpg;*.jpeg;*.png;*.bmp")])
         if file_path:
-            self.image_original = Image.open(file_path)
-            self.image_draw = self.image_original.copy()
-            self.draw = ImageDraw.Draw(self.image_draw)
-            self.image_show = self.image_original.copy()
-            self.photo = ImageTk.PhotoImage(self.image_show)
-            self.canvas1.create_image(0, 0, image=self.photo, anchor=NW)
+            self.file_path = file_path
+            self.init_img()
 
     def save_image(self):
         file_path = filedialog.asksaveasfilename(title="保存图片", defaultextension=".png",
                                                  filetypes=[("PNG 文件", "*.png"), ("JPG 文件", "*.jpg")])
         if file_path:
-            self.image_draw.save(file_path)
+            self.image_draw_mask.save(file_path)
 
     def use_pen(self):
         print(self.tool)
@@ -167,33 +180,18 @@ class ImageEditor:
     def paint(self, event):
         print("paint", self.tool)
         if self.tool == "pen":
+            i = int(event.widget._name)
             x, y = int(event.x / self.ratio), int(event.y / self.ratio)
-            self.draw.ellipse((x - self.brush_size, y - self.brush_size, x + self.brush_size, y + self.brush_size),
-                              fill=self.draw_color, outline=self.draw_color)
-            # self.draw.line([event.x, event.y, event.x + 1, event.y + 1], fill=self.draw_color, width=20)
-
-            image_show_gray = cv2.cvtColor(np.asarray(self.image_draw), cv2.COLOR_RGB2GRAY)
-            image_show_bgr = cv2.cvtColor(np.asarray(self.image_draw), cv2.COLOR_RGB2BGR)  # PIL -> cv
-            result_dict = distenceMeasure(image_show_gray)
-            imgdrawResult(image_show_bgr, result_dict)
-            self.image_show = Image.fromarray(cv2.cvtColor(image_show_bgr, cv2.COLOR_BGR2RGB))  # cv -> PIL
-
-            # LineWhiteTop = resultDict["LineWhiteTop"]
-            # k = LineWhiteTop[1] / LineWhiteTop[0]
-            # b = LineWhiteTop[3] - k * LineWhiteTop[2]
-            # draw = ImageDraw.Draw(self.image_show)
-            # draw.line([0, int(b), 600, int(k * 600 + b)], fill=(255, 0, 0), width=1)
-            self.photo = ImageTk.PhotoImage(self.image_show)
-            self.canvas1.create_image(0, 0, image=self.photo, anchor=NW)
+            self.draw_image(i, x, y)
         elif self.tool == "pick":
             x, y = event.x, event.y
-            print(self.image_show.getpixel((x, y)))
             self.color_btn.configure(bg=rgb2hex(self.image_show.getpixel((x, y))))
             self.draw_color = self.image_show.getpixel((x, y))
 
     def img_reset(self):
         self.init_img()
-        pass
+        for i in range(4):
+            self.show_image(i)
 
     def resize_canvas(self, event=None):
         if event:
@@ -208,11 +206,9 @@ class ImageEditor:
         self.canv_h = int(self.img_h * self.ratio) - 1
         canv_w = self.canv_w
         canv_h = self.canv_h
-        self.canvas1.config(width=canv_w, height=canv_h - 10)
-        self.canvas2.config(width=canv_w, height=canv_h - 10)
-        self.canvas3.config(width=canv_w, height=canv_h - 10)
-        self.canvas4.config(width=canv_w, height=canv_h - 10)
-        self.show_image()
+        for i in range(4):
+            self.canvas[i].config(width=canv_w, height=canv_h)
+            self.show_image(i)
 
     def run(self):
         self.root.mainloop()
