@@ -5,8 +5,14 @@ using namespace cv;
 // 配置 1c1 图1 c 中间的竖支撑 编号1
 #define CTOP 700
 #define CBOTTOM 1630
-#define BTOP 1500
+#define BTOP 1600
 #define BBOTTOM 1800
+#define PIX_H   1233
+#define MM_H   84
+#define PIX_MM  (PIX_H/MM_H)
+#define AREA25  int(PIX_MM*PIX_MM*25)
+#define AREA150  int(PIX_MM*PIX_MM*150)
+
 //vector<vector<string>> = { vector<string>{"1c1"} };
 // 12(3)45(6)(7)89（10）11 12
 // 中间分组 broken : 
@@ -18,68 +24,183 @@ using namespace cv;
 CPostProcessor::CPostProcessor() {
     m_img1Cfg = {
         // 455-700 770-1000 1000-1300 1900-2300
-        {"1c1", "cb5", 1,Point(450,CTOP),Point(700,CBOTTOM)},
-        {"1c2", "cb5", 2,Point(770,CTOP),Point(1000,CBOTTOM)},
-        {"1c3", "cb1", 3,Point(1000,CTOP),Point(1300,CBOTTOM)},
-        {"1c4", "cb5", 4,Point(1900,CTOP),Point(2300,CBOTTOM)},
+        {"1c1", "cb5", 1,Point(450,CTOP),Point(700,CBOTTOM),AREA150},
+        {"1c2", "cb5", 2,Point(700,CTOP),Point(1000,CBOTTOM),AREA150},
+        {"1c3", "cb1", 3,Point(1000,CTOP),Point(1430,CBOTTOM)},
+        {"1c4", "cb5", 4,Point(1900,CTOP),Point(2250,CBOTTOM),AREA150},
 
-        {"1b6", "bbl", 6,Point(450,BTOP),Point(2200,BBOTTOM)},
-        {"1b7", "bbl", 7,Point(450,BTOP),Point(2200,BBOTTOM)},
-        {"1b8", "bbl", 8,Point(450,BTOP),Point(2200,BBOTTOM)},
+        {"1b6", "bbl", 6,Point(450,BTOP),Point(1430,BBOTTOM),AREA25},
+        {"1b8", "bbl", 8,Point(1430,BTOP),Point(2250,BBOTTOM),AREA150},
         {"1b2", "bbc", 2,Point(2000,BTOP),Point(2448,BBOTTOM)},
     };
     m_img2Cfg = {
-        {"2c5", "cb5", 5,Point(600,CTOP),Point(1200,CBOTTOM)},
+        {"2c5", "cb5", 5,Point(600,CTOP),Point(1200,CBOTTOM),AREA150},
         {"2c6", "cb2", 6,Point(1200,CTOP),Point(1800,CBOTTOM)},
 
         {"2b1", "bbc", 1,Point(0,BTOP),Point(2448,BBOTTOM)},
     };
     m_img3Cfg = {
         {"3c7", "cb3", 7,Point(300,CTOP),Point(900,CBOTTOM)},
-        {"3c8", "cb6", 8,Point(1000,CTOP),Point(1600,CBOTTOM)},
-        {"3c9", "cb6", 9,Point(2000,CTOP),Point(2448,CBOTTOM)},
+        {"3c8", "cb6", 8,Point(1000,CTOP),Point(1600,CBOTTOM),AREA150},
+        {"3c9", "cb6", 9,Point(2000,CTOP),Point(2448,CBOTTOM),AREA150},
 
         {"3b3", "bbc", 1,Point(0,BTOP),Point(2448,BBOTTOM)},
     };
     m_img4Cfg = {
-        {"4c9", "cb6", 9,Point(100,CTOP),Point(600,CBOTTOM)},
+        {"4c9", "cb6", 9,Point(100,CTOP),Point(600,CBOTTOM),AREA150},
         {"4c10", "cb4", 10,Point(1100,CTOP),Point(1400,CBOTTOM)},
-        {"4c11", "cb6", 11,Point(1400,CTOP),Point(1700,CBOTTOM)},
-        {"4c12", "cb6", 12,Point(1800,CTOP),Point(2100,CBOTTOM)},
+        {"4c11", "cb6", 11,Point(1400,CTOP),Point(1700,CBOTTOM),AREA150},
+        {"4c12", "cb6", 12,Point(1800,CTOP),Point(2100,CBOTTOM),AREA150},
 
         {"4b3", "bbc", 1,Point(0,BTOP),Point(400,BBOTTOM)},
-        {"4b9", "bbr", 9,Point(300,BTOP),Point(2200,BBOTTOM)},
-        {"4b10", "bbr", 10,Point(300,BTOP),Point(2200,BBOTTOM)},
-        {"4b11", "bbr", 11,Point(300,BTOP),Point(2200,BBOTTOM)},
+        {"4b9", "bbr", 9,Point(100,BTOP),Point(1400,BBOTTOM),AREA150},
+        {"4b10", "bbr", 10,Point(1100,BTOP),Point(2100,BBOTTOM),AREA25},
     };
+    m_imgCfg.push_back(m_img1Cfg);
+    m_imgCfg.push_back(m_img2Cfg);
+    m_imgCfg.push_back(m_img3Cfg);
+    m_imgCfg.push_back(m_img4Cfg);
     m_brokenCfg = {
         {"cb1",0},{"cb2",0},{"cb3",0},{"cb4",0},{"cb5",1},{"cb6",1},
         {"bbl",1},{"bbc",0},{"bbr",1},
     };
+    img_template = cv::imread(template_path);
 }
 
+void CPostProcessor::imgCfgInit() {
+    m_img1Cfg = {
+        // 455-700 770-1000 1000-1300 1900-2300
+        {"1c1", "cb5", 1,Point(450,CTOP),Point(700,CBOTTOM),AREA150},
+        {"1c2", "cb5", 2,Point(700,CTOP),Point(1000,CBOTTOM),AREA150},
+        {"1c3", "cb1", 3,Point(1000,CTOP),Point(1430,CBOTTOM)},
+        {"1c4", "cb5", 4,Point(1900,CTOP),Point(2250,CBOTTOM),AREA150},
+
+        {"1b6", "bbl", 6,Point(450,BTOP),Point(1430,BBOTTOM),AREA25},
+        {"1b8", "bbl", 8,Point(1430,BTOP),Point(2250,BBOTTOM),AREA150},
+        {"1b2", "bbc", 2,Point(2000,BTOP),Point(2448,BBOTTOM)},
+    };
+    m_img2Cfg = {
+        {"2c5", "cb5", 5,Point(600,CTOP),Point(1200,CBOTTOM),AREA150},
+        {"2c6", "cb2", 6,Point(1200,CTOP),Point(1800,CBOTTOM)},
+
+        {"2b1", "bbc", 1,Point(0,BTOP),Point(2448,BBOTTOM)},
+    };
+    m_img3Cfg = {
+        {"3c7", "cb3", 7,Point(300,CTOP),Point(900,CBOTTOM)},
+        {"3c8", "cb6", 8,Point(1000,CTOP),Point(1600,CBOTTOM),AREA150},
+        {"3c9", "cb6", 9,Point(2000,CTOP),Point(2448,CBOTTOM),AREA150},
+
+        {"3b3", "bbc", 1,Point(0,BTOP),Point(2448,BBOTTOM)},
+    };
+    m_img4Cfg = {
+        {"4c9", "cb6", 9,Point(100,CTOP),Point(600,CBOTTOM),AREA150},
+        {"4c10", "cb4", 10,Point(1100,CTOP),Point(1400,CBOTTOM)},
+        {"4c11", "cb6", 11,Point(1400,CTOP),Point(1700,CBOTTOM),AREA150},
+        {"4c12", "cb6", 12,Point(1800,CTOP),Point(2100,CBOTTOM),AREA150},
+
+        {"4b3", "bbc", 1,Point(0,BTOP),Point(400,BBOTTOM)},
+        {"4b9", "bbr", 9,Point(100,BTOP),Point(1400,BBOTTOM),AREA150},
+        {"4b10", "bbr", 10,Point(1100,BTOP),Point(2100,BBOTTOM),AREA25},
+    };
+    m_imgCfg.push_back(m_img1Cfg);
+    m_imgCfg.push_back(m_img2Cfg);
+    m_imgCfg.push_back(m_img3Cfg);
+    m_imgCfg.push_back(m_img4Cfg);
+}
+void CPostProcessor::imgCfgInitByOffSet() {
+    m_img1Cfg = {
+        CBox("1c1", "cb5", 1, Point(500, CTOP), Point(630, CBOTTOM), AREA150),
+        CBox("1c2", "cb5", 2, Point(840, CTOP), Point(920, CBOTTOM), AREA150),
+        CBox("1c3", "cb1", 3, Point(1110, CTOP), Point(1200, CBOTTOM)),
+        CBox("1c4", "cb5", 4, Point(2020, CTOP), Point(2150, CBOTTOM), AREA150),
+
+        CBox("1b6", "bbl", 6, Point(450, BTOP), Point(1430, BBOTTOM), AREA25),
+        CBox("1b8", "bbl", 8, Point(1430, BTOP), Point(2250, BBOTTOM), AREA150),
+        CBox("1b2", "bbc", 2, Point(2000, BTOP), Point(2448, BBOTTOM))
+    };
+    m_img2Cfg = {
+        CBox("2c4", "cb5", 4, Point(0, CTOP), Point(180, CBOTTOM), AREA150),
+            CBox("2c5", "cb5", 5, Point(820, CTOP), Point(960, CBOTTOM), AREA150),
+            CBox("2c6", "cb2", 6, Point(1640, CTOP), Point(1800, CBOTTOM)),
+
+            CBox("2b1", "bbc", 1, Point(0, BTOP), Point(2448, BBOTTOM))
+    };
+    m_img3Cfg = {
+        CBox("3c7", "cb3", 7, Point(500, CTOP), Point(700, CBOTTOM)),
+            CBox("3c8", "cb6", 8, Point(1300, CTOP), Point(1500, CBOTTOM), AREA150),
+            CBox("3c9", "cb6", 9, Point(2100, CTOP), Point(2300, CBOTTOM), AREA150),
+
+            CBox("3b3", "bbc", 1, Point(0, BTOP), Point(2448, BBOTTOM))
+    };
+    m_img4Cfg = {
+        CBox("4c9", "cb6", 9, Point(250, CTOP), Point(420, CBOTTOM), AREA150),
+        CBox("4c10", "cb4", 10, Point(1200, CTOP), Point(1300, CBOTTOM)),
+        CBox("4c11", "cb6", 11, Point(1480, CTOP), Point(1560, CBOTTOM), AREA150),
+        CBox("4c12", "cb6", 12, Point(1800, CTOP), Point(2030, CBOTTOM), AREA150),
+
+        CBox("4b3", "bbc", 1, Point(0, BTOP), Point(280, BBOTTOM)),
+        CBox("4b9", "bbr", 9, Point(380, BTOP), Point(1240, BBOTTOM), AREA150),
+        CBox("4b10", "bbr", 10, Point(1300, BTOP), Point(2030, BBOTTOM), AREA25),
+    };
+    m_imgCfg.push_back(m_img1Cfg);
+    m_imgCfg.push_back(m_img2Cfg);
+    m_imgCfg.push_back(m_img3Cfg);
+    m_imgCfg.push_back(m_img4Cfg);
+}
 Mat CPostProcessor::getMask(vector<Point> points) {
     Mat mask;
 
     return mask;
 }
+cv::Point CPostProcessor::findWhiteArea(cv::Mat img_bgr) {
+    int method = cv::TM_SQDIFF_NORMED;
+    cv::Mat result;
+    cv::matchTemplate(img_bgr, img_template, result, method);
+    cv::normalize(result, result, 0, 1, cv::NORM_MINMAX, -1);
+    double _minVal, _maxVal;
+    cv::Point minLoc, maxLoc;
+    cv::minMaxLoc(result, &_minVal, &_maxVal, &minLoc, &maxLoc, cv::Mat());
+    cv::Point matchLoc;
+    if (method == cv::TM_SQDIFF || method == cv::TM_SQDIFF_NORMED) {
+        matchLoc = minLoc;
+    }
+    else {
+        matchLoc = maxLoc;
+    }
+    return matchLoc;
+}
+void CPostProcessor::setOffSet(cv::Mat img_bgr) {
+    cv::Point matchLoc = findWhiteArea(img_bgr);
+    offset = matchLoc.x - template_x;
+    if (abs(offset) > 250) {
+        offset = 0;
+        imgCfgInit();
+    }
+    else {
+        imgCfgInitByOffSet();
+    }
+}
 
 bool CPostProcessor::Process(vector<Mat> v_img, vector<vector<CDefect>> vv_defect) {
     bool result = true;
+    // 设置offset
+    setOffSet(v_img[0]);
+    for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); ++it) {
+        (*it).second = 0;
+    }
     // 遍历4个图
     for (int i = 0; i < 4; i++) {
         Mat img = v_img[i];
         vector<CDefect> v_defect = vv_defect[i];
         for (auto it = v_defect.begin(); it != v_defect.end(); ++it) {
-            processImg1(img, (*it), i + 1);
+            processImg(img, (*it), i);
         }
     }
 
     // 遍历m_brokenCnt 确认 NG
-    for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); it++){
+    for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); ++it) {
         string key = (*it).first;
         int val = (*it).second;
-    //for (auto [key, val] : m_brokenCnt) {
         if (val > m_brokenCfg[key]) {
             result = false;
             break;
@@ -87,37 +208,40 @@ bool CPostProcessor::Process(vector<Mat> v_img, vector<vector<CDefect>> vv_defec
     }
     return result;
 }
-void findVerticalLine(Mat image, Point point1, Point point2) {
-    Mat roi = image(Rect(point1, point2));
-    Mat gray;
-    cvtColor(roi, gray, COLOR_BGR2GRAY);
-    Mat edges;
-    Canny(gray, edges, 50, 200);
-    vector<Vec4i> lines;
-    HoughLinesP(edges, lines, 1, CV_PI / 180, 50, 50, 10);
-    for (size_t i = 0; i < lines.size(); i++) {
-        Vec4i l = lines[i];
-        double angle = atan2(l[3] - l[1], l[2] - l[0]) * 180 / CV_PI;
-        if (abs(angle) < 100 || abs(angle) > 80) {
-            line(roi, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255), 3, LINE_AA);
-        }
-    }
-    imshow("Vertical Line", roi);
-    waitKey(0);
-}
-void CPostProcessor::processImg1(Mat img, CDefect defect, int serial) {
+
+void CPostProcessor::processImg(Mat img, CDefect defect, int serial) {
     Mat img_mask = Mat::zeros(img.size(), CV_8UC1);
     rectangle(img_mask, { defect.p1, defect.p2 }, Scalar(1), -1, 4);
-    int area = defect.area;
-    for (auto it = m_img1Cfg.begin(); it != m_img1Cfg.end(); ++it) {
+    int defect_area = defect.area;
+
+    for (auto it = m_imgCfg[serial].begin(); it != m_imgCfg[serial].end(); ++it) {
+        string arr_name = (*it).arr_name;
+        int cfg_area = (*it).area;
         // 切片
-        //findVerticalLine(img, (*it).p1, (*it).p2);
-        Rect select = Rect((*it).p1, (*it).p2);
+        int x1 = (*it).p1.x + offset;
+        int x2 = (*it).p2.x + offset;
+        if (x1 < 0) {
+            x1 = 0;
+        }
+        if (x2 < 0) {
+            x2 = 0;
+        }
+        if (x1 > img.cols) {
+            x1 = img.cols;
+        }
+        if (x2 > img.cols) {
+            x2 = img.cols;
+        }
+        Rect select = Rect(Point(x1, (*it).p1.y), Point(x2, (*it).p2.y));
         Mat ROI = img_mask(select);
         int sum = cv::sum(ROI)[0];
-        std::cout << sum << std::endl;
-        if (sum > 100){
-            (*it).state = false;
+        // 一多半在这个配置框就认为是这个的
+        if (sum > defect.area*0.5){
+            // 面积超限 算两个
+            if (defect_area > cfg_area) {
+                (*it).state = false;
+                (*it).n_defect++;
+            }
             (*it).n_defect++;
             m_brokenCnt[(*it).arr_name]++;
         }

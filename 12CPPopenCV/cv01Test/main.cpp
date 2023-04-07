@@ -4,9 +4,9 @@
 #include<ctime>
 #include "CPostProcessor.h"
 #include "quickopencv.h"
-//#include <fstream>
-//#include <nlohmann/json.hpp>
-//using json = nlohmann::json;
+#include <fstream>
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
 using namespace std;
 using namespace cv;
 void TraversalPicture();
@@ -32,7 +32,6 @@ void cvtest()
 	waitKey();
 	destroyAllWindows();
 }
-/*
 void jsonTest() {
 	string json_name = "F:/sheepy/result.json";
 	std::ifstream f(json_name);
@@ -45,11 +44,9 @@ void jsonTest() {
 		cout << point["x"] << point["y"] << endl;
 	}
 }
-*/
 void PPtest()
 {
-	//string dir_root = "F:/sheepy/02data/01LG/test/";
-	string dir_root = "D:/02dataset/01work/01TuoPanLJ/tuopan/black_0074690/";
+	string dir_root = "D:/04DataSets/ningjingLG/all/";
 	string img_first_name = "black_0074690_CM1_";
 	vector<Mat> v_img;
 	for (int i = 0; i < 4; i++) {
@@ -59,12 +56,13 @@ void PPtest()
 	}
 	CPostProcessor pp = CPostProcessor();
 	vector<vector<CDefect>> vv_defect;
-	vector<CDefect> v_defect = { {{450,700},{700,1630}, 6, 1 } };
+	vector<CDefect> v_defect = { {{800,800},{900,900}, 6, 1 } };
 	vv_defect.push_back(v_defect);
-	vv_defect.push_back(v_defect);
-	vv_defect.push_back(v_defect);
-	vv_defect.push_back(v_defect);
-	pp.Process(v_img, vv_defect);
+	vv_defect.push_back({});
+	vv_defect.push_back({});
+	vv_defect.push_back({});
+	bool result = pp.Process(v_img, vv_defect);
+	cout << result << endl;
 }
 int main()
 {
