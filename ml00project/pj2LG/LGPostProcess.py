@@ -60,7 +60,7 @@ class CPostProcessor:
         self.m_brokenCnt = {}
         self.m_objs = CBoxArray()
         self.offset = 0
-        self.template = cv2.imread(r"D:\04DataSets\ningjingLG\/template.bmp")
+        self.img_template = cv2.imread(r"D:\04DataSets\ningjingLG\/template.bmp")
         self.template_x = 1260
 
     # v_img 四张图片
@@ -118,7 +118,7 @@ class CPostProcessor:
 
     def findWhiteArea(self, img_bgr: np.ndarray):
         method = cv2.TM_SQDIFF_NORMED
-        result = cv2.matchTemplate(img_bgr, self.template, method)
+        result = cv2.matchTemplate(img_bgr, self.img_template, method)
         cv2.normalize(result, result, 0, 1, cv.NORM_MINMAX, -1)
         _minVal, _maxVal, minLoc, maxLoc = cv.minMaxLoc(result, None)
         if method == cv.TM_SQDIFF or method == cv.TM_SQDIFF_NORMED:
