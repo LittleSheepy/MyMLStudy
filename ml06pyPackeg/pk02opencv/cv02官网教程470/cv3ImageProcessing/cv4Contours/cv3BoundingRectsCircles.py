@@ -3,7 +3,11 @@ import cv2 as cv
 import numpy as np
 import argparse
 import random as rng
-
+# 为轮廓创建边界框和圆圈
+"""
+        boundRect[i] = cv.boundingRect(contours_poly[i])
+        centers[i], radius[i] = cv.minEnclosingCircle(contours_poly[i])
+"""
 rng.seed(12345)
 
 def thresh_callback(val):
