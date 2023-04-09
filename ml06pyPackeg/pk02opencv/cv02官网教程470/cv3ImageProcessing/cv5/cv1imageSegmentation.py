@@ -98,7 +98,7 @@ cv.circle(markers, (5,5), 3, 255, -1)
 cv.imshow('Markers',  markers*255/len(contours))
 ## [seeds]
 
-## [watershed]
+## [watershed]# 执行分水岭算法
 # Perform the watershed algorithm
 cv.watershed(imgResult, markers)
 cv.imshow('watershed imgResult', imgResult)
