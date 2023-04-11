@@ -1,3 +1,4 @@
+from cv2CoreFunctionality.cv3mat_mask_operations import my_filter2D             # 滤波器
 from cv3ImageProcessing import cv1Basic
 # 1绘图
 my_ellipse = cv1Basic.cv1BasicDrawing.my_ellipse                                # 画椭圆
@@ -59,6 +60,8 @@ my_matchTemplate = cv3Histograms.cv4CalcBackProjection.my_matchTemplate         
 
 from cv3ImageProcessing import cv4Contours
 my_findContours = cv4Contours.cv1findContours.my_findContours                   # 寻找轮廓
-my_convexHull = cv4Contours.cv2ConvexHull.my_convexHull                       # 凸包
+my_convexHull = cv4Contours.cv2ConvexHull.my_convexHull                         # 凸包
 
+my_minAreaRect = cv4Contours.cv4BoundingRotatedBoxesAndEllipses.my_minAreaRect  # 最小外接矩形
+my_fitEllipse = cv4Contours.cv4BoundingRotatedBoxesAndEllipses.my_fitEllipse    # 拟合椭圆
 
