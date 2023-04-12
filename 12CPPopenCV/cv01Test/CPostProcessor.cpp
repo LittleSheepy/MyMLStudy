@@ -1,5 +1,12 @@
 #include <opencv2/opencv.hpp>
+#include <fstream>
+#include <sys/stat.h>
+#include <direct.h>
 #include "CPostProcessor.h"
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
+#include <filesystem>
+//namespace fs = std::experimental::filesystem;
+namespace fs = std::experimental::filesystem;
 using namespace std;
 using namespace cv;
 // 配置 1c1 图1 c 中间的竖支撑 编号1
@@ -181,7 +188,54 @@ void CPostProcessor::setOffSet(cv::Mat img_bgr) {
     }
 }
 
+void CPostProcessor::savePara(vector<Mat> v_img, vector<vector<CDefect>> vv_defect) {
+    // 创建或者清空文件夹
+    static int num = 1;
+    const std::string folder_path = "./AI_para";
+    //if (fs::exists(folder_path)) {
+    //    // Folder exists, clear its contents
+    //    for (auto& file : fs::directory_iterator(folder_path)) {
+    //        fs::remove_all(file);
+    //    }
+    //}
+    //else {
+    //    // Folder does not exist, create it
+    //    fs::create_directory(folder_path);
+    //}
+    for (int i = 0; i < 4; i++) {
+        // 保存图片
+        Mat img = v_img[i];
+        std::string filename = folder_path + "/" + std::to_string(num);
+        filename = filename + "_" + std::to_string(i);
+        std::string img_name = filename + ".bmp";
+        cv::imwrite(img_name, img);
+        // 保存 vector<CDefect>
+
+        vector<CDefect> v_defect = vv_defect[i];
+        std::string vect_name = filename + ".bin";
+        std::ofstream outputFile(vect_name);
+
+        // check if the file was successfully opened
+        if (outputFile.is_open()) {
+            // loop through each element in the vector and write it to the file
+            for (const auto& defect : v_defect) {
+                outputFile.write(reinterpret_cast<const char*>(&defect), sizeof(defect));
+            }
+            // close the file
+            outputFile.close();
+        }
+        else {
+            // handle the case where the file could not be opened
+            std::cerr << "Error: could not open file for writing\n";
+        }
+    }
+
+
+
+    num++;
+}
 bool CPostProcessor::Process(vector<Mat> v_img, vector<vector<CDefect>> vv_defect) {
+    savePara(v_img, vv_defect);
     bool result = true;
     // 设置offset
     setOffSet(v_img[0]);
