@@ -57,6 +57,7 @@ public:
 	bool Process(vector<Mat> v_img, vector<vector<CDefect>> vv_defect);
 	void processImg(Mat img, CDefect defect, int serial);
 	Mat getMask(vector<Point> points);
+	void savePara(vector<Mat> v_img, vector<vector<CDefect>> vv_defect);
 public:
 	vector<CBox>			m_img1Cfg;
 	vector<CBox>			m_img2Cfg;
