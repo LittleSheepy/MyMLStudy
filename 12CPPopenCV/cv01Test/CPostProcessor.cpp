@@ -292,12 +292,14 @@ void CPostProcessor::processImg(Mat img, CDefect defect, int serial) {
         // 一多半在这个配置框就认为是这个的
         if (sum > defect.area*0.5){
             // 面积超限 算两个
-            if (defect_area > cfg_area) {
-                (*it).state = false;
+            if (defect_area > 0) {
+                if (defect_area > cfg_area) {
+                    (*it).state = false;
+                    (*it).n_defect++;
+                }
                 (*it).n_defect++;
+                m_brokenCnt[(*it).arr_name]++;
             }
-            (*it).n_defect++;
-            m_brokenCnt[(*it).arr_name]++;
         }
     }
 }

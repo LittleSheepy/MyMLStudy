@@ -12,6 +12,7 @@ struct CDefect
 	Point p2;	// 右下点
 	int   area;	// 缺陷面积
 	int	  type;	// 缺陷类型 破损、毛边
+	CDefect() {}
 	CDefect(Point p1, Point p2, int area, int type) :p1(p1), p2(p2), area(area), type(type) {}
 };
 

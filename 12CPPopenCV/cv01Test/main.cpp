@@ -5,8 +5,8 @@
 #include "CPostProcessor.h"
 #include "quickopencv.h"
 #include <fstream>
-#include <nlohmann/json.hpp>
-using json = nlohmann::json;
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
+#include <filesystem>
 using namespace std;
 using namespace cv;
 void TraversalPicture();
@@ -32,35 +32,47 @@ void cvtest()
 	waitKey();
 	destroyAllWindows();
 }
-void jsonTest() {
-	string json_name = "F:/sheepy/result.json";
-	std::ifstream f(json_name);
-	json data = json::parse(f);
-	auto points = data["regions"][0]["polygon"]["outer"]["point"];
-	for (int i = 0; i < 4; ++i) {
-		auto point = points[i];
-		float x = point["x"];
-		Point p = { point["x"] , point["y"] };
-		cout << point["x"] << point["y"] << endl;
-	}
-}
+
 void PPtest()
 {
 	string dir_root = "D:/04DataSets/ningjingLG/all/";
 	string img_first_name = "black_0074690_CM1_";
 	vector<Mat> v_img;
-	for (int i = 0; i < 4; i++) {
-		string img_path = dir_root + img_first_name + to_string(i + 1) + ".bmp";
-		//v_img.push_back(imread(img_path, cv::IMREAD_GRAYSCALE));
-		v_img.push_back(imread(img_path));
-	}
+	//for (int i = 0; i < 4; i++) {
+	//	string img_path = dir_root + img_first_name + to_string(i + 1) + ".bmp";
+	//	//v_img.push_back(imread(img_path, cv::IMREAD_GRAYSCALE));
+	//	v_img.push_back(imread(img_path));
+	//}
 	CPostProcessor pp = CPostProcessor();
 	vector<vector<CDefect>> vv_defect;
-	vector<CDefect> v_defect = { {{800,800},{900,900}, 6, 1 } };
-	vv_defect.push_back(v_defect);
-	vv_defect.push_back({});
-	vv_defect.push_back({});
-	vv_defect.push_back({});
+	//vector<CDefect> v_defect = { {{800,800},{900,900}, 6, 1 } };
+	//vv_defect.push_back(v_defect);
+	//vv_defect.push_back({});
+	//vv_defect.push_back({});
+	//vv_defect.push_back({});
+
+	const std::string folder_path = "./AI_para";
+	for (int i = 0; i < 4; i++) {
+		// 读取图片
+		/*Mat img = v_img[i];*/
+		std::string filename = folder_path + "/" + std::to_string(1);
+		filename = filename + "_" + std::to_string(i);
+		std::string img_name = filename + ".bmp";
+		v_img.push_back(imread(img_name));
+
+		// 读取 vector<CDefect>
+		vector<CDefect> v_defect;
+		std::string vect_name = filename + ".bin";
+		std::ifstream outputFile(vect_name, std::ios::binary);
+		CDefect defect;
+		while (outputFile.read(reinterpret_cast<char*>(&defect), sizeof(CDefect)))
+		{
+			v_defect.push_back(defect);
+		}
+		vv_defect.push_back(v_defect);
+		outputFile.close();
+	}
+
 	bool result = pp.Process(v_img, vv_defect);
 	cout << result << endl;
 }
