@@ -247,7 +247,9 @@ bool CPostProcessor::Process(vector<Mat> v_img, vector<vector<CDefect>> vv_defec
         Mat img = v_img[i];
         vector<CDefect> v_defect = vv_defect[i];
         for (auto it = v_defect.begin(); it != v_defect.end(); ++it) {
-            processImg(img, (*it), i);
+            if ((*it).area > 0) {
+                processImg(img, (*it), i);
+            }
         }
     }
 
@@ -292,14 +294,12 @@ void CPostProcessor::processImg(Mat img, CDefect defect, int serial) {
         // 一多半在这个配置框就认为是这个的
         if (sum > defect.area*0.5){
             // 面积超限 算两个
-            if (defect_area > 0) {
-                if (defect_area > cfg_area) {
-                    (*it).state = false;
-                    (*it).n_defect++;
-                }
+            if (defect_area > cfg_area) {
+                (*it).state = false;
                 (*it).n_defect++;
-                m_brokenCnt[(*it).arr_name]++;
             }
+            (*it).n_defect++;
+            m_brokenCnt[(*it).arr_name]++;
         }
     }
 }
