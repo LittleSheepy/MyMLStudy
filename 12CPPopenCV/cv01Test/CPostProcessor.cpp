@@ -229,9 +229,6 @@ void CPostProcessor::savePara(vector<Mat> v_img, vector<vector<CDefect>> vv_defe
             std::cerr << "Error: could not open file for writing\n";
         }
     }
-
-
-
     num++;
 }
 bool CPostProcessor::Process(vector<Mat> v_img, vector<vector<CDefect>> vv_defect) {
