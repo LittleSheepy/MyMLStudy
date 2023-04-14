@@ -11,7 +11,8 @@ public:
     CNumRec(const std::string template_dir);
     void processImage(const cv::Mat& img_gray);
     Rect findWhiteArea(const cv::Mat& img_gray);
+    Rect findNumArea(const cv::Mat& img_cut);
 private:
-    std::vector<cv::Mat> template_list;
-    cv::Mat img_white_gray;
+    std::vector<cv::Mat>    m_template_list;
+    cv::Mat                 m_img_white_gray;
 };
