@@ -22,10 +22,10 @@ class Exp(MyExp):
         self.hsv_prob = 1.0
         self.flip_prob = 0.5
         # --------------  training config --------------------- #
-        self.basic_lr_per_img = 0.01 / 16.0
+        self.basic_lr_per_img = 0.01 / 8.0
         self.max_epoch = 400
         self.eval_interval = 1
-        self.output_dir = r"D:\00myGitHub\aFolder_YOLO\04yoloxs\YOLOX_outputs/yolox030/"
+        self.output_dir = r"F:\sheepy\00GitHub\a01_YOLO\01YOLOX\YOLOX_outputs\/yolox030/"
         # -----------------  testing config ------------------ #
         # output image size during evaluation/test
         self.test_size = (1024, 1024)
