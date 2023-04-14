@@ -60,7 +60,8 @@ class CPostProcessor:
         self.m_brokenCnt = {}
         self.m_objs = CBoxArray()
         self.offset = 0
-        self.img_template = cv2.imread(r"D:\04DataSets\ningjingLG\/template.bmp")
+        self.img_template = cv2.imread(r"D:/04DataSets\ningjingLG\01CeMian/template.bmp")
+        self.img_template_box = cv2.imread(r"D:\04DataSets\ningjingLG\02ZangWu\LateralPollution\/template_box.bmp")
         self.template_x = 1260
 
     # v_img 四张图片
@@ -148,17 +149,17 @@ class CPostProcessor:
             CBox("1b2", "bbc", 2, (2150, BTOP), (2448, BBOTTOM))
         ]
         self.m_img2Cfg = [
-            CBox("1c1", "cb5", 1, (450, CTOP), (700, CBOTTOM), AREA150),
+            CBox("2c4", "cb5", 1, (450, CTOP), (700, CBOTTOM), AREA150),
             CBox("2c5", "cb5", 5, (600, CTOP), (1200, CBOTTOM), AREA150),
             CBox("2c6", "cb2", 6, (1200, CTOP), (1800, CBOTTOM)),
 
             CBox("2b1", "bbc", 1, (100, BTOP), (2448, BBOTTOM))
         ]
         self.m_img3Cfg = [
-            CBox("1c1", "cb5", 1, (450, CTOP), (700, CBOTTOM), AREA150),
             CBox("3c7", "cb3", 7, (300, CTOP), (900, CBOTTOM)),
             CBox("3c8", "cb6", 8, (1000, CTOP), (1600, CBOTTOM), AREA150),
             CBox("3c9", "cb6", 9, (2000, CTOP), (2448, CBOTTOM), AREA150),
+
             CBox("3b3", "bbc", 1, (0, BTOP), (2200, BBOTTOM))
         ]
         self.m_img4Cfg = {
@@ -213,6 +214,48 @@ class CPostProcessor:
     def getMask(self, points: List[Tuple[int, int]]) -> np.ndarray:
         pass
 
+    def detect2_old(self, img_bgr):
+        c5 = None
+        c6 = None
+        for cbox in self.m_img2Cfg:
+            if cbox.name == "2c5":
+                c5 = cbox
+            if cbox.name == "2c6":
+                c6 = cbox
+
+
+        # xmin = c5.p2[0] - self.offset
+        # xmax = c6.p1[0] - self.offset
+        # ymin = CTOP+20
+        # ymax = CBOTTOM-20
+        # box_center = img_bgr[ymin:ymax,xmin:xmax]
+        # winname = "img"
+        # cv2.namedWindow(winname)
+        # cv2.moveWindow(winname, 40, 30)
+        # cv2.imshow(winname, box_center)
+        # cv2.waitKey(0)
+        pass
+    def detect2(self, img_bgr):
+        # 模版匹配
+        res = cv2.matchTemplate(img_bgr, self.img_template_box, cv2.TM_CCOEFF_NORMED)
+        max_ = res.max()
+        # 画出匹配结果
+        threshold = max_
+        loc = np.where(res >= threshold)
+
+        xmin = loc[1][0] + 100
+        xmax = xmin + 680
+        ymin = CTOP+60
+        ymax = CBOTTOM-60
+        box_center = img_bgr[ymin:ymax, xmin:xmax]
+        winname = "img"
+        cv2.namedWindow(winname)
+        cv2.moveWindow(winname, 40, 30)
+        cv2.imshow(winname, box_center)
+        cv2.waitKey(0)
+        pass
+
+
 # cv2.imwrite("img_canny.jpg", img_canny)
 def mask2defectList(img_mask):
     img_canny = cv.Canny(img_mask, 127, 127 * 2)
@@ -235,7 +278,8 @@ def drawDefectList(img_bgr, defectList):
 
 if __name__ == '__main__':
     dir_root = r"D:\04DataSets\ningjingLG\all\/"
-    img_first_name = "black_0074690_CM1_"
+    dir_root = r"D:\04DataSets\ningjingLG\02ZangWu\LateralPollution\img\/"
+    img_first_name = "black_0064692_CM1_"
     v_img = []
     for i in range(4):
         img_path = dir_root + img_first_name + str(i + 1) + ".bmp"
@@ -243,8 +287,12 @@ if __name__ == '__main__':
     vv_defect = [[CDefect((450, 700), (700, 1630), 6)]] * 4
 
     pp = CPostProcessor()
+    pp.setOffSet(v_img[0])
+    pp.detect2(v_img[1])
     try:
-        result = pp.Process(v_img, vv_defect)
-        print("\n",result)
+        # result = pp.Process(v_img, vv_defect)
+        # print("\n",result)
+        pp.setOffSet(v_img[0])
+        pp.detect2(v_img[1])
     except Exception as e:
         print(e)
