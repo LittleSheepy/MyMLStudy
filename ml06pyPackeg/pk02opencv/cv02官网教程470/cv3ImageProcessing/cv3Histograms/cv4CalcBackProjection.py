@@ -43,12 +43,12 @@ def pickPoint(event, x, y, flags, param):
     if event != cv.EVENT_LBUTTONDOWN: return
     mask = my_floodFill(img_bgr, seed=(x, y), newVal=(120,)*3, low=low, up=up)
 
-    hist, backproj = my_calcBackProject([hsv], mask, channels=[0, 1], histSize=[30, 32], ranges=[0, 180, 0, 256])
+    hist, backproj = my_calcBackProject([img_bgr], mask, channels=[0, 1], histSize=[30, 32], ranges=[0, 180, 0, 256])
     cv.imshow('Mask&BackProj', cv.hconcat([mask, backproj]))
 
 def Hist_and_Backproj(bins):
     histSize = max(bins, 2)
-    hist, backproj = my_calcBackProject([hsv], channels=[0], histSize=[histSize], ranges=[0, 180])
+    hist, backproj = my_calcBackProject([img_bgr], channels=[0], histSize=[histSize], ranges=[0, 180])
 
     w, h = 400, 400
     bin_w = int(round(w / histSize))
@@ -62,15 +62,15 @@ def TrackbarTest():
     window_image = 'Source image'
     cv.namedWindow(window_image)
     cv.imshow(window_image, img_bgr)
-    cv.createTrackbar('Hist&Backproj', window_image, 13, 180, Hist_and_Backproj)
+    cv.createTrackbar('Hist&Backproj', window_image, 13, 156, Hist_and_Backproj)
     cv.createTrackbar('Low thresh', window_image, low, 255, callback_low)
     cv.createTrackbar('High thresh', window_image, up, 255, callback_up)
     cv.setMouseCallback(window_image, pickPoint)
 
 
 if __name__ == '__main__':
-    dir_root = r"D:\02dataset\02opencv_data/"
-    filename = dir_root + 'hand0.jpg'
+    dir_root = r"D:\04DataSets\ningjingLG\02ZangWu\/"
+    filename = dir_root + 'xiao.bmp'
     img_bgr = cv.imread(filename)
     hsv = cv.cvtColor(img_bgr, cv.COLOR_BGR2HSV)
 
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     cv.imshow('mask', mask)
 
     # 背投影
-    hist, backproj = my_calcBackProject([hsv], mask=None, channels=[0], histSize=[256], ranges=[0, 256])
+    hist, backproj = my_calcBackProject([img_bgr], mask=None, channels=[0], histSize=[256], ranges=[0, 256])
     cv.imshow('BackProj', backproj)
 
     # 滑动条调数测试
