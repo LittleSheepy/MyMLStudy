@@ -24,6 +24,7 @@ class Exp(MyExp):
         self.basic_lr_per_img = 0.01 / 16.0
         self.max_epoch = 400
         self.eval_interval = 1
+        self.output_dir = r"D:\00myGitHub\aFolder_YOLO\04yoloxs\YOLOX_outputs/yolox030/"
         # -----------------  testing config ------------------ #
         # output image size during evaluation/test
         self.test_size = (1024, 1024)
