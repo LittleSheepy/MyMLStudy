@@ -10,6 +10,7 @@
 using namespace std;
 using namespace cv;
 void TraversalPicture();
+void NumRecTest();
 void cvtest()
 {
 	std::cout << "Hello World!\n";
@@ -78,6 +79,6 @@ void PPtest()
 }
 int main()
 {
-	PPtest();
+	NumRecTest();
 	return 0;
 }
