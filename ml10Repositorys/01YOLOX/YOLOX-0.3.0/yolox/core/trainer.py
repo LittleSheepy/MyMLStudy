@@ -189,7 +189,7 @@ class Trainer:
                 raise ValueError("logger must be either 'tensorboard' or 'wandb'")
 
         logger.info("Training start...")
-        logger.info("\n{}".format(model))
+        # logger.info("\n{}".format(model))
 
     def after_train(self):
         logger.info(

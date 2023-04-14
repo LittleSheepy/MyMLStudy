@@ -2,7 +2,8 @@
 import os
 
 from yolox.data import get_yolox_datadir
-from yolox.exp import Exp as MyExp
+# from yolox.exp import Exp as MyExp
+from exps.example.yolox_voc.yolox_voc_s import Exp as MyExp
 
 
 class Exp(MyExp):
