@@ -32,7 +32,7 @@ Rect CNumRec::findWhiteArea(const cv::Mat& img_gray) {
     vector<Rect> filteredRects;
     for (Rect rect : boundRect)
     {
-        if (rect.area() >= 240000 && rect.area() < 280000)
+        if (rect.area() >= 150000 && rect.area() < 280000)
         {
             filteredRects.push_back(rect);
         }
@@ -65,8 +65,11 @@ Rect CNumRec::findNumArea(const cv::Mat& img_cut_binary_img) {
     cv::Mat dilated_img;
     cv::dilate(img_closing, dilated_img, kernel3, cv::Point(-1, -1), 1);
 
+    //cv::imshow("img_cut_binary_img", dilated_img);
+    //moveWindow("img_cut_binary_img", 100, 100);
+    //cv::waitKey(0);
     //std::cout << "dilate time: " << clock() - startTime << std::endl;
-    //startTime = clock();//º∆ ±ø™ º
+    //startTime = clock();//ËÆ°Êó∂ÂºÄÂßã
 
     // Find contours
     std::vector<std::vector<cv::Point>> contours;
@@ -85,7 +88,7 @@ Rect CNumRec::findNumArea(const cv::Mat& img_cut_binary_img) {
     cv::Rect result_rect(0, 1000, 0, 0);
     for (cv::Rect rect : boundRect)
     {
-        if (rect.width / rect.height >= 5.0 && result_rect.y > rect.y && rect.y > 200)
+        if (rect.width / rect.height >= 4.0 && result_rect.y > rect.y && rect.y > 200)
         {
             result_rect = rect;
         }
@@ -93,19 +96,29 @@ Rect CNumRec::findNumArea(const cv::Mat& img_cut_binary_img) {
     return result_rect;
 }
 
-void CNumRec::processImage(const cv::Mat& img_gray) {
-    //double startTime = clock();//º∆ ±ø™ º
+string CNumRec::processImage(const cv::Mat& img_gray) {
+    //double startTime = clock();//ËÆ°Êó∂ÂºÄÂßã
     cv::Rect whiteArea_rect;
     whiteArea_rect = findWhiteArea(img_gray);
 
     cv::Mat img_cut = img_gray(whiteArea_rect);
+    //cv::imshow("Binary image", img_cut);
+    //moveWindow("Binary image", 100, 100);
+    //cv::waitKey(0);
+    resize(img_cut, img_cut, Size(693, 417), 0, 0, INTER_LINEAR);
     cv::Mat img_cut_binary_img;
-    cv::threshold(img_cut, img_cut_binary_img, 250, 255, cv::THRESH_BINARY_INV);
+    cv::threshold(img_cut, img_cut_binary_img, 200, 255, cv::THRESH_BINARY_INV);
+    //cv::imshow("img_cut_binary_img", img_cut_binary_img);
+    //moveWindow("img_cut_binary_img", 100, 100);
+    //cv::waitKey(0);
 
     cv::Rect result_rect = findNumArea(img_cut_binary_img);
     cv::Mat binary_img = img_cut_binary_img(cv::Rect(result_rect.x, result_rect.y, result_rect.width, result_rect.height));
     cv::Mat num_img = img_cut(cv::Rect(result_rect.x, result_rect.y, result_rect.width, result_rect.height));
 
+    //cv::imshow("Binary image", binary_img);
+    //moveWindow("Binary image", 100, 100);
+    //cv::waitKey(0);
     // Apply vertical projection to the binary image to get the sum of white pixels in each column
     cv::threshold(binary_img, binary_img, 250, 1, cv::THRESH_BINARY);
 
@@ -125,7 +138,7 @@ void CNumRec::processImage(const cv::Mat& img_gray) {
         int element = arr[i];
         // Do something with the element
         if (element == 0) {
-            if (run_one_flg && step > 5) {
+            if (run_one_flg && step > 2) {
                 white_x_max.push_back(i);
                 step = 0;
                 run_one_flg = false;
@@ -135,7 +148,7 @@ void CNumRec::processImage(const cv::Mat& img_gray) {
             }
         }
         else if (element > 0) {
-            if (!run_one_flg && step > 5) {
+            if (!run_one_flg && step > 2) {
                 white_x_min.push_back(i);
                 step = 0;
                 run_one_flg = true;
@@ -148,6 +161,7 @@ void CNumRec::processImage(const cv::Mat& img_gray) {
 
     // Recognize digits
     std::vector<std::vector<int>> result;     // class, xmin, ymin
+    string str_result="";
     int xmin_ = 0;
     int xmax_ = 0;
     for (int index = 0; index < 7; index++)
@@ -158,7 +172,7 @@ void CNumRec::processImage(const cv::Mat& img_gray) {
         }
 
         xmax_ = white_x_max[index];
-        cv::Mat img_tmp = num_img(cv::Rect(xmin_, 0, xmax_ - xmin_+3, num_img.rows));
+        cv::Mat img_tmp = num_img(cv::Rect(xmin_, 0, xmax_ - xmin_+6, num_img.rows));
         double max_score = 0;
         cv::Mat loc;
         int xmin__ = 0;
@@ -181,38 +195,43 @@ void CNumRec::processImage(const cv::Mat& img_gray) {
                 res_loc = { i, xmin_ + xmin__, ymin_ };
             }
         }
+        str_result = str_result + to_string(res_loc[0]);
         result.push_back(res_loc);
     }
+
     for (const auto& vec : result) {
         for (const auto& elem : vec) {
             std::cout << elem << " ";
         }
         std::cout << std::endl;
     }
-    //std::cout << " time: " << clock() - startTime << std::endl;
-    ////namedWindow("Binary image", WINDOW_NORMAL);
-    //Mat grayscale_image;
-    //cvtColor(num_img, grayscale_image, COLOR_GRAY2BGR);
-    //for (int index = 0; index < 7; index++) {
-    //    xmin_ = white_x_min[index];
-    //    xmax_ = white_x_max[index];
-    //    line(grayscale_image, Point(xmin_, 0), Point(xmin_, num_img.rows), Scalar(0, 0, 255), 1);
-    //    line(grayscale_image, Point(xmax_, 0), Point(xmax_, num_img.rows), Scalar(0, 0, 255), 1);
-    //}
-    //cv::imshow("Binary image", grayscale_image);
-    //moveWindow("Binary image", 100, 100);
-    //cv::waitKey(0);
+    // std::cout << " time: " << clock() - startTime << std::endl;
+    // namedWindow("Binary image", WINDOW_NORMAL);
+    Mat grayscale_image;
+    cv::cvtColor(num_img, grayscale_image, COLOR_GRAY2BGR);
+    for (int index = 0; index < 7; index++) {
+        xmin_ = white_x_min[index];
+        xmax_ = white_x_max[index];
+        line(grayscale_image, Point(xmin_, 0), Point(xmin_, num_img.rows), Scalar(0, 0, 255), 1);
+        line(grayscale_image, Point(xmax_, 0), Point(xmax_, num_img.rows), Scalar(0, 0, 255), 1);
+    }
+    cv::imshow("Binary image", grayscale_image);
+    cv::moveWindow("Binary image", 100, 100);
+    cv::waitKey(0);
+    return str_result;
 }
 
 /// <summary>
-/// ≤‚ ‘¥˙¬Î
+/// ÊµãËØï‰ª£Á†Å
 /// </summary>
 
 //void NumRecTest() {
-//    String dir_root = "F:/sheepy/00MyMLStudy/ml00project/pj2LG/numRec/";
-//    String img_path = dir_root + "black_0074690_CM3_1.bmp";
+//    String dir_root = "D:/00myGitHub/00MyMLStudy/ml00project/pj2LG/numRec/";
+//    String img_path = dir_root + "04.bmp";
 //    String white_template_path = dir_root + "white_template3.bmp";
 //    Mat img_gray = imread(img_path, cv::IMREAD_GRAYSCALE);
 //    CNumRec nr = CNumRec(dir_root);
-//    nr.processImage(img_gray);
+//    string str_result;
+//    str_result = nr.processImage(img_gray);
+//    cout << str_result << endl;
 //}
