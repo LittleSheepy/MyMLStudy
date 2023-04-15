@@ -24,12 +24,18 @@
     <ClCompile Include="quickdemo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="NumRec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CPostProcessor.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="quickopencv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NumRec.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

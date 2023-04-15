@@ -9,7 +9,7 @@ using namespace std;
 class CNumRec {
 public:
     CNumRec(const std::string template_dir);
-    void processImage(const cv::Mat& img_gray);
+    string processImage(const cv::Mat& img_gray);
     Rect findWhiteArea(const cv::Mat& img_gray);
     Rect findNumArea(const cv::Mat& img_cut);
 private:
