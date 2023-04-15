@@ -19,6 +19,8 @@ import os
 datasets_path = r"D:/sheepy/04DataSets/02noname/01qipao_only/small/"
 os.environ['YOLOX_DATADIR']=datasets_path
 print('YOLOX_DATADIR=', os.getenv("YOLOX_DATADIR", None))
+
+name = "yolox-s"
 exp_file = r"exps/example/yolox_voc/my_voc_exp.py"
 # ckpt_path = r"F:\sheepy\00GitHub\a01_YOLO\01YOLOX\YOLOX\YOLOX_outputs\my_voc_exp1\best_ckpt.pth"
 ckpt_path = r"F:\sheepy\00GitHub\a01_YOLO\01YOLOX\YOLOX\YOLOX_outputs\my_voc_exp3\best_ckpt.pth"

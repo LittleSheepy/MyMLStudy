@@ -4,8 +4,11 @@
 
 # VOC_CLASSES = ( '__background__', # always index 0
 VOC_CLASSES = (
-    "qipao",
+    "bd", "bb", "gh", "wb", "wc", "ps", "yqwrw", "zx"
 )
+# VOC_CLASSES = (
+#     "qipao",
+# )
 # VOC_CLASSES = (
 #     "aeroplane",
 #     "bicycle",
