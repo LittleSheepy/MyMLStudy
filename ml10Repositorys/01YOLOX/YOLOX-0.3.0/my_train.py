@@ -16,8 +16,9 @@ from yolox.utils import configure_module, configure_nccl, configure_omp, get_num
 
 import os
 # datasets_path = r"D:/sheepy/04DataSets/02noname/01qipao_only/small/"
-datasets_path = r"D:\02dataset\VOC_mudiban\/"
-datasets_path = r"D:/sheepy/04DataSets/02noname/01qipao_only/big/"
+# datasets_path = r"D:\02dataset\VOC_mudiban\/"
+# datasets_path = r"D:/sheepy/04DataSets/02noname/01qipao_only/big/"
+datasets_path = r"D:\02dataset\01work\02noname/01qipao_only/small/"
 os.environ['YOLOX_DATADIR']=datasets_path
 print('YOLOX_DATADIR=', os.getenv("YOLOX_DATADIR", None))
 
@@ -43,7 +44,7 @@ def make_parser():
         type=str,
         help="url used to set up distributed training",
     )
-    parser.add_argument("-b", "--batch-size", type=int, default=8, help="batch size")
+    parser.add_argument("-b", "--batch-size", type=int, default=4, help="batch size")
     parser.add_argument(
         "-d", "--devices", default=0, type=int, help="device for training"
     )
