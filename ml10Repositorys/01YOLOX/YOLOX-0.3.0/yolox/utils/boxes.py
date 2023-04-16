@@ -74,8 +74,8 @@ def postprocess(prediction, num_classes, conf_thre=0.7, nms_thre=0.45, class_agn
             output[i] = torch.cat((output[i], detections))
 
     return output
-
-
+# bboxes_a torch.Size([2, 4])
+# bboxes_b torch.Size([150, 4])  False
 def bboxes_iou(bboxes_a, bboxes_b, xyxy=True):
     if bboxes_a.shape[1] != 4 or bboxes_b.shape[1] != 4:
         raise IndexError
@@ -89,15 +89,15 @@ def bboxes_iou(bboxes_a, bboxes_b, xyxy=True):
         tl = torch.max(
             (bboxes_a[:, None, :2] - bboxes_a[:, None, 2:] / 2),
             (bboxes_b[:, :2] - bboxes_b[:, 2:] / 2),
-        )
+        )       # torch.Size([2, 150, 2])
         br = torch.min(
             (bboxes_a[:, None, :2] + bboxes_a[:, None, 2:] / 2),
             (bboxes_b[:, :2] + bboxes_b[:, 2:] / 2),
         )
 
-        area_a = torch.prod(bboxes_a[:, 2:], 1)
-        area_b = torch.prod(bboxes_b[:, 2:], 1)
-    en = (tl < br).type(tl.type()).prod(dim=2)
+        area_a = torch.prod(bboxes_a[:, 2:], 1)     # (2,)
+        area_b = torch.prod(bboxes_b[:, 2:], 1)     # (150,)
+    en = (tl < br).type(tl.type()).prod(dim=2)      # torch.Size([2, 150])      # 寻找有交集的 无交集的话 tl>br
     area_i = torch.prod(br - tl, 2) * en  # * ((tl < br).all())
     return area_i / (area_a[:, None] + area_b - area_i)
 
