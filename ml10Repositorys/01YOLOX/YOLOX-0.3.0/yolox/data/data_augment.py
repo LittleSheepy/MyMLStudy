@@ -163,10 +163,10 @@ class TrainTransform:
         self.max_labels = max_labels
         self.flip_prob = flip_prob
         self.hsv_prob = hsv_prob
-
+    # (1024, 1024, 3) (14, 5)  (1024, 1024)
     def __call__(self, image, targets, input_dim):
-        boxes = targets[:, :4].copy()
-        labels = targets[:, 4].copy()
+        boxes = targets[:, :4].copy()       # (14, 4)
+        labels = targets[:, 4].copy()       # (14,)
         if len(boxes) == 0:
             targets = np.zeros((self.max_labels, 5), dtype=np.float32)
             image, r_o = preproc(image, input_dim)

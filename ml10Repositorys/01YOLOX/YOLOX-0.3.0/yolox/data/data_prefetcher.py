@@ -15,10 +15,10 @@ class DataPrefetcher:
 
     def __init__(self, loader):
         self.loader = iter(loader)
-        self.stream = torch.cuda.Stream()
+        self.stream = torch.cuda.Stream()                               # 创建了一个CUDA流，用于异步传输数据。
         self.input_cuda = self._input_cuda_for_image
         self.record_stream = DataPrefetcher._record_stream_for_image
-        self.preload()
+        self.preload()  # 调用了preload函数，用于预加载下一批数据。
 
     def preload(self):
         try:
@@ -30,10 +30,10 @@ class DataPrefetcher:
 
         with torch.cuda.stream(self.stream):
             self.input_cuda()
-            self.next_target = self.next_target.cuda(non_blocking=True)
+            self.next_target = self.next_target.cuda(non_blocking=True) # nonblocking=True参数来指示CUDA不应该等待数据传输完成。后面wait_stream等待数据传输完成
 
     def next(self):
-        torch.cuda.current_stream().wait_stream(self.stream)
+        torch.cuda.current_stream().wait_stream(self.stream)    # 这里使用waitstream函数等待CUDA流传输完成。
         input = self.next_input
         target = self.next_target
         if input is not None:

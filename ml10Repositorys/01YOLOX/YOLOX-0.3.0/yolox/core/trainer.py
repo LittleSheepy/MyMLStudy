@@ -93,7 +93,7 @@ class Trainer:
 
     def train_one_iter(self):
         iter_start_time = time.time()
-
+        # inps: torch.Size([8, 3, 1024, 1024])  targets: torch.Size([8, 120, 5])
         inps, targets = self.prefetcher.next()
         inps = inps.to(self.data_type)
         targets = targets.to(self.data_type)
