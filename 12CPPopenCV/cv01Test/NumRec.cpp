@@ -1,6 +1,8 @@
 // NumRec.cpp
 #include "NumRec.h"
 #include <iostream>
+#include <numeric>
+
 
 
 CNumRec::CNumRec(const std::string template_dir) {
@@ -32,7 +34,7 @@ Rect CNumRec::findWhiteArea(const cv::Mat& img_gray) {
     vector<Rect> filteredRects;
     for (Rect rect : boundRect)
     {
-        if (rect.area() >= 150000 && rect.area() < 280000)
+        if (rect.area() >= 150000 && rect.area() < 350000)
         {
             filteredRects.push_back(rect);
         }
@@ -95,16 +97,106 @@ Rect CNumRec::findNumArea(const cv::Mat& img_cut_binary_img) {
     }
     return result_rect;
 }
-
+vector<Rect> CNumRec::getNumBox(cv::Mat binary_img) {
+    std::vector<std::vector<cv::Point>> contours;
+    std::vector<cv::Vec4i> hierarchy;
+    cv::findContours(binary_img, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+    std::vector<cv::Rect> boundRect(contours.size());
+    for (int i = 0; i < contours.size(); i++) {
+        cv::approxPolyDP(contours[i], contours[i], 3, true);
+        boundRect[i] = cv::boundingRect(contours[i]);
+    }
+    std::sort(boundRect.begin(), boundRect.end(), [](cv::Rect a, cv::Rect b) { return a.x < b.x; });
+    //cv::Rect* result = new cv::Rect[boundRect.size()];
+    //std::copy(boundRect.begin(), boundRect.end(), result);
+    return boundRect;
+}
 string CNumRec::processImage(const cv::Mat& img_gray) {
-    //double startTime = clock();//计时开始
+    // 查找白色区域
     cv::Rect whiteArea_rect;
     whiteArea_rect = findWhiteArea(img_gray);
-
     cv::Mat img_cut = img_gray(whiteArea_rect);
-    //cv::imshow("Binary image", img_cut);
-    //moveWindow("Binary image", 100, 100);
-    //cv::waitKey(0);
+    resize(img_cut, img_cut, Size(693, 417), 0, 0, INTER_LINEAR);
+    cv::Mat img_cut_binary_img;
+    cv::threshold(img_cut, img_cut_binary_img, 200, 255, cv::THRESH_BINARY_INV);
+
+    // 查找数字区域
+    cv::Rect result_rect = findNumArea(img_cut_binary_img);
+    cv::Mat num_img = img_cut(cv::Rect(result_rect.x, result_rect.y, result_rect.width, result_rect.height));
+    cv::Mat binary_img;
+    cv::threshold(num_img, binary_img, 190, 255, cv::THRESH_BINARY_INV);
+
+    // 大小标准化
+    int num_img_h = binary_img.rows;
+    int num_img_w = binary_img.cols;
+    float ratio = num_img_h / 35.0f;
+    int num_img_w_new = static_cast<int>(num_img_w / ratio);
+    cv::resize(binary_img, binary_img, cv::Size(num_img_w_new, 35));
+    cv::resize(num_img, num_img, cv::Size(num_img_w_new, 35));
+
+    vector<Rect> result_boxes = getNumBox(binary_img);
+
+    std::string str_result = "";
+    for (int index = 0; index < 7; index++) {
+        cv::Rect box = result_boxes[index];
+        int x = box.x, y = box.y, w = box.width, h = box.height;
+        int y_new = y - 1;
+        int h_new = h + 2;
+        if (y_new < 0) {
+            y_new = 0;
+        }
+        if (y_new + h_new > num_img.rows) {
+            h_new = num_img.rows - y_new;
+        }
+        int x_new = x - 2;
+        if (x_new < 0) {
+            x_new = 0;
+        }
+        int w_new = w + 4;
+        cv::Mat img_tmp = num_img(cv::Rect(x_new, y_new, w_new, h_new));
+        cv::resize(img_tmp, img_tmp, m_template_list[0].size(), 0, 0, cv::INTER_LINEAR);
+        double max_score = 0;
+        int num_result = -1;
+        std::vector<double> scores;
+        for (int i = 0; i < m_template_list.size(); i++) {
+            cv::Mat template_img = m_template_list[i];
+            cv::Mat res;
+            cv::matchTemplate(img_tmp, template_img, res, cv::TM_CCOEFF_NORMED);
+            double max_val;
+            cv::minMaxLoc(res, nullptr, &max_val);
+            scores.push_back(max_val);
+            if (max_val > max_score) {
+                max_score = max_val;
+                num_result = i;
+            }
+        }
+        std::vector<int> scores_indices(scores.size());
+        std::iota(scores_indices.begin(), scores_indices.end(), 0);
+        std::sort(scores_indices.begin(), scores_indices.end(), [&](int i, int j) { return scores[i] < scores[j]; });
+        if (w > 12) {
+            num_result = scores_indices[scores_indices.size() - 1];
+            if (num_result == 1) {
+                num_result = scores_indices[scores_indices.size() - 2];
+            }
+        }
+        else {
+            num_result = 1;
+        }
+        std::cout << index << " scores: ";
+        for (double score : scores) {
+            std::cout << score << " ";
+        }
+        std::cout << std::endl;
+        str_result += std::to_string(num_result);
+    }
+    return str_result;
+}
+string CNumRec::processImage1(const cv::Mat & img_gray) {
+    //double startTime = clock();//计时开始
+    // 查找白色区域
+    cv::Rect whiteArea_rect;
+    whiteArea_rect = findWhiteArea(img_gray);
+    cv::Mat img_cut = img_gray(whiteArea_rect);
     resize(img_cut, img_cut, Size(693, 417), 0, 0, INTER_LINEAR);
     cv::Mat img_cut_binary_img;
     cv::threshold(img_cut, img_cut_binary_img, 200, 255, cv::THRESH_BINARY_INV);
@@ -225,13 +317,18 @@ string CNumRec::processImage(const cv::Mat& img_gray) {
 /// 测试代码
 /// </summary>
 
-//void NumRecTest() {
-//    String dir_root = "D:/00myGitHub/00MyMLStudy/ml00project/pj2LG/numRec/";
-//    String img_path = dir_root + "04.bmp";
-//    String white_template_path = dir_root + "white_template3.bmp";
-//    Mat img_gray = imread(img_path, cv::IMREAD_GRAYSCALE);
-//    CNumRec nr = CNumRec(dir_root);
-//    string str_result;
-//    str_result = nr.processImage(img_gray);
-//    cout << str_result << endl;
-//}
+void NumRecTest() {
+    String dir_root = "D:/02dataset/01work/05nanjingLG/03NumRec/";
+    String dir_template = dir_root + "/template/";
+    String dir_imgall = dir_root + "/imgall/";
+    String img_path = dir_imgall + "Image_20230415092911313.bmp";
+    String white_template_path = dir_root + "Image_20230415092911313.bmp";
+    Mat img_gray = imread(img_path, cv::IMREAD_GRAYSCALE);
+    CNumRec nr = CNumRec(dir_template);
+    string str_result;
+
+    double startTime = clock();//计时开始
+    str_result = nr.processImage(img_gray);
+    cout << " time: " << clock() - startTime << endl;
+    cout << str_result << endl;
+}

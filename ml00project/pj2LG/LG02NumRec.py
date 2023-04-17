@@ -126,16 +126,9 @@ class CNumRec:
         contours, hierarchy = cv2.findContours(binary_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         contours_poly = [None] * len(contours)
         boundRect = [None] * len(contours)
-        #result_boxes = []
         for i, contour in enumerate(contours):
             contours_poly[i] = cv2.approxPolyDP(contour, 3, True)
             boundRect[i] = cv2.boundingRect(contours_poly[i])
-            # center_x = int(boundRect[i][0] + boundRect[i][2] / 2)
-            # center_y = int(boundRect[i][1] + boundRect[i][3] / 2)
-            # w, h = 20, 32
-            # point1 = (center_x - w // 2, center_y - h // 2)
-            # point2 = (center_x + w // 2, center_y + h // 2)
-            # result_boxes.append([point1, point2])
         boundRect = sorted(boundRect, key=lambda box: box[0])
         return boundRect
 
