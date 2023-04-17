@@ -3,7 +3,9 @@ import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
 import random as rng
-
+#
+# class CNumRec:
+#     def __init__(self):
 
 if __name__ == '__main__':
     dir_root = r"D:\03GitHub\00myGitHub\MyMLStudy\ml00project\pj2LG\numRec/"
@@ -27,7 +29,7 @@ if __name__ == '__main__':
     ret, img_cut_binary_img = cv.threshold(img_cut, 250, 255, cv.THRESH_BINARY_INV)
     # 定义水平膨胀核
     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (30, 3))
-    kernel3 = cv2.getStructuringElement(cv2.MORPH_RECT, (7, 7))
+    kernel3 = cv2.getStructuringElement(cv2.MORPH_RECT, (7, 3))
     # 水平膨胀
     img_closing = cv.morphologyEx(img_cut_binary_img, cv.MORPH_CLOSE, kernel)
     dilated_img = cv.dilate(img_closing, kernel3, iterations=1)

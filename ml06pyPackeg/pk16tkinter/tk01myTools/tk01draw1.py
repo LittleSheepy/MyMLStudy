@@ -8,7 +8,7 @@ import numpy as np
 # from PIL.Image import Image
 
 # sys.path.append("../../")
-from ...ml00project.pj3distence.cv01distenceTest import distenceMeasure, imgdrawResult
+from ....ml00project.pj3distence.cv01distenceTest import distenceMeasure, imgdrawResult
 
 def rgb2hex(rgb):
     hex_color = "#" + hex(rgb[0])[2:].zfill(2) + hex(rgb[1])[2:].zfill(2) + hex(rgb[2])[2:].zfill(2)

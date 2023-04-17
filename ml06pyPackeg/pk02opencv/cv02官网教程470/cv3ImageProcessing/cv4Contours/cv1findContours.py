@@ -25,17 +25,28 @@ def my_findContours(img_gray, threshold):
     contours, hierarchy = cv.findContours(img_canny, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
     return contours, hierarchy, img_canny
 
-def thresh_callback(threshold):
-    contours, hierarchy, img_canny = my_findContours(img_gray, threshold)
 
+def draw_contours(img_gray, contours, hierarchy):
     drawing = np.zeros((img_gray.shape[0], img_gray.shape[1], 3), dtype=np.uint8)
     for i in range(len(contours)):
         color = (rng.randint(0,256), rng.randint(0,256), rng.randint(0,256))
         cv.drawContours(drawing, contours, i, color, 2, cv.LINE_8, hierarchy, 0)
+    return drawing
+
+
+def thresh_callback(threshold):
+    contours, hierarchy, img_canny = my_findContours(img_gray, threshold)
+
+    drawing = draw_contours(img_gray, contours, hierarchy)
+    # drawing = np.zeros((img_gray.shape[0], img_gray.shape[1], 3), dtype=np.uint8)
+    # for i in range(len(contours)):
+    #     color = (rng.randint(0,256), rng.randint(0,256), rng.randint(0,256))
+    #     cv.drawContours(drawing, contours, i, color, 2, cv.LINE_8, hierarchy, 0)
 
     # Show in a window
     img_canny = cv.cvtColor(img_canny, cv.COLOR_GRAY2BGR)
     cv.imshow(source_window, cv.hconcat([img_bgr, img_canny, drawing]))
+
 
 if __name__ == '__main__':
     dir_root = r"D:\02dataset\02opencv_data/"
