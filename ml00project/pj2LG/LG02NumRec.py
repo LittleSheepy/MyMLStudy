@@ -65,7 +65,7 @@ class CNumRec:
     def __init__(self, template_dir):
         self.m_template_list = []
         for i in range(10):
-            template_img = cv2.imread(template_dir + str(i) + ".bmp", cv2.IMREAD_GRAYSCALE)
+            template_img = cv2.imread(template_dir + str(i) + ".jpg", cv2.IMREAD_GRAYSCALE)
             self.m_template_list.append(template_img)
         white_template_path = template_dir + "white_template.bmp"
         self.m_img_white_gray = cv2.imread(white_template_path, cv2.IMREAD_GRAYSCALE)
@@ -122,13 +122,56 @@ class CNumRec:
         cv2.imwrite(imgWhiteContours_file_path, drawing)
         return result_rect
 
+    def x_projection(self, binary_img):
+        horizontal_projection = np.sum(binary_img, axis=1)
+        result = [0,binary_img.shape[0]]
+        for i, cnt in enumerate(horizontal_projection):
+            if cnt > 0:
+                result[0] = i
+                break
+        for i, cnt in reversed(list(enumerate(horizontal_projection))):
+            if cnt > 0:
+                result[1] = i
+                break
+        return result
+
+    def y_projection(self, binary_img):
+        binary_img = cv2.threshold(binary_img, 250, 1, cv2.THRESH_BINARY)[1]
+        vertical_projection = np.sum(binary_img, axis=0)
+        # 找白色区域
+        white_area = []
+        start = None
+        for i, cnt in enumerate(vertical_projection):
+            if cnt > 1:
+                if start is None:
+                    start = i
+            elif cnt == 0 and start is not None:
+                white_area.append([start, i-1])
+                start = None
+        white_area_merge = []
+        for i in range(len(white_area)-1):
+            area = white_area[i]
+            if area[1] - area[0] > 12:
+                white_area_merge.append(area)
+            else:
+                area_pre = white_area_merge[-1]
+                if area[0] - area_pre[1] <= 6 and area[1] - area_pre[0] < 30:
+                    white_area_merge[-1][1] = area[1]
+                else:
+                    white_area_merge.append(area)
+        return white_area_merge
+
+
     def getNumBox(self, binary_img):
         contours, hierarchy = cv2.findContours(binary_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         contours_poly = [None] * len(contours)
-        boundRect = [None] * len(contours)
+        boundRect = []
         for i, contour in enumerate(contours):
             contours_poly[i] = cv2.approxPolyDP(contour, 3, True)
-            boundRect[i] = cv2.boundingRect(contours_poly[i])
+            rect = cv2.boundingRect(contours_poly[i])
+            if rect[2] * rect[3] > 200:
+                boundRect.append(rect)
+
         boundRect = sorted(boundRect, key=lambda box: box[0])
         return boundRect
 
@@ -155,8 +198,15 @@ class CNumRec:
             binary_img = cv2.resize(binary_img, (num_img_w_new, 35))
             num_img = cv2.resize(num_img, (num_img_w_new, 35))
 
+            # y投影
+            num_area_x_list = self.y_projection(binary_img)
+            num_area_y_list = []
+            for num_area_x in num_area_x_list:
+                binary_img_oneNum = binary_img[:, num_area_x[0]:num_area_x[1]]
+                num_area_y = self.x_projection(binary_img_oneNum)
+                num_area_y_list.append(num_area_y)
             # 获取数字box
-            #imgNumArea(num_img, binary_img)
+            imgNumArea(num_img, binary_img)
             result_boxes = self.getNumBox(binary_img)
 
             # 识别数字
@@ -179,12 +229,12 @@ class CNumRec:
                 num_result = "_"
                 scores = []
                 # img_tmp = cv2.threshold(img_tmp, 240, 255, cv2.THRESH_BINARY_INV)[1]
+                cv2.imwrite(imgNumNums_dir + imgall_filename + "_" + str(index) + ".jpg", img_tmp)
                 for i in range(len(self.m_template_list)):
                     template_img = self.m_template_list[i]
                     # template_img = cv2.threshold(template_img, 240, 255, cv2.THRESH_BINARY_INV)[1]
                     # img_tmp = cv2.threshold(img_tmp, 240, 255, cv2.THRESH_BINARY_INV)[1]
                     # cv2.imwrite("img.jpg", template_img)
-                    # cv2.imwrite("img1.jpg", img_tmp)
                     try:
                         res = cv2.matchTemplate(img_tmp, template_img, cv2.TM_CCOEFF_NORMED)
                     except:
@@ -338,23 +388,24 @@ def NumRecTestDir():
 if __name__ == '__main__':
     root_dir = r"D:\04DataSets\05nanjingLG\03NumRec/"
     imgall = root_dir + "imgall/"
-    template_dir = root_dir + "template/"
+    template_dir = root_dir + "template18/"
     imgallContours_dir = root_dir + "imgallContours/"
     imgallWhiteArea = root_dir + "imgallWhiteArea/"
     imgWhiteContours_dir = root_dir + "imgWhiteContours/"
     imgNumContours_dir = root_dir + "imgNumContours/"
     imgNumNums_dir = root_dir + "imgNumNums/"
     imgNumLine_dir = root_dir + "imgNumLine/"
-    imgNumResult_dir = root_dir + "imgNumResult/"
-    imgall_filename = "Image_20230415092911313.bmp"
+    imgNumResult_dir = root_dir + "imgNumResult18/"
+    imgall_filename = "Image_20230415165939974.bmp"
     imgall_img_path = imgall + f"{imgall_filename}"
     imgallContours_file_path = imgallContours_dir + f"{imgall_filename}"
     imgWhiteContours_file_path = imgWhiteContours_dir + f"{imgall_filename}"
     imgNumLine_file_path = imgNumLine_dir + f"{imgall_filename}"
     imgNumContours_file_path = imgNumContours_dir + f"{imgall_filename}"
     imgNumNums_file_path = imgNumNums_dir + f"{imgall_filename}"
-    #NumRecTest(imgall_img_path)
+    NumRecTest(imgall_img_path)
     try:
-        NumRecTestDir()
+        # NumRecTestDir()
+        pass
     except:
         pass
