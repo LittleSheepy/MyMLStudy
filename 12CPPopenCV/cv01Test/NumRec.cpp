@@ -67,12 +67,6 @@ Rect CNumRec::findNumArea(const cv::Mat& img_cut_binary_img) {
     cv::Mat dilated_img;
     cv::dilate(img_closing, dilated_img, kernel3, cv::Point(-1, -1), 1);
 
-    //cv::imshow("img_cut_binary_img", dilated_img);
-    //moveWindow("img_cut_binary_img", 100, 100);
-    //cv::waitKey(0);
-    //std::cout << "dilate time: " << clock() - startTime << std::endl;
-    //startTime = clock();//计时开始
-
     // Find contours
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;
@@ -97,7 +91,85 @@ Rect CNumRec::findNumArea(const cv::Mat& img_cut_binary_img) {
     }
     return result_rect;
 }
-vector<Rect> CNumRec::getNumBox(cv::Mat binary_img) {
+
+// x 投影
+std::vector<int> CNumRec::x_projection(cv::Mat binary_img) {
+    cv::Mat horizontal_projection;
+    cv::reduce(binary_img, horizontal_projection, 1, cv::REDUCE_SUM, CV_32S);
+    std::vector<int> result(2);
+    for (int i = 0; i < horizontal_projection.rows; i++) {
+        int cnt = horizontal_projection.at<int>(i, 0);
+        if (cnt > 0) {
+            result[0] = i;
+            break;
+        }
+    }
+    for (int i = horizontal_projection.rows - 1; i >= 0; i--) {
+        int cnt = horizontal_projection.at<int>(i, 0);
+        if (cnt > 0) {
+            result[1] = i;
+            break;
+        }
+    }
+    return result;
+}
+
+// y 投影
+vector<array<int, 2>> CNumRec::y_projection(cv::Mat binary_img_src) {
+    cv::Mat binary_img;
+    cv::threshold(binary_img_src, binary_img, 250, 1, cv::THRESH_BINARY);
+    cv::Mat vertical_projection;
+    cv::reduce(binary_img, vertical_projection, 0, cv::REDUCE_SUM, CV_32S);
+    int* arr = vertical_projection.ptr<int>(0);
+    int arr_size = vertical_projection.cols;
+
+    std::vector<std::array<int, 2>> white_area;
+    int start = -1;
+    for (int i = 0; i < arr_size; i++) // Iterate through horizontal projection array
+    {
+        int cnt = arr[i];
+        if (cnt > 1) {
+            if (start == -1) {
+                start = i;
+            }
+        }
+        else if (cnt == 0 && start != -1) {
+            white_area.push_back({ start, i - 1 });
+            start = -1;
+        }
+    }
+    std::vector<std::array<int, 2>> white_area_merge;
+    for (int i = 0; i < white_area.size(); i++) {
+        auto area = white_area[i];
+        if (area[1] - area[0] > 12) {
+            white_area_merge.push_back(area);
+        }
+        else {
+            auto area_pre = white_area_merge.back();
+            if (area[0] - area_pre[1] <= 6 && area[1] - area_pre[0] < 30) {
+                white_area_merge.back()[1] = area[1];
+            }
+            else {
+                white_area_merge.push_back(area);
+            }
+        }
+    }
+    return white_area_merge;
+}
+
+vector<Rect> CNumRec::getNumBoxByProjection(cv::Mat binary_img) {
+    std::vector<std::array<int, 2>> num_area_x_list = y_projection(binary_img);
+    std::vector<std::vector<int>> num_area_y_list;
+    vector<Rect> resultRect;
+    for (auto num_area_x : num_area_x_list) {
+        cv::Mat binary_img_oneNum = binary_img(cv::Rect(num_area_x[0], 0, num_area_x[1] - num_area_x[0], binary_img.rows));
+        std::vector<int> num_area_y = x_projection(binary_img_oneNum);
+        num_area_y_list.push_back({ num_area_y[0], num_area_y[1] });
+        resultRect.push_back(Rect(num_area_x[0], num_area_y[0], num_area_x[1] - num_area_x[0], num_area_y[1] - num_area_y[0]));
+    }
+    return resultRect;
+}
+vector<Rect> CNumRec::getNumBoxByContours(cv::Mat binary_img) {
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;
     cv::findContours(binary_img, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
@@ -134,7 +206,7 @@ string CNumRec::processImage(const cv::Mat& img_gray) {
     cv::resize(binary_img, binary_img, cv::Size(num_img_w_new, 35));
     cv::resize(num_img, num_img, cv::Size(num_img_w_new, 35));
 
-    vector<Rect> result_boxes = getNumBox(binary_img);
+    vector<Rect> result_boxes = getNumBoxByProjection(binary_img);
 
     std::string str_result = "";
     for (int index = 0; index < 7; index++) {
