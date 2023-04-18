@@ -55,4 +55,4 @@ pitch = (sum(upper_distances) + sum(lower_distances)) / (len(upper_distances) + 
 
 # Step 13: Calculate the tooth angle using the arctangent of the slope of the two extended lines
 u0 = corners[corners[:, :, 0] == w-1][0][0]
-d0 = corners[corners[:, :,
+# d0 = corners[corners[:, :,
