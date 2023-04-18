@@ -149,7 +149,7 @@ class YOLOXHead(nn.Module):
         for k, (cls_conv, reg_conv, stride_this_level, x) in enumerate(
             zip(self.cls_convs, self.reg_convs, self.strides, xin)
         ):
-            x = self.stems[k](x)    # torch.Size([1, 128, 80, 80]) ->
+            x = self.stems[k](x)
             cls_x = x
             reg_x = x
 
@@ -188,7 +188,7 @@ class YOLOXHead(nn.Module):
                     [reg_output, obj_output.sigmoid(), cls_output.sigmoid()], 1
                 )
 
-            outputs.append(output)  # torch.Size([1, 85, 80, 80]) torch.Size([1, 85, 40, 40])
+            outputs.append(output)
 
         if self.training:
             return self.get_losses(
@@ -202,11 +202,11 @@ class YOLOXHead(nn.Module):
                 dtype=xin[0].dtype,
             )
         else:
-            self.hw = [x.shape[-2:] for x in outputs]   # [torch.Size([80, 80]), torch.Size([40, 40]), torch.Size([20, 20])]
+            self.hw = [x.shape[-2:] for x in outputs]
             # [batch, n_anchors_all, 85]
             outputs = torch.cat(
                 [x.flatten(start_dim=2) for x in outputs], dim=2
-            ).permute(0, 2, 1)          # torch.Size([1, 8400, 85])
+            ).permute(0, 2, 1)
             if self.decode_in_inference:
                 return self.decode_outputs(outputs, dtype=xin[0].type())
             else:
@@ -231,20 +231,20 @@ class YOLOXHead(nn.Module):
         output[..., :2] = (output[..., :2] + grid) * stride
         output[..., 2:4] = torch.exp(output[..., 2:4]) * stride
         return output, grid
-    # torch.Size([1, 8400, 85])
+
     def decode_outputs(self, outputs, dtype):
         grids = []
         strides = []
-        for (hsize, wsize), stride in zip(self.hw, self.strides):           # 80 80 8
+        for (hsize, wsize), stride in zip(self.hw, self.strides):
             yv, xv = meshgrid([torch.arange(hsize), torch.arange(wsize)])
             grid = torch.stack((xv, yv), 2).view(1, -1, 2)
             grids.append(grid)
             shape = grid.shape[:2]
             strides.append(torch.full((*shape, 1), stride))
-        # strides torch.Size([1, 6400, 1]) torch.Size([1, 1600, 1]) torch.Size([1, 400, 1])
-        grids = torch.cat(grids, dim=1).type(dtype)     # torch.Size([1, 8400, 2])
-        strides = torch.cat(strides, dim=1).type(dtype) # torch.Size([1, 8400, 1])
-        # outputs torch.Size([1, 8400, 85]) 坐标还原到大图
+
+        grids = torch.cat(grids, dim=1).type(dtype)
+        strides = torch.cat(strides, dim=1).type(dtype)
+
         outputs = torch.cat([
             (outputs[..., 0:2] + grids) * strides,
             torch.exp(outputs[..., 2:4]) * strides,
@@ -540,10 +540,9 @@ class YOLOXHead(nn.Module):
         geometry_relation = is_in_centers[:, anchor_filter]
 
         return anchor_filter, geometry_relation
-    # cost : torch.Size([1, 27])
-    # pair_wise_ious:torch.Size([1, 27])            [7.]  1  21504
+
     def simota_matching(self, cost, pair_wise_ious, gt_classes, num_gt, fg_mask):
-        matching_matrix = torch.zeros_like(cost, dtype=torch.uint8)     # torch.Size([1, 27])
+        matching_matrix = torch.zeros_like(cost, dtype=torch.uint8)
 
         n_candidate_k = min(10, pair_wise_ious.size(1))
         topk_ious, _ = torch.topk(pair_wise_ious, n_candidate_k, dim=1)
@@ -556,20 +555,20 @@ class YOLOXHead(nn.Module):
 
         del topk_ious, dynamic_ks, pos_idx
 
-        anchor_matching_gt = matching_matrix.sum(0)     # (27, )
+        anchor_matching_gt = matching_matrix.sum(0)
         # deal with the case that one anchor matches multiple ground-truths
         if anchor_matching_gt.max() > 1:
             multiple_match_mask = anchor_matching_gt > 1
             _, cost_argmin = torch.min(cost[:, multiple_match_mask], dim=0)
             matching_matrix[:, multiple_match_mask] *= 0
             matching_matrix[cost_argmin, multiple_match_mask] = 1
-        fg_mask_inboxes = anchor_matching_gt > 0    # (27, )
-        num_fg = fg_mask_inboxes.sum().item()       # 1
+        fg_mask_inboxes = anchor_matching_gt > 0
+        num_fg = fg_mask_inboxes.sum().item()
 
-        fg_mask[fg_mask.clone()] = fg_mask_inboxes  # (21504,)
-        # 判断和哪个gt匹配
-        matched_gt_inds = matching_matrix[:, fg_mask_inboxes].argmax(0)         # [0]
-        gt_matched_classes = gt_classes[matched_gt_inds]                        # [7]
+        fg_mask[fg_mask.clone()] = fg_mask_inboxes
+
+        matched_gt_inds = matching_matrix[:, fg_mask_inboxes].argmax(0)
+        gt_matched_classes = gt_classes[matched_gt_inds]
 
         pred_ious_this_matching = (matching_matrix * pair_wise_ious).sum(0)[
             fg_mask_inboxes
