@@ -11,60 +11,13 @@ from sklearn.datasets import make_circles
 from Sinkhorn_Knopp import compute_optimal_transport
 
 
-
+# SinkhornKnopp应用实例_领域自适应
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import train_test_split
 
 
-Xtr, Xte, ytr, yte = train_test_split(*make_blobs(n_samples=200, centers=3, cluster_std=1.5), test_size=0.5)
 
-Xte += np.random.randn(*Xte.shape) * 2 + np.array([[2, -3]]) 
-
-
-# In[56]:
-
-
-fig, ax = plt.subplots()
-
-for cl, col in zip(range(3), ['blue','orange', 'green']):
-    X = Xtr[ytr==cl,:]
-    ax.scatter(X[:,0], X[:,1], color=col, label='class {}'.format(cl+1))
-    
-ax.scatter(Xte[:,0], Xte[:,1], color='gray', alpha=0.8, label='test') 
-ax.legend(loc=0)
-
-
-# In[57]:
-
-
-# Distance metric
-M = pairwise_distances(Xtr, Xte, metric='euclidean')
-# Uniform weights
-n, m = M.shape
-r = np.ones(n) / n
-c = np.ones(m) / m
-P, d = compute_optimal_transport(M, r, c, lam=50, epsilon=1e-6)
-
-
-# In[58]:
-
-
-fig, ax = plt.subplots()
-
-for i in range(Xtr.shape[0]):
-    for j in range(Xte.shape[0]):
-        if P[i,j] > 1e-4:
-            ax.plot([Xtr[i,0], Xte[j,0]], [Xtr[i,1], Xte[j,1]], color='red', alpha=P[i,j]*100)
-            
-for cl, col in zip(range(3), ['blue','orange', 'green']):
-    X = Xtr[ytr==cl,:]
-    ax.scatter(X[:,0], X[:,1], color=col, label='class {}'.format(cl+1))
-    
-ax.scatter(Xte[:,0], Xte[:,1], color='gray', alpha=0.8, label='test')
-            
-ax.legend(loc=0)
-
-
+# SinkhornKnopp应用实例_颜色迁移
 # ## Color transfer
 # 
 # See `color_transfer.py` module!

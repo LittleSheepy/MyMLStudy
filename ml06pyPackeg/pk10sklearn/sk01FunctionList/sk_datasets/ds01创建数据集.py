@@ -16,4 +16,5 @@ def my_make_circles():
     ax.scatter(X2[:, 0], X2[:, 1], color='orange', label='set 2')
     ax.legend(loc=0)
     plt.show()
+    return X1, X2
 
