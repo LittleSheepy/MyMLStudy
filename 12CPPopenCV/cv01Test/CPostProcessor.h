@@ -4,23 +4,23 @@
 #include <string>
 #include <map>
 using namespace std;
-using namespace cv;
-// è¦´Ã½á¹¹Ìå
+
+// ç‘•ç–µç»“æ„ä½“
 struct CDefect
 {
-	Point p1;	// ×óÉÏµã
-	Point p2;	// ÓÒÏÂµã
-	int   area;	// È±ÏİÃæ»ı
-	int	  type;	// È±ÏİÀàĞÍ ÆÆËğ¡¢Ã«±ß
+	cv::Point p1;	// å·¦ä¸Šç‚¹
+	cv::Point p2;	// å³ä¸‹ç‚¹
+	int   area;	// ç¼ºé™·é¢ç§¯
+	int	  type;	// ç¼ºé™·ç±»å‹ ç ´æŸã€æ¯›è¾¹
 	CDefect() {}
-	CDefect(Point p1, Point p2, int area, int type) :p1(p1), p2(p2), area(area), type(type) {}
+	CDefect(cv::Point p1, cv::Point p2, int area, int type) :p1(p1), p2(p2), area(area), type(type) {}
 };
 
-// è¦´Ã½á¹¹Ìå
+// ç‘•ç–µç»“æ„ä½“
 struct CArrayCfg
 {
-	int   cnt;	// ÔÊĞíÈ±Ïİ¸öÊı
-	int	  area;	// ÔÊĞíÈ±ÏİÃæ»ı
+	int   cnt;	// å…è®¸ç¼ºé™·ä¸ªæ•°
+	int	  area;	// å…è®¸ç¼ºé™·é¢ç§¯
 	CArrayCfg() :cnt(0), area(0) {}
 	CArrayCfg(int type, int area) :cnt(cnt), area(area) {}
 };
@@ -31,12 +31,12 @@ public:
 	string name;
 	string arr_name;
 	int serial;
-	Point p1;
-	Point p2;
+	cv::Point p1;
+	cv::Point p2;
 	int	area;
 	int n_defect;
 	bool state;
-	CBox(string name, string arr_name, int serial, Point p1, Point p2, int	area=0) :
+	CBox(string name, string arr_name, int serial, cv::Point p1, cv::Point p2, int	area = 0) :
 		name(name), arr_name(arr_name), serial(serial), p1(p1), p2(p2), area(area), n_defect(0), state(true) {}
 };
 class CBoxArray {
@@ -53,12 +53,12 @@ public:
 	void imgCfgInitByOffSet();
 	cv::Point findWhiteArea(cv::Mat img_bgr);
 	void setOffSet(cv::Mat img_bgr);
-	// v_img ËÄÕÅÍ¼Æ¬
-	// vv_defect ËÄ¸öCDefectÈ±ÏİÁĞ±í
-	bool Process(vector<Mat> v_img, vector<vector<CDefect>> vv_defect);
-	void processImg(Mat img, CDefect defect, int serial);
-	Mat getMask(vector<Point> points);
-	void savePara(vector<Mat> v_img, vector<vector<CDefect>> vv_defect);
+	// v_img å››å¼ å›¾ç‰‡
+	// vv_defect å››ä¸ªCDefectç¼ºé™·åˆ—è¡¨ 
+	bool Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect);
+	void processImg(cv::Mat img, CDefect defect, int serial);
+	cv::Mat getMask(vector<cv::Point> points);
+	void savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect);
 public:
 	vector<CBox>			m_img1Cfg;
 	vector<CBox>			m_img2Cfg;
@@ -68,10 +68,10 @@ public:
 	map<string, int>		m_brokenCnt;
 	map<string, int>		m_brokenCfg;
 	CBoxArray m_objs;
-	// Ä£°å
+	// æ¨¡æ¿
 	int offset = 0;
 	int template_x = 1260;
-	Mat img_template;
+	cv::Mat img_template;
 	string template_path = "template.bmp";
 };
 
