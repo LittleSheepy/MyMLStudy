@@ -155,12 +155,12 @@
   <ItemGroup>
     <ClCompile Include="CPostProcessor.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="NumRec.cpp" />
+    <ClCompile Include="CNumRec.cpp" />
     <ClCompile Include="quickdemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CPostProcessor.h" />
-    <ClInclude Include="NumRec.h" />
+    <ClInclude Include="CNumRec.h" />
     <ClInclude Include="quickopencv.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

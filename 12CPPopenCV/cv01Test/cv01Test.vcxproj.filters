@@ -24,7 +24,7 @@
     <ClCompile Include="quickdemo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="NumRec.cpp">
+    <ClCompile Include="CNumRec.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +35,7 @@
     <ClInclude Include="quickopencv.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="NumRec.h">
+    <ClInclude Include="CNumRec.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
