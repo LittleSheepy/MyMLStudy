@@ -2,13 +2,20 @@
 #include <opencv2/opencv.hpp>
 #include <string>
 #include <vector>
-//using namespace cv;
 using namespace std;
+
+struct CNumRecPara
+{
+    cv::Mat img_bgr;
+    string str_result;
+    string str_pre_saved;
+};
 
 class CNumRec {
 public:
     CNumRec();
     CNumRec(const std::string template_dir);
+    bool processImage(CNumRecPara& num_rec_para);
     bool processImage(const cv::Mat& img_gray, string& str_result);
     string processImage(const cv::Mat& img_gray);
 private:
