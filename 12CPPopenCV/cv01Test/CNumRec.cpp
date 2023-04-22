@@ -38,7 +38,7 @@ CNumRec::CNumRec() {
     m_img_white_gray = cv::imread(white_template_path, cv::IMREAD_GRAYSCALE);
 #ifdef DEBUG
     struct stat info;
-    if(fs::is_directory(img_save_path)) {
+    if (fs::is_directory(img_save_path)) {
         if (fs::exists(img_save_path)) { // 判断文件夹是否存在
             std::cout << "Folder exists!" << std::endl;
         }
@@ -79,8 +79,8 @@ cv::Rect CNumRec::findWhiteArea(const cv::Mat& img_gray) {
 #ifdef DEBUG
     cv::Mat img_bgr_contours;
     cv::cvtColor(img_gray, img_bgr_contours, cv::COLOR_GRAY2BGR);
-    drawContours(img_bgr_contours, contours, -1, cv::Scalar(0, 0, 255), 1);
-    map_img["findWhiteArea_contours"] = img_gray_binary;
+    drawContours(img_bgr_contours, contours, -1, cv::Scalar(0, 0, 255), 2);
+    map_img["findWhiteArea_contours"] = img_bgr_contours;
 #endif // DEBUG
     std::vector<std::vector<cv::Point>> contours_poly(contours.size());
     std::vector<cv::Rect> boundRect(contours.size());
@@ -326,7 +326,7 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
     }
 
 #ifdef DEBUG
-    static int i=0;
+    static int i = 0;
 
     //Create a time_t object and get the current time
     time_t now = time(0);
@@ -337,17 +337,18 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
     ss << std::put_time(&ltm, "%Y%m%d%H%M");
     std::string str_time = ss.str();
     string file_path = NumRecBGR;
-    file_path += str_time + "_" + to_string(i) + "_"  + str_result;
-    string save_path = file_path  + ".bmp";
+    file_path += str_time + "_" + to_string(i) + "_" + str_result;
+    string save_path = file_path + ".bmp";
     cv::imwrite(save_path, img_bgr);
     cv::imwrite("img.bmp", img_bgr);
     // 保存debug图
     file_path = NumRecDebug;
+    file_path += str_time + "_" + to_string(i) + "_" + str_result;
     for (const auto& pair : map_img) {
         string key = pair.first;
-        cv:: Mat img = pair.second;
+        cv::Mat img = pair.second;
         save_path = file_path + "_" + key + ".bmp";
-        cv::imwrite(save_path, img_bgr);
+        cv::imwrite(save_path, img);
     }
 #endif // DEBUG
     return true;
@@ -561,11 +562,11 @@ string CNumRec::processImage1(const cv::Mat& img_gray) {
 /// 测试代码
 /// </summary>
 void NumRecTest() {
-//    cv::String dir_root = "D:/02dataset/01work/05nanjingLG/03NumRec/";
-    cv::String dir_root = "D:/02dataset/01work/01TuoPanLJ/03NumRec/";
+    cv::String dir_root = "D:/02dataset/01work/05nanjingLG/03NumRec/";
+    //cv::String dir_root = "D:/02dataset/01work/01TuoPanLJ/03NumRec/";
     cv::String dir_template = dir_root + "/template/";
-    cv::String dir_imgall = dir_root + "/imgall/";
-    cv::String img_path = dir_imgall + "Image_20230415092911313.bmp";
+    cv::String dir_imgall = dir_root + "/imgall0422/";
+    cv::String img_path = dir_imgall + "img_3_0538062.bmp";
     cv::Mat img_gray = cv::imread(img_path, cv::IMREAD_GRAYSCALE);
     CNumRec nr = CNumRec(dir_template);
     string str_result;
