@@ -1,4 +1,5 @@
 // NumRec.cpp
+//#include "pch.h"
 #include <iostream>
 #include <numeric>
 #include <Windows.h>
@@ -10,19 +11,19 @@
 #include "CNumRec.h"
 
 
-#define DEBUG 0
+#define PP_DEBUG 0
 
-#ifdef DEBUG
-#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
-#include <experimental/filesystem> // C++14标准引入的文件系统库
-#include <sys/stat.h>
-namespace fs = std::experimental::filesystem;
+#ifdef PP_DEBUG
+//#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
+//#include <experimental/filesystem> // C++14标准引入的文件系统库
+//#include <sys/stat.h>
+//namespace fs = std::experimental::filesystem;
 //string img_save_path_str = "D:/00myGitHub/00MyMLStudy/12CPPopenCV/bin/img_save/";
 string img_save_path = "./img_save/";
 string NumRecBGR = img_save_path + "NumRecBGR/";
 string NumRecDebug = img_save_path + "NumRecDebug/";
 map<string, cv::Mat> map_img;
-#endif // DEBUG
+#endif // PP_DEBUG
 
 
 CNumRec::CNumRec() {
@@ -36,14 +37,14 @@ CNumRec::CNumRec() {
     }
     cv::String white_template_path = template_dir + "white_template1.bmp";
     m_img_white_gray = cv::imread(white_template_path, cv::IMREAD_GRAYSCALE);
-#ifdef DEBUG
-    struct stat info;
-    if (fs::is_directory(img_save_path)) {
-        if (fs::exists(img_save_path)) { // 判断文件夹是否存在
-            std::cout << "Folder exists!" << std::endl;
-        }
-    }
-#endif // DEBUG
+#ifdef PP_DEBUG
+    //struct stat info;
+    //if(fs::is_directory(img_save_path)) {
+    //    if (fs::exists(img_save_path)) { // 判断文件夹是否存在
+    //        std::cout << "Folder exists!" << std::endl;
+    //    }
+    //}
+#endif // PP_DEBUG
 }
 
 CNumRec::CNumRec(const std::string template_dir = "./") {
@@ -56,32 +57,40 @@ CNumRec::CNumRec(const std::string template_dir = "./") {
     }
     cv::String white_template_path = template_dir + "white_template1.bmp";
     m_img_white_gray = cv::imread(white_template_path, cv::IMREAD_GRAYSCALE);
-#ifdef DEBUG
-    struct stat info;
-    if (fs::is_directory(img_save_path)) {
-        if (fs::exists(img_save_path)) { // 判断文件夹是否存在
-            std::cout << "Folder exists!" << std::endl;
-        }
-    }
-#endif // DEBUG
+#ifdef PP_DEBUG
+    //struct stat info;
+    //if (fs::is_directory(img_save_path)) {
+    //    if (fs::exists(img_save_path)) { // 判断文件夹是否存在
+    //        std::cout << "Folder exists!" << std::endl;
+    //    }
+    //}
+#endif // PP_DEBUG
 }
 
 cv::Rect CNumRec::findWhiteArea(const cv::Mat& img_gray) {
+    char buf[125];
+    OutputDebugStringA("<<findWhiteArea>> enter findWhiteArea");
     cv::Mat img_gray_binary;
     cv::threshold(img_gray, img_gray_binary, 250, 255, cv::THRESH_BINARY);
-#ifdef DEBUG
+#ifdef PP_DEBUG
+    static int index;
+    string file_name_debug = NumRecDebug + to_string(index) + ".bmp";
+    cv::imwrite(file_name_debug, img_gray);
     map_img["findWhiteArea_img_gray_binary"] = img_gray_binary;
-#endif // DEBUG
+#endif // PP_DEBUG
 
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;
     cv::findContours(img_gray_binary, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_SIMPLE);
-#ifdef DEBUG
+
+#ifdef PP_DEBUG
+    sprintf_s(buf, "<<findWhiteArea>> findContours ok");
+    OutputDebugStringA(buf);
     cv::Mat img_bgr_contours;
     cv::cvtColor(img_gray, img_bgr_contours, cv::COLOR_GRAY2BGR);
     drawContours(img_bgr_contours, contours, -1, cv::Scalar(0, 0, 255), 2);
     map_img["findWhiteArea_contours"] = img_bgr_contours;
-#endif // DEBUG
+#endif // PP_DEBUG
     std::vector<std::vector<cv::Point>> contours_poly(contours.size());
     std::vector<cv::Rect> boundRect(contours.size());
     for (size_t i = 0; i < contours.size(); i++)
@@ -93,7 +102,7 @@ cv::Rect CNumRec::findWhiteArea(const cv::Mat& img_gray) {
     vector<cv::Rect> filteredRects;
     for (cv::Rect rect : boundRect)
     {
-        if (rect.area() >= 150000 && rect.area() < 450000)
+        if (rect.area() >= 100000 && rect.area() < 450000)
         {
             filteredRects.push_back(rect);
         }
@@ -103,19 +112,32 @@ cv::Rect CNumRec::findWhiteArea(const cv::Mat& img_gray) {
     if (filteredRects.size() > 0) {
         result_rect = filteredRects[0];
     }
+    else {
+        sprintf_s(buf, "<<findWhiteArea>> findWhiteArea got fiald");
+        OutputDebugStringA(buf);
+    }
+
+    sprintf_s(buf, "<<findWhiteArea>> result_rect xywh %d %d %d %d", result_rect.x, result_rect.y, result_rect.width, result_rect.height);
+    OutputDebugStringA(buf);
+    sprintf_s(buf, "<<findWhiteArea>> findWhiteArea out");
+    OutputDebugStringA(buf);
     return result_rect;
 }
 
 cv::Rect CNumRec::findNumArea(const cv::Mat& img_cut_binary_img) {
-
+    char buf[125];
+    OutputDebugStringA("<<findNumArea>> findNumArea  enter ");
 
     // Morphological operations
     cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(30, 3));
-    cv::Mat kernel3 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(7, 7));
+    cv::Mat kernel3 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 1));
+    cv::Mat kernel7 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(7, 3));
+    cv::Mat img_openning;
     cv::Mat img_closing;
-    cv::morphologyEx(img_cut_binary_img, img_closing, cv::MORPH_CLOSE, kernel);
     cv::Mat dilated_img;
-    cv::dilate(img_closing, dilated_img, kernel3, cv::Point(-1, -1), 1);
+    cv::morphologyEx(img_cut_binary_img, img_openning, cv::MORPH_OPEN, kernel3);
+    cv::morphologyEx(img_openning, img_closing, cv::MORPH_CLOSE, kernel);
+    cv::dilate(img_closing, dilated_img, kernel7, cv::Point(-1, -1), 1);
 
     // Find contours
     std::vector<std::vector<cv::Point>> contours;
@@ -139,6 +161,8 @@ cv::Rect CNumRec::findNumArea(const cv::Mat& img_cut_binary_img) {
             result_rect = rect;
         }
     }
+    sprintf_s(buf, "<<findNumArea>> findNumArea out");
+    OutputDebugStringA(buf);
     return result_rect;
 }
 
@@ -166,6 +190,8 @@ std::vector<int> CNumRec::x_projection(cv::Mat binary_img) {
 
 // y 投影
 vector<array<int, 2>> CNumRec::y_projection(cv::Mat binary_img_src) {
+    char buf[125];
+    OutputDebugStringA("<<<<<<<<y_projection>>>>>>>>>>> y_projection enter");
     cv::Mat binary_img;
     cv::threshold(binary_img_src, binary_img, 250, 1, cv::THRESH_BINARY);
     cv::Mat vertical_projection;
@@ -204,10 +230,13 @@ vector<array<int, 2>> CNumRec::y_projection(cv::Mat binary_img_src) {
             }
         }
     }
+    OutputDebugStringA("<<<<<<<<y_projection>>>>>>>>>>> y_projection out");
     return white_area_merge;
 }
 
 vector<cv::Rect> CNumRec::getNumBoxByProjection(cv::Mat binary_img) {
+    char buf[125];
+    OutputDebugStringA("<<<<<<<<getNumBoxByProjection>>>>>>>>>>> getNumBoxByProjection enter");
     std::vector<std::array<int, 2>> num_area_x_list = y_projection(binary_img);
     std::vector<std::vector<int>> num_area_y_list;
     vector<cv::Rect> resultRect;
@@ -216,7 +245,10 @@ vector<cv::Rect> CNumRec::getNumBoxByProjection(cv::Mat binary_img) {
         std::vector<int> num_area_y = x_projection(binary_img_oneNum);
         num_area_y_list.push_back({ num_area_y[0], num_area_y[1] });
         resultRect.push_back(cv::Rect(num_area_x[0], num_area_y[0], num_area_x[1] - num_area_x[0], num_area_y[1] - num_area_y[0]));
+        sprintf_s(buf, "NumBox: xywh: %d %d %d %d", num_area_x[0], num_area_y[0], num_area_x[1] - num_area_x[0], num_area_y[1] - num_area_y[0]);
+        OutputDebugStringA(buf);
     }
+    OutputDebugStringA("<<<<<<<<getNumBoxByProjection>>>>>>>>>>> getNumBoxByProjection out");
     return resultRect;
 }
 vector<cv::Rect> CNumRec::getNumBoxByContours(cv::Mat binary_img) {
@@ -234,7 +266,24 @@ vector<cv::Rect> CNumRec::getNumBoxByContours(cv::Mat binary_img) {
     return boundRect;
 }
 
+bool CNumRec::processImage(CNumRecPara& num_rec_para) {
+    return true;
+}
+
 bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
+    char buf[125];
+    OutputDebugStringA("<<<<<<<<processImage>>>>>>>>>>> processImage enter >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+#ifdef PP_DEBUG
+    //Create a time_t object and get the current time
+    time_t now = time(0);
+    //Create a tm struct to hold the current time
+    tm ltm;
+    localtime_s(&ltm, &now);
+    std::stringstream ss;
+    ss << std::put_time(&ltm, "%Y%m%d%H%M");
+    std::string str_time = ss.str();
+#endif // PP_DEBUG
+
     if (img_bgr.empty()) {
         return false;
     }
@@ -245,16 +294,15 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
     }
     else // if image is not grayscale
     {
-        cout << "Image is color" << endl;
         cvtColor(img_bgr, img_gray, cv::COLOR_BGR2GRAY); // convert color image to grayscale
     }
     // 查找白色区域
     cv::Rect whiteArea_rect;
     whiteArea_rect = findWhiteArea(img_gray);
     cv::Mat img_cut = img_gray(whiteArea_rect);
-    resize(img_cut, img_cut, cv::Size(693, 417), 0, 0, cv::INTER_LINEAR);
+    //resize(img_cut, img_cut, cv::Size(693, 417), 0, 0, cv::INTER_LINEAR);
     cv::Mat img_cut_binary_img;
-    cv::threshold(img_cut, img_cut_binary_img, 200, 255, cv::THRESH_BINARY_INV);
+    cv::threshold(img_cut, img_cut_binary_img, 250, 255, cv::THRESH_BINARY_INV);
 
     // 查找数字区域
     cv::Rect result_rect = findNumArea(img_cut_binary_img);
@@ -263,15 +311,19 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
     cv::threshold(num_img, binary_img, 190, 255, cv::THRESH_BINARY_INV);
 
     // 大小标准化
-    int num_img_h = binary_img.rows;
-    int num_img_w = binary_img.cols;
-    float ratio = num_img_h / 35.0f;
-    int num_img_w_new = static_cast<int>(num_img_w / ratio);
-    cv::resize(binary_img, binary_img, cv::Size(num_img_w_new, 35));
-    cv::resize(num_img, num_img, cv::Size(num_img_w_new, 35));
+    //int num_img_h = binary_img.rows;
+    //int num_img_w = binary_img.cols;
+    //float ratio = num_img_h / 35.0f;
+    //int num_img_w_new = static_cast<int>(num_img_w / ratio);
+    //cv::resize(binary_img, binary_img, cv::Size(num_img_w_new, 35), 0,0,cv::INTER_LINEAR);
+    //cv::resize(num_img, num_img, cv::Size(num_img_w_new, 35), 0, 0, cv::INTER_LINEAR);
 
     vector<cv::Rect> result_boxes = getNumBoxByProjection(binary_img);
-
+    // 判断模版存在
+    if (m_template_list[0].empty()) {
+        OutputDebugStringA("<<<<<<processImage>>>>>>  template file is not exist!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        return false;
+    }
     for (int index = 0; index < 7; index++) {
         cv::Rect box = result_boxes[index];
         int x = box.x, y = box.y, w = box.width, h = box.height;
@@ -290,6 +342,12 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
         int w_new = w + 4;
         cv::Mat img_tmp = num_img(cv::Rect(x_new, y_new, w_new, h_new));
         cv::resize(img_tmp, img_tmp, m_template_list[0].size(), 0, 0, cv::INTER_LINEAR);
+
+#ifdef PP_DEBUG
+        string img_num_little = NumRecDebug + str_time + "_img_num_little_" + to_string(index) + ".bmp";
+        cv::imwrite(img_num_little, img_tmp);
+#endif // PP_DEBUG
+
         double max_score = 0;
         int num_result = -1;
         std::vector<double> scores;
@@ -325,23 +383,15 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
         str_result = str_result + std::to_string(num_result);
     }
 
-#ifdef DEBUG
+#ifdef PP_DEBUG
     static int i = 0;
-
-    //Create a time_t object and get the current time
-    time_t now = time(0);
-    //Create a tm struct to hold the current time
-    tm ltm;
-    localtime_s(&ltm, &now);
-    std::stringstream ss;
-    ss << std::put_time(&ltm, "%Y%m%d%H%M");
-    std::string str_time = ss.str();
     string file_path = NumRecBGR;
     file_path += str_time + "_" + to_string(i) + "_" + str_result;
     string save_path = file_path + ".bmp";
     cv::imwrite(save_path, img_bgr);
     cv::imwrite("img.bmp", img_bgr);
     // 保存debug图
+    map_img["processImage_NumArea_binary_img"] = binary_img;
     file_path = NumRecDebug;
     file_path += str_time + "_" + to_string(i) + "_" + str_result;
     for (const auto& pair : map_img) {
@@ -350,90 +400,17 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
         save_path = file_path + "_" + key + ".bmp";
         cv::imwrite(save_path, img);
     }
-#endif // DEBUG
+#endif // PP_DEBUG
+
+    sprintf_s(buf, "<<<<<<processImage>>>>>> str_result=%s", str_result.c_str());
+    OutputDebugStringA(buf);
+    OutputDebugStringA("<<<<<<<<processImage>>>>>>>>>>> processImage out >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     return true;
 }
 
-string CNumRec::processImage(const cv::Mat& img_gray) {
-    cv::Mat img_gray_gray;
-    cv::cvtColor(img_gray, img_gray_gray, cv::COLOR_BGR2GRAY);
-    // 查找白色区域
-    cv::Rect whiteArea_rect;
-    whiteArea_rect = findWhiteArea(img_gray_gray);
-    cv::Mat img_cut = img_gray_gray(whiteArea_rect);
-    resize(img_cut, img_cut, cv::Size(693, 417), 0, 0, cv::INTER_LINEAR);
-    cv::Mat img_cut_binary_img;
-    cv::threshold(img_cut, img_cut_binary_img, 200, 255, cv::THRESH_BINARY_INV);
-
-    // 查找数字区域
-    cv::Rect result_rect = findNumArea(img_cut_binary_img);
-    cv::Mat num_img = img_cut(cv::Rect(result_rect.x, result_rect.y, result_rect.width, result_rect.height));
-    cv::Mat binary_img;
-    cv::threshold(num_img, binary_img, 190, 255, cv::THRESH_BINARY_INV);
-
-    // 大小标准化
-    int num_img_h = binary_img.rows;
-    int num_img_w = binary_img.cols;
-    float ratio = num_img_h / 35.0f;
-    int num_img_w_new = static_cast<int>(num_img_w / ratio);
-    cv::resize(binary_img, binary_img, cv::Size(num_img_w_new, 35));
-    cv::resize(num_img, num_img, cv::Size(num_img_w_new, 35));
-
-    vector<cv::Rect> result_boxes = getNumBoxByProjection(binary_img);
-
+string CNumRec::processImage(const cv::Mat& img_bgr) {
     std::string str_result = "";
-    for (int index = 0; index < 7; index++) {
-        cv::Rect box = result_boxes[index];
-        int x = box.x, y = box.y, w = box.width, h = box.height;
-        int y_new = y - 1;
-        int h_new = h + 2;
-        if (y_new < 0) {
-            y_new = 0;
-        }
-        if (y_new + h_new > num_img.rows) {
-            h_new = num_img.rows - y_new;
-        }
-        int x_new = x - 2;
-        if (x_new < 0) {
-            x_new = 0;
-        }
-        int w_new = w + 4;
-        cv::Mat img_tmp = num_img(cv::Rect(x_new, y_new, w_new, h_new));
-        cv::resize(img_tmp, img_tmp, m_template_list[0].size(), 0, 0, cv::INTER_LINEAR);
-        double max_score = 0;
-        int num_result = -1;
-        std::vector<double> scores;
-        for (int i = 0; i < m_template_list.size(); i++) {
-            cv::Mat template_img = m_template_list[i];
-            cv::Mat res;
-            cv::matchTemplate(img_tmp, template_img, res, cv::TM_CCOEFF_NORMED);
-            double max_val;
-            cv::minMaxLoc(res, nullptr, &max_val);
-            scores.push_back(max_val);
-            if (max_val > max_score) {
-                max_score = max_val;
-                num_result = i;
-            }
-        }
-        std::vector<int> scores_indices(scores.size());
-        std::iota(scores_indices.begin(), scores_indices.end(), 0);
-        std::sort(scores_indices.begin(), scores_indices.end(), [&](int i, int j) { return scores[i] < scores[j]; });
-        if (w > 12) {
-            num_result = scores_indices[scores_indices.size() - 1];
-            if (num_result == 1) {
-                num_result = scores_indices[scores_indices.size() - 2];
-            }
-        }
-        else {
-            num_result = 1;
-        }
-        std::cout << index << " scores: ";
-        for (double score : scores) {
-            std::cout << score << " ";
-        }
-        std::cout << std::endl;
-        str_result = str_result + std::to_string(num_result);
-    }
+    processImage(img_bgr, str_result);
     return str_result;
 }
 string CNumRec::processImage1(const cv::Mat& img_gray) {

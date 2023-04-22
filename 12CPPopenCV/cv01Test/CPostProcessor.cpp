@@ -251,7 +251,7 @@ void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_
 }
 bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect) {
     char buf[128];
-    OutputDebugStringA("<<Process>> begin Process");
+    OutputDebugStringA("<<Process>> begin Process>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 #ifdef DEBUG
     savePara(v_img, vv_defect);
 #endif // DEBUG
@@ -291,7 +291,10 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
             std::string key = pair.first;
             int value = pair.second;
             outputFile << key << " " << value << "\n";
+            sprintf_s(buf, "<<Process>> result : %s : %d", key.c_str(), value);
+            OutputDebugStringA(buf);
         }
+
         // 保存结果
         outputFile << "\nresult:" << " " << result << "\n";
         // close the file
@@ -300,7 +303,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
 #endif // DEBUG
     sprintf_s(buf, "<<Process>> result : %s", result ? "true" : "false");
     OutputDebugStringA(buf);
-    OutputDebugStringA("<<Process>> begin Process");
+    OutputDebugStringA("<<Process>> Process out <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
     return result;
 }
 
