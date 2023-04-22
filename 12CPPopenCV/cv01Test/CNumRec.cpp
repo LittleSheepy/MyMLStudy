@@ -363,6 +363,7 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
                 num_result = i;
             }
         }
+
         std::vector<int> scores_indices(scores.size());
         std::iota(scores_indices.begin(), scores_indices.end(), 0);
         std::sort(scores_indices.begin(), scores_indices.end(), [&](int i, int j) { return scores[i] < scores[j]; });
@@ -370,6 +371,22 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
             num_result = scores_indices[scores_indices.size() - 1];
             if (num_result == 1) {
                 num_result = scores_indices[scores_indices.size() - 2];
+            }
+            if (num_result == 0) {
+                cv::Mat img_center = img_tmp(cv::Rect(8, 10, 5, 12));
+                int sum = cv::sum(img_center)[0];
+                if (sum > 1000) {
+                    if (scores_indices[scores_indices.size() - 2] == 9) {
+                        num_result = 9;
+                    }
+                    if (scores_indices[scores_indices.size() - 2] == 6) {
+                        num_result = 6;
+                    }
+                    if (scores_indices[scores_indices.size() - 2] == 8) {
+                        num_result = 8;
+                    }
+                }
+
             }
         }
         else {
