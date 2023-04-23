@@ -79,7 +79,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
+    <IncludePath>D:\tools\opencv455\build\include\opencv2;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
     <IntDir>../MiddleDirectory</IntDir>
     <OutDir>$(SolutionDir)bin</OutDir>
@@ -161,6 +161,7 @@
   <ItemGroup>
     <ClInclude Include="CPostProcessor.h" />
     <ClInclude Include="CNumRec.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="quickopencv.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

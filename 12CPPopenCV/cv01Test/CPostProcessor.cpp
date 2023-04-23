@@ -301,6 +301,14 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
         }
     }
 #ifdef PP_DEBUG
+    //Create a time_t object and get the current time
+    time_t now = time(0);
+    //Create a tm struct to hold the current time
+    tm ltm;
+    localtime_s(&ltm, &now);
+    std::stringstream ss;
+    ss << std::put_time(&ltm, "%Y%m%d%H%M");
+    std::string str_time = ss.str();
     string m_brokenCnt_file = PostProcessDebug + "m_brokenCnt.txt";
     std::ofstream outputFile(m_brokenCnt_file);
     if (outputFile.is_open()) {
