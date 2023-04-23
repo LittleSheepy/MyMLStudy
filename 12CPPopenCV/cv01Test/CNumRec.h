@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 using namespace std;
-
+// 参数
 struct CNumRecPara
 {
     cv::Mat img_bgr;

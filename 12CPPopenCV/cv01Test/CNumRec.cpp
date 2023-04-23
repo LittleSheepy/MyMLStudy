@@ -27,7 +27,7 @@ map<string, cv::Mat> map_img;
 
 
 CNumRec::CNumRec() {
-    string template_dir = "./";
+    string template_dir = "./Template/";
     // Load templates
     for (int i = 0; i < 10; i++) {
         cv::Mat template_img = cv::imread(template_dir + std::to_string(i) + ".bmp", cv::IMREAD_GRAYSCALE);
@@ -47,7 +47,7 @@ CNumRec::CNumRec() {
 #endif // PP_DEBUG
 }
 
-CNumRec::CNumRec(const std::string template_dir = "./") {
+CNumRec::CNumRec(const std::string template_dir = "./Template/") {
     // Load templates
     for (int i = 0; i < 10; i++) {
         cv::Mat template_img = cv::imread(template_dir + std::to_string(i) + ".bmp", cv::IMREAD_GRAYSCALE);
@@ -367,14 +367,26 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
         std::vector<int> scores_indices(scores.size());
         std::iota(scores_indices.begin(), scores_indices.end(), 0);
         std::sort(scores_indices.begin(), scores_indices.end(), [&](int i, int j) { return scores[i] < scores[j]; });
+        sprintf_s(buf, "scores_indices -2 -1 : %f %f", scores[scores_indices[scores_indices.size() - 2]], scores[scores_indices[scores_indices.size() - 1]]);
+        OutputDebugStringA(buf);
         if (w > 12) {
+
+            cv::Mat img_tmp_binary = binary_img(cv::Rect(x_new, y_new, w_new, h_new));
             num_result = scores_indices[scores_indices.size() - 1];
             if (num_result == 1) {
                 num_result = scores_indices[scores_indices.size() - 2];
             }
+            //if (num_result == 6) {
+            //    cv::Mat img_center = img_tmp_binary(cv::Rect(8, 10, 5, 12));
+            //    cv::imwrite("img0.bmp", img_center);
+            //    int sum = cv::sum(img_center)[0];
+            //    sprintf_s(buf, "0000000   sum : %d", sum);
+            //}
             if (num_result == 0) {
-                cv::Mat img_center = img_tmp(cv::Rect(8, 10, 5, 12));
+                cv::Mat img_center = img_tmp_binary(cv::Rect(8, 10, 5, 12));
                 int sum = cv::sum(img_center)[0];
+                sprintf_s(buf, "0000000   sum : %d", sum);
+                OutputDebugStringA(buf);
                 if (sum > 1000) {
                     if (scores_indices[scores_indices.size() - 2] == 9) {
                         num_result = 9;
@@ -417,7 +429,7 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
         save_path = file_path + "_" + key + ".bmp";
         cv::imwrite(save_path, img);
     }
-#endif // PP_DEBUG
+#endif // PP_DEBUG 
 
     sprintf_s(buf, "<<<<<<processImage>>>>>> str_result=%s", str_result.c_str());
     OutputDebugStringA(buf);
