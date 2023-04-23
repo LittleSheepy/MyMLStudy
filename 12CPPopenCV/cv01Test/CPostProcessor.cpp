@@ -1,4 +1,5 @@
-#include <opencv2/opencv.hpp>
+#include "pch.h"
+#include <opencv.hpp>
 #include <fstream>
 #include <sys/stat.h>
 #include <direct.h>
@@ -7,9 +8,9 @@
 #include <filesystem>
 #include <Windows.h>
 
-#define DEBUG 0
+#define PP_DEBUG 0
 
-#ifdef DEBUG
+#ifdef PP_DEBUG
 #define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 #include <experimental/filesystem> // C++14标准引入的文件系统库
 #include <sys/stat.h>
@@ -19,7 +20,7 @@ string PostProcess_img_save_path = "./img_save/";
 string PostProcessAI_para = PostProcess_img_save_path + "AI_para/";
 string PostProcessDebug = PostProcess_img_save_path + "PostProcessDebug/";
 map<string, cv::Mat> PostProcess_map_img;
-#endif // DEBUG
+#endif // PP_DEBUG
 
 using namespace std;
 
@@ -29,7 +30,7 @@ using namespace std;
 #define BTOP 1600
 #define BBOTTOM 1800
 #define PIX_H   1233
-#define MM_H   84
+#define MM_H   90
 #define PIX_MM  (PIX_H/MM_H)                // 14'6785
 #define AREA25  int(PIX_MM*PIX_MM*25)
 #define AREA150  int(PIX_MM*PIX_MM*150)     // 32320
@@ -43,44 +44,6 @@ using namespace std;
 //      解释：bbl:bottom broken left
 // 
 CPostProcessor::CPostProcessor() {
-    m_img1Cfg = {
-        // 455-700 770-1000 1000-1300 1900-2300
-        {"1c1", "cb5", 1,cv::Point(450,CTOP),cv::Point(700,CBOTTOM),AREA150},
-        {"1c2", "cb5", 2,cv::Point(700,CTOP),cv::Point(1000,CBOTTOM),AREA150},
-        {"1c3", "cb1", 3,cv::Point(1000,CTOP),cv::Point(1430,CBOTTOM)},
-        {"1c4", "cb5", 4,cv::Point(1900,CTOP),cv::Point(2250,CBOTTOM),AREA150},
-
-        {"1b6", "bbl", 6,cv::Point(450,BTOP),cv::Point(1430,BBOTTOM),AREA25},
-        {"1b8", "bbl", 8,cv::Point(1430,BTOP),cv::Point(2250,BBOTTOM),AREA150},
-        {"1b2", "bbc", 2,cv::Point(2000,BTOP),cv::Point(2448,BBOTTOM)},
-    };
-    m_img2Cfg = {
-        {"2c5", "cb5", 5,cv::Point(600,CTOP),cv::Point(1200,CBOTTOM),AREA150},
-        {"2c6", "cb2", 6,cv::Point(1200,CTOP),cv::Point(1800,CBOTTOM)},
-
-        {"2b1", "bbc", 1,cv::Point(0,BTOP),cv::Point(2448,BBOTTOM)},
-    };
-    m_img3Cfg = {
-        {"3c7", "cb3", 7,cv::Point(300,CTOP),cv::Point(900,CBOTTOM)},
-        {"3c8", "cb6", 8,cv::Point(1000,CTOP),cv::Point(1600,CBOTTOM),AREA150},
-        {"3c9", "cb6", 9,cv::Point(2000,CTOP),cv::Point(2448,CBOTTOM),AREA150},
-
-        {"3b3", "bbc", 1,cv::Point(0,BTOP),cv::Point(2448,BBOTTOM)},
-    };
-    m_img4Cfg = {
-        {"4c9", "cb6", 9,cv::Point(100,CTOP),cv::Point(600,CBOTTOM),AREA150},
-        {"4c10", "cb4", 10,cv::Point(1100,CTOP),cv::Point(1400,CBOTTOM)},
-        {"4c11", "cb6", 11,cv::Point(1400,CTOP),cv::Point(1700,CBOTTOM),AREA150},
-        {"4c12", "cb6", 12,cv::Point(1800,CTOP),cv::Point(2100,CBOTTOM),AREA150},
-
-        {"4b3", "bbc", 1,cv::Point(0,BTOP),cv::Point(400,BBOTTOM)},
-        {"4b9", "bbr", 9,cv::Point(100,BTOP),cv::Point(1400,BBOTTOM),AREA150},
-        {"4b10", "bbr", 10,cv::Point(1100,BTOP),cv::Point(2100,BBOTTOM),AREA25},
-    };
-    m_imgCfg.push_back(m_img1Cfg);
-    m_imgCfg.push_back(m_img2Cfg);
-    m_imgCfg.push_back(m_img3Cfg);
-    m_imgCfg.push_back(m_img4Cfg);
     m_brokenCfg = {
         {"cb1",0},{"cb2",0},{"cb3",0},{"cb4",0},{"cb5",1},{"cb6",1},
         {"bbl",1},{"bbc",0},{"bbr",1},
@@ -98,7 +61,6 @@ void CPostProcessor::imgCfgInit() {
 
         {"1b6", "bbl", 6,cv::Point(450,BTOP),cv::Point(1430,BBOTTOM),AREA25},
         {"1b8", "bbl", 8,cv::Point(1430,BTOP),cv::Point(2250,BBOTTOM),AREA150},
-        {"1b2", "bbc", 2,cv::Point(2000,BTOP),cv::Point(2448,BBOTTOM)},
     };
     m_img2Cfg = {
         {"2c5", "cb5", 5,cv::Point(600,CTOP),cv::Point(1200,CBOTTOM),AREA150},
@@ -109,7 +71,6 @@ void CPostProcessor::imgCfgInit() {
     m_img3Cfg = {
         {"3c7", "cb3", 7,cv::Point(300,CTOP),cv::Point(900,CBOTTOM)},
         {"3c8", "cb6", 8,cv::Point(1000,CTOP),cv::Point(1600,CBOTTOM),AREA150},
-        {"3c9", "cb6", 9,cv::Point(2000,CTOP),cv::Point(2448,CBOTTOM),AREA150},
 
         {"3b3", "bbc", 1,cv::Point(0,BTOP),cv::Point(2448,BBOTTOM)},
     };
@@ -119,7 +80,6 @@ void CPostProcessor::imgCfgInit() {
         {"4c11", "cb6", 11,cv::Point(1400,CTOP),cv::Point(1700,CBOTTOM),AREA150},
         {"4c12", "cb6", 12,cv::Point(1800,CTOP),cv::Point(2100,CBOTTOM),AREA150},
 
-        {"4b3", "bbc", 1,cv::Point(0,BTOP),cv::Point(400,BBOTTOM)},
         {"4b9", "bbr", 9,cv::Point(100,BTOP),cv::Point(1400,BBOTTOM),AREA150},
         {"4b10", "bbr", 10,cv::Point(1100,BTOP),cv::Point(2100,BBOTTOM),AREA25},
     };
@@ -130,39 +90,77 @@ void CPostProcessor::imgCfgInit() {
 }
 void CPostProcessor::imgCfgInitByOffSet() {
     m_img1Cfg = {
-        CBox("1c1", "cb5", 1, cv::Point(500, CTOP), cv::Point(630, CBOTTOM), AREA150),
-        CBox("1c2", "cb5", 2, cv::Point(840, CTOP), cv::Point(920, CBOTTOM), AREA150),
-        CBox("1c3", "cb1", 3, cv::Point(1110, CTOP), cv::Point(1200, CBOTTOM)),
-        CBox("1c4", "cb5", 4, cv::Point(2020, CTOP), cv::Point(2150, CBOTTOM), AREA150),
+        CBox("1c1", "cb5", 1, cv::Point(380, CTOP), cv::Point(680, CBOTTOM), AREA150),
+        CBox("1c2", "cb5", 2, cv::Point(800, CTOP), cv::Point(980, CBOTTOM), AREA150),
+        CBox("1c3", "cb1", 3, cv::Point(1090, CTOP), cv::Point(1250, CBOTTOM)),
+        CBox("1c4", "cb5", 4, cv::Point(1980, CTOP), cv::Point(2210, CBOTTOM), AREA150),
 
-        CBox("1b6", "bbl", 6, cv::Point(450, BTOP), cv::Point(1430, BBOTTOM), AREA25),
-        CBox("1b8", "bbl", 8, cv::Point(1430, BTOP), cv::Point(2250, BBOTTOM), AREA150),
-        CBox("1b2", "bbc", 2, cv::Point(2000, BTOP), cv::Point(2448, BBOTTOM))
+        CBox("1b6", "bbl", 6, cv::Point(430, BTOP), cv::Point(1150, BBOTTOM), AREA25),
+        CBox("1b8", "bbl", 8, cv::Point(1200, BTOP), cv::Point(2030, BBOTTOM), AREA150),
     };
     m_img2Cfg = {
-        CBox("2c4", "cb5", 4, cv::Point(0, CTOP), cv::Point(180, CBOTTOM), AREA150),
-            CBox("2c5", "cb5", 5, cv::Point(820, CTOP), cv::Point(960, CBOTTOM), AREA150),
-            CBox("2c6", "cb2", 6, cv::Point(1640, CTOP), cv::Point(1800, CBOTTOM)),
+        //CBox("2c4", "cb5", 4, cv::Point(0, CTOP), cv::Point(180, CBOTTOM), AREA150),
+        CBox("2c5", "cb5", 5, cv::Point(810, CTOP), cv::Point(1180, CBOTTOM), AREA150),
+        CBox("2c6", "cb2", 6, cv::Point(1610, CTOP), cv::Point(1900, CBOTTOM)),
 
-            CBox("2b1", "bbc", 1, cv::Point(0, BTOP), cv::Point(2448, BBOTTOM))
+        CBox("2b1", "bbc", 1, cv::Point(100, BTOP), cv::Point(2448, BBOTTOM))
     };
     m_img3Cfg = {
-        CBox("3c7", "cb3", 7, cv::Point(500, CTOP), cv::Point(700, CBOTTOM)),
-            CBox("3c8", "cb6", 8, cv::Point(1300, CTOP), cv::Point(1500, CBOTTOM), AREA150),
-            CBox("3c9", "cb6", 9, cv::Point(2100, CTOP), cv::Point(2300, CBOTTOM), AREA150),
+        CBox("3c7", "cb3", 7, cv::Point(400, CTOP), cv::Point(710, CBOTTOM)),
+        CBox("3c8", "cb6", 8, cv::Point(1220, CTOP), cv::Point(1490, CBOTTOM), AREA150),
 
-            CBox("3b3", "bbc", 1, cv::Point(0, BTOP), cv::Point(2448, BBOTTOM))
+        CBox("3b3", "bbc", 1, cv::Point(0, BTOP), cv::Point(2220, BBOTTOM))
     };
     m_img4Cfg = {
-        CBox("4c9", "cb6", 9, cv::Point(250, CTOP), cv::Point(420, CBOTTOM), AREA150),
-        CBox("4c10", "cb4", 10, cv::Point(1200, CTOP), cv::Point(1300, CBOTTOM)),
-        CBox("4c11", "cb6", 11, cv::Point(1480, CTOP), cv::Point(1560, CBOTTOM), AREA150),
-        CBox("4c12", "cb6", 12, cv::Point(1800, CTOP), cv::Point(2030, CBOTTOM), AREA150),
+        CBox("4c9", "cb6", 9, cv::Point(330, CTOP), cv::Point(550, CBOTTOM), AREA150),
+        CBox("4c10", "cb4", 10, cv::Point(1260, CTOP), cv::Point(1400, CBOTTOM)),
+        CBox("4c11", "cb6", 11, cv::Point(1510, CTOP), cv::Point(1690, CBOTTOM), AREA150),
+        CBox("4c12", "cb6", 12, cv::Point(1820, CTOP), cv::Point(2100, CBOTTOM), AREA150),
 
-        CBox("4b3", "bbc", 1, cv::Point(0, BTOP), cv::Point(280, BBOTTOM)),
-        CBox("4b9", "bbr", 9, cv::Point(380, BTOP), cv::Point(1240, BBOTTOM), AREA150),
-        CBox("4b10", "bbr", 10, cv::Point(1300, BTOP), cv::Point(2030, BBOTTOM), AREA25),
+        CBox("4b9", "bbr", 9, cv::Point(500, BTOP), cv::Point(1310, BBOTTOM), AREA150),
+        CBox("4b10", "bbr", 10, cv::Point(1370, BTOP), cv::Point(2050, BBOTTOM), AREA25),
     };
+    m_imgCfg.clear();
+    m_imgCfg.push_back(m_img1Cfg);
+    m_imgCfg.push_back(m_img2Cfg);
+    m_imgCfg.push_back(m_img3Cfg);
+    m_imgCfg.push_back(m_img4Cfg);
+}
+
+void CPostProcessor::imgCfgInitByOffSet2() {
+    m_img1Cfg = {
+        CBox("1c1", "cb5", 1, cv::Point(550, CTOP), cv::Point(850, CBOTTOM), AREA150),
+        CBox("1c2", "cb5", 2, cv::Point(950, CTOP), cv::Point(1130, CBOTTOM), AREA150),
+        CBox("1c3", "cb1", 3, cv::Point(1230, CTOP), cv::Point(1390, CBOTTOM)),
+
+        CBox("1b6", "bbl", 6, cv::Point(660, BTOP), cv::Point(1280, BBOTTOM), AREA25),
+        CBox("1b8", "bbl", 8, cv::Point(1340, BTOP), cv::Point(2170, BBOTTOM), AREA150),
+    };
+    m_img2Cfg = {
+        //CBox("2c4", "cb5", 4, cv::Point(0, CTOP), cv::Point(180, CBOTTOM), AREA150),
+        CBox("2c5", "cb5", 5, cv::Point(1000, CTOP), cv::Point(1300, CBOTTOM), AREA150),
+        CBox("2c6", "cb2", 6, cv::Point(1800, CTOP), cv::Point(2100, CBOTTOM)),
+
+        CBox("2b1", "bbc", 1, cv::Point(280, BTOP), cv::Point(2448, BBOTTOM))
+    };
+    m_img3Cfg = {
+        CBox("3c7", "cb3", 7, cv::Point(600, CTOP), cv::Point(900, CBOTTOM)),
+        CBox("3c8", "cb6", 8, cv::Point(1400, CTOP), cv::Point(1700, CBOTTOM), AREA150),
+        //CBox("3c9", "cb6", 9, cv::Point(2100, CTOP), cv::Point(2300, CBOTTOM), AREA150),
+
+        CBox("3b3", "bbc", 1, cv::Point(0, BTOP), cv::Point(2400, BBOTTOM))
+    };
+    m_img4Cfg = {
+        CBox("4c9", "cb6", 9, cv::Point(200, CTOP), cv::Point(450, CBOTTOM), AREA150),
+        CBox("4c10", "cb4", 10, cv::Point(1180, CTOP), cv::Point(1340, CBOTTOM)),
+        CBox("4c11", "cb6", 11, cv::Point(1430, CTOP), cv::Point(1620, CBOTTOM), AREA150),
+        CBox("4c12", "cb6", 12, cv::Point(1740, CTOP), cv::Point(2030, CBOTTOM), AREA150),
+
+        //CBox("4b3", "bbc", 1, cv::Point(0, BTOP), cv::Point(270, BBOTTOM)),
+        CBox("4b9", "bbr", 9, cv::Point(400, BTOP), cv::Point(1230, BBOTTOM), AREA150),
+        CBox("4b10", "bbr", 10, cv::Point(1290, BTOP), cv::Point(1980, BBOTTOM), AREA25),
+    };
+    m_imgCfg.clear();
     m_imgCfg.push_back(m_img1Cfg);
     m_imgCfg.push_back(m_img2Cfg);
     m_imgCfg.push_back(m_img3Cfg);
@@ -190,16 +188,36 @@ cv::Point CPostProcessor::findWhiteArea(cv::Mat img_bgr) {
     }
     return matchLoc;
 }
-void CPostProcessor::setOffSet(cv::Mat img_bgr) {
+void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
+    char buf[128];
+    sprintf_s(buf, "<<<<setOffSet>>> setOffSet enter>>>>>>>>>>>>>>camera_num=%d", camera_num);
+    OutputDebugStringA(buf);
+    if (camera_num == 0) {
+        template_x = 1270;
+    }
+    else {
+        template_x = 1410;
+    }
+    //sprintf_s(buf, "ssss");
+    //OutputDebugStringA(buf);
     cv::Point matchLoc = findWhiteArea(img_bgr);
     offset = matchLoc.x - template_x;
     if (abs(offset) > 250) {
+        template_x = 1260;
+        sprintf_s(buf, "offset=%d, white_left=%d, template_x=%d", offset, matchLoc.x, template_x);
+        OutputDebugStringA(buf);
         offset = 0;
         imgCfgInit();
     }
     else {
-        imgCfgInitByOffSet();
+        if (camera_num == 0) {
+            imgCfgInitByOffSet();
+        }
+        else {
+            imgCfgInitByOffSet2();
+        }
     }
+    OutputDebugStringA("<<<setOffSet>>> setOffSet out <<<<<<<<<<<<<<<");
 }
 
 void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect) {
@@ -249,16 +267,16 @@ void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_
     }
     num++;
 }
-bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect) {
+bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num) {
     char buf[128];
     OutputDebugStringA("<<Process>> begin Process>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-#ifdef DEBUG
+#ifdef PP_DEBUG
     savePara(v_img, vv_defect);
-#endif // DEBUG
+#endif // PP_DEBUG
 
     bool result = true;
     // 设置offset
-    setOffSet(v_img[0]);
+    setOffSet(v_img[0], camera_num);
     for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); ++it) {
         (*it).second = 0;
     }
@@ -282,7 +300,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
             break;
         }
     }
-#ifdef DEBUG
+#ifdef PP_DEBUG
     string m_brokenCnt_file = PostProcessDebug + "m_brokenCnt.txt";
     std::ofstream outputFile(m_brokenCnt_file);
     if (outputFile.is_open()) {
@@ -300,7 +318,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
         // close the file
         outputFile.close();
     }
-#endif // DEBUG
+#endif // PP_DEBUG
     sprintf_s(buf, "<<Process>> result : %s", result ? "true" : "false");
     OutputDebugStringA(buf);
     OutputDebugStringA("<<Process>> Process out <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
@@ -308,6 +326,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
 }
 
 void CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
+    char buf[128];
     cv::Mat img_mask = cv::Mat::zeros(img.size(), CV_8UC1);
     rectangle(img_mask, { defect.p1, defect.p2 }, cv::Scalar(1), -1, 4);
     int defect_area = defect.area;
@@ -334,7 +353,7 @@ void CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
         cv::Mat ROI = img_mask(select);
         int sum = cv::sum(ROI)[0];
         // 一多半在这个配置框就认为是这个的
-        if (sum > defect.area * 0.5) {
+        if (sum > defect.area * 0.9) {
             // 面积超限 算两个
             if (defect_area > cfg_area) {
                 (*it).state = false;
@@ -343,6 +362,8 @@ void CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
             }
             (*it).n_defect++;
             m_brokenCnt[(*it).arr_name]++;
+            sprintf_s(buf, "<<processImg>> img=%d, name=%s, sum=%d, defect_area=%d, m_brokenCnt=%d", serial, (*it).arr_name.c_str(), sum, defect.area, m_brokenCnt[(*it).arr_name]);
+            OutputDebugStringA(buf);
         }
     }
 }

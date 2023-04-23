@@ -51,11 +51,12 @@ public:
 	CPostProcessor();
 	void imgCfgInit();
 	void imgCfgInitByOffSet();
+	void imgCfgInitByOffSet2();
 	cv::Point findWhiteArea(cv::Mat img_bgr);
-	void setOffSet(cv::Mat img_bgr);
+	void setOffSet(cv::Mat img_bgr, int camera_num = 0);
 	// v_img 四张图片
 	// vv_defect 四个CDefect缺陷列表 
-	bool Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect);
+	bool Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num = 0);
 	void processImg(cv::Mat img, CDefect defect, int serial);
 	cv::Mat getMask(vector<cv::Point> points);
 	void savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect);
