@@ -75,10 +75,13 @@ void PPtest()
 	}
 
 	bool result = pp.Process(v_img, vv_defect);
+	result = pp.Process(v_img, vv_defect);
+	result = pp.Process(v_img, vv_defect);
 	cout << result << endl;
 }
 int main()
 {
-	NumRecTest();
+	//NumRecTest();
+	PPtest();
 	return 0;
 }
