@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include "CAlgBase.h"
 using namespace std;
 
 // 瑕疵结构体
@@ -45,7 +46,7 @@ public:
 	int state;
 };
 
-class CPostProcessor
+class CPostProcessor :CAlgBase
 {
 public:
 	CPostProcessor();
@@ -54,7 +55,7 @@ public:
 	void imgCfgInitByOffSet2();
 	map<string, cv::Point> getRowWhitePoint(const cv::Mat& img_gray, int point_y);
 	cv::Point findWhiteAreaByTemplate(const cv::Mat& img_bgr);
-	cv::Rect findWhiteArea(const cv::Mat& img_bgr);
+	//cv::Rect findWhiteArea(const cv::Mat& img_bgr);
 	void setOffSet(cv::Mat img_bgr, int camera_num = 0);
 	// v_img 四张图片
 	// vv_defect 四个CDefect缺陷列表 
@@ -63,6 +64,7 @@ public:
 	cv::Mat getMask(vector<cv::Point> points);
 	void savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect);
 public:
+	string					m_className = "【二次复判】";
 	vector<CBox>			m_img1Cfg;
 	vector<CBox>			m_img2Cfg;
 	vector<CBox>			m_img3Cfg;

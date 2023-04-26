@@ -2,10 +2,9 @@
 #include <fstream>
 #include <sys/stat.h>
 #include <direct.h>
+
 #include "CPostProcessor.h"
-#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
-#include <filesystem>
-#include <Windows.h>
+
 
 #define PP_DEBUG 0
 
@@ -187,48 +186,48 @@ map<string, cv::Point> CPostProcessor::getRowWhitePoint(const cv::Mat& img_gray,
     }
     return RowPoints;
 }
-cv::Rect CPostProcessor::findWhiteArea(const cv::Mat& img_gray) {
-    char buf[125];
-    OutputDebugStringA("<<findWhiteArea>> enter findWhiteArea");
-    cv::Mat img_gray_binary;
-    cv::threshold(img_gray, img_gray_binary, 250, 255, cv::THRESH_BINARY);
-
-    std::vector<std::vector<cv::Point>> contours;
-    std::vector<cv::Vec4i> hierarchy;
-    cv::findContours(img_gray_binary, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_SIMPLE);
-
-    std::vector<std::vector<cv::Point>> contours_poly(contours.size());
-    std::vector<cv::Rect> boundRect(contours.size());
-    for (size_t i = 0; i < contours.size(); i++)
-    {
-        cv::approxPolyDP(contours[i], contours_poly[i], 3, true);
-        boundRect[i] = cv::boundingRect(contours_poly[i]);
-    }
-    // Filter out contours with an area less than 100
-    vector<cv::Rect> filteredRects;
-    for (cv::Rect rect : boundRect)
-    {
-        if (rect.area() >= 100000 && rect.area() < 450000)
-        {
-            filteredRects.push_back(rect);
-        }
-    }
-    cv::Rect result_rect = cv::Rect(0, 0, 0, 0);
-
-    if (filteredRects.size() > 0) {
-        result_rect = filteredRects[0];
-    }
-    else {
-        sprintf_s(buf, "<<findWhiteArea>> findWhiteArea got fiald");
-        OutputDebugStringA(buf);
-    }
-
-    sprintf_s(buf, "<<findWhiteArea>> result_rect xywh %d %d %d %d", result_rect.x, result_rect.y, result_rect.width, result_rect.height);
-    OutputDebugStringA(buf);
-    sprintf_s(buf, "<<findWhiteArea>> findWhiteArea out");
-    OutputDebugStringA(buf);
-    return result_rect;
-}
+//cv::Rect CPostProcessor::findWhiteArea(const cv::Mat& img_gray) {
+//    char buf[125];
+//    OutputDebugStringA("<<findWhiteArea>> enter findWhiteArea");
+//    cv::Mat img_gray_binary;
+//    cv::threshold(img_gray, img_gray_binary, 250, 255, cv::THRESH_BINARY);
+//
+//    std::vector<std::vector<cv::Point>> contours;
+//    std::vector<cv::Vec4i> hierarchy;
+//    cv::findContours(img_gray_binary, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_SIMPLE);
+//
+//    std::vector<std::vector<cv::Point>> contours_poly(contours.size());
+//    std::vector<cv::Rect> boundRect(contours.size());
+//    for (size_t i = 0; i < contours.size(); i++)
+//    {
+//        cv::approxPolyDP(contours[i], contours_poly[i], 3, true);
+//        boundRect[i] = cv::boundingRect(contours_poly[i]);
+//    }
+//    // Filter out contours with an area less than 100
+//    vector<cv::Rect> filteredRects;
+//    for (cv::Rect rect : boundRect)
+//    {
+//        if (rect.area() >= 100000 && rect.area() < 450000)
+//        {
+//            filteredRects.push_back(rect);
+//        }
+//    }
+//    cv::Rect result_rect = cv::Rect(0, 0, 0, 0);
+//
+//    if (filteredRects.size() > 0) {
+//        result_rect = filteredRects[0];
+//    }
+//    else {
+//        sprintf_s(buf, "<<findWhiteArea>> findWhiteArea got fiald");
+//        OutputDebugStringA(buf);
+//    }
+//
+//    sprintf_s(buf, "<<findWhiteArea>> result_rect xywh %d %d %d %d", result_rect.x, result_rect.y, result_rect.width, result_rect.height);
+//    OutputDebugStringA(buf);
+//    sprintf_s(buf, "<<findWhiteArea>> findWhiteArea out");
+//    OutputDebugStringA(buf);
+//    return result_rect;
+//}
 
 cv::Point CPostProcessor::findWhiteAreaByTemplate(const cv::Mat& img_bgr) {
     int method = cv::TM_SQDIFF_NORMED;
@@ -291,10 +290,6 @@ void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
 }
 
 void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect) {
-    //char buf[128];
-    //sprintf_s(buf, "ssss");
-    //OutputDebugStringA(buf);
-    // 
     // 创建或者清空文件夹
     static int num = 1;
     const std::string folder_path = "./img_save/AI_para";
@@ -338,8 +333,10 @@ void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_
     num++;
 }
 bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num) {
+    sprintf_alg("[二次复判][Begin] camera_num=%d", camera_num);
     char buf[128];
-    OutputDebugStringA("<<Process>> begin Process>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    // 重置过程变量
+    reset();
 #ifdef PP_DEBUG
     savePara(v_img, vv_defect);
 #endif // PP_DEBUG
@@ -397,9 +394,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
         outputFile.close();
     }
 #endif // PP_DEBUG
-    sprintf_s(buf, "<<Process>> result : %s", result ? "true" : "false");
-    OutputDebugStringA(buf);
-    OutputDebugStringA("<<Process>> Process out <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+    sprintf_alg("[二次复判][End] result=%s", result ? "true" : "false");
     return result;
 }
 
@@ -429,7 +424,7 @@ void CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
         }
         cv::Rect select = cv::Rect(cv::Point(x1, (*it).p1.y), cv::Point(x2, (*it).p2.y));
         cv::Mat ROI = img_mask(select);
-        int sum = cv::sum(ROI)[0];
+        double sum = cv::sum(ROI)[0];
         // 一多半在这个配置框就认为是这个的
         if (sum > defect.area * 0.9) {
             // 面积超限 算两个
@@ -440,7 +435,7 @@ void CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
             }
             (*it).n_defect++;
             m_brokenCnt[(*it).arr_name]++;
-            sprintf_s(buf, "<<processImg>> img=%d, name=%s, sum=%d, defect_area=%d, m_brokenCnt=%d", serial, (*it).arr_name.c_str(), sum, defect.area, m_brokenCnt[(*it).arr_name]);
+            sprintf_s(buf, "<<processImg>> img=%d, name=%s, sum=%.3f, defect_area=%d, m_brokenCnt=%d", serial, (*it).arr_name.c_str(), sum, defect.area, m_brokenCnt[(*it).arr_name]);
             OutputDebugStringA(buf);
         }
     }
