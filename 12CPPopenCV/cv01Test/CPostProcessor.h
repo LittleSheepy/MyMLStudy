@@ -1,5 +1,5 @@
 #pragma once
-#include <opencv2/opencv.hpp>
+#include <opencv.hpp>
 #include <vector>
 #include <string>
 #include <map>
@@ -34,12 +34,10 @@ public:
 	cv::Point p1;
 	cv::Point p2;
 	int	area;
-	int	w;
-	int	h;
 	int n_defect;
 	bool state;
-	CBox(string name, string arr_name, int serial, cv::Point p1, cv::Point p2, int	area = 0, int w = 0, int h = 0) :
-		name(name), arr_name(arr_name), serial(serial), p1(p1), p2(p2), area(area), w(w), h(h), n_defect(0), state(true) {}
+	CBox(string name, string arr_name, int serial, cv::Point p1, cv::Point p2, int	area = 0) :
+		name(name), arr_name(arr_name), serial(serial), p1(p1), p2(p2), area(area), n_defect(0), state(true) {}
 };
 class CBoxArray {
 public:
@@ -54,7 +52,9 @@ public:
 	void imgCfgInit();
 	void imgCfgInitByOffSet();
 	void imgCfgInitByOffSet2();
-	cv::Point findWhiteArea(cv::Mat img_bgr);
+	map<string, cv::Point> getRowWhitePoint(const cv::Mat& img_gray, int point_y);
+	cv::Point findWhiteAreaByTemplate(const cv::Mat& img_bgr);
+	cv::Rect findWhiteArea(const cv::Mat& img_bgr);
 	void setOffSet(cv::Mat img_bgr, int camera_num = 0);
 	// v_img 四张图片
 	// vv_defect 四个CDefect缺陷列表 
