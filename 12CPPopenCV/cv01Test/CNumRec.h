@@ -1,7 +1,8 @@
 #pragma once
-#include <opencv2/opencv.hpp>
+#include <opencv.hpp>
 #include <string>
 #include <vector>
+#include "CAlgBase.h"
 using namespace std;
 // 参数
 struct CNumRecPara
@@ -11,7 +12,7 @@ struct CNumRecPara
     string str_pre_saved;
 };
 
-class CNumRec {
+class CNumRec:CAlgBase {
 public:
     CNumRec();
     CNumRec(const std::string template_dir);

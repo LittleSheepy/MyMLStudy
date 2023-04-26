@@ -1,5 +1,4 @@
 #include "pch.h"
-#include <opencv.hpp>
 #include <fstream>
 #include <sys/stat.h>
 #include <direct.h>
@@ -7,7 +6,6 @@
 #define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 #include <filesystem>
 #include <Windows.h>
-#include<limits.h>
 
 #define PP_DEBUG 0
 
@@ -32,11 +30,9 @@ using namespace std;
 #define BBOTTOM 1800
 #define PIX_H   1233
 #define MM_H   90
-#define PIX_MM  (PIX_H/MM_H)                // 13.7
+#define PIX_MM  (PIX_H/MM_H)                // 14'6785
 #define AREA25  int(PIX_MM*PIX_MM*25)
 #define AREA150  int(PIX_MM*PIX_MM*150)     // 32320
-#define LENGTH5  int(PIX_MM*5)              // 68.5
-#define LENGTH30  int(PIX_MM*30)            // 411
 
 //vector<vector<string>> = { vector<string>{"1c1"} };
 // 12(3)45(6)(7)89（10）11 12
@@ -135,7 +131,6 @@ void CPostProcessor::imgCfgInitByOffSet2() {
         CBox("1c1", "cb5", 1, cv::Point(550, CTOP), cv::Point(850, CBOTTOM), AREA150),
         CBox("1c2", "cb5", 2, cv::Point(950, CTOP), cv::Point(1130, CBOTTOM), AREA150),
         CBox("1c3", "cb1", 3, cv::Point(1230, CTOP), cv::Point(1390, CBOTTOM)),
-        CBox("1c4", "cb5", 4, cv::Point(2120, CTOP), cv::Point(2400, CBOTTOM), AREA150),
 
         CBox("1b6", "bbl", 6, cv::Point(660, BTOP), cv::Point(1280, BBOTTOM), AREA25),
         CBox("1b8", "bbl", 8, cv::Point(1340, BTOP), cv::Point(2170, BBOTTOM), AREA150),
@@ -175,7 +170,67 @@ cv::Mat CPostProcessor::getMask(vector<cv::Point> points) {
 
     return mask;
 }
-cv::Point CPostProcessor::findWhiteArea(cv::Mat img_bgr) {
+map<string, cv::Point> CPostProcessor::getRowWhitePoint(const cv::Mat& img_gray, int point_y) {
+    int w = img_gray.cols;
+    map<string, cv::Point> RowPoints;
+    for (int point_x = 0; point_x < w; point_x++) {
+        if (img_gray.at<uchar>(point_y, point_x) > 240) {
+            RowPoints["left"] = cv::Point(point_x, point_y);
+            break;
+        }
+    }
+    for (int point_x = w - 1; point_x > 0; point_x--) {
+        if (img_gray.at<uchar>(point_y, point_x) > 240) {
+            RowPoints["right"] = cv::Point(point_x, point_y);
+            break;
+        }
+    }
+    return RowPoints;
+}
+cv::Rect CPostProcessor::findWhiteArea(const cv::Mat& img_gray) {
+    char buf[125];
+    OutputDebugStringA("<<findWhiteArea>> enter findWhiteArea");
+    cv::Mat img_gray_binary;
+    cv::threshold(img_gray, img_gray_binary, 250, 255, cv::THRESH_BINARY);
+
+    std::vector<std::vector<cv::Point>> contours;
+    std::vector<cv::Vec4i> hierarchy;
+    cv::findContours(img_gray_binary, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_SIMPLE);
+
+    std::vector<std::vector<cv::Point>> contours_poly(contours.size());
+    std::vector<cv::Rect> boundRect(contours.size());
+    for (size_t i = 0; i < contours.size(); i++)
+    {
+        cv::approxPolyDP(contours[i], contours_poly[i], 3, true);
+        boundRect[i] = cv::boundingRect(contours_poly[i]);
+    }
+    // Filter out contours with an area less than 100
+    vector<cv::Rect> filteredRects;
+    for (cv::Rect rect : boundRect)
+    {
+        if (rect.area() >= 100000 && rect.area() < 450000)
+        {
+            filteredRects.push_back(rect);
+        }
+    }
+    cv::Rect result_rect = cv::Rect(0, 0, 0, 0);
+
+    if (filteredRects.size() > 0) {
+        result_rect = filteredRects[0];
+    }
+    else {
+        sprintf_s(buf, "<<findWhiteArea>> findWhiteArea got fiald");
+        OutputDebugStringA(buf);
+    }
+
+    sprintf_s(buf, "<<findWhiteArea>> result_rect xywh %d %d %d %d", result_rect.x, result_rect.y, result_rect.width, result_rect.height);
+    OutputDebugStringA(buf);
+    sprintf_s(buf, "<<findWhiteArea>> findWhiteArea out");
+    OutputDebugStringA(buf);
+    return result_rect;
+}
+
+cv::Point CPostProcessor::findWhiteAreaByTemplate(const cv::Mat& img_bgr) {
     int method = cv::TM_SQDIFF_NORMED;
     cv::Mat result;
     cv::matchTemplate(img_bgr, img_template, result, method);
@@ -204,7 +259,18 @@ void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
     }
     //sprintf_s(buf, "ssss");
     //OutputDebugStringA(buf);
-    cv::Point matchLoc = findWhiteArea(img_bgr);
+    //cv::Point matchLoc = findWhiteArea(img_bgr);
+    cv::Mat img_gray;
+    cv::cvtColor(img_bgr, img_gray, cv::COLOR_BGR2GRAY);
+    double startTime = clock();//计时开始
+    cv::Rect matchLoc = findWhiteArea(img_gray);
+    cout << "findWhiteArea: " << clock() - startTime << endl;
+    startTime = clock();//计时开始
+    map<string, cv::Point> points = getRowWhitePoint(img_gray, 1300);
+    //cv::Mat small_img_gray = img_gray(cv::Rect(points["left"].x));
+    cout << "getRowWhitePoint: " << clock() - startTime << endl;
+    cout << matchLoc.x << endl;
+    cout << points["left"].x << endl;
     offset = matchLoc.x - template_x;
     if (abs(offset) > 250) {
         template_x = 1260;
@@ -313,7 +379,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
     std::stringstream ss;
     ss << std::put_time(&ltm, "%Y%m%d%H%M");
     std::string str_time = ss.str();
-    string m_brokenCnt_file = PostProcessDebug + str_time  +"m_brokenCnt.txt";
+    string m_brokenCnt_file = PostProcessDebug + "m_brokenCnt.txt";
     std::ofstream outputFile(m_brokenCnt_file);
     if (outputFile.is_open()) {
         // write the keys and values to the file
@@ -346,8 +412,6 @@ void CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
     for (auto it = m_imgCfg[serial].begin(); it != m_imgCfg[serial].end(); ++it) {
         string arr_name = (*it).arr_name;
         int cfg_area = (*it).area;
-        int defect_w = abs(defect.p1.x - defect.p2.x);
-        int defect_h = abs(defect.p1.y - defect.p2.y);
         // 切片
         int x1 = (*it).p1.x + offset;
         int x2 = (*it).p2.x + offset;
@@ -366,38 +430,17 @@ void CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
         cv::Rect select = cv::Rect(cv::Point(x1, (*it).p1.y), cv::Point(x2, (*it).p2.y));
         cv::Mat ROI = img_mask(select);
         int sum = cv::sum(ROI)[0];
-        sprintf_s(buf, "<<processImg>> img=%d, name=%s, sum=%d, defect_area*0.9=%d, defect_area=%d, defect_w=%d, defect_h=%d, m_brokenCnt=%d", serial, (*it).name.c_str(), sum, (int)(defect.area * 0.7), defect.area, defect_w, defect_h, m_brokenCnt[(*it).arr_name]);
-        OutputDebugStringA(buf);
         // 一多半在这个配置框就认为是这个的
-        if (sum > defect.area * 0.7) {
-            // 条件限制
-            int lenth_ = 0;
+        if (sum > defect.area * 0.9) {
             // 面积超限 算两个
-            if (cfg_area == AREA25) {
-                lenth_ = LENGTH5;
-            }
-            if (cfg_area == AREA150) {
-                lenth_ = LENGTH30;
-            }
-            // 缺陷特征
-            int defect_length = 0;
-            if ((*it).arr_name[0] == 'c') {
-                defect_length = defect_h;
-            }
-
-            if ((*it).arr_name[0] == 'b') {
-                defect_length = defect_w;
-            }
-            sprintf_s(buf, "<<processImg>>defect_length=%d, lenth_=%d", defect_length, lenth_);
-            OutputDebugStringA(buf);
-            if (defect_length > lenth_) {
+            if (defect_area > cfg_area) {
                 (*it).state = false;
                 (*it).n_defect++;
                 m_brokenCnt[(*it).arr_name]++;
             }
             (*it).n_defect++;
             m_brokenCnt[(*it).arr_name]++;
-            sprintf_s(buf, "<<processImg>>m_brokenCnt=%d", m_brokenCnt[(*it).arr_name]);
+            sprintf_s(buf, "<<processImg>> img=%d, name=%s, sum=%d, defect_area=%d, m_brokenCnt=%d", serial, (*it).arr_name.c_str(), sum, defect.area, m_brokenCnt[(*it).arr_name]);
             OutputDebugStringA(buf);
         }
     }

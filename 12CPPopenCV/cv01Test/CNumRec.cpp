@@ -1,5 +1,5 @@
 // NumRec.cpp
-//#include "pch.h"
+#include "pch.h"
 #include <iostream>
 #include <numeric>
 #include <Windows.h>
@@ -298,18 +298,14 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
     }
     // 查找白色区域
     cv::Rect whiteArea_rect;
-    double startTime = clock();//计时开始
     whiteArea_rect = findWhiteArea(img_gray);
-    cout << "findWhiteArea: " << clock() - startTime << endl;
     cv::Mat img_cut = img_gray(whiteArea_rect);
     //resize(img_cut, img_cut, cv::Size(693, 417), 0, 0, cv::INTER_LINEAR);
     cv::Mat img_cut_binary_img;
     cv::threshold(img_cut, img_cut_binary_img, 250, 255, cv::THRESH_BINARY_INV);
 
     // 查找数字区域
-    startTime = clock();//计时开始
     cv::Rect result_rect = findNumArea(img_cut_binary_img);
-    cout << "findNumArea: " << clock() - startTime << endl;
     cv::Mat num_img = img_cut(cv::Rect(result_rect.x, result_rect.y, result_rect.width, result_rect.height));
     cv::Mat binary_img;
     cv::threshold(num_img, binary_img, 190, 255, cv::THRESH_BINARY_INV);
