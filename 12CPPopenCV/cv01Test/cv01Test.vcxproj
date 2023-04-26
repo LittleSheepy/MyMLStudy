@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="CAlgBase.cpp" />
     <ClCompile Include="CPostProcessor.cpp" />
+    <ClCompile Include="FolderTest.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CNumRec.cpp" />
     <ClCompile Include="quickdemo.cpp" />

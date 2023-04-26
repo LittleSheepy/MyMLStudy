@@ -6,22 +6,22 @@
 #include "CAlgBase.h"
 using namespace std;
 
-// ç‘•ç–µç»“æ„ä½“
+// è¦´Ã½á¹¹Ìå
 struct CDefect
 {
-	cv::Point p1;	// å·¦ä¸Šç‚¹
-	cv::Point p2;	// å³ä¸‹ç‚¹
-	int   area;	// ç¼ºé™·é¢ç§¯
-	int	  type;	// ç¼ºé™·ç±»å‹ ç ´æŸã€æ¯›è¾¹
+	cv::Point p1;	// ×óÉÏµã
+	cv::Point p2;	// ÓÒÏÂµã
+	int   area;	// È±ÏİÃæ»ı
+	int	  type;	// È±ÏİÀàĞÍ ÆÆËğ¡¢Ã«±ß
 	CDefect() {}
 	CDefect(cv::Point p1, cv::Point p2, int area, int type) :p1(p1), p2(p2), area(area), type(type) {}
 };
 
-// ç‘•ç–µç»“æ„ä½“
+// è¦´Ã½á¹¹Ìå
 struct CArrayCfg
 {
-	int   cnt;	// å…è®¸ç¼ºé™·ä¸ªæ•°
-	int	  area;	// å…è®¸ç¼ºé™·é¢ç§¯
+	int   cnt;	// ÔÊĞíÈ±Ïİ¸öÊı
+	int	  area;	// ÔÊĞíÈ±ÏİÃæ»ı
 	CArrayCfg() :cnt(0), area(0) {}
 	CArrayCfg(int type, int area) :cnt(cnt), area(area) {}
 };
@@ -57,14 +57,14 @@ public:
 	cv::Point findWhiteAreaByTemplate(const cv::Mat& img_bgr);
 	//cv::Rect findWhiteArea(const cv::Mat& img_bgr);
 	void setOffSet(cv::Mat img_bgr, int camera_num = 0);
-	// v_img å››å¼ å›¾ç‰‡
-	// vv_defect å››ä¸ªCDefectç¼ºé™·åˆ—è¡¨ 
+	// v_img ËÄÕÅÍ¼Æ¬
+	// vv_defect ËÄ¸öCDefectÈ±ÏİÁĞ±í 
 	bool Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num = 0);
 	void processImg(cv::Mat img, CDefect defect, int serial);
 	cv::Mat getMask(vector<cv::Point> points);
 	void savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect);
 public:
-	string					m_className = "ã€äºŒæ¬¡å¤åˆ¤ã€‘";
+	string					m_className = "¡¾¶ş´Î¸´ÅĞ¡¿";
 	vector<CBox>			m_img1Cfg;
 	vector<CBox>			m_img2Cfg;
 	vector<CBox>			m_img3Cfg;
@@ -73,7 +73,7 @@ public:
 	map<string, int>		m_brokenCnt;
 	map<string, int>		m_brokenCfg;
 	CBoxArray m_objs;
-	// æ¨¡æ¿
+	// Ä£°å
 	int offset = 0;
 	int template_x = 1260;
 	cv::Mat img_template;

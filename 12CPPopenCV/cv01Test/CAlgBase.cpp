@@ -20,7 +20,7 @@ void CAlgBase::reset() {
     m_debug_imgs.clear();
 }
 
-// è·å¾—ç™½è‰²åŒºåŸŸ é€šè¿‡è½®å»“æŸ¥æ‰¾
+// »ñµÃ°×É«ÇøÓò Í¨¹ıÂÖÀª²éÕÒ
 cv::Rect CAlgBase::findWhiteAreaByContour(const cv::Mat& img_gray) {
     sprintf_alg("<<findWhiteArea>> enter findWhiteArea");
     cv::Mat img_gray_binary;
@@ -74,7 +74,7 @@ cv::Rect CAlgBase::findWhiteAreaByContour(const cv::Mat& img_gray) {
 }
 cv::Rect CAlgBase::findWhiteArea(const cv::Mat& img_gray)
 {
-    double startTime = clock();//è®¡æ—¶å¼€å§‹
+    double startTime = clock();//¼ÆÊ±¿ªÊ¼
     cv::Rect result_rect = findWhiteAreaByContour(img_gray);
     cout << "findWhiteAreaByContour: " << clock() - startTime << endl;
     return result_rect;
@@ -99,7 +99,7 @@ void CAlgBase::sprintf_alg(const char* format, ...) {
 }
 
 std::string CAlgBase::getFatherFuncName(int n) {
-    // è·å–å †æ ˆåˆ—è¡¨
+    // »ñÈ¡¶ÑÕ»ÁĞ±í
     constexpr int MAX_FRAMES = 64;
     void* frames[MAX_FRAMES];
     int num_frames = CaptureStackBackTrace(0, MAX_FRAMES, frames, nullptr);
