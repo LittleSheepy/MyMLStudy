@@ -15,7 +15,7 @@
 
 #ifdef PP_DEBUG
 //#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
-//#include <experimental/filesystem> // C++14æ ‡å‡†å¼•å…¥çš„æ–‡ä»¶ç³»ç»Ÿåº“
+//#include <experimental/filesystem> // C++14±ê×¼ÒıÈëµÄÎÄ¼şÏµÍ³¿â
 //#include <sys/stat.h>
 //namespace fs = std::experimental::filesystem;
 //string img_save_path_str = "D:/00myGitHub/00MyMLStudy/12CPPopenCV/bin/img_save/";
@@ -40,7 +40,7 @@ CNumRec::CNumRec() {
 #ifdef PP_DEBUG
     //struct stat info;
     //if(fs::is_directory(img_save_path)) {
-    //    if (fs::exists(img_save_path)) { // åˆ¤æ–­æ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨
+    //    if (fs::exists(img_save_path)) { // ÅĞ¶ÏÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ
     //        std::cout << "Folder exists!" << std::endl;
     //    }
     //}
@@ -60,7 +60,7 @@ CNumRec::CNumRec(const std::string template_dir = "./Template/") {
 #ifdef PP_DEBUG
     //struct stat info;
     //if (fs::is_directory(img_save_path)) {
-    //    if (fs::exists(img_save_path)) { // åˆ¤æ–­æ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨
+    //    if (fs::exists(img_save_path)) { // ÅĞ¶ÏÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ
     //        std::cout << "Folder exists!" << std::endl;
     //    }
     //}
@@ -166,7 +166,7 @@ cv::Rect CNumRec::findNumArea(const cv::Mat& img_cut_binary_img) {
     return result_rect;
 }
 
-// x æŠ•å½±
+// x Í¶Ó°
 std::vector<int> CNumRec::x_projection(cv::Mat binary_img) {
     cv::Mat horizontal_projection;
     cv::reduce(binary_img, horizontal_projection, 1, cv::REDUCE_SUM, CV_32S);
@@ -188,7 +188,7 @@ std::vector<int> CNumRec::x_projection(cv::Mat binary_img) {
     return result;
 }
 
-// y æŠ•å½±
+// y Í¶Ó°
 vector<array<int, 2>> CNumRec::y_projection(cv::Mat binary_img_src) {
     char buf[125];
     OutputDebugStringA("<<<<<<<<y_projection>>>>>>>>>>> y_projection enter");
@@ -272,7 +272,9 @@ bool CNumRec::processImage(CNumRecPara& num_rec_para) {
 
 bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
     char buf[125];
+    sprintf_alg("´òÓ¡ selfname");
     OutputDebugStringA("<<<<<<<<processImage>>>>>>>>>>> processImage enter >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    reset();
 #ifdef PP_DEBUG
     //Create a time_t object and get the current time
     time_t now = time(0);
@@ -296,7 +298,7 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
     {
         cvtColor(img_bgr, img_gray, cv::COLOR_BGR2GRAY); // convert color image to grayscale
     }
-    // æŸ¥æ‰¾ç™½è‰²åŒºåŸŸ
+    // ²éÕÒ°×É«ÇøÓò
     cv::Rect whiteArea_rect;
     whiteArea_rect = findWhiteArea(img_gray);
     cv::Mat img_cut = img_gray(whiteArea_rect);
@@ -304,13 +306,13 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
     cv::Mat img_cut_binary_img;
     cv::threshold(img_cut, img_cut_binary_img, 250, 255, cv::THRESH_BINARY_INV);
 
-    // æŸ¥æ‰¾æ•°å­—åŒºåŸŸ
+    // ²éÕÒÊı×ÖÇøÓò
     cv::Rect result_rect = findNumArea(img_cut_binary_img);
     cv::Mat num_img = img_cut(cv::Rect(result_rect.x, result_rect.y, result_rect.width, result_rect.height));
     cv::Mat binary_img;
     cv::threshold(num_img, binary_img, 190, 255, cv::THRESH_BINARY_INV);
 
-    // å¤§å°æ ‡å‡†åŒ–
+    // ´óĞ¡±ê×¼»¯
     //int num_img_h = binary_img.rows;
     //int num_img_w = binary_img.cols;
     //float ratio = num_img_h / 35.0f;
@@ -319,7 +321,7 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
     //cv::resize(num_img, num_img, cv::Size(num_img_w_new, 35), 0, 0, cv::INTER_LINEAR);
 
     vector<cv::Rect> result_boxes = getNumBoxByProjection(binary_img);
-    // åˆ¤æ–­æ¨¡ç‰ˆå­˜åœ¨
+    // ÅĞ¶ÏÄ£°æ´æÔÚ
     if (m_template_list[0].empty()) {
         OutputDebugStringA("<<<<<<processImage>>>>>>  template file is not exist!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         return false;
@@ -384,8 +386,8 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
             //}
             if (num_result == 0) {
                 cv::Mat img_center = img_tmp_binary(cv::Rect(8, 10, 5, 12));
-                int sum = cv::sum(img_center)[0];
-                sprintf_s(buf, "0000000   sum : %d", sum);
+                double sum = cv::sum(img_center)[0];
+                sprintf_s(buf, "0000000   sum : %.3f", sum);
                 OutputDebugStringA(buf);
                 if (sum > 1000) {
                     if (scores_indices[scores_indices.size() - 2] == 9) {
@@ -419,7 +421,7 @@ bool CNumRec::processImage(const cv::Mat& img_bgr, string& str_result) {
     string save_path = file_path + ".bmp";
     cv::imwrite(save_path, img_bgr);
     cv::imwrite("img.bmp", img_bgr);
-    // ä¿å­˜debugå›¾
+    // ±£´ædebugÍ¼
     map_img["processImage_NumArea_binary_img"] = binary_img;
     file_path = NumRecDebug;
     file_path += str_time + "_" + to_string(i) + "_" + str_result;
@@ -443,8 +445,8 @@ string CNumRec::processImage(const cv::Mat& img_bgr) {
     return str_result;
 }
 string CNumRec::processImage1(const cv::Mat& img_gray) {
-    //double startTime = clock();//è®¡æ—¶å¼€å§‹ 
-    // æŸ¥æ‰¾ç™½è‰²åŒºåŸŸ
+    //double startTime = clock();//¼ÆÊ±¿ªÊ¼ 
+    // ²éÕÒ°×É«ÇøÓò
     cv::Rect whiteArea_rect;
     whiteArea_rect = findWhiteArea(img_gray);
     cv::Mat img_cut = img_gray(whiteArea_rect);
@@ -565,7 +567,7 @@ string CNumRec::processImage1(const cv::Mat& img_gray) {
 }
 
 /// <summary>
-/// æµ‹è¯•ä»£ç 
+/// ²âÊÔ´úÂë
 /// </summary>
 void NumRecTest() {
     cv::String dir_root = "D:/02dataset/01work/05nanjingLG/03NumRec/";
@@ -577,7 +579,7 @@ void NumRecTest() {
     CNumRec nr = CNumRec(dir_template);
     string str_result;
 
-    double startTime = clock();//è®¡æ—¶å¼€å§‹
+    double startTime = clock();//¼ÆÊ±¿ªÊ¼
     bool result = nr.processImage(img_gray, str_result);
     cout << " time: " << clock() - startTime << endl;
     cout << "result " << result << endl;
