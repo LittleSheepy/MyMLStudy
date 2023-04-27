@@ -7,10 +7,10 @@
 #include <string>
 #include "CPostProcessor.h"
 #include "CAlgBase.h"
+#include "CNumRec.h"
 using namespace std;
 using namespace cv;
 void FolderTest();
-void TraversalPicture();
 void NumRecTest();
 
 void PPtest()
@@ -69,7 +69,7 @@ int main()
 	//ABTest();
 
 	//PPtest();
-	//NumRecTest();
+	NumRecTest();
 	FolderTest();
 	return 0;
 }
