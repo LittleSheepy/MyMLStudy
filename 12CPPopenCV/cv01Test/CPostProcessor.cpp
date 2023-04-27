@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include <fstream>
 #include <sys/stat.h>
 #include <direct.h>
@@ -10,7 +10,7 @@
 
 #ifdef PP_DEBUG
 #define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
-#include <experimental/filesystem> // C++14±ê×¼ÒıÈëµÄÎÄ¼şÏµÍ³¿â
+#include <experimental/filesystem> // C++14æ ‡å‡†å¼•å…¥çš„æ–‡ä»¶ç³»ç»Ÿåº“
 #include <sys/stat.h>
 namespace fs = std::experimental::filesystem;
 //string img_save_path_str = "D:/00myGitHub/00MyMLStudy/12CPPopenCV/bin/img_save/";
@@ -22,24 +22,27 @@ map<string, cv::Mat> PostProcess_map_img;
 
 using namespace std;
 
-// ÅäÖÃ 1c1 Í¼1 c ÖĞ¼äµÄÊúÖ§³Å ±àºÅ1
+// é…ç½® 1c1 å›¾1 c ä¸­é—´çš„ç«–æ”¯æ’‘ ç¼–å·1
 #define CTOP 700
 #define CBOTTOM 1630
 #define BTOP 1600
 #define BBOTTOM 1800
 #define PIX_H   1233
 #define MM_H   90
-#define PIX_MM  (PIX_H/MM_H)                // 14'6785
+#define PIX_MM  (PIX_H/MM_H)                // 13.7
 #define AREA25  int(PIX_MM*PIX_MM*25)
 #define AREA150  int(PIX_MM*PIX_MM*150)     // 32320
+#define LENGTH5  int(PIX_MM*5)              // 68.5
+#define LENGTH30  int(PIX_MM*30)            // 411
+#define CEMIAN_BROKEN ""
 
 //vector<vector<string>> = { vector<string>{"1c1"} };
-// 12(3)45(6)(7)89£¨10£©11 12
-// ÖĞ¼ä·Ö×é broken : 
+// 12(3)45(6)(7)89ï¼ˆ10ï¼‰11 12
+// ä¸­é—´åˆ†ç»„ broken : 
 // cb1:3 cb2:6 cb3:7 cb4:10 cb5:1245 cb6:89 11 12
-//      ½âÊÍ£ºcb1: center broken 1
-// µ×²¿·Ö×é broken : bbl bbc bbr
-//      ½âÊÍ£ºbbl:bottom broken left
+//      è§£é‡Šï¼šcb1: center broken 1
+// åº•éƒ¨åˆ†ç»„ broken : bbl bbc bbr
+//      è§£é‡Šï¼šbbl:bottom broken left
 // 
 CPostProcessor::CPostProcessor() {
     m_brokenCfg = {
@@ -130,6 +133,7 @@ void CPostProcessor::imgCfgInitByOffSet2() {
         CBox("1c1", "cb5", 1, cv::Point(550, CTOP), cv::Point(850, CBOTTOM), AREA150),
         CBox("1c2", "cb5", 2, cv::Point(950, CTOP), cv::Point(1130, CBOTTOM), AREA150),
         CBox("1c3", "cb1", 3, cv::Point(1230, CTOP), cv::Point(1390, CBOTTOM)),
+        CBox("1c4", "cb5", 4, cv::Point(2120, CTOP), cv::Point(2400, CBOTTOM), AREA150),
 
         CBox("1b6", "bbl", 6, cv::Point(660, BTOP), cv::Point(1280, BBOTTOM), AREA25),
         CBox("1b8", "bbl", 8, cv::Point(1340, BTOP), cv::Point(2170, BBOTTOM), AREA150),
@@ -261,10 +265,10 @@ void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
     //cv::Point matchLoc = findWhiteArea(img_bgr);
     cv::Mat img_gray;
     cv::cvtColor(img_bgr, img_gray, cv::COLOR_BGR2GRAY);
-    double startTime = clock();//¼ÆÊ±¿ªÊ¼
+    double startTime = clock();//è®¡æ—¶å¼€å§‹
     cv::Rect matchLoc = findWhiteArea(img_gray);
     cout << "findWhiteArea: " << clock() - startTime << endl;
-    startTime = clock();//¼ÆÊ±¿ªÊ¼
+    startTime = clock();//è®¡æ—¶å¼€å§‹
     map<string, cv::Point> points = getRowWhitePoint(img_gray, 1300);
     //cv::Mat small_img_gray = img_gray(cv::Rect(points["left"].x));
     cout << "getRowWhitePoint: " << clock() - startTime << endl;
@@ -290,7 +294,7 @@ void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
 }
 
 void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect) {
-    // ´´½¨»òÕßÇå¿ÕÎÄ¼ş¼Ğ
+    // åˆ›å»ºæˆ–è€…æ¸…ç©ºæ–‡ä»¶å¤¹
     static int num = 1;
     const std::string folder_path = "./img_save/AI_para";
     //if (fs::exists(folder_path)) {
@@ -304,13 +308,13 @@ void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_
     //    fs::create_directory(folder_path);
     //}
     for (int i = 0; i < 4; i++) {
-        // ±£´æÍ¼Æ¬
+        // ä¿å­˜å›¾ç‰‡
         cv::Mat img = v_img[i];
         std::string filename = folder_path + "/" + std::to_string(num);
         filename = filename + "_" + std::to_string(i);
         std::string img_name = filename + ".bmp";
         cv::imwrite(img_name, img);
-        // ±£´æ vector<CDefect>
+        // ä¿å­˜ vector<CDefect>
 
         vector<CDefect> v_defect = vv_defect[i];
         std::string vect_name = filename + ".bin";
@@ -333,38 +337,56 @@ void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_
     num++;
 }
 bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num) {
-    sprintf_alg("[¶ş´Î¸´ÅĞ][Begin] camera_num=%d", camera_num);
+    sprintf_alg("[äºŒæ¬¡å¤åˆ¤][Begin] camera_num=%d", camera_num);
     char buf[128];
-    // ÖØÖÃ¹ı³Ì±äÁ¿
+    // é‡ç½®è¿‡ç¨‹å˜é‡
     reset();
 #ifdef PP_DEBUG
     savePara(v_img, vv_defect);
 #endif // PP_DEBUG
 
     bool result = true;
-    // ÉèÖÃoffset
+    // è®¾ç½®offset
     setOffSet(v_img[0], camera_num);
     for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); ++it) {
         (*it).second = 0;
     }
-    // ±éÀú4¸öÍ¼ 
+    vector<vector<CDefect>> vv_defect_others;
+    // éå†4ä¸ªå›¾ 
     for (int i = 0; i < 4; i++) {
         cv::Mat img = v_img[i];
+        vector<CDefect> v_defect_others;
         vector<CDefect> v_defect = vv_defect[i];
         for (auto it = v_defect.begin(); it != v_defect.end(); ++it) {
             if ((*it).area > 0) {
-                processImg(img, (*it), i);
+                bool matched =  processImg(img, (*it), i);
+                if (matched == false) {
+                    v_defect_others.push_back(*it);
+                }
+            }
+        }
+        vv_defect_others.push_back(v_defect_others);
+    }
+
+    // å¦‚æœæœ‰å…¶ä»–ä½ç½®ç ´æŸ ç¡®è®¤æ˜¯NG
+    if (result == true) {
+        for (int i = 0; i < 4; i++) {
+            vector<CDefect> v_defect_others = vv_defect_others[i];
+            if (v_defect_others.size() > 0) {
+                result = false;
+                break;
             }
         }
     }
-
-    // ±éÀúm_brokenCnt È·ÈÏ NG
-    for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); ++it) {
-        string key = (*it).first;
-        int val = (*it).second;
-        if (val > m_brokenCfg[key]) {
-            result = false;
-            break;
+    // éå†m_brokenCnt ç¡®è®¤ NG
+    if (result == true) {
+        for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); ++it) {
+            string key = (*it).first;
+            int val = (*it).second;
+            if (val > m_brokenCfg[key]) {
+                result = false;
+                break;
+            }
         }
     }
 #ifdef PP_DEBUG
@@ -376,7 +398,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
     std::stringstream ss;
     ss << std::put_time(&ltm, "%Y%m%d%H%M");
     std::string str_time = ss.str();
-    string m_brokenCnt_file = PostProcessDebug + "m_brokenCnt.txt";
+    string m_brokenCnt_file = PostProcessDebug + str_time  +"m_brokenCnt.txt";
     std::ofstream outputFile(m_brokenCnt_file);
     if (outputFile.is_open()) {
         // write the keys and values to the file
@@ -388,18 +410,18 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
             OutputDebugStringA(buf);
         }
 
-        // ±£´æ½á¹û
+        // ä¿å­˜ç»“æœ
         outputFile << "\nresult:" << " " << result << "\n";
         // close the file
         outputFile.close();
     }
 #endif // PP_DEBUG
-    sprintf_alg("[¶ş´Î¸´ÅĞ][End] result=%s", result ? "true" : "false");
+    sprintf_alg("[äºŒæ¬¡å¤åˆ¤][End] result=%s", result ? "true" : "false");
     return result;
 }
 
-void CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
-    char buf[128];
+bool CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
+    char buf[256];
     cv::Mat img_mask = cv::Mat::zeros(img.size(), CV_8UC1);
     rectangle(img_mask, { defect.p1, defect.p2 }, cv::Scalar(1), -1, 4);
     int defect_area = defect.area;
@@ -407,7 +429,9 @@ void CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
     for (auto it = m_imgCfg[serial].begin(); it != m_imgCfg[serial].end(); ++it) {
         string arr_name = (*it).arr_name;
         int cfg_area = (*it).area;
-        // ÇĞÆ¬
+        int defect_w = abs(defect.p1.x - defect.p2.x);
+        int defect_h = abs(defect.p1.y - defect.p2.y);
+        // åˆ‡ç‰‡
         int x1 = (*it).p1.x + offset;
         int x2 = (*it).p2.x + offset;
         if (x1 < 0) {
@@ -425,18 +449,43 @@ void CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
         cv::Rect select = cv::Rect(cv::Point(x1, (*it).p1.y), cv::Point(x2, (*it).p2.y));
         cv::Mat ROI = img_mask(select);
         double sum = cv::sum(ROI)[0];
-        // Ò»¶à°ëÔÚÕâ¸öÅäÖÃ¿ò¾ÍÈÏÎªÊÇÕâ¸öµÄ
-        if (sum > defect.area * 0.9) {
-            // Ãæ»ı³¬ÏŞ ËãÁ½¸ö
-            if (defect_area > cfg_area) {
+        sprintf_s(buf, "<<processImg>> img=%d, name=%s, sum=%.3f, defect_area*0.9=%d, defect_area=%d, defect_w=%d, defect_h=%d, m_brokenCnt=%d", serial, (*it).name.c_str(), sum, (int)(defect.area * 0.7), defect.area, defect_w, defect_h, m_brokenCnt[(*it).arr_name]);
+        OutputDebugStringA(buf);
+        // ä¸€å¤šåŠåœ¨è¿™ä¸ªé…ç½®æ¡†å°±è®¤ä¸ºæ˜¯è¿™ä¸ªçš„
+        if (sum > defect.area * 0.7) {
+            // æ¡ä»¶é™åˆ¶
+            int lenth_ = 0;
+            // é¢ç§¯è¶…é™ ç®—ä¸¤ä¸ª
+            if (cfg_area == AREA25) {
+                lenth_ = LENGTH5;
+            }
+            if (cfg_area == AREA150) {
+                lenth_ = LENGTH30;
+            }
+            // ç¼ºé™·ç‰¹å¾
+            int defect_length = 0;
+            if ((*it).arr_name[0] == 'c') {
+                defect_length = defect_h;
+            }
+
+            if ((*it).arr_name[0] == 'b') {
+                defect_length = defect_w;
+            }
+            sprintf_s(buf, "<<processImg>>defect_length=%d, lenth_=%d", defect_length, lenth_);
+            OutputDebugStringA(buf);
+            if (defect_length > lenth_) {
                 (*it).state = false;
                 (*it).n_defect++;
                 m_brokenCnt[(*it).arr_name]++;
             }
             (*it).n_defect++;
             m_brokenCnt[(*it).arr_name]++;
-            sprintf_s(buf, "<<processImg>> img=%d, name=%s, sum=%.3f, defect_area=%d, m_brokenCnt=%d", serial, (*it).arr_name.c_str(), sum, defect.area, m_brokenCnt[(*it).arr_name]);
+            sprintf_s(buf, "<<processImg>>m_brokenCnt=%d", m_brokenCnt[(*it).arr_name]);
             OutputDebugStringA(buf);
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }
