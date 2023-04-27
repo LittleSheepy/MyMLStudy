@@ -12,7 +12,7 @@ struct CNumRecPara
     string str_pre_saved;
 };
 
-class CNumRec :CAlgBase {
+class CNumRec:CAlgBase {
 public:
     CNumRec();
     CNumRec(const std::string template_dir);
