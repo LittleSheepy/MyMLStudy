@@ -79,10 +79,10 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\tools\opencv455\build\include\opencv2;$(IncludePath)</IncludePath>
+    <IncludePath>D:\tools\opencv455\build\include\opencv2/;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
-    <IntDir>../MiddleDirectory</IntDir>
-    <OutDir>$(SolutionDir)bin</OutDir>
+    <IntDir>../MiddleDirectory/</IntDir>
+    <OutDir>$(SolutionDir)bin/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -158,14 +158,12 @@
     <ClCompile Include="FolderTest.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CNumRec.cpp" />
-    <ClCompile Include="quickdemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAlgBase.h" />
     <ClInclude Include="CPostProcessor.h" />
     <ClInclude Include="CNumRec.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="quickopencv.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
