@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <opencv.hpp>
 
 #define AB_DEBUG
@@ -17,7 +17,7 @@ public:
     std::string getFatherFuncName(int n = 2);
     void reset();
 public:
-    string                  m_className = "¡¾Ëã·¨»ùÀà¡¿";
+    string                  m_className = "ã€ç®—æ³•åŸºç±»ã€‘";
     map<string, cv::Mat>    m_debug_imgs;
 };
 

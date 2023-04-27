@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <opencv.hpp>
 #include <string>
 #include <vector>
