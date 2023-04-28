@@ -53,13 +53,22 @@ CPostProcessor::CPostProcessor() {
         {"cb1",0},{"cb2",0},{"cb3",0},{"cb4",0},{"cb5",1},{"cb6",1},
         {"bbl",1},{"bbc",0},{"bbr",1},
     };
+
+    m_s_g_c = { "cb5", "cb5", "cb1", "cb5", "cb5", "cb2", "cb3", "cb6", "cb6", "cb4", "cb4", "cb6" };
+    m_limit_c = { AREA150, AREA150, 0, AREA150, AREA150, 0, 0, AREA150, AREA150, 0, 0, AREA150 };
+    m_s_g_b = { "bbl", "bbl", "bbc", "bbr", "bbr"};
+    m_limit_b = { {6, AREA25}, {8, AREA150} , {1, 0} , {9, AREA150} , {10, AREA25} };
     img_template = cv::imread(template_path);
+}
+
+int CPostProcessor::getLimit(string bc, int ser) {
+
 }
 
 void CPostProcessor::imgCfgInit() {
     m_img1Cfg = {
         // 455-700 770-1000 1000-1300 1900-2300
-        {"1c1", "cb5", 1,cv::Point(450,CTOP),cv::Point(700,CBOTTOM),AREA150},
+        {"1c1", "cb5", 1,cv::Point(450,CTOP),cv::Point(700,CBOTTOM),AREA150},       // cb5 b:broken
         {"1c2", "cb5", 2,cv::Point(700,CTOP),cv::Point(1000,CBOTTOM),AREA150},
         {"1c3", "cb1", 3,cv::Point(1000,CTOP),cv::Point(1430,CBOTTOM)},
         {"1c4", "cb5", 4,cv::Point(1900,CTOP),cv::Point(2250,CBOTTOM),AREA150},
@@ -341,11 +350,14 @@ void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_
     }
     num++;
 }
-bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num) {
+
+bool CPostProcessor::Process_old(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num) {
     sprintf_alg("[二次复判][Begin] camera_num=%d", camera_num);
     char buf[128];
     // 重置过程变量
     reset();
+    m_CenterDefectMatched.clear();
+    m_BottomDefectMatched.clear();
 #ifdef PP_DEBUG
     savePara(v_img, vv_defect);
 #endif // PP_DEBUG
@@ -440,7 +452,7 @@ bool CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
     cv::Mat img_mask = cv::Mat::zeros(img.size(), CV_8UC1);
     rectangle(img_mask, { defect.p1, defect.p2 }, cv::Scalar(1), -1, 4);
     int defect_area = defect.area;
-
+    bool result = false;
     for (auto it = m_imgCfg[serial].begin(); it != m_imgCfg[serial].end(); ++it) {
         string arr_name = (*it).arr_name;
         int cfg_area = (*it).area;
@@ -497,11 +509,247 @@ bool CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
             m_brokenCnt[(*it).arr_name]++;
             sprintf_s(buf, "<<processImg>>m_brokenCnt=%d", m_brokenCnt[(*it).arr_name]);
             OutputDebugStringA(buf);
-            return true;
-        }
-        else {
-            return false;
+            result = true;
         }
     }
-    return true;
+    return result;
+}
+int CPostProcessor::HeBing(int serial, char bc) {
+    // 合并缺陷 分组
+    vector<CDefect> v_defect1 = m_CenterDefectMatched[serial];
+    vector<vector<CDefect>> vv_defect1;
+    vv_defect1.push_back({ v_defect1.front() });
+    for (auto it = v_defect1.begin() + 1; it != v_defect1.end(); ++it) {
+        CDefect q = *it;
+        bool foundGroup = false;
+        for (int j = 0; j < vv_defect1.size(); j++) {
+            for (int k = 0; k < vv_defect1[j].size(); k++) {
+                CDefect v = vv_defect1[j][k];
+                int x1 = max(q.p1.x, v.p1.x);
+                int y1 = max(q.p1.y, v.p1.y);
+                int x2 = min(q.p2.x, v.p2.x);
+                int y2 = min(q.p2.y, v.p2.y);
+                int intersectionArea = max(0, x2 - x1) * max(0, y2 - y1);
+                if (intersectionArea > 0) {
+                    vv_defect1[j].push_back(q);
+                    foundGroup = true;
+                    break;
+                }
+            }
+            if (foundGroup) {
+                break;
+            }
+        }
+        if (!foundGroup) {
+            vv_defect1.push_back({ q });
+        }
+    }
+    int vv_defect1_size = vv_defect1.size();
+    if (vv_defect1_size > 1) {
+        sprintf_alg("[HeBing] vv_defect1_size > 1. vv_defect1_size=%d", vv_defect1_size);
+        return vv_defect1_size;
+    }
+    int x_min=5000, x_max=0, y_min=5000, y_max=0;
+    for (int k = 0; k < vv_defect1[0].size(); k++) {
+        CDefect v = vv_defect1[0][k];
+        if (min(v.p1.x, v.p2.x) < x_min) {
+            x_min = min(v.p1.x, v.p2.x);
+        }
+        if (min(v.p1.y, v.p2.y) < y_min) {
+            x_min = min(v.p1.y, v.p2.y);
+        }
+        if (max(v.p1.x, v.p2.x) > x_max) {
+            x_max = max(v.p1.x, v.p2.x);
+        }
+        if (max(v.p1.y, v.p2.y) > y_max) {
+            y_max = max(v.p1.y, v.p2.y);
+        }
+    }
+
+    int defect_w = x_max - x_min;
+    int defect_h = y_max - y_min;
+    int defect_length;
+
+    int lenth_limit = 0;
+    if (bc == 'c') {
+        defect_length = defect_h;
+        lenth_limit = m_limit_c[serial];
+    }
+    else {
+        defect_length = defect_w;
+        lenth_limit = m_limit_b[serial];
+    }
+    if (defect_length > lenth_limit) {
+        return 2;
+    }
+    else {
+        return 1;
+    }
+}
+bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num) {
+    sprintf_alg("[二次复判][Begin] camera_num=%d", camera_num);
+    char buf[128];
+    // 重置过程变量
+    reset();
+    m_CenterDefectMatched.clear();
+    m_BottomDefectMatched.clear();
+#ifdef PP_DEBUG
+    savePara(v_img, vv_defect);
+#endif // PP_DEBUG
+
+    bool result = true;
+    // 设置offset
+    setOffSet(v_img[0], camera_num);
+    for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); ++it) {
+        (*it).second = 0;
+    }
+    vector<vector<CDefect>> vv_defect_others;
+    // 遍历4个缺陷匹配置框
+    for (int i = 0; i < 4; i++) {
+        cv::Mat img = v_img[i];
+        vector<CDefect> v_defect_others;
+        vector<CDefect> v_defect = vv_defect[i];
+        for (auto it = v_defect.begin(); it != v_defect.end(); ++it) {
+            if ((*it).area > 0) {
+                if ((*it).type == 11) {
+                    bool matched = defectMatchBox(img, *it, i);
+                    if (matched == false) {
+                        // TODO 这里可以直接返回false
+                        // result = false;
+                        // break;
+                        sprintf_alg("[Process] match failed: defect_area=%d", (*it).area);
+                        v_defect_others.push_back(*it);
+                    }
+                }
+                else {
+                    sprintf_alg("[warring] type=%d name=%s", (*it).type, (*it).name);
+                }
+            }
+            else {
+                sprintf_alg("[warring] area=%d", (*it).area);
+            }
+        }
+        sprintf_alg("[Process] v_defect_others size = %d", v_defect_others.size());
+        vv_defect_others.push_back(v_defect_others);
+    }
+    // 如果有其他位置破损 确认是NG
+    if (result == true) {
+        for (int i = 0; i < 4; i++) {
+            vector<CDefect> v_defect_others = vv_defect_others[i];
+            if (v_defect_others.size() > 0) {
+                sprintf_alg("[Process] rejudge is NG, img_num=%d,have other broken defect!", i);
+                result = false;
+                break;
+            }
+        }
+    }
+
+    // 中间
+    for (int i = 1; i < 13; ++i) {
+        int cnt = HeBing(1, 'c');
+        string group_str = m_s_g_c[i - 1];
+        m_brokenCnt[group_str] += cnt;
+    }
+    // 中间
+    for (int i = 1; i < 13; ++i) {
+        int cnt = HeBing(1, 'c');
+        string group_str = m_s_g_c[i - 1];
+        m_brokenCnt[group_str] += cnt;
+    }
+
+    
+
+
+    // 遍历m_brokenCnt 确认 NG
+    if (result == true) {
+        for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); ++it) {
+            string key = (*it).first;
+            int val = (*it).second;
+            if (val > m_brokenCfg[key]) {
+                sprintf_alg("[Process] rejudge is NG, key=%s,val=%d,m_brokenCfg=%d,num is too big!", (*it).first.c_str(), val, m_brokenCfg[key]);
+                result = false;
+                break;
+            }
+        }
+    }
+#ifdef PP_DEBUG
+    //Create a time_t object and get the current time
+    time_t now = time(0);
+    //Create a tm struct to hold the current time
+    tm ltm;
+    localtime_s(&ltm, &now);
+    std::stringstream ss;
+    ss << std::put_time(&ltm, "%Y%m%d%H%M");
+    std::string str_time = ss.str();
+    string m_brokenCnt_file = PostProcessDebug + str_time + "m_brokenCnt.txt";
+    std::ofstream outputFile(m_brokenCnt_file);
+    if (outputFile.is_open()) {
+        // write the keys and values to the file
+        for (const auto& pair : m_brokenCnt) {
+            std::string key = pair.first;
+            int value = pair.second;
+            outputFile << key << " " << value << "\n";
+            sprintf_s(buf, "<<Process>> result : %s : %d", key.c_str(), value);
+            OutputDebugStringA(buf);
+        }
+
+        // 保存结果
+        outputFile << "\nresult:" << " " << result << "\n";
+        // close the file
+        outputFile.close();
+    }
+#endif // PP_DEBUG
+    sprintf_alg("[二次复判][End] result=%s", result ? "true" : "false");
+    return result;
+}
+
+bool CPostProcessor::defectMatchBox(cv::Mat img, CDefect defect, int serial) {
+    sprintf_alg("[defectMatchBox][Enter] img serial=%d, defect aera", serial, defect.area);
+    int result = false;
+
+    // 创建缺陷mask
+    cv::Mat img_mask = cv::Mat::zeros(img.size(), CV_8UC1);
+    rectangle(img_mask, { defect.p1, defect.p2 }, cv::Scalar(1), -1, 4);
+
+    for (auto it = m_imgCfg[serial].begin(); it != m_imgCfg[serial].end(); ++it) {
+        sprintf_alg("[defectMatchBox] m_imgCf: name=%s, arr_name=%s", (*it).name, (*it).arr_name);
+        string arr_name = (*it).arr_name;
+        int cfg_area = (*it).area;
+        int defect_w = abs(defect.p1.x - defect.p2.x);
+        int defect_h = abs(defect.p1.y - defect.p2.y);
+        sprintf_alg("[defectMatchBox] defect_w=%d, defect_h=%d", defect_w, defect_h);
+        // 切片
+        int x1 = (*it).p1.x + offset;
+        int x2 = (*it).p2.x + offset;
+        if (x1 < 0) {
+            x1 = 0;
+        }
+        if (x2 < 0) {
+            x2 = 0;
+        }
+        if (x1 > img.cols) {
+            x1 = img.cols;
+        }
+        if (x2 > img.cols) {
+            x2 = img.cols;
+        }
+        cv::Rect select = cv::Rect(cv::Point(x1, (*it).p1.y), cv::Point(x2, (*it).p2.y));
+        cv::Mat ROI = img_mask(select);
+        double sum = cv::sum(ROI)[0];
+        sprintf_alg("[defectMatchBox] sum=%.3f,defect_x:p1.x=%d p2.x=%d config_x:x1=%d x2=%d", sum, defect.p1.x, defect.p2.x, x1, x2);
+        sprintf_alg("[defectMatchBox] defect_area*0.7=%d, defect_area=%d, m_brokenCnt=%d", (int)(defect.area * 0.7), defect.area, m_brokenCnt[arr_name]);
+        // 一多半在这个配置框就认为是这个的
+        if (sum > defect.area * 0.7) {
+            if ((*it).arr_name[0] == 'c') {
+                m_CenterDefectMatched[(*it).serial].push_back(defect);
+                sprintf_alg("[defectMatchBox] m_CenterDefectMatched size serial=%d, size=%d", (*it).serial, m_CenterDefectMatched[(*it).serial].size());
+            }
+            else {
+                m_BottomDefectMatched[(*it).serial].push_back(defect);
+                sprintf_alg("[defectMatchBox] m_BottomDefectMatched size serial=%d, size=%d", (*it).serial, m_BottomDefectMatched[(*it).serial].size());
+            }
+            result = true;
+        }
+    }
+    return result;
 }
