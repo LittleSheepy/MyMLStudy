@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-04-28T07:42:29.743Z" agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.95 Safari/537.36" etag="tkdXiCsK0QCX93nRiAgi" version="21.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-28T07:56:51.610Z" agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.95 Safari/537.36" etag="Mbt6Ju7dfHh9qS0BzxNd" version="21.2.3" type="github">
   <diagram name="第 1 页" id="TQq3zP2J2Zs_yPfLcd-N">
-    <mxGraphModel dx="1242" dy="657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="793" dy="419" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -32,11 +32,29 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-51" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="fYOLJ2JK0MwK6xJ_GKbu-15" target="eVq_5vU3gRNtWS-iG7IX-53">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-52" value="结束遍历" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-51">
+          <mxGeometry x="-0.237" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="fYOLJ2JK0MwK6xJ_GKbu-15" value="遍历四张图和缺陷数据" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="315" y="520" width="150" height="80" as="geometry" />
         </mxCell>
         <mxCell id="fYOLJ2JK0MwK6xJ_GKbu-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="1" source="fYOLJ2JK0MwK6xJ_GKbu-20" target="fYOLJ2JK0MwK6xJ_GKbu-21" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="fYOLJ2JK0MwK6xJ_GKbu-20" target="eVq_5vU3gRNtWS-iG7IX-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-49" value="结束遍历" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-48">
+          <mxGeometry x="-0.2794" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="fYOLJ2JK0MwK6xJ_GKbu-20" value="遍历缺陷数据" style="rhombus;whiteSpace=wrap;html=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="610" y="520" width="130" height="80" as="geometry" />
@@ -75,18 +93,13 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="eVq_5vU3gRNtWS-iG7IX-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-4" target="eVq_5vU3gRNtWS-iG7IX-17">
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-4" target="eVq_5vU3gRNtWS-iG7IX-30">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="eVq_5vU3gRNtWS-iG7IX-19" value="遍历结束" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-18">
-          <mxGeometry x="-0.2056" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-4" value="遍历图片承重梁相对位置参数配置" style="rhombus;whiteSpace=wrap;html=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="782.5" y="830" width="205" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="eVq_5vU3gRNtWS-iG7IX-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-5" target="eVq_5vU3gRNtWS-iG7IX-8">
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-5" target="eVq_5vU3gRNtWS-iG7IX-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-11" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-9">
@@ -94,8 +107,13 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="eVq_5vU3gRNtWS-iG7IX-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-5" target="eVq_5vU3gRNtWS-iG7IX-15">
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-5" target="eVq_5vU3gRNtWS-iG7IX-34">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-36" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-35">
+          <mxGeometry x="0.2468" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-5" value="判断缺陷面积70%在配置承重梁Box内" style="rhombus;whiteSpace=wrap;html=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="1067.5" y="830" width="205" height="140" as="geometry" />
@@ -117,19 +135,80 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-8" value="是否超过允许尺寸" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="1130" y="1080" width="80" height="80" as="geometry" />
+          <mxGeometry x="1261" y="1090" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="eVq_5vU3gRNtWS-iG7IX-15" value="缺陷结构体保存在v_defect_others" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="1395" y="870" width="120" height="60" as="geometry" />
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-17" value="缺陷结构体保存在v_defect_others" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="825" y="1340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="eVq_5vU3gRNtWS-iG7IX-17" value="v_defect_others保存在vv_defect_others" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="825" y="1090" width="120" height="60" as="geometry" />
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-20" target="eVq_5vU3gRNtWS-iG7IX-37">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1470" y="1430" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-20" value="计数+2（后面根据个数限制判断NG，有的允许一个。这个相当于直接NG）" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="1270" y="1090" width="120" height="60" as="geometry" />
+          <mxGeometry x="1401" y="1100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-23" target="eVq_5vU3gRNtWS-iG7IX-37">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-23" value="计数+1（后面根据个数限制判断NG，有的允许一个）" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="1110" y="1250" width="120" height="60" as="geometry" />
+          <mxGeometry x="1241" y="1260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-30" target="eVq_5vU3gRNtWS-iG7IX-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-30" value="结束遍历" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="825" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-34" target="eVq_5vU3gRNtWS-iG7IX-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-34" value="return false" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-37" target="eVq_5vU3gRNtWS-iG7IX-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1000" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-37" value="return true" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1241" y="1400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-42" target="eVq_5vU3gRNtWS-iG7IX-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-45" value="是false" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-44">
+          <mxGeometry x="-0.2374" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-42" value="判断缺陷处理结构" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="845" y="1130" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-47" value="v_defect_others保存在vv_defect_others" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="615" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-53" target="eVq_5vU3gRNtWS-iG7IX-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-53" value="遍历vv_defect_others" style="rhombus;whiteSpace=wrap;html=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="320" y="810" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-57" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-54" target="eVq_5vU3gRNtWS-iG7IX-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-58" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-57">
+          <mxGeometry x="-0.2988" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-54" value="有其他位置破损" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="570" y="805" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-56" value="result=false" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="550" y="975" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
