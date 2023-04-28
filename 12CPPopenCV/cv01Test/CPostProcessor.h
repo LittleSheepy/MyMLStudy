@@ -11,7 +11,7 @@ struct CDefect
 {
     cv::Point p1;	// 左上点
     cv::Point p2;	// 右下点
-    int   area;	// 缺陷面积
+    int   area;	    // 缺陷面积
     string	  type;	// 缺陷类型 破损、毛边
     CDefect() {}
     CDefect(cv::Point p1, cv::Point p2, int area, string type) :p1(p1), p2(p2), area(area), type(type) {}
@@ -23,7 +23,7 @@ struct CArrayCfg
     int   cnt;	// 允许缺陷个数
     int	  area;	// 允许缺陷面积
     CArrayCfg() :cnt(0), area(0) {}
-    CArrayCfg(int type, int area) :cnt(cnt), area(area) {}
+    CArrayCfg(int cnt, int area) :cnt(cnt), area(area) {}
 };
 
 class CBox
