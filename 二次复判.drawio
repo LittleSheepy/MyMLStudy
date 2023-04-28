@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-04-28T07:56:51.610Z" agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.95 Safari/537.36" etag="Mbt6Ju7dfHh9qS0BzxNd" version="21.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-28T08:05:46.417Z" agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.95 Safari/537.36" etag="9QHDNOHsXYicwGBRAFDw" version="21.2.3" type="github">
   <diagram name="第 1 页" id="TQq3zP2J2Zs_yPfLcd-N">
-    <mxGraphModel dx="793" dy="419" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1785" dy="944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -147,13 +147,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="eVq_5vU3gRNtWS-iG7IX-20" value="计数+2（后面根据个数限制判断NG，有的允许一个。这个相当于直接NG）" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="1401" y="1100" width="120" height="60" as="geometry" />
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-20" value="m_brokenCnt计数+2（后面根据个数限制判断NG，有的允许一个。这个相当于直接NG）" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1401" y="1090" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-23" target="eVq_5vU3gRNtWS-iG7IX-37">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eVq_5vU3gRNtWS-iG7IX-23" value="计数+1（后面根据个数限制判断NG，有的允许一个）" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-23" value="m_brokenCnt计数+1（后面根据个数限制判断NG，有的允许一个）" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="1241" y="1260" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-30" target="eVq_5vU3gRNtWS-iG7IX-42">
@@ -193,6 +193,19 @@
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-53" target="eVq_5vU3gRNtWS-iG7IX-54">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-63" value="不为空" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-55">
+          <mxGeometry x="-0.2727" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-53" target="eVq_5vU3gRNtWS-iG7IX-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-62" value="空" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-60">
+          <mxGeometry x="-0.25" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-53" value="遍历vv_defect_others" style="rhombus;whiteSpace=wrap;html=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="320" y="810" width="140" height="70" as="geometry" />
         </mxCell>
@@ -205,10 +218,42 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-54" value="有其他位置破损" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="570" y="805" width="80" height="80" as="geometry" />
+          <mxGeometry x="682.5" y="805" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-56" value="result=false" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="550" y="975" width="120" height="60" as="geometry" />
+          <mxGeometry x="662.5" y="965" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-59" target="eVq_5vU3gRNtWS-iG7IX-67">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="389.9999999999998" y="1110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-66" value="遍历结束" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-64">
+          <mxGeometry x="-0.1981" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-70" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-59" target="eVq_5vU3gRNtWS-iG7IX-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-59" value="遍历m_brokenCnt" style="rhombus;whiteSpace=wrap;html=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="320" y="960" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-67" value="返回result" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-74" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-69" target="eVq_5vU3gRNtWS-iG7IX-56">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-75" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-74">
+          <mxGeometry x="-0.317" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-69" value="大于个数限制" style="rhombus;whiteSpace=wrap;html=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="480" y="960" width="140" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
