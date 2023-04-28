@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-04-28T07:33:08.874Z" agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.95 Safari/537.36" etag="Yn1AK2zDWTbRv_YUgz7K" version="21.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-28T07:38:57.191Z" agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.95 Safari/537.36" etag="7-keGUHqFM5thqhn2W51" version="21.2.3" type="github">
   <diagram name="第 1 页" id="TQq3zP2J2Zs_yPfLcd-N">
-    <mxGraphModel dx="921" dy="487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1587" dy="839" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -75,11 +75,39 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-4" target="eVq_5vU3gRNtWS-iG7IX-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-19" value="遍历结束" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-18">
+          <mxGeometry x="-0.2056" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-4" value="遍历图片承重梁相对位置参数配置" style="rhombus;whiteSpace=wrap;html=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="782.5" y="830" width="205" height="140" as="geometry" />
         </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-5" target="eVq_5vU3gRNtWS-iG7IX-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-11" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="eVq_5vU3gRNtWS-iG7IX-9">
+          <mxGeometry x="-0.3472" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="eVq_5vU3gRNtWS-iG7IX-5" target="eVq_5vU3gRNtWS-iG7IX-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="eVq_5vU3gRNtWS-iG7IX-5" value="判断缺陷面积70%在配置承重梁Box内" style="rhombus;whiteSpace=wrap;html=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="1067.5" y="830" width="205" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-8" value="" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="1080" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-15" value="缺陷结构体保存在v_defect_others" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1395" y="870" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eVq_5vU3gRNtWS-iG7IX-17" value="v_defect_others保存在vv_defect_others" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="825" y="1090" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
