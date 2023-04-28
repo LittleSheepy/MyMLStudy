@@ -1,4 +1,7 @@
-﻿#pragma once
+﻿/*
+2023年4月28日
+*/
+#pragma once
 #include <opencv.hpp>
 #include <vector>
 #include <string>
@@ -9,12 +12,13 @@ using namespace std;
 // 瑕疵结构体
 struct CDefect
 {
-    cv::Point p1;	// 左上点
-    cv::Point p2;	// 右下点
-    int   area;	    // 缺陷面积
-    string	  type;	// 缺陷类型 破损、毛边
+    cv::Point   p1;	        // 左上点
+    cv::Point   p2;	        // 右下点
+    int         area;	    // 缺陷面积
+    int	        type;	    // 缺陷类型 11破损、12毛边
+    string	    name;	    // 缺陷类型 11破损、12毛边
     CDefect() {}
-    CDefect(cv::Point p1, cv::Point p2, int area, string type) :p1(p1), p2(p2), area(area), type(type) {}
+    CDefect(cv::Point p1, cv::Point p2, int area, int type = 11, string name = "") :p1(p1), p2(p2), area(area), type(type), name(name) {}
 };
 
 // 瑕疵结构体
@@ -48,7 +52,7 @@ public:
     int state;
 };
 
-class CPostProcessor:CAlgBase{
+class CPostProcessor :CAlgBase {
 public:
     CPostProcessor();
     void imgCfgInit();

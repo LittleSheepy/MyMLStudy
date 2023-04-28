@@ -1,4 +1,7 @@
-﻿#pragma once
+﻿/*
+2023年4月28日
+*/
+#pragma once
 #include <opencv.hpp>
 
 #define AB_DEBUG

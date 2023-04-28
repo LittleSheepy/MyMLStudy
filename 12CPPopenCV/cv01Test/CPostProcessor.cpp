@@ -1,4 +1,7 @@
-﻿#include "pch.h"
+﻿/*
+2023年4月28日
+*/
+#include "pch.h"
 #include <fstream>
 #include <sys/stat.h>
 #include <direct.h>
@@ -35,6 +38,7 @@ using namespace std;
 #define LENGTH5  int(PIX_MM*5)              // 68.5
 #define LENGTH30  int(PIX_MM*30)            // 411
 #define CEMIAN_BROKEN ""
+
 
 //vector<vector<string>> = { vector<string>{"1c1"} };
 // 12(3)45(6)(7)89（10）11 12
@@ -100,7 +104,7 @@ void CPostProcessor::imgCfgInitByOffSet() {
         CBox("1b8", "bbl", 8, cv::Point(1200, BTOP), cv::Point(2030, BBOTTOM), AREA150),
     };
     m_img2Cfg = {
-        //CBox("2c4", "cb5", 4, cv::Point(0, CTOP), cv::Point(180, CBOTTOM), AREA150),
+        CBox("2c4", "cb5", 4, cv::Point(0, CTOP), cv::Point(320, CBOTTOM), AREA150),
         CBox("2c5", "cb5", 5, cv::Point(810, CTOP), cv::Point(1180, CBOTTOM), AREA150),
         CBox("2c6", "cb2", 6, cv::Point(1610, CTOP), cv::Point(1900, CBOTTOM)),
 
@@ -109,6 +113,7 @@ void CPostProcessor::imgCfgInitByOffSet() {
     m_img3Cfg = {
         CBox("3c7", "cb3", 7, cv::Point(400, CTOP), cv::Point(710, CBOTTOM)),
         CBox("3c8", "cb6", 8, cv::Point(1220, CTOP), cv::Point(1490, CBOTTOM), AREA150),
+        CBox("3c9", "cb6", 9, cv::Point(2240, CTOP), cv::Point(2448, CBOTTOM), AREA150),
 
         CBox("3b3", "bbc", 1, cv::Point(0, BTOP), cv::Point(2220, BBOTTOM))
     };
@@ -139,7 +144,7 @@ void CPostProcessor::imgCfgInitByOffSet2() {
         CBox("1b8", "bbl", 8, cv::Point(1340, BTOP), cv::Point(2170, BBOTTOM), AREA150),
     };
     m_img2Cfg = {
-        //CBox("2c4", "cb5", 4, cv::Point(0, CTOP), cv::Point(180, CBOTTOM), AREA150),
+        CBox("2c4", "cb5", 4, cv::Point(220, CTOP), cv::Point(450, CBOTTOM), AREA150),
         CBox("2c5", "cb5", 5, cv::Point(1000, CTOP), cv::Point(1300, CBOTTOM), AREA150),
         CBox("2c6", "cb2", 6, cv::Point(1800, CTOP), cv::Point(2100, CBOTTOM)),
 
@@ -148,7 +153,7 @@ void CPostProcessor::imgCfgInitByOffSet2() {
     m_img3Cfg = {
         CBox("3c7", "cb3", 7, cv::Point(600, CTOP), cv::Point(900, CBOTTOM)),
         CBox("3c8", "cb6", 8, cv::Point(1400, CTOP), cv::Point(1700, CBOTTOM), AREA150),
-        //CBox("3c9", "cb6", 9, cv::Point(2100, CTOP), cv::Point(2300, CBOTTOM), AREA150),
+        CBox("3c9", "cb6", 9, cv::Point(2240, CTOP), cv::Point(2448, CBOTTOM), AREA150),
 
         CBox("3b3", "bbc", 1, cv::Point(0, BTOP), cv::Point(2400, BBOTTOM))
     };
@@ -277,7 +282,7 @@ void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
     offset = matchLoc.x - template_x;
     if (abs(offset) > 250) {
         template_x = 1260;
-        sprintf_s(buf, "offset=%d, white_left=%d, template_x=%d", offset, matchLoc.x, template_x);
+        sprintf_s(buf, "[setOffSet][warning]offset=%d, white_left=%d, template_x=%d", offset, matchLoc.x, template_x);
         OutputDebugStringA(buf);
         offset = 0;
         imgCfgInit();
@@ -359,10 +364,18 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
         vector<CDefect> v_defect = vv_defect[i];
         for (auto it = v_defect.begin(); it != v_defect.end(); ++it) {
             if ((*it).area > 0) {
-                bool matched =  processImg(img, (*it), i);
-                if (matched == false) {
-                    v_defect_others.push_back(*it);
+                if ((*it).type == 11) {
+                    bool matched = processImg(img, (*it), i);
+                    if (matched == false) {
+                        v_defect_others.push_back(*it);
+                    }
                 }
+                else {
+                    sprintf_alg("[warring] type=%d name=%s", (*it).type, (*it).name);
+                }
+            }
+            else {
+                sprintf_alg("[warring] area=%d", (*it).area);
             }
         }
         vv_defect_others.push_back(v_defect_others);
@@ -373,6 +386,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
         for (int i = 0; i < 4; i++) {
             vector<CDefect> v_defect_others = vv_defect_others[i];
             if (v_defect_others.size() > 0) {
+                sprintf_alg("[Process] rejudge is NG, img_num=%d,have other broken defect!", i);
                 result = false;
                 break;
             }
@@ -384,6 +398,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
             string key = (*it).first;
             int val = (*it).second;
             if (val > m_brokenCfg[key]) {
+                sprintf_alg("[Process] rejudge is NG, key=%s,val=%d,m_brokenCfg=%d,num is too big!", (*it).first.c_str(), val, m_brokenCfg[key]);
                 result = false;
                 break;
             }
@@ -398,7 +413,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
     std::stringstream ss;
     ss << std::put_time(&ltm, "%Y%m%d%H%M");
     std::string str_time = ss.str();
-    string m_brokenCnt_file = PostProcessDebug + str_time  +"m_brokenCnt.txt";
+    string m_brokenCnt_file = PostProcessDebug + str_time + "m_brokenCnt.txt";
     std::ofstream outputFile(m_brokenCnt_file);
     if (outputFile.is_open()) {
         // write the keys and values to the file
@@ -488,4 +503,5 @@ bool CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
             return false;
         }
     }
+    return true;
 }
