@@ -650,11 +650,15 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
         string group_str = m_s_g_c[i - 1];
         m_brokenCnt[group_str] += cnt;
     }
-    // 中间
+    // 底部
     for (int i = 1; i < 13; ++i) {
         int cnt = HeBing(1, 'c');
-        string group_str = m_s_g_c[i - 1];
+        string group_str = m_s_g_b[i - 1];
         m_brokenCnt[group_str] += cnt;
+    }
+    for (auto it = m_limit_b.begin(); it != m_limit_b.end(); ++it) {
+        int serial = (*it).first;
+        int limit_length = (*it).second;
     }
 
     
