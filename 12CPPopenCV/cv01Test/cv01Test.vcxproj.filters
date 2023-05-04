@@ -30,6 +30,9 @@
     <ClCompile Include="FolderTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="PPTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CPostProcessor.h">

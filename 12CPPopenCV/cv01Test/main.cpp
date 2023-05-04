@@ -12,8 +12,10 @@ using namespace std;
 using namespace cv;
 void FolderTest();
 void NumRecTest();
+void PPTestOne(int serial = 1);
+void PPTestAll();
 
-void PPtest()
+void PP_test()
 {
 	string dir_root = "D:/04DataSets/ningjingLG/all/";
 	string img_first_name = "black_0074690_CM1_";
@@ -69,7 +71,8 @@ int main()
 	//ABTest();
 
 	//PPtest();
-	NumRecTest();
-	FolderTest();
+	PPTestOne();
+	//NumRecTest();
+	//FolderTest();
 	return 0;
 }

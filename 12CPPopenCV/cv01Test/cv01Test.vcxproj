@@ -82,7 +82,7 @@
     <IncludePath>D:\tools\opencv455\build\include\opencv2/;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
     <IntDir>../MiddleDirectory/</IntDir>
-    <OutDir>$(SolutionDir)bin/</OutDir>
+    <OutDir>D:\04Bin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -158,6 +158,7 @@
     <ClCompile Include="FolderTest.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CNumRec.cpp" />
+    <ClCompile Include="PPTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAlgBase.h" />
