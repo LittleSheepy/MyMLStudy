@@ -55,3 +55,4 @@ DeepLearning/CNN/ResNet/models/resnet/resnet.meta
 .idea
 12CPPopenCV/cv01Test/cv01Test.vcxproj
 ant-learn-python-concurrent-old
+.vs/

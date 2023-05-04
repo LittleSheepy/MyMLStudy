@@ -1,5 +1,5 @@
 ﻿/*
-2023年4月28日
+2023年5月4日
 */
 #include "pch.h"
 #include <iostream>
@@ -84,17 +84,15 @@ cv::Rect CAlgBase::findWhiteArea(const cv::Mat& img_gray)
 }
 
 void CAlgBase::sprintf_alg(const char* format, ...) {
-    string father_func_name = getFatherFuncName(1);
-    string title = "";
-    title = "[Alg]{" + father_func_name + "}";
+    string title = "[Alg]";
+    //string father_func_name = getFatherFuncName(1);
+    //title = "{" + father_func_name + "}";
     char buf[256] = { 0 };
     va_list args;
     va_start(args, format);
-    sprintf_s(buf, format, args);
-    //vsprintf_s(buf, format, args);
-    //_vsnprintf_s(buf, sizeof(buf) - 1, format, args);   // 
+    vsprintf_s(buf, format, args);
     va_end(args);
-    cout << buf << endl;
+    //cout << buf << endl;
     char out_put[1024] = "";
     strcat_s(out_put, title.c_str());
     strcat_s(out_put, buf);

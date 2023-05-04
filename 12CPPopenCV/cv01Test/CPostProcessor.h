@@ -1,5 +1,5 @@
 ﻿/*
-2023年4月28日
+2023年5月4日
 */
 #pragma once
 #include <opencv.hpp>
@@ -17,8 +17,17 @@ struct CDefect
     int         area;	    // 缺陷面积
     int	        type;	    // 缺陷类型 11破损、12毛边
     string	    name;	    // 缺陷类型 11破损、12毛边
+    double      realArea;   // 真实面积
     CDefect() {}
-    CDefect(cv::Point p1, cv::Point p2, int area, int type = 11, string name = "") :p1(p1), p2(p2), area(area), type(type), name(name) {}
+    CDefect(cv::Point p1, cv::Point p2, int area, int type = 11, string name = "null", double realArea = 0)
+        :p1(p1), p2(p2), area(area), type(type), name(name), realArea(realArea) {}
+
+    bool operator==(const CDefect& other) const {
+        return p1.x == other.p1.x && p1.y == other.p1.y && p2.x == other.p2.x && p2.y == other.p2.y;
+    }
+    bool overlap(const CDefect& other) {
+        return (p1.x <= other.p2.x && p2.x >= other.p1.x && p1.y <= other.p2.y && p2.y >= other.p1.y);
+    }
 };
 
 // 瑕疵结构体
@@ -71,6 +80,9 @@ public:
     cv::Mat getMask(vector<cv::Point> points);
     void savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect);
     int getLimit(string bc, int ser);
+    vector<int> getGroupBBoxesWH(vector<CDefect> bboxes);
+    vector<vector<CDefect>> groupBBoxes(vector<CDefect> bboxes);
+    int groupBBoxes_old(vector<CDefect> bboxes, vector<CDefect>& v_defect1, char bc);
     int HeBing(int serial, char bc);
 public:
     string					    m_className = "【二次复判】";
@@ -87,7 +99,7 @@ public:
     CBoxArray                   m_objs;
     vector<int>                 m_limit_c;
     vector<string>              m_s_g_c;
-    map<int, int>               m_limit_b;
+    vector<int>                 m_limit_b;
     vector<string>              m_s_g_b;
     // 模板
     int offset = 0;

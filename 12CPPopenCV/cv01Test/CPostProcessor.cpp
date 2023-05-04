@@ -1,5 +1,5 @@
 ﻿/*
-2023年4月28日
+2023年5月4日
 */
 #include "pch.h"
 #include <fstream>
@@ -56,13 +56,13 @@ CPostProcessor::CPostProcessor() {
 
     m_s_g_c = { "cb5", "cb5", "cb1", "cb5", "cb5", "cb2", "cb3", "cb6", "cb6", "cb4", "cb4", "cb6" };
     m_limit_c = { AREA150, AREA150, 0, AREA150, AREA150, 0, 0, AREA150, AREA150, 0, 0, AREA150 };
-    m_s_g_b = { "bbl", "bbl", "bbc", "bbr", "bbr"};
-    m_limit_b = { {6, AREA25}, {8, AREA150} , {1, 0} , {9, AREA150} , {10, AREA25} };
+    m_s_g_b = { "bbl", "bbl", "bbc", "bbr", "bbr" };
+    m_limit_b = { AREA25, AREA150, 0, AREA150, AREA25 };
     img_template = cv::imread(template_path);
 }
 
 int CPostProcessor::getLimit(string bc, int ser) {
-
+    return 0;
 }
 
 void CPostProcessor::imgCfgInit() {
@@ -73,20 +73,20 @@ void CPostProcessor::imgCfgInit() {
         {"1c3", "cb1", 3,cv::Point(1000,CTOP),cv::Point(1430,CBOTTOM)},
         {"1c4", "cb5", 4,cv::Point(1900,CTOP),cv::Point(2250,CBOTTOM),AREA150},
 
-        {"1b6", "bbl", 6,cv::Point(450,BTOP),cv::Point(1430,BBOTTOM),AREA25},
-        {"1b8", "bbl", 8,cv::Point(1430,BTOP),cv::Point(2250,BBOTTOM),AREA150},
+        {"1b6", "bbl", 1,cv::Point(450,BTOP),cv::Point(1430,BBOTTOM),AREA25},
+        {"1b8", "bbl", 2,cv::Point(1430,BTOP),cv::Point(2250,BBOTTOM),AREA150},
     };
     m_img2Cfg = {
         {"2c5", "cb5", 5,cv::Point(600,CTOP),cv::Point(1200,CBOTTOM),AREA150},
         {"2c6", "cb2", 6,cv::Point(1200,CTOP),cv::Point(1800,CBOTTOM)},
 
-        {"2b1", "bbc", 1,cv::Point(0,BTOP),cv::Point(2448,BBOTTOM)},
+        {"2b1", "bbc", 3,cv::Point(0,BTOP),cv::Point(2448,BBOTTOM)},
     };
     m_img3Cfg = {
         {"3c7", "cb3", 7,cv::Point(300,CTOP),cv::Point(900,CBOTTOM)},
         {"3c8", "cb6", 8,cv::Point(1000,CTOP),cv::Point(1600,CBOTTOM),AREA150},
 
-        {"3b3", "bbc", 1,cv::Point(0,BTOP),cv::Point(2448,BBOTTOM)},
+        {"3b3", "bbc", 3,cv::Point(0,BTOP),cv::Point(2448,BBOTTOM)},
     };
     m_img4Cfg = {
         {"4c9", "cb6", 9,cv::Point(100,CTOP),cv::Point(600,CBOTTOM),AREA150},
@@ -94,8 +94,8 @@ void CPostProcessor::imgCfgInit() {
         {"4c11", "cb6", 11,cv::Point(1400,CTOP),cv::Point(1700,CBOTTOM),AREA150},
         {"4c12", "cb6", 12,cv::Point(1800,CTOP),cv::Point(2100,CBOTTOM),AREA150},
 
-        {"4b9", "bbr", 9,cv::Point(100,BTOP),cv::Point(1400,BBOTTOM),AREA150},
-        {"4b10", "bbr", 10,cv::Point(1100,BTOP),cv::Point(2100,BBOTTOM),AREA25},
+        {"4b9", "bbr", 4,cv::Point(100,BTOP),cv::Point(1400,BBOTTOM),AREA150},
+        {"4b10", "bbr", 5,cv::Point(1100,BTOP),cv::Point(2100,BBOTTOM),AREA25},
     };
     m_imgCfg.push_back(m_img1Cfg);
     m_imgCfg.push_back(m_img2Cfg);
@@ -109,22 +109,22 @@ void CPostProcessor::imgCfgInitByOffSet() {
         CBox("1c3", "cb1", 3, cv::Point(1090, CTOP), cv::Point(1250, CBOTTOM)),
         CBox("1c4", "cb5", 4, cv::Point(1980, CTOP), cv::Point(2210, CBOTTOM), AREA150),
 
-        CBox("1b6", "bbl", 6, cv::Point(430, BTOP), cv::Point(1150, BBOTTOM), AREA25),
-        CBox("1b8", "bbl", 8, cv::Point(1200, BTOP), cv::Point(2030, BBOTTOM), AREA150),
+        CBox("1b6", "bbl", 1, cv::Point(430, BTOP), cv::Point(1150, BBOTTOM), AREA25),
+        CBox("1b8", "bbl", 2, cv::Point(1200, BTOP), cv::Point(2030, BBOTTOM), AREA150),
     };
     m_img2Cfg = {
         CBox("2c4", "cb5", 4, cv::Point(0, CTOP), cv::Point(320, CBOTTOM), AREA150),
         CBox("2c5", "cb5", 5, cv::Point(810, CTOP), cv::Point(1180, CBOTTOM), AREA150),
         CBox("2c6", "cb2", 6, cv::Point(1610, CTOP), cv::Point(1900, CBOTTOM)),
 
-        CBox("2b1", "bbc", 1, cv::Point(100, BTOP), cv::Point(2448, BBOTTOM))
+        CBox("2b1", "bbc", 3, cv::Point(100, BTOP), cv::Point(2448, BBOTTOM))
     };
     m_img3Cfg = {
         CBox("3c7", "cb3", 7, cv::Point(400, CTOP), cv::Point(710, CBOTTOM)),
         CBox("3c8", "cb6", 8, cv::Point(1220, CTOP), cv::Point(1490, CBOTTOM), AREA150),
         CBox("3c9", "cb6", 9, cv::Point(2240, CTOP), cv::Point(2448, CBOTTOM), AREA150),
 
-        CBox("3b3", "bbc", 1, cv::Point(0, BTOP), cv::Point(2220, BBOTTOM))
+        CBox("3b3", "bbc", 3, cv::Point(0, BTOP), cv::Point(2220, BBOTTOM))
     };
     m_img4Cfg = {
         CBox("4c9", "cb6", 9, cv::Point(330, CTOP), cv::Point(550, CBOTTOM), AREA150),
@@ -132,8 +132,8 @@ void CPostProcessor::imgCfgInitByOffSet() {
         CBox("4c11", "cb6", 11, cv::Point(1510, CTOP), cv::Point(1690, CBOTTOM), AREA150),
         CBox("4c12", "cb6", 12, cv::Point(1820, CTOP), cv::Point(2100, CBOTTOM), AREA150),
 
-        CBox("4b9", "bbr", 9, cv::Point(500, BTOP), cv::Point(1310, BBOTTOM), AREA150),
-        CBox("4b10", "bbr", 10, cv::Point(1370, BTOP), cv::Point(2050, BBOTTOM), AREA25),
+        CBox("4b9", "bbr", 4, cv::Point(500, BTOP), cv::Point(1310, BBOTTOM), AREA150),
+        CBox("4b10", "bbr", 5, cv::Point(1370, BTOP), cv::Point(2050, BBOTTOM), AREA25),
     };
     m_imgCfg.clear();
     m_imgCfg.push_back(m_img1Cfg);
@@ -149,22 +149,22 @@ void CPostProcessor::imgCfgInitByOffSet2() {
         CBox("1c3", "cb1", 3, cv::Point(1230, CTOP), cv::Point(1390, CBOTTOM)),
         CBox("1c4", "cb5", 4, cv::Point(2120, CTOP), cv::Point(2400, CBOTTOM), AREA150),
 
-        CBox("1b6", "bbl", 6, cv::Point(660, BTOP), cv::Point(1280, BBOTTOM), AREA25),
-        CBox("1b8", "bbl", 8, cv::Point(1340, BTOP), cv::Point(2170, BBOTTOM), AREA150),
+        CBox("1b6", "bbl", 1, cv::Point(660, BTOP), cv::Point(1280, BBOTTOM), AREA25),
+        CBox("1b8", "bbl", 2, cv::Point(1340, BTOP), cv::Point(2170, BBOTTOM), AREA150),
     };
     m_img2Cfg = {
         CBox("2c4", "cb5", 4, cv::Point(220, CTOP), cv::Point(450, CBOTTOM), AREA150),
         CBox("2c5", "cb5", 5, cv::Point(1000, CTOP), cv::Point(1300, CBOTTOM), AREA150),
         CBox("2c6", "cb2", 6, cv::Point(1800, CTOP), cv::Point(2100, CBOTTOM)),
 
-        CBox("2b1", "bbc", 1, cv::Point(280, BTOP), cv::Point(2448, BBOTTOM))
+        CBox("2b1", "bbc", 3, cv::Point(280, BTOP), cv::Point(2448, BBOTTOM))
     };
     m_img3Cfg = {
         CBox("3c7", "cb3", 7, cv::Point(600, CTOP), cv::Point(900, CBOTTOM)),
         CBox("3c8", "cb6", 8, cv::Point(1400, CTOP), cv::Point(1700, CBOTTOM), AREA150),
         CBox("3c9", "cb6", 9, cv::Point(2240, CTOP), cv::Point(2448, CBOTTOM), AREA150),
 
-        CBox("3b3", "bbc", 1, cv::Point(0, BTOP), cv::Point(2400, BBOTTOM))
+        CBox("3b3", "bbc", 3, cv::Point(0, BTOP), cv::Point(2400, BBOTTOM))
     };
     m_img4Cfg = {
         CBox("4c9", "cb6", 9, cv::Point(200, CTOP), cv::Point(450, CBOTTOM), AREA150),
@@ -172,9 +172,9 @@ void CPostProcessor::imgCfgInitByOffSet2() {
         CBox("4c11", "cb6", 11, cv::Point(1430, CTOP), cv::Point(1620, CBOTTOM), AREA150),
         CBox("4c12", "cb6", 12, cv::Point(1740, CTOP), cv::Point(2030, CBOTTOM), AREA150),
 
-        //CBox("4b3", "bbc", 1, cv::Point(0, BTOP), cv::Point(270, BBOTTOM)),
-        CBox("4b9", "bbr", 9, cv::Point(400, BTOP), cv::Point(1230, BBOTTOM), AREA150),
-        CBox("4b10", "bbr", 10, cv::Point(1290, BTOP), cv::Point(1980, BBOTTOM), AREA25),
+        //CBox("4b3", "bbc", 3, cv::Point(0, BTOP), cv::Point(270, BBOTTOM)),
+        CBox("4b9", "bbr", 4, cv::Point(400, BTOP), cv::Point(1230, BBOTTOM), AREA150),
+        CBox("4b10", "bbr", 5, cv::Point(1290, BTOP), cv::Point(1980, BBOTTOM), AREA25),
     };
     m_imgCfg.clear();
     m_imgCfg.push_back(m_img1Cfg);
@@ -331,14 +331,18 @@ void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_
         // 保存 vector<CDefect>
 
         vector<CDefect> v_defect = vv_defect[i];
-        std::string vect_name = filename + ".bin";
+        std::string vect_name = filename + ".txt";
         std::ofstream outputFile(vect_name);
-
         // check if the file was successfully opened
         if (outputFile.is_open()) {
             // loop through each element in the vector and write it to the file
             for (const auto& defect : v_defect) {
-                outputFile.write(reinterpret_cast<const char*>(&defect), sizeof(defect));
+                //outputFile.write(reinterpret_cast<const char*>(&defect), sizeof(defect));
+                outputFile << defect.p1.x << " " << defect.p1.y << endl;
+                outputFile << defect.p2.x << " " << defect.p2.y << endl;
+                outputFile << defect.area << endl;
+                outputFile << defect.type << endl;
+                outputFile << defect.name << endl;
             }
             // close the file
             outputFile.close();
@@ -514,49 +518,59 @@ bool CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
     }
     return result;
 }
-int CPostProcessor::HeBing(int serial, char bc) {
-    // 合并缺陷 分组
-    vector<CDefect> v_defect1 = m_CenterDefectMatched[serial];
-    vector<vector<CDefect>> vv_defect1;
-    vv_defect1.push_back({ v_defect1.front() });
-    for (auto it = v_defect1.begin() + 1; it != v_defect1.end(); ++it) {
-        CDefect q = *it;
-        bool foundGroup = false;
-        for (int j = 0; j < vv_defect1.size(); j++) {
-            for (int k = 0; k < vv_defect1[j].size(); k++) {
-                CDefect v = vv_defect1[j][k];
-                int x1 = max(q.p1.x, v.p1.x);
-                int y1 = max(q.p1.y, v.p1.y);
-                int x2 = min(q.p2.x, v.p2.x);
-                int y2 = min(q.p2.y, v.p2.y);
-                int intersectionArea = max(0, x2 - x1) * max(0, y2 - y1);
-                if (intersectionArea > 0) {
-                    vv_defect1[j].push_back(q);
-                    foundGroup = true;
+
+// BBOX分组 重叠就分为一组
+vector<vector<CDefect>> CPostProcessor::groupBBoxes(vector<CDefect> bboxes) {
+    vector<vector<CDefect>> groups;
+    for (int i = 0; i < bboxes.size(); i++) {
+        bool added = false;
+        for (int j = 0; j < groups.size(); j++) {
+            for (int k = 0; k < groups[j].size(); k++) {
+                //if (overlap(bboxes[i], groups[j][k])) {
+                if (bboxes[i].overlap(groups[j][k])) {
+                    groups[j].push_back(bboxes[i]);
+                    added = true;
                     break;
                 }
             }
-            if (foundGroup) {
+            if (added) {
+                // Merge groups that overlap with each other
+                for (int k = j + 1; k < groups.size(); k++) {
+                    bool overlapFound = false;
+                    for (int l = 0; l < groups[k].size(); l++) {
+                        if (bboxes[i].overlap(groups[k][l])) {
+                            //if (overlap(bboxes[i], groups[k][l])) {
+                            overlapFound = true;
+                            break;
+                        }
+                    }
+                    if (overlapFound) {
+                        groups[j].insert(groups[j].end(), groups[k].begin(), groups[k].end());
+                        groups.erase(groups.begin() + k);
+                        k--;
+                    }
+                }
                 break;
             }
         }
-        if (!foundGroup) {
-            vv_defect1.push_back({ q });
+        if (!added) {
+            groups.push_back({ bboxes[i] });
         }
     }
-    int vv_defect1_size = vv_defect1.size();
-    if (vv_defect1_size > 1) {
-        sprintf_alg("[HeBing] vv_defect1_size > 1. vv_defect1_size=%d", vv_defect1_size);
-        return vv_defect1_size;
-    }
-    int x_min=5000, x_max=0, y_min=5000, y_max=0;
-    for (int k = 0; k < vv_defect1[0].size(); k++) {
-        CDefect v = vv_defect1[0][k];
+    return groups;
+}
+
+// 获得一组bbox的WH
+vector<int> CPostProcessor::getGroupBBoxesWH(vector<CDefect> bboxes) {
+    vector<int> resultWH;
+    int x_min = 5000, x_max = 0, y_min = 5000, y_max = 0;
+    for (int k = 0; k < bboxes.size(); k++) {
+        CDefect v = bboxes[k];
         if (min(v.p1.x, v.p2.x) < x_min) {
             x_min = min(v.p1.x, v.p2.x);
         }
         if (min(v.p1.y, v.p2.y) < y_min) {
-            x_min = min(v.p1.y, v.p2.y);
+            y_min = min(v.p1.y, v.p2.y);
         }
         if (max(v.p1.x, v.p2.x) > x_max) {
             x_max = max(v.p1.x, v.p2.x);
@@ -568,27 +582,60 @@ int CPostProcessor::HeBing(int serial, char bc) {
 
     int defect_w = x_max - x_min;
     int defect_h = y_max - y_min;
-    int defect_length;
+    resultWH.push_back(defect_w);
+    resultWH.push_back(defect_h);
+    sprintf_alg("[getGroupBBoxesWH] defect_w=%d, defect_h=%d", defect_w, defect_h);
+    return resultWH;
+}
 
+int CPostProcessor::HeBing(int serial, char bc) {
+    sprintf_alg("[HeBing][enter] serial=%d, bc=%c", serial, bc);
+    // 合并缺陷 分组
+    vector<CDefect> v_defect1 = m_CenterDefectMatched[serial - 1];
+
+    int defect_length_index = 1;
+    int cfg_area = m_limit_c[serial - 1];
     int lenth_limit = 0;
-    if (bc == 'c') {
-        defect_length = defect_h;
-        lenth_limit = m_limit_c[serial];
+    if (cfg_area == AREA25) {
+        lenth_limit = LENGTH5;
     }
-    else {
-        defect_length = defect_w;
-        lenth_limit = m_limit_b[serial];
+    if (cfg_area == AREA150) {
+        lenth_limit = LENGTH30;
     }
-    if (defect_length > lenth_limit) {
-        return 2;
+    //if (bc == 'b') {
+    //    v_defect1 = m_BottomDefectMatched[serial - 1];
+    //    defect_length_index = 0;
+    //    cfg_area = m_limit_b[serial - 1];
+    //}
+    // 没有缺陷
+    if (v_defect1.size() == 0) {
+        sprintf_alg("[HeBing][out] no defect");
+        return 0;
     }
-    else {
-        return 1;
+
+    vector<vector<CDefect>> vv_defect1;
+    // 合并破损框
+    vv_defect1 = groupBBoxes(v_defect1);
+    //int vv_defect1_size = (int)vv_defect1.size();
+    //if (vv_defect1_size > 1) {
+    //    sprintf_alg("[HeBing][out] vv_defect1_size > 1. vv_defect1_size=%d", vv_defect1_size);
+    //    return vv_defect1_size;
+    //}
+    // 遍历每组破损框
+    int defect_cnt = 0;
+    for (vector<CDefect> v_defect : vv_defect1) {
+        vector<int> resultWH = getGroupBBoxesWH(v_defect);
+        int defect_length = resultWH[defect_length_index];
+        if (defect_length > lenth_limit) {
+            defect_cnt = 1;
+            break;
+        }
     }
+    sprintf_alg("[HeBing][out] defect_cnt=%d", defect_cnt);
+    return defect_cnt;
 }
 bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num) {
-    sprintf_alg("[二次复判][Begin] camera_num=%d", camera_num);
-    char buf[128];
+    sprintf_alg("[ReJudge][Begin] camera_num=%d ", camera_num);
     // 重置过程变量
     reset();
     m_CenterDefectMatched.clear();
@@ -607,9 +654,15 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
     // 遍历4个缺陷匹配置框
     for (int i = 0; i < 4; i++) {
         cv::Mat img = v_img[i];
-        vector<CDefect> v_defect_others;
         vector<CDefect> v_defect = vv_defect[i];
+        vv_defect_others.push_back({});
+        sprintf_alg("[Process] img %d v_defect.size=%d", i, v_defect.size());
+        if (v_defect.size() == 0) {
+            sprintf_alg("[Process][import] img %d have None defect.", i);
+            continue;
+        }
         for (auto it = v_defect.begin(); it != v_defect.end(); ++it) {
+            sprintf_alg("[Process] defect_area=%d, defect_type = %d.", (*it).area, (*it).type);
             if ((*it).area > 0) {
                 if ((*it).type == 11) {
                     bool matched = defectMatchBox(img, *it, i);
@@ -618,19 +671,18 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
                         // result = false;
                         // break;
                         sprintf_alg("[Process] match failed: defect_area=%d", (*it).area);
-                        v_defect_others.push_back(*it);
+                        vv_defect_others[i].push_back(*it);
                     }
                 }
                 else {
-                    sprintf_alg("[warring] type=%d name=%s", (*it).type, (*it).name);
+                    sprintf_alg("[Process][warring] type=%d name=%s", (*it).type, (*it).name);
                 }
             }
             else {
-                sprintf_alg("[warring] area=%d", (*it).area);
+                sprintf_alg("[Process][warring] area=%d", (*it).area);
             }
         }
-        sprintf_alg("[Process] v_defect_others size = %d", v_defect_others.size());
-        vv_defect_others.push_back(v_defect_others);
+        sprintf_alg("[Process] v_defect_others size = %d", vv_defect_others[i].size());
     }
     // 如果有其他位置破损 确认是NG
     if (result == true) {
@@ -646,23 +698,20 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
 
     // 中间
     for (int i = 1; i < 13; ++i) {
-        int cnt = HeBing(1, 'c');
         string group_str = m_s_g_c[i - 1];
+        sprintf_alg("[Process] c group_str=%s", group_str.c_str());
+        int cnt = HeBing(i, 'c');
         m_brokenCnt[group_str] += cnt;
+        sprintf_alg("[Process] c m_brokenCnt group_str=%s, %d", group_str.c_str(), m_brokenCnt[group_str]);
     }
     // 底部
-    for (int i = 1; i < 13; ++i) {
-        int cnt = HeBing(1, 'c');
-        string group_str = m_s_g_b[i - 1];
-        m_brokenCnt[group_str] += cnt;
-    }
-    for (auto it = m_limit_b.begin(); it != m_limit_b.end(); ++it) {
-        int serial = (*it).first;
-        int limit_length = (*it).second;
-    }
-
-    
-
+    //for (int i = 1; i < 6; ++i) {
+    //    string group_str = m_s_g_b[i - 1];
+    //    sprintf_alg("[Process] b group_str=%s", group_str.c_str());
+    //    int cnt = HeBing(i, 'b');
+    //    m_brokenCnt[group_str] += cnt;
+    //    sprintf_alg("[Process] b m_brokenCnt group_str=%s, %d", group_str.c_str(), m_brokenCnt[group_str]);
+    //}
 
     // 遍历m_brokenCnt 确认 NG
     if (result == true) {
@@ -693,8 +742,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
             std::string key = pair.first;
             int value = pair.second;
             outputFile << key << " " << value << "\n";
-            sprintf_s(buf, "<<Process>> result : %s : %d", key.c_str(), value);
-            OutputDebugStringA(buf);
+            sprintf_alg("<<Process>> result : %s : %d, , limit: %d", key.c_str(), value, m_brokenCfg[key]);
         }
 
         // 保存结果
@@ -703,7 +751,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
         outputFile.close();
     }
 #endif // PP_DEBUG
-    sprintf_alg("[二次复判][End] result=%s", result ? "true" : "false");
+    sprintf_alg("[ReJudge][End] result=%s", result ? "true" : "false");
     return result;
 }
 
@@ -716,11 +764,12 @@ bool CPostProcessor::defectMatchBox(cv::Mat img, CDefect defect, int serial) {
     rectangle(img_mask, { defect.p1, defect.p2 }, cv::Scalar(1), -1, 4);
 
     for (auto it = m_imgCfg[serial].begin(); it != m_imgCfg[serial].end(); ++it) {
-        sprintf_alg("[defectMatchBox] m_imgCf: name=%s, arr_name=%s", (*it).name, (*it).arr_name);
+        sprintf_alg("[defectMatchBox] m_imgCf: name=%s, arr_name=%s", (*it).name.c_str(), (*it).arr_name.c_str());
         string arr_name = (*it).arr_name;
         int cfg_area = (*it).area;
         int defect_w = abs(defect.p1.x - defect.p2.x);
         int defect_h = abs(defect.p1.y - defect.p2.y);
+        int judge_area = defect_w * defect_h;
         sprintf_alg("[defectMatchBox] defect_w=%d, defect_h=%d", defect_w, defect_h);
         // 切片
         int x1 = (*it).p1.x + offset;
@@ -741,19 +790,86 @@ bool CPostProcessor::defectMatchBox(cv::Mat img, CDefect defect, int serial) {
         cv::Mat ROI = img_mask(select);
         double sum = cv::sum(ROI)[0];
         sprintf_alg("[defectMatchBox] sum=%.3f,defect_x:p1.x=%d p2.x=%d config_x:x1=%d x2=%d", sum, defect.p1.x, defect.p2.x, x1, x2);
-        sprintf_alg("[defectMatchBox] defect_area*0.7=%d, defect_area=%d, m_brokenCnt=%d", (int)(defect.area * 0.7), defect.area, m_brokenCnt[arr_name]);
+        sprintf_alg("[defectMatchBox]       defect_area*0.7=%d, defect_area=%d, m_brokenCnt=%d", (int)(defect.area * 0.7), defect.area, m_brokenCnt[arr_name]);
         // 一多半在这个配置框就认为是这个的
-        if (sum > defect.area * 0.7) {
+        //if (sum > defect.area * 0.7) {
+        if (sum > judge_area * 0.7) {
             if ((*it).arr_name[0] == 'c') {
-                m_CenterDefectMatched[(*it).serial].push_back(defect);
-                sprintf_alg("[defectMatchBox] m_CenterDefectMatched size serial=%d, size=%d", (*it).serial, m_CenterDefectMatched[(*it).serial].size());
+                m_CenterDefectMatched[(*it).serial - 1].push_back(defect);
+                sprintf_alg("[defectMatchBox]       m_CenterDefectMatched center size: serial=%d, size=%d", (*it).serial, m_CenterDefectMatched[(*it).serial].size());
             }
             else {
-                m_BottomDefectMatched[(*it).serial].push_back(defect);
-                sprintf_alg("[defectMatchBox] m_BottomDefectMatched size serial=%d, size=%d", (*it).serial, m_BottomDefectMatched[(*it).serial].size());
+                m_BottomDefectMatched[(*it).serial - 1].push_back(defect);
+                sprintf_alg("[defectMatchBox]       m_BottomDefectMatched bottom size: serial=%d, size=%d", (*it).serial, m_BottomDefectMatched[(*it).serial].size());
             }
             result = true;
+            break;
         }
     }
+    sprintf_alg("[defectMatchBox][Out] result=%s", result ? "true" : "false");
     return result;
+}
+
+int CPostProcessor::groupBBoxes_old(vector<CDefect> bboxes, vector<CDefect>& v_defect1, char bc) {
+    vector<vector<CDefect>> vv_defect1;
+    vector<CDefect> v_defect1_shengyu;
+    vector<CDefect> v_defect1_group_tmp;
+    //vv_defect1.push_back({ v_defect1.front() });
+    v_defect1_group_tmp = { v_defect1.front() };
+    v_defect1.erase(v_defect1.begin());
+    v_defect1_shengyu.clear();
+    bool find_new = false;
+    while (true) {
+        for (auto it = v_defect1.begin(); it != v_defect1.end(); ++it) {
+            CDefect q = *it;
+            bool foundGroup = false;
+            for (int j = 0; j < v_defect1_group_tmp.size(); j++) {
+                CDefect v = v_defect1_group_tmp[j];
+                int intersectionArea = 0;
+                if (bc == 'c') {
+                    //int x1 = max(q.p1.x, v.p1.x);
+                    int y1 = max(q.p1.y, v.p1.y);
+                    //int x2 = min(q.p2.x, v.p2.x);
+                    int y2 = min(q.p2.y, v.p2.y);
+                    intersectionArea = max(0, y2 - y1);
+                }
+                //else {
+                //    //int x1 = max(q.p1.x, v.p1.x);
+                //    //int y1 = max(q.p1.y, v.p1.y);
+                //    //int x2 = min(q.p2.x, v.p2.x);
+                //    //int y2 = min(q.p2.y, v.p2.y);
+                //    intersectionArea = 0;
+                //}
+                if (intersectionArea > 0) {
+                    v_defect1_group_tmp.push_back(q);
+                    foundGroup = true;
+                    find_new = true;
+                    break;
+                }
+            }
+            if (!foundGroup) {
+                v_defect1_shengyu.push_back(q);
+            }
+        }
+        if (find_new == true) {
+            find_new = false;
+            v_defect1 = v_defect1_shengyu;
+            v_defect1_shengyu.clear();
+            continue;
+        }
+        // 
+        if (find_new == false) {
+            if (v_defect1_shengyu.size() == 0) {
+                sprintf_alg("[HeBing][import] have only one group");
+                vv_defect1.push_back(v_defect1_group_tmp);
+                break;
+            }
+            else {
+                sprintf_alg("[HeBing][import] have more than one group");
+                return 2;
+            }
+
+        }
+
+    }
 }
