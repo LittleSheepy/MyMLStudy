@@ -21,6 +21,7 @@ void FolderTest();
 void NumRecTest();
 bool PPTestOne(int serial = 1);
 void PPTestAll();
+void saveJson();
 
 void PP_test()
 {
@@ -78,7 +79,7 @@ int main()
 	//ABTest();
 
 	//PPtest();
-	PPTestAll();
+	saveJson();
 	//NumRecTest();
 	//FolderTest();
 	return 0;

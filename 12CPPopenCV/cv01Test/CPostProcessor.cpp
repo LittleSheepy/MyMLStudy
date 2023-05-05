@@ -455,11 +455,8 @@ bool CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
             sprintf_s(buf, "<<processImg>>defect_length=%d, lenth_=%d", defect_length, lenth_);
             OutputDebugStringA(buf);
             if (defect_length > lenth_) {
-                (*it).state = false;
-                (*it).n_defect++;
                 m_brokenCnt[(*it).arr_name]++;
             }
-            (*it).n_defect++;
             m_brokenCnt[(*it).arr_name]++;
             sprintf_s(buf, "<<processImg>>m_brokenCnt=%d", m_brokenCnt[(*it).arr_name]);
             OutputDebugStringA(buf);
