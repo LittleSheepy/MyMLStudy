@@ -1,5 +1,5 @@
 ﻿/*
-2023年5月4日
+2023年5月5日
 */
 #pragma once
 #include <opencv.hpp>
@@ -19,7 +19,7 @@ struct CDefect
     string	    name;	    // 缺陷类型 11破损、12毛边
     double      realArea;   // 真实面积
     CDefect() {}
-    CDefect(cv::Point p1, cv::Point p2, int area, int type = 11, string name = "null", double realArea = 0)
+    CDefect(cv::Point p1, cv::Point p2, int area=0, int type = 11, string name = "null", double realArea = 0)
         :p1(p1), p2(p2), area(area), type(type), name(name), realArea(realArea) {}
 
     bool operator==(const CDefect& other) const {

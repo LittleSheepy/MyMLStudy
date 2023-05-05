@@ -8,11 +8,18 @@
 #include "CPostProcessor.h"
 #include "CAlgBase.h"
 #include "CNumRec.h"
+
+// opencv
+//#include <opencv2/core/utils/logger.hpp>
+//using namespace cv::utils::logging;
+////setLogLevel(cv::utils::logging::LOG_LEVEL_SILENT);
+//cv::utils::logging::setLogLevel(0);
+
 using namespace std;
 using namespace cv;
 void FolderTest();
 void NumRecTest();
-void PPTestOne(int serial = 1);
+bool PPTestOne(int serial = 1);
 void PPTestAll();
 
 void PP_test()
@@ -71,7 +78,7 @@ int main()
 	//ABTest();
 
 	//PPtest();
-	PPTestOne();
+	PPTestAll();
 	//NumRecTest();
 	//FolderTest();
 	return 0;
