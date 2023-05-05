@@ -1,10 +1,10 @@
 ﻿/*
-2023年5月4日
+2023年5月5日
 */
 #pragma once
 #include <opencv.hpp>
 
-#define AB_DEBUG
+//#define AB_DEBUG
 
 #ifdef AB_DEBUG
 #endif // AB_DEBUG

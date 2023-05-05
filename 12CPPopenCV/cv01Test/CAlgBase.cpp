@@ -1,10 +1,10 @@
 ﻿/*
-2023年5月4日
+2023年5月5日
 */
 #include "pch.h"
 #include <iostream>
-#include <DbgHelp.h>
 #include <ctime>
+#include <DbgHelp.h>
 
 #include "CAlgBase.h"
 
@@ -25,7 +25,9 @@ void CAlgBase::reset() {
 
 // 获得白色区域 通过轮廓查找
 cv::Rect CAlgBase::findWhiteAreaByContour(const cv::Mat& img_gray) {
-    sprintf_alg("<<findWhiteArea>> enter findWhiteArea");
+#ifdef AB_DEBUG
+    sprintf_alg("[Alg][findWhiteAreaByContour] Enter");
+#endif // AB_DEBUG
     cv::Mat img_gray_binary;
     cv::threshold(img_gray, img_gray_binary, 250, 255, cv::THRESH_BINARY);
 #ifdef AB_DEBUG
@@ -71,8 +73,10 @@ cv::Rect CAlgBase::findWhiteAreaByContour(const cv::Mat& img_gray) {
         sprintf_alg("<<findWhiteArea>> findWhiteArea got fiald");
     }
 
-    sprintf_alg("<<findWhiteArea>> result_rect xywh %d %d %d %d", result_rect.x, result_rect.y, result_rect.width, result_rect.height);
-    sprintf_alg("<<findWhiteArea>> findWhiteArea out");
+#ifdef AB_DEBUG
+    sprintf_alg("[Alg][findWhiteAreaByContour] result_rect xywh %d %d %d %d", result_rect.x, result_rect.y, result_rect.width, result_rect.height);
+    sprintf_alg("[Alg][findWhiteAreaByContour] Out");
+#endif // AB_DEBUG
     return result_rect;
 }
 cv::Rect CAlgBase::findWhiteArea(const cv::Mat& img_gray)
@@ -92,7 +96,7 @@ void CAlgBase::sprintf_alg(const char* format, ...) {
     va_start(args, format);
     vsprintf_s(buf, format, args);
     va_end(args);
-    //cout << buf << endl;
+    cout << buf << endl;
     char out_put[1024] = "";
     strcat_s(out_put, title.c_str());
     strcat_s(out_put, buf);
