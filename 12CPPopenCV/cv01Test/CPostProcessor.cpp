@@ -102,6 +102,8 @@ void CPostProcessor::imgCfgInit() {
     m_imgCfg.push_back(m_img3Cfg);
     m_imgCfg.push_back(m_img4Cfg);
 }
+/*
+// 0506之前的右边
 void CPostProcessor::imgCfgInitByOffSet() {
     m_img1Cfg = {
         CBox("1c1", "cb5", 1, cv::Point(380, CTOP), cv::Point(680, CBOTTOM), AREA150),
@@ -182,6 +184,90 @@ void CPostProcessor::imgCfgInitByOffSet2() {
     m_imgCfg.push_back(m_img3Cfg);
     m_imgCfg.push_back(m_img4Cfg);
 }
+*/
+// 左边线 0506  底部没
+void CPostProcessor::imgCfgInitByOffSet() {
+    m_img1Cfg = {
+        CBox("1c1", "cb5", 1, cv::Point(210, CTOP), cv::Point(520, CBOTTOM), AREA150),
+        CBox("1c2", "cb5", 2, cv::Point(620, CTOP), cv::Point(820, CBOTTOM), AREA150),
+        CBox("1c3", "cb1", 3, cv::Point(910, CTOP), cv::Point(1080, CBOTTOM)),
+        CBox("1c4", "cb5", 4, cv::Point(1820, CTOP), cv::Point(2070, CBOTTOM), AREA150),
+
+        CBox("1b6", "bbl", 1, cv::Point(430, BTOP), cv::Point(1150, BBOTTOM), AREA25),
+        CBox("1b8", "bbl", 2, cv::Point(1200, BTOP), cv::Point(2030, BBOTTOM), AREA150),
+    };
+    m_img2Cfg = {
+        //CBox("2c4", "cb5", 4, cv::Point(0, CTOP), cv::Point(320, CBOTTOM), AREA150),
+        CBox("2c5", "cb5", 5, cv::Point(400, CTOP), cv::Point(1100, CBOTTOM), AREA150),
+        CBox("2c6", "cb2", 6, cv::Point(1200, CTOP), cv::Point(2000, CBOTTOM)),
+
+        CBox("2b1", "bbc", 3, cv::Point(100, BTOP), cv::Point(2448, BBOTTOM))
+    };
+    m_img3Cfg = {
+        CBox("3c7", "cb3", 7, cv::Point(300, CTOP), cv::Point(1100, CBOTTOM)),
+        CBox("3c8", "cb6", 8, cv::Point(1200, CTOP), cv::Point(1900, CBOTTOM), AREA150),
+        //CBox("3c9", "cb6", 9, cv::Point(2240, CTOP), cv::Point(2448, CBOTTOM), AREA150),
+
+        CBox("3b3", "bbc", 3, cv::Point(0, BTOP), cv::Point(2220, BBOTTOM))
+    };
+    m_img4Cfg = {
+        CBox("4c9", "cb6", 9, cv::Point(200, CTOP), cv::Point(700, CBOTTOM), AREA150),
+        CBox("4c10", "cb4", 10, cv::Point(1300, CTOP), cv::Point(1590, CBOTTOM)),
+        CBox("4c11", "cb6", 11, cv::Point(1600, CTOP), cv::Point(1800, CBOTTOM), AREA150),
+        CBox("4c12", "cb6", 12, cv::Point(1830, CTOP), cv::Point(2300, CBOTTOM), AREA150),
+
+        CBox("4b9", "bbr", 4, cv::Point(500, BTOP), cv::Point(1310, BBOTTOM), AREA150),
+        CBox("4b10", "bbr", 5, cv::Point(1370, BTOP), cv::Point(2050, BBOTTOM), AREA25),
+    };
+    m_imgCfg.clear();
+    m_imgCfg.push_back(m_img1Cfg);
+    m_imgCfg.push_back(m_img2Cfg);
+    m_imgCfg.push_back(m_img3Cfg);
+    m_imgCfg.push_back(m_img4Cfg);
+}
+
+// 左边线 0506  底部没
+void CPostProcessor::imgCfgInitByOffSet2() {
+    m_img1Cfg = {
+        CBox("1c1", "cb5", 1, cv::Point(270, CTOP), cv::Point(560, CBOTTOM), AREA150),
+        CBox("1c2", "cb5", 2, cv::Point(660, CTOP), cv::Point(850, CBOTTOM), AREA150),
+        CBox("1c3", "cb1", 3, cv::Point(930, CTOP), cv::Point(1090, CBOTTOM)),
+        CBox("1c4", "cb5", 4, cv::Point(1790, CTOP), cv::Point(2010, CBOTTOM), AREA150),
+
+        CBox("1b6", "bbl", 1, cv::Point(660, BTOP), cv::Point(1280, BBOTTOM), AREA25),
+        CBox("1b8", "bbl", 2, cv::Point(1340, BTOP), cv::Point(2170, BBOTTOM), AREA150),
+    };
+    m_img2Cfg = {
+        //CBox("2c4", "cb5", 4, cv::Point(0, CTOP), cv::Point(320, CBOTTOM), AREA150),
+        CBox("2c5", "cb5", 5, cv::Point(560, CTOP), cv::Point(1230, CBOTTOM), AREA150),
+        CBox("2c6", "cb2", 6, cv::Point(1330, CTOP), cv::Point(2030, CBOTTOM)),
+
+        CBox("2b1", "bbc", 3, cv::Point(100, BTOP), cv::Point(2448, BBOTTOM))
+    };
+    m_img3Cfg = {
+        CBox("3c7", "cb3", 7, cv::Point(240, CTOP), cv::Point(940, CBOTTOM)),
+        CBox("3c8", "cb6", 8, cv::Point(1030, CTOP), cv::Point(1700, CBOTTOM), AREA150),
+        CBox("3c9", "cb6", 9, cv::Point(1760, CTOP), cv::Point(2400, CBOTTOM), AREA150),
+
+        CBox("3b3", "bbc", 3, cv::Point(0, BTOP), cv::Point(2220, BBOTTOM))
+    };
+    m_img4Cfg = {
+        CBox("4c9", "cb6", 9, cv::Point(200, CTOP), cv::Point(500, CBOTTOM), AREA150),
+        CBox("4c10", "cb4", 10, cv::Point(1100, CTOP), cv::Point(1350, CBOTTOM)),
+        CBox("4c11", "cb6", 11, cv::Point(1350, CTOP), cv::Point(1660, CBOTTOM), AREA150),
+        CBox("4c12", "cb6", 12, cv::Point(1670, CTOP), cv::Point(2200, CBOTTOM), AREA150),
+
+        //CBox("4b3", "bbc", 3, cv::Point(0, BTOP), cv::Point(270, BBOTTOM)),
+        CBox("4b9", "bbr", 4, cv::Point(400, BTOP), cv::Point(1230, BBOTTOM), AREA150),
+        CBox("4b10", "bbr", 5, cv::Point(1290, BTOP), cv::Point(1980, BBOTTOM), AREA25),
+    };
+    m_imgCfg.clear();
+    m_imgCfg.push_back(m_img1Cfg);
+    m_imgCfg.push_back(m_img2Cfg);
+    m_imgCfg.push_back(m_img3Cfg);
+    m_imgCfg.push_back(m_img4Cfg);
+}
+
 cv::Mat CPostProcessor::getMask(vector<cv::Point> points) {
     cv::Mat mask;
 
@@ -225,11 +311,19 @@ void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
     char buf[128];
     sprintf_s(buf, "<<<<setOffSet>>> setOffSet enter>>>>>>>>>>>>>>camera_num=%d", camera_num);
     OutputDebugStringA(buf);
+    // 0506之前右边线
+    //if (camera_num == 0) {
+    //    template_x = 1270;
+    //}
+    //else {
+    //    template_x = 1410;
+    //}
+    // 0506左边线
     if (camera_num == 0) {
-        template_x = 1270;
+        template_x = 1100;
     }
     else {
-        template_x = 1410;
+        template_x = 1110;
     }
     //sprintf_s(buf, "ssss");
     //OutputDebugStringA(buf);
@@ -486,7 +580,6 @@ vector<vector<CDefect>> CPostProcessor::groupBBoxes(vector<CDefect> bboxes) {
                     bool overlapFound = false;
                     for (int l = 0; l < groups[k].size(); l++) {
                         if (bboxes[i].overlap(groups[k][l])) {
-                            //if (overlap(bboxes[i], groups[k][l])) {
                             overlapFound = true;
                             break;
                         }
