@@ -36,6 +36,12 @@
     <ClCompile Include="saveJson.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CReJudgeFront.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="distenceTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CPostProcessor.h">
@@ -48,6 +54,15 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="CAlgBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CReJudgeFront.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ReJudgeData.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorialAngle.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
