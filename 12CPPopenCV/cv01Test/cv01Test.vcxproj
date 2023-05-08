@@ -155,6 +155,8 @@
   <ItemGroup>
     <ClCompile Include="CAlgBase.cpp" />
     <ClCompile Include="CPostProcessor.cpp" />
+    <ClCompile Include="CReJudgeFront.cpp" />
+    <ClCompile Include="distenceTest.cpp" />
     <ClCompile Include="FolderTest.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CNumRec.cpp" />
@@ -165,7 +167,10 @@
     <ClInclude Include="CAlgBase.h" />
     <ClInclude Include="CPostProcessor.h" />
     <ClInclude Include="CNumRec.h" />
+    <ClInclude Include="CReJudgeFront.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ReJudgeData.h" />
+    <ClInclude Include="VectorialAngle.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

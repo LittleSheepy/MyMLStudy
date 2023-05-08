@@ -600,34 +600,6 @@ vector<vector<CDefect>> CPostProcessor::groupBBoxes(vector<CDefect> bboxes) {
     return groups;
 }
 
-// 获得一组bbox的WH
-vector<int> CPostProcessor::getGroupBBoxesWH(vector<CDefect> bboxes) {
-    vector<int> resultWH;
-    int x_min = 5000, x_max = 0, y_min = 5000, y_max = 0;
-    for (int k = 0; k < bboxes.size(); k++) {
-        CDefect v = bboxes[k];
-        if (min(v.p1.x, v.p2.x) < x_min) {
-            x_min = min(v.p1.x, v.p2.x);
-        }
-        if (min(v.p1.y, v.p2.y) < y_min) {
-            y_min = min(v.p1.y, v.p2.y);
-        }
-        if (max(v.p1.x, v.p2.x) > x_max) {
-            x_max = max(v.p1.x, v.p2.x);
-        }
-        if (max(v.p1.y, v.p2.y) > y_max) {
-            y_max = max(v.p1.y, v.p2.y);
-        }
-    }
-
-    int defect_w = x_max - x_min;
-    int defect_h = y_max - y_min;
-    resultWH.push_back(defect_w);
-    resultWH.push_back(defect_h);
-    sprintf_alg("[getGroupBBoxesWH] defect_w=%d, defect_h=%d", defect_w, defect_h);
-    return resultWH;
-}
-
 int CPostProcessor::HeBing(int serial, char bc) {
     sprintf_alg("[HeBing][enter] serial=%d, bc=%c", serial, bc);
     vector<CDefect> v_defect1 = m_CenterDefectMatched[serial - 1];
