@@ -1,3 +1,6 @@
+/*
+2023Äê5ÔÂ8ÈÕ
+*/
 #pragma once
 #include <opencv.hpp>
 #include "CAlgBase.h"
@@ -5,7 +8,7 @@
 class CReJudgeFront : public CAlgBase
 {
 private:
-    void imgCfgInit(); 
+    void imgCfgInit();
     bool defectInMask(cv::Mat img, CDefect defect, int imgSerial);
     bool getPoint(cv::Mat img_gray, int imgSerial);
 public:

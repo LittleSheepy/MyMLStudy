@@ -1,5 +1,5 @@
 ﻿/*
-2023年5月7日
+2023年5月8日
 */
 #pragma once
 #include <opencv.hpp>
@@ -32,23 +32,25 @@ public:
     vector<vector<CDefect>> groupBBoxes(vector<CDefect> bboxes);
     int groupBBoxes_old(vector<CDefect> bboxes, vector<CDefect>& v_defect1, char bc);
     int HeBing(int serial, char bc);
+    bool loadCfg();
 public:
-    string					    m_className = "【二次复判】";
-    vector<CBox>			    m_img1Cfg;
-    vector<CBox>			    m_img2Cfg;
-    vector<CBox>			    m_img3Cfg;
-    vector<CBox>			    m_img4Cfg;
-    vector<vector<CBox>>	    m_imgCfg;
-    map<int, vector<CDefect>>	m_CenterDefectMatched;
-    map<int, vector<CDefect>>	m_BottomDefectMatched;
-    map<string, int>		    m_brokenCnt;
-    map<string, int>		    m_brokenCfg;
-    map<string, vector<int>>	m_brokenCfg_vect;
-    CBoxArray                   m_objs;
-    vector<int>                 m_limit_c;
-    vector<string>              m_s_g_c;
-    vector<int>                 m_limit_b;
-    vector<string>              m_s_g_b;
+    string					        m_className = "【二次复判】";
+    vector<CBox>			        m_img1Cfg;
+    vector<CBox>			        m_img2Cfg;
+    vector<CBox>			        m_img3Cfg;
+    vector<CBox>			        m_img4Cfg;
+    vector<vector<CBox>>	        m_imgCfg;
+    vector<vector<vector<CBox>>>	m_imgCfgAll;
+    map<int, vector<CDefect>>	    m_CenterDefectMatched;
+    map<int, vector<CDefect>>	    m_BottomDefectMatched;
+    map<string, int>		        m_brokenCnt;
+    map<string, int>		        m_brokenCfg;
+    map<string, vector<int>>	    m_brokenCfg_vect;
+    CBoxArray                       m_objs;
+    vector<int>                     m_limit_c;
+    vector<string>                  m_s_g_c;
+    vector<int>                     m_limit_b;
+    vector<string>                  m_s_g_b;
     // 模板
     int offset = 0;
     int template_x = 1260;

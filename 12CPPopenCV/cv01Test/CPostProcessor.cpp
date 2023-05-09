@@ -1,5 +1,5 @@
 ﻿/*
-2023年5月5日
+2023年5月8日
 */
 #include "pch.h"
 #include <fstream>
@@ -49,6 +49,7 @@ using namespace std;
 //      解释：bbl:bottom broken left
 // 
 CPostProcessor::CPostProcessor() {
+    loadCfg();
     m_brokenCfg = {
         {"cb1",0},{"cb2",0},{"cb3",0},{"cb4",0},{"cb5",1},{"cb6",1},
         {"bbl",1},{"bbc",0},{"bbr",1},
@@ -267,7 +268,34 @@ void CPostProcessor::imgCfgInitByOffSet2() {
     m_imgCfg.push_back(m_img3Cfg);
     m_imgCfg.push_back(m_img4Cfg);
 }
+bool CPostProcessor::loadCfg() {
 
+    std::ifstream ifs("Config/ReJudgeSide.json");
+    Json::Reader reader;
+    Json::Value m_imgCfgJson;
+    reader.parse(ifs, m_imgCfgJson);
+
+    m_imgCfgAll.clear();
+    for (const auto& camera : m_imgCfgJson) {
+        vector<vector<CBox>> cameraCfg;
+        for (const auto& imgCfgJson : camera) {
+            vector<CBox> imgCfg;
+            for (const auto& boxJson : imgCfgJson) {
+                std::string name = boxJson["name"].asString();
+                string arr_name = boxJson["arr_name"].asString();
+                int serial = boxJson["serial"].asInt();
+                cv::Point p1(boxJson["p1_x"].asInt(), boxJson["p1_y"].asInt());
+                cv::Point p2(boxJson["p2_x"].asInt(), boxJson["p2_y"].asInt());
+                int area = boxJson["area"].asInt();
+                CBox box(name, arr_name, serial, p1, p2, area);
+                imgCfg.push_back(box);
+            }
+            cameraCfg.push_back(imgCfg);
+        }
+        m_imgCfgAll.push_back(cameraCfg);
+    }
+    return true;
+}
 cv::Mat CPostProcessor::getMask(vector<cv::Point> points) {
     cv::Mat mask;
 
@@ -348,12 +376,13 @@ void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
         imgCfgInit();
     }
     else {
-        if (camera_num == 0) {
-            imgCfgInitByOffSet();
-        }
-        else {
-            imgCfgInitByOffSet2();
-        }
+        m_imgCfg = m_imgCfgAll[camera_num];
+        //if (camera_num == 0) {
+        //    imgCfgInitByOffSet();
+        //}
+        //else {
+        //    imgCfgInitByOffSet2();
+        //}
     }
     OutputDebugStringA("<<<setOffSet>>> setOffSet out <<<<<<<<<<<<<<<");
 }
@@ -882,4 +911,5 @@ int CPostProcessor::groupBBoxes_old(vector<CDefect> bboxes, vector<CDefect>& v_d
         }
 
     }
+    return 0;
 }
