@@ -1,5 +1,5 @@
 /*
-2023年5月7日
+2023年5月8日
 */
 #include "CReJudgeFront.h"
 
@@ -14,42 +14,42 @@ bool CReJudgeFront::getPoint(cv::Mat img_gray, int imgSerial) {
     vector<cv::Point> topPointsList;
     vector<cv::Point> bottomPointsList;
     // 获取竖着的 20个点 
-    for (int i = 800; i <= 1800; i += 50) {
+    for (int i = 500; i <= 1200; i += 50) {
         map<string, cv::Point> PointsTmp = getRowPoint(img_gray, i);     // 
         leftPointsList.push_back(PointsTmp["whiteleft"]);
         rightPointsList.push_back(PointsTmp["whiteright"]);
     }
     // 获取横着的 16个点 
-    for (int i = 500; i <= 1200; i += 50) {
+    for (int i = 800; i <= 1800; i += 50) {
         map<string, cv::Point> PointsTmp = getColumnPoint(img_gray, i);     // 
-        leftPointsList.push_back(PointsTmp["whitetop"]);
-        rightPointsList.push_back(PointsTmp["whitebottom"]);
+        topPointsList.push_back(PointsTmp["whitetop"]);
+        bottomPointsList.push_back(PointsTmp["whitebottom"]);
     }
+    cv::Vec4f leftLine;
+    cv::Vec4f rightLine;
+    cv::Vec4f topLine;
+    cv::Vec4f bottomLine;
     switch (imgSerial)
     {
     case 0:
-        cv::Vec4f leftLine;
         fitLine(leftPointsList, leftLine, cv::DIST_L2, 0, 0.01, 0.01);
-        cv::Vec4f topLine;
         fitLine(topPointsList, topLine, cv::DIST_L2, 0, 0.01, 0.01);
+        m_Point = getIntersectionPoint(leftLine, topLine);
         break;
     case 1:
-        cv::Vec4f leftLine;
         fitLine(leftPointsList, leftLine, cv::DIST_L2, 0, 0.01, 0.01);
-        cv::Vec4f bottomLine;
         fitLine(bottomPointsList, bottomLine, cv::DIST_L2, 0, 0.01, 0.01);
+        m_Point = getIntersectionPoint(leftLine, bottomLine);
         break;
     case 2:
-        cv::Vec4f rightLine;
         fitLine(rightPointsList, rightLine, cv::DIST_L2, 0, 0.01, 0.01);
-        cv::Vec4f topLine;
         fitLine(topPointsList, topLine, cv::DIST_L2, 0, 0.01, 0.01);
+        m_Point = getIntersectionPoint(rightLine, topLine);
         break;
     case 3:
-        cv::Vec4f rightLine;
         fitLine(rightPointsList, rightLine, cv::DIST_L2, 0, 0.01, 0.01);
-        cv::Vec4f bottomLine;
         fitLine(bottomPointsList, bottomLine, cv::DIST_L2, 0, 0.01, 0.01);
+        m_Point = getIntersectionPoint(rightLine, bottomLine);
         break;
     default:
         break;
@@ -73,6 +73,7 @@ bool CReJudgeFront::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_de
     // 遍历4个图匹配置框
     for (int i = 0; i < 4; i++) {
         cv::Mat img = v_img[i];
+        getPoint(img, i);
         vector<CDefect> v_defect = vv_defect[i];
         vv_defect_others.push_back({});
         if (v_defect.size() == 0) {
@@ -174,7 +175,7 @@ bool CReJudgeFront::defectInMask(cv::Mat img, CDefect defect, int imgSerial) {
         m_DefectMatched[imgSerial].push_back(defect);
         sprintf_alg("[defectInMask]       m_DefectMatched %d size : %d", imgSerial, m_DefectMatched[imgSerial].size());
         result = true;
-    }else {
+    } else {
         sprintf_alg("[defectInMask][import] img serial=%d have other defect!!!", imgSerial);
         sprintf_alg("[defectInMask] defectInfo: p1.x=%d p1.y=%d p2.x=%d p2.y=%d", defect.p1.x, defect.p1.y, defect.p2.x, defect.p2.y);
     }

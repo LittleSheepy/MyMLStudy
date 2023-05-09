@@ -1,5 +1,5 @@
 ﻿/*
-2023年5月5日
+2023年5月8日
 */
 #include "pch.h"
 #include <fstream>
@@ -90,8 +90,6 @@ cv::Rect CAlgBase::findWhiteArea(const cv::Mat& img_gray)
 
 void CAlgBase::sprintf_alg(const char* format, ...) {
     string title = "[Alg]";
-    //string father_func_name = getFatherFuncName(1);
-    //title = "{" + father_func_name + "}";
     char buf[256] = { 0 };
     va_list args;
     va_start(args, format);
@@ -104,38 +102,6 @@ void CAlgBase::sprintf_alg(const char* format, ...) {
     OutputDebugStringA(out_put);
 }
 
-std::string CAlgBase::getFatherFuncName(int n) {
-    // 获取堆栈列表
-    constexpr int MAX_FRAMES = 64;
-    void* frames[MAX_FRAMES];
-    int num_frames = CaptureStackBackTrace(0, MAX_FRAMES, frames, nullptr);
-
-    // Initialize the symbol handler
-    SymInitialize(GetCurrentProcess(), nullptr, TRUE);
-
-    // Get the symbol name from the address
-    char symbolBuffer[sizeof(SYMBOL_INFO) + MAX_SYM_NAME * sizeof(TCHAR)];
-    PSYMBOL_INFO symbol = reinterpret_cast<PSYMBOL_INFO>(symbolBuffer);
-    symbol->SizeOfStruct = sizeof(SYMBOL_INFO);
-    symbol->MaxNameLen = MAX_SYM_NAME;
-    // 
-    std::string fatherName = "";
-    int print_cnt = 0;
-    for (int i = 0; i < num_frames; ++i) {
-        if (print_cnt >= n) {
-            break;
-        }
-        SymFromAddr(GetCurrentProcess(), (DWORD64)(frames[i]), nullptr, symbol);
-        string name = string(symbol->Name);
-        if (name == string("CAlgBase::getFatherFuncName") || name == string("CAlgBase::sprintf_alg")) {
-            continue;
-        }
-        fatherName = "[" + string(symbol->Name) + "]" + fatherName;
-        print_cnt++;
-    }
-    return fatherName;
-}
-
 string CAlgBase::getTimeString() {
     std::time_t now = std::time(nullptr);
     tm ltm;
@@ -146,7 +112,6 @@ string CAlgBase::getTimeString() {
     std::string time_str = oss.str();
     return time_str;
 }
-
 
 void CAlgBase::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, string savePath) {
     // 创建或者清空文件夹
@@ -328,4 +293,20 @@ map<string, cv::Point> CAlgBase::getColumnPoint(cv::Mat img_gray, int point_x, i
     }
 
     return EarPoints;
+}
+
+cv::Point CAlgBase::getIntersectionPoint(cv::Vec4f line1, cv::Vec4f line2) {
+    // Define variables for slope and y-intercepts of line1 and line2
+    float slope1, slope2, yIntercept1, yIntercept2;
+    // Compute slope and y-intercept of line1
+    slope1 = line1[1] / line1[0];
+    yIntercept1 = line1[3] - slope1 * line1[2];
+    // Compute slope and y-intercept of line2
+    slope2 = line2[1] / line2[0];
+    yIntercept2 = line2[3] - slope2 * line2[2];
+
+    // Find the intersection point of the two lines
+    double x = (yIntercept2 - yIntercept1) / (slope1 - slope2 + 0.000001);
+    double y = slope1 * x + yIntercept1;
+    return cv::Point((int)x, (int)y);
 }

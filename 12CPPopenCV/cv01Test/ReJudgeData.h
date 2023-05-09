@@ -1,5 +1,5 @@
 /*
-2023年5月7日
+2023年5月8日
 */
 #pragma once
 #include <opencv.hpp>
@@ -28,15 +28,6 @@ struct CDefect
     bool overlap(const CDefect& other) {
         return (p1.x <= other.p2.x && p2.x >= other.p1.x && p1.y <= other.p2.y && p2.y >= other.p1.y);
     }
-};
-
-// 瑕疵结构体
-struct CArrayCfg
-{
-    int   cnt;	// 允许缺陷个数
-    int	  area;	// 允许缺陷面积
-    CArrayCfg() :cnt(0), area(0) {}
-    CArrayCfg(int cnt, int area) :cnt(cnt), area(area) {}
 };
 
 class CBox
