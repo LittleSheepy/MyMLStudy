@@ -13,12 +13,12 @@ vector<Mat> getImgParaSample() {
 	vector<Mat> v_img;
 	//string dir_root = "D:/04DataSets/ningjingLG/all/";
 	string dir_root = "D:/02dataset/01work/05nanjingLG/05ReJudgeFront/testSimple/";
-	string img_first_name = "%d_0";
+	string img_first_name = "1_%d";
 	for (int i = 0; i < 4; i++) {
 		char buf[125];
 		sprintf_s(buf, img_first_name.c_str(), i);
 		string img_first_nameAll = buf;
-		string img_path = dir_root + img_first_nameAll + ".bmp";
+		string img_path = dir_root + img_first_nameAll + ".jpg";
 		v_img.push_back(imread(img_path, cv::IMREAD_GRAYSCALE));
 	}
 	return v_img;
@@ -26,7 +26,7 @@ vector<Mat> getImgParaSample() {
 
 void getImgDefectParaSample(vector<Mat>& v_img, vector<vector<CDefect>>& vv_defect) {
 	v_img = getImgParaSample();
-	vector<CDefect> v_defect = { {{800,800},{900,900}, 6, 1 } };
+	vector<CDefect> v_defect = { {{800,800},{900,900}, 6, 11, "ps"}};
 	vv_defect.push_back(v_defect);
 	vv_defect.push_back({});
 	vv_defect.push_back({});
@@ -166,3 +166,4 @@ void RJFTestAll() {
 	}
 	file_result.close();
 }
+

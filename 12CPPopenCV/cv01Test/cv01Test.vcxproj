@@ -81,7 +81,7 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>D:\tools\jsoncpp-vs2019\include\;D:\tools\opencv455\build\include\opencv2/;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
-    <IntDir>../MiddleDirectory/</IntDir>
+    <IntDir>D:\04Bin\MiddleDirectory/</IntDir>
     <OutDir>D:\04Bin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,7 +127,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>
       </AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -155,18 +155,20 @@
   <ItemGroup>
     <ClCompile Include="CAlgBase.cpp" />
     <ClCompile Include="CPostProcessor.cpp" />
+    <ClCompile Include="CReJudgeBack.cpp" />
     <ClCompile Include="CReJudgeFront.cpp" />
-    <ClCompile Include="distenceTest.cpp" />
     <ClCompile Include="FolderTest.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CNumRec.cpp" />
     <ClCompile Include="PPTest.cpp" />
+    <ClCompile Include="RJBTest.cpp" />
     <ClCompile Include="saveJson.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAlgBase.h" />
     <ClInclude Include="CPostProcessor.h" />
     <ClInclude Include="CNumRec.h" />
+    <ClInclude Include="CReJudgeBack.h" />
     <ClInclude Include="CReJudgeFront.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ReJudgeData.h" />

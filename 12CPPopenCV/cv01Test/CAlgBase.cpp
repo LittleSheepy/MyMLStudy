@@ -154,6 +154,44 @@ void CAlgBase::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect
     num++;
 }
 
+void CAlgBase::savePara(cv::Mat img, vector<CDefect> v_defect, string savePath) {
+    // 创建或者清空文件夹
+    static int num = 1;
+    if (img.empty()) {
+        return;
+    }
+    if (v_defect.size() == 0) {
+        return;
+    }
+    // 保存图片
+    std::string filename = savePath + "/" + std::to_string(num);
+    std::string img_name = filename + ".jpg";
+    cv::imwrite(img_name, img);
+    // 保存 vector<CDefect>
+
+    std::string vect_name = filename + ".txt";
+    std::ofstream outputFile(vect_name);
+    // check if the file was successfully opened
+    if (outputFile.is_open()) {
+        // loop through each element in the vector and write it to the file
+        for (const auto& defect : v_defect) {
+            //outputFile.write(reinterpret_cast<const char*>(&defect), sizeof(defect));
+            outputFile << defect.p1.x << " " << defect.p1.y << endl;
+            outputFile << defect.p2.x << " " << defect.p2.y << endl;
+            outputFile << defect.area << endl;
+            outputFile << defect.type << endl;
+            outputFile << defect.name << endl;
+        }
+        // close the file
+        outputFile.close();
+    }
+    else {
+        // handle the case where the file could not be opened
+        std::cerr << "Error: could not open file for writing\n";
+    }
+    num++;
+}
+
 // BBOX分组 重叠就分为一组
 vector<vector<CDefect>> CAlgBase::groupBBoxes(vector<CDefect> bboxes) {
     vector<vector<CDefect>> groups;
@@ -250,6 +288,58 @@ vector<int> CAlgBase::getGroupBBoxesXYXY(vector<CDefect> bboxes) {
     return resultXYXY;
 }
 
+// 左边白线
+cv::Point CAlgBase::getLeftPoint(cv::Mat img_gray, int point_y, int gray_value) {
+    int w = img_gray.cols;
+    cv::Point point;
+    for (int point_x = 0; point_x < w; point_x++) {
+        if (img_gray.at<uchar>(point_y, point_x) > gray_value) {
+            point = cv::Point(point_x, point_y);
+            break;
+        }
+    }
+    return point;
+}
+
+// 右边白线
+cv::Point CAlgBase::getRightPoint(cv::Mat img_gray, int point_y, int gray_value) {
+    int w = img_gray.cols;
+    cv::Point point;
+    for (int point_x = w-1; point_x > 0; point_x--) {
+        if (img_gray.at<uchar>(point_y, point_x) > gray_value) {
+            point = cv::Point(point_x, point_y);
+            break;
+        }
+    }
+    return point;
+}
+
+// 上边白线
+cv::Point CAlgBase::getTopPoint(cv::Mat img_gray, int point_x, int gray_value) {
+    int h = img_gray.rows;
+    cv::Point point;
+    for (int point_y = 0; point_y < h; point_y++) {
+        if (img_gray.at<uchar>(point_y, point_x) > gray_value) {
+            point = cv::Point(point_x, point_y);
+            break;
+        }
+    }
+    return point;
+}
+
+// 下边白线
+cv::Point CAlgBase::getBottomPoint(cv::Mat img_gray, int point_x, int gray_value) {
+    int h = img_gray.rows;
+    cv::Point point;
+    for (int point_y = h - 1; point_y > 0; point_y--) {
+        if (img_gray.at<uchar>(point_y, point_x) > gray_value) {
+            point = cv::Point(point_x, point_y);
+            break;
+        }
+    }
+    return point;
+}
+
 // 遍历行
 std::map<string, cv::Point> CAlgBase::getRowPoint(cv::Mat img_gray, int point_y, int gray_value) {
     int w = img_gray.cols;
@@ -279,7 +369,7 @@ map<string, cv::Point> CAlgBase::getColumnPoint(cv::Mat img_gray, int point_x, i
     for (int point_y = 0; point_y < h; point_y++) {
         if (img_gray.at<uchar>(point_y, point_x) > gray_value) {
             y = point_y;
-            EarPoints["whitetop"] = { point_x, point_y };
+            EarPoints["whitetop"] = cv::Point(point_x, point_y);
             break;
         }
     }
@@ -287,7 +377,7 @@ map<string, cv::Point> CAlgBase::getColumnPoint(cv::Mat img_gray, int point_x, i
     for (int point_y = y + 1; point_y < h; point_y++) {
         if (img_gray.at<uchar>(point_y, point_x) < gray_value) {
             y = point_y;
-            EarPoints["whitebottom"] = { point_x, point_y };
+            EarPoints["whitebottom"] = cv::Point(point_x, point_y);
             break;
         }
     }
@@ -308,5 +398,8 @@ cv::Point CAlgBase::getIntersectionPoint(cv::Vec4f line1, cv::Vec4f line2) {
     // Find the intersection point of the two lines
     double x = (yIntercept2 - yIntercept1) / (slope1 - slope2 + 0.000001);
     double y = slope1 * x + yIntercept1;
-    return cv::Point((int)x, (int)y);
+    if (line1[0] < 1e-05) {
+        y = slope2 * x + yIntercept2;
+    }
+    return cv::Point(static_cast<int>(std::round(x)), static_cast<int>(std::round(y)));
 }

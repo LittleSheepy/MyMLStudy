@@ -97,7 +97,7 @@ bool CReJudgeFront::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_de
                     }
                 }
                 else {
-                    sprintf_alg("[Process][warring] type=%d name=%s", (*it).type, (*it).name);
+                    sprintf_alg("[Process][warring]type is not 11. type=%d name=%s", (*it).type, (*it).name.c_str());
                 }
             }
             else {

@@ -8,7 +8,6 @@
 class CReJudgeFront : public CAlgBase
 {
 private:
-    void imgCfgInit();
     bool defectInMask(cv::Mat img, CDefect defect, int imgSerial);
     bool getPoint(cv::Mat img_gray, int imgSerial);
 public:

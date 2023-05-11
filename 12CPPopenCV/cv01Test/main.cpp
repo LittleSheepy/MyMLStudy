@@ -22,6 +22,8 @@ void NumRecTest();
 bool PPTestOne(int serial = 1);
 void PPTestAll();
 void saveJson();
+void RJFTestSimple(); 
+void RJBTestSimple();
 
 void PP_test()
 {
@@ -79,7 +81,7 @@ int main()
 	//ABTest();
 
 	//PPtest();
-	saveJson();
+	RJBTestSimple();
 	//NumRecTest();
 	//FolderTest();
 	return 0;
