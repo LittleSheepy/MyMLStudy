@@ -1,5 +1,5 @@
-/*
-2023Äê5ÔÂ8ÈÕ
+ï»¿/*
+2023å¹´5æœˆ11æ—¥
 */
 #include "CReJudgeFront.h"
 
@@ -13,13 +13,13 @@ bool CReJudgeFront::getPoint(cv::Mat img_gray, int imgSerial) {
     vector<cv::Point> rightPointsList;
     vector<cv::Point> topPointsList;
     vector<cv::Point> bottomPointsList;
-    // »ñÈ¡Êú×ÅµÄ 20¸öµã 
+    // è·å–ç«–ç€çš„ 20ä¸ªç‚¹ 
     for (int i = 500; i <= 1200; i += 50) {
         map<string, cv::Point> PointsTmp = getRowPoint(img_gray, i);     // 
         leftPointsList.push_back(PointsTmp["whiteleft"]);
         rightPointsList.push_back(PointsTmp["whiteright"]);
     }
-    // »ñÈ¡ºá×ÅµÄ 16¸öµã 
+    // è·å–æ¨ªç€çš„ 16ä¸ªç‚¹ 
     for (int i = 800; i <= 1800; i += 50) {
         map<string, cv::Point> PointsTmp = getColumnPoint(img_gray, i);     // 
         topPointsList.push_back(PointsTmp["whitetop"]);
@@ -57,10 +57,10 @@ bool CReJudgeFront::getPoint(cv::Mat img_gray, int imgSerial) {
     return true;
 }
 
-// ·µ»Ø trueÊÇOK  falseÊÇNG
+// è¿”å› trueæ˜¯OK  falseæ˜¯NG
 bool CReJudgeFront::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect) {
     sprintf_alg("[ReJudgeFront][Process][Begin]");
-    // ÖØÖÃ¹ı³Ì±äÁ¿
+    // é‡ç½®è¿‡ç¨‹å˜é‡
     reset();
     m_DefectMatched.clear();
 #ifdef RJF_DEBUG
@@ -70,7 +70,7 @@ bool CReJudgeFront::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_de
     m_Point = cv::Point(530, 30);
 
     vector<vector<CDefect>> vv_defect_others;
-    // ±éÀú4¸öÍ¼Æ¥ÅäÖÃ¿ò
+    // éå†4ä¸ªå›¾åŒ¹é…ç½®æ¡†
     for (int i = 0; i < 4; i++) {
         cv::Mat img = v_img[i];
         getPoint(img, i);
@@ -89,7 +89,7 @@ bool CReJudgeFront::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_de
                 if ((*it).type == 11) {
                     bool matched = defectInMask(img, *it, i);
                     if (matched == false) {
-                        // TODO ÕâÀï¿ÉÒÔÖ±½Ó·µ»Øfalse
+                        // TODO è¿™é‡Œå¯ä»¥ç›´æ¥è¿”å›false
                         // result = false;
                         // break;
                         sprintf_alg("[Process] match failed: defect_area=%d", (*it).area);
@@ -105,39 +105,39 @@ bool CReJudgeFront::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_de
             }
         }
         //sprintf_alg("[Process]      v_defect_others size = %d", vv_defect_others[i].size());
-        // ¸´ÅĞÈ±Ïİ
+        // å¤åˆ¤ç¼ºé™·
         if (vv_defect_others[i].size() > 0) {
             result = false;
             sprintf_alg("[Process] ReJudgeFront is NG, img_num=%d,have other broken defect!", i);
         }
         vector<CDefect> v_defectInMask = m_DefectMatched[i];
         vector<vector<CDefect>> vv_defectsGroup;
-        // ºÏ²¢ÆÆËğ¿ò
+        // åˆå¹¶ç ´æŸæ¡†
         vv_defectsGroup = groupBBoxes(v_defectInMask);
-        // ±éÀúÃ¿×éÆÆËğ¿ò
+        // éå†æ¯ç»„ç ´æŸæ¡†
         int distence1 = 280;
         int distence2 = 880;
         for (vector<CDefect> v_defect : vv_defectsGroup) {
             vector<int> resultXYXY = getGroupBBoxesXYXY(v_defect);
-            // ÅĞ¶ÏY
+            // åˆ¤æ–­Y
             int distence_y1 = abs(m_Point.y - resultXYXY[1]);
             int distence_y2 = abs(m_Point.y - resultXYXY[3]);
-            // Y ·½Ïò NG
+            // Y æ–¹å‘ NG
             if (((distence_y1 > distence1) && (distence_y1 < distence2)) || ((distence_y2 > distence1) && (distence_y2 < distence2))) {
                 result = false;
                 sprintf_alg("[Process] ReJudgeFront is NG, img_num=%d, Y have defect!", i);
             }
 
-            // ÅĞ¶ÏX
+            // åˆ¤æ–­X
             int distence_x1 = abs(m_Point.x - resultXYXY[0]);
             int distence_x2 = abs(m_Point.x - resultXYXY[2]);
-            // X ·½Ïò NG
+            // X æ–¹å‘ NG
             if (((distence_x1 > distence1) && (distence_x1 < distence2)) || ((distence_x2 > distence1) && (distence_x2 < distence2))) {
                 result = false;
                 sprintf_alg("[Process] ReJudgeFront is NG, img_num=%d, X have defect!", i);
             }
 
-            // ´óĞ¡
+            // å¤§å°
             int NG_LENGTH = 50;
             int defect_group_w = resultXYXY[2] - resultXYXY[0];
             int defect_group_h = resultXYXY[3] - resultXYXY[1];
@@ -151,26 +151,26 @@ bool CReJudgeFront::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_de
     return result;
 }
 
-// ·µ»Ø trueÊÇÔÚmaskÖĞ falseÊÇ²»ÔÚmaskÖĞ
+// è¿”å› trueæ˜¯åœ¨maskä¸­ falseæ˜¯ä¸åœ¨maskä¸­
 bool CReJudgeFront::defectInMask(cv::Mat img, CDefect defect, int imgSerial) {
     sprintf_alg("[defectInMask][Enter] img serial=%d, defect aera", imgSerial, defect.area);
     int result = false;
 
-    // ¼ÆËãÈ±ÏİÍâ½Ó¿òÃæ»ıºÍWH
+    // è®¡ç®—ç¼ºé™·å¤–æ¥æ¡†é¢ç§¯å’ŒWH
     int defect_w = abs(defect.p1.x - defect.p2.x);
     int defect_h = abs(defect.p1.y - defect.p2.y);
     int judge_area = defect_w * defect_h;
     sprintf_alg("[defectInMask] defectInfo: judge_area=%d area=%d defect_w=%d, defect_h=%d", judge_area, defect.area, defect_w, defect_h);
     sprintf_alg("[defectInMask] defectInfo: p1.x=%d p1.y=%d p2.x=%d p2.y=%d", defect.p1.x, defect.p1.y, defect.p2.x, defect.p2.y);
 
-    // ½ØÈ¡È±ÏİÇøÓò
+    // æˆªå–ç¼ºé™·åŒºåŸŸ
     cv::Mat img_mask = img;
     cv::Rect select = cv::Rect(defect.p1, defect.p2);
     cv::Mat ROI = img_mask(select);
     double sum = cv::sum(ROI)[0];
     sprintf_alg("[defectInMask] sum=%.3f,judge_area * 0.7=%d", sum, (int)(judge_area * 0.7));
 
-    // ÔÚmaskÖĞ
+    // åœ¨maskä¸­
     if (sum > judge_area * 0.7) {
         m_DefectMatched[imgSerial].push_back(defect);
         sprintf_alg("[defectInMask]       m_DefectMatched %d size : %d", imgSerial, m_DefectMatched[imgSerial].size());
