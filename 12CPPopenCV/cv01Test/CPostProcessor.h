@@ -29,7 +29,6 @@ public:
     cv::Mat getMask(vector<cv::Point> points);
     void savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect);
     int getLimit(string bc, int ser);
-    vector<vector<CDefect>> groupBBoxes(vector<CDefect> bboxes);
     int groupBBoxes_old(vector<CDefect> bboxes, vector<CDefect>& v_defect1, char bc);
     int HeBing(int serial, char bc);
     bool loadCfg();

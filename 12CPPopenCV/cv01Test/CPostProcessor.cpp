@@ -589,46 +589,6 @@ bool CPostProcessor::processImg(cv::Mat img, CDefect defect, int serial) {
     return result;
 }
 
-// BBOX分组 重叠就分为一组
-vector<vector<CDefect>> CPostProcessor::groupBBoxes(vector<CDefect> bboxes) {
-    vector<vector<CDefect>> groups;
-    for (int i = 0; i < bboxes.size(); i++) {
-        bool added = false;
-        for (int j = 0; j < groups.size(); j++) {
-            for (int k = 0; k < groups[j].size(); k++) {
-                //if (overlap(bboxes[i], groups[j][k])) {
-                if (bboxes[i].overlap(groups[j][k])) {
-                    groups[j].push_back(bboxes[i]);
-                    added = true;
-                    break;
-                }
-            }
-            if (added) {
-                // Merge groups that overlap with each other
-                for (int k = j + 1; k < groups.size(); k++) {
-                    bool overlapFound = false;
-                    for (int l = 0; l < groups[k].size(); l++) {
-                        if (bboxes[i].overlap(groups[k][l])) {
-                            overlapFound = true;
-                            break;
-                        }
-                    }
-                    if (overlapFound) {
-                        groups[j].insert(groups[j].end(), groups[k].begin(), groups[k].end());
-                        groups.erase(groups.begin() + k);
-                        k--;
-                    }
-                }
-                break;
-            }
-        }
-        if (!added) {
-            groups.push_back({ bboxes[i] });
-        }
-    }
-    return groups;
-}
-
 int CPostProcessor::HeBing(int serial, char bc) {
     sprintf_alg("[HeBing][enter] serial=%d, bc=%c", serial, bc);
     vector<CDefect> v_defect1 = m_CenterDefectMatched[serial - 1];

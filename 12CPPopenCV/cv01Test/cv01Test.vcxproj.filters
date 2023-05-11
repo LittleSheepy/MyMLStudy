@@ -39,7 +39,10 @@
     <ClCompile Include="CReJudgeFront.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="distenceTest.cpp">
+    <ClCompile Include="CReJudgeBack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RJBTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,10 +62,13 @@
     <ClInclude Include="CReJudgeFront.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ReJudgeData.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="VectorialAngle.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ReJudgeData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CReJudgeBack.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -26,7 +26,14 @@ struct CDefect
         return p1.x == other.p1.x && p1.y == other.p1.y && p2.x == other.p2.x && p2.y == other.p2.y;
     }
     bool overlap(const CDefect& other) {
-        return (p1.x <= other.p2.x && p2.x >= other.p1.x && p1.y <= other.p2.y && p2.y >= other.p1.y);
+        //return (p1.x <= other.p2.x && p2.x >= other.p1.x && p1.y <= other.p2.y && p2.y >= other.p1.y);
+        return (p1.y <= other.p2.y && p2.y >= other.p1.y);
+    }
+    bool overlap_x(const CDefect& other) {
+        return (p1.x <= other.p2.x && p2.x >= other.p1.x);
+    }
+    bool overlap_y(const CDefect& other) {
+        return (p1.y <= other.p2.y && p2.y >= other.p1.y);
     }
 };
 
