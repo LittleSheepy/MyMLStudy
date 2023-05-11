@@ -1,5 +1,5 @@
-/*
-2023Äê5ÔÂ8ÈÕ
+ï»¿/*
+2023å¹´5æœˆ11æ—¥
 */
 #pragma once
 #include <opencv.hpp>
@@ -9,15 +9,15 @@
 #include "CAlgBase.h"
 using namespace std;
 
-// è¦´Ã½á¹¹Ìå
+// ç‘•ç–µç»“æ„ä½“
 struct CDefect
 {
-    cv::Point   p1;	        // ×óÉÏµã
-    cv::Point   p2;	        // ÓÒÏÂµã
-    int         area;	    // È±ÏİÃæ»ı
-    int	        type;	    // È±ÏİÀàĞÍ 11ÆÆËğ¡¢12Ã«±ß
-    string	    name;	    // È±ÏİÀàĞÍ 11ÆÆËğ¡¢12Ã«±ß
-    double      realArea;   // ÕæÊµÃæ»ı
+    cv::Point   p1;	        // å·¦ä¸Šç‚¹
+    cv::Point   p2;	        // å³ä¸‹ç‚¹
+    int         area;	    // ç¼ºé™·é¢ç§¯
+    int	        type;	    // ç¼ºé™·ç±»å‹ 11ç ´æŸã€12æ¯›è¾¹
+    string	    name;	    // ç¼ºé™·ç±»å‹ 11ç ´æŸã€12æ¯›è¾¹
+    double      realArea;   // çœŸå®é¢ç§¯
     CDefect() {}
     CDefect(cv::Point p1, cv::Point p2, int area = 0, int type = 11, string name = "null", double realArea = 0)
         :p1(p1), p2(p2), area(area), type(type), name(name), realArea(realArea) {}
@@ -42,7 +42,7 @@ class CBox
 public:
     string name;
     string arr_name;
-    int serial;             // ±àºÅ
+    int serial;             // ç¼–å·
     cv::Point p1;
     cv::Point p2;
     int	area;

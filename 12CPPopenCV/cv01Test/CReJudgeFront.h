@@ -1,5 +1,5 @@
-/*
-2023Äê5ÔÂ8ÈÕ
+ï»¿/*
+2023å¹´5æœˆ11æ—¥
 */
 #pragma once
 #include <opencv.hpp>
@@ -14,7 +14,7 @@ public:
     CReJudgeFront();
     bool Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect);
 public:
-    string					    m_className = "¡¾ÕıÃæ¶ş´Î¸´ÅĞ¡¿";
+    string					    m_className = "ã€æ­£é¢äºŒæ¬¡å¤åˆ¤ã€‘";
     map<int, vector<CDefect>>	m_DefectMatched;
     cv::Point                   m_Point;
 
