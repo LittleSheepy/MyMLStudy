@@ -12,7 +12,7 @@ using namespace cv;
 vector<Mat> getImgParaSample() {
 	vector<Mat> v_img;
 	//string dir_root = "D:/04DataSets/ningjingLG/all/";
-	string dir_root = "D:/02dataset/01work/05nanjingLG/05ReJudgeFront/testSimple/";
+	string dir_root = "D:/02dataset/01work/05nanjingLG/05ReJudgeFront/ReJudgeFront/";
 	string img_first_name = "1_%d";
 	for (int i = 0; i < 4; i++) {
 		char buf[125];
@@ -26,7 +26,7 @@ vector<Mat> getImgParaSample() {
 
 void getImgDefectParaSample(vector<Mat>& v_img, vector<vector<CDefect>>& vv_defect) {
 	v_img = getImgParaSample();
-	vector<CDefect> v_defect = { {{800,800},{900,900}, 6, 11, "ps"}};
+	vector<CDefect> v_defect = { {{416,1546},{439,1564}, 250, 10, "LBPS"} };
 	vv_defect.push_back(v_defect);
 	vv_defect.push_back({});
 	vv_defect.push_back({});
@@ -95,6 +95,7 @@ void getImgDefectParaBySerial2(vector<Mat>& v_img, vector<vector<CDefect>>& vv_d
 		outputFile.close();
 	}
 }
+
 bool PPTestOne(int serial = 0) {
 	CPostProcessor pp = CPostProcessor();
 	pp.loadCfg();

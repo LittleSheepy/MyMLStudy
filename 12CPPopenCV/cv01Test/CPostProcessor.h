@@ -10,7 +10,7 @@
 #include "ReJudgeData.h"
 using namespace std;
 
-class CPostProcessor :CAlgBase {
+class CPostProcessor : public CAlgBase {
 public:
     CPostProcessor();
     void imgCfgInit();
@@ -50,6 +50,7 @@ public:
     vector<string>                  m_s_g_c;
     vector<int>                     m_limit_b;
     vector<string>                  m_s_g_b;
+    vector<int>                     m_v_white_x;
     // 模板
     int offset = 0;
     int template_x = 1260;
