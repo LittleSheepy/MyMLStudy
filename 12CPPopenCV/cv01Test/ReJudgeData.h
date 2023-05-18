@@ -9,6 +9,14 @@
 #include "CAlgBase.h"
 using namespace std;
 
+struct CPixAccuracyBase {
+    float back = 0.208;
+    float Front0 = 0.141;
+    float Front1 = 0.141;
+    float side0 = 0.068;
+    float side1 = 0.068;
+};
+
 // 瑕疵结构体
 struct CDefect
 {
@@ -28,6 +36,9 @@ struct CDefect
     bool overlap(const CDefect& other) {
         //return (p1.x <= other.p2.x && p2.x >= other.p1.x && p1.y <= other.p2.y && p2.y >= other.p1.y);
         return (p1.y <= other.p2.y && p2.y >= other.p1.y);
+    }
+    bool overlap_xy(const CDefect& other) {
+        return (p1.x <= other.p2.x && p2.x >= other.p1.x && p1.y <= other.p2.y && p2.y >= other.p1.y);
     }
     bool overlap_x(const CDefect& other) {
         return (p1.x <= other.p2.x && p2.x >= other.p1.x);

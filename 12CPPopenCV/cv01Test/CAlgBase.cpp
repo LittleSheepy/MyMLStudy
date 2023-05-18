@@ -3,6 +3,9 @@
 */
 #include "pch.h"
 #include <fstream>
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
+#include <experimental/filesystem> // C++14标准引入的文件系统库
+namespace fs = std::experimental::filesystem;
 #include <iostream>
 #include <ctime>
 #include <DbgHelp.h>
@@ -23,6 +26,25 @@ string AlgBaseDebug = AlgBase_img_save_path + "NumRecDebug/";
 void CAlgBase::reset() {
     m_debug_imgs.clear();
 }
+
+bool CAlgBase::loadPixAccuracyCfg() {
+    if (!fs::exists("Config/PixAccuracy.cfg")) {
+        sprintf_alg("[CAlgBase][error] PixAccuracy.cfg file not exist!!!");
+        return false;
+    }
+    std::ifstream ifs("Config/PixAccuracy.cfg");
+    Json::Reader reader;
+    Json::Value m_imgCfgJson;
+    reader.parse(ifs, m_imgCfgJson);
+
+    m_pix_accuracy.back = (float)m_imgCfgJson["back"].asDouble();
+    m_pix_accuracy.Front0 = (float)m_imgCfgJson["Front0"].asDouble();
+    m_pix_accuracy.Front1 = (float)m_imgCfgJson["Front1"].asDouble();
+    m_pix_accuracy.side0 = (float)m_imgCfgJson["side0"].asDouble();
+    m_pix_accuracy.side1 = (float)m_imgCfgJson["side1"].asDouble();
+    return true;
+}
+
 
 // 获得白色区域 通过轮廓查找
 cv::Rect CAlgBase::findWhiteAreaByContour(const cv::Mat& img_gray) {
@@ -156,7 +178,7 @@ void CAlgBase::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect
 
 void CAlgBase::savePara(cv::Mat img, vector<CDefect> v_defect, string savePath) {
     // 创建或者清空文件夹
-    static int num = 1;
+    static int num = 0;
     if (img.empty()) {
         return;
     }
@@ -232,6 +254,81 @@ vector<vector<CDefect>> CAlgBase::groupBBoxes(vector<CDefect> bboxes) {
     return groups;
 }
 
+// BBOX分组 重叠就分为一组
+vector<vector<CDefect>> CAlgBase::groupBBoxesByType(vector<CDefect> bboxes, int type) {
+    vector<vector<CDefect>> groups;
+    for (int i = 0; i < bboxes.size(); i++) {
+        bool added = false;
+        for (int j = 0; j < groups.size(); j++) {
+            for (int k = 0; k < groups[j].size(); k++) {
+                //if (overlap(bboxes[i], groups[j][k])) {
+                bool overlapFlg = false;
+                switch (type)// 012 xy x y
+                {
+                case 0:
+                    sprintf_alg("0 type = %d", type);
+                    overlapFlg = bboxes[i].overlap_xy(groups[j][k]);
+                    break;
+                case 1:
+                    sprintf_alg("1 type = %d", type);
+                    overlapFlg = bboxes[i].overlap_x(groups[j][k]);
+                    break;
+                case 2:
+                    sprintf_alg("2 type = %d", type);
+                    overlapFlg = bboxes[i].overlap_y(groups[j][k]);
+                    break;
+                default:
+                    break;
+                }
+                if (overlapFlg) {
+                    groups[j].push_back(bboxes[i]);
+                    added = true;
+                    break;
+                }
+            }
+            if (added) {
+                // Merge groups that overlap with each other
+                for (int k = j + 1; k < groups.size(); k++) {
+                    bool overlapFound = false;
+                    for (int l = 0; l < groups[k].size(); l++) {
+                        bool overlapFlg = false;
+                        switch (type)// 012 xy x y
+                        {
+                        case 0:
+                            sprintf_alg("0 type = %d", type);
+                            overlapFlg = bboxes[i].overlap_xy(groups[k][l]);
+                            break;
+                        case 1:
+                            sprintf_alg("1 type = %d", type);
+                            overlapFlg = bboxes[i].overlap_x(groups[k][l]);
+                            break;
+                        case 2:
+                            sprintf_alg("2 type = %d", type);
+                            overlapFlg = bboxes[i].overlap_y(groups[k][l]);
+                            break;
+                        default:
+                            break;
+                        }
+                        if (overlapFlg) {
+                            overlapFound = true;
+                            break;
+                        }
+                    }
+                    if (overlapFound) {
+                        groups[j].insert(groups[j].end(), groups[k].begin(), groups[k].end());
+                        groups.erase(groups.begin() + k);
+                        k--;
+                    }
+                }
+                break;
+            }
+        }
+        if (!added) {
+            groups.push_back({ bboxes[i] });
+        }
+    }
+    return groups;
+}
 
 // 获得一组bbox的WH
 vector<int> CAlgBase::getGroupBBoxesWH(vector<CDefect> bboxes) {
@@ -305,7 +402,7 @@ cv::Point CAlgBase::getLeftPoint(cv::Mat img_gray, int point_y, int gray_value) 
 cv::Point CAlgBase::getRightPoint(cv::Mat img_gray, int point_y, int gray_value) {
     int w = img_gray.cols;
     cv::Point point;
-    for (int point_x = w-1; point_x > 0; point_x--) {
+    for (int point_x = w - 1; point_x > 0; point_x--) {
         if (img_gray.at<uchar>(point_y, point_x) > gray_value) {
             point = cv::Point(point_x, point_y);
             break;
@@ -347,7 +444,7 @@ std::map<string, cv::Point> CAlgBase::getRowPoint(cv::Mat img_gray, int point_y,
     std::map<cv::String, cv::Point> RowPoints;
     for (int point_x = 0; point_x < w; point_x++) {
         if (img_gray.at<uchar>(point_y, point_x) > gray_value) {
-            int y = point_x;
+            x = point_x;
             RowPoints["whiteleft"] = cv::Point(point_x, point_y);
             break;
         }
@@ -389,10 +486,10 @@ cv::Point CAlgBase::getIntersectionPoint(cv::Vec4f line1, cv::Vec4f line2) {
     // Define variables for slope and y-intercepts of line1 and line2
     float slope1, slope2, yIntercept1, yIntercept2;
     // Compute slope and y-intercept of line1
-    slope1 = line1[1] / line1[0];
+    slope1 = line1[1] / line1[0] + 0.000001;
     yIntercept1 = line1[3] - slope1 * line1[2];
     // Compute slope and y-intercept of line2
-    slope2 = line2[1] / line2[0];
+    slope2 = line2[1] / line2[0] + 0.000001;
     yIntercept2 = line2[3] - slope2 * line2[2];
 
     // Find the intersection point of the two lines
@@ -402,4 +499,69 @@ cv::Point CAlgBase::getIntersectionPoint(cv::Vec4f line1, cv::Vec4f line2) {
         y = slope2 * x + yIntercept2;
     }
     return cv::Point(static_cast<int>(std::round(x)), static_cast<int>(std::round(y)));
+}
+
+//将单面图片的瑕疵坐标，转换为拼接后的整幅坐标
+cv::Point CAlgBase::_ConvertXY2Merge(int x, int y, int index, int sourceWidth, int sourceHeight)
+{
+    int mx = 0;
+    int my = 0;
+    if (index == 0)
+    {
+
+        mx = x;
+        my = y;
+    }
+    else if (index == 2)
+    {
+        mx = sourceWidth + x;
+        my = y;
+    }
+    else if (index == 1)
+    {
+        mx = x;
+        my = sourceHeight + y;
+    }
+    else
+    {
+        mx = sourceWidth + x;
+        my = sourceHeight + y;
+    }
+    cv::Point point(mx, my);
+    //char buf[128];
+    //sprintf_s(buf, "瑕疵信息表:X:%d,Y:%d,Index:%d,SW:%d,SH:%d,mx:%d,my:%d", x, y, index, sourceWidth, sourceHeight, mx, my);
+    //OutputDebugStringA(buf);
+    return point;
+}
+
+void CAlgBase::_DrawDefect(cv::Mat imgMat, CDefect defInfo, int idx, cv::Scalar color)
+{
+    //cv::Scalar color;
+    //color = cv::Scalar(0, 0, 255);
+
+    char buf[128];
+    if (defInfo.type == 10)
+    {
+        sprintf_s(buf, "%s%.2f", L"L", defInfo.realArea);
+    }
+    else
+    {
+        sprintf_s(buf, "%s%.2f", L"A", defInfo.realArea);
+    }
+    cv::Point position1 = _ConvertXY2Merge(defInfo.p1.x, defInfo.p1.y, idx, imgMat.cols, imgMat.rows);
+    cv::Point position2 = _ConvertXY2Merge(defInfo.p2.x, defInfo.p2.y, idx, imgMat.cols, imgMat.rows);
+    int mostTop = position1.y;
+    int mostBtm = position2.y;
+    int mostLeft = position1.x;
+    int mostRight = position2.x;
+
+    int nameX = mostLeft;
+    int nameY = mostTop;
+
+    int sizeX = mostLeft;
+    int sizeY = mostBtm;
+
+    cv::rectangle(imgMat, position1, position2, color, 2, 5);
+    cv::putText(imgMat, defInfo.name, cv::Point(nameX, nameY), cv::FONT_HERSHEY_PLAIN, 3, color, 3);
+    cv::putText(imgMat, buf, cv::Point(sizeX, sizeY + 30), cv::FONT_HERSHEY_PLAIN, 3, color, 3);
 }

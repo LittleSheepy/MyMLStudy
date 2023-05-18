@@ -5,6 +5,9 @@
 #include <fstream>
 #include <sys/stat.h>
 #include <direct.h>
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
+#include <experimental/filesystem> // C++14标准引入的文件系统库
+namespace fs = std::experimental::filesystem;
 
 #include "CPostProcessor.h"
 
@@ -12,10 +15,7 @@
 #define PP_DEBUG 0
 
 #ifdef PP_DEBUG
-#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
-#include <experimental/filesystem> // C++14标准引入的文件系统库
 #include <sys/stat.h>
-namespace fs = std::experimental::filesystem;
 //string img_save_path_str = "D:/00myGitHub/00MyMLStudy/12CPPopenCV/bin/img_save/";
 string PostProcess_img_save_path = "./img_save/";
 string PostProcessAI_para = PostProcess_img_save_path + "AI_para/";
@@ -26,18 +26,20 @@ map<string, cv::Mat> PostProcess_map_img;
 using namespace std;
 
 // 配置 1c1 图1 c 中间的竖支撑 编号1
-#define CTOP 700
-#define CBOTTOM 1630
-#define BTOP 1600
-#define BBOTTOM 1800
-#define PIX_H   1233                        // 
-#define MM_H   90
-#define PIX_MM  (PIX_H/MM_H)                // 13.7
-#define AREA25  int(PIX_MM*PIX_MM*25)
-#define AREA150  int(PIX_MM*PIX_MM*150)     // 32320
-#define LENGTH5  int(PIX_MM*5)              // 68.5
-#define LENGTH30  int(PIX_MM*30)            // 411
-#define CEMIAN_BROKEN ""
+#define CTOP            700
+#define CBOTTOM         1630
+#define BTOP            1600
+#define BBOTTOM         1800
+#define TTOP            530
+#define TBOTTOM         720
+#define PIX_H           1233                        // 
+#define MM_H            90
+#define PIX_MM          (PIX_H/MM_H)                // 13.7
+#define AREA25          int(PIX_MM*PIX_MM*25)
+#define AREA150         int(PIX_MM*PIX_MM*150)     // 32320
+#define LENGTH5         int(PIX_MM*5)              // 68.5
+#define LENGTH30        int(PIX_MM*30)            // 411
+#define CEMIAN_BROKEN   ""
 
 
 //vector<vector<string>> = { vector<string>{"1c1"} };
@@ -46,6 +48,8 @@ using namespace std;
 // cb1:3 cb2:6 cb3:7 cb4:10 cb5:1245 cb6:89 11 12
 //      解释：cb1: center broken 1
 // 底部分组 broken : bbl bbc bbr
+//      解释：bbl:bottom broken left
+// 顶部分组 broken : tb1 tb2   tb1特殊区域   tb2非特殊区域
 //      解释：bbl:bottom broken left
 // 
 CPostProcessor::CPostProcessor() {
@@ -268,9 +272,13 @@ void CPostProcessor::imgCfgInitByOffSet2() {
     m_imgCfg.push_back(m_img3Cfg);
     m_imgCfg.push_back(m_img4Cfg);
 }
-bool CPostProcessor::loadCfg() {
 
-    std::ifstream ifs("Config/ReJudgeSide.json");
+bool CPostProcessor::loadCfg() {
+    if (!fs::exists("Config/ReJudgeSide.cfg")) {
+        sprintf_alg("[ReJudge][error] cfg file not exist!!!");
+        return false;
+    }
+    std::ifstream ifs("Config/ReJudgeSide.cfg");
     Json::Reader reader;
     Json::Value m_imgCfgJson;
     reader.parse(ifs, m_imgCfgJson);
@@ -294,6 +302,11 @@ bool CPostProcessor::loadCfg() {
         }
         m_imgCfgAll.push_back(cameraCfg);
     }
+    m_v_white_x.clear();
+    m_v_white_x.push_back(1320);
+    m_v_white_x.push_back(1260);
+    m_v_white_x.push_back(1470);
+    m_v_white_x.push_back(1345);
     return true;
 }
 cv::Mat CPostProcessor::getMask(vector<cv::Point> points) {
@@ -346,13 +359,16 @@ void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
     //else {
     //    template_x = 1410;
     //}
+    // 
     // 0506左边线
-    if (camera_num == 0) {
-        template_x = 1100;
-    }
-    else {
-        template_x = 1110;
-    }
+    //if (camera_num == 0) {
+    //    template_x = 1100;
+    //}
+    //else {
+    //    template_x = 1110;
+    //}
+
+    template_x = m_v_white_x[camera_num];
     //sprintf_s(buf, "ssss");
     //OutputDebugStringA(buf);
     //cv::Point matchLoc = findWhiteArea(img_bgr);
@@ -635,15 +651,38 @@ int CPostProcessor::HeBing(int serial, char bc) {
 }
 bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num) {
     sprintf_alg("[ReJudge][Begin] camera_num=%d ", camera_num);
+    // 判断参数有效
+    if (v_img.size() != 4) {
+        sprintf_alg("\n[ReJudge][error] para error!!! v_img is not 4!!!, v_img size=%d.\n", v_img.size());
+        sprintf_alg("[ReJudge][End] result=false");
+        return false;
+    }
+    if (vv_defect.size() != 4) {
+        sprintf_alg("\n[ReJudge][error] para error!!! vv_defect is not 4!!!, vv_defect size=%d.\n", vv_defect.size());
+        sprintf_alg("[ReJudge][End] result=false");
+        return false;
+    }
+    bool result = true;
+    if (m_imgCfgAll.size() == 0) {
+        sprintf_alg("\n[ReJudge][error] m_imgCfgAll is not initiate!!!\n");
+        size_t cnt = 0;
+        for (int i = 0; i < 4; i++) {
+            cnt += vv_defect[i].size();
+        }
+        if (cnt > 0) {
+            result = false;
+        }
+        else {
+            result = true;
+        }
+        sprintf_alg("[ReJudge][End] result=%s", result ? "true" : "false");
+        return result;
+    }
     // 重置过程变量
     reset();
     m_CenterDefectMatched.clear();
     m_BottomDefectMatched.clear();
-#ifdef PP_DEBUG
-    savePara(v_img, vv_defect);
-#endif // PP_DEBUG
 
-    bool result = true;
     // 设置offset
     setOffSet(v_img[0], camera_num);
     for (auto it = m_brokenCnt.begin(); it != m_brokenCnt.end(); ++it) {
@@ -749,6 +788,9 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
         // close the file
         outputFile.close();
     }
+#endif // PP_DEBUG
+#ifdef PP_DEBUG
+    savePara(v_img, vv_defect);
 #endif // PP_DEBUG
     sprintf_alg("[ReJudge][End] result=%s", result ? "true" : "false");
     return result;
