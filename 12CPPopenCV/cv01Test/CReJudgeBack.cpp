@@ -1,5 +1,5 @@
 ﻿/*
-2023年5月11日
+2023年5月19日
 */
 #include "pch.h"
 #include <cmath>
@@ -25,7 +25,7 @@ namespace fs = std::experimental::filesystem;
 
 CReJudgeBack::CReJudgeBack() {
     CAlgBase::loadPixAccuracyCfg();
-    m_len5mm = std::round(5 / m_pix_accuracy.back);
+    m_len5mm = (int)std::round(5 / m_pix_accuracy.back);
     loadCfg();
 }
 
@@ -146,15 +146,19 @@ bool CReJudgeBack::Process(cv::Mat img_mask, vector<CDefect> v_defect) {
     OutputDebugStringA("[ReJudgeBack][Process][Begin]");
     sprintf_alg("[ReJudgeBack][Process][Begin]");
 
-    std::string NGBBOX_name = "./img_save/AI_para/ReJudgeBack/触发NG条件的BBOX" + to_string(num) + ".txt";
-    std::ofstream outputNGBBOXFile(NGBBOX_name);
-    outputNGBBOXFile << "编号:" << num << endl;
-    outputNGBBOXFile << "所有检测框:" << num << endl;
+    //std::string NGBBOX_name = "./img_save/AI_para/ReJudgeBack/触发NG条件的BBOX" + to_string(num) + ".txt";
+    //std::ofstream outputNGBBOXFile(NGBBOX_name);
+    //outputNGBBOXFile << "编号:" << num << endl;
+    //outputNGBBOXFile << "所有检测框:" << num << endl;
+    int tmp = 1;
     for (const auto& defect : v_defect) {
         //outputFile.write(reinterpret_cast<const char*>(&defect), sizeof(defect));
-        outputNGBBOXFile << "检测框名:" << defect.name << endl;
-        outputNGBBOXFile << "左上角点:" << defect.p1.x << " " << defect.p1.y << endl;
-        outputNGBBOXFile << "右下角点:" << defect.p2.x << " " << defect.p2.y << endl;
+        //outputNGBBOXFile << "框编号:" << tmp << endl;
+        //outputNGBBOXFile << "检测框名:" << defect.name << endl;
+        //outputNGBBOXFile << "最大长度:" << defect.realArea << endl;
+        //outputNGBBOXFile << "左上角点:" << defect.p1.x << " " << defect.p1.y << endl;
+        //outputNGBBOXFile << "右下角点:" << defect.p2.x << " " << defect.p2.y << endl;
+        tmp++;
     }
 
     if (img_mask.empty()) {
@@ -190,8 +194,30 @@ bool CReJudgeBack::Process(cv::Mat img_mask, vector<CDefect> v_defect) {
         img_mask = img;
     }
     // 二值化
-    cv::threshold(img_mask, img, 100, 255, cv::THRESH_BINARY);
-    img_mask = img;
+    cv::Mat img_mask_Need;
+    cv::threshold(img_mask, img_mask_Need, 100, 0, cv::THRESH_TOZERO);
+
+    // 提取 定位孔 mask 图案
+    cv::Mat img_mask_Hole;
+    cv::threshold(img_mask_Need, img_mask_Hole, 200, 0, cv::THRESH_TOZERO_INV);
+    cv::imwrite("./img_save/img_mask_Hole1.jpg", img_mask_Hole);
+    cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3));
+    cv::morphologyEx(img_mask_Hole, img_mask_Hole, cv::MORPH_OPEN, element);
+
+    // 提取 棱边 mask 图案
+    cv::Mat img_mask_Edge;
+    cv::threshold(img_mask_Need, img_mask_Edge, 200, 0, cv::THRESH_TOZERO);
+
+    img_mask = img_mask_Need;
+    //cv::imwrite("./img_save/img_mask_Need.jpg", img_mask_Need);
+    //cv::imwrite("./img_save/img_mask.jpg", img_mask);
+    //cv::imwrite("./img_save/img_mask_Hole.jpg", img_mask_Hole);
+    //cv::imwrite("./img_save/img_mask_Edge.jpg", img_mask_Edge);
+    // 提取 Mark 图案
+    cv::Mat binImg;
+    //cv::threshold(imgMaskGray, binImg, 210, 0, cv::THRESH_TOZERO_INV);
+    //cv::threshold(binImg, binImg, 80, 255, cv::THRESH_BINARY);
+
     // 重置过程变量
     reset();
     m_DefectMatched.clear();
@@ -206,38 +232,50 @@ bool CReJudgeBack::Process(cv::Mat img_mask, vector<CDefect> v_defect) {
     imgCfgInit();
     test_showcfg(img_mask, m_imgCfgCenter, m_imgCfg, v_defect);
     vector<CDefect> v_defect_others = {};
-    vector<CDefect> v_defect_in_mask = {};
+    vector<CDefect> v_defect_in_hole = {};
+    vector<CDefect> v_defect_out_hole = {};
+    // 缺陷在定位孔上
+    getDefectsInMask2(img_mask_Hole, v_defect, v_defect_in_hole, v_defect_out_hole);
+    // 复判缺陷 定位孔有缺陷
+    if (v_defect_in_hole.size() > 0) {
+        result = false;
+        sprintf_alg("[Process] ReJudgeFront is NG,loc hole have broken defect!");
+        // TODO 上线可以在这里直接返回false
+        //sprintf_alg("[ReJudgeBack][Process][End] result=%s", result ? "true" : "false");
+        //return result;
+    }
 
     // 把缺陷分为在mask上和不在mask上
-    getDefectsInMask(img_mask, v_defect);
+    getDefectsInMask(img_mask, v_defect_out_hole);
 
     sprintf_alg("[Process]      1 m_defectsOthers size = %d", m_defectsOthers.size());
 
     // 给缺陷分组
-    getDefectsGroup(img_mask, m_defectsInMask);
+    getDefectsGroup(img_mask, m_defectsInEdge);
 
     sprintf_alg("[Process]      2 m_defectsOthers size = %d", m_defectsOthers.size());
 
     // 复判缺陷 有其他缺陷
-    if (v_defect_others.size() > 0) {
+    if (m_defectsOthers.size() > 0) {
         result = false;
         sprintf_alg("[Process] ReJudgeFront is NG,have other broken defect!");
         // TODO 上线可以在这里直接返回false
         //sprintf_alg("[ReJudgeBack][Process][End] result=%s", result ? "true" : "false");
         //return result;
     }
+
     vector<CDefect> v_defect_NG;
     // 复判缺陷 边中间有缺陷
     if (m_defectsInCenter.size() > 0) {
-        outputNGBBOXFile << "《《重点》》棱边中间区域有框。" << endl;
-        outputNGBBOXFile << "触发NG的框:" << endl;
-        outputNGBBOXFile << "《《重点》》!!!!!!!!!!!蓝圈圈出!!!!!!!!" << endl;
+        //outputNGBBOXFile << "《《重点》》棱边中间区域有框。" << endl;
+        //outputNGBBOXFile << "触发NG的框:" << endl;
+        //outputNGBBOXFile << "《《重点》》!!!!!!!!!!!蓝圈圈出!!!!!!!!" << endl;
         CDefect defect = m_defectsInCenter[0];
         v_defect_NG.push_back(defect);
-        outputNGBBOXFile << "检测框名:" << defect.name << endl;
-        outputNGBBOXFile << "左上角点:" << defect.p1.x << " " << defect.p1.y << endl;
-        outputNGBBOXFile << "右下角点:" << defect.p2.x << " " << defect.p2.y << endl;
-        outputNGBBOXFile.close();
+        //outputNGBBOXFile << "检测框名:" << defect.name << endl;
+        //outputNGBBOXFile << "左上角点:" << defect.p1.x << " " << defect.p1.y << endl;
+        //outputNGBBOXFile << "右下角点:" << defect.p2.x << " " << defect.p2.y << endl;
+        //outputNGBBOXFile.close();
         result = false;
         sprintf_alg("[Process] ReJudgeFront is NG,Center have broken defect!");
         // TODO 上线可以在这里直接返回false
@@ -264,21 +302,20 @@ bool CReJudgeBack::Process(cv::Mat img_mask, vector<CDefect> v_defect) {
             }
             if (defect_cnt >= 2) {
                 sprintf_alg("[Process] ReJudgeFront is NG,key=%d, Side defect num is too more!!!", key);
-                outputNGBBOXFile << "《《重点》》边角同一组，大于5mm缺陷个数大于或等于两个！！！！！" << endl;
-                outputNGBBOXFile << "触发NG的框:" << endl;
-                outputNGBBOXFile << "《《重点》》!!!!!!!!!!!蓝圈圈出!!!!!!!!" << endl;
+                //outputNGBBOXFile << "《《重点》》边角同一组，大于5mm缺陷个数大于或等于两个！！！！！" << endl;
+                //outputNGBBOXFile << "触发NG的框:" << endl;
+                //outputNGBBOXFile << "《《重点》》!!!!!!!!!!!蓝圈圈出!!!!!!!!" << endl;
                 for (const auto& v_defect_long : vv_defect_long) {
-                    outputNGBBOXFile << "组开始:" << endl;
                     for (const auto& defect : v_defect_long) {
                         v_defect_NG.push_back(defect);
-                        outputNGBBOXFile << "检测框名:" << defect.name << endl;
-                        outputNGBBOXFile << "左上角点:" << defect.p1.x << " " << defect.p1.y << endl;
-                        outputNGBBOXFile << "右下角点:" << defect.p2.x << " " << defect.p2.y << endl;
+                        //outputNGBBOXFile << "检测框名:" << defect.name << endl;
+                        //outputNGBBOXFile << "检测框名:" << defect.name << endl;
+                        //outputNGBBOXFile << "左上角点:" << defect.p1.x << " " << defect.p1.y << endl;
+                        //outputNGBBOXFile << "右下角点:" << defect.p2.x << " " << defect.p2.y << endl;
                     }
-                    outputNGBBOXFile << "组结束:" << endl;
                 }
                 result = false;
-                outputNGBBOXFile.close();
+                //outputNGBBOXFile.close();
                 // TODO 上线可以在这里直接返回false
                 sprintf_alg("[ReJudgeBack][Process][End] result=%s", result ? "true" : "false");
                 break;
@@ -288,6 +325,7 @@ bool CReJudgeBack::Process(cv::Mat img_mask, vector<CDefect> v_defect) {
             }
         }
     }
+#if 1
     std::string filename_result = "./img_save/AI_para/ReJudgeBack/" + std::to_string(num);
     filename_result = filename_result + "_result";
     std::string img_name = filename_result + ".jpg";
@@ -299,26 +337,39 @@ bool CReJudgeBack::Process(cv::Mat img_mask, vector<CDefect> v_defect) {
     cv::Mat img_save_old = cv::imread("./Config/yuantu.bmp");
     //cv::cvtColor(img_mask, img_save, cv::COLOR_GRAY2BGR);
 
+    for (auto it : m_imgCfgCenter) {
+        cv::rectangle(img_save, it.p1, it.p2, cv::Scalar(255, 255, 0), 10);
+    }
+    for (auto it : m_imgCfg) {
+        cv::rectangle(img_save, it.p1, it.p2, cv::Scalar(255, 0, 255), 10);
+    }
     // 保存old
     cv::Scalar color = cv::Scalar(0, 0, 255);
     cv::putText(img_save_old, "NG", cv::Point(100, 220), cv::FONT_HERSHEY_PLAIN, 20, color, 10);
 
+    int tmp_num = 1;
     for (auto it : v_defect) {
         _DrawDefect(img_save_old, it, 0, color);
+        //cv::putText(img_save_old, to_string(tmp_num), it.p1 + cv::Point(0, 210), cv::FONT_HERSHEY_PLAIN, 15, cv::Scalar(0, 255, 255), 20);
+        tmp_num++;
     }
 
     // 保存之后的
     if (result) {
         cv::Scalar color = cv::Scalar(0, 255, 0);
         cv::putText(img_save, "OK", cv::Point(100, 220), cv::FONT_HERSHEY_PLAIN, 20, color, 10);
+        int tmp_num=1;
         for (auto it : v_defect) {
             _DrawDefect(img_save, it, 0, color);
+            //cv::putText(img_save, to_string(tmp_num), it.p1 + cv::Point(0, 210), cv::FONT_HERSHEY_PLAIN, 15, cv::Scalar(0, 255, 255), 20);
+            tmp_num++;
         }
     }
     else {
         cv::Scalar color = cv::Scalar(0, 0, 255);
         cv::putText(img_save, "NG", cv::Point(100, 220), cv::FONT_HERSHEY_PLAIN, 20, color, 10);
 
+        int tmp_num = 1;
         for (auto it : v_defect) {
             cv::Point center = (it.p1 + it.p2) / 2;
             int radius = 30;
@@ -326,6 +377,8 @@ bool CReJudgeBack::Process(cv::Mat img_mask, vector<CDefect> v_defect) {
             // Draw the circle on the image
             circle(img_save, center, radius, cv::Scalar(255, 0, 0), 3);
             _DrawDefect(img_save, it, 0, color);
+            //cv::putText(img_save, to_string(tmp_num), it.p1 + cv::Point(0, 210), cv::FONT_HERSHEY_PLAIN, 15, cv::Scalar(0, 255, 255), 20);
+            tmp_num++;
         }
         //color = cv::Scalar(255, 0, 0);
         //for (auto it : v_defect_NG) {
@@ -339,13 +392,45 @@ bool CReJudgeBack::Process(cv::Mat img_mask, vector<CDefect> v_defect) {
         sprintf_alg("[ReJudgeBack][Process][error] Have other defect!!!");
         result = false;
     }
-
+#endif
     sprintf_alg("[ReJudgeBack][Process][End] result=%s", result ? "true" : "false");
     sprintf_s(buf, "[ReJudgeBack][Process][End] result=%s", result ? "true" : "false");
     OutputDebugStringA(buf);
     return result;
 }
 
+bool CReJudgeBack::filterDefects(vector<CDefect>& v_defect, vector<CDefect>& v_defect_need, vector<CDefect>& v_defect_others) {
+    for (auto it = v_defect.begin(); it != v_defect.end(); ++it) {
+        if ((*it).area <= 0) {
+            sprintf_alg("[filterDefects][warring]     defect_area is 0, area=%d", (*it).area);
+            v_defect_others.push_back(*it);
+            continue;
+        }
+        if ((*it).type != 10) {
+            sprintf_alg("[filterDefects][warring]type is not 10. type=%d name=%s", (*it).type, (*it).name.c_str());
+            v_defect_others.push_back(*it);
+            continue;
+        }
+        v_defect_need.push_back(*it);
+    }
+    return true;
+}
+
+bool CReJudgeBack::getDefectsInMask2(cv::Mat img_mask, vector<CDefect>& v_defect, vector<CDefect>& v_defect_matched, vector<CDefect>& v_defect_others) {
+    // 遍历
+    for (auto it = v_defect.begin(); it != v_defect.end(); ++it) {
+        bool matched = defectInMask(img_mask, *it);
+        if (matched) {
+            v_defect_matched.push_back(*it);
+            //sprintf_alg("[getDefectsInMask2]       v_defect_matched size : %d", v_defect_matched.size());
+        }
+        else {
+            v_defect_others.push_back(*it);
+            //sprintf_alg("[getDefectsInMask2]       m_defectsOthers size : %d", m_defectsOthers.size());
+        }
+    }
+    return true;
+}
 bool CReJudgeBack::getDefectsInMask(cv::Mat img_mask, vector<CDefect> v_defect) {
     // 二值化
     cv::Mat img;
@@ -359,13 +444,13 @@ bool CReJudgeBack::getDefectsInMask(cv::Mat img_mask, vector<CDefect> v_defect) 
         }
         if ((*it).type != 10) {
             sprintf_alg("[getDefectsInMask][warring]type is not 10. type=%d name=%s", (*it).type, (*it).name.c_str());
-            m_otherTypeDefect == true;
+            m_otherTypeDefect = true;
             continue;
         }
         bool matched = defectInMask(img, *it);
         if (matched) {
-            m_defectsInMask.push_back(*it);
-            sprintf_alg("[getDefectsInMask]       m_defectsInMask size : %d", m_defectsInMask.size());
+            m_defectsInEdge.push_back(*it);
+            sprintf_alg("[getDefectsInMask]       m_defectsInEdge size : %d", m_defectsInEdge.size());
         }
         else {
             // TODO 这里可以直接返回false
@@ -424,14 +509,14 @@ bool CReJudgeBack::getDefectsGroup(cv::Mat img_mask, vector<CDefect> v_defect) {
         // 判断是否中间禁区
         bool matched = defectMatchBoxCenter(img_mask, *it);
         if (matched) {
-            //sprintf_alg("[getDefectsGroup]       m_defectsInMask size : %d", m_defectsInCenter.size());
+            //sprintf_alg("[getDefectsGroup]       m_defectsInCenter size : %d", m_defectsInCenter.size());
             continue;
         }
 
         // 判断在那个边角矩形组
         matched = defectMatchBox(img_mask, *it);
         if (matched) {
-            //sprintf_alg("[getDefectsGroup]       m_defectsInMask size : %d", m_defectsInCenter.size());
+            //sprintf_alg("[getDefectsGroup]       m_defectsInCenter size : %d", m_defectsInCenter.size());
             continue;
         }
         else {

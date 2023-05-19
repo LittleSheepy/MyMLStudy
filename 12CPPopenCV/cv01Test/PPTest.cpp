@@ -12,14 +12,15 @@ using namespace cv;
 vector<Mat> getImgParaSample() {
 	vector<Mat> v_img;
 	//string dir_root = "D:/04DataSets/ningjingLG/all/";
-	string dir_root = "D:/02dataset/01work/05nanjingLG/05ReJudgeFront/ReJudgeFront/";
-	string img_first_name = "1_%d";
+	string dir_root = "D:/04Bin/PostProcessTest/PostProcessSideTest0519/";
+	string img_first_name = "black_0188923_CM4_%d";
 	for (int i = 0; i < 4; i++) {
 		char buf[125];
-		sprintf_s(buf, img_first_name.c_str(), i);
+		sprintf_s(buf, img_first_name.c_str(), i+1);
 		string img_first_nameAll = buf;
-		string img_path = dir_root + img_first_nameAll + ".jpg";
-		v_img.push_back(imread(img_path, cv::IMREAD_GRAYSCALE));
+		string img_path = dir_root + img_first_nameAll + ".bmp";
+		//v_img.push_back(imread(img_path, cv::IMREAD_GRAYSCALE));
+		v_img.push_back(imread(img_path, cv::IMREAD_COLOR));
 	}
 	return v_img;
 }
@@ -34,6 +35,7 @@ void getImgDefectParaSample(vector<Mat>& v_img, vector<vector<CDefect>>& vv_defe
 }
 
 void getImgDefectParaBySerial(vector<Mat>& v_img, vector<vector<CDefect>>& vv_defect, int serial = 1) {
+	v_img = getImgParaSample();
 	const std::string folder_path = "./AI_para042914";
 	for (int i = 0; i < 4; i++) {
 		// 读取图片
@@ -41,7 +43,7 @@ void getImgDefectParaBySerial(vector<Mat>& v_img, vector<vector<CDefect>>& vv_de
 		std::string filename = folder_path + "/";
 		filename = filename + std::to_string(serial) + "_" + std::to_string(i);
 		std::string img_name = filename + ".bmp";
-		v_img.push_back(imread(img_name));
+		//v_img.push_back(imread(img_name));
 
 		// 读取 vector<CDefect>
 		vector<CDefect> v_defect;
@@ -66,13 +68,14 @@ void getImgDefectParaBySerial(vector<Mat>& v_img, vector<vector<CDefect>>& vv_de
 }
 
 void getImgDefectParaBySerial2(vector<Mat>& v_img, vector<vector<CDefect>>& vv_defect, int serial = 1) {
-	const std::string folder_path = "./AI_para_test/RejudgeFront/";
+	v_img = getImgParaSample();
+	const std::string folder_path = "./PostProcessTest/PostProcessSideTest0519/";
 	for (int i = 0; i < 4; i++) {
 		// 读取图片
 		/*Mat img = v_img[i];*/
 		std::string filename = folder_path + "/";
 		std::string img_name = filename + std::to_string(serial % 2) + "_" + std::to_string(i) + ".bmp";
-		v_img.push_back(imread(img_name));
+		//v_img.push_back(imread(img_name));
 
 		// 读取 vector<CDefect>
 		vector<CDefect> v_defect;
@@ -85,10 +88,17 @@ void getImgDefectParaBySerial2(vector<Mat>& v_img, vector<vector<CDefect>>& vv_d
 				break;
 			}
 			outputFile >> defect.p1.y;
+			if (outputFile.eof()) {
+				break;
+			}
+			if (defect.p1.y == 0) {
+				break;
+			}
 			outputFile >> defect.p2.x >> defect.p2.y;
 			outputFile >> defect.area;
 			outputFile >> defect.type;
 			outputFile >> defect.name;
+			outputFile >> defect.realArea;
 			v_defect.push_back(defect);
 		}
 		vv_defect.push_back(v_defect);
@@ -102,21 +112,21 @@ bool PPTestOne(int serial = 0) {
 	vector<Mat> v_img;
 	vector<vector<CDefect>> vv_defect;
 	getImgDefectParaBySerial2(v_img, vv_defect, serial);
-	bool result = pp.Process(v_img, vv_defect, serial % 2);
+	bool result = pp.Process(v_img, vv_defect, 3);
 	cout << result << endl;
 	return result;
 }
 // 全部测试
 void PPTestAll() {
-	std::ifstream file("二次复判测试用例.csv"); //打开txt文件
-	std::ofstream file_result("二次复判测试用例_结果.csv"); //打开txt文件
+	std::ifstream file("二次复判测试用例_单个.csv"); //打开txt文件
+	std::ofstream file_result("二次复判测试用例_单个_结果.csv"); //打开txt文件
 	std::string line;
 	int line_num = 1;
 	for (int i = 0; i < 4; i++) {
 		std::getline(file, line);
 		file_result << line << endl;
 	}
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 14; i++) {
 		std::getline(file, line);
 		char last_char = line.back(); // get the last character of the line
 		last_char = last_char == ',' ? line[line.size() - 2] : last_char;
@@ -142,7 +152,7 @@ bool RJFTestOne(int serial = 0) {
 	CReJudgeFront pp = CReJudgeFront();
 	vector<Mat> v_img;
 	vector<vector<CDefect>> vv_defect;
-	getImgDefectParaBySerial2(v_img, vv_defect, serial);
+	getImgDefectParaBySerial2(v_img, vv_defect, 3);
 	bool result = pp.Process(v_img, vv_defect);
 	cout << result << endl;
 	return result;

@@ -1,5 +1,5 @@
 ﻿/*
-2023年5月11日
+2023年5月19日
 */
 #include "pch.h"
 #include <fstream>
@@ -63,7 +63,7 @@ CPostProcessor::CPostProcessor() {
     m_limit_c = { AREA150, AREA150, 0, AREA150, AREA150, 0, 0, AREA150, AREA150, 0, 0, AREA150 };
     m_s_g_b = { "bbl", "bbl", "bbc", "bbr", "bbr" };
     m_limit_b = { AREA25, AREA150, 0, AREA150, AREA25 };
-    img_template = cv::imread(template_path);
+    //img_template = cv::imread(template_path);
 }
 
 int CPostProcessor::getLimit(string bc, int ser) {
@@ -403,10 +403,22 @@ void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
     OutputDebugStringA("<<<setOffSet>>> setOffSet out <<<<<<<<<<<<<<<");
 }
 
-void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect) {
+void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, bool result) {
+    cv::Scalar color_red = cv::Scalar(0, 0, 255);
+    cv::Scalar color_green = cv::Scalar(0, 255, 0);
+    cv::Scalar color = color_red;
+    if (result) {
+        color = color_green;
+    }
+
     // 创建或者清空文件夹
     static int num = 1;
-    const std::string folder_path = "./img_save/AI_para";
+    const std::string folder_path = "./img_save/AI_para/PP";
+    std::string filename_all = folder_path + "/" + std::to_string(num);
+
+    vector<cv::Mat> v_img_old;
+    vector<cv::Mat> v_img_result;
+
     for (int i = 0; i < 4; i++) {
         // 保存图片
         cv::Mat img = v_img[i];
@@ -416,10 +428,10 @@ void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_
         std::string filename = folder_path + "/" + std::to_string(num);
         filename = filename + "_" + std::to_string(i);
         std::string img_name = filename + ".bmp";
-        cv::imwrite(img_name, img);
+        //cv::imwrite(img_name, img);
         // 保存 vector<CDefect>
-
         vector<CDefect> v_defect = vv_defect[i];
+#if 1
         std::string vect_name = filename + ".txt";
         std::ofstream outputFile(vect_name);
         // check if the file was successfully opened
@@ -440,7 +452,62 @@ void CPostProcessor::savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_
             // handle the case where the file could not be opened
             std::cerr << "Error: could not open file for writing\n";
         }
+#endif
+        // 画old框
+        cv::Mat img_save_old;
+        img.copyTo(img_save_old);
+        std::string img_name_old = filename + "_old.bmp";
+        //cv::putText(img_save_old, "NG", cv::Point(100, 220), cv::FONT_HERSHEY_PLAIN, 20, color_red, 10);
+        for (auto it : v_defect) {
+            _DrawDefect(img_save_old, it, 0, color_red);
+        }
+        v_img_old.push_back(img_save_old);
+        //cv::imwrite(img_name_old, img_save_old);
+
+        // 画识别后
+
+    // 保存之后的
+        cv::Mat img_save;
+        img.copyTo(img_save);
+        std::string img_name_result = filename + "_result.bmp";
+        if (result) {
+            cv::Scalar color = cv::Scalar(0, 255, 0);
+            //cv::putText(img_save, "OK", cv::Point(100, 220), cv::FONT_HERSHEY_PLAIN, 20, color, 10);
+            for (auto it : v_defect) {
+                _DrawDefect(img_save, it, 0, color);
+            }
+        }
+        else {
+            cv::Scalar color = cv::Scalar(0, 0, 255);
+            //cv::putText(img_save, "NG", cv::Point(100, 220), cv::FONT_HERSHEY_PLAIN, 20, color, 10);
+            for (auto it : v_defect) {
+                _DrawDefect(img_save, it, 0, color);
+            }
+        }
+        v_img_result.push_back(img_save);
+        //cv::imwrite(img_name_result, img_save);
     }
+    // 保存
+    cv::Mat img_save_old;
+    cv::hconcat(v_img_old, img_save_old);
+    std::string img_name_old = filename_all + "_old.jpg";
+    cv::putText(img_save_old, "NG", cv::Point(100, 220), cv::FONT_HERSHEY_PLAIN, 20, color_red, 10);
+    cv::imwrite(img_name_old, img_save_old);
+
+    cv::Mat img_save_result;
+    cv::hconcat(v_img_result, img_save_result);
+    std::string img_name_result = filename_all + "_result.jpg";
+
+    if (result) {
+        cv::Scalar color = cv::Scalar(0, 255, 0);
+        cv::putText(img_save_result, "OK", cv::Point(100, 220), cv::FONT_HERSHEY_PLAIN, 20, color, 10);
+    }
+    else {
+        cv::Scalar color = cv::Scalar(0, 0, 255);
+        cv::putText(img_save_result, "NG", cv::Point(100, 220), cv::FONT_HERSHEY_PLAIN, 20, color, 10);
+    }
+    cv::imwrite(img_name_result, img_save_result);
+
     num++;
 }
 
@@ -451,9 +518,9 @@ bool CPostProcessor::Process_old(vector<cv::Mat> v_img, vector<vector<CDefect>> 
     reset();
     m_CenterDefectMatched.clear();
     m_BottomDefectMatched.clear();
-#ifdef PP_DEBUG
-    savePara(v_img, vv_defect);
-#endif // PP_DEBUG
+//#ifdef PP_DEBUG
+//    savePara(v_img, vv_defect);
+//#endif // PP_DEBUG
 
     bool result = true;
     // 设置offset
@@ -650,6 +717,8 @@ int CPostProcessor::HeBing(int serial, char bc) {
     return defect_cnt;
 }
 bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, int camera_num) {
+    static int num = -1;
+    num++;
     sprintf_alg("[ReJudge][Begin] camera_num=%d ", camera_num);
     // 判断参数有效
     if (v_img.size() != 4) {
@@ -763,6 +832,22 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
             }
         }
     }
+    // 保存
+    std::string filename_result = "./img_save/AI_para/PP/" + std::to_string(num);
+    filename_result = filename_result + "_result";
+    std::string img_name = filename_result + ".jpg";
+    std::string filename_old = "./img_save/AI_para/PP/" + std::to_string(num);
+    filename_old = filename_old + "_old";
+    std::string img_name_old = filename_old + ".jpg";
+    //img_mask = cv::imread("./Config/BackRegion.jpg");
+    //cv::Mat img_save = cv::imread("./Config/yuantu.bmp");
+    //cv::Mat img_save_old = cv::imread("./Config/yuantu.bmp");
+    // 保存old
+    for (int i = 0; i < 4; i++) {
+
+    }
+
+
 #ifdef PP_DEBUG
     //Create a time_t object and get the current time
     time_t now = time(0);
@@ -790,7 +875,7 @@ bool CPostProcessor::Process(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_d
     }
 #endif // PP_DEBUG
 #ifdef PP_DEBUG
-    savePara(v_img, vv_defect);
+    savePara(v_img, vv_defect, result);
 #endif // PP_DEBUG
     sprintf_alg("[ReJudge][End] result=%s", result ? "true" : "false");
     return result;
