@@ -1,5 +1,5 @@
 ﻿/*
-2023年5月11日
+2023年5月19日
 */
 #pragma once
 #include <opencv.hpp>
@@ -27,7 +27,7 @@ public:
     bool defectMatchBox(cv::Mat img, CDefect defect, int serial);
     bool processImg(cv::Mat img, CDefect defect, int serial);
     cv::Mat getMask(vector<cv::Point> points);
-    void savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect);
+    void savePara(vector<cv::Mat> v_img, vector<vector<CDefect>> vv_defect, bool result);
     int getLimit(string bc, int ser);
     int groupBBoxes_old(vector<CDefect> bboxes, vector<CDefect>& v_defect1, char bc);
     int HeBing(int serial, char bc);

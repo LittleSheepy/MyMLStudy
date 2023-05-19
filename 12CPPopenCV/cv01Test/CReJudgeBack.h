@@ -1,5 +1,5 @@
 ﻿/*
-2023年5月11日
+2023年5月19日
 */
 #pragma once
 #include <opencv.hpp>
@@ -17,8 +17,10 @@ struct CfgRJBStruct
 class CReJudgeBack : public CAlgBase
 {
 private:
+    bool filterDefects(vector<CDefect>& v_defect, vector<CDefect>& v_defect_need, vector<CDefect>& v_defect_others);
     bool defectInMask(cv::Mat img, CDefect defect);
     bool getDefectsInMask(cv::Mat img_mask, vector<CDefect> v_defect);
+    bool getDefectsInMask2(cv::Mat img, vector<CDefect>& v_defect, vector<CDefect>& v_defect_matched, vector<CDefect>& v_defect_others);
     bool getPoint(cv::Mat img_gray);
     bool getDefectsGroup(cv::Mat img_mask, vector<CDefect> v_defect);
     bool defectMatchBox(cv::Mat img, CDefect defect);                   // 匹配在边角矩形组
@@ -31,7 +33,8 @@ public:
 public:
     string					        m_className = "【底面二次复判】";
     vector<CDefect>	                m_DefectMatched;
-    vector<CDefect>	                m_defectsInMask;
+    vector<CDefect>	                m_defectsInEdge;
+    vector<CDefect>	                m_defectsInLocHole;
     vector<CDefect>	                m_defectsOthers;
     vector<CDefect>	                m_defectsInCenter;
     map<int, vector<CDefect>>	    m_DefectGroup;

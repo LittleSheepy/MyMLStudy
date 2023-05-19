@@ -1,5 +1,5 @@
 ﻿/*
-2023年5月11日
+2023年5月19日
 */
 #pragma once
 #include <opencv.hpp>
@@ -10,11 +10,11 @@
 using namespace std;
 
 struct CPixAccuracyBase {
-    float back = 0.208;
-    float Front0 = 0.141;
-    float Front1 = 0.141;
-    float side0 = 0.068;
-    float side1 = 0.068;
+    float back = 0.208f;
+    float Front0 = 0.141f;
+    float Front1 = 0.141f;
+    float side0 = 0.068f;
+    float side1 = 0.068f;
 };
 
 // 瑕疵结构体

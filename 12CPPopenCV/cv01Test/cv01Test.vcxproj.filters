@@ -39,10 +39,10 @@
     <ClCompile Include="CReJudgeFront.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CReJudgeBack.cpp">
+    <ClCompile Include="RJBTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="RJBTest.cpp">
+    <ClCompile Include="CReJudgeBack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

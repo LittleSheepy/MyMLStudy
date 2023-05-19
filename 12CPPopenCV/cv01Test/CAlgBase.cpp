@@ -1,5 +1,5 @@
 ﻿/*
-2023年5月11日
+2023年5月19日
 */
 #include "pch.h"
 #include <fstream>
@@ -484,7 +484,7 @@ map<string, cv::Point> CAlgBase::getColumnPoint(cv::Mat img_gray, int point_x, i
 
 cv::Point CAlgBase::getIntersectionPoint(cv::Vec4f line1, cv::Vec4f line2) {
     // Define variables for slope and y-intercepts of line1 and line2
-    float slope1, slope2, yIntercept1, yIntercept2;
+    double slope1, slope2, yIntercept1, yIntercept2;
     // Compute slope and y-intercept of line1
     slope1 = line1[1] / line1[0] + 0.000001;
     yIntercept1 = line1[3] - slope1 * line1[2];
@@ -540,13 +540,13 @@ void CAlgBase::_DrawDefect(cv::Mat imgMat, CDefect defInfo, int idx, cv::Scalar 
     //color = cv::Scalar(0, 0, 255);
 
     char buf[128];
-    if (defInfo.type == 10)
+    if (defInfo.type == 10 || defInfo.type == 11)
     {
-        sprintf_s(buf, "%s%.2f", L"L", defInfo.realArea);
+        sprintf_s(buf, "%Ls%.2f", L"L", defInfo.realArea);
     }
     else
     {
-        sprintf_s(buf, "%s%.2f", L"A", defInfo.realArea);
+        sprintf_s(buf, "%Ls%.2f", L"A", defInfo.realArea);
     }
     cv::Point position1 = _ConvertXY2Merge(defInfo.p1.x, defInfo.p1.y, idx, imgMat.cols, imgMat.rows);
     cv::Point position2 = _ConvertXY2Merge(defInfo.p2.x, defInfo.p2.y, idx, imgMat.cols, imgMat.rows);
