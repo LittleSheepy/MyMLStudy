@@ -212,35 +212,6 @@ class CAlgo_KDWater:
                 defect.rtRect[1] += curRect[1]
                 vecDefect.append(defect)
 
-    # def _GetDefect_ByImgDiff(self, defect, imgAux, imgBase):
-    #     DEF_THRESD_NOR = 60
-    #     DEF_THRESD_DIFF = 80
-    #     DEF_THRESD_ABNOR = 30
-    #     DEF_THRESD_AREA = 300
-    #
-    #     img0 = cv2.GaussianBlur(imgAux, (5, 5), 1.0)
-    #     img1 = cv2.GaussianBlur(imgBase, (5, 5), 1.0)
-    #
-    #     img0 = cv2.threshold(imgBase, DEF_THRESD_ABNOR, 255, cv2.THRESH_BINARY_INV)[1]
-    #     img1 = cv2.threshold(imgAux - imgBase, DEF_THRESD_DIFF, 255, cv2.THRESH_BINARY)[1]
-    #     imgBin = cv2.bitwise_and(img1, img0)
-    #
-    #     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (10, 10))
-    #     img1 = cv2.morphologyEx(img1, cv2.MORPH_OPEN, kernel)
-    #
-    #     contours, _ = cv2.findContours(imgBin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-    #
-    #     ret = False
-    #
-    #     for cnt in contours:
-    #         area = cv2.contourArea(cnt)
-    #         if area > DEF_THRESD_AREA:
-    #             defect.iArea = area
-    #             defect.rtRect = cv2.boundingRect(cnt)
-    #             ret = True
-    #
-    #     return ret
-
     def _GetImage_ByBox_Left(self, outImg, outCent, srcImg, cent, curImgTempl):
         iHalfWid = (self.m_imgTempl.shape[1] >> 1) + 30
         iHalfHei = (self.m_imgTempl.shape[0] >> 1) + 30
