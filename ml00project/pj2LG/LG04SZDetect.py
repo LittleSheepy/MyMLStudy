@@ -3,6 +3,8 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+import random as rng
+
 def pltShowCV(img, title="img"):
     if len(img.shape) == 2:
         img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
@@ -28,6 +30,12 @@ def pltShowCVDot(img, point, title="img"):
     plt.show()
     cnt += 1
 
+def draw_contours(img_gray, contours, hierarchy):
+    drawing = np.zeros((img_gray.shape[0], img_gray.shape[1], 3), dtype=np.uint8)
+    for i in range(len(contours)):
+        color = (rng.randint(0,256), rng.randint(0,256), rng.randint(0,256))
+        cv2.drawContours(drawing, contours, i, color, 2, cv2.LINE_8, hierarchy, 0)
+    return drawing
 
 class _TKDWater_Defect:
     def __init__(self):
@@ -39,6 +47,9 @@ class CAlgo_KDWater:
     def __init__(self):
         self.m_imgTempl = None
         self.m_ptStdOffs = None
+        self.DEF_THRESD_AREA = 0
+        self.DEF_THRESD_NOR = 50
+        self.DEF_THRESD_DIFF = 60
 
     def LoadTemplate(self):
         self.m_imgTempl = cv2.imread("Template\\nm_block.bmp", cv2.IMREAD_GRAYSCALE)
@@ -61,7 +72,7 @@ class CAlgo_KDWater:
         while iIndex_R < len(vecBoxCent):
             curCent = vecBoxCent[iIndex_R]
             iIndex_R += 1
-            #pltShowCVDot(srcImgGray, curCent, "curCent")
+            pltShowCVDot(srcImgGray, curCent, "curCent")
             self._SearchDefect_Box(vecDefect, vecBoxCent, curCent, srcImgGray)
             if len(vecDefect) > 0:
                 # ret = False
@@ -144,30 +155,6 @@ class CAlgo_KDWater:
         imgNeib = [np.zeros((251, 247), dtype=np.uint8) for i in range(4)]
         ptNeib = [[0, 0] for i in range(4)]
 
-        # iIndex = 0
-        # ret, imgNeib[iIndex] = self._GetImage_ByBox_Left(imgNeib[iIndex], ptNeib[iIndex], srcImgGray, cent, imgCur)
-        # if ret:
-        #     bNeib[iIndex] = True
-        #     self._addBoxPos(vecBoxCent, ptNeib[iIndex])
-        #
-        # iIndex = 1
-        # if self._GetImage_ByBox_Right(imgNeib[iIndex], ptNeib[iIndex], srcImgGray, cent, imgCur):
-        #     bNeib[iIndex] = True
-        #     self._addBoxPos(vecBoxCent, ptNeib[iIndex])
-        #
-        # iIndex = 2
-        # if self._GetImage_ByBox_Up(imgNeib[iIndex], ptNeib[iIndex], srcImgGray, cent, imgCur):
-        #     bNeib[iIndex] = True
-        #     self._addBoxPos(vecBoxCent, ptNeib[iIndex])
-        #
-        # iIndex = 3
-        # if self._GetImage_ByBox_Down(imgNeib[iIndex], ptNeib[iIndex], srcImgGray, cent, imgCur):
-        #     bNeib[iIndex] = True
-        #     self._addBoxPos(vecBoxCent, ptNeib[iIndex])
-        # for idx in range(4):
-        #     if not bNeib[idx]:
-        #         imgNeib[idx] = imgCur.copy()
-        #
         funcList = [self._GetImage_ByBox_Left, self._GetImage_ByBox_Right, self._GetImage_ByBox_Up, self._GetImage_ByBox_Down]
         for idx in range(4):
             ret, imgNeib[idx] = funcList[idx](imgNeib[idx], ptNeib[idx], srcImgGray, cent, imgCur)
@@ -177,13 +164,11 @@ class CAlgo_KDWater:
             else:
                 imgNeib[idx] = imgCur.copy()
 
-        DEF_THRESD_AREA = 100
-        DEF_THRESD_NOR = 50
-        DEF_THRESD_DIFF = 60
+        DEF_THRESD_AREA = self.DEF_THRESD_AREA
+        DEF_THRESD_NOR = self.DEF_THRESD_NOR        # 50
+        DEF_THRESD_DIFF = self.DEF_THRESD_DIFF      # 60
 
         diff = [np.zeros((1, 1), dtype=np.uint8)] * 4
-        # for i in range(4):
-        #     imgNeib[i] = np.zeros((251, 247), dtype=np.uint8)
         for idx in range(4):
             diff[idx] = cv2.absdiff(imgNeib[idx], imgCur)
             _, diff[idx] = cv2.threshold(diff[idx], DEF_THRESD_DIFF, 1, cv2.THRESH_BINARY)
@@ -199,8 +184,15 @@ class CAlgo_KDWater:
         imgBin = cv2.erode(imgBin, kernel)
         imgBin = cv2.dilate(imgBin, kernel)
 
-        contours, _ = cv2.findContours(imgBin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-
+        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (7, 7))
+        imgBin = cv2.dilate(imgBin, kernel)
+        imgBin = cv2.dilate(imgBin, kernel)
+        imgBin = cv2.erode(imgBin, kernel)
+        imgBin = cv2.erode(imgBin, kernel)
+        pltShowCV(imgBin, "imgBin")
+        contours, hierarchy = cv2.findContours(imgBin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+        drawing = draw_contours(imgBin, contours, hierarchy)
+        pltShowCV(drawing, "drawing")
         #vecDefect = []
         for cnt in contours:
             area = cv2.contourArea(cnt)
@@ -370,6 +362,18 @@ class CAlgo_KDWater:
 
         return ret
 
+        # DEF_THRESD_AREA = self.DEF_THRESD_AREA
+        # DEF_THRESD_NOR = self.DEF_THRESD_NOR        # 50
+        # DEF_THRESD_DIFF = self.DEF_THRESD_DIFF      # 60
+    def setDEF_THRESD_AREA(self, DEF_THRESD_AREA):
+        self.DEF_THRESD_AREA = DEF_THRESD_AREA
+
+    def setDEF_THRESD_NOR(self, DEF_THRESD_NOR):
+        self.DEF_THRESD_NOR = DEF_THRESD_NOR
+
+    def setDEF_THRESD_DIFF(self, DEF_THRESD_DIFF):
+        self.DEF_THRESD_DIFF = DEF_THRESD_DIFF
+
 
 def test_water():
     global filename
@@ -390,7 +394,7 @@ def test_water():
 
 def _scan_files(directory, vecFiles):
     for file in os.listdir(directory):
-        if file.endswith(".jpg") or file.endswith(".png"):
+        if file.endswith(".jpg") or file.endswith(".png") or file.endswith(".bmp"):
             vecFiles.append(os.path.join(directory, file))
 
 filename = ""
