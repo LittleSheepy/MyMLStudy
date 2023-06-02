@@ -369,21 +369,20 @@ bool CReJudgeBack::Process(cv::Mat img_mask, vector<CDefect> v_defect) {
         cv::Scalar color = cv::Scalar(0, 0, 255);
         cv::putText(img_save, "NG", cv::Point(100, 220), cv::FONT_HERSHEY_PLAIN, 20, color, 10);
 
-        int tmp_num = 1;
-        for (auto it : v_defect) {
+        for (auto it : v_defect_NG) {
+            cv::Scalar color = cv::Scalar(255, 0, 0);
             cv::Point center = (it.p1 + it.p2) / 2;
             int radius = 30;
 
             // Draw the circle on the image
             circle(img_save, center, radius, cv::Scalar(255, 0, 0), 3);
+        }
+        int tmp_num = 1;
+        for (auto it : v_defect) {
             _DrawDefect(img_save, it, 0, color);
-            //cv::putText(img_save, to_string(tmp_num), it.p1 + cv::Point(0, 210), cv::FONT_HERSHEY_PLAIN, 15, cv::Scalar(0, 255, 255), 20);
+            // cv::putText(img_save, to_string(tmp_num), it.p1 + cv::Point(0, 210), cv::FONT_HERSHEY_PLAIN, 15, cv::Scalar(0, 255, 255), 20);
             tmp_num++;
         }
-        //color = cv::Scalar(255, 0, 0);
-        //for (auto it : v_defect_NG) {
-        //    _DrawDefect(img_save, it, 0, color);
-        //}
     }
 
     cv::imwrite(img_name, img_save);

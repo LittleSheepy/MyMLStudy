@@ -80,7 +80,7 @@ void RJBTestAll() {
 		std::getline(file, line);
 		file_result << line << endl;
 	}
-	for (int i = 0; i < 18; i++) {
+	for (int i = 0; i < 19; i++) {
 		std::getline(file, line);
 		char last_char = line.back(); // get the last character of the line
 		last_char = last_char == ',' ? line[line.size() - 2] : last_char;

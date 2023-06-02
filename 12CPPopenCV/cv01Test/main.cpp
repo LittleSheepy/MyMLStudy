@@ -23,6 +23,7 @@ bool PPTestOne(int serial = 0);
 void RJFTestSimple();
 void RJBTestSimple();
 void RJBTestAll();
+bool RJBTestOne(int serial = 0);
 
 void PPtest()
 {
@@ -199,7 +200,8 @@ int main()
 	//ABTest();
 	//groupBBoxesTest();
 	//RJBTestSimple();
-	RJBTestAll();
+	RJBTestOne(18);
+	//RJBTestAll();
 	//PPTestAll();
 	//RJFTestSimple();
 	//NumRecTest();
