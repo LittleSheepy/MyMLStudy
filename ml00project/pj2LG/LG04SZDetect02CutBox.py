@@ -293,10 +293,10 @@ class CAlgo_KDWater2:
         imgCur = vecBox[iCurIndex].imgMatch
         # pltShowCV(imgCur, "imgCur")
 
-        DEF_THRESD_AREA = 170
-        DEF_THRESD_DIFF = 60
+        DEF_THRESD_AREA = 10
+        DEF_THRESD_DIFF = 40
         DEF_THRESD_NOR = 50
-        DEF_THRESD_MAXMEAN = 35
+        DEF_THRESD_MAXMEAN = 50
 
         if 0:
             DEF_THRESD_DIFF_AUTO = DEF_THRESD_DIFF + int((vecBox[iCurIndex].m_iMeanVal - 80) * 0.5)
@@ -328,7 +328,7 @@ class CAlgo_KDWater2:
                 # pltShowCV(diff[idx]*255, "diff[idx]" + str(idx))
         for idx in range(1, 4):
             diff[0] += diff[idx]
-        # pltShowCV(imgCur, "imgCur")
+        #pltShowCV(imgCur, "imgCur")
         #pltShowCV(diff[0]*80, "diff[0]")
         _, imgBin = cv2.threshold(diff[0], 1, 255, cv2.THRESH_BINARY)
         #pltShowCV(imgBin, "imgBin")
@@ -349,6 +349,8 @@ class CAlgo_KDWater2:
         imgBin = cv2.erode(imgBin, kernel)
         imgBin = cv2.dilate(imgBin, kernel)
 
+        # imgBin = cv2.dilate(imgBin, kernel0)
+
         vecCont, _ = cv2.findContours(imgBin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
         curRect = (
@@ -364,7 +366,7 @@ class CAlgo_KDWater2:
             # Calculate the moments of the contour
             moments = cv2.moments(vecCont[idx])
             # Calculate the center of the contour
-            center = (moments['m10'] / moments['m00']+0.0001, moments['m01'] / moments['m00']+0.0001)
+            center = (moments['m10'] / (moments['m00']+0.0001), moments['m01'] / (moments['m00']+0.0001))
             iPos = 0  # 0: middle, 1: corner, 2: edge
             MAXMEAN = 5
             if (center[0] < 30) or (center[1] < 30) or (center[0] > 220) or (center[1] > 220):
@@ -725,7 +727,7 @@ class Box:
 def is_overlap(box1, box2):
     return not (box1.x1 >= box2.x2 or box1.x2 <= box2.x1 or box1.y1 >= box2.y2 or box1.y2 <= box2.y1)
 
-def cutBox():
+def cutBox(i_dir=0):
     # Load the template
     algo = CAlgo_KDWater2()
     algo.LoadTemplate()
@@ -738,8 +740,8 @@ def cutBox():
         img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
         h, w = img.shape
         vecDefect = []
-        result, vecDefect = algo.FindDefect(vecDefect, img, 3)
-        vecDefect = txt2_TKDWater_Defect2(txt_path, w, h)
+        result, vecDefect = algo.FindDefect(vecDefect, img, i_dir)
+        # vecDefect = txt2_TKDWater_Defect2(txt_path, w, h)
         for box in algo.vecBox:
             # box位置
 
@@ -780,6 +782,8 @@ def cutBox():
                         new_y2 = iH-1
                     new_w = new_x2 - new_x1
                     new_h = new_y2 - new_y1
+                    if new_w < 5 or new_h < 5:
+                        continue
                     new_cx = new_x1 + new_w/2
                     new_cy = new_y1 + new_h/2
                     cls = str(0)
@@ -802,7 +806,8 @@ def cutBox():
         cv2.imwrite(img_save_xy + imgfile, imgColor_xy)
         pass
 if __name__ == '__main__':
-    dir_root = r"F:\15project\02kd\03LG\03trainData\00imgAll\01AIDI/"
+    # dir_root = r"F:\15project\02kd\03LG\03trainData\00imgAll\01AIDI/"
+    dir_root = r"D:\0\0LG_DATA\SZ_NG_8/"
     img_src = dir_root + r"2_2/"
     txt_src = dir_root + r"txt/"
     img_save = dir_root + r"img_save/"
@@ -812,4 +817,4 @@ if __name__ == '__main__':
     #CheckWater_1_2()
     #CheckWater_2_1()
     #CheckWater_2_2()
-    cutBox()
+    cutBox(3)
