@@ -12,10 +12,11 @@ import json
 #3、将
 
 def move1():
-    img_dir = "test_data/image_all/"
-    biaozhu = "test_data/image_biaozhu_test/"
-    nobiaozhu = "test_data/image_nobiaozhu/"
-    xml_dir = "test_data/xml_all"
+    root_dir = r"D:\00myGitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect\predict22\/"
+    img_dir = root_dir + "/img_pre/"
+    biaozhu = root_dir + "/img_pre_1/"
+    nobiaozhu = root_dir + "/image_nobiaozhu/"
+    xml_dir = root_dir + "/labels/"
     num1=0
     num2=0
     for imgfile in os.listdir(img_dir):
@@ -25,12 +26,12 @@ def move1():
             num2+=1
             #print(xmlfile)
             if xmlfile[:-4] == imgfile[:-4]:
-                # shutil.copyfile(img_dir + imgfile, biaozhu + imgfile)
+                shutil.move(img_dir + imgfile, biaozhu + imgfile)
                 moveFlg = True
         #print(num2)
-        if not moveFlg:
-            print(imgfile)
-            # shutil.copyfile(mg_dir + imgfile, nobiaozhu + imgfile)
+        # if moveFlg:
+        #     print(imgfile)
+        #     shutil.move(img_dir + imgfile, biaozhu + imgfile)
     # print(num1)
 
 
@@ -149,7 +150,7 @@ def gen_det_label(input_dir, out_label):
 
 if __name__ == '__main__':
     #move_xml()
-    #move1()
+    move1()
     #move_noxmlpic()
     # check_xml_label()
-    RandPickTrainTestData()
+    #RandPickTrainTestData()
