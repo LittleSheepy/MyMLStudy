@@ -2,7 +2,7 @@ import os
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-
+from tqdm import tqdm
 import random as rng
 
 def pltShowCV(img, title="img"):
@@ -143,7 +143,7 @@ class CAlgo_KDWater2:
                 self.m_imgTempl.shape[1],
                 self.m_imgTempl.shape[0])
             box.imgMatch = srcImgGray[curRect[1]:curRect[1] + curRect[3], curRect[0]:curRect[0] + curRect[2]]
-            pltShowCVDot(srcImgGray, box.ptCent, "srcImgGray")
+            # pltShowCVDot(srcImgGray, box.ptCent, "srcImgGray")
             box.m_iRow = 0
             box.m_iCol = 0
             vecDefect = self._SearchDefect(vecDefect, box, srcImgGray, i_dir)
@@ -731,7 +731,7 @@ def cutBox(i_dir=0):
     # Load the template
     algo = CAlgo_KDWater2()
     algo.LoadTemplate()
-    for imgfile in os.listdir(img_src):
+    for imgfile in tqdm(os.listdir(img_src)):
         imgfile_name = imgfile[:-4]
         img_path = img_src + imgfile
         txt_path = txt_src + imgfile_name + ".txt"
@@ -807,8 +807,10 @@ def cutBox(i_dir=0):
         pass
 if __name__ == '__main__':
     # dir_root = r"F:\15project\02kd\03LG\03trainData\00imgAll\01AIDI/"
-    dir_root = r"D:\0\0LG_DATA\SZ_NG_8/"
-    img_src = dir_root + r"2_2/"
+    # dir_root = r"D:\0\0LG_DATA\SZ_NG_8/"
+    # dir_root = r"F:\15project\02kd\03LG\03trainData\00imgAll\SZ_NG_32/"
+    dir_root = r"G:\06LG\0LG_DATA\SZ_TEST_OK0527\/"
+    img_src = dir_root + r"1_1/"
     txt_src = dir_root + r"txt/"
     img_save = dir_root + r"img_save/"
     img_save_xy = dir_root + r"img_save_xy/"
@@ -817,4 +819,11 @@ if __name__ == '__main__':
     #CheckWater_1_2()
     #CheckWater_2_1()
     #CheckWater_2_2()
+    # img_src = dir_root + r"1_1/"
+    # cutBox(0)
+    img_src = dir_root + r"1_2/"
+    cutBox(1)
+    img_src = dir_root + r"2_1/"
+    cutBox(2)
+    img_src = dir_root + r"2_2/"
     cutBox(3)
