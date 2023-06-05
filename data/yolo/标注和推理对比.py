@@ -46,7 +46,7 @@ def main():
 
 
 if __name__ == '__main__':
-    root_dir = r"D:\00myGitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect\predict22/"
+    root_dir = r"D:\00myGitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect\predict26_32_0.5/"
     img_dir = root_dir + r"img_have/"
     img_predict_path = root_dir + r"img_pre/"
     img_save = root_dir + r"img_duibi/"

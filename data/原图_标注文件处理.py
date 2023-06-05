@@ -12,11 +12,11 @@ import json
 #3、将
 
 def move1():
-    root_dir = r"D:\00myGitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect\predict22\/"
-    img_dir = root_dir + "/img_pre/"
-    biaozhu = root_dir + "/img_pre_1/"
+    root_dir = r"G:\06LG\0LG_DATA\SZ_TEST_OK0527\/"
+    img_dir = root_dir + "/img_save11/"
+    biaozhu = root_dir + "/img_save11_have0604/"
     nobiaozhu = root_dir + "/image_nobiaozhu/"
-    xml_dir = root_dir + "/labels/"
+    xml_dir = root_dir + "/img_have0604/"
     num1=0
     num2=0
     for imgfile in os.listdir(img_dir):
