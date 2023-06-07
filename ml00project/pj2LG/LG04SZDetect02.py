@@ -43,6 +43,8 @@ class _TKDWater_Defect2:
         self.rtRect = None
         self.iArea = 0
         self.iPos = 0
+        self.bNIC = False
+        self.ptCenter = None
 
 class _CKDWater_MatchBox:
     def __init__(self):
@@ -52,6 +54,19 @@ class _CKDWater_MatchBox:
         self.ptCent = [0, 0]
         self.imgMatch = None
         self.imgBoxFull = None
+        self.m_vptNIC = []
+        self.m_vptNIC.append([124, 124])
+
+        self.m_vptNIC.append([65, 100])
+        self.m_vptNIC.append([65, 148])
+        self.m_vptNIC.append([100, 183])
+        self.m_vptNIC.append([148, 183])
+
+        self.m_vptNIC.append([183, 148])
+        self.m_vptNIC.append([183, 100])
+        self.m_vptNIC.append([148, 65])
+        self.m_vptNIC.append([100, 65])
+        self.m_nic_mean = []
 
     def IsPtInRect(self, pt):
         ret = False
@@ -67,6 +82,7 @@ class _CKDWater_MatchBox:
         return ret
 
     def CalcMeanVal(self):
+        global iDir_g
         _, imgBin = cv2.threshold(self.imgMatch, 0, 255, cv2.THRESH_OTSU)
 
         val = cv2.mean(self.imgMatch, imgBin)[0]
@@ -82,12 +98,59 @@ class _CKDWater_MatchBox:
         self.imgMatch = self.imgMatch.astype('uint8')
         #pltShowCV(self.imgMatch)
 
+        for i in range(9):
+            nic_center_pt = self.m_vptNIC[i]
+
+            zero = 1.85
+            radio = 2.42
+            if iDir_g == 0:
+                nic_offset_x = int((zero - self.m_iCol)*radio)
+                nic_offset_y = int((zero - self.m_iRow)*radio)
+            elif iDir_g == 1:
+                nic_offset_x = int((zero - self.m_iCol)*radio)
+                nic_offset_y = int((self.m_iRow-zero)*radio)
+            elif iDir_g == 2:
+                nic_offset_x = int((self.m_iCol - zero)*radio)
+                nic_offset_y = int((zero - self.m_iRow)*radio)
+            else:
+                nic_offset_x = int((self.m_iCol - zero)*radio)
+                nic_offset_y = int((self.m_iRow-zero)*radio)
+            # nic_offset_x = int((3 - self.m_iCol)*1.7)
+            # nic_offset_y = int((3 - self.m_iRow)*1.7)
+            # nic_offset_x = 0
+            # nic_offset_y = 0
+            nic_center_pt = [nic_center_pt[0] + nic_offset_x, nic_center_pt[1] + nic_offset_y]
+            mean = calculate_mean(self.imgMatch, nic_center_pt)
+            self.m_nic_mean.append(mean)
+
+
+def calculate_mean(gray_image, center, diameter=36):
+    radius = diameter // 2
+    mask = np.zeros(gray_image.shape, dtype=np.uint8)
+    cv2.circle(mask, center, radius, 255, -1)
+    masked_image = cv2.bitwise_and(gray_image, gray_image, mask=mask)
+    mean_value = cv2.mean(masked_image, mask=mask)[0]
+    return mean_value
+
 class CAlgo_KDWater2:
     def __init__(self):
         self.m_imgTempl = None
         self.m_imgTempl_tabMask_Col = None
         self.m_imgTempl_tabMask_Row = None
         self.m_ptStdOffs = None
+        self.vecBox = None
+        self.m_vptNIC = []
+        self.m_vptNIC.append([124, 124])
+
+        self.m_vptNIC.append([65, 100])
+        self.m_vptNIC.append([65, 148])
+        self.m_vptNIC.append([100, 183])
+        self.m_vptNIC.append([148, 183])
+
+        self.m_vptNIC.append([183, 148])
+        self.m_vptNIC.append([183, 100])
+        self.m_vptNIC.append([148, 65])
+        self.m_vptNIC.append([100, 65])
 
     def LoadTemplate(self):
         self.m_imgTempl = cv2.imread("Template/nm_block.bmp", cv2.IMREAD_GRAYSCALE)
@@ -201,6 +264,98 @@ class CAlgo_KDWater2:
                 vec_box[idx].m_iCol = i_max_x - vec_box[idx].m_iCol
                 vec_box[idx].m_iRow = i_max_y - vec_box[idx].m_iRow
 
+    def _GetBoxByRowCol(self, vec_box, ix, iy):
+        ret = -1
+        i_total = len(vec_box)
+        for idx in range(i_total):
+            if vec_box[idx].m_iCol == ix and vec_box[idx].m_iRow == iy:
+                ret = idx
+                break
+        return ret
+
+
+    def _CopyImage2Box(self, box, src_img_gray):
+        i_half_w = box.imgMatch.shape[1] // 2
+        i_half_h = box.imgMatch.shape[0] // 2
+
+        i_st_x_src = box.ptCent[0] - i_half_w
+        i_st_y_src = box.ptCent[1] - i_half_h
+        i_end_x_src = i_st_x_src + box.imgMatch.shape[1]
+        i_end_y_src = i_st_y_src + box.imgMatch.shape[0]
+        i_st_x_dst = 0
+        i_st_y_dst = 0
+        if i_st_x_src < 0:
+            i_st_x_dst = -i_st_x_src
+            i_st_x_src = 0
+        if i_st_y_src < 0:
+            i_st_y_dst = -i_st_y_src
+            i_st_y_src = 0
+        if i_end_x_src > src_img_gray.shape[1]:
+            i_end_x_src = src_img_gray.shape[1]
+        if i_end_y_src > src_img_gray.shape[0]:
+            i_end_y_src = src_img_gray.shape[0]
+
+        src_rect = (i_st_x_src, i_st_y_src, i_end_x_src - i_st_x_src, i_end_y_src - i_st_y_src)
+        dst_rect = (i_st_x_dst, i_st_y_dst, src_rect[2], src_rect[3])
+        box.imgMatch[dst_rect[1]:dst_rect[1]+dst_rect[3], dst_rect[0]:dst_rect[0]+dst_rect[2]] = src_img_gray[src_rect[1]:src_rect[1]+src_rect[3], src_rect[0]:src_rect[0]+src_rect[2]]
+
+
+    def _CompleteRoundBox(self, vec_box, src_img_gray, i_dir):
+        i_total = len(vec_box)
+        if i_total <= 0:
+            return
+
+        i_max_row = 0
+        i_max_col = 0
+        for idx in range(i_total):
+            if vec_box[idx].m_iRow > i_max_row:
+                i_max_row = vec_box[idx].m_iRow
+            if vec_box[idx].m_iCol > i_max_col:
+                i_max_col = vec_box[idx].m_iCol
+
+        i_row_cnt = i_max_row + 1
+        i_col_cnt = i_max_col + 1
+
+        # 补列
+        for idx in range(i_row_cnt):
+            box = _CKDWater_MatchBox()
+            box.m_iCol = i_col_cnt
+            box.m_iRow = idx
+
+            i_last_box_idx0 = self._GetBoxByRowCol(vec_box, i_max_col, box.m_iRow)
+            i_last_box_idx1 = self._GetBoxByRowCol(vec_box, i_max_col - 1, box.m_iRow)
+            if i_last_box_idx0 >= 0 and i_last_box_idx1 >= 0:
+                p_box0 = vec_box[i_last_box_idx0]
+                p_box1 = vec_box[i_last_box_idx1]
+                box.ptCent = (np.array(p_box0.ptCent) + (np.array(p_box0.ptCent) - np.array(p_box1.ptCent))).tolist()
+
+                box.imgMatch = p_box0.imgMatch.copy()
+                box.imgBoxFull = p_box0.imgBoxFull.copy()
+
+                self._CopyImage2Box(box, src_img_gray)
+
+                vec_box.append(box)
+
+        # 补行
+        for idx in range(i_col_cnt+1):
+            box = _CKDWater_MatchBox()
+            box.m_iCol = idx
+            box.m_iRow = i_row_cnt
+
+            i_last_box_idx0 = self._GetBoxByRowCol(vec_box, box.m_iCol, i_max_row)
+            i_last_box_idx1 = self._GetBoxByRowCol(vec_box, box.m_iCol, i_max_row - 1)
+            if i_last_box_idx0 >= 0 and i_last_box_idx1 >= 0:
+                p_box0 = vec_box[i_last_box_idx0]
+                p_box1 = vec_box[i_last_box_idx1]
+                box.ptCent = (np.array(p_box0.ptCent) + (np.array(p_box0.ptCent) - np.array(p_box1.ptCent))).tolist()
+
+                box.imgMatch = p_box0.imgMatch.copy()
+                box.imgBoxFull = p_box0.imgBoxFull.copy()
+
+                self._CopyImage2Box(box, src_img_gray)
+
+                vec_box.append(box)
+
     def _SearchDefect(self, vecDefect, box, srcImgGray, iDir):
         vecDefect.clear()
 
@@ -214,9 +369,12 @@ class CAlgo_KDWater2:
             self._SearchBox_Neib(vecBox, curBox, srcImgGray)
 
         self._UniteSortRowCol(vecBox, iDir)
+
+        self._CompleteRoundBox(vecBox, srcImgGray, iDir)
+
         for idx in range(len(vecBox)):
             vecBox[idx].CalcMeanVal()
-
+        self.vecBox = vecBox
         vecDefect_Tmp = []
         #vecDefect_Tmp.extend([_TKDWater_Defect2()] * 64)
         for idx in range(len(vecBox)):
@@ -231,10 +389,11 @@ class CAlgo_KDWater2:
             iHalfH = self.m_imgTempl.shape[0] >> 1
             for idx in range(len(vecBox)):
                 rect = cv2.Rect(vecBox[idx].ptCent[0] - iHalfW, vecBox[idx].ptCent[1] - iHalfH, self.m_imgTempl.shape[1], self.m_imgTempl.shape[0])
-                cv2.rectangle(imgColor, rect, cv2.Scalar(0, 255, 0), 2)
+                cv2.rectangle(imgColor, rect, cv2.Scalar(0, 255, 0), 1)
 
                 buf = str(vecBox[idx].m_iRow) + ", " + str(vecBox[idx].m_iCol)
                 cv2.putText(imgColor, buf, vecBox[idx].ptCent, cv2.FONT_HERSHEY_SIMPLEX, 0.8, cv2.Scalar(0, 0, 255), 2)
+            cv2.imwrite("1.jpg", imgColor)
         return vecDefect
     def _GetBoxByRowCol_NoSpecTab(self, vec_box, ix, iy):
         if (ix == 0 and iy == 3) or (ix == 0 and iy == 4) or (ix == 3 and iy == 0) or (ix == 4 and iy == 0):
@@ -260,6 +419,11 @@ class CAlgo_KDWater2:
         iCurRow = curBox.m_iRow
         iCurCol = curBox.m_iCol
         iTotal = len(vecBox)
+        curRect = (
+            curBox.ptCent[0] - (self.m_imgTempl.shape[1] >> 1),
+            curBox.ptCent[1] - (self.m_imgTempl.shape[0] >> 1),
+            self.m_imgTempl.shape[1],
+            self.m_imgTempl.shape[0])
 
         iIndex = self._GetBoxByRowCol_NoSpecTab(vecBox, iCurCol - 1, iCurRow)
         if iIndex >= 0:
@@ -288,7 +452,7 @@ class CAlgo_KDWater2:
         imgCur = vecBox[iCurIndex].imgMatch
         # pltShowCV(imgCur, "imgCur")
 
-        DEF_THRESD_AREA = 170
+        DEF_THRESD_AREA = 180
         DEF_THRESD_DIFF = 60
         DEF_THRESD_NOR = 50
         DEF_THRESD_MAXMEAN = 35
@@ -321,9 +485,37 @@ class CAlgo_KDWater2:
                 # pltShowCV(diff[idx], "diff[idx]" + str(idx))
                 _, diff[idx] = cv2.threshold(diff[idx], DEF_THRESD_DIFF, 1, cv2.THRESH_BINARY)
                 # pltShowCV(diff[idx]*255, "diff[idx]" + str(idx))
+
+# NIC
+        nic = [True] * 9
+        for nic_idx in range(9):
+            box_cur = vecBox[iCurIndex]
+            nic_centerPt = self.m_vptNIC[nic_idx]
+            mean_imgCur = calculate_mean(imgCur, nic_centerPt)
+            mean_imgCur = box_cur.m_nic_mean[nic_idx]
+            diff_cnt = 0
+            for idx in range(4):
+                box_Neib = vecBox[iNeibIndex[idx]]
+                img_iNeibIndex = vecBox[iNeibIndex[idx]].imgMatch
+                mean_NeibIndex = calculate_mean(img_iNeibIndex, nic_centerPt)
+                mean_NeibIndex = box_Neib.m_nic_mean[nic_idx]
+                if mean_NeibIndex - mean_imgCur >= 60:
+                    diff_cnt = diff_cnt +1
+            if diff_cnt > 1:
+                nic_offset_x = int((3 - box_cur.m_iCol)*1.7)
+                nic_offset_y = int((3 - box_cur.m_iRow)*1.7)
+                nic[nic_idx] = False
+                defect = _TKDWater_Defect2()
+                defect.bNIC = True
+                defect.ptCenter = [
+                    nic_centerPt[0] + curRect[0] + nic_offset_x,
+                    nic_centerPt[1] + curRect[1] + nic_offset_y]
+                vecDefect.append(defect)
+
+
         for idx in range(1, 4):
             diff[0] += diff[idx]
-        pltShowCV(imgCur, "imgCur")
+        #pltShowCV(imgCur, "imgCur")
         #pltShowCV(diff[0]*80, "diff[0]")
         _, imgBin = cv2.threshold(diff[0], 1, 255, cv2.THRESH_BINARY)
         #pltShowCV(imgBin, "imgBin")
@@ -332,7 +524,7 @@ class CAlgo_KDWater2:
         #pltShowCV(imgBaseBin, "imgBaseBin")
 
         imgBin &= imgBaseBin
-        pltShowCV(imgBin, "imgBin")
+        # pltShowCV(imgBin, "imgBin")
 
         self._CheckSpecTab(imgBin, vecBox[iCurIndex], iDir)
 
@@ -346,11 +538,6 @@ class CAlgo_KDWater2:
 
         vecCont, _ = cv2.findContours(imgBin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
-        curRect = (
-            curBox.ptCent[0] - (self.m_imgTempl.shape[1] >> 1),
-            curBox.ptCent[1] - (self.m_imgTempl.shape[0] >> 1),
-            self.m_imgTempl.shape[1],
-            self.m_imgTempl.shape[0])
         for idx in range(len(vecCont)):
             area = cv2.contourArea(vecCont[idx])
             rotRect = cv2.minAreaRect(vecCont[idx])
@@ -620,6 +807,8 @@ def delete_path(path):
             os.rmdir(file_path)
 
 def CheckWater_Common(filePath, strResult, iDir):
+    global iDir_g
+    iDir_g = iDir
     # Delete the existing result folder
     if os.path.exists(strResult):
         for file in os.listdir(strResult):
@@ -642,53 +831,95 @@ def CheckWater_Common(filePath, strResult, iDir):
     # Find defects in each image and save the result
     for idx in range(len(vecPath)):
         img = cv2.imread(os.path.join(filePath, vecPath[idx]), cv2.IMREAD_GRAYSCALE)
+        imgColor = cv2.imread(os.path.join(filePath, vecPath[idx]))
         vecDefect = []
         result, vecDefect = algo.FindDefect(vecDefect, img, iDir)
+# 画圈
+        for box in algo.vecBox:
+            #center_nic = [box.ptCent[0] + (box.m_iCol-3)*2, box.ptCent[1] + (box.m_iRow-3)*2]
+            zero = 1.85
+            radio = 2.42
+            if iDir == 0:
+                nic_offset_x = int((zero - box.m_iCol)*radio)
+                nic_offset_y = int((zero - box.m_iRow)*radio)
+            elif iDir == 1:
+                zero = 2.5
+                radio = 1.8
+                nic_offset_x = int((zero - box.m_iCol)*radio)
+                nic_offset_y = int((box.m_iRow-zero)*radio)
+            elif iDir == 2:
+                zero = 2.5
+                radio = 1.8
+                nic_offset_x = int((box.m_iCol - zero)*radio)
+                nic_offset_y = int((zero - box.m_iRow)*radio)
+            else:
+                zero = 2.5
+                radio = 1.8
+                nic_offset_x = int((box.m_iCol - zero)*radio)
+                nic_offset_y = int((box.m_iRow-zero)*radio)
 
+            # nic_offset_x = 0
+            # nic_offset_y = 0
+            lt = [box.ptCent[0]-124, box.ptCent[1]-124]
+
+            rect = [box.ptCent[0] - 124, box.ptCent[1] - 124, 248, 248]
+            #cv2.rectangle(imgColor, rect, (0, 255, 0), 1)
+            for i in range(9):
+                nic_center = box.m_vptNIC[i]
+                nic_mean = box.m_nic_mean[i]
+                nic_center_new = [nic_center[0] + lt[0] + nic_offset_x, nic_center[1] + lt[1]+nic_offset_y]
+                cv2.circle(imgColor, nic_center_new, 18, (0, 255, 0), 1)
+                cv2.putText(imgColor, str(int(nic_mean)), [nic_center[0] + lt[0]-15, nic_center[1] + lt[1]-15], cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 1)
+        filename = os.path.join(strResult, vecPath[idx])
+        cv2.imwrite(filename, imgColor)
+        return
         if not result:
-            imgColor = cv2.imread(os.path.join(filePath, vecPath[idx]))
 
             for idx1 in range(len(vecDefect)):
-                boxRT = vecDefect[idx1].rtRect
-                boxRT[0] -= 0
-                boxRT[1] -= 0
-                boxRT[2] += 0
-                boxRT[3] += 0
-                if boxRT[0] < 0: boxRT[0] = 0
-                if boxRT[1] < 0: boxRT[1] = 0
-                if boxRT[0] + boxRT[2] > imgColor.shape[1]: boxRT[2] = imgColor.shape[1] - boxRT[0]
-                if boxRT[1] + boxRT[3] > imgColor.shape[0]: boxRT[3] = imgColor.shape[0] - boxRT[1]
+                if vecDefect[idx1].bNIC:
+                    cv2.circle(imgColor, vecDefect[idx1].ptCenter, 15, (255, 0, 0), 1)
+                else:
+                    boxRT = vecDefect[idx1].rtRect
+                    boxRT[0] -= 0
+                    boxRT[1] -= 0
+                    boxRT[2] += 0
+                    boxRT[3] += 0
+                    if boxRT[0] < 0: boxRT[0] = 0
+                    if boxRT[1] < 0: boxRT[1] = 0
+                    if boxRT[0] + boxRT[2] > imgColor.shape[1]: boxRT[2] = imgColor.shape[1] - boxRT[0]
+                    if boxRT[1] + boxRT[3] > imgColor.shape[0]: boxRT[3] = imgColor.shape[0] - boxRT[1]
 
-                cv2.rectangle(imgColor, boxRT, (0, 0, 255), 1)
+                    #cv2.rectangle(imgColor, boxRT, (0, 0, 255), 1)
 
-                boxRT_tl = [boxRT[0], boxRT[1]]
-                cv2.putText(imgColor, str(vecDefect[idx1].iArea), boxRT_tl, cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 1)
+                    boxRT_tl = [boxRT[0], boxRT[1]]
+                    #cv2.putText(imgColor, str(int(vecDefect[idx1].iArea)), boxRT_tl, cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 1)
 
             filename = os.path.join(strResult, vecPath[idx])
             cv2.imwrite(filename, imgColor)
 
 def CheckWater_1_1():
-    filePath = "1_1"
-    strResult = "Result_1_1"
+    filePath = dir_root + "1_1"
+    strResult = dir_root + "Result_1_1"
     CheckWater_Common(filePath, strResult, 0)
 
 def CheckWater_1_2():
-    filePath = "1_2"
-    strResult = "Result_1_2"
+    filePath = dir_root + "1_2"
+    strResult = dir_root + "Result_1_2"
     CheckWater_Common(filePath, strResult, 1)
 
 def CheckWater_2_1():
-    filePath = "2_1"
-    strResult = "Result_2_1"
+    filePath = dir_root + "2_1"
+    strResult = dir_root + "Result_2_1"
     CheckWater_Common(filePath, strResult, 2)
 
 def CheckWater_2_2():
-    filePath = "2_2"
-    strResult = "Result_2_2"
+    filePath = dir_root + "2_2"
+    strResult = dir_root + "Result_2_2"
     CheckWater_Common(filePath, strResult, 3)
-
+iDir_g = 0
 if __name__ == '__main__':
-    #CheckWater_1_1()
-    #CheckWater_1_2()
-    #CheckWater_2_1()
+    dir_root = r"D:\0\0LG_DATA\SZ_NIC_4/"
+    CheckWater_1_1()
+    CheckWater_1_2()
+    CheckWater_2_1()
     CheckWater_2_2()
