@@ -803,27 +803,46 @@ def cutBox(i_dir=0):
                     line = line + " " + str(new_h_p)
                     box_txt_f.write(line)
             box_txt_f.close()
-        cv2.imwrite(img_save_xy + imgfile, imgColor_xy)
+        # cv2.imwrite(img_save_xy + imgfile, imgColor_xy)
         pass
+def creatDir(folder_path):
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
 if __name__ == '__main__':
     # dir_root = r"F:\15project\02kd\03LG\03trainData\00imgAll\01AIDI/"
     # dir_root = r"D:\0\0LG_DATA\SZ_NG_8/"
     # dir_root = r"F:\15project\02kd\03LG\03trainData\00imgAll\SZ_NG_32/"
-    dir_root = r"G:\06LG\0LG_DATA\SZ_TEST_OK0527\/"
+    # dir_root = r"D:\0\0LG_DATA\SZ_NG_8\/"
+    # 笔记本
+    dir_root = r"D:\0\0LG_DATA\SZ_OKNG_0606\/"       #根目录
     img_src = dir_root + r"1_1/"
+    # 创建以下文件夹 手动
     txt_src = dir_root + r"txt/"
     img_save = dir_root + r"img_save/"
     img_save_xy = dir_root + r"img_save_xy/"
     txt_save = dir_root + r"txt_save/"
-    #CheckWater_1_1()
-    #CheckWater_1_2()
-    #CheckWater_2_1()
-    #CheckWater_2_2()
-    # img_src = dir_root + r"1_1/"
-    # cutBox(0)
+
+    img_src = dir_root + r"1_1/"
+    img_save = dir_root + r"img_save1_1/"
+    txt_save = dir_root + r"txt_save1_1/"
+    creatDir(img_save)
+    creatDir(txt_save)
+    cutBox(0)
     img_src = dir_root + r"1_2/"
+    img_save = dir_root + r"img_save1_2/"
+    txt_save = dir_root + r"txt_save1_2/"
+    creatDir(img_save)
+    creatDir(txt_save)
     cutBox(1)
     img_src = dir_root + r"2_1/"
+    img_save = dir_root + r"img_save2_1/"
+    txt_save = dir_root + r"txt_save2_1/"
+    creatDir(img_save)
+    creatDir(txt_save)
     cutBox(2)
     img_src = dir_root + r"2_2/"
+    img_save = dir_root + r"img_save2_2/"
+    txt_save = dir_root + r"txt_save2_2/"
+    creatDir(img_save)
+    creatDir(txt_save)
     cutBox(3)
