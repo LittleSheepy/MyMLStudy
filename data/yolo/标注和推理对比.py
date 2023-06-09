@@ -46,10 +46,10 @@ def main():
 
 
 if __name__ == '__main__':
-    root_dir = r"D:\00myGitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect\predict26_32_0.5/"
+    root_dir = r"D:\0\0LG_DATA\01coco128little0606\/"
     img_dir = root_dir + r"img_have/"
     img_predict_path = root_dir + r"img_pre/"
     img_save = root_dir + r"img_duibi/"
-    txt_label = root_dir + r"txt_save/"
-    txt_pre = root_dir + r"labels/"
+    txt_label = root_dir + r"txt_train/"
+    txt_pre = root_dir + r"txt_labels/"
     main()

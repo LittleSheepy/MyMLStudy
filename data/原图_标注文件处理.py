@@ -12,11 +12,11 @@ import json
 #3、将
 
 def move1():
-    root_dir = r"G:\06LG\0LG_DATA\SZ_TEST_OK0527\/"
-    img_dir = root_dir + "/img_save11/"
-    biaozhu = root_dir + "/img_save11_have0604/"
+    root_dir = r"D:\0\0LG_DATA\SZ_NG_0529\/"
+    img_dir = root_dir + "/img_save_have0606/"
+    biaozhu = root_dir + "/img_save_have0608_8/"
     nobiaozhu = root_dir + "/image_nobiaozhu/"
-    xml_dir = root_dir + "/img_have0604/"
+    xml_dir = root_dir + "/txt_save_have0608_8/"
     num1=0
     num2=0
     for imgfile in os.listdir(img_dir):
@@ -26,7 +26,8 @@ def move1():
             num2+=1
             #print(xmlfile)
             if xmlfile[:-4] == imgfile[:-4]:
-                shutil.move(img_dir + imgfile, biaozhu + imgfile)
+                #shutil.move(img_dir + imgfile, biaozhu + imgfile)
+                shutil.copyfile(img_dir + imgfile, biaozhu + imgfile)
                 moveFlg = True
         #print(num2)
         # if moveFlg:
