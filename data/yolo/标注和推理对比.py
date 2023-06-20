@@ -21,7 +21,7 @@ def readTxt(txt_path, w, h):
 def drawBox(img, rectList):
     for rect in rectList:
         cv2.rectangle(img, (int(rect[0]), int(rect[1])), (int(rect[0] + rect[2]), int(rect[1] + rect[3])),
-                  (0, 255, 0), 2)
+                  (0, 255, 0), 1)
     return img
 
 def main():
