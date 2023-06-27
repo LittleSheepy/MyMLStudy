@@ -65,7 +65,7 @@ class CNumRec:
     def __init__(self, template_dir):
         self.m_template_list = []
         for i in range(10):
-            template_img = cv2.imread(template_dir + str(i) + ".jpg", cv2.IMREAD_GRAYSCALE)
+            template_img = cv2.imread(template_dir + str(i) + ".bmp", cv2.IMREAD_GRAYSCALE)
             self.m_template_list.append(template_img)
         white_template_path = template_dir + "white_template.bmp"
         self.m_img_white_gray = cv2.imread(white_template_path, cv2.IMREAD_GRAYSCALE)
@@ -81,7 +81,7 @@ class CNumRec:
             boundRect[i] = cv2.boundingRect(contours_poly[i])
         filteredRects = []
         for rect in boundRect:
-            if 150000 <= rect[2] * rect[3] < 350000:
+            if 150000 <= rect[2] * rect[3] < 450000:
                 filteredRects.append(rect)
         result_rect = (0, 0, 0, 0)
         if filteredRects:
@@ -184,7 +184,7 @@ class CNumRec:
                       whiteArea_rect[0]:whiteArea_rect[0] + whiteArea_rect[2]]
 
             img_cut = cv2.resize(img_cut, (693, 417), interpolation=cv2.INTER_LINEAR)
-            img_cut_binary_img = cv2.threshold(img_cut, 250, 255, cv2.THRESH_BINARY_INV)[1]
+            img_cut_binary_img = cv2.threshold(img_cut, 240, 255, cv2.THRESH_BINARY_INV)[1]
             # 查找数字区域
             result_rect = self.findNumArea(img_cut_binary_img)
             num_img = img_cut[result_rect[1]:result_rect[1] + result_rect[3],
@@ -192,11 +192,11 @@ class CNumRec:
 
             binary_img = cv2.threshold(num_img, 190, 255, cv2.THRESH_BINARY_INV)[1]
             # 大小标准化
-            num_img_h, num_img_w = binary_img.shape[0], binary_img.shape[1]
-            ratio = num_img_h / 35
-            num_img_w_new = int(num_img_w / ratio)
-            binary_img = cv2.resize(binary_img, (num_img_w_new, 35))
-            num_img = cv2.resize(num_img, (num_img_w_new, 35))
+            # num_img_h, num_img_w = binary_img.shape[0], binary_img.shape[1]
+            # ratio = num_img_h / 35
+            # num_img_w_new = int(num_img_w / ratio)
+            # binary_img = cv2.resize(binary_img, (num_img_w_new, 35), interpolation=cv2.INTER_LINEAR)
+            # num_img = cv2.resize(num_img, (num_img_w_new, 35), interpolation=cv2.INTER_LINEAR)
 
             # y投影
             num_area_x_list = self.y_projection(binary_img)
@@ -254,9 +254,11 @@ class CNumRec:
                 print(index, "scores:", scores)
                 str_result = str_result + str(num_result)
             cv2.imwrite(imgNumResult_dir + imgall_filename + str_result + ".bmp", num_img)
+            cv2.imwrite(imgNumAera_file_path + imgall_filename + str_result + ".bmp", binary_img)
+
+            return str_result
         except:
             pass
-        return str_result
     def processImage1(self, img_gray):
         # 查找白色区域
         whiteArea_rect = self.findWhiteArea(img_gray)
@@ -360,8 +362,8 @@ class CNumRec:
 def NumRecTest(img_path):
     img_gray = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
     nr = CNumRec(template_dir)
-    str_result = nr.processImage(img_gray)
-    print(str_result)
+    result = nr.processImage(img_gray)
+    print(result)
 
 def NumRecTestDir():
     global imgall_filename
@@ -379,6 +381,7 @@ def NumRecTestDir():
         imgNumLine_file_path = imgNumLine_dir + f"{imgall_filename}"
         imgNumContours_file_path = imgNumContours_dir + f"{imgall_filename}"
         imgNumNums_file_path = imgNumNums_dir + f"{imgall_filename}"
+        imgNumAera_file_path = imgNumAera_dir + f"{imgall_filename}"
 
         img_gray = cv2.imread(imgall_img_path, cv2.IMREAD_GRAYSCALE)
         nr = CNumRec(template_dir)
@@ -386,23 +389,25 @@ def NumRecTestDir():
         print(str_result)
 
 if __name__ == '__main__':
-    root_dir = r"D:\04DataSets\05nanjingLG\03NumRec/"
-    imgall = root_dir + "imgall/"
-    template_dir = root_dir + "template18/"
+    root_dir = r"D:\02dataset\01work\05nanjingLG\03NumRec/"
+    imgall = root_dir + "imgall0422/"
+    template_dir = root_dir + "template/"
     imgallContours_dir = root_dir + "imgallContours/"
     imgallWhiteArea = root_dir + "imgallWhiteArea/"
     imgWhiteContours_dir = root_dir + "imgWhiteContours/"
     imgNumContours_dir = root_dir + "imgNumContours/"
+    imgNumAera_dir = root_dir + "imgNumAera/"
     imgNumNums_dir = root_dir + "imgNumNums/"
     imgNumLine_dir = root_dir + "imgNumLine/"
-    imgNumResult_dir = root_dir + "imgNumResult18/"
-    imgall_filename = "Image_20230415165939974.bmp"
+    imgNumResult_dir = root_dir + "imgNumResult/"
+    imgall_filename = "img_3_0538062.bmp"
     imgall_img_path = imgall + f"{imgall_filename}"
     imgallContours_file_path = imgallContours_dir + f"{imgall_filename}"
     imgWhiteContours_file_path = imgWhiteContours_dir + f"{imgall_filename}"
     imgNumLine_file_path = imgNumLine_dir + f"{imgall_filename}"
     imgNumContours_file_path = imgNumContours_dir + f"{imgall_filename}"
     imgNumNums_file_path = imgNumNums_dir + f"{imgall_filename}"
+    imgNumAera_file_path = imgNumAera_dir + f"{imgall_filename}"
     NumRecTest(imgall_img_path)
     try:
         # NumRecTestDir()
