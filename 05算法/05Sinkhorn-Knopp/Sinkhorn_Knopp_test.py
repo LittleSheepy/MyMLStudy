@@ -9,18 +9,6 @@ from Sinkhorn_Knopp import compute_optimal_transport
 # ## The dessert problem
 # Take a look at the preferences for desserts in the [KERMIT](kermit.ugent.be) research unit.
 # preferences 喜好
-"""
-|         |   merveilleux |   eclair |   chocolate mousse |   bavarois |   carrot cake |
-|:--------|--------------:|---------:|-------------------:|-----------:|--------------:|
-| Bernard |           2   |        2 |                  1 |          0 |             0 |
-| Jan     |           0   |       -2 |                 -2 |         -2 |             2 |
-| Willem  |           1   |        2 |                  2 |          2 |            -1 |
-| Hilde   |           2   |        1 |                  0 |          1 |            -1 |
-| Steffie |           0.5 |        2 |                  2 |          1 |             0 |
-| Marlies |           0   |        1 |                  1 |          1 |            -1 |
-| Tim     |          -2   |        2 |                  2 |          1 |             1 |
-| Wouter  |           2   |        1 |                  2 |          1 |            -1 |
-"""
 ren_list = ['ren1', 'ren2', 'ren3', 'ren4', 'ren5', 'ren6', 'ren7', 'ren8']
 chi_list = ['chi1', 'chi2', 'chi3', 'chi4', 'chi5']
 preferences = pd.DataFrame([
@@ -33,9 +21,6 @@ preferences = pd.DataFrame([
     [-2, 2, 2, 1, 1],
     [2, 1, 2, 1, -1]
 ], index=ren_list)
-# ], index=['Bernard', 'Jan', 'Willem', 'Hilde', 'Steffie', 'Marlies', 'Tim', 'Wouter'])
-
-# preferences.columns = ['merveilleux', 'eclair', 'chocolate mousse', 'bavarois', 'carrot cake']
 preferences.columns = chi_list
 
 # M_df = preferences.copy()
