@@ -21,10 +21,28 @@
     <ClCompile Include="CPostProcessor.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="quickdemo.cpp">
+    <ClCompile Include="CNumRec.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="NumRec.cpp">
+    <ClCompile Include="CAlgBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FolderTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PPTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="saveJson.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CReJudgeFront.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RJBTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CReJudgeBack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +50,25 @@
     <ClInclude Include="CPostProcessor.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="quickopencv.h">
+    <ClInclude Include="CNumRec.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="NumRec.h">
+    <ClInclude Include="pch.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CAlgBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CReJudgeFront.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorialAngle.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ReJudgeData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CReJudgeBack.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
