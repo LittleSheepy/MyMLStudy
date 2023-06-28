@@ -1,51 +1,49 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QTabWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QRadioButton, QVBoxLayout
 import sys
 
-
-class Example(QWidget):
-
+class MyApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.initUI()
 
-    def initUI(self):
-        vbox = QVBoxLayout(self)
+        self.radio1 = QRadioButton('Option 1', self)
+        self.radio2 = QRadioButton('Option 2', self)
+        self.radio3 = QRadioButton('Option 3', self)
 
-        self.tabWidget = QTabWidget(self)
+        self.radio1.setChecked(True)  # Set 'Option 1' as the default selected option
 
-        # Create first tab
-        self.tab1 = QWidget()
-        self.vbox1 = QVBoxLayout(self.tab1)
-        self.button1 = QPushButton("Button 1")
-        self.button2 = QPushButton("Button 2")
-        self.vbox1.addWidget(self.button1)
-        self.vbox1.addWidget(self.button2)
+        self.layout = QVBoxLayout(self)
+        self.layout.addWidget(self.radio1)
+        self.layout.addWidget(self.radio2)
+        self.layout.addWidget(self.radio3)
 
-        # Create second tab
-        self.tab2 = QWidget()
-        self.vbox2 = QVBoxLayout(self.tab2)
-        self.button3 = QPushButton("Button 3")
-        self.button4 = QPushButton("Button 4")
-        self.vbox2.addWidget(self.button3)
-        self.vbox2.addWidget(self.button4)
+        self.radio1.toggled.connect(self.on_radio_button_toggled1)
+        self.radio2.toggled.connect(self.on_radio_button_toggled2)
+        self.radio3.toggled.connect(self.on_radio_button_toggled3)
 
-        self.tabWidget.addTab(self.tab1, "Tab 1")
-        self.tabWidget.addTab(self.tab2, "Tab 2")
+    def on_radio_button_toggled(self):
+        self.radio1.setStyleSheet("color: gray;")
+        self.radio2.setStyleSheet("color: gray;")
+        self.radio3.setStyleSheet("color: gray;")
+        if self.radio1.isChecked():
+            self.radio1.setStyleSheet("color: black;")
+        elif self.radio2.isChecked():
+            self.radio2.setStyleSheet("color: black;")
+        elif self.radio3.isChecked():
+            self.radio3.setStyleSheet("color: black;")
 
-        vbox.addWidget(self.tabWidget)
-        vbox.addStretch(1)  # Add a stretchable space at the bottom
-        self.setLayout(vbox)
+    def on_radio_button_toggled1(self):
+        print('Option 1 is selected.')
+        self.on_radio_button_toggled()
 
-        self.setGeometry(300, 300, 300, 200)
-        self.setWindowTitle('QTabWidget demo')
-        self.show()
+    def on_radio_button_toggled2(self):
+        print('Option 2 is selected.')
+        self.on_radio_button_toggled()
 
+    def on_radio_button_toggled3(self):
+        print('Option 3 is selected.')
+        self.on_radio_button_toggled()
 
-def main():
-    app = QApplication(sys.argv)
-    ex = Example()
-    sys.exit(app.exec_())
-
-
-if __name__ == '__main__':
-    main()
+app = QApplication(sys.argv)
+window = MyApp()
+window.show()
+sys.exit(app.exec_())
