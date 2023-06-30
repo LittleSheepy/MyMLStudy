@@ -74,13 +74,13 @@ class MyWindow(QWidget):
         self.tabWidget = QTabWidget(self)
 
         # self.init_menuBar()
-        self.init_tab_creat_data()
         self.init_tab_train()
+        self.init_tab_creat_data()
         self.init_tab_infrence()
         self.init_tab_test()
 
         self.lineEdit.setText('100')
-        self.lineEdit_data.setText(r'D:\02dataset\imagenette2-160')
+        self.lineEdit_data.setText(r'./datasetstest/')
 
         # Create a Stream object and set it as the new output
 
