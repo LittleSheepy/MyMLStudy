@@ -26,11 +26,14 @@ class Worker(QThread):
         val_per = int(window.centralWidget.lineEdit_data_val.text())
         test_per = int(window.centralWidget.lineEdit_data_test.text())
         create_dataset(dir_src, "./tmp_datasets/", class_nums, val_per, test_per)
+        data_name = os.path.basename(os.path.normpath(dir_src))
+        data_path = os.path.join("./tmp_datasets/", data_name)
+
 
         print("开始训练")
         epochs = int(window.centralWidget.lineEdit.text())
         # lineEdit_data = window.lineEdit_data.text()
-        run(pyqt=window, epochs=epochs) # , data=lineEdit_data
+        run(pyqt=window, epochs=epochs, data=data_path) # , data=lineEdit_data
 
 class TensorboardRun(QThread):
     def run(self):
