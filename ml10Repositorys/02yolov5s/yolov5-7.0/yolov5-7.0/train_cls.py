@@ -60,7 +60,7 @@ from skimage.exposure import match_histograms
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
-def train(opt, device):
+def train(pyqt, opt, device):
     init_seeds(opt.seed + 1 + RANK, deterministic=True)
     save_dir, data, bs, epochs, nw, imgsz, pretrained = \
         opt.save_dir, Path(opt.data), opt.batch_size, opt.epochs, min(os.cpu_count() - 1, opt.workers), \
@@ -101,7 +101,7 @@ def train(opt, device):
                                                    cache=opt.cache,
                                                    rank=LOCAL_RANK,
                                                    workers=nw)
-    print("============================================")
+    print("1============================================")
     test_dir = data_dir / 'test' if (data_dir / 'test').exists() else data_dir / 'val'  # data/test or data/val
     if RANK in {-1, 0}:
         testloader = create_classification_dataloader(path=test_dir,
@@ -125,6 +125,7 @@ def train(opt, device):
             LOGGER.warning("WARNING ⚠️ pass YOLOv5 classifier model with '-cls' suffix, i.e. '--model yolov5s-cls.pt'")
             model = ClassificationModel(model=model, nc=nc, cutoff=opt.cutoff or 10)  # convert to classification model
         reshape_classifier_output(model, nc)  # update class count
+    print("2============================================")
     for m in model.modules():
         if not pretrained and hasattr(m, 'reset_parameters'):
             m.reset_parameters()
@@ -134,6 +135,7 @@ def train(opt, device):
         p.requires_grad = True  # for training
     model = model.to(device)
 
+    print("3============================================")
     # Info
     if RANK in {-1, 0}:
         model.names = trainloader.dataset.classes  # attach class names
@@ -146,6 +148,7 @@ def train(opt, device):
         logger.log_images(file, name='Train Examples')
         logger.log_graph(model, imgsz)  # log model
 
+    print("4============================================")
     # Optimizer
     optimizer = smart_optimizer(model, opt.optimizer, opt.lr0, momentum=0.9, decay=opt.decay)
 
@@ -176,14 +179,16 @@ def train(opt, device):
                 f'Starting {opt.model} training on {data} dataset with {nc} classes for {epochs} epochs...\n\n'
                 f"{'Epoch':>10}{'GPU_mem':>10}{'train_loss':>12}{f'{val}_loss':>12}{'top1_acc':>12}{'top5_acc':>12}")
     for epoch in range(epochs):  # loop over the dataset multiple times
+        print("epoch: ", epoch)
+        # 界面进度条
         tloss, vloss, fitness = 0.0, 0.0, 0.0  # train loss, val loss, fitness
         model.train()
         if RANK != -1:
             trainloader.sampler.set_epoch(epoch)
-        pbar = enumerate(trainloader)
-        if RANK in {-1, 0}:
-            pbar = tqdm(enumerate(trainloader), total=len(trainloader), bar_format=TQDM_BAR_FORMAT)
-        for i, (images, labels) in pbar:  # progress bar
+        #pbar = enumerate(trainloader)
+        # if RANK in {-1, 0}:
+        #     pbar = tqdm(enumerate(trainloader), total=len(trainloader), bar_format=TQDM_BAR_FORMAT)
+        for i, (images, labels) in enumerate(trainloader):  # progress bar
             images, labels = images.to(device, non_blocking=True), labels.to(device)
 
             # Forward
@@ -206,14 +211,17 @@ def train(opt, device):
                 # Print
                 tloss = (tloss * i + loss.item()) / (i + 1)  # update mean losses
                 mem = '%.3gG' % (torch.cuda.memory_reserved() / 1E9 if torch.cuda.is_available() else 0)  # (GB)
-                pbar.desc = f"{f'{epoch + 1}/{epochs}':>10}{mem:>10}{tloss:>12.3g}" + ' ' * 36
+                #pbar.desc = f"{f'{epoch + 1}/{epochs}':>10}{mem:>10}{tloss:>12.3g}" + ' ' * 36
 
                 # Test
-                if i == len(pbar) - 1:  # last batch
+                if i == len(trainloader) - 1:  # last batch
                     top1, top5, vloss = validate.run(model=ema.ema,
                                                      dataloader=testloader,
-                                                     criterion=criterion,
-                                                     pbar=pbar)  # test accuracy, loss
+                                                     criterion=criterion
+                                                     # ,pbar=pbar
+                                                     )  # test accuracy, loss
+                    print("train : tloss", tloss)
+                    print("validate : top1, top5, vloss ", top1, top5, vloss)
                     fitness = top1  # define fitness as top1 accuracy
 
         # Scheduler
@@ -233,6 +241,7 @@ def train(opt, device):
                 "metrics/accuracy_top5": top5,
                 "lr/0": optimizer.param_groups[0]['lr']}  # learning rate
             logger.log_metrics(metrics, epoch)
+            # print(epoch, metrics)
 
             # Save model
             final_epoch = epoch + 1 == epochs
@@ -253,6 +262,7 @@ def train(opt, device):
                 if best_fitness == fitness:
                     torch.save(ckpt, best)
                 del ckpt
+        # pyqt.progressBar.setValue(int(100 * (epoch+1)/epochs))
 
     # Train complete
     if RANK in {-1, 0} and final_epoch:
@@ -278,8 +288,9 @@ def train(opt, device):
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, default='yolov5s-cls.pt', help='initial weights path')   # yolov5s-cls.pt
-    parser.add_argument('--data', type=str, default=r'D:\02dataset\imagenette2-160', help='cifar10, cifar100, mnist, imagenet, ...')
-    parser.add_argument('--epochs', type=int, default=10, help='total training epochs')
+    parser.add_argument('--data', type=str, default=r'D:\02dataset\imagenette2-160_little', help='cifar10, cifar100, mnist, imagenet, ...')
+    #parser.add_argument('--data', type=str, default=r'', help='cifar10, cifar100, mnist, imagenet, ...')
+    parser.add_argument('--epochs', type=int, default=3, help='total training epochs')
     parser.add_argument('--batch-size', type=int, default=8, help='total batch size for all GPUs')
     parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=224, help='train, val image size (pixels)')
     parser.add_argument('--nosave', action='store_true', help='only save final checkpoint')
@@ -302,7 +313,7 @@ def parse_opt(known=False):
     return parser.parse_known_args()[0] if known else parser.parse_args()
 
 
-def main(opt):
+def main(pyqt, opt):
     # Checks
     if RANK in {-1, 0}:
         print_args(vars(opt))
@@ -324,19 +335,19 @@ def main(opt):
     opt.save_dir = increment_path(Path(opt.project) / opt.name, exist_ok=opt.exist_ok)  # increment run
 
     # Train
-    train(opt, device)
+    train(pyqt, opt, device)
 
 
-def run(**kwargs):
+def run(pyqt, **kwargs):
     # Usage: from yolov5 import classify; classify.train.run(data=mnist, imgsz=320, model='yolov5m')
     opt = parse_opt(True)
     for k, v in kwargs.items():
         setattr(opt, k, v)
-    main(opt)
+    main(pyqt, opt)
     return opt
 
 
 if __name__ == "__main__":
     opt = parse_opt(True)
-    main(opt)
+    main(None, opt)
     # run()

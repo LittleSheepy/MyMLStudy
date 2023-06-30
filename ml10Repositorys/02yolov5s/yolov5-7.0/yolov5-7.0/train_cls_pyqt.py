@@ -33,7 +33,7 @@ class Worker(QThread):
         print("开始训练")
         epochs = int(window.centralWidget.lineEdit.text())
         # lineEdit_data = window.lineEdit_data.text()
-        run(pyqt=window, epochs=epochs, data=data_path, imgsz=img_size) # , data=lineEdit_data
+        run(pyqt=window.centralWidget, epochs=epochs, data=data_path, imgsz=img_size) # , data=lineEdit_data
 
 class TensorboardRun(QThread):
     def run(self):
