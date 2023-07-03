@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout
-from PyQt5.QtWidgets import QStackedWidget, QTabWidget
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QHBoxLayout
+from PyQt5.QtWidgets import QStackedWidget, QTabWidget, QAction
 from PyQt5.QtWidgets import QPushButton, QLineEdit, QComboBox, QProgressBar
 from PyQt5.QtCore import Qt
 from classify.train import run
@@ -16,6 +16,8 @@ import re
 import subprocess
 import webbrowser
 from tensorboard import program
+from utils.create_dataset import create_dataset
+from utils.gen_wts import generate_wts
 class Worker(QThread):
     def run(self):
         print("开始训练")
@@ -61,10 +63,13 @@ class MyWindow(QWidget):
         self.resize(800, 600)
         self.tabWidget = QTabWidget(self)
 
-        self.init_tab_creat_data()
+        # self.init_menuBar()
         self.init_tab_train()
+        # self.init_tab_creat_data()
+        self.init_tab_infrence()
+        self.init_tab_test()
 
-        self.lineEdit.setText('100')
+        self.lineEdit_data.setText(r'./datasetstest/')
 
         # Create a Stream object and set it as the new output
 
@@ -80,10 +85,7 @@ class MyWindow(QWidget):
         # Connect the Stream's newText signal to the appendText method
         self.stream.newText.connect(self.appendText)
 
-        self.button.clicked.connect(self.on_button_clicked)
-        self.button_stop.clicked.connect(self.on_button_stop_clicked)
-        self.button_data.clicked.connect(self.on_button_data_clicked)
-        self.button_tensorboard.clicked.connect(self.on_button_tensorboard_clicked)
+        # self.radio_outdata.setChecked(True)  # Set 'Option 1' as the default selected option
 
         self.worker = Worker()
         self.tensorboardRun = TensorboardRun()
@@ -107,7 +109,7 @@ class MyWindow(QWidget):
         self.layout_data = QHBoxLayout(self.tab1)
         label = QLabel('类别数量:')
         self.lineEdit_data_cnt = QLineEdit(self.tab1)
-        self.lineEdit_data_cnt.setText('80')
+        self.lineEdit_data_cnt.setText('3')
         self.layout_data.addWidget(label)
         self.layout_data.addWidget(self.lineEdit_data_cnt)
         self.layout_creat_data.addLayout(self.layout_data)
@@ -160,7 +162,7 @@ class MyWindow(QWidget):
         self.layout_data = QHBoxLayout(self.tab2)
         label = QLabel('类别数量:')
         self.lineEdit_data_cnt = QLineEdit(self.tab2)
-        self.lineEdit_data_cnt.setText('80')
+        self.lineEdit_data_cnt.setText('3')
         self.layout_data.addWidget(label)
         self.layout_data.addWidget(self.lineEdit_data_cnt)
         self.layout_train.addLayout(self.layout_data)
@@ -187,6 +189,7 @@ class MyWindow(QWidget):
         # 迭代次数
         self.label = QLabel('迭代次数:')
         self.lineEdit = QLineEdit(self.tab2)
+        self.lineEdit.setText('3')
         self.layout_epochs = QHBoxLayout(self.tab2)
         self.layout_epochs.addWidget(self.label)
         self.layout_epochs.addWidget(self.lineEdit)
@@ -207,13 +210,44 @@ class MyWindow(QWidget):
         self.layout_bar.addWidget(label1)
         self.layout_bar.addWidget(self.progressBar)
         self.layout_train.addLayout(self.layout_bar)
+
+        # 导出模型
+        self.layout_saveto = QHBoxLayout(self.tab2)
+        label1 = QLabel('保存路径:')
+        self.label_saveto = QLabel('')
+        self.label_saveto.setText("Your new text here")
+        # self.label_saveto.setAlignment(Qt.AlignLeft)
+        self.button_gen_wts = QPushButton('pt转wts')
+        self.button_gen_engine = QPushButton('wts转engine')
+        self.layout_saveto.addWidget(label1)
+        self.layout_saveto.addWidget(self.label_saveto)
+        self.layout_saveto.addWidget(self.button_gen_wts)
+        self.layout_train.addLayout(self.layout_saveto)
+
         # Create QTextEdit and layout
         self.textEdit = QTextEdit(self.tab2)
-
-        # self.layout_train.addWidget(self.comboBox)
-        # self.layout_train.addWidget(self.progressBar)
-
         self.layout_train.addWidget(self.textEdit)
+
+        self.button.clicked.connect(self.on_button_clicked)
+        self.button_stop.clicked.connect(self.on_button_stop_clicked)
+        self.button_data.clicked.connect(self.on_button_data_clicked)
+        self.button_gen_wts.clicked.connect(self.on_button_gen_wts_clicked)
+        self.button_gen_engine.clicked.connect(self.on_button_gen_engine_clicked)
+
+        self.tabWidget.addTab(self.tab2, "训练")
+
+        # self.radio_outdata.toggled.connect(self.on_radio_button_toggled1)
+        # self.radio2.toggled.connect(self.on_radio_button_toggled2)
+
+    def init_tab_infrence(self):
+        self.tab_infrence = QWidget()
+        self.layout_infrence = QVBoxLayout(self.tab_infrence)
+        self.tabWidget.addTab(self.tab_infrence, "导出模型")
+
+    def init_tab_test(self):
+        self.tab_test = QWidget()
+        self.layout_test = QVBoxLayout(self.tab_test)
+        self.tabWidget.addTab(self.tab_test, "测试")
 
     def appendText(self, text):
         text = text.replace('\r', '')
@@ -231,6 +265,61 @@ class MyWindow(QWidget):
         print(folder_path)  # Print the selected folder path
         self.lineEdit_data.setText(folder_path)
 
+    def on_button_gen_engine_clicked(self):
+        folder_path = QFileDialog.getExistingDirectory(self, "Select Folder")
+        print(folder_path)  # Print the selected folder path
+        self.lineEdit_data.setText(folder_path)
+
+    def on_button_gen_wts_clicked(self):
+        pt_saveto = self.label_saveto.text()
+        pt_path = os.path.join(pt_saveto, "weights", "best.pt")
+        wts_path = os.path.join(pt_saveto, "weights", "best.wts")
+        generate_wts(pt_path, wts_path)
+        pass
+
+    def on_radio_button_toggled1(self):
+        pass
+
+class mainWindow(QMainWindow):
+
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle('KADO AI训练 v1.0.23.0626')
+        self.resize(800, 600)
+        self.init_menuBar()
+
+        # Create a central widget
+        self.centralWidget = MyWindow(self)
+        self.setCentralWidget(self.centralWidget)
+
+        self.tensorboardRun = TensorboardRun()
+        self.show()
+
+    def init_menuBar(self):
+        # Create a menu bar
+        menubar = self.menuBar()
+
+        # Create a menu
+        fileMenu = menubar.addMenu('文件')
+        viewMenu = menubar.addMenu('查看')
+
+        # Create an action
+        openAction = QAction('打开', self)
+        openAction.triggered.connect(self.openFile)  # Connect the triggered signal to the openFile slot
+        fileMenu.addAction(openAction)
+
+        # 查看曲线
+        openAction1 = QAction('训练曲线', self)
+        openAction1.triggered.connect(self.on_button_tensorboard_clicked)  # Connect the triggered signal to the openFile slot
+        viewMenu.addAction(openAction1)
+    def openFile(self):
+        fileName, _ = QFileDialog.getOpenFileName(self, "Open File", "", "All Files (*)")
+        if fileName:
+            print(f'File opened: {fileName}')
+
     def on_button_tensorboard_clicked(self):
         self.tensorboardRun.start()
 
@@ -240,7 +329,7 @@ class MyWindow(QWidget):
 if __name__ == '__main__':
     multiprocessing.freeze_support()
     app = QApplication([])
-    window = MyWindow()
+    window = mainWindow()
     window.show()
     app.exec_()
 
