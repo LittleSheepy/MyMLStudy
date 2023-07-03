@@ -101,7 +101,7 @@ def train(pyqt, opt, device):
                                                    cache=opt.cache,
                                                    rank=LOCAL_RANK,
                                                    workers=nw)
-    print("1============================================")
+    print("Creat trainloader Dataloader Finished.")
     test_dir = data_dir / 'test' if (data_dir / 'test').exists() else data_dir / 'val'  # data/test or data/val
     if RANK in {-1, 0}:
         testloader = create_classification_dataloader(path=test_dir,
@@ -111,7 +111,7 @@ def train(pyqt, opt, device):
                                                       cache=opt.cache,
                                                       rank=-1,
                                                       workers=nw)
-
+    print("Creat testloader Dataloader Finished.")
     # Model
     with torch_distributed_zero_first(LOCAL_RANK), WorkingDirectory(ROOT):
         if Path(opt.model).is_file() or opt.model.endswith('.pt'):
@@ -125,7 +125,6 @@ def train(pyqt, opt, device):
             LOGGER.warning("WARNING ⚠️ pass YOLOv5 classifier model with '-cls' suffix, i.e. '--model yolov5s-cls.pt'")
             model = ClassificationModel(model=model, nc=nc, cutoff=opt.cutoff or 10)  # convert to classification model
         reshape_classifier_output(model, nc)  # update class count
-    print("2============================================")
     for m in model.modules():
         if not pretrained and hasattr(m, 'reset_parameters'):
             m.reset_parameters()
@@ -134,8 +133,7 @@ def train(pyqt, opt, device):
     for p in model.parameters():
         p.requires_grad = True  # for training
     model = model.to(device)
-
-    print("3============================================")
+    print("Creat model Finished.")
     # Info
     if RANK in {-1, 0}:
         model.names = trainloader.dataset.classes  # attach class names
@@ -148,7 +146,6 @@ def train(pyqt, opt, device):
         logger.log_images(file, name='Train Examples')
         logger.log_graph(model, imgsz)  # log model
 
-    print("4============================================")
     # Optimizer
     optimizer = smart_optimizer(model, opt.optimizer, opt.lr0, momentum=0.9, decay=opt.decay)
 
@@ -333,7 +330,7 @@ def main(pyqt, opt):
 
     # Parameters
     opt.save_dir = increment_path(Path(opt.project) / opt.name, exist_ok=opt.exist_ok)  # increment run
-
+    pyqt.label_saveto.setText(str(opt.save_dir))
     # Train
     train(pyqt, opt, device)
 
