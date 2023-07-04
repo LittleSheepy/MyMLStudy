@@ -138,7 +138,7 @@ def train(pyqt, opt, device):
     if RANK in {-1, 0}:
         model.names = trainloader.dataset.classes  # attach class names
         model.transforms = testloader.dataset.torch_transforms  # attach inference transforms
-        model_info(model)
+        # model_info(model)
         if opt.verbose:
             LOGGER.info(model)
         images, labels = next(iter(trainloader))
@@ -170,7 +170,7 @@ def train(pyqt, opt, device):
     best_fitness = 0.0
     scaler = amp.GradScaler(enabled=cuda)
     val = test_dir.stem  # 'val' or 'test'
-    LOGGER.info(f'Image sizes {imgsz} train, {imgsz} test\n'
+    print(f'Image sizes {imgsz} train, {imgsz} test\n'
                 f'Using {nw * WORLD_SIZE} dataloader workers\n'
                 f"Logging results to {colorstr('bold', save_dir)}\n"
                 f'Starting {opt.model} training on {data} dataset with {nc} classes for {epochs} epochs...\n\n'
@@ -263,7 +263,7 @@ def train(pyqt, opt, device):
 
     # Train complete
     if RANK in {-1, 0} and final_epoch:
-        LOGGER.info(f'\nTraining complete ({(time.time() - t0) / 3600:.3f} hours)'
+        print(f'\nTraining complete ({(time.time() - t0) / 3600:.3f} hours)'
                     f"\nResults saved to {colorstr('bold', save_dir)}"
                     f"\nPredict:         python classify/predict.py --weights {best} --source im.jpg"
                     f"\nValidate:        python classify/val.py --weights {best} --data {data_dir}"
@@ -288,7 +288,7 @@ def parse_opt(known=False):
     parser.add_argument('--data', type=str, default=r'D:\02dataset\imagenette2-160', help='cifar10, cifar100, mnist, imagenet, ...')
     #parser.add_argument('--data', type=str, default=r'', help='cifar10, cifar100, mnist, imagenet, ...')
     parser.add_argument('--epochs', type=int, default=3, help='total training epochs')
-    parser.add_argument('--batch-size', type=int, default=8, help='total batch size for all GPUs')
+    parser.add_argument('--batch-size', type=int, default=2, help='total batch size for all GPUs')
     parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=224, help='train, val image size (pixels)')
     parser.add_argument('--nosave', action='store_true', help='only save final checkpoint')
     parser.add_argument('--cache', type=str, nargs='?', const='ram', help='--cache images in "ram" (default) or "disk"')

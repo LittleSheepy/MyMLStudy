@@ -1,0 +1,10 @@
+fish
+dog
+cassette_player
+chain_saw
+church
+French_horn
+garbage_truck
+gas_pump
+golf_ball
+parachute

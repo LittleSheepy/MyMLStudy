@@ -19,6 +19,8 @@ from tensorboard import program
 from utils.create_dataset import create_dataset
 from utils.create_dataset import create_dataset
 from utils.gen_wts import generate_wts
+
+import cv2
 class Worker(QThread):
     def run(self):
         print("创建临时数据集")
@@ -113,10 +115,6 @@ class MyWindow(QWidget):
         # Connect the Stream's newText signal to the appendText method
         self.stream.newText.connect(self.appendText)
 
-        self.button.clicked.connect(self.on_button_clicked)
-        self.button_stop.clicked.connect(self.on_button_stop_clicked)
-        self.button_data.clicked.connect(self.on_button_data_clicked)
-
         self.radio_outdata.setChecked(True)  # Set 'Option 1' as the default selected option
 
         self.worker = Worker()
@@ -187,7 +185,7 @@ class MyWindow(QWidget):
         # 数据集
         self.radio_outdata = QRadioButton('外部数据集   ', self)
         label = QLabel('数据集路径:')
-        label.setStyleSheet("color: gray;")
+        #label.setStyleSheet("color: gray;")
         # label.setStyleSheet("color: black; disabled { color: gray; }")
         self.lineEdit_data = QLineEdit(self.tab2)
         self.button_data = QPushButton('选择数据集')
@@ -290,6 +288,25 @@ class MyWindow(QWidget):
     def init_tab_test(self):
         self.tab_test = QWidget()
         self.layout_test = QVBoxLayout(self.tab_test)
+
+        label = QLabel('测试路径:')
+        #label.setStyleSheet("color: gray;")
+        self.lineEdit_data_testdir = QLineEdit(self.tab_test)
+        self.lineEdit_data_testdir.setText(r'./img_test/')
+        self.button_test_dir = QPushButton('选择路径')
+        self.button_test_img = QPushButton('测试')
+        self.layout_data_test = QHBoxLayout(self.tab_test)
+        self.layout_data_test.addWidget(label)
+        self.layout_data_test.addWidget(self.lineEdit_data_test)
+        self.layout_data_test.addWidget(self.button_test_dir)
+        self.layout_data_test.addWidget(self.button_test_img)
+        self.layout_test.addLayout(self.layout_data_test)
+
+        self.layout_test.addStretch(1)  # Add a stretchable space at the bottom
+
+        self.button_test_dir.clicked.connect(self.on_button_test_dir_clicked)
+        self.button_test_img.clicked.connect(self.on_button_test_img_clicked)
+
         self.tabWidget.addTab(self.tab_test, "测试")
 
     def appendText(self, text):
@@ -306,14 +323,41 @@ class MyWindow(QWidget):
     def on_button_data_clicked(self):
         folder_path = QFileDialog.getExistingDirectory(self, "Select Folder")
         print(folder_path)  # Print the selected folder path
-        self.lineEdit_data.setText(folder_path)
+        if not folder_path == "":
+            self.lineEdit_data.setText(folder_path)
+
+    def on_button_test_dir_clicked(self):
+        folder_path = QFileDialog.getExistingDirectory(self, "Select Folder")
+        print(folder_path)  # Print the selected folder path
+        if not folder_path == "":
+            self.lineEdit_data_testdir.setText(folder_path)
+
+    def on_button_test_img_clicked(self):
+        # import shutil
+        # from utils.yolov5_cls_trt import YoLov5TRT
+        # if os.path.exists('output/'):
+        #     shutil.rmtree('output/')
+        # os.makedirs('output/')
+        # pt_saveto = self.label_saveto.text()
+        # engine_path = os.path.join(pt_saveto, "weights", "best.engine")
+        # folder_path = self.lineEdit_data_testdir.text()
+        # parent, filename = os.path.split(folder_path)
+        # save_name = os.path.join('output', filename)
+        # yolov5_wrapper = YoLov5TRT(engine_path)
+        # batch_image_raw, use_time = yolov5_wrapper.infer(
+        #     self.yolov5_wrapper.get_raw_image([folder_path]))
+        # cv2.imwrite(save_name, batch_image_raw[0])
+        pass
 
     def on_button_gen_engine_clicked(self):
+        pt_saveto = self.label_saveto.text()
+        wts_path = os.path.join(pt_saveto, "weights", "best.wts")
+        engine_path = os.path.join(pt_saveto, "weights", "best.engine")
         args = []
-        args.append(r"D:\04Bin\YOLOV5_7_0.exe")
+        args.append(r"D:\04Bin\gen_engine.exe")
         args.append("-s")
-        args.append("yolov5s.wts")
-        args.append("yolov5s.engine")
+        args.append(wts_path)
+        args.append(engine_path)
         args.append("s")
         self.trtRun.set_args(args)
         self.trtRun.start()

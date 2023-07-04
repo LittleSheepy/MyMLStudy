@@ -31,7 +31,6 @@ def get_img_path_batches(batch_size, img_dir):
 with open("imagenet_classes.txt") as f:
     classes = [line.strip() for line in f.readlines()]
 
-
 class YoLov5TRT(object):
     """
     description: A YOLOv5 class that warps TensorRT ops, preprocess and postprocess ops.

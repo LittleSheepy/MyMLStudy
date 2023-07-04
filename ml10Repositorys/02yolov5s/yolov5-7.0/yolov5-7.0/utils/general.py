@@ -232,7 +232,8 @@ def print_args(args: Optional[dict] = None, show_file=True, show_func=False):
     except ValueError:
         file = Path(file).stem
     s = (f'{file}: ' if show_file else '') + (f'{func}: ' if show_func else '')
-    LOGGER.info(colorstr(s) + ', '.join(f'{k}={v}' for k, v in args.items()))
+    # LOGGER.info(colorstr(s) + ', '.join(f'{k}={v}' for k, v in args.items()))
+    print(colorstr(s) + ', '.join(f'{k}={v}' for k, v in args.items()))
 
 
 def init_seeds(seed=0, deterministic=False):
@@ -706,7 +707,8 @@ def colorstr(*input):
         'end': '\033[0m',  # misc
         'bold': '\033[1m',
         'underline': '\033[4m'}
-    return ''.join(colors[x] for x in args) + f'{string}' + colors['end']
+    # return ''.join(colors[x] for x in args) + f'{string}' + colors['end']
+    return string
 
 
 def labels_to_class_weights(labels, nc=80):
