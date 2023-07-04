@@ -3,7 +3,7 @@ import argparse
 import os
 import struct
 import torch
-from utils.torch_utils import select_device
+# from utils.torch_utils import select_device
 
 
 def parse_args():
@@ -35,7 +35,7 @@ def generate_wts(pt_file, wts_file, m_type = "cls"):
 
     # Load model
     print(f'Loading {pt_file}')
-    device = select_device('0')
+    device = torch.device('cuda:0')
     model = torch.load(pt_file, map_location=device)  # Load FP32 weights
     model = model['ema' if model.get('ema') else 'model'].float()
 
