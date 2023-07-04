@@ -8,12 +8,15 @@ from utils.torch_utils import select_device
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Convert .pt file to .wts')
-    parser.add_argument('-w', '--weights', required=True,
+    parser.add_argument('-w', '--weights',
+                        default=r'D:\00myGitHub\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0/yolov5s-cls.pt',
                         help='Input weights (.pt) file path (required)')
     parser.add_argument(
-        '-o', '--output', help='Output (.wts) file path (optional)')
+        '-o', '--output',
+        default=r'D:\00myGitHub\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0/yolov5s-cls.wts',
+        help='Output (.wts) file path (optional)')
     parser.add_argument(
-        '-t', '--type', type=str, default='detect', choices=['detect', 'cls', 'seg'],
+        '-t', '--type', type=str, default='cls', choices=['detect', 'cls', 'seg'],
         help='determines the model is detection/classification')
     args = parser.parse_args()
     if not os.path.isfile(args.weights):
@@ -32,7 +35,7 @@ def generate_wts(pt_file, wts_file, m_type = "cls"):
 
     # Load model
     print(f'Loading {pt_file}')
-    device = select_device('cpu')
+    device = select_device('0')
     model = torch.load(pt_file, map_location=device)  # Load FP32 weights
     model = model['ema' if model.get('ema') else 'model'].float()
 

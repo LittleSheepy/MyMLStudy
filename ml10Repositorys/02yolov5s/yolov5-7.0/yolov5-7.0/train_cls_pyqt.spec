@@ -5,10 +5,10 @@ block_cipher = None
 
 
 a = Analysis(
-    ['F:/sheepy/00GitHub/aFolder_YOLO/01yolov5s/yolov5-7.0/yolov5-7.0/train_cls_pyqt.py'],
+    ['D:\\00myGitHub\\00MyMLStudy\\ml10Repositorys\\02yolov5s\\yolov5-7.0\\yolov5-7.0/train_cls_pyqt.py'],
     pathex=[],
     binaries=[],
-    datas=[('F:/sheepy/00GitHub/aFolder_YOLO/01yolov5s/yolov5-7.0/yolov5-7.0/classify', 'classify/'), ('F:/sheepy/00GitHub/aFolder_YOLO/01yolov5s/yolov5-7.0/yolov5-7.0/data', 'data/'), ('F:/sheepy/00GitHub/aFolder_YOLO/01yolov5s/yolov5-7.0/yolov5-7.0/models', 'models/'), ('F:/sheepy/00GitHub/aFolder_YOLO/01yolov5s/yolov5-7.0/yolov5-7.0/utils', 'utils/'), ('F:/sheepy/00GitHub/aFolder_YOLO/01yolov5s/yolov5-7.0/yolov5-7.0/requirements.txt', '.'), ('F:/sheepy/00GitHub/aFolder_YOLO/01yolov5s/yolov5-7.0/yolov5-7.0/yolov5s-cls.pt', '.')],
+    datas=[('D:\\00myGitHub\\00MyMLStudy\\ml10Repositorys\\02yolov5s\\yolov5-7.0\\yolov5-7.0/classify', 'classify/'), ('D:\\00myGitHub\\00MyMLStudy\\ml10Repositorys\\02yolov5s\\yolov5-7.0\\yolov5-7.0/data', 'data/'), ('D:\\00myGitHub\\00MyMLStudy\\ml10Repositorys\\02yolov5s\\yolov5-7.0\\yolov5-7.0/models', 'models/'), ('D:\\00myGitHub\\00MyMLStudy\\ml10Repositorys\\02yolov5s\\yolov5-7.0\\yolov5-7.0/utils', 'utils/'), ('D:\\00myGitHub\\00MyMLStudy\\ml10Repositorys\\02yolov5s\\yolov5-7.0\\yolov5-7.0/requirements.txt', '.'), ('D:\\00myGitHub\\00MyMLStudy\\ml10Repositorys\\02yolov5s\\yolov5-7.0\\yolov5-7.0/yolov5s-cls.pt', '.')],
     hiddenimports=['models.yolo', 'subprocess'],
     hookspath=[],
     hooksconfig={},

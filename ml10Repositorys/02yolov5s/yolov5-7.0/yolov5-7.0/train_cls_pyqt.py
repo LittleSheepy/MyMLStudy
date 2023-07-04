@@ -54,6 +54,24 @@ class TensorboardRun(QThread):
         si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
         # 打开exe文件
         subprocess.Popen([exe_path] + args)
+
+class exeRun(QThread):
+    def set_args(self, args = []):
+        self.args = args
+
+    def run(self):
+        print("开始run exe")
+        # 指定exe文件的路径和参数
+        current_path = os.getcwd()
+        print(current_path)
+        exe_path = self.args[0]
+        if not os.path.exists(exe_path):
+            print("没有文件 ", exe_path)
+        args = []
+        si = subprocess.STARTUPINFO()
+        si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        # 打开exe文件
+        subprocess.Popen(self.args)
 def parse_progress(text):
     match = re.search(r'(\d+)%', text)
     if match:
@@ -102,6 +120,7 @@ class MyWindow(QWidget):
         self.radio_outdata.setChecked(True)  # Set 'Option 1' as the default selected option
 
         self.worker = Worker()
+        self.trtRun = exeRun()
         #self.setGeometry(300, 300, 300, 200)
         print("当前版本：v1.0.23.0626")
 
@@ -212,7 +231,7 @@ class MyWindow(QWidget):
         # 迭代次数
         self.label = QLabel('迭代次数:')
         self.lineEdit = QLineEdit(self.tab2)
-        self.lineEdit.setText('100')
+        self.lineEdit.setText('10')
         self.layout_epochs = QHBoxLayout(self.tab2)
         self.layout_epochs.addWidget(self.label)
         self.layout_epochs.addWidget(self.lineEdit)
@@ -290,9 +309,14 @@ class MyWindow(QWidget):
         self.lineEdit_data.setText(folder_path)
 
     def on_button_gen_engine_clicked(self):
-        folder_path = QFileDialog.getExistingDirectory(self, "Select Folder")
-        print(folder_path)  # Print the selected folder path
-        self.lineEdit_data.setText(folder_path)
+        args = []
+        args.append(r"D:\04Bin\YOLOV5_7_0.exe")
+        args.append("-s")
+        args.append("yolov5s.wts")
+        args.append("yolov5s.engine")
+        args.append("s")
+        self.trtRun.set_args(args)
+        self.trtRun.start()
 
     def on_button_gen_wts_clicked(self):
         pt_saveto = self.label_saveto.text()
