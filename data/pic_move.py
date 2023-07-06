@@ -5,18 +5,18 @@ import os, shutil
 def move1():
     root_dir = r"D:\03GitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect/predict11/"
     root_dir = r"D:\03GitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect\predict14\/"
-    root_dir = r"D:\02dataset\01work\SZ_060708_ALL\/"
-    img_dir = root_dir + r"/img_save2_1/"
-    biaozhu = root_dir + "/img_have/"
+    root_dir = r"F:\0LG标注_yolo\12-侧面黑色顶底加强筋破损\/"
+    img_dir = root_dir + r"/imgOK/"
+    biaozhu = root_dir + "/img/"
     nobiaozhu = "D:/01sheepy/01work/01baojie_ocr/pp/img_nobiaozhu/"
-    xml_dir = root_dir + "/labels/"
+    xml_dir = root_dir + "/txt/"
     for imgfile in os.listdir(img_dir):
         moveFlg = False
         for xmlfile in os.listdir(xml_dir):
             print(xmlfile)
             if xmlfile[:-4] == imgfile[:-4]:
                 # shutil.copyfile(img_dir + imgfile, biaozhu + imgfile)
-                shutil.copyfile(img_dir + imgfile, biaozhu + imgfile)
+                shutil.move(img_dir + imgfile, biaozhu + imgfile)
                 moveFlg = True
         # if not moveFlg:
         #     shutil.copyfile(img_dir + imgfile, nobiaozhu + imgfile)
@@ -38,4 +38,4 @@ def moveByLabel():
 
 
 if __name__ == '__main__':
-    moveByLabel()
+    move1()
