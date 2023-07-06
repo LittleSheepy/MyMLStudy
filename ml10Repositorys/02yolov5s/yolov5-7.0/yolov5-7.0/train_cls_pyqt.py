@@ -297,7 +297,7 @@ class MyWindow(QWidget):
         self.button_test_img = QPushButton('测试')
         self.layout_data_test = QHBoxLayout(self.tab_test)
         self.layout_data_test.addWidget(label)
-        self.layout_data_test.addWidget(self.lineEdit_data_test)
+        self.layout_data_test.addWidget(self.lineEdit_data_testdir)
         self.layout_data_test.addWidget(self.button_test_dir)
         self.layout_data_test.addWidget(self.button_test_img)
         self.layout_test.addLayout(self.layout_data_test)
