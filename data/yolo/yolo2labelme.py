@@ -6,12 +6,10 @@ import json
 import matplotlib.pyplot as plt
 import base64
 
-img_dir = "/Users/tianshu/Documents/iCollections/tta_train/img"
-
 
 def parse_tta_label(txt_path, img_dir, save_dir):
     file_name = txt_path.split('/')[-1].split('.')[0]
-    img_path = os.path.join(img_dir, file_name + ".png")
+    img_path = os.path.join(img_dir, file_name + ".jpg")
     img = cv2.imread(img_path)
     h, w = img.shape[:2]
 
@@ -35,20 +33,19 @@ def parse_tta_label(txt_path, img_dir, save_dir):
         label_info = label_info.strip()
         label_info = label_info.split(' ')
         class_name = label_info[0]
-        c_x = int(float(label_info[1]) * w)
-        c_y = int(float(label_info[2]) * h)
-        b_w = int(float(label_info[3]) * w)
-        b_h = int(float(label_info[4]) * h)
-        x1 = int(c_x - b_w / 2)
-        x2 = int(c_x + b_w / 2)
-        y1 = int(c_y - b_h / 2)
-        y2 = int(c_y + b_h / 2)
+        point_cnt = int((len(label_info)-1)/2)
+        points = []
+        for i in range(point_cnt):
+            px = label_info[1+2*i]
+            py = label_info[1+2*i+1]
+            x = int(float(px) * w)
+            y = int(float(py) * h)
+            points.append([x,y])
 
-        points = [[x1, y1], [x2, y2]]
-        shape_type = "rectangle"
+        shape_type = "polygon"
         shape = {}
 
-        shape.__setitem__("label", class_name)
+        shape.__setitem__("label", "WR")
         shape.__setitem__("points", points)
         shape.__setitem__("shape_type", shape_type)
         shape.__setitem__("flags", {})
@@ -75,7 +72,11 @@ def generate_labelme_prelabel(txt_dir, img_dir, save_dir):
 
 
 if __name__ == '__main__':
-    txt_dir = "/Users/tianshu/Documents/iCollections/tta_train/txt"
-    save_dir = "/Users/tianshu/Documents/iCollections/tta_train/json"
+    root_dir = r"D:\05xx\0518\/"
+    txt_dir = root_dir + "txt/"
+    save_dir = root_dir + "json/"
+
+    img_dir = root_dir + r"\img\/"
+
     generate_labelme_prelabel(txt_dir, img_dir, save_dir)
 

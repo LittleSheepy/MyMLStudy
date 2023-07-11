@@ -34,7 +34,8 @@ def labelme2yolov2Seg(jsonfilePath="", resultDirPath="", classList=["JQJPS"]):
                 # 6. 遍历shapes中的每个目标的轮廓
                 for shape in shapes:
                     # 7.根据json中目标的类别标签，从classList中寻找类别的ID，然后写入txt文件中
-                    file_handle.writelines(str(classList.index(shape["label"])) + " ")
+                    #file_handle.writelines(str(classList.index(shape["label"])) + " ")
+                    file_handle.writelines(str(0) + " ")
 
                     # 8. 遍历shape轮廓中的每个点，每个点要进行图像尺寸的缩放，即x/width, y/height
                     for point in shape["points"]:
@@ -50,6 +51,7 @@ def labelme2yolov2Seg(jsonfilePath="", resultDirPath="", classList=["JQJPS"]):
         f.close()
 
 if __name__ == "__main__":
-    jsonfilePath = r"F:\0LG标注_yolo\12-侧面黑色顶底加强筋破损\label\/"  # 要转换的json文件所在目录
-    resultDirPath = r"F:\0LG标注_yolo\12-侧面黑色顶底加强筋破损\txt\/"  # 要生成的txt文件夹
-    labelme2yolov2Seg(jsonfilePath=jsonfilePath, resultDirPath=resultDirPath, classList=["JQJPS"])
+    root_dir = r"D:\05xx\0518\/"
+    jsonfilePath = root_dir + r"\json\/"  # 要转换的json文件所在目录
+    resultDirPath = root_dir + r"\txt\/"  # 要生成的txt文件夹
+    labelme2yolov2Seg(jsonfilePath=jsonfilePath, resultDirPath=resultDirPath, classList=["EWMPS"])
