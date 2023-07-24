@@ -15,7 +15,7 @@ from ..plots import Annotator, colors
 
 #@threaded
 def plot_images_and_masks(images, targets, masks, paths=None, fname='images.jpg', names=None):
-    print(fname)
+    #print("fname : ", fname)
     # Plot image grid with labels
     if isinstance(images, torch.Tensor):
         images = images.cpu().float().numpy()
@@ -86,7 +86,7 @@ def plot_images_and_masks(images, targets, masks, paths=None, fname='images.jpg'
             if len(masks):
                 # if not masks.shape[0] == idx.shape[0]:
                 #     idx = np.repeat(idx, masks.shape[0])
-                print(masks.max())
+                # print(masks.max())
                 #if masks.max() > 1.0:  # mean that masks are overlap
                 if "labels" in str(fname) or masks.max() > 1.0:  # mean that masks are overlap
                     image_masks = masks[[i]]  # (1, 640, 640)
