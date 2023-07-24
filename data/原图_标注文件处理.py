@@ -12,11 +12,11 @@ import json
 #3、将
 
 def move1():
-    root_dir = r"D:\0\0LG_DATA\SZ_NG_0529\/"
-    img_dir = root_dir + "/img_save_have0606/"
-    biaozhu = root_dir + "/img_save_have0608_8/"
+    root_dir = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\predict-seg\exp_nmnic2\/"
+    img_dir = root_dir + "/img_save1_1/"
+    biaozhu = root_dir + "/img_src/"
     nobiaozhu = root_dir + "/image_nobiaozhu/"
-    xml_dir = root_dir + "/txt_save_have0608_8/"
+    xml_dir = root_dir + "/img_have/"
     num1=0
     num2=0
     for imgfile in os.listdir(img_dir):

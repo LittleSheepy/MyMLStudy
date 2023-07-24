@@ -18,7 +18,7 @@ def move1():
             shutil.copyfile(in_file_dir + fi, out_file_dir + fi_en)
 
 if __name__ == '__main__':
-    root_dir = r"F:/"
+    root_dir = r"D:/"
     file_dir = root_dir + r"051820_051908/"
     out_dir = root_dir + r"051820_051908_EN/"
     move1()

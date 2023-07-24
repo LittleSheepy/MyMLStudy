@@ -51,7 +51,10 @@ def labelme2yolov2Seg(jsonfilePath="", resultDirPath="", classList=["JQJPS"]):
         f.close()
 
 if __name__ == "__main__":
-    root_dir = r"D:\05xx\0518\/"
+    root_dir = r"D:\05xxNMSZ\SZ_NG_32\/"
     jsonfilePath = root_dir + r"\json\/"  # 要转换的json文件所在目录
     resultDirPath = root_dir + r"\txt\/"  # 要生成的txt文件夹
+
+    if not os.path.exists(resultDirPath):
+        os.mkdir(resultDirPath)
     labelme2yolov2Seg(jsonfilePath=jsonfilePath, resultDirPath=resultDirPath, classList=["EWMPS"])

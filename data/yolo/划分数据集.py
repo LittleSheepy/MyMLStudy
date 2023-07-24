@@ -2,8 +2,8 @@ import os, shutil, random
 import numpy as np
 
 postfix = 'jpg'  # 这里要注意下，文件夹里的图片格式要都是jpg，如果是PNG那就都得是PNG
-base_path = 'E:\Deep learning\yolov5-7.0\VOCdata\images'  # 转化完的图片和txt所在的文件夹
-dataset_path = 'E:\Deep learning\yolov5-7.0\VOCdata\data_path'  # 新建一个文件夹
+base_path = r'I:\0LG_label_name\nic\images_train/'  # 转化完的图片和txt所在的文件夹
+dataset_path = r'I:\0LG_label_name\nic\\data_path'  # 新建一个文件夹
 val_size, test_size = 0.1, 0.0  # 这里把test设置为0，也就是train：val = 9:1
 # val_size = 0.1
 

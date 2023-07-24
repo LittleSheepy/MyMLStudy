@@ -12,9 +12,11 @@ import json
 #3、将
 
 def creatTxt():
-    root_dir = r"D:\05xx\0518\/"
+    root_dir = r"D:\05xxNMSZ\05xx\/"
     img_dir = root_dir + "/img/"
     txt_dir = root_dir + "/txt/"
+    if not os.path.exists(txt_dir):
+        os.mkdir(txt_dir)
     for imgfile in os.listdir(img_dir):
         f = open(txt_dir + imgfile[:-4] + ".txt", "a")
         f.close()

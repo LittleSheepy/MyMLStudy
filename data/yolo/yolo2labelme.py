@@ -20,11 +20,11 @@ def parse_tta_label(txt_path, img_dir, save_dir):
     with open(txt_path, 'r') as f:
         label_info_list = f.readlines()
 
-    version = "4.5.13"
+    version = "5.2.1"
     data_dict = dict()
     data_dict.__setitem__("version", version)
-    data_dict.__setitem__("imagePath", file_name)
-    data_dict.__setitem__("imageData", image_base64)
+    data_dict.__setitem__("imagePath", file_name+".jpg")
+    data_dict.__setitem__("imageData", None)
     data_dict.__setitem__("imageHeight", h)
     data_dict.__setitem__("imageWidth", w)
     data_dict.__setitem__("flags", {})
@@ -38,14 +38,16 @@ def parse_tta_label(txt_path, img_dir, save_dir):
         for i in range(point_cnt):
             px = label_info[1+2*i]
             py = label_info[1+2*i+1]
-            x = int(float(px) * w)
-            y = int(float(py) * h)
+            # x = int(float(px) * w)
+            # y = int(float(py) * h)
+            x = round(float(px) * w, 6)
+            y = round(float(py) * h, 6)
             points.append([x,y])
 
         shape_type = "polygon"
         shape = {}
 
-        shape.__setitem__("label", "WR")
+        shape.__setitem__("label", "NMSZ")
         shape.__setitem__("points", points)
         shape.__setitem__("shape_type", shape_type)
         shape.__setitem__("flags", {})
@@ -72,11 +74,14 @@ def generate_labelme_prelabel(txt_dir, img_dir, save_dir):
 
 
 if __name__ == '__main__':
-    root_dir = r"D:\05xx\0518\/"
+    root_dir = r"D:\05xxNMSZ\SZ_NG_32\/"
     txt_dir = root_dir + "txt/"
     save_dir = root_dir + "json/"
 
-    img_dir = root_dir + r"\img\/"
+    img_dir = root_dir + r"\img/"
+    #img_dir = r"D:\04Bin\NG\/"
+    if not os.path.exists(save_dir):
+        os.mkdir(save_dir)
 
     generate_labelme_prelabel(txt_dir, img_dir, save_dir)
 

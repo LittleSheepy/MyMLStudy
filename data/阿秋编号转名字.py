@@ -4,17 +4,10 @@ def aq_num2name(xml_file):
     f = open(os.path.join(xml_file), "r")
 
 
-
-
-
-if __name__ == '__main__':
-    root_dir = r"F:\/"
-    root_db = r"E:\15project\02kd\03LG\AIDI\所有模型\/"
-    dir_biaozhu = root_dir + "0LG标注_已标注_tmp/"
-    dir_name = root_dir + "0LG标注_name/"
-    dirlist = ["8-反面黑色加强筋破损"]
-    #for dir_ in os.listdir(dir_biaozhu):
-    for dir_ in dirlist:
+def aq2name():
+    for dir_ in os.listdir(dir_biaozhu):
+    #for dir_ in dirlist:
+        dir_num = dir_.split("-")[0]
         fullpath_ = os.path.join(dir_biaozhu, dir_)
         fullpath_name = os.path.join(dir_name, dir_)
         if not os.path.isdir(fullpath_):
@@ -54,7 +47,7 @@ if __name__ == '__main__':
                 filename_storage_save = filename_storage[1:-2]
                 print(filename_source, filename_storage_save)
 
-
+                filename_storage_save = "aidi" + dir_num + "_"
                 filename_source_full = os.path.join(fullpath_, filename_source)
                 filename_storage_save_full = os.path.join(fullpath_name, filename_storage_save)
                 filename_source_full_json = filename_source_full[:-4] + ".json"
@@ -72,4 +65,34 @@ if __name__ == '__main__':
                 line_i = line_i + 1
 
 
+def aq2name_bynum():
+    for dir_ in os.listdir(dir_biaozhu):
+        dir_num = dir_.split("-")[0]
+        fullpath_ = os.path.join(dir_biaozhu, dir_)
+        fullpath_name = os.path.join(dir_name, dir_)
+        if not os.path.isdir(fullpath_):
+            continue
+        if not os.path.exists(fullpath_name):
+            os.mkdir(fullpath_name)
+        for filename in os.listdir(fullpath_):
+            if filename[-4:] == "json":
+                continue
+            filename_storage_save = "aidi" + dir_num + "_" + filename
+            filename_source_full = os.path.join(fullpath_, filename)
+            filename_storage_save_full = os.path.join(fullpath_name, filename_storage_save)
+            shutil.move(filename_source_full, filename_storage_save_full)
+
+            filename_source_full_json = filename_source_full[:-4] + ".json"
+            filename_storage_save_full_json = filename_storage_save_full[:-4] + ".json"
+            if os.path.exists(filename_source_full_json):
+                shutil.move(filename_source_full_json, filename_storage_save_full_json)
+
+
+if __name__ == '__main__':
+    root_dir = r"I:\/"
+    root_db = r"H:\15project\02kd\03LG\AIDI\所有模型\/"
+    dir_biaozhu = root_dir + "0LG标注_已标注_tmp/"
+    dir_name = root_dir + "0LG_label_name/反面/"
+    dirlist = ["8-反面黑色加强筋破损"]
+    aq2name_bynum()
 
