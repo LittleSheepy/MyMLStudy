@@ -849,7 +849,7 @@ if __name__ == '__main__':
     # dir_root = r"F:\15project\02kd\03LG\03trainData\00imgAll\SZ_NG_32/"
     # dir_root = r"D:\0\0LG_DATA\SZ_NG_8\/"
     # 笔记本
-    dir_root = r"I:\0LG_label_name\sz\/"       #根目录
+    dir_root = r"I:\0LG_label_name\nmjqjps\/"       #根目录
     img_src = dir_root + r"1_1/"
     # 创建以下文件夹 手动
     txt_src = dir_root + r"txt/"

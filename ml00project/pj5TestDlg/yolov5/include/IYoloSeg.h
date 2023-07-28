@@ -16,7 +16,10 @@ class DLL_EXPORT IYoloSeg
 {
 public:
     virtual void Init()=0;
-    virtual std::vector<Detection> Predict(cv::Mat& img, std::vector<std::vector<Detection>>& res_batch, std::vector<std::vector<std::vector<cv::Point>>>& contours)=0;
+    virtual std::vector<Detection> Predict(cv::Mat& img, 
+        std::vector<std::vector<Detection>>& res_batch, std::vector<std::vector<std::vector<cv::Point>>>& contours)=0;
+    virtual void SetEngineName(std::string engine_name) = 0;
+    virtual void SetWeightName(std::string weight_name) = 0;
 };
 DLL_EXPORT IYoloSeg* createYoloSegInstance();
 DLL_EXPORT void get_rect_ex(cv::Mat& img, float bbox[4], cv::Rect& rect);

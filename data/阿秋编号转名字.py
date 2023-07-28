@@ -75,24 +75,33 @@ def aq2name_bynum():
         if not os.path.exists(fullpath_name):
             os.mkdir(fullpath_name)
         for filename in os.listdir(fullpath_):
-            if filename[-4:] == "json":
-                continue
+            # if filename[-4:] == "json":
+            #     continue
             filename_storage_save = "aidi" + dir_num + "_" + filename
             filename_source_full = os.path.join(fullpath_, filename)
             filename_storage_save_full = os.path.join(fullpath_name, filename_storage_save)
             shutil.move(filename_source_full, filename_storage_save_full)
 
-            filename_source_full_json = filename_source_full[:-4] + ".json"
-            filename_storage_save_full_json = filename_storage_save_full[:-4] + ".json"
-            if os.path.exists(filename_source_full_json):
-                shutil.move(filename_source_full_json, filename_storage_save_full_json)
+            # filename_source_full_json = filename_source_full[:-4] + ".json"
+            # filename_storage_save_full_json = filename_storage_save_full[:-4] + ".json"
+            # if os.path.exists(filename_source_full_json):
+            #     shutil.move(filename_source_full_json, filename_storage_save_full_json)
 
+
+def aq2name_bynum2():
+    for filename in os.listdir(dir_biaozhu):
+        # if filename[-4:] == "json":
+        #     continue
+        filename_storage_save = "aidi16" + "_" + filename
+        filename_source_full = os.path.join(dir_biaozhu, filename)
+        filename_storage_save_full = os.path.join(dir_name, filename_storage_save)
+        shutil.move(filename_source_full, filename_storage_save_full)
 
 if __name__ == '__main__':
-    root_dir = r"I:\/"
+    root_dir = r"E:\0ProjectData\0LG_CB_DATA\1AIDI_TrainData\0LG_label_name\BM\/"
     root_db = r"H:\15project\02kd\03LG\AIDI\所有模型\/"
-    dir_biaozhu = root_dir + "0LG标注_已标注_tmp/"
-    dir_name = root_dir + "0LG_label_name/反面/"
+    dir_biaozhu = root_dir + "16BM_JQJPS/"
+    dir_name = root_dir + "16BM_JQJPS_name/"
     dirlist = ["8-反面黑色加强筋破损"]
-    aq2name_bynum()
+    aq2name_bynum2()
 

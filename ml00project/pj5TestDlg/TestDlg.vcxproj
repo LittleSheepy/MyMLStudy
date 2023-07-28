@@ -77,8 +77,9 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>..\Third_Part\OpenCV4.5.5_V19\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName);D:\tools\opencv455\build\include\;D:\tools\opencv455\build\include\opencv2\;./yolov5\include;C:\Users\sheepy\Desktop\test\yolov5\include</IncludePath>
     <LibraryPath>D:\tools\opencv455\build\x64\vc15\lib\;..\Third_Part\OpenCV4.5.5_V19\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);./yolov5\lib</LibraryPath>
-    <OutDir>D:\04Bin\</OutDir>
+    <OutDir>D:\04BinNM\</OutDir>
     <IntDir>D:\04Bin\MiddleDir\</IntDir>
+    <TargetName>$(ProjectName)_nmjqjps</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -90,8 +91,8 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>..\Third_Part\OpenCV4.5.5_V19\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName);D:\tools\opencv455\build\include\;D:\tools\opencv455\build\include\opencv2\;C:\Users\sheepy\Desktop\test\include;D:\tools\TensorRT-8.0.1.6-cu11.3\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\include;C:\Users\sheepy\Desktop\test;C:\Users\sheepy\Desktop\test\plugin</IncludePath>
     <LibraryPath>D:\tools\opencv455\build\x64\vc15\lib\;..\Third_Part\OpenCV4.5.5_V19\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
-    <OutDir>D:\04Bin\</OutDir>
-    <TargetName>$(ProjectName)</TargetName>
+    <OutDir>D:\04BinNM\</OutDir>
+    <TargetName>$(ProjectName)_nic</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

@@ -94,11 +94,15 @@ def random_perspective(im,
             # clip
             new[i] = segment2box(xy, width, height)
             new_segments.append(xy)
-
         # filter candidates
         i = box_candidates(box1=targets[:, 1:5].T * s, box2=new.T, area_thr=0.01)
+        if len(new_segments) < len(i):
+            a = 1
         targets = targets[i]
         targets[:, 1:5] = new[i]
-        new_segments = np.array(new_segments)[i]
+        try:
+            new_segments = np.array(new_segments)[i]
+        except Exception:
+            pass
 
     return im, targets, new_segments

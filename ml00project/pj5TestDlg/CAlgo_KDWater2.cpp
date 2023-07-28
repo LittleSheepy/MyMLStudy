@@ -721,7 +721,7 @@ inline int _GetBoxByRowCol_NotSE( std::vector<_CKDWater_MatchBox>& vecBox, int i
 
 
 
-void CAlgo_KDWater2::_GetDefect_Neib2(std::vector<_TKDWater_Defect2>& vecDefect, std::vector<_CKDWater_MatchBox>& vecBox, int iCurIndex, int iDir, int iMaxCol, int iMaxRow, cv::Mat& srcImgGray)
+void CAlgo_KDWater2::_GetDefect_Neib(std::vector<_TKDWater_Defect2>& vecDefect, std::vector<_CKDWater_MatchBox>& vecBox, int iCurIndex, int iDir, int iMaxCol, int iMaxRow, cv::Mat& srcImgGray)
 {
 	int iTotal = vecBox.size();
 	if (iTotal <= 0)
@@ -781,19 +781,38 @@ void CAlgo_KDWater2::_GetDefect_Neib2(std::vector<_TKDWater_Defect2>& vecDefect,
 	std::vector<cv::Mat> img_batch;
 	img_color(curRect).copyTo(imgBoxColor);
 	std::vector<std::vector<std::vector<cv::Point>>> contours;
-	cv::imwrite("imgBoxColor.jpg", imgBoxColor);
+	//cv::imwrite("imgBoxColor.jpg", imgBoxColor);
 	std::vector<std::vector<Detection>> res_batch;
 	auto& res = yoloseg->Predict(imgBoxColor, res_batch, contours);
 	cv::Mat img = imgBoxColor;
 	for (size_t j = 0; j < res.size(); j++) {
+		// 
 		_TKDWater_Defect2 defect;
 
 		defect.iMeanVal = res[j].conf*100;
 
 		defect.rtRect = get_rect(img, res[j].bbox);
+		// 判断边缘 去除
+		if (defect.rtRect.x > 238 || defect.rtRect.y > 238 || 
+			defect.rtRect.x + defect.rtRect.width < 10 ||
+			defect.rtRect.y + defect.rtRect.height < 10) {
+			continue;
+		}
+		// 去除0_3角上的
+		if ((0 == iCurRow && 3 == iCurCol)|| (3 == iCurRow && 0 == iCurCol) || (0 == iCurRow && 4 == iCurCol) || (4 == iCurRow && 0 == iCurCol))
+		{
+			if (!(
+				((defect.rtRect.y + defect.rtRect.height / 2 > 35)&&(defect.rtRect.y + defect.rtRect.height / 2 < 213)) ||
+				((defect.rtRect.y + defect.rtRect.height / 2 > 35) && (defect.rtRect.y + defect.rtRect.height / 2 < 213))
+				)) {
+				continue;
+			}
+		}
 		defect.iArea = defect.rtRect.area();
 		defect.rtRect.x += curRect.x;
 		defect.rtRect.y += curRect.y;
+		defect.p0.x = curRect.x;
+		defect.p0.y = curRect.y;
 		defect.contour = contours[j];
 		vecDefect.push_back(defect);
 	}
@@ -922,7 +941,7 @@ void CAlgo_KDWater2::_GetDefect_Neib2(std::vector<_TKDWater_Defect2>& vecDefect,
 
 }
 
-void CAlgo_KDWater2::_GetDefect_Neib(std::vector<_TKDWater_Defect2>& vecDefect, std::vector<_CKDWater_MatchBox>& vecBox, int iCurIndex, int iDir, int iMaxCol, int iMaxRow, cv::Mat& srcImgGray)
+void CAlgo_KDWater2::_GetDefect_Neib2(std::vector<_TKDWater_Defect2>& vecDefect, std::vector<_CKDWater_MatchBox>& vecBox, int iCurIndex, int iDir, int iMaxCol, int iMaxRow, cv::Mat& srcImgGray)
 {
 	int iTotal = vecBox.size();
 	if (iTotal <= 0)
@@ -1737,7 +1756,7 @@ bool CAlgo_KDWater2::_GetMaxMatch( _CKDWater_MatchBox& outBox, cv::Mat& roiImg, 
 	cv::minMaxIdx(result, NULL, &dMax);
 
 	int iVal = dMax;
-	if (iVal < 150)
+	if (iVal < 180)
 	{
 		return false;
 	}

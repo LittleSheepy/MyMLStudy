@@ -95,7 +95,10 @@ def plot_images_and_masks(images, targets, masks, paths=None, fname='images.jpg'
                     image_masks = np.repeat(image_masks, nl, axis=0)
                     image_masks = np.where(image_masks == index, 1.0, 0.0)
                 else:
-                    image_masks = masks[idx]
+                    try:
+                        image_masks = masks[idx]
+                    except Exception:
+                        pass
 
                 im = np.asarray(annotator.im).copy()
                 for j, box in enumerate(boxes.T.tolist()):

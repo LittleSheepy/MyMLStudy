@@ -200,6 +200,7 @@ public:
 		m_tParam.iThresd_MaxMeanValue = 70;  // 水渍区域平均亮度最大值
 		m_tParam.iThresd_PixelValue_Water = 90; // 水渍像素值
 		yoloseg = createYoloSegInstance();
+		yoloseg->SetEngineName(engine_name);
 		yoloseg->Init();
 
 	}
@@ -318,7 +319,8 @@ private:
 
 	IYoloSeg* yoloseg = NULL;
 	std::string wts_name = "";
-	std::string engine_name = "yolov5_7.0_LG.engine";
+	//std::string engine_name = "yolov5_7.0_LG_NMSZ.engine";
+	std::string engine_name = "seg_best_nmjqjps.engine";
 	bool is_p6 = false;
 	float gd = 0.33f, gw = 0.50f;
 	std::string img_dir = "./images";

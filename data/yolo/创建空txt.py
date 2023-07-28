@@ -12,9 +12,9 @@ import json
 #3、将
 
 def creatTxt():
-    root_dir = r"D:\05xxNMSZ\05xx\/"
-    img_dir = root_dir + "/img/"
-    txt_dir = root_dir + "/txt/"
+    root_dir = r"E:\0ProjectData\0LG_CB_DATA\1AIDI_TrainData\0LG_label_name\BM\DM_LBPS\/"
+    img_dir = root_dir + "/img_ok/"
+    txt_dir = root_dir + "/txt_ok/"
     if not os.path.exists(txt_dir):
         os.mkdir(txt_dir)
     for imgfile in os.listdir(img_dir):

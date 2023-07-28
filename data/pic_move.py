@@ -22,9 +22,9 @@ def move1():
         #     shutil.copyfile(img_dir + imgfile, nobiaozhu + imgfile)
 
 def moveByLabel():
-    root_dir = r"D:\05xxNMSZ\SZ_NG_32\/"
-    img_dir = root_dir + r"img/"
-    biaozhu = root_dir + "img3/"
+    root_dir = r"E:\0ProjectData\0LG_CB_DATA\1AIDI_TrainData\0LG_label_name\BM\DM_LBPS\/"
+    img_dir = root_dir + r"imgall/"
+    biaozhu = root_dir + "img/"
     nobiaozhu = "D:/01sheepy/01work/01baojie_ocr/pp/img_nobiaozhu/"
     xml_dir = root_dir + "/txt/"
     for xmlfile in os.listdir(xml_dir):
