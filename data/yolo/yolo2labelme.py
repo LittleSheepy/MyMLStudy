@@ -12,6 +12,7 @@ def parse_tta_label(txt_path, img_dir, save_dir):
     img_path = os.path.join(img_dir, file_name + ".jpg")
     img = cv2.imread(img_path)
     h, w = img.shape[:2]
+    # h, w = 2048, 2448
 
     with open(img_path, 'rb') as f:
         image = f.read()
@@ -46,8 +47,9 @@ def parse_tta_label(txt_path, img_dir, save_dir):
 
         shape_type = "polygon"
         shape = {}
-
-        shape.__setitem__("label", "BMJQJPS")
+        names = ["ZSKPS","JY"]
+        shape.__setitem__("label", "NMLBPS")
+        #shape.__setitem__("label", names[int(class_name)])
         shape.__setitem__("points", points)
         shape.__setitem__("shape_type", shape_type)
         shape.__setitem__("flags", {})
@@ -74,7 +76,7 @@ def generate_labelme_prelabel(txt_dir, img_dir, save_dir):
 
 
 if __name__ == '__main__':
-    root_dir = r"E:\0ProjectData\0LG_CB_DATA\1AIDI_TrainData\0LG_label_name\BM\16BM_JQJPS_name1\/"
+    root_dir = r"D:\05xxnmlbps\0811test\/"
     txt_dir = root_dir + "txt/"
     save_dir = root_dir + "json/"
 

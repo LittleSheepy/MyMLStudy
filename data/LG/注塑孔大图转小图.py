@@ -28,7 +28,7 @@ def dir_dm2_2little():
 
 
 if __name__ == '__main__':
-    dir_root = "./"
+    dir_root = r"E:\0ProjectData\0LG_CB_DATA\0ByDate\07272829\/"
     dir_dm2 = dir_root + "DM2/"
     dir_dm2_little = dir_root + "DM2_little/"
 
