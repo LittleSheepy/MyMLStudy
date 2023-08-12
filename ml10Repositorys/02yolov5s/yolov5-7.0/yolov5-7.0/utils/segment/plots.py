@@ -98,6 +98,7 @@ def plot_images_and_masks(images, targets, masks, paths=None, fname='images.jpg'
                     try:
                         image_masks = masks[idx]
                     except Exception:
+                        return
                         pass
 
                 im = np.asarray(annotator.im).copy()

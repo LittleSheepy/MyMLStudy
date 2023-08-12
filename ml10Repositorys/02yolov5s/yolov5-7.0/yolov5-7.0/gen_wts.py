@@ -57,8 +57,8 @@ def generate_wts(pt_file, wts_file, m_type = "cls"):
 
 
 if __name__ == '__main__':
-    root_dir = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_cmewm5\weights\/"
+    root_dir = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_nmlbps\weights\/"
     pt_path = root_dir + "best.pt"
-    wts_path = root_dir + "seg_best_cmewm.wts"
+    wts_path = root_dir + "seg_best_nmzlbps.wts"
     pt_file, wts_file, m_type = parse_args()
     generate_wts(pt_file, wts_file, m_type)
