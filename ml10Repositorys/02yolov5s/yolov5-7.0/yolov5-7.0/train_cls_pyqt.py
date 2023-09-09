@@ -258,7 +258,7 @@ class MyWindow(QWidget):
         self.label_saveto.setText("    ")
         # self.label_saveto.setAlignment(Qt.AlignLeft)
         self.button_gen_wts = QPushButton('pt转wts')
-        self.button_gen_engine = QPushButton('wts转engine')
+        self.button_gen_engine = QPushButton('wts转kdseg')
         self.layout_saveto.addWidget(label1)
         self.layout_saveto.addWidget(self.label_saveto)
         self.layout_saveto.addWidget(self.button_gen_wts)
