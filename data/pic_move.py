@@ -24,11 +24,10 @@ def move1():
         #     shutil.copyfile(img_dir + imgfile, nobiaozhu + imgfile)
 
 def moveByLabel():
-    root_dir = r"D:\05xxDMLBPS\07xxx\/"
-    img_dir = root_dir + r"img_ok/"
-    biaozhu = root_dir + "img/"
-    nobiaozhu = "D:/01sheepy/01work/01baojie_ocr/pp/img_nobiaozhu/"
-    xml_dir = root_dir + "/txt/"
+    root_dir = r"D:\02dataset\01work\07NM_WR\YOLO_NM_WR_0828\/"
+    img_dir = root_dir + r"img_OK/"
+    biaozhu = root_dir + "img_NG/"
+    xml_dir = root_dir + "/txt_NG/"
     if not os.path.exists(biaozhu):
         os.mkdir(biaozhu)
     for xmlfile in os.listdir(xml_dir):
