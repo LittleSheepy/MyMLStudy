@@ -45,6 +45,9 @@
     <ClInclude Include="yolov5\include\types.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="yolov5\include\IYoloSeg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestDlgDlg.cpp">

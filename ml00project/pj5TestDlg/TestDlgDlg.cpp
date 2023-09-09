@@ -809,6 +809,9 @@ void CheckWater_Common( std::string filePath, std::string strResult, int iDir )
 }
 
 
+void CheckWater_1_2(void);
+void CheckWater_2_1(void);
+void CheckWater_2_2(void);
 
 //std::string g_strPath = "D:\\LGCBTray\\Test_Image\\NM\\";
 //std::string g_strPath = "D:\\LGCBTray\\Test_Image\\NM\\0606\\";
@@ -824,6 +827,10 @@ void CheckWater_1_1( void )
 	//BMP2JPG(filePath, strResult);
 
 	g_pMainDlg->GetDlgItem(IDC_BUTTON1)->EnableWindow(TRUE);
+
+	CheckWater_1_2();
+	CheckWater_2_1();
+	CheckWater_2_2();
 }
 
 
@@ -835,7 +842,6 @@ void CTestDlgDlg::OnBnClickedButton1()
 	std::thread th(CheckWater_1_1);
 	th.detach();
 }
-
 
 void CheckWater_1_2(void)
 {

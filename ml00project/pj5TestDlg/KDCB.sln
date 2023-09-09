@@ -4,23 +4,52 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.32630.195
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestDlg", "TestDlg.vcxproj", "{9A39BFBC-3D47-4F46-BD97-135697EEB11A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2} = {EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "yolov5_7_0", "..\..\..\00GitHub\00myGitHub\tensorrtx_my\tensorrtx_my\yolov5_7.0_class\build\yolov5_7_0.vcxproj", "{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		MinSizeRel|x64 = MinSizeRel|x64
+		MinSizeRel|x86 = MinSizeRel|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
+		RelWithDebInfo|x64 = RelWithDebInfo|x64
+		RelWithDebInfo|x86 = RelWithDebInfo|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.Debug|x64.ActiveCfg = Debug|x64
 		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.Debug|x64.Build.0 = Debug|x64
 		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.Debug|x86.ActiveCfg = Debug|Win32
 		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.Debug|x86.Build.0 = Debug|Win32
+		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.MinSizeRel|x64.ActiveCfg = Release|x64
+		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.MinSizeRel|x64.Build.0 = Release|x64
+		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.MinSizeRel|x86.ActiveCfg = Release|Win32
+		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.MinSizeRel|x86.Build.0 = Release|Win32
 		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.Release|x64.ActiveCfg = Release|x64
 		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.Release|x64.Build.0 = Release|x64
 		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.Release|x86.ActiveCfg = Release|Win32
 		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.Release|x86.Build.0 = Release|Win32
+		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.RelWithDebInfo|x64.ActiveCfg = Release|x64
+		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.RelWithDebInfo|x64.Build.0 = Release|x64
+		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.RelWithDebInfo|x86.ActiveCfg = Release|Win32
+		{9A39BFBC-3D47-4F46-BD97-135697EEB11A}.RelWithDebInfo|x86.Build.0 = Release|Win32
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.Debug|x64.ActiveCfg = Debug|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.Debug|x64.Build.0 = Debug|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.Debug|x86.ActiveCfg = Debug|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.MinSizeRel|x64.ActiveCfg = MinSizeRel|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.MinSizeRel|x86.ActiveCfg = MinSizeRel|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.Release|x64.ActiveCfg = Release|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.Release|x64.Build.0 = Release|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.Release|x86.ActiveCfg = Release|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
+		{EA5FEEE6-46D4-3E5D-8D1D-7A2A3BD0F8A2}.RelWithDebInfo|x86.ActiveCfg = RelWithDebInfo|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
