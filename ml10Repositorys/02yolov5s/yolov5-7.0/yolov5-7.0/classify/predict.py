@@ -104,6 +104,9 @@ def run(
     # Run inference
     model.warmup(imgsz=(1 if pt else bs, 3, *imgsz))  # warmup
     seen, windows, dt = 0, [], (Profile(), Profile(), Profile())
+    csv_name = os.path.join(save_dir, "0result.csv")
+    csv_file = open(csv_name, "w")
+    csv_file.write("name, 0, 1\n")
     for path, im, im0s, vid_cap, s in dataset:
         with dt[0]:
             im = torch.Tensor(im).to(model.device)
@@ -139,6 +142,11 @@ def run(
             top5i = prob.argsort(0, descending=True)[:5].tolist()  # top 5 indices
             s += f"{', '.join(f'{names[j]} {prob[j]:.2f}' for j in top5i)}, "
 
+            # save scv
+            line = p.name
+            line_prob = ",".join(f'{j:.2f}' for j in prob)
+            line = line + "," + line_prob + "\n"
+            csv_file.write(line)
             # Write results
             text = '\n'.join(f'{prob[j]:.2f} {names[j]}' for j in top5i)
             if save_img or view_img:  # Add bbox to image
@@ -178,7 +186,7 @@ def run(
 
         # Print time (inference-only)
         LOGGER.info(f"{s}{dt[1].dt * 1E3:.1f}ms")
-
+    csv_file.close()
     # Print results
     t = tuple(x.t / seen * 1E3 for x in dt)  # speeds per image
     LOGGER.info(f'Speed: %.1fms pre-process, %.1fms inference, %.1fms NMS per image at shape {(1, 3, *imgsz)}' % t)
@@ -191,8 +199,12 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'yolov5s-cls.pt', help='model path(s)')
-    parser.add_argument('--source', type=str, default=ROOT / 'data/images', help='file/dir/URL/glob/screen/0(webcam)')
+    weights_path = r"D:\00myGitHub\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\runs\train-cls\exp\weights\\best.pt"
+    source_path = r"D:\02dataset\01work\06淮河科技瑕疵分类\瑕疵小图-AI训练用\NG\NG小图\脏污\/"
+    # source_path = r"D:\02dataset\01work\06淮河科技瑕疵分类\NG\NG小图\脏污\/"
+
+    parser.add_argument('--weights', nargs='+', type=str, default=weights_path, help='model path(s)')
+    parser.add_argument('--source', type=str, default=source_path, help='file/dir/URL/glob/screen/0(webcam)')
     parser.add_argument('--data', type=str, default=ROOT / 'data/coco128.yaml', help='(optional) dataset.yaml path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[224], help='inference size h,w')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
@@ -203,7 +215,7 @@ def parse_opt():
     parser.add_argument('--visualize', action='store_true', help='visualize features')
     parser.add_argument('--update', action='store_true', help='update all models')
     parser.add_argument('--project', default=ROOT / 'runs/predict-cls', help='save results to project/name')
-    parser.add_argument('--name', default='exp', help='save results to project/name')
+    parser.add_argument('--name', default='exp_zw', help='save results to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--half', action='store_true', help='use FP16 half-precision inference')
     parser.add_argument('--dnn', action='store_true', help='use OpenCV DNN for ONNX inference')
