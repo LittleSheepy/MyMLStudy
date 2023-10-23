@@ -320,7 +320,7 @@ private:
 	IYoloSeg* yoloseg = NULL;
 	std::string wts_name = "";
 	//std::string engine_name = "yolov5_7.0_LG_NMSZ.engine";
-	std::string engine_name = "seg_best_nmjqjps.engine";
+	std::string engine_name = "seg_best_nmsz.engine";
 	bool is_p6 = false;
 	float gd = 0.33f, gw = 0.50f;
 	std::string img_dir = "./images";

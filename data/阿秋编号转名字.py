@@ -92,16 +92,16 @@ def aq2name_bynum2():
     for filename in os.listdir(dir_biaozhu):
         # if filename[-4:] == "json":
         #     continue
-        filename_storage_save = "aidi16" + "_" + filename
+        filename_storage_save = "aidi10" + "_" + filename
         filename_source_full = os.path.join(dir_biaozhu, filename)
         filename_storage_save_full = os.path.join(dir_name, filename_storage_save)
         shutil.move(filename_source_full, filename_storage_save_full)
 
 if __name__ == '__main__':
-    root_dir = r"E:\0ProjectData\0LG_CB_DATA\1AIDI_TrainData\0LG_label_name\BM\/"
+    root_dir = r"D:\img_szk\/"
     root_db = r"H:\15project\02kd\03LG\AIDI\所有模型\/"
-    dir_biaozhu = root_dir + "16BM_JQJPS/"
-    dir_name = root_dir + "16BM_JQJPS_name/"
+    dir_biaozhu = root_dir + "json/"
+    dir_name = root_dir + "json/"
     dirlist = ["8-反面黑色加强筋破损"]
     aq2name_bynum2()
 

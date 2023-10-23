@@ -350,7 +350,7 @@ cv::Point CPostProcessor::findWhiteAreaByTemplate(const cv::Mat& img_bgr) {
 }
 void CPostProcessor::setOffSet(cv::Mat img_bgr, int camera_num) {
     char buf[128];
-    sprintf_s(buf, "<<<<setOffSet>>> setOffSet enter>>>>>>>>>>>>>>camera_num=%d", camera_num);
+    sprintf_s(buf, "<<<<setOffSet>>> setOffSet enter>>>>>>>>>>>>>>camera_num=%d\n", camera_num);
     OutputDebugStringA(buf);
     // 0506之前右边线
     //if (camera_num == 0) {

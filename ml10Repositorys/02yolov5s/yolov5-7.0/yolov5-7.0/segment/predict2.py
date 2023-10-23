@@ -94,8 +94,9 @@ def run(
     # Directories
     save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
     (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
-    (save_dir / 'img' if save_img else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
-    (save_dir / 'img_src' if save_img else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
+    (save_dir / 'img_result' if save_img else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
+    (save_dir / 'imgNG' if save_img else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
+    (save_dir / 'imgOK' if save_img else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
 
     # Load model
     device = select_device(device)
@@ -149,8 +150,9 @@ def run(
 
             p = Path(p)  # to Path
             save_path = str(save_dir / p.name)  # im.jpg
-            save_path = str(save_dir / 'img' / p.name)  # im.jpg
-            save_src_path = str(save_dir / 'img_src' / p.name)  # im.jpg
+            save_path = str(save_dir / 'img_result' / p.name)  # im.jpg
+            save_src_path = str(save_dir / 'imgNG' / p.name)  # im.jpg
+            saveOK_path = str(save_dir / 'imgOK' / p.name)  # im.jpg
             txt_path = str(save_dir / 'labels' / p.stem) + ('' if dataset.mode == 'image' else f'_{frame}')  # im.txt
             s += '%gx%g ' % im.shape[2:]  # print string
             imc = im0.copy() if save_crop else im0  # for save_crop
@@ -209,6 +211,9 @@ def run(
                         img = cv2.hconcat([im0, im_src])
                         cv2.imwrite(save_path, img)
                         cv2.imwrite(save_src_path, im_src)
+                    else:
+                        cv2.imwrite(saveOK_path, im_src)
+                        pass
                 else:  # 'video' or 'stream'
                     if vid_path[i] != save_path:  # new video
                         vid_path[i] = save_path
@@ -239,17 +244,24 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_nmlbps\weights\best.pt"
+    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg1\exp_cmps10\weights\\best.pt" # cmps
+    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_nmnic1024_4\weights\best.pt"         # 02 nmnic
+    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_nmjqjps1024_5\weights\\best.pt"      # 03 nmjqjps
+    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_nmsz1024_\weights\\best.pt"          # 06 nmsz
+    pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_nmwr17\weights\\best.pt"              # 07 nmwr
+    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg1\exp_nmjy2\weights\\best.pt"              # 07 nmjy
+    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_cmps13\weights\\best.pt"             # 12 cmps
+    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg1\exp_cmjy_NGOK\weights\\best.pt"
 
     #img_dir = r"E:\0ProjectData\0LG_CB_DATA\0ByDate\0518\DMJPG\/"
-    img_dir = r"E:\0ProjectData\0LG_CB_DATA\5pk\images\FrontAll\/"
+    img_dir = r"D:\02dataset\01work\07NM_WR\YOLO_NM_WR_0828\img_NG\/"
     #img_dir = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\predict-seg\exp_dmsyj4\img_src\/"
     #parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'yolov5s-seg.pt', help='model path(s)')
     parser.add_argument('--weights', nargs='+', type=str, default=pt_file, help='model path(s)')
     parser.add_argument('--source', type=str, default=img_dir, help='file/dir/URL/glob/screen/0(webcam)')
     parser.add_argument('--data', type=str, default=ROOT / 'data/coco128.yaml', help='(optional) dataset.yaml path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[1024], help='inference size h,w')
-    parser.add_argument('--conf-thres', type=float, default=0.1, help='confidence threshold')
+    parser.add_argument('--conf-thres', type=float, default=0.3, help='confidence threshold')
     parser.add_argument('--iou-thres', type=float, default=0.45, help='NMS IoU threshold')
     parser.add_argument('--max-det', type=int, default=100, help='maximum detections per image')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
@@ -264,7 +276,7 @@ def parse_opt():
     parser.add_argument('--visualize', action='store_true', help='visualize features')
     parser.add_argument('--update', action='store_true', help='update all models')
     parser.add_argument('--project', default=ROOT / 'runs/predict-seg', help='save results to project/name')
-    parser.add_argument('--name', default='exp_nmlbps', help='save results to project/name')
+    parser.add_argument('--name', default='exp_nmwr1024', help='save results to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--line-thickness', default=1, type=int, help='bounding box thickness (pixels)')
     parser.add_argument('--hide-labels', default=True, action='store_true', help='hide labels')

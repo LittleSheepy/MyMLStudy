@@ -732,6 +732,9 @@ void CAlgo_KDWater2::_GetDefect_Neib(std::vector<_TKDWater_Defect2>& vecDefect, 
 	_CKDWater_MatchBox& curBox = vecBox[iCurIndex];
 	int iCurRow = curBox.m_iRow;
 	int iCurCol = curBox.m_iCol;
+	if (5 == iCurRow) {
+		int q = 1;
+	}
 
 	cv::Mat imgCur = vecBox[iCurIndex].imgMatch;
 	cv::Mat imgBoxFull = vecBox[iCurIndex].imgBoxFull;
@@ -781,7 +784,10 @@ void CAlgo_KDWater2::_GetDefect_Neib(std::vector<_TKDWater_Defect2>& vecDefect, 
 	std::vector<cv::Mat> img_batch;
 	img_color(curRect).copyTo(imgBoxColor);
 	std::vector<std::vector<std::vector<cv::Point>>> contours;
-	//cv::imwrite("imgBoxColor.jpg", imgBoxColor);
+	cv::imwrite("imgBoxColor.jpg", imgBoxColor);
+	char buf[128];
+	sprintf_s(buf, "_GetDefect_Neib \n");
+	OutputDebugStringA(buf);
 	std::vector<std::vector<Detection>> res_batch;
 	auto& res = yoloseg->Predict(imgBoxColor, res_batch, contours);
 	cv::Mat img = imgBoxColor;

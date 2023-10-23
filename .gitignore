@@ -59,3 +59,9 @@ ant-learn-python-concurrent-old
 *.wts
 ml10Repositorys/02yolov5s/yolov5-7.0/runs/
 ml00project/pj5TestDlg/x64/
+data/build/
+data/dist/
+data/LG/build/
+data/LG/dist/
+data/yolo/build/
+ml00project/pj5TestDlg_bake.zip

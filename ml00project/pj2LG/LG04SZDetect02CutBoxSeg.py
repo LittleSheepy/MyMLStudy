@@ -768,6 +768,9 @@ def cutBox(i_dir=0):
         imgColor = cv2.imread(img_path)
         imgColor_xy = cv2.imread(img_path)
         img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+        if img is None:
+            print("   ", imgfile)
+            continue
         h, w = img.shape
         vecDefect = []
         result, vecDefect = algo.FindDefect(vecDefect, img, i_dir)
@@ -796,6 +799,9 @@ def cutBox(i_dir=0):
             bEnterFlg = False
 
             for contour in contours:
+                area = cv2.contourArea(contour)
+                if area < 200:
+                    continue
                 line = "0"
                 if bEnterFlg:
                     line = "\n0"
@@ -828,19 +834,19 @@ def RuncutBox():
     txt_save = dir_root + r"txt_save1_2/"
     creatDir(img_save)
     creatDir(txt_save)
-    #cutBox(1)
+    cutBox(1)
     img_src = dir_root + r"2_1/"
     img_save = dir_root + r"img_save2_1/"
     txt_save = dir_root + r"txt_save2_1/"
     creatDir(img_save)
     creatDir(txt_save)
-    #cutBox(2)
+    cutBox(2)
     img_src = dir_root + r"2_2/"
     img_save = dir_root + r"img_save2_2/"
     txt_save = dir_root + r"txt_save2_2/"
     creatDir(img_save)
     creatDir(txt_save)
-    #cutBox(3)
+    cutBox(3)
 
 
 if __name__ == '__main__':
@@ -849,19 +855,36 @@ if __name__ == '__main__':
     # dir_root = r"F:\15project\02kd\03LG\03trainData\00imgAll\SZ_NG_32/"
     # dir_root = r"D:\0\0LG_DATA\SZ_NG_8\/"
     # 笔记本
-    dir_root = r"I:\0LG_label_name\nmjqjps\/"       #根目录
+    dir_root = r"D:\05xxNMSZ\noadd\right_0728\/"       #根目录
     img_src = dir_root + r"1_1/"
     # 创建以下文件夹 手动
     txt_src = dir_root + r"txt/"
     img_save = dir_root + r"img_save/"
     img_save_xy = dir_root + r"img_save_xy/"
     txt_save = dir_root + r"txt_save/"
-    #RuncutBox()
     # txt2Mask(r"I:\0LG_label_name\jy\txt\NM1_2-2-2.txt", 2448, 2048)
 
     img_src = dir_root + r"1_1/"
-    img_save = dir_root + r"img_save1_1/"
-    txt_save = dir_root + r"txt_save1_1/"
+    # img_save = dir_root + r"img_save1_1/"
+    # txt_save = dir_root + r"txt_save1_1/"
     creatDir(img_save)
     creatDir(txt_save)
     cutBox(0)
+    img_src = dir_root + r"1_2/"
+    # img_save = dir_root + r"img_save1_2/"
+    # txt_save = dir_root + r"txt_save1_2/"
+    creatDir(img_save)
+    creatDir(txt_save)
+    cutBox(1)
+    img_src = dir_root + r"2_1/"
+    # img_save = dir_root + r"img_save2_1/"
+    # txt_save = dir_root + r"txt_save2_1/"
+    creatDir(img_save)
+    creatDir(txt_save)
+    cutBox(2)
+    img_src = dir_root + r"2_2/"
+    # img_save = dir_root + r"img_save2_2/"
+    # txt_save = dir_root + r"txt_save2_2/"
+    creatDir(img_save)
+    creatDir(txt_save)
+    cutBox(3)
