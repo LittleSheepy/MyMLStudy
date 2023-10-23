@@ -8,15 +8,11 @@
 
 
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
-path: D:\02dataset\01work\05NM_JY\YOLO_NM_JY_0713\  # dataset root dir
+path: D:\02dataset\01work\13CM_EWMPS\YOLO_CM_EWMPS_0727\  # dataset root dir
 train: images/train  # train images (relative to 'path') 128 images
-val: images/train  # val images (relative to 'path') 128 images
+val: images/val  # val images (relative to 'path') 128 images
 test:  # test images (optional)
 
 # Classes
 names:
-  0: cmjy
-
-
-# Download script/URL (optional)
-download:
+  0: EWMPS
