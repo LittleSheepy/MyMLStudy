@@ -24,16 +24,26 @@ def move1():
         #     shutil.copyfile(img_dir + imgfile, nobiaozhu + imgfile)
 
 def moveByLabel():
-    root_dir = r"D:\02dataset\01work\07NM_WR\YOLO_NM_WR_0828\/"
-    img_dir = root_dir + r"img_OK/"
-    biaozhu = root_dir + "img_NG/"
-    xml_dir = root_dir + "/txt_NG/"
-    if not os.path.exists(biaozhu):
-        os.mkdir(biaozhu)
+    root_dir = r"D:\02dataset\06淮河科技瑕疵分类\NG小图/"
+    img_dir = root_dir + r"/got - 副本/"
+    biaozhu = root_dir + "/重复/"
+    xml_dir = root_dir + "/got/"
+    # if not os.path.exists(biaozhu):
+    #     os.mkdir(biaozhu)
     for xmlfile in os.listdir(xml_dir):
-        imgfile = xmlfile[:-4] + ".jpg"
+        imgfile = xmlfile[:-5] + ".jpeg"
         if os.path.exists(img_dir + imgfile):
-            shutil.move(img_dir + imgfile, biaozhu + imgfile)
+            # shutil.move(img_dir + imgfile, biaozhu + imgfile)
+            os.remove(img_dir + imgfile)
+            #shutil.copyfile(img_dir + imgfile, biaozhu + imgfile)
+            print("have ", imgfile)
+        else:
+            pass
+            # print(imgfile)
+        imgfile = xmlfile[:-4] + ".bmp"
+        if os.path.exists(img_dir + imgfile):
+            # shutil.move(img_dir + imgfile, biaozhu + imgfile)
+            os.remove(img_dir + imgfile)
             #shutil.copyfile(img_dir + imgfile, biaozhu + imgfile)
             print("have ", imgfile)
         else:

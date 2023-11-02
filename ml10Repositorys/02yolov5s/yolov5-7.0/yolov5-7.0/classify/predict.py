@@ -106,7 +106,7 @@ def run(
     seen, windows, dt = 0, [], (Profile(), Profile(), Profile())
     csv_name = os.path.join(save_dir, "0result.csv")
     csv_file = open(csv_name, "w")
-    csv_file.write("name, 0, 1\n")
+    csv_file.write("name, 0,1,10,11,2,3,4,5,6,7,8,9\n")
     for path, im, im0s, vid_cap, s in dataset:
         with dt[0]:
             im = torch.Tensor(im).to(model.device)
@@ -199,8 +199,9 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    weights_path = r"D:\00myGitHub\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\runs\train-cls\exp\weights\\best.pt"
-    source_path = r"D:\02dataset\01work\06淮河科技瑕疵分类\瑕疵小图-AI训练用\NG\NG小图\脏污\/"
+    weights_path = ROOT / r"runs\train-cls\HHKJ12_\202311021358_all100\\weights\\best.pt"
+    # source_path = r"D:\02dataset\01work\06淮河科技瑕疵分类\瑕疵小图-AI训练用\NG\NG小图\脏污\/"
+    source_path = r"D:\02dataset\06淮河科技瑕疵分类\NG小图\2脏污\2脏污_all/"
     # source_path = r"D:\02dataset\01work\06淮河科技瑕疵分类\NG\NG小图\脏污\/"
 
     parser.add_argument('--weights', nargs='+', type=str, default=weights_path, help='model path(s)')

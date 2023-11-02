@@ -464,7 +464,7 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
     pt_path = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_nmsz3\weights\\last.pt"
-    parser.add_argument('--weights', type=str, default=ROOT / 'yolov5s-seg.pt', help='initial weights path')
+    parser.add_argument('--weights', type=str, default='weights/yolov5s-seg.pt', help='initial weights path')
     #parser.add_argument('--weights', type=str, default=pt_path, help='initial weights path')
     parser.add_argument('--cfg', type=str, default=ROOT / 'models/segment/yolov5s-seg.yaml', help='model.yaml path')
     parser.add_argument('--data', type=str, default=ROOT / 'data/coco128-seg03_nm_jqjps.yaml', help='dataset.yaml path')

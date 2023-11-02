@@ -98,6 +98,8 @@ def run(
 
     model.eval()
     pred, targets, loss, dt = [], [], 0, (Profile(), Profile(), Profile())
+    pred2 = []
+    pred3 = []
     n = len(dataloader)  # number of batches
     action = 'validating' if dataloader.dataset.root.stem == 'val' else 'testing'
     desc = f"{pbar.desc[:-36]}{action:>36}" if pbar else f"{action}"
@@ -112,6 +114,8 @@ def run(
 
             with dt[2]:
                 pred.append(y.argsort(1, descending=True)[:, :5])
+                pred2.append(y.argsort(1, descending=True)[:, :2])
+                pred3.append(y.argsort(1, descending=True)[:, :3])
                 targets.append(labels)
                 if criterion:
                     loss += criterion(y, labels)
@@ -122,15 +126,31 @@ def run(
     acc = torch.stack((correct[:, 0], correct.max(1).values), dim=1)  # (top1, top5) accuracy
     top1, top5 = acc.mean(0).tolist()
 
+    # top2
+    pred2 = torch.cat(pred2)
+    correct2 = (targets[:, None] == pred2).float()
+    acc2 = torch.stack((correct2[:, 0], correct2.max(1).values), dim=1)  # (top1, top5) accuracy
+    _, top2 = acc2.mean(0).tolist()
+
+    # top3
+    pred3 = torch.cat(pred3)
+    correct3 = (targets[:, None] == pred3).float()
+    acc3 = torch.stack((correct3[:, 0], correct3.max(1).values), dim=1)  # (top1, top5) accuracy
+    _, top3 = acc3.mean(0).tolist()
+
     if pbar:
-        pbar.desc = f"{pbar.desc[:-36]}{loss:>12.3g}{top1:>12.3g}{top5:>12.3g}"
+        pbar.desc = f"{pbar.desc[:-36]}{loss:>12.3g}{top1:>12.3g}{top2:>12.3g}{top3:>12.3g}"
     if verbose:  # all classes
-        LOGGER.info(f"{'Class':>24}{'Images':>12}{'top1_acc':>12}{'top5_acc':>12}")
-        LOGGER.info(f"{'all':>24}{targets.shape[0]:>12}{top1:>12.3g}{top5:>12.3g}")
+        LOGGER.info(f"{'Class':>24}{'Images':>12}{'top1_acc':>12}{'top2_acc':>12}{'top3_acc':>12}")
+        LOGGER.info(f"{'all':>24}{targets.shape[0]:>12}{top1:>12.3g}{top2:>12.3g}{top3:>12.3g}")
         for i, c in model.names.items():
             aci = acc[targets == i]
             top1i, top5i = aci.mean(0).tolist()
-            LOGGER.info(f"{c:>24}{aci.shape[0]:>12}{top1i:>12.3g}{top5i:>12.3g}")
+            aci2 = acc2[targets == i]
+            _, top2i = aci2.mean(0).tolist()
+            aci3 = acc3[targets == i]
+            _, top3i = aci3.mean(0).tolist()
+            LOGGER.info(f"{c:>24}{aci.shape[0]:>12}{top1i:>12.3g}{top2i:>12.3g}{top3i:>12.3g}")
 
         # Print results
         t = tuple(x.t / len(dataloader.dataset.samples) * 1E3 for x in dt)  # speeds per image
@@ -138,13 +158,13 @@ def run(
         LOGGER.info(f'Speed: %.1fms pre-process, %.1fms inference, %.1fms post-process per image at shape {shape}' % t)
         LOGGER.info(f"Results saved to {colorstr('bold', save_dir)}")
 
-    return top1, top5, loss
+    return top1, top5, loss, top2, top3
 
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data', type=str, default=ROOT / '../datasets/mnist', help='dataset path')
-    parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'yolov5s-cls.pt', help='model.pt path(s)')
+    parser.add_argument('--data', type=str, default= r'D:\02dataset\06HHKJ\HHKJ1009_train\HHKJ1009', help='dataset path')
+    parser.add_argument('--weights', nargs='+', type=str, default=ROOT / r'..\runs\train-cls\HHKJ10_\202310271045\weights\best.pt', help='model.pt path(s)')
     parser.add_argument('--batch-size', type=int, default=128, help='batch size')
     parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=224, help='inference size (pixels)')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
