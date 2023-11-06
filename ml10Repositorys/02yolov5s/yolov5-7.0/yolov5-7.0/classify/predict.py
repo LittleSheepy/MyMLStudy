@@ -199,9 +199,9 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    weights_path = ROOT / r"runs\train-cls\HHKJ12_\202311021358_all100\\weights\\best.pt"
+    weights_path = ROOT / r"runs\train-cls\HHKJ12_\202311061031_HHKJ1103_3000_50_02\\weights\\best.pt"
     # source_path = r"D:\02dataset\01work\06淮河科技瑕疵分类\瑕疵小图-AI训练用\NG\NG小图\脏污\/"
-    source_path = r"D:\02dataset\06淮河科技瑕疵分类\NG小图\2脏污\2脏污_all/"
+    source_path = r"D:\02dataset\06淮河科技瑕疵分类\NG小图\got/"
     # source_path = r"D:\02dataset\01work\06淮河科技瑕疵分类\NG\NG小图\脏污\/"
 
     parser.add_argument('--weights', nargs='+', type=str, default=weights_path, help='model path(s)')

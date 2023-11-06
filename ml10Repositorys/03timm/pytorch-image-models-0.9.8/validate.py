@@ -56,6 +56,7 @@ parser = argparse.ArgumentParser(description='PyTorch ImageNet Validation')
 parser.add_argument('data', nargs='?', metavar='DIR', const=None,
                     help='path to dataset (*deprecated*, use --data-dir)')
 parser.add_argument('--data-dir', metavar='DIR',
+                    default=r'D:\02dataset\06HHKJ\HHKJ_all1030_train\HHKJ_all1030/',
                     help='path to dataset (root dir)')
 parser.add_argument('--dataset', metavar='NAME', default='',
                     help='dataset type + name ("<type>/<name>") (default: ImageFolder or ImageTar if empty)')
@@ -63,7 +64,8 @@ parser.add_argument('--split', metavar='NAME', default='validation',
                     help='dataset split (default: validation)')
 parser.add_argument('--dataset-download', action='store_true', default=False,
                     help='Allow download of dataset for torch/ and tfds/ datasets that support it.')
-parser.add_argument('--model', '-m', metavar='NAME', default='dpn92',
+parser.add_argument('--model', '-m', metavar='NAME',
+                    default='resnet50',
                     help='model architecture (default: dpn92)')
 parser.add_argument('-j', '--workers', default=4, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')
@@ -75,7 +77,7 @@ parser.add_argument('--in-chans', type=int, default=None, metavar='N',
                     help='Image input channels (default: None => 3)')
 parser.add_argument('--input-size', default=None, nargs=3, type=int,
                     metavar='N N N', help='Input all image dimensions (d h w, e.g. --input-size 3 224 224), uses model default if empty')
-parser.add_argument('--use-train-size', action='store_true', default=False,
+parser.add_argument('--use-train-size', action='store_true', default=True,
                     help='force use of train input size, even when test size is specified in pretrained cfg')
 parser.add_argument('--crop-pct', default=None, type=float,
                     metavar='N', help='Input image center crop pct')
@@ -95,7 +97,8 @@ parser.add_argument('--gp', default=None, type=str, metavar='POOL',
                     help='Global pool type, one of (fast, avg, max, avgmax, avgmaxc). Model default if None.')
 parser.add_argument('--log-freq', default=10, type=int,
                     metavar='N', help='batch logging frequency (default: 10)')
-parser.add_argument('--checkpoint', default='', type=str, metavar='PATH',
+parser.add_argument('--checkpoint', type=str, metavar='PATH',
+                    default=r'F:\sheepy\00GitHub\pytorch-image-models\output\train\20231102-143603-resnet50-224/model_best.pth.tar',
                     help='path to latest checkpoint (default: none)')
 parser.add_argument('--pretrained', dest='pretrained', action='store_true',
                     help='use pre-trained model')

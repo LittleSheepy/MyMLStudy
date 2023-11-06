@@ -278,13 +278,14 @@ def train(opt, device):
 
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
-    data_name = "HHKJ1009"
-
+    data_name = "HHKJ1103_3000"
+    data_path = r"D:\02dataset\06HHKJ\{data_name}_train\{data_name}/".format(data_name=data_name)
+    epochs = 50
     train_name = time.strftime('%Y%m%d%H%M', time.localtime())
+    name = r"{train_name}_{data_name}_{epochs}_01".format(train_name=train_name, data_name=data_name, epochs=epochs)
     parser.add_argument('--model', type=str, default='yolov5s-cls.pt', help='initial weights path')   # yolov5s-cls.pt
-    parser.add_argument('--data', type=str, default=r'D:\02dataset\06HHKJ\HHKJ1009_train\HHKJ1009/', help='cifar10, cifar100, mnist, imagenet, ...')
-    # parser.add_argument('--data', type=str, default=r'D:\02dataset\06HHKJ\HHKJ1025_train\HHKJ1025/', help='cifar10, cifar100, mnist, imagenet, ...')
-    parser.add_argument('--epochs', type=int, default=100, help='total training epochs')
+    parser.add_argument('--data', type=str, default=data_path, help='cifar10, cifar100, mnist, imagenet, ...')
+    parser.add_argument('--epochs', type=int, default=epochs, help='total training epochs')
     parser.add_argument('--batch-size', type=int, default=256, help='total batch size for all GPUs')
     parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=224, help='train, val image size (pixels)')
     parser.add_argument('--nosave', action='store_true', help='only save final checkpoint')
@@ -292,7 +293,7 @@ def parse_opt(known=False):
     parser.add_argument('--device', default='0', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
     parser.add_argument('--workers', type=int, default=2, help='max dataloader workers (per RANK in DDP mode)')
     parser.add_argument('--project', default=ROOT / 'runs/train-cls/HHKJ12_', help='save to project/name')
-    parser.add_argument('--name', default=train_name+"_all100", help='save to project/name')
+    parser.add_argument('--name', default=name, help='save to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--pretrained', nargs='?', const=True, default=True, help='start from i.e. --pretrained False')
     parser.add_argument('--optimizer', choices=['SGD', 'Adam', 'AdamW', 'RMSProp'], default='Adam', help='optimizer')

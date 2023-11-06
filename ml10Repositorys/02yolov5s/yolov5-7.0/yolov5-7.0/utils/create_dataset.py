@@ -16,6 +16,11 @@ def create_dataset(src_dir, tar_dir, class_nums, val_per, test_per):
         dir_src_class = os.path.join(src_dir, str(i))
         #dir_tar_class = os.path.join(data_path_new, str(i))
         listdir = [i for i in os.listdir(dir_src_class)]
+        # 限制最大值
+        if len(listdir) > 3000:
+            listdir, test = train_test_split(listdir, test_size=1-3000/len(listdir), shuffle=True, random_state=0)
+
+
         if listdir == []:
             continue
         if test_per > 0:
@@ -40,7 +45,7 @@ def create_dataset(src_dir, tar_dir, class_nums, val_per, test_per):
 
 
 if __name__ == '__main__':
-    data_name = "HHKJ1009"
+    data_name = "HHKJ1103_3000"
     # data_name = "HHKJ_9_1030"
     # data_name = "HHKJ_all1030"
     root_dir = r"D:\02dataset\06HHKJ/"

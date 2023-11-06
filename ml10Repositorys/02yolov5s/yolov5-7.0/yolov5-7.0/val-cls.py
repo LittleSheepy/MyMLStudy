@@ -163,8 +163,9 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
+    data_path = r'D:\02dataset\06HHKJ\HHKJ1009_train\HHKJ1009\/'
     data_path = r'D:\02dataset\06HHKJ\HHKJ_all1030_train\HHKJ_all1030'
-    weights_path = ROOT / r'runs\train-cls\HHKJ12_\202311021358_all100\\weights\best.pt'
+    weights_path = ROOT / r'runs\train-cls\HHKJ12_\202311061320_HHKJ1103_3000_50_02\\weights\best.pt'
     parser.add_argument('--data', type=str, default=data_path, help='dataset path')
     parser.add_argument('--weights', nargs='+', type=str, default=weights_path, help='model.pt path(s)')
     parser.add_argument('--batch-size', type=int, default=128, help='batch size')
