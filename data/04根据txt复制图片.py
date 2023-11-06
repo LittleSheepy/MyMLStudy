@@ -15,7 +15,7 @@ def txtCopy():
 if __name__ == '__main__':
     dir_root = r"D:\02dataset\06淮河科技瑕疵分类\NG小图\/"
     # dir_root = r"D:\02dataset\06HHKJ\HHKJ1009\/"
-    src_file = dir_root + r"/9涂层脱落\9涂层脱落_确认\0小点/"
+    src_file = dir_root + r"\\9涂层脱落\9涂层脱落零一/"
     dst_file = dir_root + r"/got"
     txt_file = dir_root + r"/got.txt"
     if not os.path.exists(dst_file):
