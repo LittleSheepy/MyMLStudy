@@ -32,7 +32,9 @@ from utils import load_checkpoint, load_pretrained, save_checkpoint, NativeScale
 
 def parse_option():
     parser = argparse.ArgumentParser('Swin Transformer training and evaluation script', add_help=False)
-    parser.add_argument('--cfg', type=str, required=True, metavar="FILE", help='path to config file', )
+    parser.add_argument('--cfg', type=str,
+                        default="configs/swin/swin_tiny_patch4_window7_224_22k.yaml",
+                        metavar="FILE", help='path to config file', )
     parser.add_argument(
         "--opts",
         help="Modify config options by adding 'KEY VALUE' pairs. ",
@@ -50,7 +52,9 @@ def parse_option():
                              'part: sharding the dataset into nonoverlapping pieces and only cache one piece')
     parser.add_argument('--pretrained',
                         help='pretrained weight from checkpoint, could be imagenet22k pretrained weight')
-    parser.add_argument('--resume', help='resume from checkpoint')
+    parser.add_argument('--resume',
+                        default=r"E:\BaiduNetdiskDownload/swin_tiny_patch4_window7_224_22k.pth",
+                        help='resume from checkpoint')
     parser.add_argument('--accumulation-steps', type=int, help="gradient accumulation steps")
     parser.add_argument('--use-checkpoint', action='store_true',
                         help="whether to use gradient checkpointing to save memory")
@@ -64,7 +68,9 @@ def parse_option():
     parser.add_argument('--throughput', action='store_true', help='Test throughput only')
 
     # distributed training
-    parser.add_argument("--local_rank", type=int, required=True, help='local rank for DistributedDataParallel')
+    parser.add_argument("--local_rank", type=int,
+                        default=0,
+                        help='local rank for DistributedDataParallel')
 
     # for acceleration
     parser.add_argument('--fused_window_process', action='store_true',
