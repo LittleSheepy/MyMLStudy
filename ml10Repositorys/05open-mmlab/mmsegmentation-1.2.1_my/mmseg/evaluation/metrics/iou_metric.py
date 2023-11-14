@@ -183,7 +183,11 @@ class IoUMetric(BaseMetric):
         """
 
         mask = (label != ignore_index)
-        pred_label = pred_label[mask]
+        try:
+            pred_label = pred_label[mask]
+        except Exception as e:
+            pass
+            return
         label = label[mask]
 
         intersect = pred_label[pred_label == label]

@@ -49,7 +49,9 @@ class PPM(nn.ModuleList):
         """Forward function."""
         ppm_outs = []
         for ppm in self:
-            ppm_out = ppm(x)
+            ppm_out = x
+            for m in ppm:
+                ppm_out = m(ppm_out)
             upsampled_ppm_out = resize(
                 ppm_out,
                 size=x.size()[2:],

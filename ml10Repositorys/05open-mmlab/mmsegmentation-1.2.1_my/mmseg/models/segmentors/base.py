@@ -91,7 +91,12 @@ class BaseSegmentor(BaseModel, metaclass=ABCMeta):
             - If ``mode="loss"``, return a dict of tensor.
         """
         if mode == 'loss':
-            return self.loss(inputs, data_samples)
+            try:
+                result = self.loss(inputs, data_samples)
+            except:
+                pass
+                result = self.loss(inputs, data_samples)
+            return result
         elif mode == 'predict':
             return self.predict(inputs, data_samples)
         elif mode == 'tensor':
@@ -183,7 +188,6 @@ class BaseSegmentor(BaseModel, metaclass=ABCMeta):
                     warning=False).squeeze(0)
             else:
                 i_seg_logits = seg_logits[i]
-
             if C > 1:
                 i_seg_pred = i_seg_logits.argmax(dim=0, keepdim=True)
             else:
@@ -198,3 +202,4 @@ class BaseSegmentor(BaseModel, metaclass=ABCMeta):
             })
 
         return data_samples
+

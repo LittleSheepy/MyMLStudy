@@ -19,8 +19,10 @@ class ChaseDB1Dataset(BaseSegDataset):
         palette=[[120, 120, 120], [6, 230, 230]])
 
     def __init__(self,
-                 img_suffix='.png',
-                 seg_map_suffix='_1stHO.png',
+                 img_suffix='.jpg',
+                 seg_map_suffix='.png',
+                 # img_suffix='.png',
+                 # seg_map_suffix='_1stHO.png',
                  reduce_zero_label=False,
                  **kwargs) -> None:
         super().__init__(

@@ -9,7 +9,9 @@ from mmseg.apis import init_model
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Print the whole config')
-    parser.add_argument('config', help='config file path')
+    parser.add_argument('--config',
+                        default=r"configs\unet/unet-s5-d16_fcn_4xb4-40k_chase-db1-128x128.py",
+                        help='config file path')
     parser.add_argument(
         '--graph', action='store_true', help='print the models graph')
     parser.add_argument(

@@ -67,3 +67,11 @@ data/yolo/build/
 ml00project/pj5TestDlg_bake.zip
 ml10Repositorys/02yolov5s/yolov5-7.0/yolov5-7.0/runs_liu/
 ml10Repositorys/02yolov5s/yolov5-7.0/yolov5-7.0/runs_pk/
+ml10Repositorys/05open-mmlab/mmsegmentation-1.2.1_my/src/
+ml12mmengine_study/data/
+ml12mmengine_study/runs/
+ml12mmengine_study/work_dir/
+ml12mmengine_study/__pycache__/
+ml10Repositorys/05open-mmlab/mmsegmentation-1.2.1_my/output
+data/MNIST/
+runs/

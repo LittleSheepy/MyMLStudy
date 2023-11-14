@@ -14,9 +14,13 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description='Convert DRIVE dataset to mmsegmentation format')
     parser.add_argument(
-        'training_path', help='the training part of DRIVE dataset')
+        '--training_path',
+        default=r"F:\sheepy\02data\06DRIVE\training.zip",
+        help='the training part of DRIVE dataset')
     parser.add_argument(
-        'testing_path', help='the testing part of DRIVE dataset')
+        '--testing_path',
+        default=r"F:\sheepy\02data\06DRIVE\test.zip",
+        help='the testing part of DRIVE dataset')
     parser.add_argument('--tmp_dir', help='path of the temporary directory')
     parser.add_argument('-o', '--out_dir', help='output path')
     args = parser.parse_args()

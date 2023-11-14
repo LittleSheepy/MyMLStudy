@@ -1,6 +1,7 @@
 # dataset settings
 dataset_type = 'PascalVOCDataset'
-data_root = 'data/VOCdevkit/VOC2012'
+data_root = 'data/VOCdevkit/VOC2022'
+# data_root = r'E:\0ProjectData\AI_PK_pictreue\1_Front_LZPS\voc\/'
 crop_size = (512, 512)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
@@ -40,8 +41,8 @@ tta_pipeline = [
         ])
 ]
 train_dataloader = dict(
-    batch_size=4,
-    num_workers=4,
+    batch_size=2,
+    num_workers=1,
     persistent_workers=True,
     sampler=dict(type='InfiniteSampler', shuffle=True),
     dataset=dict(
@@ -53,7 +54,7 @@ train_dataloader = dict(
         pipeline=train_pipeline))
 val_dataloader = dict(
     batch_size=1,
-    num_workers=4,
+    num_workers=1,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(

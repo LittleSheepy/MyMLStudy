@@ -399,7 +399,7 @@ class UNet(BaseModule):
             self.encoder.append(nn.Sequential(*enc_conv_block))
             in_channels = base_channels * 2**i
 
-    def forward(self, x):
+    def forward(self, x):               # torch.Size([1, 3, 128, 128])
         self._check_input_divisible(x)
         enc_outs = []
         for enc in self.encoder:

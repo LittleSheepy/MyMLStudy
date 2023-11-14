@@ -15,7 +15,9 @@ TRAINING_LEN = 60
 def parse_args():
     parser = argparse.ArgumentParser(
         description='Convert CHASE_DB1 dataset to mmsegmentation format')
-    parser.add_argument('dataset_path', help='path of CHASEDB1.zip')
+    parser.add_argument('--dataset_path',
+                        default=r"F:\sheepy\00MyMLStudy\ml10Repositorys\05open-mmlab\mmsegmentation-1.2.1_my\data\OpenDataLab___CHASE_DB1\raw/CHASEDB1.zip",
+                        help='path of CHASEDB1.zip')
     parser.add_argument('--tmp_dir', help='path of the temporary directory')
     parser.add_argument('-o', '--out_dir', help='output path')
     args = parser.parse_args()

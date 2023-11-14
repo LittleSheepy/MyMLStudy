@@ -116,7 +116,7 @@ class EncoderDecoder(BaseSegmentor):
 
     def extract_feat(self, inputs: Tensor) -> List[Tensor]:
         """Extract features from images."""
-        x = self.backbone(inputs)
+        x = self.backbone(inputs)       # (chinal size)(torch.Size([2, 256, 128, 128]), 512 64, 1024 64, 2048 64)
         if self.with_neck:
             x = self.neck(x)
         return x

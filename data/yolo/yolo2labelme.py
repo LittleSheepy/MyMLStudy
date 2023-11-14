@@ -48,7 +48,7 @@ def parse_tta_label(txt_path, img_dir, save_dir):
         shape_type = "polygon"
         shape = {}
         names = ["ZSKPS","JY"]
-        shape.__setitem__("label", "NMSZ")
+        shape.__setitem__("label", "LZPS")
         #shape.__setitem__("label", names[int(class_name)])
         shape.__setitem__("points", points)
         shape.__setitem__("shape_type", shape_type)
@@ -76,7 +76,7 @@ def generate_labelme_prelabel(txt_dir, img_dir, save_dir):
 
 
 if __name__ == '__main__':
-    root_dir = r"E:\0ProjectData\0LG_CB_DATA\2labelData\06NMSZ\02big\07xx\/"
+    root_dir = r"E:\0ProjectData\0LG_CB_DATA\2labelData\01NM_LZPS\1all\/"
     txt_dir = root_dir + "txt/"
     save_dir = root_dir + "json/"
 

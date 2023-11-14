@@ -10,3 +10,4 @@ def inference():
 if __name__ == '__main__':
     print("")
     print(mmseg.__version__)
+    inference()

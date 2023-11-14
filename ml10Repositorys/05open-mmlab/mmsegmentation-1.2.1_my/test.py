@@ -11,21 +11,27 @@ from mmengine.runner import Runner
 def parse_args():
     parser = argparse.ArgumentParser(
         description='MMSeg test (and eval) a model')
-    parser.add_argument('config',
+    parser.add_argument('--config',
+                        default=r"configs\deeplabv3plus/deeplabv3plus_r50-d8_4xb4-20k_voc12aug-512x512.py",
                         help='train config file path')
-    parser.add_argument('checkpoint', help='checkpoint file')
+    parser.add_argument('--checkpoint',
+                        default=r"E:\01model_output\01mmseg\deeplabv3plus_r50-d8_4xb4-20k_voc12aug-512x512_vocpk\/iter_20000.pth",
+                        help='checkpoint file')
     parser.add_argument(
         '--work-dir',
+        default=r"E:\01model_output\01mmseg/unet-s5-d16_fcn_4xb4-40k_chase-db1-128x128",
         help=('if specified, the evaluation metric results will be dumped'
               'into the directory as json'))
     parser.add_argument(
         '--out',
+        default=r"E:\01model_output\01mmseg/unet-s5-d16_fcn_4xb4-40k_chase-db1-128x128",
         type=str,
         help='The directory to save output prediction for offline evaluation')
     parser.add_argument(
         '--show', action='store_true', help='show prediction results')
     parser.add_argument(
         '--show-dir',
+        default=r"E:\01model_output\01mmseg/unet-s5-d16_fcn_4xb4-40k_chase-db1-128x128",
         help='directory where painted images will be saved. '
         'If specified, it will be automatically saved '
         'to the work_dir/timestamp/show_dir')

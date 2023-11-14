@@ -656,7 +656,7 @@ class ResNet(BaseModule):
             for param in m.parameters():
                 param.requires_grad = False
 
-    def forward(self, x):
+    def forward(self, x):       # torch.Size([2, 3, 512, 512])
         """Forward function."""
         if self.deep_stem:
             x = self.stem(x)

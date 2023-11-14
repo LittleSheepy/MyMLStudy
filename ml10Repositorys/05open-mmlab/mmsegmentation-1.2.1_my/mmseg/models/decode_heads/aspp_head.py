@@ -103,9 +103,10 @@ class ASPPHead(BaseDecodeHead):
                 H, W) which is feature map for last layer of decoder head.
         """
         x = self._transform_inputs(inputs)
+        x_ = self.image_pool(x)
         aspp_outs = [
             resize(
-                self.image_pool(x),
+                x_,
                 size=x.size()[2:],
                 mode='bilinear',
                 align_corners=self.align_corners)
