@@ -119,7 +119,7 @@ class EncoderDecoder(BaseSegmentor):
         x = self.backbone(inputs)       # (chinal size)(torch.Size([2, 256, 128, 128]), 512 64, 1024 64, 2048 64)
         if self.with_neck:
             x = self.neck(x)
-        return x
+        return x                        # [torch.Size([2, 768, 160, 160])  80 40 20]
 
     def encode_decode(self, inputs: Tensor,
                       batch_img_metas: List[dict]) -> Tensor:

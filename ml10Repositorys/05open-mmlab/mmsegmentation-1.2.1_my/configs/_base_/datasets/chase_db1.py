@@ -2,11 +2,11 @@
 dataset_type = 'ChaseDB1Dataset'
 data_root = r'D:\02dataset\02_LGCBPK_mm\1_Front_LZPS/'
 # data_root = r'D:\02dataset\02_LGCBPK_mm\2_Side_CMPS/'
-# img_scale = (512, 512)
-# crop_size = (512, 512)
-# data_root = 'data/CHASE_DB1'
-img_scale = (960, 999)
+img_scale = (2432, 1976)
 crop_size = (512, 512)
+# data_root = 'data/CHASE_DB1'
+# img_scale = (960, 999)
+# crop_size = (512, 512)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations'),
@@ -22,7 +22,7 @@ train_pipeline = [
 ]
 test_pipeline = [
     dict(type='LoadImageFromFile'),
-    # dict(type='RandomCrop', crop_size=(1976, 2432), cat_max_ratio=1.0),
+    # dict(type='RandomCrop', crop_size=(2432, 1976), cat_max_ratio=1.0),
     dict(type='Resize', scale=img_scale, keep_ratio=True),
     # add loading annotation after ``Resize`` because ground truth
     # does not need to do resize data transform
@@ -64,7 +64,7 @@ train_dataloader = dict(
 
 val_dataloader = dict(
     batch_size=1,
-    num_workers=4,
+    num_workers=1,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(

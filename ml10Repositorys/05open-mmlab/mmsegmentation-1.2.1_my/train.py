@@ -14,10 +14,17 @@ from mmseg.registry import RUNNERS
 def parse_args():
     # unet
     config_path = r"configs\unet/unet_s5-d16_deeplabv3_4xb4-40k_chase-db1-128x128.py"
-    work_dir = r"E:\01model_output\01mmseg/unet_s5-d16_deeplabv3_4xb4-40k_chase-db1-128x128_train512_01"
+    work_dir = r"E:\01model_output\01mmseg/unet_s5-d16_deeplabv3_4xb4-40k_chase-db1-128x128_train512_02"
+
+    # mae
+    # config_path = r"configs/mae/mae-base_upernet_8xb2-amp-160k_ade20k-512x512.py"
+    # work_dir = r"E:\01model_output\01mmseg/mae-base_upernet_8xb2-amp-160k_ade20k-512x512_train512_01"
+    # # VIT
+    # config_path = r"configs/vit/vit_deit-b16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py"
+    # work_dir = r"E:\01model_output\01mmseg/vit_deit-b16-ln_mln_upernet_8xb2-160k_ade20k-512x512_train512_01"
     #
-    config_path = r"configs\ann/ann_r50-d8_4xb4-20k_voc12aug-512x512.py"
-    work_dir = r"E:\01model_output\01mmseg/ann_r50-d8_4xb4-20k_voc12aug-512x512_test"
+    # config_path = r"configs\ann/ann_r50-d8_4xb4-20k_voc12aug-512x512.py"
+    # work_dir = r"E:\01model_output\01mmseg/ann_r50-d8_4xb4-20k_voc12aug-512x512_test"
 
     parser = argparse.ArgumentParser(description='Train a segmentor')
     parser.add_argument('--config',

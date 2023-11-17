@@ -75,13 +75,13 @@ class UPerHead(BaseDecodeHead):
 
     def psp_forward(self, inputs):
         """Forward function of PSP module."""
-        x = inputs[-1]
+        x = inputs[-1]                              # torch.Size([2, 768, 20, 20])
         psp_outs = [x]
         psp_outs.extend(self.psp_modules(x))
         psp_outs = torch.cat(psp_outs, dim=1)
         output = self.bottleneck(psp_outs)
 
-        return output
+        return output           # torch.Size([2, 768, 20, 20])
 
     def _forward_feature(self, inputs):
         """Forward function for feature maps before classifying each pixel with
@@ -102,12 +102,12 @@ class UPerHead(BaseDecodeHead):
             for i, lateral_conv in enumerate(self.lateral_convs)
         ]
 
-        laterals.append(self.psp_forward(inputs))
+        laterals.append(self.psp_forward(inputs))       # [torch.Size([2, 768, 160, 160]) 80 40 20]
 
         # build top-down path
-        used_backbone_levels = len(laterals)
+        used_backbone_levels = len(laterals)            # 4
         for i in range(used_backbone_levels - 1, 0, -1):
-            prev_shape = laterals[i - 1].shape[2:]
+            prev_shape = laterals[i - 1].shape[2:]          # 40 40
             laterals[i - 1] = laterals[i - 1] + resize(
                 laterals[i],
                 size=prev_shape,
@@ -128,12 +128,12 @@ class UPerHead(BaseDecodeHead):
                 size=fpn_outs[0].shape[2:],
                 mode='bilinear',
                 align_corners=self.align_corners)
-        fpn_outs = torch.cat(fpn_outs, dim=1)
-        feats = self.fpn_bottleneck(fpn_outs)
+        fpn_outs = torch.cat(fpn_outs, dim=1)           # torch.Size([2, 3072, 160, 160])
+        feats = self.fpn_bottleneck(fpn_outs)           # torch.Size([2, 768, 160, 160])
         return feats
 
     def forward(self, inputs):
         """Forward function."""
-        output = self._forward_feature(inputs)
+        output = self._forward_feature(inputs)      # torch.Size([2, 768, 160, 160])
         output = self.cls_seg(output)
         return output

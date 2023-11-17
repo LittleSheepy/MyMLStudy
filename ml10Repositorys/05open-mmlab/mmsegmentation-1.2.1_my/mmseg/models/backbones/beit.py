@@ -113,24 +113,29 @@ class BEiTAttention(BaseModule):
     def init_weights(self):
         trunc_normal_(self.relative_position_bias_table, std=0.02)
 
-    def forward(self, x):
+    def forward(self, x):       # torch.Size([2, 1601, 768])
         """
         Args:
             x (tensor): input features with shape of (num_windows*B, N, C).
         """
+        # import cv2
+        # tensor = self.relative_position_index.data.cpu().numpy()  # Convert tensor to numpy array
+        # tensor = tensor * 255 / np.max(tensor)  # Scale values to 255
+        # cv2.imwrite('relative_position_index.jpg', tensor)
+
         B, N, C = x.shape
 
         if self.bias == 'qv_bias':
-            k_bias = torch.zeros_like(self.v_bias, requires_grad=False)
-            qkv_bias = torch.cat((self.q_bias, k_bias, self.v_bias))
-            qkv = F.linear(input=x, weight=self.qkv.weight, bias=qkv_bias)
+            k_bias = torch.zeros_like(self.v_bias, requires_grad=False)         # torch.Size([768])
+            qkv_bias = torch.cat((self.q_bias, k_bias, self.v_bias))            # torch.Size([2304])
+            qkv = F.linear(input=x, weight=self.qkv.weight, bias=qkv_bias)      # torch.Size([2, 1601, 2304])
         else:
             qkv = self.qkv(x)
 
-        qkv = qkv.reshape(B, N, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
-        q, k, v = qkv[0], qkv[1], qkv[2]
+        qkv = qkv.reshape(B, N, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)       # torch.Size([3, 2, 12, 1601, 64])
+        q, k, v = qkv[0], qkv[1], qkv[2]        # q torch.Size([2, 12, 1601, 64])
         q = q * self.scale
-        attn = (q @ k.transpose(-2, -1))
+        attn = (q @ k.transpose(-2, -1))        # torch.Size([2, 12, 1601, 1601])  k_t : torch.Size([2, 12, 64, 1601])
         if self.relative_position_bias_table is not None:
             Wh = self.window_size[0]
             Ww = self.window_size[1]
@@ -141,8 +146,8 @@ class BEiTAttention(BaseModule):
                 2, 0, 1).contiguous()  # nH, Wh*Ww, Wh*Ww
             attn = attn + relative_position_bias.unsqueeze(0)
         attn = attn.softmax(dim=-1)
-        attn = self.attn_drop(attn)
-        x = (attn @ v).transpose(1, 2).reshape(B, N, C)
+        attn = self.attn_drop(attn)                         # torch.Size([2, 12, 1601, 1601])
+        x = (attn @ v).transpose(1, 2).reshape(B, N, C)     # torch.Size([2, 1601, 768])
         x = self.proj(x)
         x = self.proj_drop(x)
         return x
@@ -218,8 +223,17 @@ class BEiTTransformerEncoderLayer(VisionTransformerEncoderLayer):
         self.attn = BEiTAttention(**attn_cfg)
 
     def forward(self, x):
-        x = x + self.drop_path(self.gamma_1 * self.attn(self.norm1(x)))
-        x = x + self.drop_path(self.gamma_2 * self.ffn(self.norm2(x)))
+        a_attn = self.attn(self.norm1(x))               # torch.Size([2, 1601, 768])
+        a_attn_gamma = self.gamma_1 * a_attn            # torch.Size([2, 1601, 768])
+        a_attn_drop = self.drop_path(a_attn_gamma)      # torch.Size([2, 1601, 768])
+        x = x + a_attn_drop
+
+        a_attn2 = self.ffn(self.norm2(x))               # torch.Size([2, 1601, 768])
+        a_attn_gamma2 = self.gamma_2 * a_attn2
+        a_attn_drop2 = self.drop_path(a_attn_gamma2)
+        x = x + a_attn_drop2
+        # x = x + self.drop_path(self.gamma_1 * self.attn(self.norm1(x)))
+        # x = x + self.drop_path(self.gamma_2 * self.ffn(self.norm2(x)))
         return x
 
 
@@ -521,14 +535,14 @@ class BEiT(BaseModule):
                 elif isinstance(m, (_BatchNorm, nn.GroupNorm, nn.LayerNorm)):
                     constant_init(m, val=1.0, bias=0.)
 
-    def forward(self, inputs):
+    def forward(self, inputs):      # torch.Size([2, 3, 640, 640])
         B = inputs.shape[0]
 
-        x, hw_shape = self.patch_embed(inputs)
+        x, hw_shape = self.patch_embed(inputs)                     # torch.Size([2, 1600, 768])  (40, 40)
 
         # stole cls_tokens impl from Phil Wang, thanks
-        cls_tokens = self.cls_token.expand(B, -1, -1)
-        x = torch.cat((cls_tokens, x), dim=1)
+        cls_tokens = self.cls_token.expand(B, -1, -1)        # torch.Size([2, 1, 768])
+        x = torch.cat((cls_tokens, x), dim=1)               # torch.Size([2, 1601, 768])
 
         outs = []
         for i, layer in enumerate(self.layers):
@@ -538,7 +552,7 @@ class BEiT(BaseModule):
                     x = self.norm1(x)
             if i in self.out_indices:
                 # Remove class token and reshape token for decoder head
-                out = x[:, 1:]
+                out = x[:, 1:]              # torch.Size([2, 1600, 768])
                 B, _, C = out.shape
                 out = out.reshape(B, hw_shape[0], hw_shape[1],
                                   C).permute(0, 3, 1, 2).contiguous()

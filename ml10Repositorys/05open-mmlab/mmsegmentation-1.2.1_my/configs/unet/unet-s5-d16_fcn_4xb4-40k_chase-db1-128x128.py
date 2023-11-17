@@ -6,4 +6,4 @@ crop_size = (512, 512)
 data_preprocessor = dict(size=crop_size)
 model = dict(
     data_preprocessor=data_preprocessor,
-    test_cfg=dict(crop_size=crop_size, stride=(85, 85)))
+    test_cfg=dict(modde="slide", crop_size=crop_size, stride=(341, 341)))

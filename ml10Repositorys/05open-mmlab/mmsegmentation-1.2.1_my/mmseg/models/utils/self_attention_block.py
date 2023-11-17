@@ -129,33 +129,33 @@ class SelfAttentionBlock(nn.Module):
         else:
             convs = convs[0]
         return convs
-
+    # 1x2048x64x128 1x1024x64x128
     def forward(self, query_feats, key_feats):
         """Forward function."""
-        batch_size = query_feats.size(0)
-        query = self.query_project(query_feats)
+        batch_size = query_feats.size(0)            # 2
+        query = self.query_project(query_feats)     # 2x256x64x128
         if self.query_downsample is not None:
             query = self.query_downsample(query)
-        query = query.reshape(*query.shape[:2], -1)
-        query = query.permute(0, 2, 1).contiguous()
+        query = query.reshape(*query.shape[:2], -1)     # torch.Size([2, 256, 8192])
+        query = query.permute(0, 2, 1).contiguous()     # torch.Size([2, 8192, 256])
 
-        key = self.key_project(key_feats)
-        value = self.value_project(key_feats)
+        key = self.key_project(key_feats)               # 2x256x64x128
+        value = self.value_project(key_feats)           # 2x256x64x128
         if self.key_downsample is not None:
-            key = self.key_downsample(key)
-            value = self.key_downsample(value)
-        key = key.reshape(*key.shape[:2], -1)
-        value = value.reshape(*value.shape[:2], -1)
-        value = value.permute(0, 2, 1).contiguous()
+            key = self.key_downsample(key)              # torch.Size([2, 256, 110])
+            value = self.key_downsample(value)          # torch.Size([2, 256, 110])
+        key = key.reshape(*key.shape[:2], -1)           # torch.Size([2, 256, 110])
+        value = value.reshape(*value.shape[:2], -1)     # torch.Size([2, 256, 110])
+        value = value.permute(0, 2, 1).contiguous()     # torch.Size([2, 110, 256])
 
-        sim_map = torch.matmul(query, key)
+        sim_map = torch.matmul(query, key)              # torch.Size([2, 8192, 110])
         if self.matmul_norm:
             sim_map = (self.channels**-.5) * sim_map
-        sim_map = F.softmax(sim_map, dim=-1)
+        sim_map = F.softmax(sim_map, dim=-1)            # torch.Size([2, 8192, 110])
 
-        context = torch.matmul(sim_map, value)
-        context = context.permute(0, 2, 1).contiguous()
-        context = context.reshape(batch_size, -1, *query_feats.shape[2:])
+        context = torch.matmul(sim_map, value)          # torch.Size([2, 8192, 256])
+        context = context.permute(0, 2, 1).contiguous()     # torch.Size([2, 256, 8192])
+        context = context.reshape(batch_size, -1, *query_feats.shape[2:])   # torch.Size([2, 256, 64, 128])
         if self.out_project is not None:
-            context = self.out_project(context)
+            context = self.out_project(context)     # torch.Size([2, 2048, 64, 128])
         return context

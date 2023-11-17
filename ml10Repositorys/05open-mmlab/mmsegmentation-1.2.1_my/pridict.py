@@ -2,14 +2,17 @@ import os
 from mmseg.apis import inference_model, init_model, show_result_pyplot
 
 # Specify the path to model config and checkpoint file
-config_file = r"configs\unet/unet_s5-d16_deeplabv3_4xb4-40k_chase-db1-128x128.py"
-checkpoint_file = r"E:\01model_output\01mmseg\unet_s5-d16_deeplabv3_4xb4-40k_chase-db1-128x128_pk512\/iter_8000.pth"
+config_path = r"configs/mae/mae-base_upernet_8xb2-amp-160k_ade20k-512x512.py"
+work_dir = r"E:\01model_output\01mmseg/mae-base_upernet_8xb2-amp-160k_ade20k-512x512_train512_01"
+config_file = config_path
+checkpoint_file = r"E:\01model_output\01mmseg\mae-base_upernet_8xb2-amp-160k_ade20k-512x512_train512_01\/iter_120000.pth"
 
 # build the model from a config file and a checkpoint file
 model = init_model(config_file, checkpoint_file, device='cuda:0')
 
 # test a directory of images
-img_dir = r'E:\0ProjectData\AI_PK_pictreue\2_Side_CMPS\img\/'
+img_dir = r'E:\0ProjectData\AI_PK_pictreue\1_Front_LZPS\all\/'
+# img_dir = r'E:\0ProjectData\AI_PK_pictreue\1_Front_LZPS\img\/'
 imgs = [os.path.join(img_dir, img) for img in os.listdir(img_dir) if img.endswith('.jpg')]
 
 img_cnt = 0

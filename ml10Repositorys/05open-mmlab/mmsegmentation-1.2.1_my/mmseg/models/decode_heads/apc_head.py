@@ -76,29 +76,29 @@ class ACM(nn.Module):
                 norm_cfg=self.norm_cfg,
                 act_cfg=self.act_cfg)
 
-    def forward(self, x):
+    def forward(self, x):                       # 1x2048x64x128
         """Forward function."""
-        pooled_x = F.adaptive_avg_pool2d(x, self.pool_scale)
+        pooled_x = F.adaptive_avg_pool2d(x, self.pool_scale)            # torch.Size([2, 2048, 1, 1])
         # [batch_size, channels, h, w]
-        x = self.input_redu_conv(x)
+        x = self.input_redu_conv(x)                                     # torch.Size([2, 512, 64, 128])
         # [batch_size, channels, pool_scale, pool_scale]
-        pooled_x = self.pooled_redu_conv(pooled_x)
+        pooled_x = self.pooled_redu_conv(pooled_x)                      # torch.Size([2, 512, 1, 1])
         batch_size = x.size(0)
         # [batch_size, pool_scale * pool_scale, channels]
         pooled_x = pooled_x.view(batch_size, self.channels,
-                                 -1).permute(0, 2, 1).contiguous()
+                                 -1).permute(0, 2, 1).contiguous()      # torch.Size([2, 1, 512])
         # [batch_size, h * w, pool_scale * pool_scale]
         affinity_matrix = self.gla(x + resize(
             self.global_info(F.adaptive_avg_pool2d(x, 1)), size=x.shape[2:])
                                    ).permute(0, 2, 3, 1).reshape(
-                                       batch_size, -1, self.pool_scale**2)
-        affinity_matrix = F.sigmoid(affinity_matrix)
+                                       batch_size, -1, self.pool_scale**2)      # torch.Size([2, 8192, 1])
+        affinity_matrix = F.sigmoid(affinity_matrix)                            # torch.Size([2, 8192, 1])
         # [batch_size, h * w, channels]
-        z_out = torch.matmul(affinity_matrix, pooled_x)
+        z_out = torch.matmul(affinity_matrix, pooled_x)                         # torch.Size([2, 8192, 512])
         # [batch_size, channels, h * w]
         z_out = z_out.permute(0, 2, 1).contiguous()
         # [batch_size, channels, h, w]
-        z_out = z_out.view(batch_size, self.channels, x.size(2), x.size(3))
+        z_out = z_out.view(batch_size, self.channels, x.size(2), x.size(3))     # torch.Size([2, 512, 64, 128])
         z_out = self.residual_conv(z_out)
         z_out = F.relu(z_out + x)
         if self.fusion:
@@ -147,13 +147,13 @@ class APCHead(BaseDecodeHead):
             norm_cfg=self.norm_cfg,
             act_cfg=self.act_cfg)
 
-    def forward(self, inputs):
+    def forward(self, inputs):              #
         """Forward function."""
-        x = self._transform_inputs(inputs)
-        acm_outs = [x]
+        x = self._transform_inputs(inputs)      # torch.Size([2, 2048, 64, 128])
+        acm_outs = [x]                          #
         for acm_module in self.acm_modules:
             acm_outs.append(acm_module(x))
-        acm_outs = torch.cat(acm_outs, dim=1)
-        output = self.bottleneck(acm_outs)
+        acm_outs = torch.cat(acm_outs, dim=1)       # torch.Size([2, 4096, 64, 128])
+        output = self.bottleneck(acm_outs)          # torch.Size([2, 512, 64, 128])
         output = self.cls_seg(output)
         return output

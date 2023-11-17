@@ -6,7 +6,7 @@ crop_size = (640, 640)
 data_preprocessor = dict(size=crop_size)
 model = dict(
     data_preprocessor=data_preprocessor,
-    pretrained='pretrain/beit_base_patch16_224_pt22k_ft22k.pth',
+    # pretrained='pretrain/beit_base_patch16_224_pt22k_ft22k.pth',
     test_cfg=dict(mode='slide', crop_size=(640, 640), stride=(426, 426)))
 
 optim_wrapper = dict(

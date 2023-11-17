@@ -1,12 +1,12 @@
 _base_ = [
-    '../_base_/models/upernet_mae.py', '../_base_/datasets/ade20k.py',
+    '../_base_/models/upernet_mae.py', '../_base_/datasets/chase_db1.py',
     '../_base_/default_runtime.py', '../_base_/schedules/schedule_160k.py'
 ]
 crop_size = (512, 512)
 data_preprocessor = dict(size=crop_size)
 model = dict(
     data_preprocessor=data_preprocessor,
-    pretrained='./pretrain/mae_pretrain_vit_base_mmcls.pth',
+    pretrained='./pretrain/mae_pretrain_vit_base.pth',  # _mmcls
     backbone=dict(
         type='MAE',
         img_size=(512, 512),

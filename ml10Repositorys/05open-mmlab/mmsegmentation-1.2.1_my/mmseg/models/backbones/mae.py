@@ -234,14 +234,14 @@ class MAE(BEiT):
                 state_dict['pos_embed'] = new_pos_embed
         return state_dict
 
-    def forward(self, inputs):
+    def forward(self, inputs):      # torch.Size([1, 3, 512, 512])
         B = inputs.shape[0]
 
-        x, hw_shape = self.patch_embed(inputs)
+        x, hw_shape = self.patch_embed(inputs)                     # torch.Size([1, 1024, 768])  (32, 32)
 
         # stole cls_tokens impl from Phil Wang, thanks
-        cls_tokens = self.cls_token.expand(B, -1, -1)
-        x = torch.cat((cls_tokens, x), dim=1)
+        cls_tokens = self.cls_token.expand(B, -1, -1)        # torch.Size([1, 1, 768])
+        x = torch.cat((cls_tokens, x), dim=1)               # torch.Size([1, 1025, 768])
         x = x + self.pos_embed
 
         outs = []

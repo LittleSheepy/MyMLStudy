@@ -90,6 +90,15 @@ class BaseSegmentor(BaseModel, metaclass=ABCMeta):
             - If ``mode="predict"``, return a list of :obj:`DetDataSample`.
             - If ``mode="loss"``, return a dict of tensor.
         """
+        # import numpy as np
+        # import matplotlib.pyplot as plt
+        #
+        # # Assuming 'tensor' is your tensor
+        # tensor = inputs[0, :, :, :].permute(1, 2, 0)
+        # numpy_img = tensor.data.cpu().numpy()
+        #
+        # plt.imshow(numpy_img)
+        # plt.show()
         if mode == 'loss':
             try:
                 result = self.loss(inputs, data_samples)

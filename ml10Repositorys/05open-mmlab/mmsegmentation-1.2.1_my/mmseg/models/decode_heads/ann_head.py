@@ -125,10 +125,10 @@ class AFNB(nn.Module):
 
     def forward(self, low_feats, high_feats):
         """Forward function."""
-        priors = [stage(high_feats, low_feats) for stage in self.stages]
-        context = torch.stack(priors, dim=0).sum(dim=0)
+        priors = [stage(high_feats, low_feats) for stage in self.stages]        # [torch.Size([2, 2048, 64, 128])]
+        context = torch.stack(priors, dim=0).sum(dim=0)                         # torch.Size([2, 2048, 64, 128])
         output = self.bottleneck(torch.cat([context, high_feats], 1))
-        return output
+        return output   # torch.Size([2, 2048, 64, 128])
 
 
 class APNB(nn.Module):
@@ -173,7 +173,7 @@ class APNB(nn.Module):
             norm_cfg=norm_cfg,
             act_cfg=act_cfg)
 
-    def forward(self, feats):
+    def forward(self, feats):           # torch.Size([2, 512, 64, 128])
         """Forward function."""
         priors = [stage(feats, feats) for stage in self.stages]
         context = torch.stack(priors, dim=0).sum(dim=0)
@@ -236,10 +236,10 @@ class ANNHead(BaseDecodeHead):
     def forward(self, inputs):
         """Forward function."""
         low_feats, high_feats = self._transform_inputs(inputs)
-        output = self.fusion(low_feats, high_feats)
+        output = self.fusion(low_feats, high_feats)             # torch.Size([2, 2048, 64, 128])
         output = self.dropout(output)
-        output = self.bottleneck(output)
-        output = self.context(output)
+        output = self.bottleneck(output)        # torch.Size([2, 512, 64, 128])
+        output = self.context(output)           # torch.Size([2, 512, 64, 128])
         output = self.cls_seg(output)
 
         return output
