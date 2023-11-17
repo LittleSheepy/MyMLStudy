@@ -75,3 +75,4 @@ ml12mmengine_study/__pycache__/
 ml10Repositorys/05open-mmlab/mmsegmentation-1.2.1_my/output
 data/MNIST/
 runs/
+data/data
