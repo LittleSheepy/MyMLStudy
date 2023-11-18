@@ -1,0 +1,1 @@
+pyinstaller -F pyinstaller_one_file.py

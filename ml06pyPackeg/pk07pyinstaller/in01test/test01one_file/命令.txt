@@ -1,0 +1,7 @@
+# 生成文件夹
+pyinstaller pyinstaller_one_file.py
+# 生成一个文件
+pyinstaller -F pyinstaller_one_file.py
+
+
+

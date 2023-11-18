@@ -15,9 +15,11 @@ def convert_json_to_label(json_file):
 def parse_args():
     parser = argparse.ArgumentParser(
         description='Convert Cityscapes annotations to TrainIds')
-    parser.add_argument('cityscapes_path', help='cityscapes data path')
+    parser.add_argument('--cityscapes_path',
+                        default=r'D:\00myGitHub\00MyMLStudy\data\data\OpenDataLab___CityScapes\raw\gtFine_trainvaltest/',
+                        help='cityscapes data path')
     parser.add_argument('--gt-dir', default='gtFine', type=str)
-    parser.add_argument('-o', '--out-dir', help='output path')
+    parser.add_argument('-o', '--out-dir', default='./data/', help='output path')
     parser.add_argument(
         '--nproc', default=1, type=int, help='number of process')
     args = parser.parse_args()
