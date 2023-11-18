@@ -77,3 +77,10 @@ data/MNIST/
 runs/
 data/data
 ml02dataset/ds00study/ds01dataset/dataset/
+ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/build1/
+ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/build/
+ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/build1/ALL_BUILD.vcxproj
+/ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/build1
+ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/csrc/
+ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/demo/
+ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/third_party/
