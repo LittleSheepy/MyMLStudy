@@ -86,14 +86,14 @@ if __name__ == '__main__':
                 pbar.set_postfix(**{'loss (batch)': loss.item()})
 
         # Evaluation round
-                if epoch % 1 == 0:
-                    # val_score = evaluate(model, dataset.train_dataloader, device, False)
-                    # scheduler.step(val_score)
-                    # logging.info('Validation Dice score: {}'.format(val_score))
+        if epoch % 1 == 0:
+            val_score = evaluate(model, dataset.train_dataloader, device, False)
+            scheduler.step(val_score)
+            logging.info('Validation Dice score: {}'.format(val_score))
 
-                    # save model
-                    Path(dir_checkpoint).mkdir(parents=True, exist_ok=True)
-                    state_dict = model.state_dict()
-                    # state_dict['mask_values'] = dataset.mask_values
-                    torch.save(state_dict, str(dir_checkpoint / 'checkpoint_epoch{}.pth'.format(epoch)))
-                    logging.info(f'Checkpoint {epoch} saved!')
+            # save model
+            Path(dir_checkpoint).mkdir(parents=True, exist_ok=True)
+            state_dict = model.state_dict()
+            # state_dict['mask_values'] = dataset.mask_values
+            torch.save(state_dict, str(dir_checkpoint / 'checkpoint_epoch{}.pth'.format(epoch)))
+            logging.info(f'Checkpoint {epoch} saved!')
