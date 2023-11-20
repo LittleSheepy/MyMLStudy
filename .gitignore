@@ -92,3 +92,7 @@ ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/third_party/
 00myseg/cmodels/__pycache__/CModelBase.cpython-38.pyc
 00myseg/config/__pycache__/__init__.cpython-38.pyc
 00myseg/config/__pycache__/CCfgBase.cpython-38.pyc
+00myseg/algseg/*/*.pyc
+00myseg/algseg/*/*/*.pyc
+
+
