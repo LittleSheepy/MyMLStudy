@@ -9,11 +9,17 @@ output_dir, string
 """
 class CCfgBase():
     def __init__(self, **para):
+        # 数据集
+        self.data_root = r"./data/"
+        self.data_classes = 2
+        # 模型
         self.model_name = "unet"
         self.model_size = "small"
+        # 训练
         self.train_lr = 0.001
         self.train_epoches = 2000
         self.train_batch_size = 10
+        # 保存
         self.output_dir = "./output_dir/"
     # def check_para(self):
     #     para_require = ["batch_size", "train_epoch"]

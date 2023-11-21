@@ -1,7 +1,10 @@
-from config.CCfgBase import CCfgBase
+from algseg.config.CCfgBase import CCfgBase
+
+
 class CModelBase:
     def __init__(self, config: CCfgBase):
         self.config = config
+        self.callback_print = None
 
     def close(self):
         pass
@@ -20,3 +23,13 @@ class CModelBase:
 
     def test(self):
         pass
+
+    def set_callback_print(self, func):
+        self.callback_print = func
+
+    def print_loss(self, str):
+        if self.callback_print:
+            self.callback_print(str)
+        else:
+            print(str)
+
