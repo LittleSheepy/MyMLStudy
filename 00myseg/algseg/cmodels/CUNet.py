@@ -12,30 +12,31 @@ from algseg.utils.dice_score import multiclass_dice_coeff, dice_coeff
 from algseg.cmodels.CModelBase import CModelBase
 from algseg.config.CCfgUNet import CCfgUNet
 from algseg.models.unet import UNet
-from algseg.dataset.CCityScapes import CCityScapes
+from algseg.dataset import get_dataset
 
 
 class CUNet(CModelBase):
     def __init__(self, config: CCfgUNet):
         super().__init__(config)
         self.config = config
-        self.model = UNet(n_channels=config.n_channels,
-                          n_classes=config.n_classes,
+        self.model = UNet(n_channels=config.data_channels,
+                          n_classes=config.data_classes,
                           bilinear=config.bilinear)
 
     def train(self):
         dir_checkpoint = self.config.output_dir
         # 数据集
         # 创建数据集
-        classes = self.config.n_classes
+        data_classes = self.config.data_classes
+        data_channels = self.config.data_channels
         data_root = self.config.data_root
-        dataset = CCityScapes(data_root)
+        dataset = get_dataset(self.config.data_name, data_root)
         dataset.init_dataset(["train"])
         train_dataloader = dataset.train_dataloader
 
         # 创建模型
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        model = UNet(n_channels=3, n_classes=classes, bilinear=False)
+        model = UNet(n_channels=data_channels, n_classes=data_classes, bilinear=False)
         model.to(device=device)
 
         # train
@@ -56,7 +57,7 @@ class CUNet(CModelBase):
             model.train()
             epoch_loss = 0
             with tqdm(total=len(dataset.train_dataset), desc=f'Epoch {epoch}/{epochs}', unit='img') as pbar:
-                for batch in dataset.train_dataloader:
+                for batch in train_dataloader:
                     images, true_masks = batch[0], batch[1][:, :, :]
 
                     assert images.shape[1] == model.n_channels, \
@@ -96,8 +97,9 @@ class CUNet(CModelBase):
                     #     'epoch': epoch
                     # })
                     pbar.set_postfix(**{'loss (batch)': loss.item()})
-                    str = "loss (batch):{}".format(loss.item())
-                    self.print_loss(str)
+                    str_loss = "loss:{}".format(loss)
+                    self.put_data_list("train_loss", str_loss)
+                    self.print_loss(str_loss)
 
             # Evaluation round
             if epoch % 1 == 0:

@@ -6,9 +6,10 @@ import torch
 import torch.utils.data as data
 from PIL import Image
 import numpy as np
+from algseg.dataset.seg_dataset_base import SegDatasetBase
 
 
-class Cityscapes(data.Dataset):
+class Cityscapes(SegDatasetBase):
     """Cityscapes <http://www.cityscapes-dataset.com/> Dataset.
     
     **Parameters:**
@@ -110,24 +111,6 @@ class Cityscapes(data.Dataset):
         target[target == 255] = 19
         #target = target.astype('uint8') + 1
         return cls.train_id_to_color[target]
-
-    def __getitem__(self, index):
-        """
-        Args:
-            index (int): Index
-        Returns:
-            tuple: (image, target) where target is a tuple of all target types if target_type is a list with more
-            than one item. Otherwise target is a json object if target_type="polygon", else the image segmentation.
-        """
-        image = Image.open(self.images[index]).convert('RGB')
-        target = Image.open(self.targets[index])
-        if self.transform:
-            image, target = self.transform(image, target)
-        target = self.encode_target(target)
-        return image, target
-
-    def __len__(self):
-        return len(self.images)
 
     def _load_json(self, path):
         with open(path, 'r') as file:

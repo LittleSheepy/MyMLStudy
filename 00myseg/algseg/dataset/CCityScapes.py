@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader
 # from torchvision.datasets import Cityscapes
 from algseg.utils import ext_transforms as et
 
-from algseg.dataset import Cityscapes
+from algseg.dataset.cityscapes import Cityscapes
 """
 Folder structure
 data
@@ -50,9 +50,6 @@ data
 #                 transform=self.transform, target_transform=self.tar_transform)
 #
 #             self.train_dataloader = DataLoader(self.train_dataset, batch_size=self.batch_size, shuffle=True)
-#
-
-
 
 
 class CCityScapes():

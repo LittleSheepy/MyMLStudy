@@ -5,6 +5,8 @@ class CModelBase:
     def __init__(self, config: CCfgBase):
         self.config = config
         self.callback_print = None
+        self.train_lossList = []
+
 
     def close(self):
         pass
@@ -31,5 +33,13 @@ class CModelBase:
         if self.callback_print:
             self.callback_print(str)
         else:
-            print(str)
+            # print(str)
+            pass
 
+    def get_data_list(self, data_name):
+        if "train_loss" == data_name:
+            return self.train_lossList
+
+    def put_data_list(self, data_name, data):
+        if "train_loss" == data_name:
+            self.train_lossList.append(data)

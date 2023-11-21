@@ -1,3 +1,4 @@
+from pathlib import Path
 """
 train_batch_size, 数字
 train_epoches, 数字
@@ -11,16 +12,17 @@ class CCfgBase():
     def __init__(self, **para):
         # 数据集
         self.data_root = r"./data/"
+        self.data_name = "chase_db1"
         self.data_classes = 2
         # 模型
         self.model_name = "unet"
         self.model_size = "small"
         # 训练
         self.train_lr = 0.001
-        self.train_epoches = 2000
+        self.train_epoches = 100
         self.train_batch_size = 10
         # 保存
-        self.output_dir = "./output_dir/"
+        self.output_dir = Path('./checkpoints/')
     # def check_para(self):
     #     para_require = ["batch_size", "train_epoch"]
     #     for key, value in para.items():
