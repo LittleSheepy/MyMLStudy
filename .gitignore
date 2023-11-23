@@ -84,3 +84,15 @@ ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/build1/ALL_BUILD.vcxproj
 ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/csrc/
 ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/demo/
 ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/third_party/
+00myseg/__pycache__/
+00myseg/checkpoints/checkpoint_epoch1.pth
+00myseg/dataset/__pycache__/
+00myseg/models/__pycache__/
+00myseg/utils/__pycache__/
+00myseg/cmodels/__pycache__/CModelBase.cpython-38.pyc
+00myseg/config/__pycache__/__init__.cpython-38.pyc
+00myseg/config/__pycache__/CCfgBase.cpython-38.pyc
+00myseg/algseg/*/*.pyc
+00myseg/algseg/*/*/*.pyc
+
+
