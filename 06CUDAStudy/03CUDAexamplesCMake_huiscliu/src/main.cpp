@@ -3,6 +3,6 @@
 int mem04();
 int reduction_1B_v1_06();
 int main() {
-    reduction_1B_v1_06();
+    mem04();
     return 0;
 }
