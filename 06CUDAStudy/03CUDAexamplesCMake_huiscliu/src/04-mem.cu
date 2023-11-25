@@ -1,4 +1,5 @@
-
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
 #include <stdio.h>
 #include <cuda.h>
 
@@ -12,7 +13,7 @@ __global__ void sum(FLOAT* x)
 
 int mem04()
 {
-    int N = 32;
+    int N = 4;
     int nbytes = N * sizeof(FLOAT);
 
     FLOAT *dx = NULL, *hx = NULL;
@@ -28,7 +29,6 @@ int mem04()
 
     /* alllocate CPU host mem: memory copy is faster than malloc */
     hx = (FLOAT*)malloc(nbytes);
-    //cuMemAllocHost((void**)&hx, nbytes);
 
     if (hx == NULL) {
         printf("couldn't allocate CPU memory\n");
@@ -36,12 +36,12 @@ int mem04()
     }
 
     /* init */
-    printf("hx original: \n");
+    printf(">>>>>hx original: \n");
     for (i = 0; i < N; i++) {
         hx[i] = i;
-
         printf("%g\n", hx[i]);
     }
+    printf("<<<<<hx original: \n");
 
     /* copy data to GPU */
     cudaMemcpy(dx, hx, nbytes, cudaMemcpyHostToDevice);
@@ -55,6 +55,7 @@ int mem04()
     /* copy data from GPU */
     cudaMemcpy(hx, dx, nbytes, cudaMemcpyDeviceToHost);
 
+
     printf("\nhx from GPU: \n");
     for (i = 0; i < N; i++) {
         printf("%g\n", hx[i]);
@@ -62,7 +63,69 @@ int mem04()
 
     cudaFree(dx);
     free(hx);
-    //cudaFreeHost(hx);
+
+    return 0;
+}
+
+
+int mem04_host()
+{
+    int N = 4;
+    int nbytes = N * sizeof(FLOAT);
+
+    FLOAT* dx = NULL, * hx = NULL;
+    int i;
+
+    /* allocate GPU mem */
+    cudaMalloc((void**)&dx, nbytes);
+
+    if (dx == NULL) {
+        printf("couldn't allocate GPU memory\n");
+        return -1;
+    }
+
+    /* alllocate CPU host mem: memory copy is faster than malloc */
+    //hx = (FLOAT*)malloc(nbytes);
+    cuMemAllocHost((void**)&hx, nbytes);
+
+    if (hx == NULL) {
+        printf("couldn't allocate CPU memory\n");
+        return -2;
+    }
+
+    /* init */
+    printf(">>>>>hx original: \n");
+    for (i = 0; i < N; i++) {
+        hx[i] = i;
+        printf("%g\n", hx[i]);
+    }
+    printf("<<<<<hx original: \n");
+
+    /* copy data to GPU */
+    cudaMemcpy(dx, hx, nbytes, cudaMemcpyHostToDevice);
+
+    /* call GPU */
+    sum << <1, N >> > (dx);
+
+    /* let GPU finish */
+    cudaDeviceSynchronize();
+
+    /* copy data from GPU */
+    cudaMemcpy(hx, dx, nbytes, cudaMemcpyDeviceToHost);
+
+    /* 异步copy的话 就得加cudaDeviceSynchronize 同步*/
+    //cudaMemcpyAsync(hx, dx, nbytes, cudaMemcpyDeviceToHost);
+    //cudaDeviceSynchronize();
+
+
+    printf("\nhx from GPU: \n");
+    for (i = 0; i < N; i++) {
+        printf("%g\n", hx[i]);
+    }
+
+    cudaFree(dx);
+    //free(hx);
+    cudaFreeHost(hx);
 
     return 0;
 }

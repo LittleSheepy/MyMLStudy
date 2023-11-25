@@ -58,7 +58,7 @@ include_directories(${TRT_DIR}\\include)
 link_directories(${TRT_DIR}\\lib)
 
 # setup opencv
-set(OpenCV_DIR "D:/tools/opencv/build/x64/vc15/lib/")  #2
+set(OpenCV_DIR "D:/tools/opencv455/build/x64/vc15/lib/")  #2
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 # Threads
