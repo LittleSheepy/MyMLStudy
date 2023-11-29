@@ -8,7 +8,7 @@ from PIL import Image
 def bmpToJpg(file_path):
  for fileName in os.listdir(file_path):
   # print(fileName)
-  newFileName = fileName[0:fileName.find(".")]+".jpg"
+  newFileName = fileName[0:fileName.find(".")]+".png"
   print(newFileName)
   im = Image.open(file_path+"\\"+fileName)
   im.save(file_path+"\\"+newFileName)
@@ -22,10 +22,10 @@ def deleteImages(file_path, imageFormat):
 
 def main():
  file_path = "D:/01sheepy\work/baojie_ocr\pendianword\img/"
- file_path = r"D:\01sheepy\01work\02tongllidianti\0dataset\imgall\imgall1229\png\/"
+ file_path = r"D:\02dataset\02_LGCBPK_mm\1_Front_LZPS\images\training\/"
  bmpToJpg(file_path)
- deleteImages(file_path, "bmp")
- deleteImages(file_path, "png")
+ deleteImages(file_path, "jpg")
+ # deleteImages(file_path, "png")
 
 
 if __name__ == '__main__':

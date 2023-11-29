@@ -76,7 +76,7 @@ def train(opt, device):
     yaml_save(save_dir / 'opt.yaml', vars(opt))
 
     # Logger
-    logger = GenericLogger(opt=opt, console_logger=LOGGER) if RANK in {-1, 0} else None
+    logger = GenericLogger(opt=opt, console_logger=LOGGER, include='tb') if RANK in {-1, 0} else None
 
     # Download Dataset
     with torch_distributed_zero_first(LOCAL_RANK), WorkingDirectory(ROOT):
