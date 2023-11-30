@@ -10,7 +10,7 @@
 安装 [requirements.txt](https://kdai:8443/!/#alg_code/view/head/alg_python/algsegmentation/algseg/requirements.txt)(pip install -r requirements.txt)
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt  
 ```  
 
 </details>  
