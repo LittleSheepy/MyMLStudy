@@ -1,12 +1,16 @@
 
 /* asum: sum of all entries of a vector.
  * This code only calculates one block to show the usage of shared memory and synchronization */
-
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
 #include <stdio.h>
 #include <cuda.h>
+#include <iostream>
+#include <time.h>　　　//引入头文件
+using namespace std;
 
 typedef float FLOAT;
-// 二叉树算法 规约
+// 二叉树算法 规约 0.237
 __global__ void reduce0(FLOAT* g_idata, FLOAT* g_odata) {
     __shared__ FLOAT sdata[256];
 
@@ -14,7 +18,7 @@ __global__ void reduce0(FLOAT* g_idata, FLOAT* g_odata) {
     unsigned int tid = threadIdx.x;
     unsigned int i = blockIdx.x * blockDim.x + threadIdx.x;
     sdata[tid] = g_idata[i];
-    printf(">>>reduce0 tid=%d\n", tid);
+    //printf(">>>reduce0 tid=%d\n", tid);
     __syncthreads();
 
     // do reduction in shared mem
@@ -22,7 +26,7 @@ __global__ void reduce0(FLOAT* g_idata, FLOAT* g_odata) {
         // modulo arithmetic is slow!
         if ((tid % (2 * s)) == 0) {
             sdata[tid] += sdata[tid + s];
-            printf(">>>reduce0 tid=%d,sdata[tid]=%f,sdata[tid + s]=%f,\n", tid, sdata[tid], sdata[tid + s]);
+            //printf(">>>reduce0 tid=%d,sdata[tid]=%f,sdata[tid + s]=%f,\n", tid, sdata[tid], sdata[tid + s]);
         }
         __syncthreads();
     }
@@ -30,7 +34,7 @@ __global__ void reduce0(FLOAT* g_idata, FLOAT* g_odata) {
     // write result for this block to global mem
     if (tid == 0) g_odata[0] = sdata[0];
 }
-// 改进
+// 改进 0.188
 __global__ void reduce1(FLOAT* g_idata, FLOAT* g_odata) {
     __shared__ FLOAT sdata[256];
 
@@ -38,17 +42,17 @@ __global__ void reduce1(FLOAT* g_idata, FLOAT* g_odata) {
     unsigned int tid = threadIdx.x;
     unsigned int i = blockIdx.x * blockDim.x + threadIdx.x;
     sdata[tid] = g_idata[i];
-    printf(">>>reduce1 tid=%d\n", tid);
+    //printf(">>>reduce1 tid=%d, blockIdx.x=%d, blockDim.x=%d\n", tid, blockIdx.x, blockDim.x);
     __syncthreads();
 
     // do reduction in shared mem
     for (unsigned int s = 1; s < blockDim.x; s *= 2) {
         // modulo arithmetic is slow!
         int index = 2 * s * tid;
-        if (index < blockDim.x / s)
+        if (index < blockDim.x)
         {
             sdata[index] += sdata[index + s];
-            printf(">>>reduce1 tid=%d,sdata[tid]=%f,sdata[tid + s]=%f,\n", tid, sdata[index], sdata[index + s]);
+            //printf(">>>reduce1 tid=%d,s=%d,sdata[tid]=%f,sdata[tid + s]=%f,\n", tid, s, sdata[index], sdata[index + s]);
         }
         __syncthreads();
     }
@@ -57,7 +61,7 @@ __global__ void reduce1(FLOAT* g_idata, FLOAT* g_odata) {
     if (tid == 0) g_odata[0] = sdata[0];
 }
 
-// 改进 改进 消除shared memory bank 访问冲突
+// 改进 改进 消除shared memory bank 访问冲突 0.172
 __global__ void reduce2(FLOAT* g_idata, FLOAT* g_odata) {
     __shared__ FLOAT sdata[256];
 
@@ -65,7 +69,7 @@ __global__ void reduce2(FLOAT* g_idata, FLOAT* g_odata) {
     unsigned int tid = threadIdx.x;
     unsigned int i = blockIdx.x * blockDim.x + threadIdx.x;
     sdata[tid] = g_idata[i];
-    printf(">>>reduce2 tid=%d\n", tid);
+    //printf(">>>reduce2 tid=%d\n", tid);
     __syncthreads();
 
     // do reduction in shared mem
@@ -74,7 +78,7 @@ __global__ void reduce2(FLOAT* g_idata, FLOAT* g_odata) {
         if (tid < s)
         {
             sdata[tid] += sdata[tid + s];
-            printf(">>>reduce0 tid=%d,sdata[tid]=%f,sdata[tid + s]=%f,\n", tid, sdata[tid], sdata[tid + s]);
+            //printf(">>>reduce0 tid=%d,sdata[tid]=%f,sdata[tid + s]=%f,\n", tid, sdata[tid], sdata[tid + s]);
         }
         __syncthreads();
     }
@@ -83,7 +87,7 @@ __global__ void reduce2(FLOAT* g_idata, FLOAT* g_odata) {
     if (tid == 0) g_odata[0] = sdata[0];
 }
 
-// 改进 
+// 改进 0.157
 __global__ void reduce3(FLOAT* g_idata, FLOAT* g_odata) {
     __shared__ FLOAT sdata[256];
 
@@ -91,7 +95,7 @@ __global__ void reduce3(FLOAT* g_idata, FLOAT* g_odata) {
     unsigned int tid = threadIdx.x;
     unsigned int i = blockIdx.x * blockDim.x * 2 + threadIdx.x;
     sdata[tid] = g_idata[i];
-    printf(">>>reduce2 tid=%d\n", tid);
+    //printf(">>>reduce2 tid=%d\n", tid);
     __syncthreads();
     sdata[tid] = g_idata[i] + g_idata[i + blockDim.x];
 
@@ -101,7 +105,7 @@ __global__ void reduce3(FLOAT* g_idata, FLOAT* g_odata) {
         if (tid < s)
         {
             sdata[tid] += sdata[tid + s];
-            printf(">>>reduce0 tid=%d,sdata[tid]=%f,sdata[tid + s]=%f,\n", tid, sdata[tid], sdata[tid + s]);
+            //printf(">>>reduce0 tid=%d,sdata[tid]=%f,sdata[tid + s]=%f,\n", tid, sdata[tid], sdata[tid + s]);
         }
         __syncthreads();
     }
@@ -110,15 +114,15 @@ __global__ void reduce3(FLOAT* g_idata, FLOAT* g_odata) {
     if (tid == 0) g_odata[0] = sdata[0];
 }
 
-// 改进 
+// 改进 0.17
 __global__ void reduce4(FLOAT* g_idata, FLOAT* g_odata) {
-    __shared__ volatile FLOAT sdata[256];
+    __shared__ volatile FLOAT sdata[256];       // volatile 避免优化
 
     // 
     unsigned int tid = threadIdx.x;
     unsigned int i = blockIdx.x * blockDim.x * 2 + threadIdx.x;
     sdata[tid] = g_idata[i];
-    printf(">>>reduce2 tid=%d\n", tid);
+    // printf(">>>reduce2 tid=%d\n", tid);
     __syncthreads();
     sdata[tid] = g_idata[i] + g_idata[i + blockDim.x];
 
@@ -128,7 +132,7 @@ __global__ void reduce4(FLOAT* g_idata, FLOAT* g_odata) {
         if (tid < s)
         {
             sdata[tid] += sdata[tid + s];
-            printf(">>>reduce0 tid=%d,sdata[tid]=%f,sdata[tid + s]=%f,\n", tid, sdata[tid], sdata[tid + s]);
+            //printf(">>>reduce0 tid=%d,sdata[tid]=%f,sdata[tid + s]=%f,\n", tid, sdata[tid], sdata[tid + s]);
         }
         __syncthreads();
     }
@@ -184,7 +188,7 @@ __global__ void VecSumKnl_v1(const FLOAT *x, FLOAT *y)
 {
     __shared__ FLOAT sdata[256];
     int tid = threadIdx.x;
-    printf(">>>VecSumKnl_v1 tid=%d\n", tid);
+    //printf(">>>VecSumKnl_v1 tid=%d\n", tid);
 
     /* load data to shared mem */
     sdata[tid] = x[tid];
@@ -192,49 +196,49 @@ __global__ void VecSumKnl_v1(const FLOAT *x, FLOAT *y)
 
     /* reduction using shared mem */
     if (tid < 128) {
-        printf(">>>VecSumKnl_v1 ===tid <128===tid=%d,sdata[tid]=%f,sdata[tid + 128]=%f,\n", tid, sdata[tid], sdata[tid + 128]);
+        //printf(">>>VecSumKnl_v1 ===tid <128===tid=%d,sdata[tid]=%f,sdata[tid + 128]=%f,\n", tid, sdata[tid], sdata[tid + 128]);
         sdata[tid] += sdata[tid + 128];
     }
     __syncthreads();
 
     if (tid < 64) {
-        printf(">>>VecSumKnl_v1 ===tid <64===tid=%d,sdata[tid]=%f,sdata[tid + 64]=%f,\n", tid, sdata[tid], sdata[tid + 64]);
+        //printf(">>>VecSumKnl_v1 ===tid <64===tid=%d,sdata[tid]=%f,sdata[tid + 64]=%f,\n", tid, sdata[tid], sdata[tid + 64]);
         sdata[tid] += sdata[tid + 64];
     }
     __syncthreads();
 
     if (tid < 32) {
-        printf(">>>VecSumKnl_v1 ===tid <32===tid=%d,sdata[tid]=%f,sdata[tid + 32]=%f,\n", tid, sdata[tid], sdata[tid + 32]);
+        //printf(">>>VecSumKnl_v1 ===tid <32===tid=%d,sdata[tid]=%f,sdata[tid + 32]=%f,\n", tid, sdata[tid], sdata[tid + 32]);
         sdata[tid] += sdata[tid + 32];
     }
     __syncthreads();
 
     if (tid < 16) {
-        printf(">>>VecSumKnl_v1 ===tid <16===tid=%d,sdata[tid]=%f,sdata[tid + 16]=%f,\n", tid, sdata[tid], sdata[tid + 16]);
+        //printf(">>>VecSumKnl_v1 ===tid <16===tid=%d,sdata[tid]=%f,sdata[tid + 16]=%f,\n", tid, sdata[tid], sdata[tid + 16]);
         sdata[tid] += sdata[tid + 16];
     }
     __syncthreads();
 
     if (tid < 8) {
-        printf(">>>VecSumKnl_v1 ===tid <8===tid=%d,sdata[tid]=%f,sdata[tid + 8]=%f,\n", tid, sdata[tid], sdata[tid + 8]);
+        //printf(">>>VecSumKnl_v1 ===tid <8===tid=%d,sdata[tid]=%f,sdata[tid + 8]=%f,\n", tid, sdata[tid], sdata[tid + 8]);
         sdata[tid] += sdata[tid + 8];
     }
     __syncthreads();
 
     if (tid < 4) {
-        printf(">>>VecSumKnl_v1 ===tid <4===tid=%d,sdata[tid]=%f,sdata[tid + 4]=%f,\n", tid, sdata[tid], sdata[tid + 4]);
+        //printf(">>>VecSumKnl_v1 ===tid <4===tid=%d,sdata[tid]=%f,sdata[tid + 4]=%f,\n", tid, sdata[tid], sdata[tid + 4]);
         sdata[tid] += sdata[tid + 4];
     }
     __syncthreads();
 
     if (tid < 2) {
-        printf(">>>VecSumKnl_v1 ===tid <2===tid=%d,sdata[tid]=%f,sdata[tid + 2]=%f,\n", tid, sdata[tid], sdata[tid + 2]);
+        //printf(">>>VecSumKnl_v1 ===tid <2===tid=%d,sdata[tid]=%f,sdata[tid + 2]=%f,\n", tid, sdata[tid], sdata[tid + 2]);
         sdata[tid] += sdata[tid + 2];
     }
     __syncthreads();
 
     if (tid == 0) {
-        printf(">>>VecSumKnl_v1 ===tid ==0===tid=%d\n", tid);
+        //printf(">>>VecSumKnl_v1 ===tid ==0===tid=%d\n", tid);
         *y = sdata[0] + sdata[1];
     }
 }
@@ -256,6 +260,7 @@ int reduction_1B_v1_06()
     int i;
     FLOAT as = 0;
 
+    clock_t start, end;     //定义clock_t变量
     /* allocate GPU mem */
     cudaMalloc((void **)&dx, nbytes);
     cudaMalloc((void **)&dy, sizeof(FLOAT));
@@ -280,21 +285,24 @@ int reduction_1B_v1_06()
     for (i = 0; i < N; i++) {
         hx[i] = 1;
     }
+    start = clock();        //开始时间
     warm_up_gpu << <1, N >> > ();
     cudaDeviceSynchronize();
-    /* copy data to GPU */
-    cudaMemcpy(dx, hx, nbytes, cudaMemcpyHostToDevice);
+    for (i = 0; i < 1000; i++) {
+        /* copy data to GPU */
+        cudaMemcpy(dx, hx, nbytes, cudaMemcpyHostToDevice);
 
-    /* call GPU */
-    //reduce2 <<<1, N>>>(dx, dy);
-    reduce3 <<<1, N/2>>>(dx, dy);
-    //VecSumKnl_v1 <<<1, N>>>(dx, dy);
+        /* call GPU */
+        //reduce1 << <1, N >> > (dx, dy);       // 012
+        reduce4 <<<1, N/2>>>(dx, dy);       // 34
+        //VecSumKnl_v1 <<<1, N>>>(dx, dy);
 
-    /* let GPU finish */
-    cudaDeviceSynchronize();
+        /* let GPU finish */
+        cudaDeviceSynchronize();
 
-    /* copy data from GPU */
-    cudaMemcpy(&as, dy, sizeof(FLOAT), cudaMemcpyDeviceToHost);
+        /* copy data from GPU */
+        cudaMemcpy(&as, dy, sizeof(FLOAT), cudaMemcpyDeviceToHost);
+    }
 
     printf("VecSumKnl, answer: 256, calculated by GPU:%g\n", as);
 
@@ -302,5 +310,7 @@ int reduction_1B_v1_06()
     cudaFree(dy);
     free(hx);
 
+    end = clock();
+    std::cout << "time = " << double(end - start) / CLOCKS_PER_SEC << "s" << std::endl;  //输出时间（单位：ｓ）
     return 0;
 }
