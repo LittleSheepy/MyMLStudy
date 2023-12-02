@@ -1,0 +1,12 @@
+2023-11-28 11:34:26,692 - WARNING - This is a warning log.
+2023-11-28 11:34:26,692 - ERROR - This is a error log.
+2023-11-28 11:34:26,692 - CRITICAL - This is a critical log.
+2023-11-28 11:36:02,301 - WARNING    - log01demo.py - <module>:10 - This is a warning log.
+2023-11-28 11:36:02,301 - ERROR      - log01demo.py - <module>:11 - This is a error log.
+2023-11-28 11:36:02,301 - CRITICAL   - log01demo.py - <module>:12 - This is a critical log.
+2023-11-28 11:38:53,220 - WARNING    - log01demo.py - <module>:12 - This is a warning log.
+2023-11-28 11:38:53,220 - ERROR      - log01demo.py - <module>:13 - This is a error log.
+2023-11-28 11:38:53,221 - CRITICAL   - log01demo.py - <module>:14 - This is a critical log.
+11/28/2023 11:39:47 AM - WARNING    - log01demo.py - <module>:11 - This is a warning log.
+11/28/2023 11:39:47 AM - ERROR      - log01demo.py - <module>:12 - This is a error log.
+11/28/2023 11:39:47 AM - CRITICAL   - log01demo.py - <module>:13 - This is a critical log.

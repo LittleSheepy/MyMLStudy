@@ -19,7 +19,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin)
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 #option 选项开关
 #启用后，将在中使用CUDA运行时库的静态版本CUDA_LIBRARIES。
-option(CUDA_USE_STATIC_CUDA_RUNTIME OFF)
+#option(CUDA_USE_STATIC_CUDA_RUNTIME OFF)
 # 判断编译器类型
 if(MSVC)     
     # Use the static C library for all build types
@@ -49,6 +49,8 @@ include_directories(${PROJECT_SOURCE_DIR}/)
 #set(CUDAFE_FLAGS_DEBUG ${CUDAFE_FLAGS_DEBUG};/MTd)
 find_package(CUDA REQUIRED)
 include_directories(${CUDA_INCLUDE_DIRS})
+include(CheckLanguage)
+check_language(CUDA)
 enable_language(CUDA)  # add this line, then no need to setup cuda path in vs
 set(CUDA_NVCC_PLAGS ${CUDA_NVCC_PLAGS};-std=c++11; -g; -G; -w; -gencode; arch=compute_75;code=sm_75)
 
