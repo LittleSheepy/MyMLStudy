@@ -1,9 +1,10 @@
-
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
 /* asum: sum of all entries of a vector */
 
 #include "reduction_aux.h"
 
-//typedef double FLOAT;
+typedef double FLOAT;
 
 /* sum all entries in x and asign to y
  * block dim must be 256 */
@@ -132,7 +133,7 @@ FLOAT asum_host(FLOAT *x, int N)
 
     for (i = 0; i < N; i++) {
         t += x[i];
-        printf(">>>asum_host t=%f,x[i]=%f\n", t, x[i]);
+        //printf(">>>asum_host t=%f,x[i]=%f\n", t, x[i]);
     }
 
     return t;
@@ -141,8 +142,8 @@ FLOAT asum_host(FLOAT *x, int N)
 //int main0602(int argc, char **argv)
 int main0602()
 {
-    int N = 1024;
-    //int N = 1024*10000;
+    //int N = 1024;
+    int N = 1024*100000;
      int nbytes = N * sizeof(FLOAT);
 
     FLOAT *dx = NULL, *hx = NULL;
