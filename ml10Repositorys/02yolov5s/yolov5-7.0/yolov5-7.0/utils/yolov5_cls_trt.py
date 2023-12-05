@@ -215,7 +215,7 @@ class warmUpThread(threading.Thread):
 
 if __name__ == "__main__":
     # load custom plugin and engine
-    engine_file_path = r"D:\04Bin/yolov5s-cls.engine"
+    engine_file_path = r"D:\08checkpoints\01yolov5_7.0\/yolov5s-cls.engine"
 
     if len(sys.argv) > 1:
         engine_file_path = sys.argv[1]
@@ -228,7 +228,7 @@ if __name__ == "__main__":
     try:
         print('batch size is', yolov5_wrapper.batch_size)
 
-        image_dir = "images/"
+        image_dir = r"D:\02dataset\datasets_cls\train\00\/"
         image_path_batches = get_img_path_batches(
             yolov5_wrapper.batch_size, image_dir)
 
