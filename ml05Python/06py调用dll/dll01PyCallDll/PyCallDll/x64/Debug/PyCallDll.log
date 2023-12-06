@@ -1,12 +1,2 @@
-﻿  pch.cpp
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\vadefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-  dllmain.cpp
-  func.cpp
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xtr1common(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xstring(2083,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xstring(3354,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xstring(4509,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-  正在生成代码...
-    正在创建库 D:\00myGitHub\00MyMLStudy\ml05Python\06py调用dll\dll03PyCallDll\PyCallDll\x64\Debug\PyCallDll.lib 和对象 D:\00myGitHub\00MyMLStudy\ml05Python\06py调用dll\dll03PyCallDll\PyCallDll\x64\Debug\PyCallDll.exp
-  PyCallDll.vcxproj -> D:\00myGitHub\00MyMLStudy\ml05Python\06py调用dll\dll03PyCallDll\PyCallDll\x64\Debug\PyCallDll.dll
+﻿D:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(77,5): warning : 文件“d:\00mygithub\00mymlstudy\ml05python\06py调用dll\dll01pycalldll\pycalldll\x64\debug\pycalldll.pch”正由另一进程使用，因此该进程无法访问此文件。
+D:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(77,5): warning : 文件“d:\00mygithub\00mymlstudy\ml05python\06py调用dll\dll01pycalldll\pycalldll\x64\debug\pch.obj”正由另一进程使用，因此该进程无法访问此文件。
