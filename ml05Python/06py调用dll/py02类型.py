@@ -67,7 +67,7 @@ def type_ptr():
     print(cast_type)
 
 def type_struct():
-    
+    pass
 
 
 
