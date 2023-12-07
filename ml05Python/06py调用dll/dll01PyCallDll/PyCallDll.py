@@ -54,11 +54,111 @@ def call_func_arg_array():
         print("python: str_info: ", u_str_info[i], chr(u_str_info[i]))
     print("python: out_word:", word.value, word.raw)
 
+
+class Rect(Structure):
+    _fields_ = [
+        ('index', c_int),
+        ('info', c_char * 16)
+    ]
+
+
+def call_func_arg_struct():
+    dll.func_arg_struct.argtypes = [Rect,  POINTER(Rect)]
+    dll.func_arg_struct.restype = c_void_p
+
+    rect_a = Rect(10, b"hello")
+    rect_b = Rect(100, b"hello")
+    dll.func_arg_struct(rect_a, byref(rect_b))
+    print("python: rect_a:", rect_a.index, rect_a.info)
+    print("python: rect_b:", rect_b.index, rect_b.info)
+
+def call_func_arg_struct_array():
+    dll.func_arg_struct_array.argtypes = [POINTER(Rect)]
+    dll.func_arg_struct_array.restype = c_void_p
+
+    rect_array = (Rect * 5)()
+    for i in range(5):
+        rect_array[i] = Rect(i, bytes("Hello_" + str(i), encoding='utf-8'))
+
+    # 以下两种方法皆可
+    print("第一种======参数=====rect_array")
+    dll.func_arg_struct_array(rect_array)
+    print("python: rect_b:", rect_array[0].index, rect_array[0].info)
+
+    print("第一种======参数=====byref(rect_array[0])")
+    dll.func_arg_struct_array(byref(rect_array[0]))
+    print("python: rect_b:", rect_array[0].index, rect_array[0].info)
+
+# 获取结构体列表
+def call_func_res_struct_array():
+    dll.func_res_struct_array.argtypes = [POINTER(c_int)]
+    dll.func_res_struct_array.restype = POINTER(Rect)
+
+    dll.freeRect.argtypes = [POINTER(Rect)]
+    dll.freeRect.restype = c_void_p
+
+    num = c_int(10)
+
+    print("python: num:", num.value)
+    rect_pt = dll.func_res_struct_array(byref(num))
+    print("python: num:", num.value)
+
+    # 结构体数组初始化
+    # rect_pt.contents只能输出首元素的内容，rect_pt.contents.index
+    rect_array = [rect_pt[i] for i in range(num.value)]
+
+    for item in rect_array:
+        print("python: index:", item.index, ", info:", item.info, item.info.decode('utf-8'))
+
+    dll.freeRect(rect_pt)
+
+class UserStruct(Structure):
+    _fields_ = [
+        ('user_id', c_long),
+        ('name', c_char * 21)
+    ]
+
+
+class CompanyStruct(Structure):
+    _fields_ = [
+        ('com_id', c_long),
+        ('name', c_char * 21),
+        ('users', UserStruct * 100),
+        ('count', c_int)
+    ]
+
+
+def c_print_company():
+    library = dll
+    library.Print_Company.argtypes = [POINTER(CompanyStruct)]
+    library.Print_Company.restype = c_void_p
+
+    user_array = (UserStruct * 100)()
+    count = 2
+    for i in range(count):
+        user_array[i] = UserStruct(i, bytes("user_" + str(i), encoding='utf-8'))
+
+    company = CompanyStruct(1, b"esunny", user_array, count)
+
+    print("python: com_id, name, count:  ", company.com_id, company.name, company.count)
+    for i in range(company.count):
+        print("python: ", company.users[i].user_id, company.users[i].name)
+
+    library.Print_Company(byref(company))
+
+    print("python: com_id, name, count:  ", company.com_id, company.name, company.count)
+    for i in range(company.count):
+        print("python: ", company.users[i].user_id, company.users[i].name)
+
+
+
+
+
 if __name__ == '__main__':
     dll_path = r"./PyCallDll/x64/Debug/PyCallDll.dll"
     dll = load_dll(dll_path)
     print("")
-    call_func_arg_array()
+    c_print_company()
 
 
 
