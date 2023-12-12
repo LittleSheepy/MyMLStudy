@@ -1,0 +1,4 @@
+2023-12-11 11:41:49,915 log01demo.py 124 INFO This is a info log.
+2023-12-11 11:41:49,915 log01demo.py 125 WARNING This is a warning log.
+2023-12-11 11:41:49,915 log01demo.py 126 ERROR This is a error log.
+2023-12-11 11:41:49,915 log01demo.py 127 CRITICAL This is a critical log.
