@@ -46,7 +46,7 @@ def call_func_arg_array():
     # from_buffer_copy函数则是创建一个ctypes实例，并将source参数内容拷贝进去
     u_str_info = (c_ubyte*16).from_buffer_copy(b'0123456789abcdef')
 
-    word = (c_char * 32)()
+    word = (c_char * 32)()          # c_char*32 是数组类型
 
     dll.func_arg_array(str_info, byref(u_str_info), word)
     print("python: str_info:", str_info.value, str_info.raw)
@@ -149,9 +149,6 @@ def c_print_company():
     print("python: com_id, name, count:  ", company.com_id, company.name, company.count)
     for i in range(company.count):
         print("python: ", company.users[i].user_id, company.users[i].name)
-
-
-
 
 
 if __name__ == '__main__':

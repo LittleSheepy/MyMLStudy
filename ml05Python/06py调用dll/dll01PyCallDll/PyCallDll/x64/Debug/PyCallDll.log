@@ -1,6 +1,1 @@
-﻿  func.cpp
-F:\sheepy\00MyMLStudy\ml05Python\06py调用dll\dll01PyCallDll\PyCallDll\func.cpp(1): warning C4603: “_CRT_SECURE_NO_WARNINGS”: 未定义宏或在预编译头使用后定义发生改变
-F:\sheepy\00MyMLStudy\ml05Python\06py调用dll\dll01PyCallDll\PyCallDll\func.cpp(1): message : 将宏添加到预编译头中，而不是在此处定义
-F:\sheepy\00MyMLStudy\ml05Python\06py调用dll\dll01PyCallDll\PyCallDll\func.cpp(2): message : 使用预编译头
-F:\sheepy\00MyMLStudy\ml05Python\06py调用dll\dll01PyCallDll\PyCallDll\func.cpp(29,23): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-  PyCallDll.vcxproj -> F:\sheepy\00MyMLStudy\ml05Python\06py调用dll\dll01PyCallDll\PyCallDll\x64\Debug\PyCallDll.dll
+﻿
