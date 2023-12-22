@@ -1,4 +1,28 @@
-2023-12-11 11:41:49,915 log01demo.py 124 INFO This is a info log.
-2023-12-11 11:41:49,915 log01demo.py 125 WARNING This is a warning log.
-2023-12-11 11:41:49,915 log01demo.py 126 ERROR This is a error log.
-2023-12-11 11:41:49,915 log01demo.py 127 CRITICAL This is a critical log.
+12/13/2023 11:38:00 AM - INFO       - log01demo.py - <module>:137 - This is a info log.
+12/13/2023 11:38:00 AM - WARNING    - log01demo.py - <module>:138 - This is a warning log.
+12/13/2023 11:38:00 AM - ERROR      - log01demo.py - <module>:139 - This is a error log.
+12/13/2023 11:38:00 AM - CRITICAL   - log01demo.py - <module>:140 - This is a critical log.
+12/13/2023 11:38:50 AM - INFO       - log01demo.py - <module>:137 - This is a info log.
+12/13/2023 11:38:50 AM - WARNING    - log01demo.py - <module>:138 - This is a warning log.
+12/13/2023 11:38:50 AM - ERROR      - log01demo.py - <module>:139 - This is a error log.
+12/13/2023 11:38:50 AM - CRITICAL   - log01demo.py - <module>:140 - This is a critical log.
+12/13/2023 11:40:04 - INFO       - log01demo.py - <module>:137 - This is a info log.
+12/13/2023 11:40:04 - WARNING    - log01demo.py - <module>:138 - This is a warning log.
+12/13/2023 11:40:04 - ERROR      - log01demo.py - <module>:139 - This is a error log.
+12/13/2023 11:40:04 - CRITICAL   - log01demo.py - <module>:140 - This is a critical log.
+12/13/2023 13:40:40 - INFO       - log01demo.py - <module>:137 - This is a info log.
+12/13/2023 13:40:40 - WARNING    - log01demo.py - <module>:138 - This is a warning log.
+12/13/2023 13:40:40 - ERROR      - log01demo.py - <module>:139 - This is a error log.
+12/13/2023 13:40:40 - CRITICAL   - log01demo.py - <module>:140 - This is a critical log.
+12/13/2023 11:49:35 - ¡¾INFO      ¡¿ - log01demo.py - <module>:137 : This is a info log.
+12/13/2023 11:49:35 - ¡¾WARNING   ¡¿ - log01demo.py - <module>:138 : This is a warning log.
+12/13/2023 11:49:35 - ¡¾ERROR     ¡¿ - log01demo.py - <module>:139 : This is a error log.
+12/13/2023 11:49:35 - ¡¾CRITICAL  ¡¿ - log01demo.py - <module>:140 : This is a critical log.
+12/13/2023 11:50:05¡¾INFO      ¡¿log01demo.py - <module>:137 : This is a info log.
+12/13/2023 11:50:05¡¾WARNING   ¡¿log01demo.py - <module>:138 : This is a warning log.
+12/13/2023 11:50:05¡¾ERROR     ¡¿log01demo.py - <module>:139 : This is a error log.
+12/13/2023 11:50:05¡¾CRITICAL  ¡¿log01demo.py - <module>:140 : This is a critical log.
+12/13/2023 11:51:26¡¾INFO      ¡¿log01demo.py - <module>:137  : This is a info log.
+12/13/2023 11:51:26¡¾WARNING   ¡¿log01demo.py - <module>:138  : This is a warning log.
+12/13/2023 11:51:26¡¾ERROR     ¡¿log01demo.py - <module>:139  : This is a error log.
+12/13/2023 11:51:26¡¾CRITICAL  ¡¿log01demo.py - <module>:140  : This is a critical log.

@@ -64,8 +64,8 @@ def set_logging(name=LOGGING_NAME):
                 "format": "%(message)s"},
             "default": {
                 # 'format': '%(asctime)s %(filename)s %(lineno)s %(levelname)s %(message)s',
-                'format': '%(asctime)s - %(levelname)-10s - %(filename)s - %(funcName)s:%(lineno)d - %(message)s',
-                "datefmt": "%m/%d/%Y %H:%M:%S %p"
+                'format': '%(asctime)s【%(levelname)-10s】%(filename)s - %(funcName)s:%(lineno)-4d: %(message)s',
+                "datefmt": "%m/%d/%Y %H:%M:%S"
             },
             "plain": {
                 "format": "%(message)s",
@@ -114,6 +114,11 @@ def set_logging(name=LOGGING_NAME):
                 "handlers": ["file"],
                 "level": "INFO",
                 "propagate": False,
+            },
+            "console_file_logger": {
+                "handlers": ["console","file"],
+                "level": "INFO",
+                "propagate": False,
             }
         }
     })
@@ -127,7 +132,7 @@ if __name__ == '__main__':
     DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"  # 日期格式
     # logging.basicConfig(filename='my.log', format=LOG_FORMAT, datefmt=DATE_FORMAT, level=logging.DEBUG)
 
-    logger = logging.getLogger("console_logger")
+    logger = logging.getLogger("console_file_logger")
     logger.debug("This is a debug log.")
     logger.info("This is a info log.")
     logger.warning("This is a warning log.")

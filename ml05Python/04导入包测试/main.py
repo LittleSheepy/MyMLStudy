@@ -1,7 +1,10 @@
-from myPack1.pk1dir1 import pk1dir1get
-from myPack1.pk1dir1.pk1dir1f2 import pk1dir1f2
-
+import myPack2
+"""
+attempted relative import beyond top-level package
+尝试在顶级包之外进行相对导入
+"""
+# from dir2.dir2f1 import *
+from myPack2.dir2.dir2f1 import *
 if __name__ == '__main__':
     print("")
-    print(type(pk1dir1get()))
-    pk1dir1get()()
+    pk2dir2f1fun1()

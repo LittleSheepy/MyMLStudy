@@ -102,7 +102,7 @@ def train(opt, device):
                                                    rank=LOCAL_RANK,
                                                    workers=nw)
     print("============================================")
-    test_dir = data_dir / 'test' if (data_dir / 'test').exists() else data_dir / 'val'  # data/test or data/val
+    test_dir = data_dir / 'val' if (data_dir / 'val').exists() else data_dir / 'test'  # data/test or data/val
     if RANK in {-1, 0}:
         testloader = create_classification_dataloader(path=test_dir,
                                                       imgsz=imgsz,
@@ -280,7 +280,8 @@ def parse_opt(known=False):
     parser = argparse.ArgumentParser()
     data_name = "HHKJ1103_3000"
     data_path = r"D:\02dataset\06HHKJ\{data_name}_train\{data_name}/".format(data_name=data_name)
-    epochs = 50
+    data_path = r"F:\sheepy\01code\01alg_code\alg_python\algsegmentation\algseg\data\datasets_cls"
+    epochs = 2
     train_name = time.strftime('%Y%m%d%H%M', time.localtime())
     name = r"{train_name}_{data_name}_{epochs}_01".format(train_name=train_name, data_name=data_name, epochs=epochs)
     parser.add_argument('--model', type=str, default='yolov5s-cls.pt', help='initial weights path')   # yolov5s-cls.pt
