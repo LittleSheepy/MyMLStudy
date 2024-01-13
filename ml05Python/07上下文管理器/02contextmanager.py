@@ -21,6 +21,7 @@ class Query(object):
 
     def __init__(self, name):
         self.name = name
+        print('Query init about %s...' % self.name)
 
     def query(self):
         print('Query info about %s...' % self.name)
@@ -37,8 +38,8 @@ def create_query(name):
 
 if __name__ == '__main__':
     print("")
-    with Query1('Bob') as q:
-        q.query()
+    # with Query1('Bob') as q:
+    #     q.query()
 
     with create_query('Bob') as q:
         q.query()

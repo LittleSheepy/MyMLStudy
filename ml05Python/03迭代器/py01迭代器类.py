@@ -20,15 +20,24 @@ class MyIterator:
         return data
 
 
-print("")
-my_iterator = MyIterator()
-try:
-    while True:
-        item = next(my_iterator)
-        print("==", item)
-        # Do something with item
-except StopIteration:
-    # 迭代结束，执行相应的处理
-    print("捕获到 StopIteration，遍历结束")
-    pass
+def next_test():
+    my_iterator = MyIterator()
+    try:
+        while True:
+            item = next(my_iterator)
+            print("==", item)
+    except StopIteration:
+        print("捕获到 StopIteration，遍历结束")
+        pass
 
+def for_test():
+    my_iterator = MyIterator()
+    for item in my_iterator:
+        print("==", item)
+
+
+
+
+if __name__ == '__main__':
+    print("")
+    for_test()

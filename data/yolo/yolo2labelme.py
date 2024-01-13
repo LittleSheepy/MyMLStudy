@@ -48,8 +48,9 @@ def parse_tta_label(txt_path, img_dir, save_dir):
         shape_type = "polygon"
         shape = {}
         names = ["ZSKPS","JY"]
-        shape.__setitem__("label", "LZPS")
+        # shape.__setitem__("label", "LZPS")
         #shape.__setitem__("label", names[int(class_name)])
+        shape.__setitem__("label", class_name)
         shape.__setitem__("points", points)
         shape.__setitem__("shape_type", shape_type)
         shape.__setitem__("flags", {})
@@ -76,7 +77,7 @@ def generate_labelme_prelabel(txt_dir, img_dir, save_dir):
 
 
 if __name__ == '__main__':
-    root_dir = r"E:\0ProjectData\0LG_CB_DATA\2labelData\01NM_LZPS\1all\/"
+    root_dir = r"F:\sheepy\01code\01alg_code\alg_python\algsegmentation\projects/"
     txt_dir = root_dir + "txt/"
     save_dir = root_dir + "json/"
 
