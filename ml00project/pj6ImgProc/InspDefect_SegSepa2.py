@@ -7,7 +7,7 @@ from GetBlob import *
 class CKDImgProc_InspDefect_SegSepa2:
     def __init__(self, iCol, iRow):
         self.m_iKnifePos_Cur = [[0 for _ in range(2)] for _ in range(32)]
-        self.m_param = None
+        self.m_param = TImgProc_DefectParam()
         self.m_curImgSize = (iRow, iCol)
         self.m_curRecvImgBuf = np.zeros((iRow * 3, iCol), dtype=np.uint8)
         self.m_curBinImgBuf = np.zeros((iRow * 3, iCol), dtype=np.uint8)
@@ -32,14 +32,22 @@ class CKDImgProc_InspDefect_SegSepa2:
     def InputImage(self, result, imgSrc):
         if imgSrc.shape != self.m_curImgSize:
             return
+        print(">1 _move_imagedata")
         self._move_imagedata(imgSrc)
+        print("<1 _move_imagedata")
+        print(">2 _position_segment")
         self._position_segment(imgSrc)
+        print("<2 _position_segment")
+        print(">3 _threshold_defect_dot")
         self._threshold_defect_dot(imgSrc)
+        print("<3 _threshold_defect_dot")
+        print(">4 _get_defect")
         self._get_defect(result.m_vecBlob)
+        print("<4 _get_defect")
 
     def _get_defect(self, vecBlob):
-        vecBlobArr = [None] * 32
-        for idx in range(self.m_param["iKnifeNum"] - 1):
+        vecBlobArr = [[] for _ in range(32)]
+        for idx in range(self.m_param.iKnifeNum - 1):
             self._get_defect_segment(idx, vecBlobArr[idx])
         vecBlob_Tmp = []
         for idx in range(self.m_param.iKnifeNum - 1):
@@ -60,24 +68,31 @@ class CKDImgProc_InspDefect_SegSepa2:
         for idx in range(len(vecBlob)):
             pBlob = vecBlob[idx]
             rect = (pBlob.iPos_X, pBlob.iPos_Y, pBlob.iSize_Wid, pBlob.iSize_Hei)
+            dRateWH = self.m_param.dRateWH
+            if dRateWH < 0.1:
+                dRateWH = 1.0
+            iStdHei = int(self.m_param.iSubDefectImgSize * self.m_param.dRateWH)
+            iStdWid = int(self.m_param.iSubDefectImgSize)
+
             cent = (rect[0] + (rect[2] >> 1), rect[1] + (rect[3] >> 1))
-            wid = rect[2] + 20
-            hei = rect[3] + 20 * self.m_param.dRateWH
-            if (wid < self.m_param.iSubDefectImgSize) and (hei < self.m_param.iSubDefectImgSize * self.m_param.dRateWH):
-                wid = self.m_param.iSubDefectImgSize
-                hei = self.m_param.iSubDefectImgSize * self.m_param.dRateWH
+            wid = int(rect[2] + 20)
+            hei = int(rect[3] + 20 * dRateWH)
+
+            if (wid < iStdWid) and (hei < iStdHei):
+                wid = iStdWid
+                hei = iStdHei
             else:
-                rate_w = wid / self.m_param.iSubDefectImgSize
-                rate_h = hei / (self.m_param.iSubDefectImgSize * self.m_param.dRateWH)
+                rate_w = wid / iStdWid
+                rate_h = hei / iStdHei
                 if rate_w > rate_h:
-                    hei = rate_w * self.m_param.iSubDefectImgSize * self.m_param.dRateWH
+                    hei = int(rate_w * iStdHei)
                 else:
-                    wid = rate_h * self.m_param.iSubDefectImgSize
+                    wid = int(rate_h * iStdWid)
             if wid > 2000:
                 wid = 2000
-            if hei > 2000 * self.m_param.dRateWH:
-                hei = 2000 * self.m_param.dRateWH
-            rtDefect_src = (cent[0] - (wid >> 1), cent[1] - (hei >> 1), wid, hei)
+            if hei > 2000 * dRateWH:
+                hei = int(2000 * dRateWH)
+            rtDefect_src = (cent[0] - (wid >> 1), cent[1] - (hei >> 1), wid, hei)   # (3672, 2506, 348, 348)
             imgDefect = None
             if (rtDefect_src[0] >= 0) and (rtDefect_src[1] >= 0) and (rtDefect_src[0] + rtDefect_src[2] <= self.m_curRecvImgBuf.shape[1]) and (rtDefect_src[1] + rtDefect_src[3] <= self.m_curRecvImgBuf.shape[0]):
                 imgDefect = self.m_curRecvImgBuf[rtDefect_src[1]:rtDefect_src[1]+rtDefect_src[3], rtDefect_src[0]:rtDefect_src[0]+rtDefect_src[2]].copy()
@@ -92,10 +107,10 @@ class CKDImgProc_InspDefect_SegSepa2:
                     dstRect[0] = offs_x
                     dstRect[2] = srcRect[2]
                 elif srcRect[0] + srcRect[2] > self.m_curRecvImgBuf.shape[1]:
-                    len = self.m_curRecvImgBuf.shape[1] - srcRect[0]
-                    srcRect[2] = len
+                    ilen = self.m_curRecvImgBuf.shape[1] - srcRect[0]
+                    srcRect[2] = ilen
                     dstRect[0] = 0
-                    dstRect[2] = len
+                    dstRect[2] = ilen
                 self.m_curRecvImgBuf[srcRect[1]:srcRect[1]+srcRect[3], srcRect[0]:srcRect[0]+srcRect[2]].copyTo(imgDefect[dstRect[1]:dstRect[1]+dstRect[3], dstRect[0]:dstRect[0]+dstRect[2]])
             maxwh = max(wid, hei)
             pBlob.imgDefect = cv2.resize(imgDefect, (maxwh, maxwh))
@@ -104,6 +119,7 @@ class CKDImgProc_InspDefect_SegSepa2:
             pBlob.iPos_Y -= self.m_curImgSize[1] << 1
 
     def _get_defect_segment(self, iSegIdx, vecBlob_Out):
+        print("> <func> _get_defect_segment")
         iStX  = int(self.m_iKnifePos_Cur[iSegIdx][1])
         iEndX = int(self.m_iKnifePos_Cur[iSegIdx+1][0])
         if iEndX <= iStX:
@@ -117,6 +133,7 @@ class CKDImgProc_InspDefect_SegSepa2:
             pBlob = vecBlob_Out[idx]
             pBlob.iPos_X += roiRect[0]
             pBlob.iPos_Y += roiRect[1]
+        print("< <func> _get_defect_segment")
 
     def _merge_defect_segment(self, vecBlob, vecSubBlob):
         vecTmp = []
@@ -143,35 +160,38 @@ class CKDImgProc_InspDefect_SegSepa2:
             vecBlob.extend(vecTmp)
 
     def _get_blob(self, iSegIdx, vecBlob_Out, binImg, grayImg, vecColMean):
-        vecBlob_Out = []
+        print("> <func> _get_blob")
+        vecBlob_Out.clear()
         # Assuming that you have a function named GetBlobList_BinaryImage_forAll
         blobSet_0 = CAM_BlobSet()
         CAMALG_GetBlobList.GetBlobList_BinaryImage_forAll(blobSet_0, binImg, 3)
-        total_0 = len(blobSet_0)
+        total_0 = blobSet_0.GetTotal()
         if total_0 <= 0:
             return
         blobSet_1 = CAM_BlobSet()
         for idx in range(total_0):
             # Assuming that you have a function named InputMergeBlob
-            blobSet_1.InputMergeBlob(blobSet_1, blobSet_0[idx], 64)
-        total_1 = len(blobSet_1)
+            blobSet_1.InputMergeBlob(blobSet_0.GetElement(idx), 64)
+        total_1 = blobSet_1.GetTotal()
         if total_1 <= 0:
             return
         for idx in range(total_1):
-            pBlob = blobSet_1[idx]
+            pBlob = blobSet_1.GetElement(idx)
             rect = pBlob.GetRect()
-            cy = rect[1] + (rect[3] >> 1)
-            if (cy >= self.m_curImgSize[1]) and (cy < (self.m_curImgSize[1] << 1)):
+            cy = rect.y + (rect.height >> 1)
+            if (cy >= self.m_curImgSize[0]) and (cy < (self.m_curImgSize[0] << 1)):
                 blob = CImgProc_Blob()
                 if self._blob_classify(blob, pBlob, grayImg, vecColMean):
                     blob.iSegIdx = iSegIdx
-                    blob.iPos_X = rect[0]
-                    blob.iPos_Y = rect[1]
-                    blob.iSize_Hei = rect[3]
-                    blob.iSize_Wid = rect[2]
-                    blob.rcRect = rect
+                    blob.iPos_X = rect.x
+                    blob.iPos_Y = rect.y
+                    blob.iSize_Hei = rect.height
+                    blob.iSize_Wid = rect.width
+                    rect = pBlob.GetRect()
+                    blob.rcRect = (rect.x,rect.y,rect.width,rect.height)
                     self._blob_getPixelValue(blob.iPixelValue, pBlob, grayImg)
                     vecBlob_Out.append(blob)
+        print("< <func> _get_blob")
 
     def _blob_classify(self, defectBlob, pBlob, srcImg, vecColMean):
         assert srcImg.shape[1] == len(vecColMean)
@@ -180,10 +200,10 @@ class CKDImgProc_InspDefect_SegSepa2:
 
         pBlob.CheckLikeLine()
 
-        iThresd_W = self.m_param['iDefectPixel_Threshold'][0]
-        iThresd_B = self.m_param['iDefectPixel_Threshold'][1]
-        iThresd_SW = self.m_param['iDefectPixel_Threshold'][2]
-        iThresd_SB = self.m_param['iDefectPixel_Threshold'][3]
+        iThresd_W = self.m_param.iDefectPixel_Threshold[0]
+        iThresd_B = self.m_param.iDefectPixel_Threshold[1]
+        iThresd_SW = self.m_param.iDefectPixel_Threshold[2]
+        iThresd_SB = self.m_param.iDefectPixel_Threshold[3]
         iCnt_W = 0
         iCnt_SW = 0
         iCnt_SB = 0
@@ -205,21 +225,21 @@ class CKDImgProc_InspDefect_SegSepa2:
                 val = pDataLine[col]
                 meanVal = vecColMean[col]
 
-                if val >= iThresd_W:
+                if val >= iThresd_W:        # 白
                     if val >= 250:
                         iCnt_250 += 1
                     iCnt_W += 1
-                elif val >= meanVal + iThresd_SW:
+                elif val >= meanVal + iThresd_SW:   # 亚白
                     iCnt_SW += 1
                 elif val <= iThresd_B:
                     iCnt_B += 1
-                elif val <= meanVal - iThresd_SB:
+                elif val <= meanVal - iThresd_SB:   # 亚黑
                     iCnt_SB += 1
 
         # <2. 瑕疵分类>
         # 0 - 针孔, 1 - 油渍, 2 - 涂层脱落, 3 - 亮点, 4 - 黑点, 5 - 脏污, 6 - 褶皱
         # 0 - 针孔
-        if self._InspSeg_CheckDefectData(iCnt_W, amRect.width, amRect.height, self.m_param.tDefectParamArr[0]):
+        if _InspSeg_CheckDefectData(iCnt_W, amRect.width, amRect.height, self.m_param.tDefectParamArr[0]):
             if iCnt_W > self.m_param.tDefectParamArr[1].iMinArea:
                 if iCnt_SW <= iCnt_W / 20:  # 白像素点数是亚白的20倍以上
                     defectBlob.iType = 0
@@ -252,8 +272,18 @@ class CKDImgProc_InspDefect_SegSepa2:
         iArea = [iCnt_W + iCnt_SW] * 3 + [iCnt_B, iCnt_SB + iCnt_B]
 
         for i in range(5):
-            bDefect[i] = self._InspSeg_CheckDefectData(iArea[i], amRect.width, amRect.height,
-                                                       self.m_param['tDefectParamArr'][i + 1])
+            bDefect[i] = _InspSeg_CheckDefectData(iArea[i], amRect.width, amRect.height,
+                                                       self.m_param.tDefectParamArr[i + 1])
+
+        if bDefect[0]:
+            if iCnt_SW * 3 < iCnt_W:
+                defectBlob.iArea = iArea[0]
+                defectBlob.iSize_Wid = amRect.width
+                defectBlob.iSize_Hei = amRect.height
+                defectBlob.iPos_X = amRect.x
+                defectBlob.iPos_Y = amRect.y
+                defectBlob.iType = 1
+                return True
 
         if bDefect[1] and bDefect[2]:
             bDefect[2] = False
@@ -334,26 +364,26 @@ class CKDImgProc_InspDefect_SegSepa2:
         curBin = self.m_curBinImgBuf[roiRect[1]:roiRect[1] + roiRect[3], roiRect[0]:roiRect[0] + roiRect[2]]
         curBin.fill(0)
 
-        for idx in range(self.m_param['iKnifeNum'] - 1):
+        for idx in range(self.m_param.iKnifeNum - 1):
             self._threshold_defect_dot_Segment(idx, curSrc, imgMean, curBin)
 
     def _threshold_defect_dot_Segment(self, iSegIdx, imgSrc, imgMean, imgBin):
-        iStX = int(self.m_iKnifePos_Cur[iSegIdx][1] + self.m_param['iRetract_WB'])
-        iEndX = int(self.m_iKnifePos_Cur[iSegIdx + 1][0] - self.m_param['iRetract_WB'])
+        iStX = int(self.m_iKnifePos_Cur[iSegIdx][1] + self.m_param.iRetract_WB)
+        iEndX = int(self.m_iKnifePos_Cur[iSegIdx + 1][0] - self.m_param.iRetract_WB)
         if iEndX <= iStX:
             iEndX = iStX
         roiRect_WB = (iStX, 0, iEndX - iStX + 1, self.m_curImgSize[0])
 
-        iStX = int(self.m_iKnifePos_Cur[iSegIdx][1] + self.m_param['iRetract_SubWB'])
-        iEndX = int(self.m_iKnifePos_Cur[iSegIdx + 1][0] - self.m_param['iRetract_SubWB'])
+        iStX = int(self.m_iKnifePos_Cur[iSegIdx][1] + self.m_param.iRetract_SubWB)
+        iEndX = int(self.m_iKnifePos_Cur[iSegIdx + 1][0] - self.m_param.iRetract_SubWB)
         if iEndX <= iStX:
             iEndX = iStX
         roiRect_SubWB = (iStX, 0, iEndX - iStX + 1, self.m_curImgSize[0])
 
-        iThresd_W = self.m_param['iDefectPixel_Threshold'][0]
-        iThresd_B = self.m_param['iDefectPixel_Threshold'][1]
-        iThresd_SW = self.m_param['iDefectPixel_Threshold'][2]
-        iThresd_SB = self.m_param['iDefectPixel_Threshold'][3]
+        iThresd_W = self.m_param.iDefectPixel_Threshold[0]
+        iThresd_B = self.m_param.iDefectPixel_Threshold[1]
+        iThresd_SW = self.m_param.iDefectPixel_Threshold[2]
+        iThresd_SB = self.m_param.iDefectPixel_Threshold[3]
 
         imgSrc_Roi = imgSrc[roiRect_WB[1]:roiRect_WB[1] + roiRect_WB[3], roiRect_WB[0]:roiRect_WB[0] + roiRect_WB[2]]
         imgBin_Roi = imgBin[roiRect_WB[1]:roiRect_WB[1] + roiRect_WB[3], roiRect_WB[0]:roiRect_WB[0] + roiRect_WB[2]]
@@ -394,9 +424,9 @@ class CKDImgProc_InspDefect_SegSepa2:
         vecLineCnt = [0] * imgSrc.shape[1]
         vecLineMean = [0] * imgSrc.shape[1]
 
-        iMinPxValue = self.m_param['iDefectPixel_Threshold'][1]
-        iMaxPxValue = self.m_param['iDefectPixel_Threshold'][0]
-        iLastIdx = len(self.m_param['iKnifeNum']) - 1
+        iMinPxValue = self.m_param.iDefectPixel_Threshold[1]
+        iMaxPxValue = self.m_param.iDefectPixel_Threshold[0]
+        iLastIdx = len(self.m_param.iKnifeNum) - 1
         iStartPos = self.m_iKnifePos_Cur[0][0]
         iEndPos = self.m_iKnifePos_Cur[iLastIdx][0]
         for row in range(0, imgSrc.shape[0], 32):
@@ -428,8 +458,8 @@ class CKDImgProc_InspDefect_SegSepa2:
         vecLineCnt = [0] * imgSrc.shape[1]
         vecLineMean = [0] * imgSrc.shape[1]
 
-        iMinPxValue = self.m_param['iDefectPixel_Threshold'][1]
-        iMaxPxValue = self.m_param['iDefectPixel_Threshold'][0]
+        iMinPxValue = self.m_param.iDefectPixel_Threshold[1]
+        iMaxPxValue = self.m_param.iDefectPixel_Threshold[0]
 
         for row in range(0, imgSrc.shape[0], 32):
             pLine = imgSrc[row]
@@ -452,7 +482,7 @@ class CKDImgProc_InspDefect_SegSepa2:
 
             vecLineMean[col] = val
 
-        iLastIdx = int(self.m_param['iKnifeNum']) - 1
+        iLastIdx = int(self.m_param.iKnifeNum) - 1
         iStartPos = self.m_iKnifePos_Cur[0][0]
         iEndPos = self.m_iKnifePos_Cur[iLastIdx][0]
         if iEndPos > iStartPos:
@@ -474,7 +504,7 @@ class CKDImgProc_InspDefect_SegSepa2:
                 dRate1 = 1.0 / (self.m_icurMeanLineCnt + 1)
                 self.m_icurMeanLineCnt += 1
             else:
-                if self.m_param['iThresd'] > 0:
+                if self.m_param.iThresd > 0:
                     dRate0 = 0.65
                     dRate1 = 0.35
                 else:
@@ -558,9 +588,9 @@ class CKDImgProc_InspDefect_SegSepa2:
         dPos = [[0 for _ in range(2)] for _ in range(64)]
         dLastPos = [[0 for _ in range(2)] for _ in range(64)]
 
-        colEdge.GetPos(bFlag, dPos, imgSrc, self.m_param['iKnifePos'], self.m_param['iKnifeNum'])
+        colEdge.GetPos(bFlag, dPos, imgSrc, self.m_param.iKnifePos, self.m_param.iKnifeNum)
 
-        for idx in range(self.m_param['iKnifeNum']):
+        for idx in range(self.m_param.iKnifeNum):
             if bFlag[idx]:
                 self.m_iKnifePos_Cur[idx][0] = dPos[idx][0] + 0.5
                 self.m_iKnifePos_Cur[idx][1] = dPos[idx][1] + 0.5
@@ -570,28 +600,28 @@ class CKDImgProc_InspDefect_SegSepa2:
                 if dLastPos[idx][0] != 0:
                     self.m_iKnifePos_Cur[idx][0] = dLastPos[idx][0]
                 else:
-                    self.m_iKnifePos_Cur[idx][0] = (self.m_param['iKnifePos'][idx][0] + self.m_param['iKnifePos'][idx][
+                    self.m_iKnifePos_Cur[idx][0] = (self.m_param.iKnifePos[idx][0] + self.m_param.iKnifePos[idx][
                         1]) * 0.5
                 if dLastPos[idx][1] != 0:
                     self.m_iKnifePos_Cur[idx][1] = dLastPos[idx][1]
                 else:
-                    self.m_iKnifePos_Cur[idx][1] = (self.m_param['iKnifePos'][idx][0] + self.m_param['iKnifePos'][idx][
+                    self.m_iKnifePos_Cur[idx][1] = (self.m_param.iKnifePos[idx][0] + self.m_param.iKnifePos[idx][
                         1]) * 0.5
 
         if not bFlag[0]:
-            self.m_iKnifePos_Cur[0][0] = self.m_param['iKnifePos'][0][1]
-            self.m_iKnifePos_Cur[0][1] = self.m_param['iKnifePos'][0][1]
+            self.m_iKnifePos_Cur[0][0] = self.m_param.iKnifePos[0][1]
+            self.m_iKnifePos_Cur[0][1] = self.m_param.iKnifePos[0][1]
 
-        iLastIdx = self.m_param['iKnifeNum'] - 1
+        iLastIdx = self.m_param.iKnifeNum - 1
         if iLastIdx < 0:
             iLastIdx = 0
         if not bFlag[iLastIdx]:
-            self.m_iKnifePos_Cur[iLastIdx][0] = self.m_param['iKnifePos'][iLastIdx][0]
-            self.m_iKnifePos_Cur[iLastIdx][1] = self.m_param['iKnifePos'][iLastIdx][0]
+            self.m_iKnifePos_Cur[iLastIdx][0] = self.m_param.iKnifePos[iLastIdx][0]
+            self.m_iKnifePos_Cur[iLastIdx][1] = self.m_param.iKnifePos[iLastIdx][0]
 
     def _position_segment_firstone(self, pos, iKnifeIdx, imgSrc):
         # 创建ROI区域
-        roiRect = (self.m_param['iKnifePos'][iKnifeIdx][0], 0, self.m_param['iKnifePos'][iKnifeIdx][1] - self.m_param['iKnifePos'][iKnifeIdx][0], imgSrc.shape[0])
+        roiRect = (self.m_param.iKnifePos[iKnifeIdx][0], 0, self.m_param.iKnifePos[iKnifeIdx][1] - self.m_param.iKnifePos[iKnifeIdx][0], imgSrc.shape[0])
         roiImg = imgSrc[roiRect[1]:roiRect[1]+roiRect[3], roiRect[0]:roiRect[0]+roiRect[2]]
 
         # 初始化直方图
@@ -629,7 +659,7 @@ class CKDImgProc_InspDefect_SegSepa2:
 
     def _position_segment_one(self, pos, iKnifeIdx, imgSrc):
         # 创建ROI区域
-        roiRect = (self.m_param['iKnifePos'][iKnifeIdx][0], 0, self.m_param['iKnifePos'][iKnifeIdx][1] - self.m_param['iKnifePos'][iKnifeIdx][0], imgSrc.shape[0])
+        roiRect = (self.m_param.iKnifePos[iKnifeIdx][0], 0, self.m_param.iKnifePos[iKnifeIdx][1] - self.m_param.iKnifePos[iKnifeIdx][0], imgSrc.shape[0])
         roiImg = imgSrc[roiRect[1]:roiRect[1]+roiRect[3], roiRect[0]:roiRect[0]+roiRect[2]]
 
         # 初始化直方图
@@ -692,7 +722,7 @@ def _InspSeg_UpdateDefectData(data, iX, iY):
     if iX > data.iRangeX[1]:
         data.iRangeX[1] = iX
 
-def _InspSeg_CheckDefectData(dfData, param):
+def _InspSeg_CheckDefectDataObj(dfData, param):
     if dfData.iCnt >= param.iMinArea:
         if dfData.iRangeX[1] - dfData.iRangeX[0] + 1 >= param.iMinWid:
             if dfData.iRangeY[1] - dfData.iRangeY[0] + 1 >= param.iMinHei:

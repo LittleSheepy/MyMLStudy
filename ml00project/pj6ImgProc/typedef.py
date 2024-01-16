@@ -11,7 +11,7 @@ class TImgProc_DefectParam:
     def __init__(self):
         self.iThresd = 0
         self.iKnifeNum = 0
-        self.iKnifePos = np.zeros((32, 2), dtype=int)
+        self.iKnifePos = [[0, 0] for _ in range(6)]
         self.iRetract_WB = 0
         self.iRetract_SubWB = 0
         self.iSubDefectImgSize = 0
@@ -28,9 +28,9 @@ class CImgProc_Blob:
         self.iSize_Wid = 0
         self.iSize_Hei = 0
         self.iSegIdx = 0
-        self.rcRect = cv2.Rect()
+        self.rcRect = []
         self.iPixelValue = [0, 0, 0]
-        self.imgDefect = cv2.Mat()
+        self.imgDefect = None
 
 class CImgProc_Result:
     def __init__(self):
