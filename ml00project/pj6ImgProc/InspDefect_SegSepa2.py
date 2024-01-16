@@ -52,7 +52,7 @@ class CKDImgProc_InspDefect_SegSepa2:
         vecBlob_Tmp = []
         for idx in range(self.m_param.iKnifeNum - 1):
             vecBlob_Tmp.extend(vecBlobArr[idx])
-        vecBlob = []
+        vecBlob.clear()
         iCnt_Big = 0
         for idx in range(len(vecBlob_Tmp)):
             if vecBlob_Tmp[idx].iType == 5:
@@ -116,7 +116,7 @@ class CKDImgProc_InspDefect_SegSepa2:
             pBlob.imgDefect = cv2.resize(imgDefect, (maxwh, maxwh))
             pBlob.iPos_X += pBlob.iSize_Wid >> 1
             pBlob.iPos_Y += pBlob.iSize_Hei >> 1
-            pBlob.iPos_Y -= self.m_curImgSize[1] << 1
+            pBlob.iPos_Y -= self.m_curImgSize[0] << 1
 
     def _get_defect_segment(self, iSegIdx, vecBlob_Out):
         print("> <func> _get_defect_segment")

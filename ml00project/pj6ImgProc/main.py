@@ -138,8 +138,12 @@ class CTestDlg:
             name = ["针孔", "油渍", "涂层","亮点", "黑点", "脏污", "褶皱"]
 
             for idx, pBlob in enumerate(result.m_vecBlob):
-                filename = f"d:\\grab\\thumb\\{iCurIdx - 1}_{idx}_{pBlob.iArea}_{name[pBlob.iType]}-({pBlob.iSize_Wid},{pBlob.iSize_Hei}).jpg"
-                cv2.imwrite(filename, pBlob.imgDefect)
+                filename = f"d:\\grab\\thumb\\py_{iCurIdx - 1}_{idx}_{pBlob.iArea}_{name[pBlob.iType]}-({pBlob.iSize_Wid},{pBlob.iSize_Hei}).jpg"
+                # cv2.imwrite(filename, pBlob.imgDefect)
+                img = cv2.cvtColor(pBlob.imgDefect, cv2.COLOR_BGR2RGB)  # 将图像从BGR转换为RGB
+                # 创建一个PIL图像并保存它
+                pil_img = Image.fromarray(img)
+                pil_img.save(filename)
 
         self.EnableOp(True)
 
