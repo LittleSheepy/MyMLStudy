@@ -11,6 +11,9 @@ class AM_TPoint:
     x = 0
     y = 0
 
+def _AMBlob_getDist_Dot2Line(line, dot):
+    return np.abs(line[1] * dot[0] - line[0] * dot[1] - (line[1] * line[2] - line[0] * line[3]))
+
 class AM_TRect:
     def __init__(self, x=0, y=0, width=0, height=0):
         self.x = x
@@ -159,7 +162,7 @@ class CAM_Blob:
         total = len(vecDot)
         cnt = 0
         for idx in range(total):
-            dist = self._AMBlob_getDist_Dot2Line(line, vecDot[idx])
+            dist = _AMBlob_getDist_Dot2Line(line, vecDot[idx])
             if dist < 50:
                 cnt += 1
 
