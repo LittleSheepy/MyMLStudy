@@ -24,18 +24,16 @@ class CTestDlg:
         self.m_hIcon = None
         self.m_param = TImgProc_DefectParam()
 
-        self.m_param.iKnifeNum = 3
+        self.m_param.iKnifeNum = 8
         self.m_param.iKnifePos = [
             [2500, 2600],
             [5100, 5200],
             [7650, 7800],
             [10200, 10350],
-            [30600, 31000],
-            [16900, 17100],
-            [19500, 19700],
-            [22000, 22200],
-            [24600, 24800],
-            [27200, 27400]
+            [12800, 12900],
+            [15350, 15450],
+            [17950, 18050],
+            [20500, 20600]
         ]
 
         self.m_param.dRateWH = 1.0

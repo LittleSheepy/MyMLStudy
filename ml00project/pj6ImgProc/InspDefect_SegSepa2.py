@@ -587,7 +587,7 @@ class CKDImgProc_InspDefect_SegSepa2:
         bFlag = [False] * 64
         dPos = [[0 for _ in range(2)] for _ in range(64)]
         dLastPos = [[0 for _ in range(2)] for _ in range(64)]
-
+        #
         colEdge.GetPos(bFlag, dPos, imgSrc, self.m_param.iKnifePos, self.m_param.iKnifeNum)
 
         for idx in range(self.m_param.iKnifeNum):
