@@ -19,16 +19,16 @@ iou_t: 0.20  # IoU training threshold
 anchor_t: 4.0  # anchor-multiple threshold
 # anchors: 3  # anchors per output layer (0 to ignore)
 fl_gamma: 0.0  # focal loss gamma (efficientDet default gamma=1.5)
-hsv_h: 0.015  # image HSV-Hue augmentation (fraction)
-hsv_s: 0.7  # image HSV-Saturation augmentation (fraction)
-hsv_v: 0.4  # image HSV-Value augmentation (fraction)
-degrees: 0.0  # image rotation (+/- deg)
-translate: 0.1  # image translation (+/- fraction)
-scale: 0.5  # image scale (+/- gain)
-shear: 0.0  # image shear (+/- deg)
-perspective: 0.0  # image perspective (+/- fraction), range 0-0.001
-flipud: 0.0  # image flip up-down (probability)
-fliplr: 0.5  # image flip left-right (probability)
-mosaic: 1.0  # image mosaic (probability)
-mixup: 0.0  # image mixup (probability)
-copy_paste: 0.0  # segment copy-paste (probability)
+hsv_h: 0.015  # image HSV-Hue augmentation (fraction)-------------------色调
+hsv_s: 0.7  # image HSV-Saturation augmentation (fraction)--------------饱和度
+hsv_v: 0.4  # image HSV-Value augmentation (fraction)-------------------明度
+degrees: 0.0  # image rotation (+/- deg)--------------------------------图像旋转
+translate: 0.1  # image translation (+/- fraction)----------------------图像平移
+scale: 0.5  # image scale (+/- gain)------------------------------------图像仿射变换的缩放比例
+shear: 0.0  # image shear (+/- deg)-------------------------------------设置裁剪的仿射矩阵系数
+perspective: 0.0  # image perspective (+/- fraction), range 0-0.001-----透视变换参数
+flipud: 0.0  # image flip up-down (probability)-------------------------上下翻转
+fliplr: 0.5  # image flip left-right (probability)----------------------左右翻转
+mosaic: 1.0  # image mosaic (probability)-------------------------------四图马赛克拼接
+mixup: 0.0  # image mixup (probability)---------------------------------进行图像混叠概率（即，多张图像重叠在一起）
+copy_paste: 0.0  # segment copy-paste (probability)---------------------轮廓复制粘贴 分割

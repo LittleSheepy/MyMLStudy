@@ -618,7 +618,6 @@ def main(opt, callbacks=Callbacks()):
                     f"Results saved to {colorstr('bold', save_dir)}\n"
                     f'Usage example: $ python train.py --hyp {evolve_yaml}')
 
-
 def run(**kwargs):
     # Usage: import train; train.run(data='coco128.yaml', imgsz=320, weights='yolov5m.pt')
     opt = parse_opt(True)
@@ -629,5 +628,12 @@ def run(**kwargs):
 
 
 if __name__ == "__main__":
+    import pathlib
     opt = parse_opt()
+    opt_vars = vars(opt)
+    for key, value in opt_vars.items():
+        if isinstance(value, str) or isinstance(value, pathlib.WindowsPath):
+            print(f'self.{key} = \"{value}\"')
+        else:
+            print(f"self.{key} = {value}")
     main(opt)
