@@ -280,7 +280,7 @@ def parse_opt(known=False):
     parser = argparse.ArgumentParser()
     data_name = "HHKJ1103_3000"
     data_path = r"D:\02dataset\06HHKJ\{data_name}_train\{data_name}/".format(data_name=data_name)
-    data_path = r"F:\sheepy\01code\01alg_code\alg_python\algsegmentation\algseg\data\datasets_cls"
+    data_path = r"D:\02dataset\datasets_cls"
     epochs = 2
     train_name = time.strftime('%Y%m%d%H%M', time.localtime())
     name = r"{train_name}_{data_name}_{epochs}_01".format(train_name=train_name, data_name=data_name, epochs=epochs)
