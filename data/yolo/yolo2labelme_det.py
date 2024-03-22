@@ -11,6 +11,8 @@ def parse_tta_label(txt_path, img_dir, save_dir):
     file_name = txt_path.split('/')[-1].split('.')[0]
     img_path = os.path.join(img_dir, file_name + ".jpg")
     img = cv2.imread(img_path)
+    if img is None:
+        return
     h, w = img.shape[:2]
     # h, w = 2048, 2448
 
@@ -36,21 +38,24 @@ def parse_tta_label(txt_path, img_dir, save_dir):
         class_name = label_info[0]
         point_cnt = int((len(label_info)-1)/2)
         points = []
-        for i in range(point_cnt):
-            px = label_info[1+2*i]
-            py = label_info[1+2*i+1]
-            # x = int(float(px) * w)
-            # y = int(float(py) * h)
-            x = round(float(px) * w, 6)
-            y = round(float(py) * h, 6)
-            points.append([x,y])
 
-        shape_type = "polygon"
+        cx1 = label_info[1]
+        cy1 = label_info[2]
+        w1 = label_info[3]
+        h1 = label_info[4]
+        cx2 = round((float(cx1)-float(w1)*0.5) * w, 6)
+        cy2 = round((float(cy1)-float(h1)*0.5) * h, 6)
+        points.append([cx2,cy2])
+        w2 = round(cx2 + float(w1) * w, 6)
+        h2 = round(cy2 + float(h1) * h, 6)
+        points.append([w2,h2])
+
+        shape_type = "rectangle"
         shape = {}
         names = ["ZSKPS","JY"]
         # shape.__setitem__("label", "LZPS")
-        #shape.__setitem__("label", names[int(class_name)])
-        shape.__setitem__("label", class_name)
+        # shape.__setitem__("label", names[int(class_name)])
+        shape.__setitem__("label", "1")
         shape.__setitem__("points", points)
         shape.__setitem__("shape_type", shape_type)
         shape.__setitem__("flags", {})
@@ -77,7 +82,7 @@ def generate_labelme_prelabel(txt_dir, img_dir, save_dir):
 
 
 if __name__ == '__main__':
-    root_dir = r"F:\sheepy\01code\01alg_code\alg_python\algsegmentation\projects/"
+    root_dir = r"C:\Users\KADO\Desktop\ZZS\C\INSPECTION/"
     txt_dir = root_dir + "txt/"
     save_dir = root_dir + "json/"
 
