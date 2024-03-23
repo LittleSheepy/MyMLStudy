@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 #include "alg02list/slist.h"
+//#include "slist.h"
 
 PSeqList createNullList_seq(int m) {
     PSeqList palist = (PSeqList)malloc(sizeof(struct SeqList));
