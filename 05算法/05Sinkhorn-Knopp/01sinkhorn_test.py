@@ -128,5 +128,5 @@ if True:
     ax[0].set_title("原始数据", fontsize=20)
     ax[1].set_title("处理后的数据", fontsize=20)
     plt.tight_layout()
-    # plt.savefig("confusion_matrix.png", dpi = 500)
+    plt.savefig("confusion_matrix.png", dpi = 500)
     plt.show()
