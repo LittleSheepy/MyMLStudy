@@ -1,3 +1,0 @@
-D:/myGitHub/MyMLStudy/CMake/01helloword/build/CMakeFiles/HelloWorldexe.dir
-D:/myGitHub/MyMLStudy/CMake/01helloword/build/CMakeFiles/ALL_BUILD.dir
-D:/myGitHub/MyMLStudy/CMake/01helloword/build/CMakeFiles/ZERO_CHECK.dir
