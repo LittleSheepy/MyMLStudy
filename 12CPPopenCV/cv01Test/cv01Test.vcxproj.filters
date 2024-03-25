@@ -18,57 +18,21 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CPostProcessor.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CNumRec.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CAlgBase.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="FolderTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="PPTest.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="saveJson.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CReJudgeFront.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="RJBTest.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CReJudgeBack.cpp">
+    <ClCompile Include="img_cvt.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CPostProcessor.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CNumRec.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>源文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CAlgBase.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CReJudgeFront.h">
-      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="VectorialAngle.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ReJudgeData.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CReJudgeBack.h">
+    <ClInclude Include="img_cvt.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

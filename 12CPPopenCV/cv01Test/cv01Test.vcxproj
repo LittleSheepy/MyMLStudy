@@ -82,7 +82,7 @@
     <IncludePath>D:\tools\jsoncpp-vs2019\include\;D:\tools\opencv455\build\include\opencv2/;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
     <IntDir>D:\04Bin\MiddleDirectory/</IntDir>
-    <OutDir>D:\04Bin\</OutDir>
+    <OutDir>$(SolutionDir)bin</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -132,7 +132,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>DbgHelp.lib;D:\tools\jsoncpp-vs2019\build\Debug\x64\jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>DbgHelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -153,25 +153,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CAlgBase.cpp" />
-    <ClCompile Include="CPostProcessor.cpp" />
-    <ClCompile Include="CReJudgeBack.cpp" />
-    <ClCompile Include="CReJudgeFront.cpp" />
     <ClCompile Include="FolderTest.cpp" />
+    <ClCompile Include="img_cvt.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="CNumRec.cpp" />
-    <ClCompile Include="PPTest.cpp" />
-    <ClCompile Include="RJBTest.cpp" />
-    <ClCompile Include="saveJson.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CAlgBase.h" />
-    <ClInclude Include="CPostProcessor.h" />
-    <ClInclude Include="CNumRec.h" />
-    <ClInclude Include="CReJudgeBack.h" />
-    <ClInclude Include="CReJudgeFront.h" />
+    <ClInclude Include="img_cvt.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="ReJudgeData.h" />
     <ClInclude Include="VectorialAngle.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
