@@ -19,6 +19,7 @@ def cut_img():
         cv2.imwrite(save_img_path, img_cut)
 
         json_path = os.path.join(big_json_dir, file_name + ".json")
+        if not os.path.exists(json_path):continue
         with open(json_path, "r") as r:
             json_info = json.load(r)
         shapes=json_info["shapes"]
@@ -36,7 +37,7 @@ def cut_img():
 
 
 if __name__ == '__main__':
-    root_dir = r"C:\Users\KADO\Desktop\ZZS\C\/"
+    root_dir = r"E:\0ProjectData\01ZZS\ZZS\A\/"
     big_root_dir = root_dir + "INSPECTION/"
     big_img_dir = big_root_dir + "img/"
     big_txt_dir = big_root_dir + "txt/"
