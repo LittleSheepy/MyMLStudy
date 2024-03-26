@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="alg02list\dslist.cpp" />
     <ClCompile Include="alg02list\llist.cpp" />
     <ClCompile Include="alg02list\slist.cpp" />
     <ClCompile Include="alg02list\slist_test.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="alg02list\dslist.h" />
     <ClInclude Include="alg02list\llist.h" />
     <ClInclude Include="alg02list\slist.h" />
     <ClInclude Include="alg02list\slist_test.h" />
@@ -89,7 +91,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>.\AlgAndDataStruct;$(IncludePath)</IncludePath>
+    <IncludePath>.\AlgAndDataStruct;.\AlgAndDataStruct/alg02list;.;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

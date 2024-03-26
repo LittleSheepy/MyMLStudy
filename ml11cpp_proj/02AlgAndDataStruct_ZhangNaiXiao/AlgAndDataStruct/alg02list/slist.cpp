@@ -1,4 +1,4 @@
-﻿/* 线性表的顺序表示：函数实现*/
+﻿/* 线性表的 顺序 表示：函数实现*/
 
 #include <stdio.h>
 #include <stdlib.h>

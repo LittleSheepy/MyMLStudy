@@ -8,5 +8,3 @@ int main()
 {
     lklist_test();
 }
-
-

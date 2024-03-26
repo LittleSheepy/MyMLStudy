@@ -1,4 +1,4 @@
-﻿/* 线性表的单链表表示：函数实现*/
+﻿/* 线性表的 单链表 表示：函数实现*/
 
 #include <stdio.h>
 #include <stdlib.h>

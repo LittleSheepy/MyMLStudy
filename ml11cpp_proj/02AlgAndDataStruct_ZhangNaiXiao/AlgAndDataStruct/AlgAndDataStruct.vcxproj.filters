@@ -27,6 +27,9 @@
     <ClCompile Include="alg02list\llist.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="alg02list\dslist.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="alg02list\slist.h">
@@ -36,6 +39,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="alg02list\llist.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="alg02list\dslist.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
