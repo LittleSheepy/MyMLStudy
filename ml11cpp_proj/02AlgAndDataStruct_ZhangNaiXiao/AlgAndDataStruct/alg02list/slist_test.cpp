@@ -49,6 +49,10 @@ void slist_test(void) {
     printf("loc = %d\n", loc);
 }
 
+void dslist_test(void) {
+
+}
+
 void lklist_test(void) {
     LinkList lklist = createNullList_link();
     print_pklist(lklist);

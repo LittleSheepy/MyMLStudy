@@ -5,8 +5,8 @@
 
 #include "dslist.h"
 
-PSeqList createNullList_seq( void ) { 	
-    PSeqList lp = (PSeqList)malloc(sizeof(struct SeqList));
+PDySeqList createNullList_seq( void ) {
+    PDySeqList lp = (PDySeqList)malloc(sizeof(struct DySeqList));
     if (lp != NULL) {
         lp->elems = (DataType*)malloc(sizeof(DataType)*NBASE);
         if (lp->elems) {
@@ -21,7 +21,7 @@ PSeqList createNullList_seq( void ) {
 }
 
 /*在palist所指顺序表中下标为p的元素之前插入元素x*/
-int insert_seq(PSeqList lp, int p, DataType x) {  
+int insert_seq(PDySeqList lp, int p, DataType x) {
     int q;
     if ( p < 0 || p > lp->n ) { /* 不存在下标为p的元素 */
         printf("Index of seq-list is out of range! \n");
@@ -47,7 +47,7 @@ int insert_seq(PSeqList lp, int p, DataType x) {
 }
 
 /*在lp所指顺序表中删除下标为ｐ的元素*/
-int delete_seq( PSeqList lp, int p ) { 
+int delete_seq(PDySeqList lp, int p ) {
     int q;
     if (p < 0 || p > lp->n-1 ) { 	/* 不存在下标为p的元素 */
         printf("Index of seq-list is out of range!\n ");
@@ -62,7 +62,7 @@ int delete_seq( PSeqList lp, int p ) {
 }
 
 /*求x在lp所指顺序表中的下标*/
-int locate_seq(PSeqList lp, DataType x) { 
+int locate_seq(PDySeqList lp, DataType x) {
     int q;
     for ( q = 0; q < lp->n; q++ )
         if (lp->elems[q] == x) return q;
@@ -70,7 +70,7 @@ int locate_seq(PSeqList lp, DataType x) {
 }
 
 /* 求lp所指顺序表中下标为p的元素值 */
-DataType  retrieve_seq( PSeqList lp, int p ) { 
+DataType  retrieve_seq(PDySeqList lp, int p ) {
     if ( p >= 0 && p < lp->n )	/* 存在下标为p的元素 */
         return lp->elems[p];
     	
@@ -78,7 +78,7 @@ DataType  retrieve_seq( PSeqList lp, int p ) {
     return SPECIAL;                 /* 返回一个顺序表中没有的特殊值 */
 }
 
-int isNullList_seq( PSeqList lp ) {
+int isNullList_seq(PDySeqList lp ) {
     return lp->n == 0;
 }
 
