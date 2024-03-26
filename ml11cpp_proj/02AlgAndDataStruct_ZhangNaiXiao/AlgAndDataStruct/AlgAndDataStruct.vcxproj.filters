@@ -30,6 +30,12 @@
     <ClCompile Include="alg02list\dslist.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="alg02list\jose_circlist.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="alg02list\jose_seqlist.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="alg02list\slist.h">

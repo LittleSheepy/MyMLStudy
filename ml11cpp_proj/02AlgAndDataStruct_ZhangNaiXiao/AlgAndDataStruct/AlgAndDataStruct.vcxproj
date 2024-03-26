@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="alg02list\dslist.cpp" />
+    <ClCompile Include="alg02list\jose_circlist.cpp" />
+    <ClCompile Include="alg02list\jose_seqlist.cpp" />
     <ClCompile Include="alg02list\llist.cpp" />
     <ClCompile Include="alg02list\slist.cpp" />
     <ClCompile Include="alg02list\slist_test.cpp" />
