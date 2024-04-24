@@ -5,11 +5,11 @@ import os, shutil
 def move1():
     root_dir = r"D:\03GitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect/predict11/"
     root_dir = r"D:\03GitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect\predict14\/"
-    root_dir = r"D:\05xxnmlbps\0811test/"
-    img_dir = root_dir + r"NG/"
-    biaozhu = root_dir + "have/"
+    root_dir = r"D:\01-TestPictrue\#6/"
+    img_dir = root_dir + r"Front_OK/"
+    biaozhu = root_dir + "新建文件夹/"
     nobiaozhu = "D:/01sheepy/01work/01baojie_ocr/pp/img_nobiaozhu/"
-    xml_dir = root_dir + "/img_aq/"
+    xml_dir = root_dir + "/NG_Src/"
     if not os.path.exists(biaozhu):
         os.mkdir(biaozhu)
     for imgfile in os.listdir(img_dir):
@@ -51,4 +51,4 @@ def moveByLabel():
             # print(imgfile)
 
 if __name__ == '__main__':
-    moveByLabel()
+    move1()
