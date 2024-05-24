@@ -18,7 +18,7 @@ typedef int DataType;
 
 
 struct SeqList {
-    int     MAXNUM;
+    int     MAXNUM;         /* 顺序表中最大元素的个数*/
     int      n;				/* 存放线性表中元素的个数 n < MAXNUM  */
     DataType * element;	    /* 存放线性表中的元素 */
 };

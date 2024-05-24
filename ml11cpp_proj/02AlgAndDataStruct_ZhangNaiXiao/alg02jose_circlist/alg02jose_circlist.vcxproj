@@ -18,27 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="alg02list\dslist.cpp" />
-    <ClCompile Include="alg02list\llist.cpp" />
-    <ClCompile Include="alg02list\slist.cpp" />
-    <ClCompile Include="alg02list\slist_test.cpp" />
-    <ClCompile Include="alg03string\string_seq.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="alg02list\dslist.h" />
-    <ClInclude Include="alg02list\llist.h" />
-    <ClInclude Include="alg02list\slist.h" />
-    <ClInclude Include="alg02list\slist_test.h" />
-    <ClInclude Include="alg03string\string_seq.h" />
-    <ClInclude Include="alg03string\string_test.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4a3cd34f-36e3-47ff-84f8-c3323668be39}</ProjectGuid>
-    <RootNamespace>AlgAndDataStruct</RootNamespace>
+    <ProjectGuid>{06c9c311-63cc-4905-a60c-0558e7729704}</ProjectGuid>
+    <RootNamespace>alg02josecirclist</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -94,11 +78,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>.\AlgAndDataStruct;.\AlgAndDataStruct/alg02list;.;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\AlgAndDataStruct;.\AlgAndDataStruct/alg02list;.;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -134,7 +116,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,6 +139,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="alg02jose_circlist.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -3,8 +3,11 @@
 
 #include <iostream>
 #include "alg02list/slist_test.h"
+#include "alg03string/string_test.h"
 
 int main()
 {
-    lklist_test();
+    //slist_test();       // 顺序表
+    //lklist_test();
+    string_test();
 }
