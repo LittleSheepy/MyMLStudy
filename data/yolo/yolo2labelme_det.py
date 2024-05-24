@@ -82,7 +82,7 @@ def generate_labelme_prelabel(txt_dir, img_dir, save_dir):
 
 
 if __name__ == '__main__':
-    root_dir = r"C:\Users\KADO\Desktop\ZZS\C\INSPECTION/"
+    root_dir = r"E:\0ProjectData\01ZZS\zzs0509/"
     txt_dir = root_dir + "txt/"
     save_dir = root_dir + "json/"
 

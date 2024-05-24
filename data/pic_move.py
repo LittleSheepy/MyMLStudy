@@ -5,20 +5,21 @@ import os, shutil
 def move1():
     root_dir = r"D:\03GitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect/predict11/"
     root_dir = r"D:\03GitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect\predict14\/"
-    root_dir = r"D:\01-TestPictrue\#6/"
-    img_dir = root_dir + r"Front_OK/"
+    root_dir = r"C:\/"
+    img_dir = root_dir + r"NMJPG_OK/"     # NMJPG_OK CMJPG_OK   NG_Src  CMJPG_NG NMJPG_NG
     biaozhu = root_dir + "新建文件夹/"
     nobiaozhu = "D:/01sheepy/01work/01baojie_ocr/pp/img_nobiaozhu/"
-    xml_dir = root_dir + "/NG_Src/"
+    xml_dir = root_dir + "/NMJPG_OK1/"     # NG-LBPS  NG_Src
     if not os.path.exists(biaozhu):
         os.mkdir(biaozhu)
     for imgfile in os.listdir(img_dir):
         moveFlg = False
         for xmlfile in os.listdir(xml_dir):
-            print(xmlfile)
+            # print(xmlfile)
             if xmlfile[:-4] == imgfile[:-4]:
                 # shutil.copyfile(img_dir + imgfile, biaozhu + imgfile)
-                shutil.move(img_dir + imgfile, biaozhu + imgfile)
+                # shutil.move(img_dir + imgfile, biaozhu + imgfile)
+                os.remove(img_dir + imgfile)
                 moveFlg = True
         # if not moveFlg:
         #     shutil.copyfile(img_dir + imgfile, nobiaozhu + imgfile)

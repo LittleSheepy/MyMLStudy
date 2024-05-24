@@ -23,8 +23,8 @@ def main():
 
 
 if __name__ == '__main__':
-    dir_root = r"E:\01项目\01LG项目\02数据\01阿丘标注数据\07内面油污\/"
-    src_name = r"标注_非训练集"
+    dir_root = r"E:\0ProjectData\0LG_CB_DATA\11aq_train\23_Side_黑灰灰_CMPS/"
+    src_name = r"test"
     src_root = dir_root + src_name + "/"
     src_source = src_root + r"source"
     src_label = src_root + r"label"

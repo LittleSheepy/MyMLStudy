@@ -16,7 +16,9 @@ def find_matching_images(directory):
             continue
 
         # Extract the base name without the last two characters (assuming format XXX1_1)
-        base_name = name[:-3]
+        index = name.rfind("_CM")+3
+        base_name = name[0:index]
+        # base_name = name[0:16]
 
         # Add the filename to the corresponding group in the dictionary
         if base_name in image_groups:
@@ -25,7 +27,8 @@ def find_matching_images(directory):
             image_groups[base_name] = [filename]
 
     # Filter out groups that don't have exactly 4 images
-    matching_groups = {k: v for k, v in image_groups.items() if len(v) == 4}
+    # matching_groups = {k: v for k, v in image_groups.items() if len(v) == 16}
+    matching_groups = image_groups
 
     return matching_groups
 
@@ -37,16 +40,24 @@ def stitch_images(directory, directory_save, image_group):
     width, height = images[0].size
 
     # Create a new image with a width and height that's twice that of the individual images
-    new_image = Image.new('RGB', (width * 2, height * 2))
+    new_image = Image.new('RGB', (width * 4, height * 4))
 
     # Paste the individual images into the new image
-    new_image.paste(images[0], (0, 0))
-    new_image.paste(images[1], (0, height))
-    new_image.paste(images[2], (width, 0))
-    new_image.paste(images[3], (width, height))
+    for cnt in range(len(image_group)):
+        jpg_name = image_group[cnt]
+        index = jpg_name.rfind("_CM") + 3
+        i = int(jpg_name[index])-1
+        j = int(jpg_name[index+2])-1
+        image = images[cnt]
+        new_image.paste(image, (width * j, height * i))
+    # new_image.paste(images[0], (0, 0))
+    # new_image.paste(images[1], (0, height))
+    # new_image.paste(images[2], (width, 0))
+    # new_image.paste(images[3], (width, height))
 
     # Save the new image
-    new_image.save(os.path.join(directory_save, image_group[0][:-3] + '.jpg'))
+    index = image_group[0].rfind("_CM")
+    new_image.save(os.path.join(directory_save, image_group[0][:index] + '.jpg'))
 
 
 def get_directory_list(directory):
@@ -74,6 +85,6 @@ def main():
 
 
 if __name__ == '__main__':
-    # root_dir = r"E:\点检和测试\点检图片\整个托盘/"
-    root_dir = r"./"
+    root_dir = r"E:\0ProjectData\0LG_CB_DATA\10测试数据\点检四方向\20240523-3/"
+    # root_dir = r"./"
     main()
