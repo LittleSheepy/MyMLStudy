@@ -5,6 +5,7 @@ PSeqString createNullStr_seq(int m) {
     if (pstr != NULL) {
         pstr->c = (char*)malloc(sizeof(char) * m);
         if (pstr->c) {
+            pstr->c[0] = 0;
             pstr->n = 0;
             pstr->MAXUM = m;
             return pstr;
@@ -13,7 +14,7 @@ PSeqString createNullStr_seq(int m) {
             free(pstr);
         }
     }
-    printf("Out of space!\n");
+    printf("Out of space!!\n");
     return NULL;
 }
 
@@ -41,7 +42,20 @@ PSeqString concat(PSeqString s1, PSeqString s2) {
     }
     return s;
 }
-
+PSeqString subStr_seq(PSeqString s, int i, int j) {
+    PSeqString s1;
+    int k;
+    s1 = createNullStr_seq(j);
+    if (s1 == NULL)return NULL;
+    if (i > 0 && i <= s->n && j > 0) {
+        if (s->n < i + j - 1)j = s->n - i + 1;
+        /*若从i开始取不了j个字符，则能取几个就取几个*/
+        for (k = 0; k < j; k++)
+            s1->c[k] = s->c[i + k - 1]; /*给字串赋值*/
+        s1->n = j;
+    }
+    return s1;
+}
 //在串s中,求从串的第i个字符开始连续j个字符所组成的字串
 PSeqString subStr(PSeqString s, int i, int j) {
     if (i > s->n || i + j - 1 > s->n) {
@@ -63,24 +77,21 @@ PSeqString subStr(PSeqString s, int i, int j) {
 
 //如果串s2是s1的字串,则可求串s2在s1中第一次出现的位置
 //带回溯的算法  非KMP   KMP算法待补充
-int index1(PSeqString s1, PSeqString s2) {
-    int i = 0, j = 0;
-    while (i < s1->n && j < s2->n) {
-        if (s1->c[i] == s2->c[j]) {
-            i++;
-            j++;
+int index(PSeqString t, PSeqString p) {
+    int i, j;
+    i = 0; j = 0;
+    while (i < p->n && j < t->n) {
+        if (p->c[i] == t->c[j]) {
+            i++; j++;
         }
         else {
-            i = i - j + 1;
-            j = 0;
+            j = j - i + 1;
+            i = 0;
         }
     }
-    if (j >= s2->n) {
-        return (i - j + 1);
-    }
-    else {
-        return 0;
-    }
+    if (i >= p->n)
+        return(j - p->n + 1);
+    else return 0;
 }
 
 //判断是否为回文字符串
@@ -120,12 +131,12 @@ void string_test() {
     s5->n = 9;
     printf("The String s1's length is %d\n", length(s1));
     printf("The String s2's length is %d\n", length(s2));
-    if (index1(s1, s2)) {
-        printf("The s2 is s1's substring! 第一次出现在字符串s1的第%d个位置\n", index1(s1, s2));
+    if (index(s1, s2)) {
+        printf("The s2 is s1's substring! 第一次出现在字符串s1的第%d个位置\n", index(s1, s2));
     }
     printf("s1和s2的组合是%s\n", concat(s1, s2)->c);
     printf("s3和s4的组合是%s\n", concat(s3, s4)->c);
-    printf("Test the subStr function: %s\n", subStr(s1, 11, 5)->c);
+    printf("Test the subStr function，%s 11 5: %s\n", s1->c, subStr_seq(s1, 11, 5)->c);
     if (isPalindromeStr(s5)) {
         printf("s5是回文字符串\n");
     }

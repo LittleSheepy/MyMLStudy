@@ -26,7 +26,7 @@ PSeqString concat(PSeqString s1, PSeqString s2);
 PSeqString subStr(PSeqString s, int i, int j);
 //如果串s2是s1的字串,则可求串s2在s1中第一次出现的位置
 //带回溯的算法  非KMP   KMP算法待补充
-int index1(PSeqString s1, PSeqString s2);
+int index(PSeqString s1, PSeqString s2);
 //判断是否为回文字符串
 int isPalindromeStr(PSeqString p);
 

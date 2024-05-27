@@ -33,6 +33,9 @@
     <ClCompile Include="alg03string\string_seq.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="alg03string\StringPro_link.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="alg02list\slist.h">
@@ -51,6 +54,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="alg03string\string_test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="alg03string\StringPro_link.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

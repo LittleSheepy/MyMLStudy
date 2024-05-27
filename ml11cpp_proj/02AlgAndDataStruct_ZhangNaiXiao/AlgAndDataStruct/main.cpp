@@ -10,4 +10,5 @@ int main()
     //slist_test();       // 顺序表
     //lklist_test();
     string_test();
+    //Str_link_test();
 }

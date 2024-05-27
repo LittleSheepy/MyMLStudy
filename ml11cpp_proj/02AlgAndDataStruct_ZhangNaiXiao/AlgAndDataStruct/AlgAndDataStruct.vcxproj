@@ -23,6 +23,7 @@
     <ClCompile Include="alg02list\llist.cpp" />
     <ClCompile Include="alg02list\slist.cpp" />
     <ClCompile Include="alg02list\slist_test.cpp" />
+    <ClCompile Include="alg03string\StringPro_link.cpp" />
     <ClCompile Include="alg03string\string_seq.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -31,6 +32,7 @@
     <ClInclude Include="alg02list\llist.h" />
     <ClInclude Include="alg02list\slist.h" />
     <ClInclude Include="alg02list\slist_test.h" />
+    <ClInclude Include="alg03string\StringPro_link.h" />
     <ClInclude Include="alg03string\string_seq.h" />
     <ClInclude Include="alg03string\string_test.h" />
   </ItemGroup>
