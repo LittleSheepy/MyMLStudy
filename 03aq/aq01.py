@@ -1,36 +1,23 @@
-import sys, os
-sys.path.append(r'D:\00myGitHub\00MyMLStudy\03aq_test')
-os.environ['path'] += ';D:\\00myGitHub\\00MyMLStudy\\03aq_test'
-from aidi_vision.aidi_vision import Trainer, Client, Image, Entry, TaskEditor, StringFloatMap
-
-
-
+from aidi_vision.aidi_vision import Trainer, Client, Image, LabelIO, Entry, TaskEditor, StringFloatMap
 
 
 def make_task():
-
     task_editor = TaskEditor()
 
-    task_editor.set_root_path("D:/denghui_bp/Data/56/Detect_0")     # Set the project root path
+    task_editor.set_root_path("D:/denghui_bp/Data/56/Detect_0")  # Set the project root path
 
-    task_editor.set_image_format("bmp")                             # Set the project image format
+    task_editor.set_image_format("bmp")  # Set the project image format
 
-    task_editor.set_indexes([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])        # Set the index (image name) of the training set
+    task_editor.set_indexes([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])  # Set the index (image name) of the training set
 
-    task_editor.set_model_version("V1")                             # Set the model version
+    task_editor.set_model_version("V1")  # Set the model version
 
-    task_editor.set_module_name("Detection")                        # Set module name
+    task_editor.set_module_name("Detection")  # Set module name
 
     return task_editor.to_json()
 
 
-
-
-
-
-
 def train():
-
     trainer = Trainer("daf52973-ce25-11e9-ad13-525400162223")  # create a trainer
 
     trainer.load_task(make_task())  # load train task from task string
@@ -48,13 +35,11 @@ def train():
         trainer.get_loss(loss)  # wait get loss of each iter. return an empty map if call times greater than max_iter
 
         if loss.empty():
-
             break
 
         msg = f"iter: {i}"
 
         for k in loss.keys():
-
             msg += f", {k}: {loss[k]}"
 
         print(msg)
@@ -64,13 +49,7 @@ def train():
     trainer.save_model()  # save trained model
 
 
-
-
-
-
-
 def test():
-
     client = Client("daf52973-ce25-11e9-ad13-525400162223")
 
     client.load_task(make_task())
@@ -80,7 +59,6 @@ def test():
     max_iter = client.max_iters()
 
     for i in range(0, max_iter):
-
         id = client.get_current_index()
 
         print(f"infer on image id: {id}")
@@ -88,13 +66,7 @@ def test():
     client.stop()
 
 
-
-
-
-
-
 def infer():
-
     client = Client("daf52973-ce25-11e9-ad13-525400162223")
 
     # add model with module name and model dir path
@@ -103,15 +75,12 @@ def infer():
 
     # please specify your test param path like `client.add_model_engine("Segment", "<model_dir>", <param file path>)
 
-    client.add_model_engine("Segment", "D:/denghui_bp/Data/56/Detect_0/model/lab_model")
-
-
+    client.add_model_engine("FastDetection", r"C:\Users\KADO\Desktop\13_Side_Black_EWMPS_FS\FastDetection_0\model\V1")
+    client.add_model_engine("Segment", r"C:\Users\KADO\Desktop\13_Side_Black_EWMPS_FS\Segment_1\model\V1")
 
     image = Image()
 
-    image.from_file("D:/denghui_bp/Data/56/Detect_0/source/2.bmp")
-
-
+    image.from_file(r"F:\EWMPS\0.bmp")
 
     # there many magics to explain
 
@@ -119,20 +88,12 @@ def infer():
 
     labels, id = client.wait_get_result(img_id)
 
-
-
     image.draw(labels[0])
 
     image.show(0, "window_name")
 
 
-
-
-
-
-
 def fast_init_serials_model():
-
     client = Client("daf52973-ce25-11e9-ad13-525400162223")
 
     # add model with module name and model dir path
@@ -142,7 +103,6 @@ def fast_init_serials_model():
     # please specify your test param path like `client.add_model_engine("Segment", "<model_dir>", <param file path>)
 
     client.add_model_engine("Factory", "<The folder path you set when exporting>")
-
 
 
 # Or initialize them one by one in order
@@ -156,32 +116,12 @@ def fast_init_serials_model():
 # client.add_model_engine("Classify", "<The folder path you set when exporting>/SUBMODEL_2_Classify", "<Optional custom parameter path 3>")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
-
-
-
     Entry.InitAlgoPlugin()  # Load the algorithm plugin from the given path, if the path parameter is empty, the plugin will be automatically found from the default path<del>This function must be called once before any module-related operation.</del>
 
     Entry.ModuleNames()  # Return all module names
 
-    Entry.SetLocale("zh_CN") # Set language (optional zh_TW, zh_CN, en_US)
+    Entry.SetLocale("zh_CN")  # Set language (optional zh_TW, zh_CN, en_US)
 
     Entry.SetLogFilter("info")  # set log filter, should be one of "trace", "debug", "info", "warning", "error", "fatal"
 
@@ -189,13 +129,11 @@ if __name__ == "__main__":
 
     Entry.InitLogDir("log_dir_path")  # Set the log directory path
 
-
-
     Entry.GetDeviceNumber()  # Counting gpu numbers
 
     # train() # Training
 
     # test() # Testing
 
-    infer() # Inference
+    infer()  # Inference
 

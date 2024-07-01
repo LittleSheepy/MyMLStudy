@@ -30,10 +30,10 @@
     <ClCompile Include="alg02list\dslist.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="alg02list\jose_circlist.cpp">
+    <ClCompile Include="alg03string\string_seq.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="alg02list\jose_seqlist.cpp">
+    <ClCompile Include="alg03string\StringPro_link.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -48,6 +48,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="alg02list\dslist.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="alg03string\string_seq.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="alg03string\string_test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="alg03string\StringPro_link.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
