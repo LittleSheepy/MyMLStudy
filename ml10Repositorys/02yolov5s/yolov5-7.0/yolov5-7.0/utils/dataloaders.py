@@ -311,7 +311,6 @@ class LoadImages:
             im = letterbox(im0, self.img_size, stride=self.stride, auto=self.auto)[0]  # padded resize
             im = im.transpose((2, 0, 1))[::-1]  # HWC to CHW, BGR to RGB
             im = np.ascontiguousarray(im)  # contiguous
-
         return path, im, im0, self.cap, s
 
     def _new_video(self, path):
@@ -632,7 +631,6 @@ class LoadImagesAndLabels(Dataset):
         num = 0
         for im_file, lb_file, prefix  in pbar:
             im_file, lb, shape, segments, nm_f, nf_f, ne_f, nc_f, msg  = verify_image_label((im_file, lb_file, prefix))
-            print(num)
             num = num + 1
             nm += nm_f
             nf += nf_f
