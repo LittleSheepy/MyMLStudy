@@ -244,22 +244,9 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs_pk\01_Front_LZPS\20231011\weights\\best.pt"            # 01 nmlzps
-    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_nmnic1024_6\weights\\best.pt"            # 02 nmnic
-    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_nmjqjps1024_5\weights\\best.pt"          # 03 nmjqjps
-    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg\exp_nmjy5\weights\\best.pt"                  # 05 nmjy
-    pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs_liu\train-seg\exp_nmsz1024_20240409\weights\best.pt"           # 06 nmsz
-    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-seg1\07NMWR\exp_nmwr20\weights\best.pt"          # 07 nmwr
-    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs_pk\12_Side_CMPS_PRE\20231016\weights\best.pt"          # 12 cmps
-    # pt_file = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs_pk\14_Side_CMWR\20231016\weights\\best.pt"             # cmwr
+    pt_file = r"D:\08weight\05yolov5\7.0\\yolov5s-seg.pt"           # cmwr
+    img_dir = r"D:\02dataset\imgtest/"
 
-    #img_dir = r"E:\0ProjectData\0LG_CB_DATA\0ByDate\0518\DMJPG\/"
-    # img_dir = r"E:\0ProjectData\AI_PK_pictreue\OK\side\img\/"
-    # img_dir = r"E:\0ProjectData\0LG_CB_DATA\9\gzj\/"
-    img_dir = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\predict-seg\exp_0406_0.1_OK\imgNG\/"
-    # img_dir = r"E:\0ProjectData\0LG_CB_DATA\9\sz\img\/"
-    #img_dir = r"F:\sheepy\00MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\predict-seg\exp_dmsyj4\img_src\/"
-    #parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'yolov5s-seg.pt', help='model path(s)')
     parser.add_argument('--weights', nargs='+', type=str, default=pt_file, help='model path(s)')
     parser.add_argument('--source', type=str, default=img_dir, help='file/dir/URL/glob/screen/0(webcam)')
     parser.add_argument('--data', type=str, default=ROOT / 'data/coco128.yaml', help='(optional) dataset.yaml path')
