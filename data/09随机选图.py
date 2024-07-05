@@ -3,7 +3,7 @@ import random
 import shutil
 
 
-def copy_random_images(src_folder, dst_folder, num_images=100):
+def copy_random_images(src_folder, dst_folder, num_images=20):
     # 获取源文件夹中的所有文件
     all_files = os.listdir(src_folder)
     # 过滤出图像文件（假设图像文件以常见的图像扩展名结尾）
@@ -39,7 +39,7 @@ def dirs_copy_random_images():
         copy_random_images(src_folder, dst_folder)
 
 if __name__ == '__main__':
-    dir_root = r"D:\02dataset\01work\07HZHengTai\00imgAll1\02FuJi/"
+    dir_root = r"D:\02dataset\01work\09DGKaiDe\00imgAll/"
     # dir_root = r"D:\02dataset\01work\07HZHengTai\00imgAll1\01ZhengJi/"
     # dir_root = r"D:\02dataset\01work\07HZHengTai\00imgAll/"
 

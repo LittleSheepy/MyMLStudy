@@ -142,7 +142,7 @@ def run(
                 p, im0, frame = path, im0s.copy(), getattr(dataset, 'frame', 0)
 
             p = Path(p)  # to Path
-            save_path = str(save_dir / p.name)  # im.jpg
+            save_path = str(save_dir / p.name.replace("bmp", "jpg"))  # im.jpg
             txt_path = str(save_dir / 'labels' / p.stem) + ('' if dataset.mode == 'image' else f'_{frame}')  # im.txt
             s += '%gx%g ' % im.shape[2:]  # print string
             gn = torch.tensor(im0.shape)[[1, 0, 1, 0]]  # normalization gain whwh
@@ -216,8 +216,10 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', nargs='+', type=str, default=r'D:\02weight\05yolov5\7.0\yolov5s.onnx', help='model path or triton URL')
-    parser.add_argument('--source', type=str, default=r'D:\02dataset\imgtest\000000000036.jpg', help='file/dir/URL/glob/screen/0(webcam)')
+    pt_path = r"D:\03GitHub\00myGitHub\MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train\LG_DL2\weights\last.pt"
+    img_path = r"D:\02dataset\01work\08LG_DL\03train\01train0705\images\val_ok\/"
+    parser.add_argument('--weights', nargs='+', type=str, default=pt_path, help='model path or triton URL')
+    parser.add_argument('--source', type=str, default=img_path, help='file/dir/URL/glob/screen/0(webcam)')
     parser.add_argument('--data', type=str, default=ROOT / 'data/coco128.yaml', help='(optional) dataset.yaml path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[640], help='inference size h,w')
     parser.add_argument('--conf-thres', type=float, default=0.25, help='confidence threshold')

@@ -4,7 +4,7 @@ import glob
 import os.path as osp
 
 def creatTxt():
-    root_dir = r"./"
+    # root_dir = r"./"
     right_str = ""
     img_dir = root_dir + "/img" + right_str + "/"
     txt_dir = root_dir + "/txt" + right_str + "/"
@@ -62,7 +62,7 @@ def labelme2yolov2Seg(jsonfilePath="", resultDirPath="", classList=["JQJPS"]):
         f.close()
 
 if __name__ == "__main__":
-    root_dir = r"./"
+    root_dir = r"D:\02dataset\01work\08LG_DL\02labeled\/"
     right_str = ""
     jsonfilePath = root_dir + r"\json" + right_str + "/"    # 要转换的json文件所在目录
     resultDirPath = root_dir + r"\txt" + right_str + "/"    # 要生成的txt文件夹
@@ -71,4 +71,4 @@ if __name__ == "__main__":
         os.mkdir(resultDirPath)
 
     creatTxt()
-    labelme2yolov2Seg(jsonfilePath=jsonfilePath, resultDirPath=resultDirPath, classList=["ZSKPS","JY"])
+    # labelme2yolov2Seg(jsonfilePath=jsonfilePath, resultDirPath=resultDirPath, classList=["ZSKPS","JY"])
