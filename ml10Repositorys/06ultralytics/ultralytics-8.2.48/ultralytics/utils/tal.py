@@ -6,6 +6,7 @@ import torch.nn as nn
 from .checks import check_version
 from .metrics import bbox_iou, probiou
 from .ops import xywhr2xyxyxyxy
+import matplotlib.pyplot as plt   # 直接选择落在GT框中的锚点 torch.Size([1, 2, 8400])
 
 TORCH_1_10 = check_version(torch.__version__, "1.10.0")
 
@@ -40,14 +41,14 @@ class TaskAlignedAssigner(nn.Module):
         """
         Compute the task-aligned assignment. Reference code is available at
         https://github.com/Nioolek/PPYOLOE_pytorch/blob/master/ppyoloe/assigner/tal_assigner.py.
-
+        pred=pd
         Args:
-            pd_scores (Tensor): shape(bs, num_total_anchors, num_classes)
-            pd_bboxes (Tensor): shape(bs, num_total_anchors, 4)
-            anc_points (Tensor): shape(num_total_anchors, 2)
-            gt_labels (Tensor): shape(bs, n_max_boxes, 1)
-            gt_bboxes (Tensor): shape(bs, n_max_boxes, 4)
-            mask_gt (Tensor): shape(bs, n_max_boxes, 1)
+            pd_scores (Tensor): shape(bs, num_total_anchors, num_classes)   torch.Size([1, 8400, 80])
+            pd_bboxes (Tensor): shape(bs, num_total_anchors, 4)             torch.Size([1, 8400, 4])
+            anc_points (Tensor): shape(num_total_anchors, 2)                torch.Size([8400, 2])
+            gt_labels (Tensor): shape(bs, n_max_boxes, 1)                   torch.Size([1, 2, 1])
+            gt_bboxes (Tensor): shape(bs, n_max_boxes, 4)                   torch.Size([1, 2, 4])
+            mask_gt (Tensor): shape(bs, n_max_boxes, 1)                     torch.Size([1, 2, 1])
 
         Returns:
             target_labels (Tensor): shape(bs, num_total_anchors)
@@ -56,8 +57,8 @@ class TaskAlignedAssigner(nn.Module):
             fg_mask (Tensor): shape(bs, num_total_anchors)
             target_gt_idx (Tensor): shape(bs, num_total_anchors)
         """
-        self.bs = pd_scores.shape[0]
-        self.n_max_boxes = gt_bboxes.shape[1]
+        self.bs = pd_scores.shape[0]            # 1
+        self.n_max_boxes = gt_bboxes.shape[1]   # 2
 
         if self.n_max_boxes == 0:
             device = gt_bboxes.device
@@ -90,32 +91,45 @@ class TaskAlignedAssigner(nn.Module):
     def get_pos_mask(self, pd_scores, pd_bboxes, gt_labels, gt_bboxes, anc_points, mask_gt):
         """Get in_gts mask, (b, max_num_obj, h*w)."""
         mask_in_gts = self.select_candidates_in_gts(anc_points, gt_bboxes)
-        # Get anchor_align metric, (b, max_num_obj, h*w)
+
+        mask_in_gts6400 = mask_in_gts[0,0,:6400].reshape((80,80)).cpu().numpy()
+        plt.imshow(mask_in_gts6400,cmap="gray")
+        plt.show()
+
+        # Get anchor_align metric, (b, max_num_obj, h*w)  计算预测边界框和真实边界框的对齐度指标。
         align_metric, overlaps = self.get_box_metrics(pd_scores, pd_bboxes, gt_labels, gt_bboxes, mask_in_gts * mask_gt)
         # Get topk_metric mask, (b, max_num_obj, h*w)
         mask_topk = self.select_topk_candidates(align_metric, topk_mask=mask_gt.expand(-1, -1, self.topk).bool())
         # Merge all mask to a final mask, (b, max_num_obj, h*w)
         mask_pos = mask_topk * mask_in_gts * mask_gt
-
         return mask_pos, align_metric, overlaps
-
+    # pd_scores torch.Size([1, 8400, 80])
+    # pd_bboxes torch.Size([1, 8400, 4])
+    # gt_labels torch.Size([1, 8, 1])
+    # gt_bboxes torch.Size([1, 8, 4])
+    # mask_gt torch.Size([1, 8, 8400])
     def get_box_metrics(self, pd_scores, pd_bboxes, gt_labels, gt_bboxes, mask_gt):
-        """Compute alignment metric given predicted and ground truth bounding boxes."""
-        na = pd_bboxes.shape[-2]
-        mask_gt = mask_gt.bool()  # b, max_num_obj, h*w
+        """Compute alignment metric given predicted and ground truth bounding boxes. 计算给定预测边界框和真实边界框的对齐度量"""
+        na = pd_bboxes.shape[-2]        # 8400
+        mask_gt = mask_gt.bool()  # b, max_num_obj, h*w torch.Size([1, 8, 8400])
+        # torch.Size([1, 1, 8400])
         overlaps = torch.zeros([self.bs, self.n_max_boxes, na], dtype=pd_bboxes.dtype, device=pd_bboxes.device)
+        # torch.Size([1, 1, 8400])
         bbox_scores = torch.zeros([self.bs, self.n_max_boxes, na], dtype=pd_scores.dtype, device=pd_scores.device)
-
-        ind = torch.zeros([2, self.bs, self.n_max_boxes], dtype=torch.long)  # 2, b, max_num_obj
+        # torch.Size([2, 1, 1])
+        ind = torch.zeros([2, self.bs, self.n_max_boxes], dtype=torch.long)  # 2, b, max_num_obj   torch.Size([2, 1, 2])
         ind[0] = torch.arange(end=self.bs).view(-1, 1).expand(-1, self.n_max_boxes)  # b, max_num_obj
         ind[1] = gt_labels.squeeze(-1)  # b, max_num_obj
         # Get the scores of each grid for each gt cls
-        bbox_scores[mask_gt] = pd_scores[ind[0], :, ind[1]][mask_gt]  # b, max_num_obj, h*w
-
-        # (b, max_num_obj, 1, 4), (b, 1, h*w, 4)
-        pd_boxes = pd_bboxes.unsqueeze(1).expand(-1, self.n_max_boxes, -1, -1)[mask_gt]
-        gt_boxes = gt_bboxes.unsqueeze(2).expand(-1, -1, na, -1)[mask_gt]
-        overlaps[mask_gt] = self.iou_calculation(gt_boxes, pd_boxes)
+        # 把初选anchor对应的正确类别的 cls_score 记录下来
+        bbox_scores[mask_gt] = pd_scores[ind[0], :, ind[1]][mask_gt]  # b, max_num_obj, h*w torch.Size([1, 8, 8400])
+        # (b, max_num_obj, 1, 4), (b, 1, h*w, 4)  torch.Size([3590, 4])
+        pd_bboxes_expand = pd_bboxes.unsqueeze(1).expand(-1, self.n_max_boxes, -1, -1)  # torch.Size([1, 1, 8400, 4])
+        pd_boxes = pd_bboxes_expand[mask_gt]     # torch.Size([2046, 4])
+        gt_bboxes_expand = gt_bboxes.unsqueeze(2).expand(-1, -1, na, -1)    # torch.Size([1, 1, 8400, 4])
+        gt_boxes = gt_bboxes_expand[mask_gt]                   # torch.Size([2046, 4])
+        iou = self.iou_calculation(gt_boxes, pd_boxes)  # torch.Size([2046])
+        overlaps[mask_gt] = iou
 
         align_metric = bbox_scores.pow(self.alpha) * overlaps.pow(self.beta)
         return align_metric, overlaps
@@ -215,16 +229,16 @@ class TaskAlignedAssigner(nn.Module):
         Select the positive anchor center in gt.
 
         Args:
-            xy_centers (Tensor): shape(h*w, 2)
-            gt_bboxes (Tensor): shape(b, n_boxes, 4)
+            xy_centers (Tensor): shape(h*w, 2)              # torch.Size([8400, 2])
+            gt_bboxes (Tensor): shape(b, n_boxes, 4)        # torch.Size([1, 2, 4])
 
         Returns:
             (Tensor): shape(b, n_boxes, h*w)
         """
-        n_anchors = xy_centers.shape[0]
-        bs, n_boxes, _ = gt_bboxes.shape
+        n_anchors = xy_centers.shape[0]     # 8400
+        bs, n_boxes, _ = gt_bboxes.shape    # 1    2
         lt, rb = gt_bboxes.view(-1, 1, 4).chunk(2, 2)  # left-top, right-bottom
-        bbox_deltas = torch.cat((xy_centers[None] - lt, rb - xy_centers[None]), dim=2).view(bs, n_boxes, n_anchors, -1)
+        bbox_deltas = torch.cat((xy_centers[None] - lt, rb - xy_centers[None]), dim=2).view(bs, n_boxes, n_anchors, -1) # torch.Size([1, 2, 8400, 4])
         # return (bbox_deltas.min(3)[0] > eps).to(gt_bboxes.dtype)
         return bbox_deltas.amin(3).gt_(eps)
 
@@ -305,7 +319,7 @@ def make_anchors(feats, strides, grid_cell_offset=0.5):
         stride_tensor.append(torch.full((h * w, 1), stride, dtype=dtype, device=device))
     return torch.cat(anchor_points), torch.cat(stride_tensor)
 
-
+# 将每一个anchor point和预测的回归参数通过dist2bbox做解码，生成anchor box与gt计算iou
 def dist2bbox(distance, anchor_points, xywh=True, dim=-1):
     """Transform distance(ltrb) to box(xywh or xyxy)."""
     lt, rb = distance.chunk(2, dim)

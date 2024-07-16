@@ -185,7 +185,7 @@ class v8DetectionLoss:
             i = targets[:, 0]  # image index
             _, counts = i.unique(return_counts=True)
             counts = counts.to(dtype=torch.int32)
-            out = torch.zeros(batch_size, counts.max(), ne - 1, device=self.device)
+            out = torch.zeros(batch_size, counts.max(), ne - 1, device=self.device) # torch.Size([1, 12, 5])
             for j in range(batch_size):
                 matches = i == j
                 n = matches.sum()
@@ -203,13 +203,18 @@ class v8DetectionLoss:
             # pred_dist = (pred_dist.view(b, a, c // 4, 4).softmax(2) * self.proj.type(pred_dist.dtype).view(1, 1, -1, 1)).sum(2)
         return dist2bbox(pred_dist, anchor_points, xywh=False)
 
+    # preds [torch.Size([1, 144, 80, 80]), torch.Size([1, 144, 40, 40]), torch.Size([1, 144, 20, 20])]
     def __call__(self, preds, batch):
         """Calculate the sum of the loss for box, cls and dfl multiplied by batch size."""
         loss = torch.zeros(3, device=self.device)  # box, cls, dfl
         feats = preds[1] if isinstance(preds, tuple) else preds
-        pred_distri, pred_scores = torch.cat([xi.view(feats[0].shape[0], self.no, -1) for xi in feats], 2).split(
-            (self.reg_max * 4, self.nc), 1
-        )
+        # pred_distri, pred_scores = torch.cat([xi.view(feats[0].shape[0], self.no, -1) for xi in feats], 2).split(
+        #     (self.reg_max * 4, self.nc), 1
+        # )
+        feats_reshaped = [xi.view(feats[0].shape[0], self.no, -1) for xi in feats]
+        feats_cat = torch.cat(feats_reshaped, 2)    # torch.Size([1, 144, 8400])
+        feats_split = feats_cat.split((self.reg_max * 4, self.nc), 1)   # [torch.Size([1, 64, 8400]), torch.Size([1, 80, 8400])]
+        pred_distri, pred_scores = feats_split
 
         pred_scores = pred_scores.permute(0, 2, 1).contiguous()
         pred_distri = pred_distri.permute(0, 2, 1).contiguous()
@@ -218,14 +223,18 @@ class v8DetectionLoss:
         batch_size = pred_scores.shape[0]
         imgsz = torch.tensor(feats[0].shape[2:], device=self.device, dtype=dtype) * self.stride[0]  # image size (h,w)
         anchor_points, stride_tensor = make_anchors(feats, self.stride, 0.5)
-
-        # Targets
+        anchor_points6400 = anchor_points[:6400,0].reshape((80,80)).cpu().numpy()
+        #import matplotlib
+        import matplotlib.pyplot as plt
+        plt.imshow(anchor_points6400,cmap="gray")
+        plt.show()
+        # Targets torch.Size([12, 6])   1+1+4
         targets = torch.cat((batch["batch_idx"].view(-1, 1), batch["cls"].view(-1, 1), batch["bboxes"]), 1)
         targets = self.preprocess(targets.to(self.device), batch_size, scale_tensor=imgsz[[1, 0, 1, 0]])
         gt_labels, gt_bboxes = targets.split((1, 4), 2)  # cls, xyxy
         mask_gt = gt_bboxes.sum(2, keepdim=True).gt_(0.0)
 
-        # Pboxes
+        # Pboxes torch.Size([1, 8400, 4])
         pred_bboxes = self.bbox_decode(anchor_points, pred_distri)  # xyxy, (b, h*w, 4)
 
         _, target_bboxes, target_scores, fg_mask, _ = self.assigner(

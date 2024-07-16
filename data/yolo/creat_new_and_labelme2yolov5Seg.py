@@ -62,7 +62,7 @@ def labelme2yolov2Seg(jsonfilePath="", resultDirPath="", classList=["JQJPS"]):
         f.close()
 
 if __name__ == "__main__":
-    root_dir = r"D:\02dataset\01work\08LG_DL\02labeled\/"
+    root_dir = r"D:\02dataset\01work\08LG_DL\02labeled\02HanDian/"
     right_str = ""
     jsonfilePath = root_dir + r"\json" + right_str + "/"    # 要转换的json文件所在目录
     resultDirPath = root_dir + r"\txt" + right_str + "/"    # 要生成的txt文件夹

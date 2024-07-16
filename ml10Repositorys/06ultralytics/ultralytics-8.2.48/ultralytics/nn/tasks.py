@@ -278,7 +278,7 @@ class BaseModel(nn.Module):
         """
         if not hasattr(self, "criterion"):
             self.criterion = self.init_criterion()
-
+        # [torch.Size([16, 144, 80, 80]), torch.Size([16, 144, 40, 40]), torch.Size([16, 144, 20, 20])]
         preds = self.forward(batch["img"]) if preds is None else preds
         return self.criterion(preds, batch)
 

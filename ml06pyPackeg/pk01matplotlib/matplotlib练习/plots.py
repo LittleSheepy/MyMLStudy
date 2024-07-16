@@ -18,7 +18,7 @@ plt.plot([i for i in range(4)],[i+10 for i in range(4)])
 plt.show()
 
 plt.title("img")
-plt.imshow([[0,1],[1,0]],"gray")
+plt.imshow(np.array([[0,1],[1,0]]),"gray")
 plt.show()
 
 plt.title("img")

@@ -221,9 +221,11 @@ def plt_settings(rcparams=None, backend="Agg"):
             if backend.lower() != original_backend.lower():
                 plt.close("all")  # auto-close()ing of figures upon backend switching is deprecated since 3.8
                 plt.switch_backend(backend)
-
-            with plt.rc_context(rcparams):
-                result = func(*args, **kwargs)
+            try:
+                with plt.rc_context(rcparams):
+                    result = func(*args, **kwargs)
+            except:
+                pass
 
             if backend != original_backend:
                 plt.close("all")
