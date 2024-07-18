@@ -9,6 +9,32 @@ from .ops import xywhr2xyxyxyxy
 import matplotlib.pyplot as plt   # 直接选择落在GT框中的锚点 torch.Size([1, 2, 8400])
 
 TORCH_1_10 = check_version(torch.__version__, "1.10.0")
+import matplotlib.pyplot as plt
+import numpy as np
+def normalize_to_255(arr):
+    arr_min = arr.min()
+    arr_max = arr.max()
+    normalized_arr = (arr - arr_min) / (arr_max - arr_min + 1e-8) * 255
+    return normalized_arr
+
+def show_one(img_data, title=""):
+    data_min = img_data.min()
+    data_max = img_data.max()
+    plt.title(title +",".join([" ", str(data_min), str(data_max)]))
+    # img_data = normalize_to_255(img_data)
+    plt.imshow(img_data, cmap="gray")
+    plt.show()
+
+
+def show8400(data8400, title=""):
+    data6400 = data8400[:6400].reshape((80, 80)).cpu().numpy()
+    show_one(data6400, title + "80*80")
+
+    data1600 = data8400[6400:8000].reshape((40, 40)).cpu().numpy()
+    show_one(data1600, title + "40*40")
+
+    data400 = data8400[8000:].reshape((20, 20)).cpu().numpy()
+    show_one(data400, title + "20*20")
 
 
 class TaskAlignedAssigner(nn.Module):
@@ -69,20 +95,24 @@ class TaskAlignedAssigner(nn.Module):
                 torch.zeros_like(pd_scores[..., 0]).to(device),
                 torch.zeros_like(pd_scores[..., 0]).to(device),
             )
-
+        # mask_pos torch.Size([1, 1, 8400])
+        # align_metric  对齐度       torch.Size([1, 1, 8400])
+        # overlaps      IOU         torch.Size([1, 1, 8400])
         mask_pos, align_metric, overlaps = self.get_pos_mask(
             pd_scores, pd_bboxes, gt_labels, gt_bboxes, anc_points, mask_gt
         )
 
         target_gt_idx, fg_mask, mask_pos = self.select_highest_overlaps(mask_pos, overlaps, self.n_max_boxes)
-
-        # Assigned target
+        show8400(target_gt_idx[0, :], "target_gt_idx")
+        show8400(fg_mask[0, :], "fg_mask")
+        show8400(mask_pos[0, 0, :], "mask_pos")
+        # Assigned target 指派目标
         target_labels, target_bboxes, target_scores = self.get_targets(gt_labels, gt_bboxes, target_gt_idx, fg_mask)
 
         # Normalize
-        align_metric *= mask_pos
-        pos_align_metrics = align_metric.amax(dim=-1, keepdim=True)  # b, max_num_obj
-        pos_overlaps = (overlaps * mask_pos).amax(dim=-1, keepdim=True)  # b, max_num_obj
+        align_metric *= mask_pos    # 根据有效anchor的标记来保留有效的对齐得分  [1, 1, 8400]
+        pos_align_metrics = align_metric.amax(dim=-1, keepdim=True)  # b, max_num_obj # 获取所有anchor与每个gt对应的最大对齐得分 [1, 1, 1]
+        pos_overlaps = (overlaps * mask_pos).amax(dim=-1, keepdim=True)  # b, max_num_obj # 获取所有anchor与每个gt的最大iou [1, 1, 1]
         norm_align_metric = (align_metric * pos_overlaps / (pos_align_metrics + self.eps)).amax(-2).unsqueeze(-1)
         target_scores = target_scores * norm_align_metric
 
@@ -92,16 +122,20 @@ class TaskAlignedAssigner(nn.Module):
         """Get in_gts mask, (b, max_num_obj, h*w)."""
         mask_in_gts = self.select_candidates_in_gts(anc_points, gt_bboxes)
 
-        mask_in_gts6400 = mask_in_gts[0,0,:6400].reshape((80,80)).cpu().numpy()
-        plt.imshow(mask_in_gts6400,cmap="gray")
-        plt.show()
+        show8400(mask_in_gts[0, 0, :], "mask_in_gts")
 
-        # Get anchor_align metric, (b, max_num_obj, h*w)  计算预测边界框和真实边界框的对齐度指标。
+        # Get anchor_align metric, (b, max_num_obj, h*w)  计算预测边界框和真实边界框的对齐度指标。 torch.Size([1, 1, 8400])
         align_metric, overlaps = self.get_box_metrics(pd_scores, pd_bboxes, gt_labels, gt_bboxes, mask_in_gts * mask_gt)
         # Get topk_metric mask, (b, max_num_obj, h*w)
         mask_topk = self.select_topk_candidates(align_metric, topk_mask=mask_gt.expand(-1, -1, self.topk).bool())
+
+        show8400(mask_topk[0, 0, :], "mask_topk")
+
         # Merge all mask to a final mask, (b, max_num_obj, h*w)
         mask_pos = mask_topk * mask_in_gts * mask_gt
+
+        show8400(mask_pos[0, 0, :], "mask_pos")
+
         return mask_pos, align_metric, overlaps
     # pd_scores torch.Size([1, 8400, 80])
     # pd_bboxes torch.Size([1, 8400, 4])
@@ -132,7 +166,9 @@ class TaskAlignedAssigner(nn.Module):
         overlaps[mask_gt] = iou
 
         align_metric = bbox_scores.pow(self.alpha) * overlaps.pow(self.beta)
-        return align_metric, overlaps
+        show8400(align_metric[0, 0, :], "align_metric")
+        show8400(overlaps[0, 0, :], "overlaps")
+        return align_metric, overlaps       # 对齐度 和 IOU
 
     def iou_calculation(self, gt_bboxes, pd_bboxes):
         """IoU calculation for horizontal bounding boxes."""
@@ -177,7 +213,7 @@ class TaskAlignedAssigner(nn.Module):
     def get_targets(self, gt_labels, gt_bboxes, target_gt_idx, fg_mask):
         """
         Compute target labels, target bounding boxes, and target scores for the positive anchor points.
-
+        计算正锚点的目标标签、目标边界框和目标分数。
         Args:
             gt_labels (Tensor): Ground truth labels of shape (b, max_num_obj, 1), where b is the
                                 batch size and max_num_obj is the maximum number of objects.
@@ -200,25 +236,25 @@ class TaskAlignedAssigner(nn.Module):
         """
 
         # Assigned target labels, (b, 1)
-        batch_ind = torch.arange(end=self.bs, dtype=torch.int64, device=gt_labels.device)[..., None]
-        target_gt_idx = target_gt_idx + batch_ind * self.n_max_boxes  # (b, h*w)
-        target_labels = gt_labels.long().flatten()[target_gt_idx]  # (b, h*w)
-
+        batch_ind = torch.arange(end=self.bs, dtype=torch.int64, device=gt_labels.device)[..., None]    # torch.Size([1, 1])
+        target_gt_idx = target_gt_idx + batch_ind * self.n_max_boxes  # (b, h*w) torch.Size([1, 8400])
+        # 8400中的格子对应的类别是哪一个
+        target_labels = gt_labels.long().flatten()[target_gt_idx]  # (b, h*w) torch.Size([1, 8400])
         # Assigned target boxes, (b, max_num_obj, 4) -> (b, h*w, 4)
-        target_bboxes = gt_bboxes.view(-1, gt_bboxes.shape[-1])[target_gt_idx]
-
-        # Assigned target scores
+        gt_bboxes_view = gt_bboxes.view(-1, gt_bboxes.shape[-1])    # torch.Size([1, 4])
+        target_bboxes = gt_bboxes_view[target_gt_idx]  # torch.Size([1, 8400, 4])   每个格子对应的真实框，没有就用第一个替代，后面会使用mask去除
+        # Assigned target scores 分配的目标分数
         target_labels.clamp_(0)
 
-        # 10x faster than F.one_hot()
+        # 10x faster than F.one_hot() torch.Size([1, 8400, 80])
         target_scores = torch.zeros(
             (target_labels.shape[0], target_labels.shape[1], self.num_classes),
             dtype=torch.int64,
             device=target_labels.device,
         )  # (b, h*w, 80)
         target_scores.scatter_(2, target_labels.unsqueeze(-1), 1)
-
-        fg_scores_mask = fg_mask[:, :, None].repeat(1, 1, self.num_classes)  # (b, h*w, 80)
+        show8400(target_scores[0, :, 22], "target_scores")
+        fg_scores_mask = fg_mask[:, :, None].repeat(1, 1, self.num_classes)  # (b, h*w, 80) torch.Size([1, 8400, 80])
         target_scores = torch.where(fg_scores_mask > 0, target_scores, 0)
 
         return target_labels, target_bboxes, target_scores
@@ -246,7 +282,7 @@ class TaskAlignedAssigner(nn.Module):
     def select_highest_overlaps(mask_pos, overlaps, n_max_boxes):
         """
         If an anchor box is assigned to multiple gts, the one with the highest IoU will be selected.
-
+        如果一个锚框被分配给多个gts，那么IoU最高的那个将被选择。
         Args:
             mask_pos (Tensor): shape(b, n_max_boxes, h*w)
             overlaps (Tensor): shape(b, n_max_boxes, h*w)
@@ -334,7 +370,7 @@ def dist2bbox(distance, anchor_points, xywh=True, dim=-1):
 
 def bbox2dist(anchor_points, bbox, reg_max):
     """Transform bbox(xyxy) to dist(ltrb)."""
-    x1y1, x2y2 = bbox.chunk(2, -1)
+    x1y1, x2y2 = bbox.chunk(2, -1)  # 拆分
     return torch.cat((anchor_points - x1y1, x2y2 - anchor_points), -1).clamp_(0, reg_max - 0.01)  # dist (lt, rb)
 
 

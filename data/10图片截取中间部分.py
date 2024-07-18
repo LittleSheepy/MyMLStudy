@@ -30,8 +30,8 @@ if __name__ == '__main__':
     # dir_root = r"D:\02dataset\01work\09DGKaiDe\00imgAll/"
     dir_root = r"./"
     # dir_root = r"D:\02dataset\01work\07HZHengTai\00imgAll1\01ZhengJi/"
-    dir_root = r"D:\02dataset\01work\07HZHengTai\00imgAll1\02FuJi\00AnHen_result/"
+    dir_root = r"D:\02dataset\01work\09DGKaiDe\00imgAll\06TaiGun_result\/"
 
-    input_folder = dir_root + '08/'
-    output_folder = dir_root + '08_500/'
+    input_folder = dir_root + '03/'
+    output_folder = dir_root + '00_500/'
     process_images(input_folder, output_folder)

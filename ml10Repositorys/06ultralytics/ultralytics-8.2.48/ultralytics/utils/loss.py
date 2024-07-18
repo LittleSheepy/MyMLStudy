@@ -11,6 +11,33 @@ from ultralytics.utils.tal import RotatedTaskAlignedAssigner, TaskAlignedAssigne
 from .metrics import bbox_iou, probiou
 from .tal import bbox2dist
 
+import matplotlib.pyplot as plt
+import numpy as np
+def normalize_to_255(arr):
+    arr_min = arr.min()
+    arr_max = arr.max()
+    normalized_arr = (arr - arr_min) / (arr_max - arr_min + 1e-8) * 255
+    return normalized_arr
+
+def show_one(img_data, title=""):
+    data_min = img_data.min()
+    data_max = img_data.max()
+    plt.title(title +",".join([" ", str(data_min), str(data_max)]))
+    img_data = normalize_to_255(img_data)
+    plt.imshow(img_data, cmap="gray")
+    plt.show()
+
+
+def show8400(data8400, title=""):
+    data6400 = data8400[:6400].reshape((80, 80)).cpu().numpy()
+    show_one(data6400, title + "80*80")
+
+    data1600 = data8400[6400:8000].reshape((40, 40)).cpu().numpy()
+    show_one(data1600, title + "40*40")
+
+    data400 = data8400[8000:].reshape((20, 20)).cpu().numpy()
+    show_one(data400, title + "20*20")
+
 
 class VarifocalLoss(nn.Module):
     """
@@ -68,12 +95,13 @@ class DFLoss(nn.Module):
         """Initialize the DFL module."""
         super().__init__()
         self.reg_max = reg_max
-
+    # pred_dist torch.Size([40, 16])
+    # target torch.Size([10, 4]) target.view(-1):torch.Size([40])
     def __call__(self, pred_dist, target):
         """
         Return sum of left and right DFL losses.
 
-        Distribution Focal Loss (DFL) proposed in Generalized Focal Loss
+        Distribution Focal Loss (DFL) proposed in Generalized Focal Loss 分布焦点损失(DFL)在广义焦点损失中提出
         https://ieeexplore.ieee.org/document/9792391
         """
         target = target.clamp_(0, self.reg_max - 1 - 0.01)
@@ -81,10 +109,20 @@ class DFLoss(nn.Module):
         tr = tl + 1  # target right
         wl = tr - target  # weight left
         wr = 1 - wl  # weight right
-        return (
-            F.cross_entropy(pred_dist, tl.view(-1), reduction="none").view(tl.shape) * wl
-            + F.cross_entropy(pred_dist, tr.view(-1), reduction="none").view(tl.shape) * wr
-        ).mean(-1, keepdim=True)
+        loss_left_ce = F.cross_entropy(pred_dist, tl.view(-1), reduction="none")
+        loss_left_ce_reshape = loss_left_ce.view(tl.shape)
+        loss_left_weight = loss_left_ce_reshape * wl
+
+        loss_right_ce = F.cross_entropy(pred_dist, tr.view(-1), reduction="none")
+        loss_right_ce_reshape = loss_right_ce.view(tr.shape)
+        loss_right_weight = loss_right_ce_reshape * wr
+        loss_none = loss_left_weight + loss_right_weight
+        loss_mean = (loss_none).mean(-1, keepdim=True)
+        return loss_mean
+        # return (
+        #     F.cross_entropy(pred_dist, tl.view(-1), reduction="none").view(tl.shape) * wl
+        #     + F.cross_entropy(pred_dist, tr.view(-1), reduction="none").view(tl.shape) * wr
+        # ).mean(-1, keepdim=True)
 
 
 class BboxLoss(nn.Module):
@@ -102,9 +140,9 @@ class BboxLoss(nn.Module):
         loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
 
         # DFL loss
-        if self.dfl_loss:
-            target_ltrb = bbox2dist(anchor_points, target_bboxes, self.dfl_loss.reg_max - 1)
-            loss_dfl = self.dfl_loss(pred_dist[fg_mask].view(-1, self.dfl_loss.reg_max), target_ltrb[fg_mask]) * weight
+        if self.dfl_loss:   # torch.Size([1, 8400, 4])
+            target_ltrb = bbox2dist(anchor_points, target_bboxes, self.dfl_loss.reg_max - 1)# 计算每个特征点到gt框的上下左右距离，距离范围为[0, 16]
+            loss_dfl = self.dfl_loss(pred_dist[fg_mask].view(-1, self.dfl_loss.reg_max), target_ltrb[fg_mask]) * weight # torch.Size([10, 1])
             loss_dfl = loss_dfl.sum() / target_scores_sum
         else:
             loss_dfl = torch.tensor(0.0).to(pred_dist.device)
@@ -223,11 +261,9 @@ class v8DetectionLoss:
         batch_size = pred_scores.shape[0]
         imgsz = torch.tensor(feats[0].shape[2:], device=self.device, dtype=dtype) * self.stride[0]  # image size (h,w)
         anchor_points, stride_tensor = make_anchors(feats, self.stride, 0.5)
-        anchor_points6400 = anchor_points[:6400,0].reshape((80,80)).cpu().numpy()
-        #import matplotlib
-        import matplotlib.pyplot as plt
-        plt.imshow(anchor_points6400,cmap="gray")
-        plt.show()
+
+        show8400(anchor_points[:,0], "anchor_points")
+
         # Targets torch.Size([12, 6])   1+1+4
         targets = torch.cat((batch["batch_idx"].view(-1, 1), batch["cls"].view(-1, 1), batch["bboxes"]), 1)
         targets = self.preprocess(targets.to(self.device), batch_size, scale_tensor=imgsz[[1, 0, 1, 0]])
@@ -246,7 +282,7 @@ class v8DetectionLoss:
             mask_gt,
         )
 
-        target_scores_sum = max(target_scores.sum(), 1)
+        target_scores_sum = max(target_scores.sum(), 1) # tensor(4.2347, device='cuda:0')
 
         # Cls loss
         # loss[1] = self.varifocal_loss(pred_scores, target_scores, target_labels) / target_scores_sum  # VFL way

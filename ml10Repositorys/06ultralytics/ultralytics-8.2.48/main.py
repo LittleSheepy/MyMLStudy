@@ -1,14 +1,7 @@
 from ultralytics import YOLO
-import matplotlib.pyplot as plt
 import numpy as np
-#import matplotlib
-#print(matplotlib.get_backend()) # module://backend_interagg
-
 #import multiprocessing
 def train():
-    plt.title("img")
-    plt.imshow(np.array([[0, 1], [1, 0]]), "gray")
-    plt.show()
     model = YOLO(r"D:\08weight\08yolov8\8.2.0/yolov8s.pt")  # build a new model from scratch
     model.train(cfg="ultralytics/cfg/default.yaml", data=r"ultralytics/cfg/datasets/coco128.yaml", epochs=2, batch=1)
 
