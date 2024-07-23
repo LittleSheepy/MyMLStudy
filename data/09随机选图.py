@@ -28,7 +28,7 @@ def one_dir_copy_random_images():
         os.mkdir(dst_folder)
     copy_random_images(src_folder, dst_folder)
 
-def dirs_copy_random_images():
+def dirs_copy_random_images(num_images=20):
     for dir_name in os.listdir(dir_root):
         print(dir_name)
         if not "result" in dir_name:
@@ -36,15 +36,15 @@ def dirs_copy_random_images():
         BianHao = dir_name[:2]
         src_folder = os.path.join(dir_root, dir_name, BianHao)
         dst_folder = os.path.join(dir_root, BianHao)
-        copy_random_images(src_folder, dst_folder)
+        copy_random_images(src_folder, dst_folder, num_images)
 
 if __name__ == '__main__':
     # dir_root = r"D:\02dataset\01work\09DGKaiDe\00imgAll/"
     dir_root = r"./"
     # dir_root = r"D:\02dataset\01work\07HZHengTai\00imgAll1\01ZhengJi/"
     # dir_root = r"D:\02dataset\01work\07HZHengTai\00imgAll/"
-
-    dirs_copy_random_images()
+    num_images = int(input())
+    dirs_copy_random_images(num_images)
 
 
 # pyinstaller -F 09随机选图.py
