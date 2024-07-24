@@ -3,57 +3,55 @@
 
 # # Chapter 4: Implementing a GPT model from Scratch To Generate Text 
 
+
 from importlib.metadata import version
 
-import matplotlib
+import matplotlib.pyplot as plt
 import tiktoken
 import torch
-import matplotlib.pyplot as plt
-from previous_chapters import MultiHeadAttention
 import torch.nn as nn
+
+from previous_chapters import MultiHeadAttention
 
 print("matplotlib version:", version("matplotlib"))
 print("torch version:", version("torch"))
 print("tiktoken version:", version("tiktoken"))
 
 GPT_CONFIG_124M = {
-    "vocab_size": 50257,    # Vocabulary size
-    "context_length": 1024, # Context length
-    "emb_dim": 768,         # Embedding dimension
-    "n_heads": 12,          # Number of attention heads
-    "n_layers": 12,         # Number of layers
-    "drop_rate": 0.1,       # Dropout rate
-    "qkv_bias": False       # Query-Key-Value bias
+    "vocab_size": 50257,    # Vocabulary size               词汇量大小
+    "context_length": 1024, # Context length                上下文长度
+    "emb_dim": 768,         # Embedding dimension           嵌入维度
+    "n_heads": 12,          # Number of attention heads     注意力头数
+    "n_layers": 12,         # Number of layers              层数
+    "drop_rate": 0.1,       # Dropout rate                  丢弃率
+    "qkv_bias": False       # Query-Key-Value bias          查询-键-值偏差
 }
 
 class DummyGPTModel(nn.Module):
     def __init__(self, cfg):
         super().__init__()
-        self.tok_emb = nn.Embedding(cfg["vocab_size"], cfg["emb_dim"])
-        self.pos_emb = nn.Embedding(cfg["context_length"], cfg["emb_dim"])
+        self.tok_emb = nn.Embedding(cfg["vocab_size"], cfg["emb_dim"])      # 50257
+        self.pos_emb = nn.Embedding(cfg["context_length"], cfg["emb_dim"])  # 1024
         self.drop_emb = nn.Dropout(cfg["drop_rate"])
         
-        # Use a placeholder for TransformerBlock
+        # Use a placeholder for TransformerBlock 定义顺序容器，用于存放transformer块
         self.trf_blocks = nn.Sequential(
             *[DummyTransformerBlock(cfg) for _ in range(cfg["n_layers"])])
         
         # Use a placeholder for LayerNorm
         self.final_norm = DummyLayerNorm(cfg["emb_dim"])
-        self.out_head = nn.Linear(
-            cfg["emb_dim"], cfg["vocab_size"], bias=False
-        )
+        self.out_head = nn.Linear(cfg["emb_dim"], cfg["vocab_size"], bias=False)
 
-    def forward(self, in_idx):
-        batch_size, seq_len = in_idx.shape
-        tok_embeds = self.tok_emb(in_idx)
-        pos_embeds = self.pos_emb(torch.arange(seq_len, device=in_idx.device))
-        x = tok_embeds + pos_embeds
-        x = self.drop_emb(x)
-        x = self.trf_blocks(x)
-        x = self.final_norm(x)
-        logits = self.out_head(x)
-        return logits
-
+    def forward(self, in_idx):  # 定义前向传播方法 torch.Size([2, 4])
+        batch_size, seq_len = in_idx.shape  # 获取批量大小和序列长度
+        tok_embeds = self.tok_emb(in_idx)  # 获取词元嵌入 torch.Size([2, 4, 768])
+        pos_embeds = self.pos_emb(torch.arange(seq_len, device=in_idx.device))  # 获取位置嵌入 torch.Size([4, 768])
+        x = tok_embeds + pos_embeds  # 合并嵌入
+        x = self.drop_emb(x)  # 应用丢弃层
+        x = self.trf_blocks(x)  # 应用transformer块
+        x = self.final_norm(x)  # 应用归一化层
+        logits = self.out_head(x)  # 计算输出
+        return logits  # 返回输出
 
 class DummyTransformerBlock(nn.Module):
     def __init__(self, cfg):
@@ -81,15 +79,15 @@ batch = []
 txt1 = "Every effort moves you"
 txt2 = "Every day holds a"
 
-batch.append(torch.tensor(tokenizer.encode(txt1)))
-batch.append(torch.tensor(tokenizer.encode(txt2)))
+batch.append(torch.tensor(tokenizer.encode(txt1)))          # tensor([6109, 3626, 6100,  345])
+batch.append(torch.tensor(tokenizer.encode(txt2)))          # tensor([6109, 1110, 6622,  257])
 batch = torch.stack(batch, dim=0)
 print(batch)
 
 torch.manual_seed(123)
 model = DummyGPTModel(GPT_CONFIG_124M)
 
-logits = model(batch)
+logits = model(batch)                   # torch.Size([2, 4, 50257])
 print("Output shape:", logits.shape)
 print(logits)
 
@@ -98,15 +96,22 @@ torch.manual_seed(123)
 # create 2 training examples with 5 dimensions (features) each
 batch_example = torch.randn(2, 5) 
 
+mean = batch_example.mean(dim=-1, keepdim=True)
+var = batch_example.var(dim=-1, keepdim=True)
+
+print("Mean:\n", mean)          # [[-0.3596], [-0.2606]]
+print("Variance:\n", var)       # [[0.2518], [0.3342]]
+
 layer = nn.Sequential(nn.Linear(5, 6), nn.ReLU())
 out = layer(batch_example)
-print(out)
-
+print(out)                      # [[0.2260, 0.3470, 0.0000, 0.2216, 0.0000, 0.0000],.....]
+out1 = torch.tensor([0.22, 0.34, 0.00, 0.22, 0.00, 0.00])
+var1 = out1.var(dim=-1, keepdim=True)
 mean = out.mean(dim=-1, keepdim=True)
 var = out.var(dim=-1, keepdim=True)
 
-print("Mean:\n", mean)
-print("Variance:\n", var)
+print("Mean:\n", mean)          # [[0.1324], [0.2170]]
+print("Variance:\n", var)       # [[0.0231], [0.0398]]
 
 out_norm = (out - mean) / torch.sqrt(var)
 print("Normalized layer outputs:\n", out_norm)
@@ -117,8 +122,8 @@ print("Mean:\n", mean)
 print("Variance:\n", var)
 
 torch.set_printoptions(sci_mode=False)
-print("Mean:\n", mean)
-print("Variance:\n", var)
+print("Mean:\n", mean)          # [[    0.0000], [    0.0000]]
+print("Variance:\n", var)       # [[    1.0000], [    1.0000]]
 
 class LayerNorm(nn.Module):
     def __init__(self, emb_dim):
@@ -143,18 +148,15 @@ out_ln = ln(batch_example)
 mean = out_ln.mean(dim=-1, keepdim=True)
 var = out_ln.var(dim=-1, unbiased=False, keepdim=True)
 
-print("Mean:\n", mean)
-print("Variance:\n", var)
+print("Mean:\n", mean)          # [[    0.0000], [    0.0000]]
+print("Variance:\n", var)       # [[    1.0000], [    1.0000]]
 
 class GELU(nn.Module):
     def __init__(self):
         super().__init__()
 
     def forward(self, x):
-        return 0.5 * x * (1 + torch.tanh(
-            torch.sqrt(torch.tensor(2.0 / torch.pi)) * 
-            (x + 0.044715 * torch.pow(x, 3))
-        ))
+        return 0.5 * x * (1 + torch.tanh(torch.sqrt(torch.tensor(2.0 / torch.pi)) * (x + 0.044715 * torch.pow(x, 3))))
 
 gelu, relu = GELU(), nn.ReLU()
 
@@ -186,14 +188,14 @@ class FeedForward(nn.Module):
     def forward(self, x):
         return self.layers(x)
 
-print(GPT_CONFIG_124M["emb_dim"])
+print(GPT_CONFIG_124M["emb_dim"])       # 768
 
 ffn = FeedForward(GPT_CONFIG_124M)
 
 # input shape: [batch_size, num_token, emb_size]
 x = torch.rand(2, 3, 768) 
 out = ffn(x)
-print(out.shape)
+print(out.shape)        # torch.Size([2, 3, 768])
 
 class ExampleDeepNeuralNetwork(nn.Module):
     def __init__(self, layer_sizes, use_shortcut):
@@ -242,9 +244,7 @@ layer_sizes = [3, 3, 3, 3, 3, 1]
 sample_input = torch.tensor([[1., 0., -1.]])
 
 torch.manual_seed(123)
-model_without_shortcut = ExampleDeepNeuralNetwork(
-    layer_sizes, use_shortcut=False
-)
+model_without_shortcut = ExampleDeepNeuralNetwork(layer_sizes, use_shortcut=False)
 print_gradients(model_without_shortcut, sample_input)
 
 torch.manual_seed(123)
@@ -291,8 +291,8 @@ x = torch.rand(2, 4, 768)  # Shape: [batch_size, num_tokens, emb_dim]
 block = TransformerBlock(GPT_CONFIG_124M)
 output = block(x)
 
-print("Input shape:", x.shape)
-print("Output shape:", output.shape)
+print("Input shape:", x.shape)              # torch.Size([2, 4, 768])
+print("Output shape:", output.shape)        # torch.Size([2, 4, 768])
 
 class GPTModel(nn.Module):
     def __init__(self, cfg):
@@ -323,9 +323,9 @@ class GPTModel(nn.Module):
 torch.manual_seed(123)
 model = GPTModel(GPT_CONFIG_124M)
 
-out = model(batch)
+out = model(batch)      # batch : torch.Size([2, 4])
 print("Input batch:\n", batch)
-print("\nOutput shape:", out.shape)
+print("\nOutput shape:", out.shape)     # torch.Size([2, 4, 50257])
 print(out)
 
 total_params = sum(p.numel() for p in model.parameters())
@@ -374,6 +374,7 @@ def generate_text_simple(model, idx, max_new_tokens, context_size):
     return idx
 
 start_context = "Hello, I am"
+# start_context = "one add one is"
 
 encoded = tokenizer.encode(start_context)
 print("encoded:", encoded)
@@ -386,7 +387,7 @@ model.eval() # disable dropout
 out = generate_text_simple(
     model=model,
     idx=encoded_tensor, 
-    max_new_tokens=6, 
+    max_new_tokens=1,
     context_size=GPT_CONFIG_124M["context_length"]
 )
 
@@ -395,3 +396,7 @@ print("Output length:", len(out[0]))
 
 decoded_text = tokenizer.decode(out.squeeze(0).tolist())
 print(decoded_text)
+
+# total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+# print(f"Total number of parameters: {total_params}")
+pass
