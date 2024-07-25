@@ -8,9 +8,11 @@
 
 from importlib.metadata import version
 
+import tiktoken
 import torch
 
-from previous_chapters import GPTModel
+from previous_chapters import GPTModel, generate_text_simple
+
 
 pkgs = ["matplotlib",
         "numpy", 
@@ -35,8 +37,6 @@ torch.manual_seed(123)
 model = GPTModel(GPT_CONFIG_124M)
 model.eval()  # Disable dropout during inference
 
-import tiktoken
-from previous_chapters import generate_text_simple
 
 def text_to_token_ids(text, tokenizer):
     encoded = tokenizer.encode(text, allowed_special={'<|endoftext|>'})
@@ -57,7 +57,7 @@ token_ids = generate_text_simple(
     context_size=GPT_CONFIG_124M["context_length"]
 )
 
-print("Output text:\n", token_ids_to_text(token_ids, tokenizer))
+print("Output text:\n", token_ids_to_text(token_ids, tokenizer)) #  Every effort moves you rentingetic wasnم refres RexMeCHicular stren
 
 inputs = torch.tensor([[16833, 3626, 6100],   # ["every effort moves",
                        [40,    1107, 588]])   #  "I really like"]
@@ -69,41 +69,41 @@ with torch.no_grad():
     logits = model(inputs)
 
 probas = torch.softmax(logits, dim=-1) # Probability of each token in vocabulary
-print(probas.shape) # Shape: (batch_size, num_tokens, vocab_size)
+print(probas.shape) # Shape: (batch_size, num_tokens, vocab_size) torch.Size([2, 3, 50257])
 
 token_ids = torch.argmax(probas, dim=-1, keepdim=True)
 print("Token IDs:\n", token_ids)
 
-print(f"Targets batch 1: {token_ids_to_text(targets[0], tokenizer)}")
-print(f"Outputs batch 1: {token_ids_to_text(token_ids[0].flatten(), tokenizer)}")
+print(f"Targets batch 1: {token_ids_to_text(targets[0], tokenizer)}")               # effort moves you
+print(f"Outputs batch 1: {token_ids_to_text(token_ids[0].flatten(), tokenizer)}")   # Armed NeNetflix
 
 text_idx = 0
 target_probas_1 = probas[text_idx, [0, 1, 2], targets[text_idx]]
-print("Text 1:", target_probas_1)
+print("Text 1:", target_probas_1)       # tensor([7.4541e-05, 3.1061e-05, 1.1563e-05])
 
 text_idx = 1
 target_probas_2 = probas[text_idx, [0, 1, 2], targets[text_idx]]
-print("Text 2:", target_probas_2)
+print("Text 2:", target_probas_2)       # tensor([1.0337e-05, 5.6776e-05, 4.7559e-06])
 
 # Compute logarithm of all token probabilities
 log_probas = torch.log(torch.cat((target_probas_1, target_probas_2)))
-print(log_probas)
+print(log_probas)       # tensor([ -9.5042, -10.3796, -11.3677, -11.4798,  -9.7764, -12.2561])
 
 # Calculate the average probability for each token
 avg_log_probas = torch.mean(log_probas)
-print(avg_log_probas)
+print(avg_log_probas)       # tensor(-10.7940)
 
 neg_avg_log_probas = avg_log_probas * -1
-print(neg_avg_log_probas)
+print(neg_avg_log_probas)   # tensor(10.7940)
 
 # Logits have shape (batch_size, num_tokens, vocab_size)
-print("Logits shape:", logits.shape)
+print("Logits shape:", logits.shape)        # torch.Size([2, 3, 50257])
 
 # Targets have shape (batch_size, num_tokens)
-print("Targets shape:", targets.shape)
+print("Targets shape:", targets.shape)      # torch.Size([2, 3])
 
-logits_flat = logits.flatten(0, 1)
-targets_flat = targets.flatten()
+logits_flat = logits.flatten(0, 1)          # torch.Size([6, 50257])
+targets_flat = targets.flatten()            # torch.Size([6])
 
 print("Flattened logits:", logits_flat.shape)
 print("Flattened targets:", targets_flat.shape)
@@ -112,7 +112,7 @@ loss = torch.nn.functional.cross_entropy(logits_flat, targets_flat)
 print(loss)
 
 perplexity = torch.exp(loss)
-print(perplexity)
+print(perplexity)       # tensor(48725.8203)
 
 import os
 import urllib.request
@@ -138,8 +138,8 @@ print(text_data[-99:])
 total_characters = len(text_data)
 total_tokens = len(tokenizer.encode(text_data))
 
-print("Characters:", total_characters)
-print("Tokens:", total_tokens)
+print("Characters:", total_characters)  # 20479
+print("Tokens:", total_tokens)          # 5145
 
 from previous_chapters import create_dataloader_v1
 
@@ -624,7 +624,7 @@ torch.manual_seed(123)
 token_ids = generate(
     model=gpt,
     idx=text_to_token_ids("Every effort moves you", tokenizer).to(device),
-    max_new_tokens=25,
+    max_new_tokens=2,
     context_size=NEW_CONFIG["context_length"],
     top_k=50,
     temperature=1.5

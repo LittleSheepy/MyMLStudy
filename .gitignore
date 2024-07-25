@@ -111,3 +111,6 @@ ml00project/pj6ImgProc/__pycache__/
 /ml11cpp_proj/02cppTest/02cppTest/Release
 /ml11cpp_proj/02cppTest/Debug
 /ml11cpp_proj/02cppTest/Release
+/ml10Repositorys/07LLMs-from-scratch/ch05/01_main-chapter-code/gpt2
+ml10Repositorys/07LLMs-from-scratch/ch05/01_main-chapter-code/*.pth
+ml10Repositorys/07LLMs-from-scratch/ch05/01_main-chapter-code/*.pdf
