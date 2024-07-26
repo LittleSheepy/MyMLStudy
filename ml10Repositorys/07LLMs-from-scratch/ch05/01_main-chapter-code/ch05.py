@@ -253,27 +253,23 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
         model.train()  # Set model to training mode
         
         for input_batch, target_batch in train_loader:
-            optimizer.zero_grad() # Reset loss gradients from previous batch iteration
-            loss = calc_loss_batch(input_batch, target_batch, model, device)
-            loss.backward() # Calculate loss gradients
-            optimizer.step() # Update model weights using loss gradients
-            tokens_seen += input_batch.numel()
+            optimizer.zero_grad()                                               # 重置前一批次迭代的梯度
+            loss = calc_loss_batch(input_batch, target_batch, model, device)    # 计算批次损失
+            loss.backward()                                                     # 计算损失梯度
+            optimizer.step()                                                    # 使用损失梯度更新模型权重
+            tokens_seen += input_batch.numel()                                  # 更新词元计数
             global_step += 1
 
             # Optional evaluation step
             if global_step % eval_freq == 0:
-                train_loss, val_loss = evaluate_model(
-                    model, train_loader, val_loader, device, eval_iter)
-                train_losses.append(train_loss)
-                val_losses.append(val_loss)
-                track_tokens_seen.append(tokens_seen)
-                print(f"Ep {epoch+1} (Step {global_step:06d}): "
-                      f"Train loss {train_loss:.3f}, Val loss {val_loss:.3f}")
+                train_loss, val_loss = evaluate_model(model, train_loader, val_loader, device, eval_iter) # 评估模型性能
+                train_losses.append(train_loss)                                 # 添加训练损失到列表
+                val_losses.append(val_loss)                                     # 添加验证损失到列表
+                track_tokens_seen.append(tokens_seen)                           # 记录看到的词元数
+                print(f"Ep {epoch+1} (Step {global_step:06d}): Train loss {train_loss:.3f}, Val loss {val_loss:.3f}")
 
         # Print a sample text after each epoch
-        generate_and_print_sample(
-            model, tokenizer, device, start_context
-        )
+        generate_and_print_sample(model, tokenizer, device, start_context)      # 生成并打印样本
 
     return train_losses, val_losses, track_tokens_seen
 
@@ -373,15 +369,15 @@ next_token_logits = torch.tensor(
     [4.51, 0.89, -1.90, 6.75, 1.63, -1.62, -1.89, 6.28, 1.79]
 )
 
-probas = torch.softmax(next_token_logits, dim=0)
+probas = torch.softmax(next_token_logits, dim=0)    # tensor([6.0907e-02, 1.6313e-03, 1.0019e-04, 5.7212e-01, 3.4190e-03, 1.3257e-04, 1.0120e-04, 3.5758e-01, 4.0122e-03])
 next_token_id = torch.argmax(probas).item()
 
 # The next generated token is then as follows:
-print(inverse_vocab[next_token_id])
+print(inverse_vocab[next_token_id])     # forward
 
 torch.manual_seed(123)
 next_token_id = torch.multinomial(probas, num_samples=1).item()
-print(inverse_vocab[next_token_id])
+print(inverse_vocab[next_token_id])     # toward
 
 def print_sampled_tokens(probas):
     torch.manual_seed(123) # Manual seed for reproducibility
@@ -419,7 +415,7 @@ plt.tight_layout()
 plt.savefig("temperature-plot.pdf")
 plt.show()
 
-print_sampled_tokens(scaled_probas[1])
+print_sampled_tokens(scaled_probas[1])      # 温度0.1 更多forward
 
 print_sampled_tokens(scaled_probas[2])
 
@@ -435,10 +431,10 @@ new_logits = torch.where(
     other=next_token_logits
 )
 
-print(new_logits)
+print(new_logits)       # tensor([4.5100,   -inf,   -inf, 6.7500,   -inf,   -inf,   -inf, 6.2800,   -inf])
 
 topk_probas = torch.softmax(new_logits, dim=0)
-print(topk_probas)
+print(topk_probas)      # tensor([0.0615, 0.0000, 0.0000, 0.5775, 0.0000, 0.0000, 0.0000, 0.3610, 0.0000])
 
 def generate(model, idx, max_new_tokens, context_size, temperature=0.0, top_k=None, eos_id=None):
 
@@ -446,17 +442,17 @@ def generate(model, idx, max_new_tokens, context_size, temperature=0.0, top_k=No
     for _ in range(max_new_tokens):
         idx_cond = idx[:, -context_size:]
         with torch.no_grad():
-            logits = model(idx_cond)
-        logits = logits[:, -1, :]
+            logits = model(idx_cond)        # torch.Size([1, 4, 50257])
+        logits = logits[:, -1, :]           # torch.Size([1, 50257])
 
-        # New: Filter logits with top_k sampling
+        # New: Filter logits with top_k sampling 过滤logits用top_k采样
         if top_k is not None:
             # Keep only top_k values
-            top_logits, _ = torch.topk(logits, top_k)
+            top_logits, _ = torch.topk(logits, top_k)       # torch.Size([1, 25])
             min_val = top_logits[:, -1]
             logits = torch.where(logits < min_val, torch.tensor(float('-inf')).to(logits.device), logits)
 
-        # New: Apply temperature scaling
+        # New: Apply temperature scaling 应用温度缩放
         if temperature > 0.0:
             logits = logits / temperature
 
@@ -486,14 +482,14 @@ torch.manual_seed(123)
 
 token_ids = generate(
     model=model,
-    idx=text_to_token_ids("Every effort moves you", tokenizer),
+    idx=text_to_token_ids("Every effort moves you", tokenizer), # tensor([[6109, 3626, 6100,  345]])
     max_new_tokens=15,
     context_size=GPT_CONFIG_124M["context_length"],
     top_k=25,
     temperature=1.4
 )
 
-print("Output text:\n", token_ids_to_text(token_ids, tokenizer))
+print("Output text:\n", token_ids_to_text(token_ids, tokenizer))    # Every effort moves you know began to go a hint a littleoms he painted with a single enough
 
 torch.save(model.state_dict(), "model.pth")
 
@@ -556,8 +552,8 @@ def assign(left, right):
 import numpy as np
 
 def load_weights_into_gpt(gpt, params):
-    gpt.pos_emb.weight = assign(gpt.pos_emb.weight, params['wpe'])
-    gpt.tok_emb.weight = assign(gpt.tok_emb.weight, params['wte'])
+    gpt.pos_emb.weight = assign(gpt.pos_emb.weight, params['wpe'])  # torch.Size([1024, 768])
+    gpt.tok_emb.weight = assign(gpt.tok_emb.weight, params['wte'])  # torch.Size([50257, 768])
     
     for b in range(len(params["blocks"])):
         q_w, k_w, v_w = np.split(
