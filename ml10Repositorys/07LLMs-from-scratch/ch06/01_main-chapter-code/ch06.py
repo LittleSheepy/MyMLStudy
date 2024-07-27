@@ -59,7 +59,7 @@ print(df["Label"].value_counts())
 def create_balanced_dataset(df):
     
     # Count the instances of "spam"
-    num_spam = df[df["Label"] == "spam"].shape[0]
+    num_spam = df[df["Label"] == "spam"].shape[0]       # 747
     
     # Randomly sample "ham" instances to match the number of "spam" instances
     ham_subset = df[df["Label"] == "ham"].sample(num_spam, random_state=123)
