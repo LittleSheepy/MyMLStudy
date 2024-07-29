@@ -57,19 +57,12 @@ print(df)
 print(df["Label"].value_counts())
 
 def create_balanced_dataset(df):
-    
-    # Count the instances of "spam"
     num_spam = df[df["Label"] == "spam"].shape[0]       # 747
-    
-    # Randomly sample "ham" instances to match the number of "spam" instances
-    ham_subset = df[df["Label"] == "ham"].sample(num_spam, random_state=123)
-    
-    # Combine ham "subset" with "spam"
-    balanced_df = pd.concat([ham_subset, df[df["Label"] == "spam"]])
-
+    ham_subset = df[df["Label"] == "ham"].sample(num_spam, random_state=123)    # (747, 2)
+    balanced_df = pd.concat([ham_subset, df[df["Label"] == "spam"]])            # (1494, 2)
     return balanced_df
 
-balanced_df = create_balanced_dataset(df)
+balanced_df = create_balanced_dataset(df)       # (1494, 2)
 print(balanced_df["Label"].value_counts())
 
 balanced_df["Label"] = balanced_df["Label"].map({"ham": 0, "spam": 1})
@@ -83,9 +76,9 @@ def random_split(df, train_frac, validation_frac):
     validation_end = train_end + int(len(df) * validation_frac)
 
     # Split the DataFrame
-    train_df = df[:train_end]
-    validation_df = df[train_end:validation_end]
-    test_df = df[validation_end:]
+    train_df = df[:train_end]                       # 1045
+    validation_df = df[train_end:validation_end]    # 149
+    test_df = df[validation_end:]                   # 300
 
     return train_df, validation_df, test_df
 
@@ -97,7 +90,7 @@ validation_df.to_csv("validation.csv", index=None)
 test_df.to_csv("test.csv", index=None)
 
 tokenizer = tiktoken.get_encoding("gpt2")
-print(tokenizer.encode("<|endoftext|>", allowed_special={"<|endoftext|>"}))
+print(tokenizer.encode("<|endoftext|>", allowed_special={"<|endoftext|>"})) # [50256]
 
 class SpamDataset(Dataset):
     def __init__(self, csv_file, tokenizer, max_length=None, pad_token_id=50256):
@@ -143,12 +136,7 @@ class SpamDataset(Dataset):
                 max_length = encoded_length
         return max_length
 
-train_dataset = SpamDataset(
-    csv_file="train.csv",
-    max_length=None,
-    tokenizer=tokenizer
-)
-
+train_dataset = SpamDataset(csv_file="train.csv", max_length=None, tokenizer=tokenizer)
 print(train_dataset.max_length)
 
 val_dataset = SpamDataset(
@@ -167,27 +155,11 @@ batch_size = 8
 
 torch.manual_seed(123)
 
-train_loader = DataLoader(
-    dataset=train_dataset,
-    batch_size=batch_size,
-    shuffle=True,
-    num_workers=num_workers,
-    drop_last=True,
-)
+train_loader = DataLoader(train_dataset,batch_size,shuffle=True,num_workers=num_workers,drop_last=True)
 
-val_loader = DataLoader(
-    dataset=val_dataset,
-    batch_size=batch_size,
-    num_workers=num_workers,
-    drop_last=False,
-)
+val_loader = DataLoader(dataset=val_dataset,batch_size=batch_size,num_workers=num_workers,drop_last=False)
 
-test_loader = DataLoader(
-    dataset=test_dataset,
-    batch_size=batch_size,
-    num_workers=num_workers,
-    drop_last=False,
-)
+test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, num_workers=num_workers, drop_last=False)
 
 print("Train loader:")
 for input_batch, target_batch in train_loader:
