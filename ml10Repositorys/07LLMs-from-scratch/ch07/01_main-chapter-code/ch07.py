@@ -80,9 +80,9 @@ model_input = format_input(data[999])
 desired_response = f"\n\n### Response:\n{data[999]['output']}"
 print(model_input + desired_response)
 
-train_portion = int(len(data) * 0.85)  # 85% for training
-test_portion = int(len(data) * 0.1)    # 10% for testing
-val_portion = len(data) - train_portion - test_portion  # Remaining 5% for validation
+train_portion = int(len(data) * 0.85)  # 85% for training 935
+test_portion = int(len(data) * 0.1)    # 10% for testing  110
+val_portion = len(data) - train_portion - test_portion  # Remaining 5% for validation 55
 
 train_data = data[:train_portion]
 test_data = data[train_portion:train_portion + test_portion]
@@ -115,14 +115,10 @@ tokenizer = tiktoken.get_encoding("gpt2")
 
 print(tokenizer.encode("<|endoftext|>", allowed_special={"<|endoftext|>"}))
 
-def custom_collate_draft_1(
-    batch,
-    pad_token_id=50256,
-    device="cpu"
-):
-    # Find the longest sequence in the batch
-    # and increase the max length by +1, which will add one extra
-    # padding token below
+def custom_collate_draft_1(batch, pad_token_id=50256, device="cpu"):
+    # Find the longest sequence in the batch 找出批次中最长的序列
+    # and increase the max length by +1, which will add one extra 并将最大长度增加+1，这将增加一个额外的值
+    # padding token below 下面填充标记
     batch_max_length = max(len(item)+1 for item in batch)
 
     # Pad and prepare inputs
@@ -154,11 +150,9 @@ inputs_3 = [7, 8, 9]
 batch = (inputs_1, inputs_2, inputs_3)
 print(custom_collate_draft_1(batch))
 
-def custom_collate_draft_2(
-    batch,
-    pad_token_id=50256,
-    device="cpu"
-):
+
+
+def custom_collate_draft_2(batch, pad_token_id=50256, device="cpu"):
     # Find the longest sequence in the batch
     batch_max_length = max(len(item)+1 for item in batch)
 
@@ -188,13 +182,7 @@ inputs, targets = custom_collate_draft_2(batch)
 print(inputs)
 print(targets)
 
-def custom_collate_fn(
-    batch,
-    pad_token_id=50256,
-    ignore_index=-100,
-    allowed_max_length=None,
-    device="cpu"
-):
+def custom_collate_fn(batch, pad_token_id=50256, ignore_index=-100, allowed_max_length=None, device="cpu"):
     # Find the longest sequence in the batch
     batch_max_length = max(len(item)+1 for item in batch)
 
@@ -234,8 +222,8 @@ def custom_collate_fn(
     return inputs_tensor, targets_tensor
 
 inputs, targets = custom_collate_fn(batch)
-print(inputs)
-print(targets)
+print("inputs:\n", inputs)
+print("targets:\n", targets)
 
 logits_1 = torch.tensor(
     [[-1.0, 1.0],  # 1st training example
@@ -265,11 +253,7 @@ print("loss_1 == loss_3:", loss_1 == loss_3)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Device:", device)
-customized_collate_fn = partial(
-    custom_collate_fn,
-    device=device,
-    allowed_max_length=1024
-)
+customized_collate_fn = partial(custom_collate_fn, device=device, allowed_max_length=1024)
 
 
 num_workers = 0

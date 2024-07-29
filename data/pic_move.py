@@ -6,10 +6,10 @@ def move1():
     root_dir = r"D:\03GitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect/predict11/"
     root_dir = r"D:\03GitHub\aFolder_YOLO\03yolov8s\ultralytics\runs\detect\predict14\/"
     root_dir = r"D:\02dataset\01work\07HZHengTai\00imgAll\03FuJiExt/"
-    img_dir = root_dir + r"06JieDai_all/"     # NMJPG_OK CMJPG_OK   NG_Src  CMJPG_NG NMJPG_NG
+    img_dir = root_dir + r"06JieDai_all/"       # NMJPG_OK CMJPG_OK   NG_Src  CMJPG_NG NMJPG_NG
     biaozhu = root_dir + "新建文件夹/"
     nobiaozhu = "D:/01sheepy/01work/01baojie_ocr/pp/img_nobiaozhu/"
-    xml_dir = root_dir + "/WeiGunYa/"     # NG-LBPS  NG_Src
+    xml_dir = root_dir + "/WeiGunYa/"           # NG-LBPS  NG_Src
     if not os.path.exists(biaozhu):
         os.mkdir(biaozhu)
     for imgfile in os.listdir(img_dir):
