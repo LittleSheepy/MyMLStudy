@@ -425,7 +425,7 @@ def token_ids_to_text(token_ids, tokenizer):
 
 def calc_loss_batch(input_batch, target_batch, model, device):
     input_batch, target_batch = input_batch.to(device), target_batch.to(device)
-    logits = model(input_batch)
+    logits = model(input_batch)     # input_batch: torch.Size([8, 61])   -> torch.Size([8, 61, 50257])
     loss = torch.nn.functional.cross_entropy(logits.flatten(0, 1), target_batch.flatten())
     return loss
 
