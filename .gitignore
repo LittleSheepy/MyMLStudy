@@ -119,3 +119,6 @@ ml10Repositorys/07LLMs-from-scratch/ch05/01_main-chapter-code/*.pdf
 ml10Repositorys/07LLMs-from-scratch/ch06/01_main-chapter-code/sms_spam_collection.zip
 /ml10Repositorys/07LLMs-from-scratch/ch06/01_main-chapter-code/sms_spam_collection
 ml10Repositorys/07LLMs-from-scratch/ch06/01_main-chapter-code/*.csv
+ml10Repositorys/07LLMs-from-scratch/ch07/01_main-chapter-code/loss-plot.pdf
+ml10Repositorys/07LLMs-from-scratch/ch07/01_main-chapter-code/instruction-data-with-response.json
+ml10Repositorys/07LLMs-from-scratch/ch07/01_main-chapter-code/gpt2-medium355M-sft.pth

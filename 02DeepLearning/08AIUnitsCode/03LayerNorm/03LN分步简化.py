@@ -18,20 +18,20 @@ data = [[[[1,2],[3,4]],
 data_np = np.array(data)
 
 data_tensor = torch.Tensor(data)
-bn = nn.BatchNorm2d(2)
+bn = nn.LayerNorm([2,2,2])
 output = bn(data_tensor)
 print("output=\n", output)
 """
 output=
- tensor([[[[-1.3416, -0.4472],
-          [ 0.4472,  1.3416]],
-         [[-1.3416, -0.4472],
-          [ 0.4472,  1.3416]]],
+ tensor([[[[-0.9257, -0.8531],
+          [-0.7805, -0.7079]],
+         [[-0.2723,  0.4538],
+          [ 1.1799,  1.9059]]],
           
-        [[[-1.3416, -0.4472],
-          [ 0.4472,  1.3416]],
-         [[-1.3416, -0.4472],
-          [ 0.4472,  1.3416]]]], grad_fn=<NativeBatchNormBackward0>)
+        [[[-0.9257, -0.8531],
+          [-0.7805, -0.7079]],
+         [[-0.2723,  0.4538],
+          [ 1.1799,  1.9059]]]], grad_fn=<NativeLayerNormBackward0>)
 """
 bn_weight = bn.weight.data
 bn_bias = bn.bias.data
@@ -42,7 +42,7 @@ print("bn.bias.data=\n", bn.bias.data)
 # 求均值
 shape = data_tensor.shape               # torch.Size([2, 2, 2, 2])
 #mean = data_np.mean([0, 2, 3])
-mean = data_tensor.mean([0,2,3])        # tensor([ 2.5000, 25.0000])
+mean = data_tensor.mean([1,2,3])        # tensor([13.7500, 13.7500])
 print("mean=\n", mean)
 
 # 求方差
@@ -54,9 +54,9 @@ print("cha=\n", cha)
 
 fang = torch.square(cha)
 print("fang=\n", fang)
-var = fang.mean([0,2,3])                                # tensor([  1.2500, 125.0000])
+var = fang.mean([1,2,3])                                # tensor([  1.2500, 125.0000])
 print("var=\n", var)
-var_t = data_tensor.var([0,2,3], unbiased=False)        # tensor([  1.2500, 125.0000])
+var_t = data_tensor.var([1,2,3], unbiased=False)        # tensor([  1.2500, 125.0000])
 print("var_t=\n", var_t)
 
 # x_n = (x - mean) / sqrt(var + eps)
@@ -67,7 +67,7 @@ result = x_n * bn_weight[..., None, None] + bn_bias[..., None, None]
 print("result=\n", result)
 
 
-
+pass
 
 
 

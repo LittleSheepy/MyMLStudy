@@ -13,7 +13,7 @@ class bn_test(nn.Module):
         super().__init__()
         # in_channels out_channels kernel_size stride padding
         # self.mbn = nn.Conv2d(1, 3, 3, 2, bias=True)
-        self.con = nn.Conv2d(1, 3, 3, 2, bias=False)
+        self.con = nn.Conv2d(1, 3, 3, 1, bias=False)
         self.bn = nn.BatchNorm2d(3)
 
         self.bn_weight = None
@@ -35,7 +35,7 @@ m = bn_test()
 m.weights_init()
 data = torch.rand((2, 1, 5, 5))
 ret = m(data)  # 得到torch BN结果
-
+print(ret)
 #
 #
 # 我们手动计算BN的结果和torch BatchNorm2d做对比是否正确
