@@ -19,7 +19,7 @@ os.environ["DASHSCOPE_API_KEY"] = "sk-720b1666b12f49c3915e4061e173ab15"
 
 llm = Tongyi()
 """********************
-        索引
+        创建检索器
 ********************"""
 # 1.加载
 loader = WebBaseLoader(
