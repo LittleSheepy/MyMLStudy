@@ -42,6 +42,7 @@ print(all_splits[10].metadata)              # {'source': 'https://lilianweng.git
 
 # 3.储存
 vectorstore = Chroma.from_documents(documents=all_splits, embedding=DashScopeEmbeddings())
+
 """********************
         检索和生成
 ********************"""

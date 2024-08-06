@@ -1,4 +1,4 @@
-# Retrieval Augmented Generation 检索增强生成
+# Build a Question/Answering system over SQL data 在SQL数据上构建问答系统
 import os
 
 import bs4
