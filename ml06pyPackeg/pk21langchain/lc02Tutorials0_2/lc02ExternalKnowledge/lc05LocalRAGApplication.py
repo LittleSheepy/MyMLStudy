@@ -23,6 +23,7 @@ from langchain_community.embeddings import GPT4AllEmbeddings
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_ollama import OllamaEmbeddings
 from langchain.schema import Document
+from langchain_community.chat_models import ChatTongyi
 llm = Tongyi()
 """
     文档加载
