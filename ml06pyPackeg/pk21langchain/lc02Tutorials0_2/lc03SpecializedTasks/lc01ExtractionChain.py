@@ -13,12 +13,8 @@ os.environ["DASHSCOPE_API_KEY"] = "sk-720b1666b12f49c3915e4061e173ab15"
 """
 class Person(BaseModel):
     name: Optional[str] = Field(default=None, description="个人姓名")
-    hair_color: Optional[str] = Field(
-        default=None, description="如果已知，该人头发的颜色。"
-    )
-    height_in_meters: Optional[str] = Field(
-        default=None, description="身高，以米为单位测量。"
-    )
+    hair_color: Optional[str] = Field(default=None, description="如果已知，该人头发的颜色。")
+    height_in_meters: Optional[str] = Field(default=None, description="身高，以米为单位测量。")
 
 prompt = ChatPromptTemplate.from_messages(
     [
