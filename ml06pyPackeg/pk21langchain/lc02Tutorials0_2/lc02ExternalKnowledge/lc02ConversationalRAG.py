@@ -25,7 +25,7 @@ llm = ChatTongyi(model="qwen-max")
 """
 print("-"*40,"\n","         创建检索器\n","-"*40,"\n")
 # 1.加载 Load
-loader = TextLoader(r'txt_cn.txt', encoding='utf8')
+loader = TextLoader(r'txt.txt', encoding='utf8')
 docs = loader.load()
 
 # 2.拆分 chunk
@@ -70,8 +70,8 @@ prompt = ChatPromptTemplate.from_messages(
 question_answer_chain = create_stuff_documents_chain(llm, prompt)
 rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
-# response = rag_chain.invoke({"input": "什么是任务分解?"})
-# print(response["answer"])
+response = rag_chain.invoke({"input": "什么是任务分解?"})
+print(response["answer"])
 
 """
     Adding chat history 添加聊天记录
@@ -132,13 +132,13 @@ chat_history.extend(
     ]
 )
 second_question = "通常的做法是什么?"
-# ai_msg_2 = rag_chain.invoke({"input": second_question, "chat_history": chat_history})
-# chat_history.extend([HumanMessage(content=question), ai_msg_2["answer"]])
-# print(ai_msg_2["answer"])
-##检查引用的内容
-# for document in ai_msg_2["context"]:
-#     print(document)
-#     print("--------------------------------------")
+ai_msg_2 = rag_chain.invoke({"input": second_question, "chat_history": chat_history})
+chat_history.extend([HumanMessage(content=question), ai_msg_2["answer"]])
+print(ai_msg_2["answer"])
+#检查引用的内容
+for document in ai_msg_2["context"]:
+    print(document)
+    print("--------------------------------------")
 
 """
     第二种方案
@@ -161,29 +161,27 @@ conversational_rag_chain = RunnableWithMessageHistory(
     output_messages_key="answer",
 )
 
-# result = conversational_rag_chain.invoke(
-#     {"input": "什么是任务分解?"},
-#     config={
-#         "configurable": {"session_id": "abc123"}
-#     },  # constructs a key "abc123" in `store`.
-# )["answer"]
-# print(result)
-#
-# result = conversational_rag_chain.invoke(
-#     {"input": "通常的做法是什么?"},
-#     config={"configurable": {"session_id": "abc123"}},
-# )["answer"]
-# print(result)
-#
-# for message in store["abc123"].messages:
-#     if isinstance(message, AIMessage):
-#         prefix = "AI"
-#     else:
-#         prefix = "User"
-#
-#     print(f"{prefix}: {message.content}\n")
+result = conversational_rag_chain.invoke(
+    {"input": "什么是任务分解?"},
+    config={
+        "configurable": {"session_id": "abc123"}
+    },  # constructs a key "abc123" in `store`.
+)["answer"]
+print(result)
 
+result = conversational_rag_chain.invoke(
+    {"input": "通常的做法是什么?"},
+    config={"configurable": {"session_id": "abc123"}},
+)["answer"]
+print(result)
 
+for message in store["abc123"].messages:
+    if isinstance(message, AIMessage):
+        prefix = "AI"
+    else:
+        prefix = "User"
+
+    print(f"{prefix}: {message.content}\n")
 
 """
     Agents
@@ -197,19 +195,18 @@ tool = create_retriever_tool(
 )
 tools = [tool]
 
-# result = tool.invoke("任务分解")
-# print(result)
-print("")
-print("3333333333333333333333333\n")
+result = tool.invoke("任务分解")
+print(result)
 
 # 2.Agent constructor 代理建造者
 agent_executor = chat_agent_executor.create_tool_calling_executor(llm, tools)
 
-query = "什么是任务分解?"
-# for s in agent_executor.stream({"messages": [HumanMessage(content=query)]}):
-#     print(s["agent"]["messages"][0].content)
-#     print("-----------------")
-print("3333333333333333333333333\n")
+# query = "什么是任务分解?"
+query = "What is Task Decomposition?"
+for s in agent_executor.stream({"messages": [HumanMessage(content=query)]}):
+    # print(type(s["agent"]["messages"][0]))      # AIMessage
+    print(s)
+    print("-----------------")
 
 memory = SqliteSaver.from_conn_string(":memory:")
 
@@ -223,12 +220,14 @@ for s in agent_executor.stream({"messages": [HumanMessage(content="你好，我�
     print(s["agent"]["messages"][0].content)
     print("-----------------")
 
-query = "什么是任务分解？"
+# query = "什么是任务分解？"
+query = "What is Task Decomposition?"
 for s in agent_executor.stream({"messages": [HumanMessage(content=query)]}, config=config):
     print(s)
     print("----")
 
-query = "根据这篇博文，常见的做法是什么?重新搜索"
+# query = "根据这篇博文，常见的做法是什么?重新搜索"
+query = "What according to the blog post are common ways of doing it? redo the search"
 for s in agent_executor.stream({"messages": [HumanMessage(content=query)]}, config=config):
     print(s)
     print("----")
