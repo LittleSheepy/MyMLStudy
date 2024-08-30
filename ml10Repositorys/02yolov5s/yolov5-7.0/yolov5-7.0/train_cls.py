@@ -279,10 +279,11 @@ def train(opt, device):
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
     data_name = "HHKJ1103_3000"
+    data_name = "ocr_char"
     data_path = r"D:\02dataset\06HHKJ\{data_name}_train\{data_name}/".format(data_name=data_name)
-    data_path = r"D:\02dataset\01work\02LGBinJiang\04py_train"
-    pt_path = r"D:\03GitHub\00myGitHub\MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-cls\BinJiang_\202408161713_HHKJ1103_3000_100_01\weights/best.pt"
-    epochs = 100
+    data_path = r"D:\02dataset\01work\11OCR\04char_class"
+    pt_path = r"D:\03GitHub\00myGitHub\MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-cls\OCR_CHAR\202408291453_ocr_char_1000_01\weights\best.pt"
+    epochs = 400
     train_name = time.strftime('%Y%m%d%H%M', time.localtime())
     name = r"{train_name}_{data_name}_{epochs}_01".format(train_name=train_name, data_name=data_name, epochs=epochs)
     parser.add_argument('--model', type=str, default='yolov5s-cls.pt', help='initial weights path')   # yolov5s-cls.pt
@@ -295,7 +296,7 @@ def parse_opt(known=False):
     parser.add_argument('--cache', type=str, nargs='?', const='ram', help='--cache images in "ram" (default) or "disk"')
     parser.add_argument('--device', default='0', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
     parser.add_argument('--workers', type=int, default=2, help='max dataloader workers (per RANK in DDP mode)')
-    parser.add_argument('--project', default=ROOT / 'runs/train-cls/BinJiang_', help='save to project/name')
+    parser.add_argument('--project', default=ROOT / 'runs/train-cls/OCR_CHAR', help='save to project/name')
     parser.add_argument('--name', default=name, help='save to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--pretrained', nargs='?', const=True, default=True, help='start from i.e. --pretrained False')

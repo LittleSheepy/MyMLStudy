@@ -12,22 +12,38 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.prompts import MessagesPlaceholder
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.chat_models import ChatTongyi
+from langchain.chains import create_sql_query_chain
+from langchain_community.utilities import SQLDatabase
+from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
+from operator import itemgetter
+
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import PromptTemplate
+from langchain_core.runnables import RunnablePassthrough
+from langchain_community.agent_toolkits import SQLDatabaseToolkit
 
 os.environ["DASHSCOPE_API_KEY"] = "sk-720b1666b12f49c3915e4061e173ab15"
 
-llm = Tongyi()
+llm = ChatTongyi(model="qwen-plus")
 
 
 
-from langchain_community.utilities import SQLDatabase
 
+"""
+    加载数据库
+"""
+print("-"*40,"\n","         加载数据库\n","-"*40,"\n")
 db = SQLDatabase.from_uri("sqlite:///Chinook.db")
 print(db.dialect)
 print(db.get_usable_table_names())
-db.run("SELECT * FROM Artist LIMIT 10;")
+result = db.run("SELECT * FROM Artist LIMIT 10;")
+print(result)
 
-from langchain.chains import create_sql_query_chain
-
+"""
+    Chains 链
+"""
+print("-"*40,"\n","         Chains 链\n","-"*40,"\n")
 chain = create_sql_query_chain(llm, db)
 response = chain.invoke({"question": "How many employees are there"})
 print(response)             # SELECT COUNT(*) FROM "Employee"
@@ -35,7 +51,8 @@ print(response)             # SELECT COUNT(*) FROM "Employee"
 result = db.run(response)
 print(result)               # '[(8,)]'
 
-chain.get_prompts()[0].pretty_print()
+# 打印prompt
+# chain.get_prompts()[0].pretty_print()
 """
 你是一个SQLite专家。给定一个输入问题，首先创建一个语法正确的SQlite查询来运行，然后查看查询的结果并返回输入问题的答案。
 除非用户在问题中指定要获取的特定数量的示例，否则按照sQlite的要求，使用LIMIT子句最多查询5个结果。
@@ -76,8 +93,10 @@ Only use the following tables:
 Question: {input}
 """
 
-from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
-
+"""
+    Execute SQL query   执行 SQL查询
+"""
+print("-"*40,"\n","         执行 SQL查询\n","-"*40,"\n")
 execute_query = QuerySQLDataBaseTool(db=db)
 write_query = create_sql_query_chain(llm, db)
 chain = write_query | execute_query
@@ -86,14 +105,9 @@ print(response)               # '[(8,)]'
 
 
 """
-    回答问题
+    Answer the question  回答问题
 """
-from operator import itemgetter
-
-from langchain_core.output_parsers import StrOutputParser
-from langchain_core.prompts import PromptTemplate
-from langchain_core.runnables import RunnablePassthrough
-
+print("-"*40,"\n","         回答问题\n","-"*40,"\n")
 answer_prompt = PromptTemplate.from_template(
     """Given the following user question, corresponding SQL query, and SQL result, answer the user question.
 
@@ -113,10 +127,9 @@ chain = (
 )
 
 response = chain.invoke({"question": "How many employees are there"})
-print(response)               # '[(8,)]'
+print(response)               # There are 8 employees.
 
 
-from langchain_community.agent_toolkits import SQLDatabaseToolkit
 
 toolkit = SQLDatabaseToolkit(db=db, llm=llm)
 

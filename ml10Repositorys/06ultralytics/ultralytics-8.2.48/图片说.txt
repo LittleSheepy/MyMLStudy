@@ -1,0 +1,4 @@
+anchor_points       锚点
+
+
+align_metric        对齐度

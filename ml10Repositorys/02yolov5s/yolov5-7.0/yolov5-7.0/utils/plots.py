@@ -88,7 +88,9 @@ class Annotator:
         if self.pil or not is_ascii(label):
             self.draw.rectangle(box, width=self.lw, outline=color)  # box
             if label:
-                w, h = self.font.getsize(label)  # text width, height
+                # w, h = self.font.getsize(label)  # text width, height
+                x0, y0, x1, y1 = self.font.getbbox(label)  # text width, height    ## 粘贴这两行
+                w, h = x1 - x0, y1 - y0
                 outside = box[1] - h >= 0  # label fits outside box
                 self.draw.rectangle(
                     (box[0], box[1] - h if outside else box[1], box[0] + w + 1,

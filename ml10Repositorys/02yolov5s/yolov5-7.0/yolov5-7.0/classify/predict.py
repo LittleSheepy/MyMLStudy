@@ -107,7 +107,7 @@ def run(
     seen, windows, dt = 0, [], (Profile(), Profile(), Profile())
     csv_name = os.path.join(save_dir, "0result.csv")
     csv_file = open(csv_name, "w")
-    csv_file.write("name, 0,1,10,11,2,3,4,5,6,7,8,9\n")
+    csv_file.write("name, 0,1,2,3,4,5,6,7,8,9\n")
     for path, im, im0s, vid_cap, s in dataset:
         with dt[0]:
             im = torch.Tensor(im).to(model.device)
@@ -140,7 +140,7 @@ def run(
             annotator = Annotator(im0, example=str(names), pil=True)
 
             # Print results
-            top5i = prob.argsort(0, descending=True)[:5].tolist()  # top 5 indices
+            top5i = prob.argsort(0, descending=True)[:3].tolist()  # top 5 indices
             s += f"{', '.join(f'{names[j]} {prob[j]:.2f}' for j in top5i)}, "
 
             # save scv
@@ -169,7 +169,16 @@ def run(
             # Save results (image with detections)
             if save_img:
                 if dataset.mode == 'image':
-                    cv2.imwrite(save_path, im0)
+                    class_str = f"{names[top5i[0]]}"
+                    # 提取文件名和目录
+                    directory, filename = os.path.split(save_path)
+                    # 在路径中添加“00”
+                    new_directory = os.path.join(directory, class_str)
+                    # 组合新的文件路径
+                    new_file_path = os.path.join(new_directory, filename)
+                    if not os.path.exists(new_directory):
+                        os.mkdir(new_directory)
+                    cv2.imwrite(new_file_path, im0)
                 else:  # 'video' or 'stream'
                     if vid_path[i] != save_path:  # new video
                         vid_path[i] = save_path
@@ -200,9 +209,10 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    weights_path = ROOT / r"runs\train-cls\HHKJ12_\202311061308_HHKJ1103_3000_50_01\\weights\\best.pt"
+    weights_path = r"D:\00work\08alg_code_bjb\AI_UI\ClsUI\trunk\Project_Cla\HZHengTai_N\models\\HZHengTai_N_20240827_151636.onnx"
+    weights_path = r"D:\03GitHub\00myGitHub\MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train-cls\OCR_CHAR\202408291544_ocr_char_400_01\weights\best.pt"
     # source_path = r"D:\02dataset\01work\06淮河科技瑕疵分类\瑕疵小图-AI训练用\NG\NG小图\脏污\/"
-    source_path = r"D:\02dataset\06淮河科技瑕疵分类\NG小图\9涂层脱落\9涂层脱落5/"
+    source_path = r"D:\02dataset\01work\02LGBinJiang\00imgAll\05W_Tape/"
     # source_path = r"D:\02dataset\01work\06淮河科技瑕疵分类\NG\NG小图\脏污\/"
 
     parser.add_argument('--weights', nargs='+', type=str, default=weights_path, help='model path(s)')
@@ -217,7 +227,7 @@ def parse_opt():
     parser.add_argument('--visualize', action='store_true', help='visualize features')
     parser.add_argument('--update', action='store_true', help='update all models')
     parser.add_argument('--project', default=ROOT / 'runs/predict-cls', help='save results to project/name')
-    parser.add_argument('--name', default='exp_zw', help='save results to project/name')
+    parser.add_argument('--name', default='exp_binjiang', help='save results to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--half', action='store_true', help='use FP16 half-precision inference')
     parser.add_argument('--dnn', action='store_true', help='use OpenCV DNN for ONNX inference')
@@ -232,7 +242,21 @@ def main(opt):
     check_requirements(exclude=('tensorboard', 'thop'))
     run(**vars(opt))
 
+def predict_dirs():
+    root_dir = r"D:\02dataset\01work\11OCR\04char_class_all/"
+    opt = parse_opt()
+    for dir_name in os.listdir(root_dir):
+        if "result" in dir_name:continue
+        dir_path = os.path.join(root_dir, dir_name)
+        if not os.path.isdir(dir_path):continue
+        result_dir_path = os.path.join(root_dir, dir_name+"_result")
+        opt.source = dir_path
+        opt.project = root_dir
+        opt.name = dir_name+"_result"
+        main(opt)
+
 
 if __name__ == "__main__":
-    opt = parse_opt()
-    main(opt)
+    # opt = parse_opt()
+    # main(opt)
+    predict_dirs()

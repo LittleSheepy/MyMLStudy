@@ -22,21 +22,23 @@ def normalize_to_255(arr):
 def show_one(img_data, title=""):
     data_min = img_data.min()
     data_max = img_data.max()
-    plt.title(title +",".join([" ", str(data_min), str(data_max)]))
-    img_data = normalize_to_255(img_data)
+    title_str = title +"-".join([" ", str(data_min), str(data_max)])
+    plt.title(title_str)
+    # img_data = normalize_to_255(img_data)
     plt.imshow(img_data, cmap="gray")
+    plt.savefig(r"D:\00Demo\v8/" + title_str + ".jpg")  # 指定保存的文件名和格式
     plt.show()
 
 
 def show8400(data8400, title=""):
     data6400 = data8400[:6400].reshape((80, 80)).cpu().numpy()
-    show_one(data6400, title + "80*80")
+    show_one(data6400, title + "80_80")
 
     data1600 = data8400[6400:8000].reshape((40, 40)).cpu().numpy()
-    show_one(data1600, title + "40*40")
+    show_one(data1600, title + "40_40")
 
     data400 = data8400[8000:].reshape((20, 20)).cpu().numpy()
-    show_one(data400, title + "20*20")
+    show_one(data400, title + "20_20")
 
 
 class VarifocalLoss(nn.Module):
@@ -263,18 +265,19 @@ class v8DetectionLoss:
         anchor_points, stride_tensor = make_anchors(feats, self.stride, 0.5)
 
         show8400(anchor_points[:,0], "anchor_points")
-
+        show8400(anchor_points[:,1], "anchor_points1")
         # Targets torch.Size([12, 6])   1+1+4
-        targets = torch.cat((batch["batch_idx"].view(-1, 1), batch["cls"].view(-1, 1), batch["bboxes"]), 1)
-        targets = self.preprocess(targets.to(self.device), batch_size, scale_tensor=imgsz[[1, 0, 1, 0]])
+        targets = torch.cat((batch["batch_idx"].view(-1, 1), batch["cls"].view(-1, 1), batch["bboxes"]), 1) # torch.Size([2, 6])
+        targets1 = targets
+        targets = self.preprocess(targets.to(self.device), batch_size, scale_tensor=imgsz[[1, 0, 1, 0]])    # torch.Size([1, 2, 5])
         gt_labels, gt_bboxes = targets.split((1, 4), 2)  # cls, xyxy
         mask_gt = gt_bboxes.sum(2, keepdim=True).gt_(0.0)
 
         # Pboxes torch.Size([1, 8400, 4])
-        pred_bboxes = self.bbox_decode(anchor_points, pred_distri)  # xyxy, (b, h*w, 4)
+        pred_bboxes = self.bbox_decode(anchor_points, pred_distri)  # xyxy, (b, h*w, 4) torch.Size([1, 8400, 4])
 
         _, target_bboxes, target_scores, fg_mask, _ = self.assigner(
-            pred_scores.detach().sigmoid(),
+            pred_scores.detach().sigmoid(),     # torch.Size([1, 8400, 80])
             (pred_bboxes.detach() * stride_tensor).type(gt_bboxes.dtype),
             anchor_points * stride_tensor,
             gt_labels,

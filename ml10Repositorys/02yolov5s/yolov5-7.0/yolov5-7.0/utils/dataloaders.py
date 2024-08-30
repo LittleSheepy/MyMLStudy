@@ -305,6 +305,19 @@ class LoadImages:
             assert im0 is not None, f'Image Not Found {path}'
             s = f'image {self.count}/{self.nf} {path}: '
 
+        # 获取图片的高度和宽度
+        height, width = im0.shape[:2]
+
+        # 计算最长边
+        longest_edge = max(height, width)
+
+        # 计算需要填充的像素数
+        padding_height = (longest_edge - height) // 2
+        padding_width = (longest_edge - width) // 2
+
+        # 填充图片
+        im0 = cv2.copyMakeBorder(im0, padding_height, padding_height, padding_width, padding_width,
+                                        cv2.BORDER_CONSTANT, value=(0, 0, 0))
         if self.transforms:
             im = self.transforms(im0)  # transforms
         else:
@@ -1204,6 +1217,20 @@ class ClassificationDataset(torchvision.datasets.ImageFolder):
             im = np.load(fn)
         else:  # read image
             im = cv2.imread(f)  # BGR
+        # 获取图片的高度和宽度
+        height, width = im.shape[:2]
+
+        # 计算最长边
+        longest_edge = max(height, width)
+
+        # 计算需要填充的像素数
+        padding_height = (longest_edge - height) // 2
+        padding_width = (longest_edge - width) // 2
+
+        # 填充图片
+        im = cv2.copyMakeBorder(im, padding_height, padding_height, padding_width, padding_width,
+                                        cv2.BORDER_CONSTANT, value=(0, 0, 0))
+
         if self.album_transforms:
             sample = self.album_transforms(image=cv2.cvtColor(im, cv2.COLOR_BGR2RGB))["image"]
         else:
