@@ -59,11 +59,6 @@ ant-learn-python-concurrent-old
 *.wts
 ml10Repositorys/02yolov5s/yolov5-7.0/runs/
 ml00project/pj5TestDlg/x64/
-data/build/
-data/dist/
-data/LG/build/
-data/LG/dist/
-data/yolo/build/
 ml00project/pj5TestDlg_bake.zip
 ml10Repositorys/02yolov5s/yolov5-7.0/yolov5-7.0/runs_liu/
 ml10Repositorys/02yolov5s/yolov5-7.0/yolov5-7.0/runs_pk/
@@ -91,8 +86,7 @@ ml10Repositorys/05open-mmlab/mmdeploy-1.3.0_my/third_party/
 00myseg/cmodels/__pycache__/CModelBase.cpython-38.pyc
 00myseg/config/__pycache__/__init__.cpython-38.pyc
 00myseg/config/__pycache__/CCfgBase.cpython-38.pyc
-00myseg/algseg/*/*.pyc
-00myseg/algseg/*/*/*.pyc
+
 
 
 ml05Python/06py调用dll/dll01py_cpp/PyCallDll/x64
