@@ -32,11 +32,11 @@
 #     res = answer_grader.invoke({"question": "What causes cardiac arrest?", "generation": generated})
 #     print(res)
 import os
-os.environ["OPENAI_API_KEY"] = "sk-kjMCtBsCdCGoVp3EAe60626fAf534c12A5009e7134Ae50C2"
-os.environ["DASHSCOPE_API_KEY"] = "sk-720b1666b12f49c3915e4061e173ab15"
 
-from langchain.llms import OpenAI,OpenAIChat
-from langchain_openai import ChatOpenAI
+# os.environ["DASHSCOPE_API_KEY"] = ""
+
+# from langchain.llms import OpenAI,OpenAIChat
+# from langchain_openai import ChatOpenAI
 
 from langchain_community.chat_models import ChatTongyi
 from typing import Optional
@@ -46,7 +46,7 @@ class Joke(BaseModel):
     setup: str = Field(description="The setup of the joke")
     punchline: str = Field(description="The punchline to the joke")
     rating: Optional[int] = Field(description="How funny the joke is, from 1 to 10")
-llm = ChatTongyi()
+llm = ChatTongyi(model="qwen-max")
 structured_llm = llm.with_structured_output(Joke)
 result = structured_llm.invoke("Tell me a joke about cats")
 print(result)  # result: None
