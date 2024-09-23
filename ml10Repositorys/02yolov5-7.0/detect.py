@@ -229,15 +229,16 @@ def run(
 def parse_opt():
     parser = argparse.ArgumentParser()
     pt_path = r"D:\08weight\05yolov5\7.0\yolov5s6.pt"
-    pt_path = r"D:\03GitHub\00myGitHub\MyMLStudy\ml10Repositorys\02yolov5s\yolov5-7.0\yolov5-7.0\runs\train\ocr_little4\weights\best.pt"
+    pt_path = r"D:\00sheepy\00MyMLStudy\ml10Repositorys\02yolov5-7.0\runs\train\ocr_little2\weights\best.pt"
     # img_path = r"D:\02dataset\imgtest\000000000036.jpg"
     img_path = r"D:\02dataset\01work\11OCR\00imgAll\OK/"
     img_path = r"D:\02dataset\01work\11OCR\03lableimg_one\img_little/"
+    img_path = r"D:\02dataset\10coco128\coco128_1\images\train2017/"
     parser.add_argument('--weights', nargs='+', type=str, default=pt_path, help='model path or triton URL')
     parser.add_argument('--source', type=str, default=img_path, help='file/dir/URL/glob/screen/0(webcam)')
-    parser.add_argument('--data', type=str, default=ROOT / 'data/coco128.yaml', help='(optional) dataset.yaml path')
+    parser.add_argument('--data', type=str, default=ROOT / 'data/coco128_1.yaml', help='(optional) dataset.yaml path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[640], help='inference size h,w')
-    parser.add_argument('--conf-thres', type=float, default=0.5, help='confidence threshold')
+    parser.add_argument('--conf-thres', type=float, default=0.3, help='confidence threshold')
     parser.add_argument('--iou-thres', type=float, default=0.45, help='NMS IoU threshold')
     parser.add_argument('--max-det', type=int, default=1000, help='maximum detections per image')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
@@ -255,7 +256,7 @@ def parse_opt():
     parser.add_argument('--name', default='exp', help='save results to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--line-thickness', default=3, type=int, help='bounding box thickness (pixels)')
-    parser.add_argument('--hide-labels', default=True, action='store_true', help='hide labels')
+    parser.add_argument('--hide-labels', default=False, action='store_true', help='hide labels')
     parser.add_argument('--hide-conf', default=False, action='store_true', help='hide confidences')
     parser.add_argument('--half', action='store_true', help='use FP16 half-precision inference')
     parser.add_argument('--dnn', action='store_true', help='use OpenCV DNN for ONNX inference')

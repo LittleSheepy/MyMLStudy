@@ -88,6 +88,32 @@ class QFocalLoss(nn.Module):
             return loss
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class ComputeLoss:
     sort_obj_iou = False
 
@@ -117,11 +143,15 @@ class ComputeLoss:
         self.nl = m.nl  # number of layers
         self.anchors = m.anchors
         self.device = device
-
+    # p [torch.Size([1, 3, 80, 80, 85]), torch.Size([1, 3, 40, 40, 85]), torch.Size([1, 3, 20, 20, 85])]
+    # targets torch.Size([4, 6])
     def __call__(self, p, targets):  # predictions, targets
         lcls = torch.zeros(1, device=self.device)  # class loss
         lbox = torch.zeros(1, device=self.device)  # box loss
         lobj = torch.zeros(1, device=self.device)  # object loss
+        # tcls [[], [], [22, 22, 22, 22, 22, 22]]
+        # tbox [torch.Size([0, 4]), torch.Size([0, 4]), torch.Size([6, 4])]  [ 0.46263,  0.81585, 13.07474, 11.98203]:dx dy w h
+        # anchors [torch.Size([0, 4]), torch.Size([0, 4]), torch.Size([6, 4])]
         tcls, tbox, indices, anchors = self.build_targets(p, targets)  # targets
 
         # Losses
@@ -130,13 +160,13 @@ class ComputeLoss:
             tobj = torch.zeros(pi.shape[:4], dtype=pi.dtype, device=self.device)  # target obj
 
             n = b.shape[0]  # number of targets
-            if n:
+            if n:   # pi[b, a, gj, gi] : torch.Size([6, 85])
                 # pxy, pwh, _, pcls = pi[b, a, gj, gi].tensor_split((2, 4, 5), dim=1)  # faster, requires torch 1.8.0
                 pxy, pwh, _, pcls = pi[b, a, gj, gi].split((2, 2, 1, self.nc), 1)  # target-subset of predictions
 
                 # Regression
-                pxy = pxy.sigmoid() * 2 - 0.5
-                pwh = (pwh.sigmoid() * 2) ** 2 * anchors[i]
+                pxy = pxy.sigmoid() * 2 - 0.5                   # xy的预测范围为-0.5~1.5
+                pwh = (pwh.sigmoid() * 2) ** 2 * anchors[i]     # wh的预测范围是0~4倍anchor的w和h，
                 pbox = torch.cat((pxy, pwh), 1)  # predicted box
                 iou = bbox_iou(pbox, tbox[i], CIoU=True).squeeze()  # iou(prediction, target)
                 lbox += (1.0 - iou).mean()  # iou loss
@@ -174,13 +204,27 @@ class ComputeLoss:
 
         return (lbox + lobj + lcls) * bs, torch.cat((lbox, lobj, lcls)).detach()
 
+
+
+
+
+
+
+
+
+
+
+
+    # p [torch.Size([1, 3, 80, 80, 85]), torch.Size([1, 3, 40, 40, 85]), torch.Size([1, 3, 20, 20, 85])]
+    # targets torch.Size([4, 6])
     def build_targets(self, p, targets):
         # Build targets for compute_loss(), input targets(image,class,x,y,w,h)
         na, nt = self.na, targets.shape[0]  # number of anchors, targets
         tcls, tbox, indices, anch = [], [], [], []
         gain = torch.ones(7, device=self.device)  # normalized to gridspace gain
+        # ai torch.Size([na, 1])  [3, 1]
         ai = torch.arange(na, device=self.device).float().view(na, 1).repeat(1, nt)  # same as .repeat_interleave(nt)
-        targets = torch.cat((targets.repeat(na, 1, 1), ai[..., None]), 2)  # append anchor indices
+        targets = torch.cat((targets.repeat(na, 1, 1), ai[..., None]), 2)  # append anchor indices torch.Size([3, 1, 7])
 
         g = 0.5  # bias
         off = torch.tensor(
@@ -193,27 +237,30 @@ class ComputeLoss:
                 # [1, 1], [1, -1], [-1, 1], [-1, -1],  # jk,jm,lk,lm
             ],
             device=self.device).float() * g  # offsets
-
+        # 输出特征图的数量：nl : number of layer
         for i in range(self.nl):
-            anchors, shape = self.anchors[i], p[i].shape
+            # self.anchors：(nl, 3, 2)  anchors: (3, 2)
+            # shape : torch.Size([1, 3, 80, 80, 85])
+            anchors, shape = self.anchors[i], p[i].shape        #
             gain[2:6] = torch.tensor(shape)[[3, 2, 3, 2]]  # xyxy gain
 
             # Match targets to anchors
-            t = targets * gain  # shape(3,n,7)
+            t = targets * gain  # shape(3,nt,7)
             if nt:
                 # Matches
-                r = t[..., 4:6] / anchors[:, None]  # wh ratio
-                j = torch.max(r, 1 / r).max(2)[0] < self.hyp['anchor_t']  # compare
+                r = t[..., 4:6] / anchors[:, None]  # wh ratio torch.Size([3, 1, 2])
+                j = torch.max(r, 1 / r).max(2)[0] < self.hyp['anchor_t']  # compare torch.Size([3, 1])
                 # j = wh_iou(anchors, t[:, 4:6]) > model.hyp['iou_t']  # iou(3,n)=wh_iou(anchors(3,2), gwh(n,2))
-                t = t[j]  # filter
+                t = t[j]  # filter  -> torch.Size([2, 7])
 
                 # Offsets
-                gxy = t[:, 2:4]  # grid xy
-                gxi = gain[[2, 3]] - gxy  # inverse
+                gxy = t[:, 2:4]  # grid xy  torch.Size([2, 2])
+                gxi = gain[[2, 3]] - gxy  # inverse 剩余
+                # gxy % 1 : 取出小数部分， 小数部分小于0.5为True
                 j, k = ((gxy % 1 < g) & (gxy > 1)).T
                 l, m = ((gxi % 1 < g) & (gxi > 1)).T
-                j = torch.stack((torch.ones_like(j), j, k, l, m))
-                t = t.repeat((5, 1, 1))[j]
+                j = torch.stack((torch.ones_like(j), j, k, l, m))       # torch.Size([5, 2])
+                t = t.repeat((5, 1, 1))[j]      # torch.Size([6, 7])
                 offsets = (torch.zeros_like(gxy)[None] + off[:, None])[j]
             else:
                 t = targets[0]

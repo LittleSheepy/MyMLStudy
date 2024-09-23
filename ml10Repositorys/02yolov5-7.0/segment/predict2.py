@@ -244,8 +244,8 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    pt_file = r"D:\08weight\05yolov5\7.0\\yolov5s-seg.pt"           # cmwr
-    img_dir = r"D:\02dataset\imgtest/"
+    pt_file = r"D:\00sheepy\00MyMLStudy\ml10Repositorys\02yolov5-7.0\runs_liu\train-seg\exp_luntai_202409192\weights\\best.pt"           # cmwr
+    img_dir = r"D:\02dataset\01work\12LunTai\00imgAll\img/"
 
     parser.add_argument('--weights', nargs='+', type=str, default=pt_file, help='model path(s)')
     parser.add_argument('--source', type=str, default=img_dir, help='file/dir/URL/glob/screen/0(webcam)')

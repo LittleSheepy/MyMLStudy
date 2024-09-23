@@ -52,7 +52,7 @@ class Detect(nn.Module):
         self.register_buffer('anchors', torch.tensor(anchors).float().view(self.nl, -1, 2))  # shape(nl,na,2)
         self.m = nn.ModuleList(nn.Conv2d(x, self.no * self.na, 1) for x in ch)  # output conv
         self.inplace = inplace  # use inplace ops (e.g. slice assignment)
-
+    # x [torch.Size([1, 128, 80, 80]), torch.Size([1, 256, 40, 40]), torch.Size([1, 512, 20, 20])]
     def forward(self, x):
         z = []  # inference output
         for i in range(self.nl):

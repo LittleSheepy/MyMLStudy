@@ -93,7 +93,7 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
     # Loggers
     data_dict = None
     if RANK in {-1, 0}:
-        logger = GenericLogger(opt=opt, console_logger=LOGGER)
+        logger = GenericLogger(opt=opt, console_logger=LOGGER, include=('tb'))
 
     # Config
     plots = not evolve and not opt.noplots  # create plots

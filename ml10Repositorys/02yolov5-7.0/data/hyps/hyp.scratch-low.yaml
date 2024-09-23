@@ -29,6 +29,6 @@ shear: 0.0  # image shear (+/- deg)-------------------------------------设置�
 perspective: 0.0  # image perspective (+/- fraction), range 0-0.001-----透视变换参数
 flipud: 0.0  # image flip up-down (probability)-------------------------上下翻转
 fliplr: 0.5  # image flip left-right (probability)----------------------左右翻转
-mosaic: 1.0  # image mosaic (probability)-------------------------------四图马赛克拼接
+mosaic: 0.0  # image mosaic (probability)-------------------------------四图马赛克拼接
 mixup: 0.0  # image mixup (probability)---------------------------------进行图像混叠概率（即，多张图像重叠在一起）
 copy_paste: 0.0  # segment copy-paste (probability)---------------------轮廓复制粘贴 分割
