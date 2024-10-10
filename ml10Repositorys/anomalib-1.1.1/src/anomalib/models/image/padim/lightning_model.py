@@ -93,7 +93,7 @@ class Padim(MemoryBankMixin, AnomalyModule):
         Args:
             batch (dict[str, str | torch.Tensor]): Input batch
             args: Additional arguments.
-            kwargs: Additional keyword arguments.
+            kwargs: Additional keyword arguments.from anomalib.deploy import ExportType
 
         Returns:
             Dictionary containing images, features, true labels and masks.

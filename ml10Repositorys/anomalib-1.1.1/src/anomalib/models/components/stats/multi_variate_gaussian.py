@@ -79,7 +79,7 @@ class MultiVariateGaussian(DynamicBufferMixin, nn.Module):
             weights_sum = torch.sum(weights)
             avg = torch.sum(observations * (weights / weights_sum)[:, None], 0)
         else:
-            avg = torch.mean(observations, 0)
+            avg = torch.mean(observations, 0)   # torch.Size([100])
 
         # Determine the normalization
         if weights is None:
@@ -120,7 +120,7 @@ class MultiVariateGaussian(DynamicBufferMixin, nn.Module):
             covariance[:, :, i] = self._cov(embedding_vectors[:, :, i], rowvar=False) + 0.01 * identity
 
         # calculate inverse covariance as we need only the inverse
-        self.inv_covariance = torch.linalg.inv(covariance.permute(2, 0, 1))
+        self.inv_covariance = torch.linalg.inv(covariance.permute(2, 0, 1))     # torch.Size([4096, 100, 100])
 
         return [self.mean, self.inv_covariance]
 

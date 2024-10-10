@@ -26,9 +26,9 @@ def get_parser() -> ArgumentParser:
         ArgumentParser: The parser object.
     """
     parser = ArgumentParser()
-    parser.add_argument("--weights", type=Path, required=True, help="Path to model weights")
-    parser.add_argument("--metadata", type=Path, required=True, help="Path to a JSON file containing the metadata.")
-    parser.add_argument("--input", type=Path, required=True, help="Path to an image to infer.")
+    parser.add_argument("--weights", type=Path, required=False, help="Path to model weights")
+    parser.add_argument("--metadata", type=Path, required=False, help="Path to a JSON file containing the metadata.")
+    parser.add_argument("--input", type=Path, required=False, help="Path to an image to infer.")
     parser.add_argument("--output", type=Path, required=False, help="Path to save the output image.")
     parser.add_argument(
         "--task",
